@@ -3533,6 +3533,8 @@
 /obj/structure/closet/crate/secure/gear,
 /obj/item/device/scanner/price,
 /obj/item/device/scanner/price,
+/obj/item/storage/bolt_bag/full_of_bolts,
+/obj/item/storage/bolt_bag/full_of_bolts,
 /turf/simulated/floor/tiled/techmaint,
 /area/ship/hand/engineering/starboard)
 "rI" = (
