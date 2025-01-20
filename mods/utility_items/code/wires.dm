@@ -99,6 +99,7 @@
 
 /datum/wires/apc/SolveWireFunction(function)
 	var/sf = ""
+	var/obj/machinery/power/apc/APC = holder
 	switch(function)
 		if(APC_WIRE_IDSCAN)
 			sf = "Port A"
@@ -107,12 +108,13 @@
 		if(APC_WIRE_MAIN_POWER2)
 			sf = "Port C"
 		if(APC_WIRE_AI_CONTROL)
-			sf = "Port D"
+			sf = "Port D (NTNet ID = [APC.NTNet_id])"
 
 	return sf
 
 /datum/wires/camera/SolveWireFunction(function)
 	var/sf = ""
+	var/obj/machinery/camera/CAM = holder
 	switch(function)
 		if(CAMERA_WIRE_FOCUS)
 			sf = "Port A"
@@ -123,7 +125,7 @@
 		if(CAMERA_WIRE_ALARM)
 			sf = "Port D"
 		if(CAMERA_WIRE_NOTHING1)
-			sf = "Port E"
+			sf = "Port E (NTNet ID = [CAM.NTNet_id])"
 		if(CAMERA_WIRE_NOTHING2)
 			sf = "Port F"
 
