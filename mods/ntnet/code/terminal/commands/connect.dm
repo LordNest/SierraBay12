@@ -44,7 +44,7 @@
 			. += "	Airlock timing: [REMOTE.normalspeed ? "<font color = '#00ff00'>STABLE</font>" : "<font color = '#ff0000'>OVERRIDEN</font>"].<br>"
 			. += "	Safety protocols: [REMOTE.safe ? "<font color = '#00ff00'>STABLE</font>" : "<font color = '#ff0000'>OVERRIDEN</font>"].<br></pre>"
 			. += "Required Access: [length(REMOTE.req_access)>=1 ? "([jointext(REMOTE.req_access, ", ") ])" : "ACCESS NOT REQUIRED"].<hr>"
-			. += "Acces check: [has_access(REMOTE.req_access, user.GetAccess()) ? "<font color = '#00ff00'>GRANTED</font>" : "<font color = '#ff0000'>DENIED</font>"]."
+			. += "Access check: [has_access(REMOTE.req_access, user.GetAccess()) ? "<font color = '#00ff00'>GRANTED</font>" : "<font color = '#ff0000'>DENIED</font>"]."
 			return
 
 		if(!has_access(REMOTE.req_access, user.GetAccess())) // && !override)
@@ -158,6 +158,46 @@
 				if("-detect")
 					REMOTE.detecting = !REMOTE.detecting
 					return "Automatic switched to: [REMOTE.detecting  ? "<font color = '#00ff00'>ON</font>" : "<font color = '#ff0000'>OFF</font>"]."
+
+	else
+		. += "Syntax mismach"
+
+// SECURITY CAMERA
+	if (copytext(txt[2],1,3) == "CM")
+		var/NTID = txt[2]
+		var/obj/machinery/camera/REMOTE = terminal.get_remote_ID(NTID)
+		if (length(txt)==2)
+			. += "Outputting data about security camera([NTID]):<hr>"
+			. += "Name:   [REMOTE.name]<br> <hr>"
+			. += "Camera Alarm:   [REMOTE.alarm_on  ? "<font color = '#ff0000'>ON</font>" : "<font color = '#00ff00'>OFF</font>"]<br> <hr>"
+			var/camera_focus
+			switch(REMOTE.view_range)
+				if(2)
+					camera_focus = "<font color = '#fffa29'>DEFOCUSED</font>"
+				if(7)
+					camera_focus = "<font color ='#00ff00'>NOMINAL</font>"
+				else
+					camera_focus = "<font color = '#ff0000'>MISMATCHED</font>"
+			. += "	Focus: [camera_focus].<br>"
+			return
+		else if (length(txt)==3)
+			switch(txt[3])
+				// triggering camera alarm
+				if("-alarm")
+					REMOTE.alarm_on  = 1
+					return "Alarm Triggered"
+				if("-light_up")
+					REMOTE.light_disabled  = 0
+					return "Light up"
+				if("-light_down")
+					REMOTE.light_disabled  = 1
+					return "Light down"
+				if("-defocus")
+					REMOTE.setViewRange(2)
+					return "Camera defocused"
+				if("-focus")
+					REMOTE.setViewRange(7)
+					return "Camera focused"
 
 	else
 		. += "Syntax mismach"
