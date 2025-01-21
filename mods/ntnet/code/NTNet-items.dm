@@ -34,6 +34,13 @@
 	if(issilicon(user))
 		to_chat(user, SPAN_INFO(SPAN_ITALIC("Chosen device network ID: [NTNet_id]")))
 
+/obj/machinery/alarm/examine(mob/user)
+	. = ..()
+	if(hasHUD(user, HUD_IT))
+		to_chat(user, SPAN_INFO(SPAN_ITALIC("You may notice a small hologram that says: [NTNet_id]")))
+	if(issilicon(user))
+		to_chat(user, SPAN_INFO(SPAN_ITALIC("Chosen device network ID: [NTNet_id]")))
+
 /obj/machinery/firealarm/examine(mob/user)
 	. = ..()
 	if(hasHUD(user, HUD_IT))

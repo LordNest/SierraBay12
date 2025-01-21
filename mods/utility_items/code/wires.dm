@@ -83,6 +83,7 @@
 
 /datum/wires/alarm/SolveWireFunction(function)
 	var/sf = ""
+	var/obj/machinery/power/apc/AIR = holder
 	switch(function)
 		if(AALARM_WIRE_IDSCAN)
 			sf = "Port A"
@@ -91,7 +92,7 @@
 		if(AALARM_WIRE_SYPHON)
 			sf = "Port C"
 		if(AALARM_WIRE_AI_CONTROL)
-			sf = "Port D"
+			sf = "Port D (NTNet ID = [AIR.NTNet_id])"
 		if(AALARM_WIRE_AALARM)
 			sf = "Port E"
 

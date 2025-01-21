@@ -137,6 +137,87 @@
 		else
 			return "ACCESS ERROR"
 
+// Atmospheric Alarm
+	if (copytext(txt[2],1,3) == "AA")
+		var/NTID = txt[2]
+		var/obj/machinery/alarm/REMOTE = terminal.get_remote_ID(NTID)
+		if (length(txt)==2)
+			. += "Outputting data about Atmospheric Alarm([NTID]):<hr>"
+			. += "Name:[copytext(REMOTE.name,2)]<br>"
+			. += "Status:[REMOTE.locked ? "<font color = '#00ff00'>BLOCKED</font>" : "<font color = '#ff0000'>OPEN</font>"]<br><hr>"
+			. += "AI control:[REMOTE.aidisabled ? "<font color = '#ff0000'>OUT OF SERVICE</font>" : "<font color = '#00ff00'>ACTIVE</font>"]<br><hr>"
+			var/alarm_level
+			switch(REMOTE.danger_level)
+				if(1)
+					alarm_level = "<font color = '#fffa29'>MINOR</font>"
+				if(0)
+					alarm_level = "<font color ='#00ff00'>CLEAR</font>"
+				else
+					alarm_level = "<font color = '#ff0000'>SEVERE</font>"
+			var/alarm_mode
+			switch(REMOTE.mode)
+				if(6)
+					alarm_mode = "<font color = '#fffa29'>OFF</font>"
+				if(5)
+					alarm_mode = "<font color = '#fffa29'>FILL</font>"
+				if(4)
+					alarm_mode = "<font color = '#fffa29'>CYCLE</font>"
+				if(3)
+					alarm_mode = "<font color = '#ff0000'>SIPHONING</font>"
+				if(2)
+					alarm_mode = "<font color = '#fffa29'>REPLACEMENT</font>"
+				if(1)
+					alarm_mode = "<font color = '#00ff00'>SCRUBBING</font>"
+				else
+					alarm_mode = "<font color = '#ff0000'>NO DATA</font>"
+			. += "<pre>Local functional data:<br>"
+			. += "	Current alarm level: [alarm_level].<br>"
+			. += "	Current operating mode: [alarm_mode].<br>"
+			return
+
+
+		if ((length(txt)==3) && (has_access(REMOTE.req_access, user.GetAccess() || !REMOTE.locked)))
+			switch(txt[3])
+				//lock-unlock panel
+				if("-lock")
+					REMOTE.locked = 1
+					. += "Atmospheric Alarm panel <font color = '#00ff00'>BLOCKED</font>"
+					REMOTE.update_icon()
+				if("-unlock")
+					REMOTE.locked = 0
+					. += "Atmospheric Alarm <font color = '#ff0000'>OPEN</font>"
+					REMOTE.update_icon()
+				//Toggle Alarm mode
+				if("-mode-scrub")
+					REMOTE.mode = 1
+					REMOTE.apply_mode()
+					. += "Atmospheric Alarm mode set to <font color = '#00ff00'>SCRUBBING</font>"
+				if("-mode-replace")
+					REMOTE.mode = 2
+					REMOTE.apply_mode()
+					. += "Atmospheric Alarm mode set to <font color = '#fffa29'>REPLACEMENT</font>"
+				if("-mode-siphon")
+					REMOTE.mode = 3
+					REMOTE.apply_mode()
+					. += "Atmospheric Alarm mode set to <font color = '#ff0000'>SIPHONING</font>"
+				if("-mode-cycle")
+					REMOTE.mode = 4
+					REMOTE.apply_mode()
+					. += "Atmospheric Alarm mode set to <font color = '#fffa29'>CYCLE</font>"
+				if("-mode-fill")
+					REMOTE.mode = 5
+					REMOTE.apply_mode()
+					. += "Atmospheric Alarm mode set to <font color = '#fffa29'>FILL</font>"
+				if("-mode-off")
+					REMOTE.mode = 6
+					REMOTE.apply_mode()
+					. += "Atmospheric Alarm mode set to <font color = '#fffa29'>OFF</font>"
+
+				else
+					return "Wrong parametr"
+			return
+		else
+			return "ACCESS ERROR"
 
 // FIREALARM
 	if (copytext(txt[2],1,3) == "FA")
@@ -158,9 +239,6 @@
 				if("-detect")
 					REMOTE.detecting = !REMOTE.detecting
 					return "Automatic switched to: [REMOTE.detecting  ? "<font color = '#00ff00'>ON</font>" : "<font color = '#ff0000'>OFF</font>"]."
-
-	else
-		. += "Syntax mismach"
 
 // SECURITY CAMERA
 	if (copytext(txt[2],1,3) == "CM")
@@ -186,12 +264,14 @@
 				if("-alarm")
 					REMOTE.alarm_on  = 1
 					return "Alarm Triggered"
+				// camera lights (can AI toggle it?)
 				if("-light_up")
 					REMOTE.light_disabled  = 0
 					return "Light up"
 				if("-light_down")
 					REMOTE.light_disabled  = 1
 					return "Light down"
+				// camera focus (AI vision range)
 				if("-defocus")
 					REMOTE.setViewRange(2)
 					return "Camera defocused"

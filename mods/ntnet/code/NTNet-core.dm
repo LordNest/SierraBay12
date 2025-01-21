@@ -32,6 +32,11 @@ GLOBAL_LIST_INIT(NTNet_machines, list())
 	GLOB.NTNet_machines += src
 	get_new_ntnet_id("PC")
 
+/obj/machinery/alarm/Initialize()
+	. = ..()
+	GLOB.NTNet_machines += src
+	get_new_ntnet_id("AA")
+
 /obj/machinery/camera/Initialize()
 	. = ..()
 	GLOB.NTNet_machines += src
