@@ -1,6 +1,6 @@
 /obj/item/rig/ert/assetprotection
 	name = "heavy emergency response suit control module"
-	desc = "A heavy, modified version of a common emergency response hardsuit. Has blood red highlights.  Armoured and space ready."
+	desc = "A heavy, modified version of a common emergency response hardsuit. Has blood red highlights. Armoured and space ready."
 	suit_type = "heavy emergency response"
 	icon_state = "asset_protection_rig"
 	armor = list(
@@ -30,3 +30,31 @@
 
 /obj/item/clothing/gloves/rig/ert/assetprotection
 	siemens_coefficient = 0
+
+/obj/item/clothing/suit/space/rig/ert
+	icon = 'mods/antagonists/icons/obj/ert_rig_suit.dmi'
+	item_icons = list(slot_wear_suit_str = 'mods/antagonists/icons/mob/ert_rig_suit.dmi')
+
+/obj/item/clothing/head/helmet/space/rig/ert
+	icon = 'mods/antagonists/icons/obj/ert_rig_head.dmi'
+	item_icons = list(slot_wear_head_str = 'mods/antagonists/icons/mob/ert_rig_head.dmi')
+
+/obj/item/clothing/shoes/magboots/rig/ert
+	icon = 'mods/antagonists/icons/obj/ert_rig_feet.dmi'
+	item_icons = list(slot_shoes_str = 'mods/antagonists/icons/mob/ert_rig_feet.dmi')
+
+/obj/item/clothing/gloves/rig/ert
+	icon = 'mods/antagonists/icons/obj/ert_rig_hands.dmi'
+	item_icons = list(slot_gloves_str = 'mods/antagonists/icons/mob/ert_rig_hands.dmi')
+
+/obj/item/rig/ert
+	icon = 'mods/antagonists/icons/obj/ert_rig_back.dmi'
+	item_icons = list(slot_back_str = 'mods/antagonists/icons/mob/ert_rig_back.dmi')
+
+/obj/item/rig/ert/engineer
+
+/obj/item/rig/ert/janitor
+
+/obj/item/rig/ert/medical
+
+/obj/item/rig/ert/security
