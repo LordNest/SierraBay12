@@ -1729,16 +1729,6 @@
 	icon_state = "vault"
 	},
 /area/map_template/rescue_base/base)
-"dR" = (
-/obj/machinery/door/blast/regular{
-	id_tag = "rescuegarage";
-	name = "Garage Exit"
-	},
-/obj/floor_decal/industrial/hatch/yellow,
-/turf/unsimulated/floor{
-	icon_state = "dark"
-	},
-/area/map_template/rescue_base/base)
 "dS" = (
 /obj/machinery/door/airlock/centcom{
 	name = "ERT Leader";
@@ -3234,10 +3224,6 @@
 	icon_state = "techfloor_grid"
 	},
 /area/map_template/rescue_base/base)
-"lE" = (
-/obj/structure/shuttle/engine/propulsion,
-/turf/space,
-/area/map_template/rescue_base/start)
 "nZ" = (
 /turf/unsimulated/floor/techfloor{
 	icon_state = "techfloor_grid"
@@ -4775,7 +4761,7 @@ ao
 ao
 ao
 ao
-dR
+ex
 ar
 ar
 bA
@@ -5187,7 +5173,7 @@ hg
 fo
 gk
 ga
-lE
+hf
 bB
 eP
 ar
