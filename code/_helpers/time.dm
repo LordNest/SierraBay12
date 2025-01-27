@@ -1,36 +1,37 @@
-#define SECOND *10
-#define SECONDS *10
-
-#define MINUTE *600
-#define MINUTES *600
-
-#define HOUR *36000
-#define HOURS *36000
-
-#define DAY *864000
-#define DAYS *864000
-
-GLOBAL_LIST_INIT(month_names, list(
+/// The title-case full english-language name of each month
+GLOBAL_LIST_AS(month_names, list(
 	"January", "February", "March",
 	"April", "May", "June",
 	"July", "August", "September",
 	"October", "November", "December"
 ))
 
-GLOBAL_LIST_INIT(month_names_short, list(
+
+/**
+* The title-case 3-letter abbreviation of the english-language
+* name of each month
+*/
+GLOBAL_LIST_AS(month_names_short, list(
 	"Jan", "Feb", "Mar",
 	"Apr", "May", "Jun",
 	"Jul", "Aug", "Sep",
 	"Oct", "Nov", "Dec"
 ))
 
-GLOBAL_LIST_INIT(day_names, list(
+
+/// The title-case full english-language name of each week day
+GLOBAL_LIST_AS(day_names, list(
 	"Monday", "Tuesday", "Wednesday",
 	"Thursday","Friday", "Saturday",
 	"Sunday"
 ))
 
-GLOBAL_LIST_INIT(day_names_short, list(
+
+/**
+* The title-case 3-letter abbreviation of the english-language
+* name of each week day
+*/
+GLOBAL_LIST_AS(day_names_short, list(
 	"Mon", "Tue", "Wed",
 	"Thu","Fri", "Sat",
 	"Sun"
@@ -145,6 +146,11 @@ var/global/next_station_date_change = 1 DAY
 /proc/stationtime2text()
 	return time2text(station_time_in_ticks, "hh:mm")
 
+
+GLOBAL_VAR(station_date)
+
+GLOBAL_VAR_AS(next_station_date_change, 1 DAY)
+
 /proc/stationdate2text()
 	var/update_time = FALSE
 	if(station_time_in_ticks > next_station_date_change)
@@ -217,11 +223,6 @@ var/global/round_start_time = 0
 	while (world.tick_usage > min(Master.tick_limit_to_run, Master.current_ticklimit))
 	return total
 
-
-/proc/acquire_days_per_month()
-	. = list(31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31)
-	if(isLeap(text2num(time2text(world.realtime, "YYYY"))))
-		.[2] = 29
 
 /proc/get_weekday_index()
 	var/list/weekdays = list("Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun")

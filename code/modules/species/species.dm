@@ -2,7 +2,22 @@
 	Datum-based species. Should make for much cleaner and easier to maintain race code.
 */
 
-/datum/species
+GLOBAL_LIST_AS(playable_species, list(
+	SPECIES_HUMAN
+))
+
+GLOBAL_LIST_EMPTY(mob_ref_to_species_name)
+
+/hook/startup/proc/CreateSpeciesLists()
+	var/race_key = 1
+	for (var/singleton/species/species as anything in GET_SINGLETON_SUBTYPE_LIST(/singleton/species))
+		GLOB.species_by_name[species.name] = species
+		if (~species.spawn_flags & SPECIES_IS_RESTRICTED)
+			GLOB.playable_species += species.name
+		species.race_key = race_key++
+	return TRUE
+
+/singleton/species
 
 	// Descriptors and strings.
 	var/name

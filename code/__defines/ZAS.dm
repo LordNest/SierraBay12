@@ -25,7 +25,7 @@
 
 #ifdef MULTIZAS
 
-GLOBAL_LIST_INIT(gzn_check, list(
+GLOBAL_LIST_AS(gzn_check, list(
 	NORTH,
 	SOUTH,
 	EAST,
@@ -34,7 +34,7 @@ GLOBAL_LIST_INIT(gzn_check, list(
 	DOWN
 ))
 
-GLOBAL_LIST_INIT(csrfz_check, list(
+GLOBAL_LIST_AS(csrfz_check, list(
 	NORTHEAST,
 	NORTHWEST,
 	SOUTHEAST,
@@ -91,14 +91,14 @@ GLOBAL_LIST_INIT(csrfz_check, list(
 	}
 #else
 
-GLOBAL_LIST_INIT(csrfz_check, list(
+GLOBAL_LIST_AS(csrfz_check, list(
 	NORTHEAST,
 	NORTHWEST,
 	SOUTHEAST,
 	SOUTHWEST
 ))
 
-GLOBAL_LIST_INIT(gzn_check, list(
+GLOBAL_LIST_AS(gzn_check, list(
 	NORTH,
 	SOUTH,
 	EAST,
