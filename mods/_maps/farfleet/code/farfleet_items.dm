@@ -65,6 +65,11 @@
 	desc = "HelTek LA-700 is a standart equipment of ICCG Space-assault Forces. Looks very similiar to STS-35."
 	icon = 'mods/_maps/farfleet/icons/obj/iccg_rifle.dmi'
 	icon_state = "iccg_rifle"
+	item_state = "arifle"
+	item_icons = list(
+		slot_r_hand_str = 'mods/_maps/farfleet/icons/mob/righthand.dmi',
+		slot_l_hand_str = 'mods/_maps/farfleet/icons/mob/lefthand.dmi',
+		)
 
 /obj/item/gun/projectile/automatic/assault_rifle/heltek/on_update_icon()
 	..()
