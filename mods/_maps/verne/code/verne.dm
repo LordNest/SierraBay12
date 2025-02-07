@@ -66,7 +66,8 @@
 		/area/verne/engineering/external = 20,
 	)
 
-/var/const/access_verne = "ACCESS_VERNE"
+var/global/const/access_verne = "ACCESS_VERNE"
+
 /datum/access/verne
 	id = access_verne
 	desc = "Verne Access"
