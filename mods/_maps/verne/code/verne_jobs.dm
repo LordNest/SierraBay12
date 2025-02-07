@@ -1,7 +1,7 @@
 /datum/job/submap/CTI_professor
 	title = "CTI Professor of Xenoscience"
 	total_positions = 0 // Pedal spawn only
-	outfit_type = /singleton/hierarchy/outfit/job/verne/pilot
+	outfit_type = /singleton/hierarchy/outfit/job/verne/professor
 	supervisors = "the CTI Rector"
 	info = "You are an employee on the SRV Verne, as it carries the students of the prestigious Ceti Technical Institute conducting research \
 	in the depths of space. Your job on the Survey team is simple; pilot the SRV Verne and the SRV Venerable Catfish; protect the students; and assist in their studies. Your Survey team has awoken \
@@ -132,11 +132,12 @@
 	id_types = list(/obj/item/card/id/verne)
 	l_ear = /obj/item/device/radio/headset/map_preset/verne
 
-/singleton/hierarchy/outfit/job/verne/rd
-	name = OUTFIT_JOB_NAME("Chief Science Officer")
-	l_ear = /obj/item/device/radio/headset/heads/rd
+/singleton/hierarchy/outfit/job/verne/professor
+	name = OUTFIT_JOB_NAME("CTI Professor of Xenoscience")
 	uniform = /obj/item/clothing/under/rank/research_director/rdalt
+	suit = /obj/item/clothing/suit/storage/toggle/labcoat
 	shoes = /obj/item/clothing/shoes/brown
+	backpack_contents = list(/obj/item/spacecash/bundle/c1000 = 5)
 
 /singleton/hierarchy/outfit/job/verne/pilot
 	name = VERNE_OUTFIT_JOB_NAME("Pilot")
