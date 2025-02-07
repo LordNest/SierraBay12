@@ -918,6 +918,14 @@
 /obj/item/material/hatchet/machete/steel,
 /obj/item/material/hatchet/machete/steel,
 /obj/item/material/hatchet/machete/steel,
+/obj/item/clothing/gloves/anomaly_detector,
+/obj/item/clothing/gloves/anomaly_detector,
+/obj/item/clothing/gloves/anomaly_detector,
+/obj/item/clothing/gloves/anomaly_detector,
+/obj/item/storage/bolt_bag/full_of_beacons,
+/obj/item/storage/bolt_bag/full_of_beacons,
+/obj/item/storage/bolt_bag/full_of_beacons,
+/obj/item/storage/bolt_bag/full_of_beacons,
 /turf/simulated/floor/tiled/white/monotile,
 /area/verne/xenosci/equipment)
 "dn" = (
@@ -1231,7 +1239,7 @@
 	},
 /obj/machinery/door/firedoor,
 /obj/machinery/door/airlock/multi_tile/glass/engineering{
-	dir = 4;
+	dir = 8;
 	name = "Verne Supermatter Upper Access"
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
@@ -1551,7 +1559,7 @@
 /area/verne/engineering/smresearch/access)
 "hn" = (
 /obj/machinery/door/airlock/multi_tile/glass/engineering{
-	dir = 4;
+	dir = 8;
 	name = "Verne Supermatter Upper Access"
 	},
 /obj/floor_decal/techfloor{
@@ -4495,6 +4503,18 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/verne/catfish)
+"DW" = (
+/obj/floor_decal/techfloor/orange,
+/obj/structure/table/steel,
+/obj/item/collector{
+	pixel_x = -6
+	},
+/obj/item/collector,
+/obj/item/collector{
+	pixel_x = 6
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/verne/engineering/workshop)
 "Ec" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -4716,7 +4736,7 @@
 /area/verne/xenosci/workshop)
 "Gv" = (
 /obj/floor_decal/industrial/outline/yellow,
-/obj/machinery/suit_storage_unit/ceti/verne,
+/obj/machinery/suit_storage_unit/ceti/verne/alt,
 /turf/simulated/floor/tiled/white/monotile,
 /area/verne/xenosci/equipment)
 "Gw" = (
@@ -14527,7 +14547,7 @@ Fd
 xU
 qj
 JJ
-hH
+DW
 Sd
 Sd
 Sd
@@ -15010,7 +15030,7 @@ zE
 lT
 qY
 aU
-NM
+Gv
 nM
 ls
 Ca
@@ -15162,7 +15182,7 @@ Kg
 lT
 qY
 aU
-VN
+NM
 tw
 Ru
 KW

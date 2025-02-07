@@ -1,3 +1,32 @@
+/datum/job/submap/CTI_professor
+	title = "CTI Professor of Xenoscience"
+	total_positions = 0 // Pedal spawn only
+	outfit_type = /singleton/hierarchy/outfit/job/verne/pilot
+	supervisors = "the CTI Rector"
+	info = "You are an employee on the SRV Verne, as it carries the students of the prestigious Ceti Technical Institute conducting research \
+	in the depths of space. Your job on the Survey team is simple; pilot the SRV Verne and the SRV Venerable Catfish; protect the students; and assist in their studies. Your Survey team has awoken \
+ 	to find the Verne running at low capacity, under-staffed, with much of the automated life support systems doing the heavy lifting."
+	whitelisted_species = list(SPECIES_HUMAN,SPECIES_IPC,SPECIES_SPACER,SPECIES_GRAVWORLDER,SPECIES_VATGROWN,SPECIES_TRITONIAN,SPECIES_SKRELL)
+	required_language = LANGUAGE_HUMAN_EURO
+
+	min_skill = list(
+		SKILL_BUREAUCRACY	=	SKILL_TRAINED,
+		SKILL_COMPUTER		=	SKILL_BASIC,
+		SKILL_FINANCE		=	SKILL_TRAINED,
+		SKILL_BOTANY		=	SKILL_BASIC,
+		SKILL_ANATOMY		=	SKILL_BASIC,
+		SKILL_DEVICES		=	SKILL_BASIC,
+		SKILL_SCIENCE		=	SKILL_TRAINED
+
+	)
+
+	max_skill = list(
+		SKILL_ANATOMY		=	SKILL_MAX,
+		SKILL_DEVICES		=	SKILL_MAX,
+		SKILL_SCIENCE		=	SKILL_MAX
+	)
+	skill_points = 30 //skills copied from Sierra pilot - 6 points
+
 /datum/job/submap/CTI_pilot
 	title = "CTI Pilot"
 	total_positions = 1
@@ -18,11 +47,11 @@
 		SKILL_PILOT   = SKILL_MAX,
 		SKILL_SCIENCE = SKILL_MAX,
 	)
-	skill_points = 20//skills copied from Torch pilot + gun
+	skill_points = 20 //skills copied from Torch pilot + gun
 
 /datum/job/submap/CTI_engineer
 	title = "CTI Engineer"
-	total_positions = 1
+	total_positions = 1 //up to two in larger mode
 	outfit_type = /singleton/hierarchy/outfit/job/verne/engineer
 	supervisors = "the CTI Professor in Command of the Verne"
 	info = "You are an employee on the SRV Verne, as it carries the students of the prestigious Ceti Technical Institute conducting research \
@@ -45,12 +74,12 @@
 		SKILL_ATMOS        = SKILL_MAX,
 		SKILL_ENGINES      = SKILL_MAX,
 	)
-	skill_points = 20//skills copied from torch eng
+	skill_points = 20 //skills copied from torch eng
 
 /datum/job/submap/CTI_Undergraduate_Xenoscience_Researcher
 	title = "CTI Undergraduate Xenoscience Researcher"
 	supervisors = "the CTI Professor in Command of the Verne"
-	total_positions = 2
+	total_positions = 2 // up to four in larger mode
 	outfit_type = /singleton/hierarchy/outfit/job/verne/researcher
 	info = "You are an undergraduate xenoscience researcher on the SRV Verne, alongside the rest of your class of the prestigious Ceti Technical Institute conducting research \
 	in the depths of space. A survey team will be accompanying you, on hand to assist your studies on the exoplanets in this system. Your team has awoken \
@@ -69,7 +98,31 @@
 		SKILL_DEVICES = SKILL_MAX,
 		SKILL_SCIENCE = SKILL_MAX,
 	)
-	skill_points = 20//skills copied from Torch sci
+	skill_points = 20 //skills copied from Torch sci
+
+/datum/job/submap/CTI_Exchange_Student
+	title = "CTI Undergraduate Anomaly Researcher"
+	supervisors = "the CTI Professor in Command of the Verne"
+	total_positions = 1 // up to two in larger mode
+	outfit_type = /singleton/hierarchy/outfit/job/verne/anomalist
+	info = "You are an undergraduate anomaly researcher on the SRV Verne, alongside the rest of your class of the prestigious Ceti Technical Institute conducting research \
+	in the depths of space. A survey team will be accompanying you, on hand to assist your studies on the exoplanets in this system. Your team has awoken \
+	to find the Verne running at low capacity, under-staffed, with much of the automated life support systems doing the heavy lifting."
+	whitelisted_species = list(SPECIES_TAJARA,SPECIES_UNATHI,SPECIES_YEOSA,SPECIES_RESOMI)
+	required_language = LANGUAGE_HUMAN_EURO
+	min_skill = list(
+		SKILL_BUREAUCRACY = SKILL_BASIC,
+		SKILL_COMPUTER    = SKILL_BASIC,
+		SKILL_DEVICES     = SKILL_BASIC,
+		SKILL_SCIENCE     = SKILL_TRAINED,
+	)
+
+	max_skill = list(
+		SKILL_ANATOMY = SKILL_MAX,
+		SKILL_DEVICES = SKILL_MAX,
+		SKILL_SCIENCE = SKILL_MAX,
+	)
+	skill_points = 20 //skills copied from Torch sci
 
 #define VERNE_OUTFIT_JOB_NAME(job_name) ("CTI Research Vessel - Job - " + job_name)
 /singleton/hierarchy/outfit/job/verne
@@ -78,6 +131,12 @@
 	pda_slot = null
 	id_types = list(/obj/item/card/id/verne)
 	l_ear = /obj/item/device/radio/headset/map_preset/verne
+
+/singleton/hierarchy/outfit/job/verne/rd
+	name = OUTFIT_JOB_NAME("Chief Science Officer")
+	l_ear = /obj/item/device/radio/headset/heads/rd
+	uniform = /obj/item/clothing/under/rank/research_director/rdalt
+	shoes = /obj/item/clothing/shoes/brown
 
 /singleton/hierarchy/outfit/job/verne/pilot
 	name = VERNE_OUTFIT_JOB_NAME("Pilot")
@@ -110,6 +169,16 @@
 	shoes = /obj/item/clothing/shoes/black
 	backpack_contents = list(/obj/item/spacecash/bundle/c1000 = 1, /obj/item/spacecash/bundle/c500 = 1)
 
+/singleton/hierarchy/outfit/job/verne/anomalist
+	name = VERNE_OUTFIT_JOB_NAME("Undergraduate Anomaly Researcher")
+	uniform = /obj/item/clothing/under/rank/psych/turtleneck
+	suit = /obj/item/clothing/suit/storage/toggle/hoodie/cti
+	shoes = /obj/item/clothing/shoes/black
+	backpack_contents = list(/obj/item/spacecash/bundle/c1000 = 1)
+
+/obj/submap_landmark/spawnpoint/CTI_professor
+	name = "CTI Professor of Xenoscience"
+
 /obj/submap_landmark/spawnpoint/CTI_pilot
 	name = "CTI Pilot"
 
@@ -118,5 +187,8 @@
 
 /obj/submap_landmark/spawnpoint/CTI_Undergraduate_Xenoscience_Researcher
 	name = "CTI Undergraduate Xenoscience Researcher"
+
+/obj/submap_landmark/spawnpoint/CTI_Undergraduate_Anomaly_Researcher
+	name = "CTI Undergraduate Anomaly Researcher"
 
 #undef VERNE_OUTFIT_JOB_NAME

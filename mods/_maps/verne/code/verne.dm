@@ -1,8 +1,3 @@
-#include "verne_areas.dm"
-#include "verne_jobs.dm"
-#include "verne_shuttles.dm"
-#include "verne_radio.dm"
-
 /obj/submap_landmark/joinable_submap/verne
 	name = "SRV Verne"
 	archetype = /singleton/submap_archetype/derelict/verne
@@ -11,9 +6,11 @@
 	descriptor = "active research vessel"
 	map = "SRV Verne"
 	crew_jobs = list(
+		/datum/job/submap/CTI_professor,
 		/datum/job/submap/CTI_pilot,
 		/datum/job/submap/CTI_engineer,
 		/datum/job/submap/CTI_Undergraduate_Xenoscience_Researcher,
+		/datum/job/submap/CTI_Exchange_Student
 	)
 
 /obj/overmap/visitable/ship/verne
@@ -45,10 +42,11 @@
 	max_ship_mass = 12000
 
 /datum/map_template/ruin/away_site/verne
-	name = "Active University Ship"
+	name = "Active University Ship (CTI Verne)"
 	id = "awaysite_verne"
 	description = "Active CTI research ship"
-	suffixes = list("verne/verne-1.dmm", "verne/verne-2.dmm", "verne/verne-3.dmm")
+	prefix = "mods/_maps/verne/maps/"
+	suffixes = list("verne-1.dmm", "verne-2.dmm", "verne-3.dmm")
 	spawn_cost = 0.5
 	player_cost = 4
 	spawn_weight = 1
@@ -174,7 +172,21 @@
 	req_access = list(access_verne)
 
 /obj/machinery/suit_storage_unit/ceti/verne
+	name = "CTI Voidsuit Storage Unit"
+	suit= /obj/item/clothing/suit/space/void/ceti
+	helmet = /obj/item/clothing/head/helmet/space/void/ceti
+	boots = /obj/item/clothing/shoes/magboots
+	tank = /obj/item/tank/oxygen
+	mask = /obj/item/clothing/mask/breath
+	req_access = list(access_xenoarch)
+	islocked = 1
 	req_access = list(access_verne)
+
+/obj/machinery/suit_storage_unit/ceti/verne/alt
+	name = "CTI Research Voidsuit Storage Unit"
+	suit= /obj/item/clothing/suit/space/void/ceti/alt
+	helmet = /obj/item/clothing/head/helmet/space/void/ceti/alt
+	ssu_color = "#282b27"
 
 /obj/machinery/turretid/verne
 	name = "turret control panel"

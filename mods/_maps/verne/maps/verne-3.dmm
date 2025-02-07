@@ -537,7 +537,9 @@
 /turf/simulated/floor/carpet/blue3,
 /area/verne/common/professor)
 "cl" = (
-/turf/simulated/floor/reinforced/airless,
+/turf/simulated/floor/reinforced{
+	map_airless = 1
+	},
 /area/space)
 "co" = (
 /obj/structure/table/standard,
@@ -614,7 +616,9 @@
 /obj/machinery/light/spot{
 	dir = 4
 	},
-/turf/simulated/floor/reinforced/airless,
+/turf/simulated/floor/reinforced{
+	map_airless = 1
+	},
 /area/verne/engineering/external)
 "cH" = (
 /obj/floor_decal/corner/green{
@@ -626,7 +630,7 @@
 /obj/machinery/reagentgrinder,
 /obj/item/reagent_containers/glass/beaker/large,
 /obj/floor_decal/corner/paleblue/mono,
-/obj/structure/closet/walllocker/medical{
+/obj/structure/closet/medical_wall{
 	name = "Pill Cabinet";
 	desc = "It's wall-mounted storage unit for supplies.";
 	pixel_y = 29;
@@ -983,9 +987,10 @@
 	id_tag = "verneblast";
 	name = "Verne Protective Blast Doors"
 	},
-/obj/wallframe_spawn/reinforced/polarized/prepainted/verne{
+/obj/wallframe_spawn/reinforced/polarized{
 	id = "eight_space"
 	},
+/obj/paint_stripe/gunmetal,
 /turf/simulated/floor/plating,
 /area/verne/common/room/eight)
 "fh" = (
@@ -1068,9 +1073,10 @@
 	id_tag = "verneblast";
 	name = "Verne Protective Blast Doors"
 	},
-/obj/wallframe_spawn/reinforced/polarized/prepainted/verne{
+/obj/wallframe_spawn/reinforced/polarized{
 	id = "professor_space"
 	},
+/obj/paint_stripe/gunmetal,
 /turf/simulated/floor/plating,
 /area/verne/common/professor)
 "gf" = (
@@ -1145,7 +1151,7 @@
 /obj/item/ammo_magazine/pistol/double,
 /obj/item/ammo_magazine/pistol/double,
 /obj/item/clothing/accessory/storage/bandolier,
-/obj/item/gun/projectile/pistol/military,
+/obj/item/gun/projectile/pistol/m22f,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/verne/bridge/access)
 "gG" = (
@@ -1326,9 +1332,10 @@
 	id_tag = "verneblast";
 	name = "Verne Protective Blast Doors"
 	},
-/obj/wallframe_spawn/reinforced/polarized/prepainted/verne{
+/obj/wallframe_spawn/reinforced/polarized{
 	id = "seven_space"
 	},
+/obj/paint_stripe/gunmetal,
 /turf/simulated/floor/plating,
 /area/verne/common/room/seven)
 "hP" = (
@@ -1556,7 +1563,9 @@
 /turf/simulated/floor/tiled,
 /area/verne/common/room)
 "jI" = (
-/turf/simulated/floor/reinforced/airless,
+/turf/simulated/floor/reinforced{
+	map_airless = 1
+	},
 /area/verne/engineering/external)
 "jJ" = (
 /obj/machinery/chem_master,
@@ -1657,6 +1666,7 @@
 	id_tag = "verneblast";
 	name = "Verne Protective Blast Doors"
 	},
+/obj/paint_stripe/gunmetal,
 /turf/simulated/floor/plating,
 /area/verne/bridge)
 "kA" = (
@@ -1699,6 +1709,7 @@
 /obj/machinery/atmospherics/pipe/manifold/visible/cyan{
 	dir = 4
 	},
+/obj/submap_landmark/spawnpoint/CTI_professor,
 /turf/simulated/floor/tiled/white,
 /area/verne/common/cryo)
 "kX" = (
@@ -1855,7 +1866,7 @@
 /area/verne/medical)
 "mR" = (
 /obj/machinery/door/airlock/multi_tile/glass/civilian{
-	dir = 4;
+	dir = 8;
 	name = "Verne Mess Serving Line"
 	},
 /obj/machinery/door/firedoor,
@@ -1867,7 +1878,9 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/turf/simulated/floor/reinforced/airless,
+/turf/simulated/floor/reinforced{
+	map_airless = 1
+	},
 /area/verne/bridge)
 "nd" = (
 /obj/structure/cable{
@@ -2225,6 +2238,7 @@
 	id_tag = "verneblast";
 	name = "Verne Protective Blast Doors"
 	},
+/obj/paint_stripe/gunmetal,
 /turf/simulated/floor/plating,
 /area/verne/bridge)
 "pD" = (
@@ -2242,7 +2256,7 @@
 	icon_state = "0-8"
 	},
 /obj/structure/table/standard,
-/obj/structure/flora/pottedplant/deskfern,
+/obj/structure/flora/pottedplant/fern,
 /obj/machinery/alarm/verne{
 	dir = 8;
 	pixel_x = 24
@@ -2454,6 +2468,7 @@
 	id_tag = "verneblast";
 	name = "Verne Protective Blast Doors"
 	},
+/obj/paint_stripe/gunmetal,
 /turf/simulated/floor/plating,
 /area/verne/bridge)
 "rC" = (
@@ -2491,7 +2506,9 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/turf/simulated/floor/reinforced/airless,
+/turf/simulated/floor/reinforced{
+	map_airless = 1
+	},
 /area/verne/engineering/external)
 "sf" = (
 /obj/structure/railing/mapped,
@@ -2599,6 +2616,7 @@
 /obj/machinery/atmospherics/binary/pump/on{
 	dir = 4
 	},
+/obj/submap_landmark/spawnpoint/CTI_Undergraduate_Anomaly_Researcher,
 /turf/simulated/floor/tiled/white,
 /area/verne/common/cryo)
 "sO" = (
@@ -2608,6 +2626,7 @@
 	id_tag = "verneblast";
 	name = "Verne Protective Blast Doors"
 	},
+/obj/paint_stripe/gunmetal,
 /turf/simulated/floor/plating,
 /area/verne/bridge)
 "sS" = (
@@ -2786,9 +2805,10 @@
 	id_tag = "verneblast";
 	name = "Verne Protective Blast Doors"
 	},
-/obj/wallframe_spawn/reinforced/polarized/prepainted/verne{
+/obj/wallframe_spawn/reinforced/polarized{
 	id = "six_space"
 	},
+/obj/paint_stripe/gunmetal,
 /turf/simulated/floor/plating,
 /area/verne/common/room/six)
 "uj" = (
@@ -3176,7 +3196,9 @@
 /obj/machinery/porta_turret{
 	req_access = list("ACCESS_VERNE")
 	},
-/turf/simulated/floor/reinforced/airless,
+/turf/simulated/floor/reinforced{
+	map_airless = 1
+	},
 /area/verne/bridge)
 "xp" = (
 /obj/floor_decal/spline/fancy/wood{
@@ -3381,7 +3403,9 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/shipsensors,
-/turf/simulated/floor/reinforced/airless,
+/turf/simulated/floor/reinforced{
+	map_airless = 1
+	},
 /area/verne/bridge)
 "yS" = (
 /obj/structure/table/standard,
@@ -3412,7 +3436,9 @@
 	icon_state = "1-4"
 	},
 /obj/machinery/light/spot,
-/turf/simulated/floor/reinforced/airless,
+/turf/simulated/floor/reinforced{
+	map_airless = 1
+	},
 /area/verne/bridge)
 "zl" = (
 /obj/random/storage,
@@ -3438,6 +3464,13 @@
 "zm" = (
 /obj/structure/table/standard,
 /obj/machinery/door/firedoor,
+/obj/item/storage/lunchbox/cti{
+	pixel_y = 8
+	},
+/obj/item/storage/lunchbox/cti{
+	pixel_y = 4
+	},
+/obj/item/storage/lunchbox/cti,
 /turf/simulated/floor/tiled/freezer,
 /area/verne/common/kitchen)
 "zn" = (
@@ -3803,7 +3836,9 @@
 	icon_state = "1-8"
 	},
 /obj/machinery/light/spot,
-/turf/simulated/floor/reinforced/airless,
+/turf/simulated/floor/reinforced{
+	map_airless = 1
+	},
 /area/verne/bridge)
 "BX" = (
 /obj/machinery/light,
@@ -3958,7 +3993,7 @@
 /area/verne/common/room/four)
 "Dr" = (
 /obj/machinery/door/firedoor,
-/obj/wallframe_spawn/reinforced/polarized/prepainted/verne{
+/obj/wallframe_spawn/reinforced/polarized{
 	id = "professor_space2"
 	},
 /turf/simulated/floor/plating,
@@ -4088,7 +4123,7 @@
 /area/verne/medical)
 "EZ" = (
 /obj/structure/table/standard,
-/obj/item/material/kitchen/rollingpin,
+/obj/item/material/rollingpin,
 /obj/item/book/manual/chef_recipes,
 /turf/simulated/floor/tiled/freezer,
 /area/verne/common/kitchen)
@@ -4141,7 +4176,7 @@
 	dir = 4;
 	pixel_x = 24
 	},
-/obj/structure/closet/hydrant,
+/obj/structure/closet/firecloset,
 /turf/simulated/floor/tiled/monotile,
 /area/verne/common/hallway)
 "Fo" = (
@@ -4483,7 +4518,9 @@
 /obj/machinery/pointdefense{
 	initial_id_tag = "Verne_PD"
 	},
-/turf/simulated/floor/reinforced/airless,
+/turf/simulated/floor/reinforced{
+	map_airless = 1
+	},
 /area/verne/engineering/external)
 "Is" = (
 /turf/simulated/floor/tiled/white,
@@ -4958,7 +4995,7 @@
 	pixel_y = 24
 	},
 /obj/item/trash/beans,
-/obj/item/material/kitchen/utensil/spork,
+/obj/item/material/utensil/spork,
 /turf/simulated/floor/wood,
 /area/verne/common/professor)
 "Md" = (
@@ -5258,7 +5295,9 @@
 /obj/machinery/porta_turret{
 	req_access = list("ACCESS_VERNE")
 	},
-/turf/simulated/floor/reinforced/airless,
+/turf/simulated/floor/reinforced{
+	map_airless = 1
+	},
 /area/verne/engineering/external)
 "Pc" = (
 /obj/structure/closet/wardrobe,
@@ -5450,8 +5489,6 @@
 /obj/item/clothing/suit/space/emergency,
 /obj/item/clothing/head/helmet/space/emergency,
 /obj/item/clothing/head/helmet/space/emergency,
-/obj/item/tank/emergency,
-/obj/item/tank/emergency,
 /obj/floor_decal/corner/b_green/mono,
 /obj/machinery/firealarm{
 	dir = 2;
@@ -5466,8 +5503,6 @@
 /obj/item/clothing/suit/space/emergency,
 /obj/item/clothing/head/helmet/space/emergency,
 /obj/item/clothing/head/helmet/space/emergency,
-/obj/item/tank/emergency,
-/obj/item/tank/emergency,
 /obj/item/storage/briefcase/inflatable,
 /obj/floor_decal/corner/b_green/mono,
 /obj/structure/sign/thera{
@@ -5839,9 +5874,9 @@
 	},
 /obj/item/storage/box/detergent,
 /obj/item/soap,
-/obj/item/ironingiron,
+/obj/item/ironing_iron,
 /obj/floor_decal/corner/b_green/mono,
-/obj/item/roller/ironingboard,
+/obj/item/ironing_board,
 /turf/simulated/floor/tiled/monotile,
 /area/verne/stairs)
 "Ul" = (
@@ -5894,7 +5929,7 @@
 /turf/simulated/floor/tiled/white,
 /area/verne/bridge)
 "UH" = (
-/obj/structure/bed/roller,
+/obj/structure/roller_bed,
 /obj/floor_decal/corner/paleblue/mono,
 /turf/simulated/floor/tiled/white/monotile,
 /area/verne/medical)
@@ -5968,11 +6003,6 @@
 	},
 /turf/simulated/floor/tiled,
 /area/verne/common/room/three)
-"Va" = (
-/obj/structure/table/standard,
-/obj/machinery/reagent_temperature,
-/turf/simulated/floor/tiled/freezer,
-/area/verne/common/kitchen)
 "Vj" = (
 /obj/structure/cable{
 	d1 = 2;
@@ -6337,7 +6367,7 @@
 /turf/simulated/floor/tiled,
 /area/verne/common/messseating/small)
 "Yu" = (
-/obj/structure/iv_drip,
+/obj/structure/iv_stand,
 /obj/floor_decal/floordetail/edgedrain{
 	dir = 8;
 	icon_state = "edge"
@@ -6391,7 +6421,9 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/turf/simulated/floor/reinforced/airless,
+/turf/simulated/floor/reinforced{
+	map_airless = 1
+	},
 /area/verne/engineering/external)
 "YK" = (
 /obj/floor_decal/corner/b_green/mono,
@@ -6450,7 +6482,9 @@
 /turf/simulated/floor/tiled/freezer,
 /area/verne/common/kitchen)
 "Zs" = (
-/turf/simulated/floor/reinforced/airless,
+/turf/simulated/floor/reinforced{
+	map_airless = 1
+	},
 /area/verne/bridge)
 "ZF" = (
 /obj/machinery/cryopod{
@@ -6503,7 +6537,9 @@
 /obj/machinery/light/spot{
 	dir = 8
 	},
-/turf/simulated/floor/reinforced/airless,
+/turf/simulated/floor/reinforced{
+	map_airless = 1
+	},
 /area/verne/engineering/external)
 "ZW" = (
 /obj/floor_decal/corner/b_green{
@@ -13284,7 +13320,7 @@ Sv
 kG
 Ci
 ZO
-Va
+aw
 Ci
 KU
 hd
