@@ -3,9 +3,9 @@
 	total_positions = 0 // Pedal spawn only
 	outfit_type = /singleton/hierarchy/outfit/job/verne/professor
 	supervisors = "the CTI Rector"
-	info = "You are an employee on the SRV Verne, as it carries the students of the prestigious Ceti Technical Institute conducting research \
-	in the depths of space. Your job on the Survey team is simple; pilot the SRV Verne and the SRV Venerable Catfish; protect the students; and assist in their studies. Your Survey team has awoken \
- 	to find the Verne running at low capacity, under-staffed, with much of the automated life support systems doing the heavy lifting."
+	info = "Вы руководите ГНС Верне, перевозящим студентов престижного Технического Университета Киты, во время проведения исследований \
+	в глубинах космоса. Ваша задача как профессора Ксенонауки - обеспечить студентов всем необходимым для исследований, быть их научным руководителем. Вы были пробуждены из криосна \
+ 	для помощи группе по обследованию сектора. Возможно им понадобится ваша оценка сложных аномалий и умение договариваться. На фронтире нынче неспокойно."
 	whitelisted_species = list(SPECIES_HUMAN,SPECIES_IPC,SPECIES_SPACER,SPECIES_GRAVWORLDER,SPECIES_VATGROWN,SPECIES_TRITONIAN,SPECIES_SKRELL)
 	required_language = LANGUAGE_HUMAN_EURO
 
@@ -32,9 +32,9 @@
 	total_positions = 1
 	outfit_type = /singleton/hierarchy/outfit/job/verne/pilot
 	supervisors = "the CTI Professor in Command of the Verne"
-	info = "You are an employee on the SRV Verne, as it carries the students of the prestigious Ceti Technical Institute conducting research \
-	in the depths of space. Your job on the Survey team is simple; pilot the SRV Verne and the SRV Venerable Catfish; protect the students; and assist in their studies. Your Survey team has awoken \
- 	to find the Verne running at low capacity, under-staffed, with much of the automated life support systems doing the heavy lifting."
+	info = "Вы работаете на ГНС Верне, перевозящим студентов престижного Технического Университета Киты, во время проведения исследований \
+	в глубинах космоса. Ваша работа в группе Обследования проста; Пилотировать ГНС Верне и ГНС Почтенный Сом; защищать студентов; помогать им в обучении. Ваша группа Обследования проснулась \
+	и обнаружила, что Верне переживает нехватку персонала, генерирующих мощностей, а автоматизированные системы жизнеобеспечения работают на полную."
 	whitelisted_species = list(SPECIES_HUMAN,SPECIES_IPC,SPECIES_SPACER,SPECIES_GRAVWORLDER,SPECIES_VATGROWN,SPECIES_TRITONIAN)
 	required_language = LANGUAGE_HUMAN_EURO
 	min_skill = list(
@@ -54,9 +54,9 @@
 	total_positions = 1 //up to two in larger mode
 	outfit_type = /singleton/hierarchy/outfit/job/verne/engineer
 	supervisors = "the CTI Professor in Command of the Verne"
-	info = "You are an employee on the SRV Verne, as it carries the students of the prestigious Ceti Technical Institute conducting research \
- 	in the depths of space. Your job on the Survey team is simple: Handle engineering work on the SRV Verne and the SRV Venerable Catfish, protect the students, and assist in their studies. Your Survey team has awoken \
-	to find the Verne running at low capacity, under-staffed, with much of the automated life support systems doing the heavy lifting."
+	info = "Вы работаете на ГНС Верне, перевозящим студентов престижного Технического Университета Киты, во время проведения исследований \
+ 	в глубинах космоса. Ваша работа в группе Обследования проста; Обслуживать ГНС Верне и ГНС Почтенный Сом; защищать студентов; помогать им в обучении. Ваша группа Обследования проснулась \
+	и обнаружила, что Верне переживает нехватку персонала, генерирующих мощностей, а автоматизированные системы жизнеобеспечения работают на полную."
 	whitelisted_species = list(SPECIES_HUMAN,SPECIES_IPC,SPECIES_SPACER,SPECIES_GRAVWORLDER,SPECIES_VATGROWN,SPECIES_TRITONIAN)
 	required_language = LANGUAGE_HUMAN_EURO
 	min_skill = list(
@@ -81,9 +81,9 @@
 	supervisors = "the CTI Professor in Command of the Verne"
 	total_positions = 2 // up to four in larger mode
 	outfit_type = /singleton/hierarchy/outfit/job/verne/researcher
-	info = "You are an undergraduate xenoscience researcher on the SRV Verne, alongside the rest of your class of the prestigious Ceti Technical Institute conducting research \
-	in the depths of space. A survey team will be accompanying you, on hand to assist your studies on the exoplanets in this system. Your team has awoken \
-	to find the Verne running at low capacity, under-staffed, with much of the automated life support systems doing the heavy lifting."
+	info = "Вы студент-бакалавр ксенонауки на борту ГНС Верне, занимающийся исследованиями с вашими одногруппниками из престижного Технического Университета Киты \
+	в глубинах космоса. Группа Обследования будет сопровождать вас, готовая помочь вашим исследованием экзопланет этой системы. Ваша группа проснулась \
+	и обнаружила, что Верне переживает нехватку персонала, генерирующих мощностей, а автоматизированные системы жизнеобеспечения работают на полную."
 	whitelisted_species = list(SPECIES_HUMAN,SPECIES_SPACER,SPECIES_GRAVWORLDER,SPECIES_VATGROWN,SPECIES_TRITONIAN)
 	required_language = LANGUAGE_HUMAN_EURO
 	min_skill = list(
@@ -105,9 +105,9 @@
 	supervisors = "the CTI Professor in Command of the Verne"
 	total_positions = 1 // up to two in larger mode
 	outfit_type = /singleton/hierarchy/outfit/job/verne/anomalist
-	info = "You are an undergraduate anomaly researcher on the SRV Verne, alongside the rest of your class of the prestigious Ceti Technical Institute conducting research \
-	in the depths of space. A survey team will be accompanying you, on hand to assist your studies on the exoplanets in this system. Your team has awoken \
-	to find the Verne running at low capacity, under-staffed, with much of the automated life support systems doing the heavy lifting."
+	info = "Вы студент по обмену, прибывший с родной планеты, чтобы обучаться исследованию аномалий на борту ГНС Верне, снаряженым престижным Техническим Университом Киты \
+	и отправленным в глубины космоса. Группа Обследования будет сопровождать вас, готовая помочь вашим исследованием экзопланет этой системы. Ваша группа проснулась \
+	и обнаружила, что Верне переживает нехватку персонала, генерирующих мощностей, а автоматизированные системы жизнеобеспечения работают на полную."
 	whitelisted_species = list(SPECIES_TAJARA,SPECIES_UNATHI,SPECIES_YEOSA,SPECIES_RESOMI)
 	required_language = LANGUAGE_HUMAN_EURO
 	min_skill = list(
