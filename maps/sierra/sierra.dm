@@ -193,6 +193,9 @@
 	#include "../../mods/_maps/ascent_seedship/_map_ascent_seedship.dme"
 	#include "../../mods/_maps/ascent_caulship/_map_ascent_caulship.dme"
 
+	// Verne-verse
+	#include "../../mods/_maps/phobos/_map_phobos.dme"
+
 
 	#include "../../mods/antagonists/_antagonists_includes.dm"
 	#include "../../mods/ascent/_ascent_includes.dm"
