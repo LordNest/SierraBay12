@@ -163,7 +163,8 @@
 /obj/item/reagent_containers/food/drinks/glass2/rocks,
 /obj/item/reagent_containers/food/drinks/glass2/wine,
 /obj/machinery/alarm{
-	pixel_y = 24
+	pixel_y = 24;
+	req_access = list("ACCESS_PHOBOS")
 	},
 /turf/simulated/floor/wood/walnut,
 /area/phobos/bridge/co_office)
@@ -333,8 +334,9 @@
 	d2 = 8;
 	icon_state = "1-8"
 	},
+/obj/machinery/light,
 /turf/simulated/floor/tiled/techfloor,
-/area/space)
+/area/ship/interseptor)
 "bf" = (
 /obj/structure/disposalpipe/segment{
 	dir = 2;
@@ -475,7 +477,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
-/turf/simulated/floor/tiled,
+/turf/simulated/floor/steel_dirty,
 /area/phobos/living/hydro)
 "bA" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply,
@@ -810,7 +812,8 @@
 "ch" = (
 /obj/machinery/computer/modular/preset/security,
 /obj/machinery/alarm{
-	pixel_y = 24
+	pixel_y = 24;
+	req_access = list("ACCESS_PHOBOS")
 	},
 /obj/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/dark/monotile,
@@ -942,7 +945,7 @@
 	icon_state = "intact"
 	},
 /turf/simulated/wall/r_titanium,
-/area/space)
+/area/ship/interseptor)
 "cC" = (
 /obj/structure/fireaxecabinet{
 	pixel_y = 32
@@ -1045,7 +1048,7 @@
 	icon_state = "intact"
 	},
 /turf/simulated/wall/r_titanium,
-/area/space)
+/area/ship/interseptor)
 "cS" = (
 /obj/structure/disposalpipe/junction{
 	dir = 4;
@@ -1253,7 +1256,7 @@
 /turf/simulated/floor/reinforced{
 	map_airless = 1
 	},
-/area/space)
+/area/ship/interseptor)
 "dr" = (
 /obj/floor_decal/corner/paleblue{
 	dir = 10
@@ -1276,7 +1279,7 @@
 /turf/simulated/floor/reinforced{
 	map_airless = 1
 	},
-/area/space)
+/area/ship/interseptor)
 "dt" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -1293,18 +1296,18 @@
 /area/phobos/maint/port)
 "du" = (
 /obj/machinery/porta_turret{
-	auto_repair = 1;
 	id_tag = "interceptor_turret_58";
 	lethal = 1;
 	name = "SGV Interceptor Defence Turret";
-	shot_delay = 10
+	shot_delay = 10;
+	req_access = list("ACCESS_PHOBOS")
 	},
 /obj/floor_decal/industrial/outline/red,
 /obj/floor_decal/industrial/danger,
 /turf/simulated/floor/reinforced{
 	map_airless = 1
 	},
-/area/space)
+/area/ship/interseptor)
 "dv" = (
 /obj/machinery/shield_diffuser,
 /obj/machinery/door/blast/regular{
@@ -1486,6 +1489,27 @@
 /obj/paint/red,
 /turf/simulated/wall/r_wall/hull,
 /area/phobos/engine/thrusterstarboard)
+"dU" = (
+/obj/floor_decal/industrial/danger{
+	dir = 10
+	},
+/obj/item/device/flashlight/lamp/floodlamp{
+	dir = 8;
+	on = 1;
+	anchored = 1
+	},
+/obj/structure/railing/mapped,
+/obj/structure/railing/mapped{
+	dir = 8
+	},
+/obj/structure/sign/solgov{
+	pixel_x = 32;
+	pixel_y = 32
+	},
+/turf/simulated/floor/reinforced{
+	map_airless = 1
+	},
+/area/ship/interseptor)
 "eb" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 9
@@ -1577,7 +1601,7 @@
 /turf/simulated/floor/reinforced{
 	map_airless = 1
 	},
-/area/space)
+/area/ship/interseptor)
 "ew" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -1656,7 +1680,7 @@
 	pixel_y = 0
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
-/area/space)
+/area/ship/interseptor)
 "eU" = (
 /obj/item/modular_computer/telescreen/preset/medical{
 	pixel_x = 32
@@ -1722,8 +1746,14 @@
 	icon_state = "2-8"
 	},
 /obj/machinery/radio_beacon,
+/obj/floor_decal/techfloor{
+	dir = 5
+	},
+/obj/floor_decal/techfloor/corner{
+	dir = 8
+	},
 /turf/simulated/floor/tiled/techfloor/grid,
-/area/space)
+/area/ship/interseptor)
 "fd" = (
 /obj/structure/cable{
 	d1 = 4;
@@ -1735,10 +1765,16 @@
 	icon_state = "0-4"
 	},
 /obj/machinery/power/apc/hyper{
-	pixel_y = -24
+	pixel_y = -24;
+	req_access = list("ACCESS_PHOBOS")
 	},
+/obj/floor_decal/techfloor,
+/obj/floor_decal/techfloor{
+	dir = 1
+	},
+/obj/floor_decal/techfloor/hole,
 /turf/simulated/floor/tiled/techfloor/grid,
-/area/space)
+/area/ship/interseptor)
 "ff" = (
 /obj/machinery/light{
 	dir = 8;
@@ -1747,7 +1783,7 @@
 /obj/floor_decal/corner/green/three_quarters{
 	dir = 8
 	},
-/turf/simulated/floor/tiled,
+/turf/simulated/floor/steel_dirty,
 /area/phobos/living/hydro)
 "fj" = (
 /obj/structure/reagent_dispensers/fueltank,
@@ -1755,7 +1791,8 @@
 /obj/machinery/power/apc{
 	dir = 2;
 	name = "south bump";
-	pixel_y = -24
+	pixel_y = -24;
+	req_access = list("ACCESS_PHOBOS")
 	},
 /obj/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/techfloor/grid,
@@ -1777,8 +1814,14 @@
 /obj/machinery/atmospherics/pipe/manifold/hidden/cyan{
 	dir = 8
 	},
-/turf/simulated/floor/tiled/techfloor,
-/area/space)
+/obj/floor_decal/techfloor{
+	dir = 4
+	},
+/obj/floor_decal/techfloor{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/ship/interseptor)
 "fr" = (
 /obj/machinery/door/airlock/hatch/maintenance,
 /obj/structure/cable/green{
@@ -1794,7 +1837,7 @@
 	dir = 4;
 	icon_state = "tube1"
 	},
-/turf/simulated/floor/tiled,
+/turf/simulated/floor/steel_dirty,
 /area/phobos/engine)
 "fv" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/fuel,
@@ -1847,7 +1890,7 @@
 	},
 /obj/floor_decal/industrial/outline/red,
 /turf/simulated/floor/tiled/techfloor,
-/area/space)
+/area/ship/interseptor)
 "fD" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 4
@@ -1911,7 +1954,8 @@
 /obj/structure/ship_munition/disperser_charge/emp,
 /obj/machinery/alarm{
 	dir = 1;
-	pixel_y = -22
+	pixel_y = -22;
+	req_access = list("ACCESS_PHOBOS")
 	},
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 8
@@ -1966,8 +2010,17 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/cyan{
 	dir = 4
 	},
-/turf/simulated/floor/plating,
-/area/space)
+/obj/machinery/door/airlock/external{
+	id_tag = "interseptor_shuttle_inner";
+	name = "Interseptor External Access"
+	},
+/obj/machinery/access_button/airlock_exterior{
+	master_tag = "interseptor_shuttle";
+	pixel_x = 6;
+	pixel_y = 25
+	},
+/turf/simulated/floor,
+/area/ship/interseptor)
 "fX" = (
 /turf/simulated/floor/reinforced{
 	map_airless = 1
@@ -1992,7 +2045,7 @@
 /obj/random/gloves,
 /obj/machinery/atmospherics/unary/vent_pump/on,
 /obj/item/shovel/spade,
-/turf/simulated/floor/tiled,
+/turf/simulated/floor/steel_dirty,
 /area/phobos/living/hydro)
 "gh" = (
 /obj/structure/catwalk,
@@ -2001,7 +2054,18 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/turf/simulated/floor/airless,
+/obj/machinery/door/airlock/external/bolted/cycling{
+	name = "Docking Port Airlock";
+	id_tag = "interseptor_dock_airlock_outer"
+	},
+/obj/machinery/access_button{
+	command = "cycle_interior";
+	master_tag = "interseptor_dock_airlock";
+	name = "interior access button";
+	pixel_x = -1;
+	pixel_y = -22
+	},
+/turf/simulated/floor,
 /area/phobos/hallway/eva)
 "gi" = (
 /obj/machinery/atmospherics/pipe/simple/visible/green{
@@ -2071,7 +2135,8 @@
 	dir = 1;
 	name = "north bump";
 	pixel_x = 0;
-	pixel_y = 24
+	pixel_y = 24;
+	req_access = list("ACCESS_PHOBOS")
 	},
 /obj/machinery/firealarm{
 	dir = 8;
@@ -2103,7 +2168,7 @@
 /obj/floor_decal/corner/green{
 	dir = 10
 	},
-/turf/simulated/floor/tiled,
+/turf/simulated/floor/steel_dirty,
 /area/phobos/living/hydro)
 "gP" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -2136,14 +2201,15 @@
 /obj/machinery/power/apc{
 	dir = 2;
 	name = "south bump";
-	pixel_y = -24
+	pixel_y = -24;
+	req_access = list("ACCESS_PHOBOS")
 	},
 /obj/floor_decal/corner/beige/mono,
 /turf/simulated/floor/tiled/white/monotile,
 /area/phobos/medbay/chemistry)
 "gW" = (
 /obj/machinery/atmospherics/unary/vent_pump/on,
-/turf/simulated/floor/tiled,
+/turf/simulated/floor/steel_dirty,
 /area/phobos/engine)
 "gX" = (
 /obj/floor_decal/corner/green{
@@ -2181,7 +2247,8 @@
 /area/phobos/bridge)
 "hc" = (
 /obj/machinery/alarm{
-	pixel_y = 24
+	pixel_y = 24;
+	req_access = list("ACCESS_PHOBOS")
 	},
 /obj/machinery/atmospherics/unary/vent_pump/on,
 /obj/floor_decal/techfloor{
@@ -2240,10 +2307,18 @@
 /turf/simulated/wall/prepainted,
 /area/phobos/disperser)
 "hz" = (
-/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
-	id_tag = "interseptor_shuttle_pump"
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/airlock{
+	id_tag = "interseptor_dock_airlock_pump"
 	},
-/turf/simulated/floor/airless,
+/obj/machinery/airlock_sensor{
+	id_tag = "interseptor_dock_airlock_sensor";
+	pixel_x = -24;
+	master_tag = "interseptor_dock_airlock"
+	},
+/obj/machinery/light/small{
+	dir = 1
+	},
+/turf/simulated/floor,
 /area/phobos/hallway/eva)
 "hE" = (
 /obj/structure/cable/green{
@@ -2305,13 +2380,22 @@
 /obj/machinery/alarm{
 	dir = 4;
 	pixel_x = -23;
-	pixel_y = 0
+	pixel_y = 0;
+	req_access = list("ACCESS_PHOBOS")
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/phobos/engine/thrusterstarboard)
 "hR" = (
 /obj/machinery/telecomms/hub/map_preset/phobos,
-/obj/floor_decal/industrial/outline/yellow,
+/obj/floor_decal/techfloor{
+	dir = 8
+	},
+/obj/floor_decal/techfloor{
+	dir = 4
+	},
+/obj/floor_decal/techfloor/hole{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/phobos/ven)
 "hU" = (
@@ -2415,13 +2499,18 @@
 	dir = 1
 	},
 /obj/machinery/portable_atmospherics/canister/empty,
+/obj/floor_decal/techfloor,
+/obj/floor_decal/techfloor{
+	dir = 1
+	},
 /obj/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/techfloor/grid,
-/area/space)
+/area/ship/interseptor)
 "iC" = (
 /obj/machinery/alarm{
 	dir = 1;
-	pixel_y = -22
+	pixel_y = -22;
+	req_access = list("ACCESS_PHOBOS")
 	},
 /obj/machinery/bodyscanner{
 	dir = 4
@@ -2442,8 +2531,11 @@
 	dir = 8
 	},
 /obj/structure/window/reinforced,
+/obj/machinery/computer/shuttle_control/explore/interseptor{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/techfloor,
-/area/space)
+/area/ship/interseptor)
 "iQ" = (
 /obj/machinery/mass_driver{
 	dir = 8;
@@ -2456,11 +2548,11 @@
 /area/phobos/disperser)
 "iS" = (
 /obj/machinery/porta_turret{
-	auto_repair = 1;
 	id_tag = "interceptor_turret_58";
 	lethal = 1;
 	name = "SGV Interceptor Defence Turret";
-	shot_delay = 10
+	shot_delay = 10;
+	req_access = list("ACCESS_PHOBOS")
 	},
 /obj/floor_decal/industrial/outline/red,
 /obj/floor_decal/industrial/danger{
@@ -2469,7 +2561,7 @@
 /turf/simulated/floor/reinforced{
 	map_airless = 1
 	},
-/area/space)
+/area/ship/interseptor)
 "iT" = (
 /obj/floor_decal/scglogo{
 	icon_state = "bottom-left"
@@ -2506,8 +2598,9 @@
 	icon_state = "2-8"
 	},
 /obj/machinery/atmospherics/pipe/manifold/hidden/fuel,
+/obj/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/techfloor/grid,
-/area/space)
+/area/ship/interseptor)
 "jb" = (
 /obj/floor_decal/corner/blue/border{
 	dir = 4
@@ -2637,7 +2730,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/fuel{
 	dir = 4
 	},
-/turf/simulated/floor/tiled,
+/turf/simulated/floor/steel_dirty,
 /area/phobos/engine)
 "jx" = (
 /obj/structure/disposalpipe/segment{
@@ -2650,7 +2743,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 5
 	},
-/turf/simulated/floor/tiled,
+/turf/simulated/floor/steel_dirty,
 /area/phobos/engine)
 "jz" = (
 /obj/machinery/optable,
@@ -2674,7 +2767,7 @@
 /obj/floor_decal/corner/green{
 	dir = 10
 	},
-/turf/simulated/floor/tiled,
+/turf/simulated/floor/steel_dirty,
 /area/phobos/living/hydro)
 "jC" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -2703,7 +2796,8 @@
 	icon_state = "tube1"
 	},
 /obj/machinery/alarm{
-	pixel_y = 24
+	pixel_y = 24;
+	req_access = list("ACCESS_PHOBOS")
 	},
 /obj/item/book/manual/sol_sop,
 /obj/item/book/manual/solgov_law{
@@ -2720,7 +2814,7 @@
 /obj/structure/railing/mapped,
 /obj/machinery/alarm{
 	pixel_y = 24;
-	req_access = list(ACCESS_PHOBOS)
+	req_access = list("ACCESS_PHOBOS")
 	},
 /turf/simulated/floor/plating,
 /area/phobos/maint/port)
@@ -2861,7 +2955,7 @@
 /turf/simulated/floor/reinforced{
 	map_airless = 1
 	},
-/area/space)
+/area/ship/interseptor)
 "kE" = (
 /obj/structure/bed/chair/shuttle/black,
 /obj/floor_decal/industrial/outline/yellow,
@@ -2871,7 +2965,7 @@
 	icon_state = "1-4"
 	},
 /turf/simulated/floor/tiled/techfloor,
-/area/space)
+/area/ship/interseptor)
 "kF" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/submap_landmark/spawnpoint/phobos/officer,
@@ -2936,7 +3030,7 @@
 /obj/floor_decal/corner/green{
 	dir = 9
 	},
-/turf/simulated/floor/tiled,
+/turf/simulated/floor/steel_dirty,
 /area/phobos/living/hydro)
 "lb" = (
 /obj/structure/disposalpipe/segment,
@@ -2974,9 +3068,12 @@
 /obj/structure/table/rack,
 /obj/item/device/encryptionkey/map_preset/phobos,
 /obj/item/device/encryptionkey/map_preset/phobos,
-/obj/floor_decal/industrial/outline/yellow,
 /obj/item/device/encryptionkey/map_preset/phobos,
 /obj/item/device/encryptionkey/map_preset/phobos,
+/obj/floor_decal/techfloor{
+	dir = 1
+	},
+/obj/floor_decal/techfloor,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/phobos/ven)
 "lh" = (
@@ -3051,8 +3148,13 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/cyan{
 	dir = 4
 	},
+/obj/floor_decal/techfloor{
+	dir = 1
+	},
+/obj/floor_decal/techfloor,
+/obj/floor_decal/techfloor/hole/right,
 /turf/simulated/floor/tiled/techfloor/grid,
-/area/space)
+/area/ship/interseptor)
 "lw" = (
 /obj/machinery/cooker/oven,
 /turf/simulated/floor/tiled/white/monotile,
@@ -3071,7 +3173,8 @@
 	dir = 1;
 	name = "north bump";
 	pixel_x = 0;
-	pixel_y = 24
+	pixel_y = 24;
+	req_access = list("ACCESS_PHOBOS")
 	},
 /obj/floor_decal/corner/red/three_quarters{
 	dir = 8
@@ -3115,7 +3218,7 @@
 /obj/machinery/alarm{
 	dir = 1;
 	pixel_y = -22;
-	req_access = list(ACCESS_PHOBOS)
+	req_access = list("ACCESS_PHOBOS")
 	},
 /obj/machinery/meter,
 /obj/structure/railing/mapped{
@@ -3155,6 +3258,15 @@
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
+	},
+/obj/floor_decal/techfloor/orange{
+	dir = 4
+	},
+/obj/floor_decal/techfloor/orange{
+	dir = 8
+	},
+/obj/floor_decal/techfloor/hole{
+	dir = 8
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/phobos/security/lobby)
@@ -3199,7 +3311,7 @@
 	pixel_y = 1
 	},
 /turf/simulated/floor/tiled/techfloor,
-/area/space)
+/area/ship/interseptor)
 "lQ" = (
 /obj/machinery/atmospherics/binary/pump/high_power/on{
 	dir = 4;
@@ -3223,8 +3335,16 @@
 /obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	id_tag = "interseptor_shuttle_pump"
 	},
-/turf/simulated/floor/airless,
-/area/space)
+/obj/machinery/airlock_sensor{
+	id_tag = "interseptor_shuttle_sensor";
+	pixel_x = 27;
+	pixel_y = 6
+	},
+/obj/machinery/light/small{
+	dir = 1
+	},
+/turf/simulated/floor,
+/area/ship/interseptor)
 "lT" = (
 /turf/simulated/wall/prepainted,
 /area/phobos/security/equipment)
@@ -3244,7 +3364,7 @@
 	},
 /obj/structure/cable,
 /turf/simulated/floor/tiled/techfloor/grid,
-/area/space)
+/area/ship/interseptor)
 "mc" = (
 /obj/structure/hygiene/sink{
 	pixel_y = 17
@@ -3330,11 +3450,21 @@
 /area/phobos/medbay)
 "mq" = (
 /obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
-	dir = 1;
-	id_tag = "interseptor_shuttle_pump"
+	id_tag = "interseptor_shuttle_pump";
+	dir = 1
 	},
-/turf/simulated/floor/airless,
-/area/space)
+/obj/machinery/embedded_controller/radio/airlock/docking_port{
+	dir = 1;
+	id_tag = "interseptor_shuttle";
+	pixel_y = -24;
+	req_access = list("ACCESS_PHOBOS");
+	tag_airpump = "interseptor_shuttle_pump";
+	tag_chamber_sensor = "interseptor_shuttle_sensor";
+	tag_exterior_door = "interseptor_shuttle_outer";
+	tag_interior_door = "interseptor_shuttle_inner"
+	},
+/turf/simulated/floor,
+/area/ship/interseptor)
 "mr" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 1
@@ -3515,8 +3645,11 @@
 	icon_state = "1-2"
 	},
 /obj/floor_decal/industrial/outline/yellow,
+/obj/machinery/light{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/techfloor/grid,
-/area/space)
+/area/ship/interseptor)
 "mW" = (
 /turf/simulated/wall/prepainted,
 /area/phobos/security/lobby)
@@ -3575,6 +3708,7 @@
 /obj/machinery/atmospherics/portables_connector{
 	dir = 8
 	},
+/obj/machinery/portable_atmospherics/canister/hydrogen,
 /turf/simulated/floor/tiled/techfloor,
 /area/phobos/engine/thrusterstarboard)
 "nc" = (
@@ -3666,7 +3800,7 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/universal,
-/turf/simulated/floor/tiled,
+/turf/simulated/floor/steel_dirty,
 /area/phobos/engine)
 "nL" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden,
@@ -3775,14 +3909,15 @@
 /area/phobos/medbay)
 "od" = (
 /obj/machinery/hologram/holopad,
-/turf/simulated/floor/tiled,
+/turf/simulated/floor/steel_dirty,
 /area/phobos/engine)
 "oh" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
 /obj/machinery/alarm{
-	pixel_y = 24
+	pixel_y = 24;
+	req_access = list("ACCESS_PHOBOS")
 	},
 /obj/machinery/door/firedoor,
 /obj/floor_decal/industrial/hatch/yellow,
@@ -3817,7 +3952,7 @@
 "on" = (
 /obj/machinery/alarm{
 	pixel_y = 24;
-	req_access = list(ACCESS_PHOBOS)
+	req_access = list("ACCESS_PHOBOS")
 	},
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 4
@@ -3900,6 +4035,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
 /obj/floor_decal/techfloor,
+/obj/floor_decal/techfloor/hole,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/phobos/security)
 "ov" = (
@@ -3950,7 +4086,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/tiled/techfloor,
-/area/space)
+/area/ship/interseptor)
 "oK" = (
 /obj/structure/table/steel,
 /obj/item/paper_bin{
@@ -4001,7 +4137,10 @@
 /area/phobos/security/questioning)
 "oR" = (
 /obj/machinery/telecomms/bus/map_preset/phobos,
-/obj/floor_decal/industrial/outline/yellow,
+/obj/floor_decal/techfloor{
+	dir = 9
+	},
+/obj/floor_decal/techfloor/corner,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/phobos/ven)
 "oX" = (
@@ -4115,8 +4254,14 @@
 	icon_state = "0-8"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/fuel,
+/obj/floor_decal/techfloor{
+	dir = 4
+	},
+/obj/floor_decal/techfloor{
+	dir = 8
+	},
 /turf/simulated/floor/tiled/techfloor/grid,
-/area/space)
+/area/ship/interseptor)
 "pB" = (
 /obj/structure/table/steel_reinforced,
 /obj/item/paper_bin{
@@ -4346,18 +4491,24 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/machinery/hologram/holopad/longrange,
 /obj/machinery/atmospherics/pipe/manifold/hidden/cyan{
 	dir = 4
 	},
-/turf/simulated/floor/tiled/techfloor,
-/area/space)
+/obj/floor_decal/techfloor{
+	dir = 4
+	},
+/obj/floor_decal/techfloor{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/ship/interseptor)
 "qw" = (
 /obj/structure/cable/green,
 /obj/machinery/power/apc{
 	dir = 4;
 	name = "east bump";
-	pixel_x = 24
+	pixel_x = 24;
+	req_access = list("ACCESS_PHOBOS")
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -4369,7 +4520,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
-/turf/simulated/floor/tiled,
+/turf/simulated/floor/steel_dirty,
 /area/phobos/engine)
 "qB" = (
 /obj/machinery/door/firedoor,
@@ -4509,7 +4660,7 @@
 /obj/floor_decal/corner/green/three_quarters{
 	dir = 1
 	},
-/turf/simulated/floor/tiled,
+/turf/simulated/floor/steel_dirty,
 /area/phobos/living/hydro)
 "rb" = (
 /obj/machinery/computer/ship/navigation{
@@ -4548,8 +4699,14 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/cyan{
 	dir = 5
 	},
-/turf/simulated/floor/tiled/techfloor,
-/area/space)
+/obj/floor_decal/techfloor{
+	dir = 4
+	},
+/obj/floor_decal/techfloor{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/ship/interseptor)
 "rm" = (
 /obj/machinery/light,
 /obj/machinery/atmospherics/binary/pump/on{
@@ -4664,8 +4821,9 @@
 	dir = 8
 	},
 /obj/structure/catwalk,
-/turf/simulated/floor/plating,
-/area/space)
+/obj/shuttle_landmark/interseptor/start,
+/turf/simulated/floor,
+/area/ship/interseptor)
 "rJ" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/submap_landmark/spawnpoint/phobos/engineer,
@@ -4706,7 +4864,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/techfloor,
-/area/space)
+/area/ship/interseptor)
 "rU" = (
 /obj/structure/cable/yellow{
 	d1 = 1;
@@ -4726,7 +4884,7 @@
 	},
 /obj/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/techfloor,
-/area/space)
+/area/ship/interseptor)
 "rZ" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
@@ -4768,7 +4926,8 @@
 /obj/machinery/power/apc{
 	dir = 4;
 	name = "east bump";
-	pixel_x = 24
+	pixel_x = 24;
+	req_access = list("ACCESS_PHOBOS")
 	},
 /turf/simulated/floor/plating,
 /area/phobos/maint/starboard/bridge)
@@ -4790,9 +4949,6 @@
 /turf/simulated/floor/tiled/white,
 /area/phobos/medbay)
 "sm" = (
-/obj/machinery/atmospherics/unary/vent_pump/on{
-	dir = 4
-	},
 /obj/structure/closet/secure_closet/guncabinet/phobos,
 /obj/item/storage/box/ammo/light_bullpup,
 /obj/item/gun/projectile/automatic/bullpup_rifle/light,
@@ -4824,7 +4980,7 @@
 /obj/floor_decal/corner/green{
 	dir = 5
 	},
-/turf/simulated/floor/tiled,
+/turf/simulated/floor/steel_dirty,
 /area/phobos/living/hydro)
 "su" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
@@ -4937,7 +5093,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
-/turf/simulated/floor/tiled,
+/turf/simulated/floor/steel_dirty,
 /area/phobos/engine)
 "sR" = (
 /obj/structure/cable/green{
@@ -4955,7 +5111,7 @@
 	dir = 10
 	},
 /turf/simulated/floor/tiled/techfloor,
-/area/space)
+/area/ship/interseptor)
 "sU" = (
 /obj/machinery/atmospherics/unary/tank/oxygen{
 	dir = 4
@@ -5095,11 +5251,14 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/floor_decal/industrial/outline/yellow,
-/turf/simulated/floor/tiled,
+/turf/simulated/floor/steel_dirty,
 /area/phobos/engine)
 "tF" = (
 /obj/machinery/telecomms/processor/map_preset/phobos,
-/obj/floor_decal/industrial/outline/yellow,
+/obj/floor_decal/techfloor{
+	dir = 1
+	},
+/obj/floor_decal/techfloor,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/phobos/ven)
 "tH" = (
@@ -5194,11 +5353,19 @@
 /area/phobos/bridge)
 "ue" = (
 /obj/machinery/telecomms/receiver/map_preset/phobos,
-/obj/floor_decal/industrial/outline/yellow,
 /obj/machinery/alarm{
 	dir = 8;
 	pixel_x = 24;
-	req_access = list(ACCESS_PHOBOS)
+	req_access = list("ACCESS_PHOBOS")
+	},
+/obj/floor_decal/techfloor{
+	dir = 4
+	},
+/obj/floor_decal/techfloor{
+	dir = 8
+	},
+/obj/floor_decal/techfloor/hole{
+	dir = 8
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/phobos/ven)
@@ -5245,6 +5412,31 @@
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/phobos/disperser)
+"um" = (
+/obj/floor_decal/industrial/danger{
+	dir = 9
+	},
+/obj/item/device/flashlight/lamp/floodlamp{
+	dir = 8;
+	on = 1;
+	anchored = 1
+	},
+/obj/structure/railing/mapped{
+	dir = 8;
+	icon_state = "railing0-1"
+	},
+/obj/structure/railing/mapped{
+	dir = 1;
+	icon_state = "railing0-1"
+	},
+/obj/structure/sign/solgov{
+	pixel_x = 32;
+	pixel_y = -32
+	},
+/turf/simulated/floor/reinforced{
+	map_airless = 1
+	},
+/area/ship/interseptor)
 "un" = (
 /obj/structure/table/steel,
 /obj/item/modular_computer/tablet/lease/preset/command,
@@ -5300,7 +5492,7 @@
 /obj/item/stack/material/steel{
 	amount = 30
 	},
-/turf/simulated/floor/tiled,
+/turf/simulated/floor/steel_dirty,
 /area/phobos/engine)
 "uH" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -5339,8 +5531,11 @@
 	d2 = 8;
 	icon_state = "2-8"
 	},
+/obj/machinery/light{
+	dir = 1
+	},
 /turf/simulated/floor/tiled/techfloor,
-/area/space)
+/area/ship/interseptor)
 "uP" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 8
@@ -5475,7 +5670,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 9
 	},
-/turf/simulated/floor/tiled,
+/turf/simulated/floor/steel_dirty,
 /area/phobos/engine)
 "vx" = (
 /obj/machinery/atmospherics/valve/open{
@@ -5538,9 +5733,15 @@
 /obj/machinery/portable_atmospherics/canister/carbon_dioxide{
 	start_pressure = 7559.63
 	},
-/obj/floor_decal/industrial/outline/grey,
+/obj/floor_decal/techfloor{
+	dir = 6
+	},
+/obj/floor_decal/techfloor/corner{
+	dir = 1
+	},
+/obj/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/techfloor/grid,
-/area/space)
+/area/ship/interseptor)
 "wa" = (
 /obj/floor_decal/industrial/danger,
 /obj/structure/sign/warning/secure_area{
@@ -5549,7 +5750,7 @@
 /turf/simulated/floor/reinforced{
 	map_airless = 1
 	},
-/area/space)
+/area/ship/interseptor)
 "wb" = (
 /obj/structure/table/woodentable_reinforced/ebony/walnut,
 /obj/item/modular_computer/tablet/lease/preset/command,
@@ -5615,7 +5816,7 @@
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
 	dir = 1
 	},
-/turf/simulated/floor/tiled,
+/turf/simulated/floor/steel_dirty,
 /area/phobos/engine)
 "wl" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/fuel{
@@ -5748,12 +5949,13 @@
 	icon_state = "2-4"
 	},
 /turf/simulated/floor/tiled/techfloor,
-/area/space)
+/area/ship/interseptor)
 "wN" = (
 /obj/machinery/conveyor{
 	dir = 8;
 	id = "phobos_garbage"
 	},
+/obj/random/junk,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/phobos/maint/port)
 "wO" = (
@@ -5820,7 +6022,8 @@
 /obj/machinery/power/apc{
 	dir = 2;
 	name = "south bump";
-	pixel_y = -24
+	pixel_y = -24;
+	req_access = list("ACCESS_PHOBOS")
 	},
 /obj/structure/window/reinforced{
 	dir = 4
@@ -5872,7 +6075,7 @@
 /turf/simulated/floor/reinforced{
 	map_airless = 1
 	},
-/area/space)
+/area/ship/interseptor)
 "xc" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -5970,8 +6173,9 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
+/obj/overmap/visitable/ship/landable/interseptor,
 /turf/simulated/floor/tiled/techfloor,
-/area/space)
+/area/ship/interseptor)
 "xz" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/fuel,
 /obj/structure/cable/green{
@@ -5982,7 +6186,7 @@
 /obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/turf/simulated/floor/tiled,
+/turf/simulated/floor/steel_dirty,
 /area/phobos/engine)
 "xA" = (
 /obj/structure/cable/yellow{
@@ -6036,7 +6240,7 @@
 	},
 /obj/structure/cable,
 /turf/simulated/floor/tiled/techfloor/grid,
-/area/space)
+/area/ship/interseptor)
 "xG" = (
 /turf/simulated/wall/prepainted,
 /area/phobos/bridge)
@@ -6047,7 +6251,7 @@
 /obj/machinery/alarm{
 	dir = 8;
 	pixel_x = 24;
-	req_access = list(ACCESS_PHOBOS)
+	req_access = list("ACCESS_PHOBOS")
 	},
 /obj/floor_decal/corner/red{
 	dir = 5
@@ -6107,7 +6311,7 @@
 /obj/machinery/atmospherics/valve/shutoff/scrubbers{
 	dir = 4
 	},
-/turf/simulated/floor/tiled,
+/turf/simulated/floor/steel_dirty,
 /area/phobos/engine)
 "xW" = (
 /obj/floor_decal/industrial/danger{
@@ -6116,7 +6320,7 @@
 /turf/simulated/floor/reinforced{
 	map_airless = 1
 	},
-/area/space)
+/area/ship/interseptor)
 "xX" = (
 /obj/structure/closet/medical_wall{
 	pixel_y = -32
@@ -6183,7 +6387,7 @@
 	icon_state = "1-8"
 	},
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,
-/turf/simulated/floor/tiled,
+/turf/simulated/floor/steel_dirty,
 /area/phobos/engine)
 "ym" = (
 /obj/structure/cable/green{
@@ -6221,8 +6425,17 @@
 	d2 = 4;
 	icon_state = "2-4"
 	},
+/obj/machinery/light{
+	dir = 8
+	},
+/obj/floor_decal/techfloor{
+	dir = 10
+	},
+/obj/floor_decal/techfloor/corner{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/techfloor/grid,
-/area/space)
+/area/ship/interseptor)
 "yC" = (
 /obj/machinery/atmospherics/unary/tank/hydrogen{
 	start_pressure = 6000;
@@ -6289,7 +6502,7 @@
 	icon_state = "intact"
 	},
 /turf/simulated/wall/r_titanium,
-/area/space)
+/area/ship/interseptor)
 "yM" = (
 /obj/machinery/atmospherics/pipe/simple/visible/universal{
 	dir = 4
@@ -6455,7 +6668,7 @@
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
 	dir = 8
 	},
-/turf/simulated/floor/tiled,
+/turf/simulated/floor/steel_dirty,
 /area/phobos/engine)
 "zv" = (
 /obj/structure/bed/chair/padded/beige{
@@ -6465,7 +6678,17 @@
 /obj/machinery/alarm{
 	dir = 4;
 	pixel_x = -23;
-	pixel_y = 0
+	pixel_y = 0;
+	req_access = list("ACCESS_PHOBOS")
+	},
+/obj/floor_decal/techfloor/orange{
+	dir = 4
+	},
+/obj/floor_decal/techfloor/orange{
+	dir = 8
+	},
+/obj/floor_decal/techfloor/hole{
+	dir = 8
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/phobos/security/lobby)
@@ -6545,7 +6768,7 @@
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/tiled/techfloor,
-/area/space)
+/area/ship/interseptor)
 "zY" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -6556,8 +6779,14 @@
 	dir = 6;
 	icon_state = "intact"
 	},
+/obj/floor_decal/techfloor{
+	dir = 4
+	},
+/obj/floor_decal/techfloor{
+	dir = 8
+	},
 /turf/simulated/floor/tiled/techfloor/grid,
-/area/space)
+/area/ship/interseptor)
 "Ad" = (
 /obj/structure/disposalpipe/segment{
 	dir = 2;
@@ -6581,7 +6810,10 @@
 /area/phobos/living)
 "Ak" = (
 /obj/machinery/telecomms/server/map_preset/phobos,
-/obj/floor_decal/industrial/outline/yellow,
+/obj/floor_decal/techfloor{
+	dir = 1
+	},
+/obj/floor_decal/techfloor,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/phobos/ven)
 "Am" = (
@@ -6643,7 +6875,7 @@
 /obj/floor_decal/corner/green{
 	dir = 6
 	},
-/turf/simulated/floor/tiled,
+/turf/simulated/floor/steel_dirty,
 /area/phobos/living/hydro)
 "AB" = (
 /obj/machinery/door/firedoor,
@@ -6753,8 +6985,15 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/cyan{
 	dir = 6
 	},
+/obj/machinery/light{
+	dir = 8
+	},
+/obj/floor_decal/techfloor{
+	dir = 9
+	},
+/obj/floor_decal/techfloor/corner,
 /turf/simulated/floor/tiled/techfloor/grid,
-/area/space)
+/area/ship/interseptor)
 "AU" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -6763,6 +7002,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/structure/catwalk,
+/obj/random/junk,
 /turf/simulated/floor/plating,
 /area/phobos/maint/port)
 "AW" = (
@@ -6793,6 +7033,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 10
 	},
+/obj/random/junk,
 /turf/simulated/floor/tiled/techfloor,
 /area/phobos/maint/port)
 "Bk" = (
@@ -6833,7 +7074,7 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/turf/simulated/floor/tiled,
+/turf/simulated/floor/steel_dirty,
 /area/phobos/living/hydro)
 "Bu" = (
 /obj/structure/extinguisher_cabinet{
@@ -6934,7 +7175,7 @@
 "BM" = (
 /obj/paint/red,
 /turf/simulated/wall/r_titanium,
-/area/space)
+/area/ship/interseptor)
 "BO" = (
 /obj/machinery/atmospherics/pipe/simple/visible/fuel{
 	dir = 5
@@ -7165,16 +7406,16 @@
 /area/phobos/medbay)
 "CV" = (
 /obj/machinery/porta_turret{
-	auto_repair = 1;
 	id_tag = "interceptor_turret_58";
 	lethal = 1;
 	name = "SGV Interceptor Defence Turret";
-	shot_delay = 10
+	shot_delay = 10;
+	req_access = list("ACCESS_PHOBOS")
 	},
 /turf/simulated/floor/reinforced{
 	map_airless = 1
 	},
-/area/space)
+/area/ship/interseptor)
 "CW" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 4
@@ -7251,7 +7492,8 @@
 /obj/machinery/alarm{
 	dir = 8;
 	icon_state = "alarm0";
-	pixel_x = 24
+	pixel_x = 24;
+	req_access = list("ACCESS_PHOBOS")
 	},
 /turf/simulated/floor/tiled/freezer,
 /area/phobos/living)
@@ -7284,7 +7526,8 @@
 /obj/structure/table/rack,
 /obj/item/book/manual/sol_sop,
 /obj/machinery/alarm{
-	pixel_y = 24
+	pixel_y = 24;
+	req_access = list("ACCESS_PHOBOS")
 	},
 /obj/floor_decal/industrial/outline/red,
 /turf/simulated/floor/tiled/monotile,
@@ -7363,8 +7606,12 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/cyan{
 	dir = 4
 	},
+/obj/floor_decal/techfloor{
+	dir = 1
+	},
+/obj/floor_decal/techfloor,
 /turf/simulated/floor/tiled/techfloor/grid,
-/area/space)
+/area/ship/interseptor)
 "Ef" = (
 /obj/structure/cable/yellow{
 	d2 = 2;
@@ -7411,11 +7658,11 @@
 /area/phobos/engine/thrusterport)
 "Eq" = (
 /obj/machinery/porta_turret{
-	auto_repair = 1;
 	id_tag = "interceptor_turret_58";
 	lethal = 1;
 	name = "SGV Interceptor Defence Turret";
-	shot_delay = 10
+	shot_delay = 10;
+	req_access = list("ACCESS_PHOBOS")
 	},
 /obj/floor_decal/industrial/outline/red,
 /obj/floor_decal/industrial/danger{
@@ -7424,9 +7671,9 @@
 /turf/simulated/floor/reinforced{
 	map_airless = 1
 	},
-/area/space)
+/area/ship/interseptor)
 "Et" = (
-/turf/simulated/floor/tiled,
+/turf/simulated/floor/steel_dirty,
 /area/phobos/engine)
 "Eu" = (
 /turf/simulated/wall/r_wall/hull,
@@ -7488,7 +7735,12 @@
 /area/phobos/engine)
 "ED" = (
 /obj/machinery/telecomms/broadcaster/map_preset/phobos,
-/obj/floor_decal/industrial/outline/yellow,
+/obj/floor_decal/techfloor{
+	dir = 5
+	},
+/obj/floor_decal/techfloor/corner{
+	dir = 8
+	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/phobos/ven)
 "EE" = (
@@ -7519,7 +7771,7 @@
 "EP" = (
 /obj/machinery/alarm{
 	pixel_y = 24;
-	req_access = list(ACCESS_PHOBOS)
+	req_access = list("ACCESS_PHOBOS")
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/phobos/security/detective)
@@ -7604,7 +7856,8 @@
 	dir = 4
 	},
 /obj/machinery/alarm{
-	pixel_y = 24
+	pixel_y = 24;
+	req_access = list("ACCESS_PHOBOS")
 	},
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
 /obj/floor_decal/corner/yellow{
@@ -7689,7 +7942,7 @@
 	dir = 8;
 	icon_state = "alarm0";
 	pixel_x = 24;
-	req_access = list(ACCESS_PHOBOS)
+	req_access = list("ACCESS_PHOBOS")
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/phobos/security/questioning)
@@ -7806,11 +8059,11 @@
 /area/phobos/maint/port)
 "Ge" = (
 /obj/machinery/porta_turret{
-	auto_repair = 1;
 	id_tag = "interceptor_turret_58";
 	lethal = 1;
 	name = "SGV Interceptor Defence Turret";
-	shot_delay = 10
+	shot_delay = 10;
+	req_access = list("ACCESS_PHOBOS")
 	},
 /obj/floor_decal/industrial/outline/red,
 /obj/floor_decal/industrial/danger{
@@ -7819,7 +8072,7 @@
 /turf/simulated/floor/reinforced{
 	map_airless = 1
 	},
-/area/space)
+/area/ship/interseptor)
 "Gg" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -7921,11 +8174,11 @@
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/tiled/techfloor,
-/area/space)
+/area/ship/interseptor)
 "GX" = (
 /obj/paint/black,
 /turf/simulated/wall/r_titanium,
-/area/space)
+/area/ship/interseptor)
 "GY" = (
 /obj/machinery/porta_turret{
 	auto_repair = 1;
@@ -8038,7 +8291,9 @@
 /area/phobos/hallway)
 "Hz" = (
 /obj/floor_decal/industrial/outline/yellow,
-/obj/random/vendor,
+/obj/random/vendor{
+	dir = 4
+	},
 /obj/machinery/light{
 	dir = 4
 	},
@@ -8056,7 +8311,7 @@
 	icon_state = "intact"
 	},
 /turf/simulated/wall/r_titanium,
-/area/space)
+/area/ship/interseptor)
 "HH" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -8084,7 +8339,7 @@
 	dir = 9;
 	icon_state = "intact"
 	},
-/turf/simulated/floor/tiled,
+/turf/simulated/floor/steel_dirty,
 /area/phobos/engine)
 "HM" = (
 /obj/structure/table/standard,
@@ -8179,7 +8434,7 @@
 	pixel_x = -5
 	},
 /obj/floor_decal/corner/green/three_quarters,
-/turf/simulated/floor/tiled,
+/turf/simulated/floor/steel_dirty,
 /area/phobos/living/hydro)
 "Il" = (
 /obj/structure/cable/green{
@@ -8317,7 +8572,8 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/alarm{
-	pixel_y = 24
+	pixel_y = 24;
+	req_access = list("ACCESS_PHOBOS")
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 10
@@ -8498,7 +8754,7 @@
 /turf/simulated/floor/reinforced{
 	map_airless = 1
 	},
-/area/space)
+/area/ship/interseptor)
 "Jy" = (
 /obj/floor_decal/spline/plain/blue{
 	dir = 6
@@ -8511,7 +8767,8 @@
 	dir = 2;
 	is_critical = 1;
 	name = "south bump";
-	pixel_y = -24
+	pixel_y = -24;
+	req_access = list("ACCESS_PHOBOS")
 	},
 /obj/structure/cable/green{
 	d2 = 8;
@@ -8525,10 +8782,13 @@
 /obj/structure/disposalpipe/trunk,
 /obj/machinery/atmospherics/pipe/simple/hidden/fuel,
 /obj/floor_decal/industrial/hatch/yellow,
-/turf/simulated/floor/tiled,
+/turf/simulated/floor/steel_dirty,
 /area/phobos/engine)
 "JN" = (
 /obj/floor_decal/techfloor{
+	dir = 1
+	},
+/obj/floor_decal/techfloor/hole{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
@@ -8542,7 +8802,7 @@
 /obj/machinery/alarm{
 	dir = 1;
 	pixel_y = -22;
-	req_access = list(ACCESS_PHOBOS)
+	req_access = list("ACCESS_PHOBOS")
 	},
 /turf/simulated/floor/plating,
 /area/phobos/disperser/storage)
@@ -8712,11 +8972,12 @@
 "KA" = (
 /obj/structure/window/reinforced,
 /obj/structure/table/steel_reinforced,
-/obj/machinery/turretid/lethal{
-	req_access = list("ACCESS_PHOBOS")
+/obj/machinery/turretid{
+	req_access = list("ACCESS_PHOBOS");
+	id_tag = "interceptor_turret_58"
 	},
 /turf/simulated/floor/tiled/techfloor,
-/area/space)
+/area/ship/interseptor)
 "KE" = (
 /obj/machinery/atmospherics/portables_connector{
 	dir = 1
@@ -8743,7 +9004,8 @@
 /obj/machinery/power/apc{
 	dir = 8;
 	name = "west bump";
-	pixel_x = -24
+	pixel_x = -24;
+	req_access = list("ACCESS_PHOBOS")
 	},
 /obj/structure/table/woodentable_reinforced/ebony,
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
@@ -8776,8 +9038,12 @@
 	d2 = 4;
 	icon_state = "2-4"
 	},
+/obj/floor_decal/techfloor,
+/obj/floor_decal/techfloor{
+	dir = 1
+	},
 /turf/simulated/floor/tiled/techfloor/grid,
-/area/space)
+/area/ship/interseptor)
 "KN" = (
 /obj/machinery/atmospherics/binary/pump/on{
 	dir = 8;
@@ -8931,7 +9197,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/techfloor,
-/area/space)
+/area/ship/interseptor)
 "Ls" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -9002,7 +9268,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/turf/simulated/floor/tiled,
+/turf/simulated/floor/steel_dirty,
 /area/phobos/living/hydro)
 "LJ" = (
 /obj/structure/hygiene/sink{
@@ -9070,7 +9336,7 @@
 /obj/machinery/alarm{
 	dir = 8;
 	pixel_x = 24;
-	req_access = list(ACCESS_PHOBOS)
+	req_access = list("ACCESS_PHOBOS")
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/submap_landmark/spawnpoint/phobos/officer,
@@ -9091,7 +9357,7 @@
 /turf/simulated/floor/reinforced{
 	map_airless = 1
 	},
-/area/space)
+/area/ship/interseptor)
 "LW" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -9267,8 +9533,14 @@
 /obj/machinery/atmospherics/binary/pump{
 	dir = 1
 	},
+/obj/floor_decal/techfloor{
+	dir = 8
+	},
+/obj/floor_decal/techfloor{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/techfloor/grid,
-/area/space)
+/area/ship/interseptor)
 "MG" = (
 /turf/simulated/wall/r_wall/prepainted,
 /area/phobos/security/equipment)
@@ -9397,7 +9669,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
-/turf/simulated/floor/tiled,
+/turf/simulated/floor/steel_dirty,
 /area/phobos/engine)
 "Nh" = (
 /obj/machinery/pointdefense{
@@ -9411,7 +9683,7 @@
 /turf/simulated/floor/reinforced{
 	map_airless = 1
 	},
-/area/space)
+/area/ship/interseptor)
 "Ni" = (
 /obj/machinery/light/small,
 /turf/simulated/floor/tiled/techfloor,
@@ -9427,7 +9699,8 @@
 /area/phobos/maint/port)
 "Nq" = (
 /obj/machinery/alarm{
-	pixel_y = 24
+	pixel_y = 24;
+	req_access = list("ACCESS_PHOBOS")
 	},
 /obj/floor_decal/corner/red{
 	dir = 5
@@ -9457,7 +9730,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/techfloor,
-/area/space)
+/area/ship/interseptor)
 "Nv" = (
 /obj/structure/window/reinforced{
 	dir = 1
@@ -9511,7 +9784,8 @@
 /obj/machinery/power/apc{
 	dir = 2;
 	name = "south bump";
-	pixel_y = -24
+	pixel_y = -24;
+	req_access = list("ACCESS_PHOBOS")
 	},
 /obj/machinery/firealarm{
 	dir = 8;
@@ -9520,7 +9794,7 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/phobos/engine/thrusterport)
 "NP" = (
-/turf/simulated/floor/tiled,
+/turf/simulated/floor/steel_dirty,
 /area/phobos/living/hydro)
 "NS" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/fuel{
@@ -9677,7 +9951,8 @@
 	dir = 1;
 	name = "north bump";
 	pixel_x = 0;
-	pixel_y = 24
+	pixel_y = 24;
+	req_access = list("ACCESS_PHOBOS")
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -9734,7 +10009,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/techfloor,
-/area/space)
+/area/ship/interseptor)
 "Pa" = (
 /obj/shuttle_landmark/nav_phobos/nav3,
 /turf/space,
@@ -9814,7 +10089,7 @@
 /obj/paint/red,
 /obj/machinery/atmospherics/pipe/simple/hidden/fuel,
 /turf/simulated/wall/r_titanium,
-/area/space)
+/area/ship/interseptor)
 "Pw" = (
 /obj/machinery/recharger/wallcharger{
 	dir = 4;
@@ -9860,6 +10135,7 @@
 /obj/structure/window/reinforced{
 	dir = 1
 	},
+/obj/structure/closet/crate/internals/fuel,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/phobos/hallway/eva)
 "PG" = (
@@ -9888,7 +10164,7 @@
 /turf/simulated/floor/reinforced{
 	map_airless = 1
 	},
-/area/space)
+/area/ship/interseptor)
 "PK" = (
 /obj/structure/table/rack,
 /obj/machinery/firealarm{
@@ -9941,7 +10217,8 @@
 /obj/item/reagent_containers/glass/beaker/large,
 /obj/machinery/alarm{
 	dir = 1;
-	pixel_y = -22
+	pixel_y = -22;
+	req_access = list("ACCESS_PHOBOS")
 	},
 /obj/machinery/light_switch{
 	pixel_x = -23;
@@ -9964,8 +10241,8 @@
 	id_tag = "interceptor_sensor_lock";
 	name = "Interceptor Drop Blast Doors"
 	},
-/turf/simulated/floor/airless,
-/area/space)
+/turf/simulated/floor,
+/area/ship/interseptor)
 "Qc" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 4
@@ -9985,7 +10262,7 @@
 	dir = 4;
 	pixel_x = -23;
 	pixel_y = 0;
-	req_access = list(ACCESS_PHOBOS)
+	req_access = list("ACCESS_PHOBOS")
 	},
 /turf/simulated/floor/plating,
 /area/phobos/disperser)
@@ -10019,7 +10296,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
-/turf/simulated/floor/tiled,
+/turf/simulated/floor/steel_dirty,
 /area/phobos/engine)
 "Qo" = (
 /obj/machinery/atmospherics/pipe/simple/visible/green{
@@ -10029,11 +10306,22 @@
 /turf/simulated/wall/r_wall/hull,
 /area/phobos/engine/atmos)
 "Qp" = (
-/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
-	dir = 1;
-	id_tag = "interseptor_shuttle_pump"
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/airlock{
+	id_tag = "interseptor_dock_airlock_pump";
+	dir = 1
 	},
-/turf/simulated/floor/airless,
+/obj/machinery/embedded_controller/radio/airlock/docking_port{
+	display_name = "Rear Patrol Dock";
+	id_tag = "interseptor_dock_airlock";
+	pixel_y = -24;
+	req_access = list("ACCESS_PHOBOS");
+	tag_chamber_sensor = "interseptor_dock_airlock_sensor";
+	tag_exterior_door = "interseptor_dock_airlock_outer";
+	tag_interior_door = "interseptor_dock_airlock_inner";
+	tag_airpump = "interseptor_dock_airlock_pump";
+	dir = 1
+	},
+/turf/simulated/floor,
 /area/phobos/hallway/eva)
 "Qr" = (
 /obj/structure/cable/green{
@@ -10136,7 +10424,7 @@
 	pixel_y = 4
 	},
 /obj/item/stack/material/steel/fifty,
-/turf/simulated/floor/tiled,
+/turf/simulated/floor/steel_dirty,
 /area/phobos/engine)
 "QT" = (
 /obj/structure/cable/green{
@@ -10159,12 +10447,12 @@
 /obj/machinery/alarm{
 	dir = 8;
 	pixel_x = 24;
-	req_access = list(ACCESS_PHOBOS)
+	req_access = list("ACCESS_PHOBOS")
 	},
 /obj/floor_decal/corner/green{
 	dir = 6
 	},
-/turf/simulated/floor/tiled,
+/turf/simulated/floor/steel_dirty,
 /area/phobos/living/hydro)
 "Ra" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/fuel{
@@ -10215,7 +10503,7 @@
 /area/phobos/disperser/storage)
 "Ri" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
-/turf/simulated/floor/tiled,
+/turf/simulated/floor/steel_dirty,
 /area/phobos/engine)
 "Rm" = (
 /obj/structure/cable/green{
@@ -10331,8 +10619,9 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
+/obj/machinery/hologram/holopad/longrange,
 /turf/simulated/floor/tiled/techfloor,
-/area/space)
+/area/ship/interseptor)
 "RM" = (
 /obj/random/maintenance/solgov,
 /turf/simulated/floor/tiled/techfloor,
@@ -10399,7 +10688,7 @@
 /obj/floor_decal/corner/green{
 	dir = 9
 	},
-/turf/simulated/floor/tiled,
+/turf/simulated/floor/steel_dirty,
 /area/phobos/living/hydro)
 "Se" = (
 /obj/structure/cable/green{
@@ -10440,8 +10729,12 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/turf/simulated/floor/plating,
-/area/space)
+/obj/machinery/door/airlock/external{
+	id_tag = "interseptor_shuttle_outer";
+	name = "Interseptor External Access"
+	},
+/turf/simulated/floor,
+/area/ship/interseptor)
 "Sn" = (
 /obj/structure/janitorialcart,
 /obj/item/mop,
@@ -10563,7 +10856,7 @@
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 8
 	},
-/turf/simulated/floor/tiled,
+/turf/simulated/floor/steel_dirty,
 /area/phobos/engine)
 "SL" = (
 /obj/structure/table/steel_reinforced,
@@ -10655,7 +10948,7 @@
 	icon_state = "1-2"
 	},
 /turf/simulated/wall/r_titanium,
-/area/space)
+/area/ship/interseptor)
 "Tj" = (
 /obj/structure/closet/emcloset,
 /obj/item/device/radio/map_preset/phobos,
@@ -10675,7 +10968,7 @@
 	icon_state = "0-2"
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
-/area/space)
+/area/ship/interseptor)
 "Tu" = (
 /obj/structure/cable/green{
 	d1 = 2;
@@ -10771,7 +11064,7 @@
 /turf/simulated/floor/reinforced{
 	map_airless = 1
 	},
-/area/space)
+/area/ship/interseptor)
 "TM" = (
 /obj/structure/disposalpipe/segment{
 	dir = 2;
@@ -10807,14 +11100,19 @@
 	dir = 8
 	},
 /obj/machinery/portable_atmospherics/canister/air,
+/obj/floor_decal/techfloor{
+	dir = 1
+	},
+/obj/floor_decal/techfloor,
 /obj/floor_decal/industrial/outline/blue,
 /turf/simulated/floor/tiled/techfloor/grid,
-/area/space)
+/area/ship/interseptor)
 "TP" = (
 /obj/structure/table/steel,
 /obj/random/firstaid,
 /obj/machinery/alarm{
-	pixel_y = 24
+	pixel_y = 24;
+	req_access = list("ACCESS_PHOBOS")
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/phobos/disperser)
@@ -10862,7 +11160,9 @@
 /area/phobos/disperser/storage)
 "Ue" = (
 /obj/floor_decal/industrial/outline/yellow,
-/obj/random/vendor,
+/obj/random/vendor{
+	dir = 4
+	},
 /turf/simulated/floor/tiled,
 /area/phobos/hallway)
 "Uh" = (
@@ -10926,7 +11226,15 @@
 	dir = 9
 	},
 /obj/structure/catwalk,
+/obj/random/junk,
 /turf/simulated/floor/plating,
+/area/phobos/maint/port)
+"UN" = (
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/random/junk,
+/turf/simulated/floor/tiled/techfloor,
 /area/phobos/maint/port)
 "UO" = (
 /obj/machinery/firealarm{
@@ -11015,7 +11323,8 @@
 /obj/machinery/power/apc{
 	dir = 4;
 	name = "east bump";
-	pixel_x = 24
+	pixel_x = 24;
+	req_access = list("ACCESS_PHOBOS")
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 9
@@ -11071,11 +11380,21 @@
 	dir = 1;
 	name = "north bump";
 	pixel_x = 0;
-	pixel_y = 24
+	pixel_y = 24;
+	req_access = list("ACCESS_PHOBOS")
 	},
 /obj/item/device/radio/intercom/map_preset/phobos{
 	dir = 4;
 	pixel_x = -24
+	},
+/obj/floor_decal/techfloor/orange{
+	dir = 4
+	},
+/obj/floor_decal/techfloor/orange{
+	dir = 8
+	},
+/obj/floor_decal/techfloor/hole{
+	dir = 4
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/phobos/security/lobby)
@@ -11126,7 +11445,7 @@
 	pixel_x = 22;
 	pixel_y = 6
 	},
-/turf/simulated/floor/tiled,
+/turf/simulated/floor/steel_dirty,
 /area/phobos/engine)
 "Vw" = (
 /obj/structure/railing/mapped{
@@ -11261,7 +11580,7 @@
 	},
 /obj/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/techfloor/grid,
-/area/space)
+/area/ship/interseptor)
 "VM" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -11283,7 +11602,7 @@
 "VT" = (
 /obj/machinery/alarm{
 	pixel_y = 24;
-	req_access = list(ACCESS_PHOBOS)
+	req_access = list("ACCESS_PHOBOS")
 	},
 /turf/simulated/floor/wood/ebony,
 /area/phobos/living/bunk)
@@ -11305,7 +11624,7 @@
 /obj/machinery/alarm{
 	dir = 8;
 	pixel_x = 24;
-	req_access = list(ACCESS_PHOBOS)
+	req_access = list("ACCESS_PHOBOS")
 	},
 /obj/floor_decal/spline/fancy/wood{
 	dir = 1
@@ -11353,7 +11672,7 @@
 	dir = 1
 	},
 /turf/simulated/wall/r_titanium,
-/area/space)
+/area/ship/interseptor)
 "Wj" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -11464,7 +11783,7 @@
 	dir = 8
 	},
 /turf/simulated/wall/r_titanium,
-/area/space)
+/area/ship/interseptor)
 "WP" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -11537,7 +11856,7 @@
 /obj/floor_decal/corner/green/three_quarters{
 	dir = 4
 	},
-/turf/simulated/floor/tiled,
+/turf/simulated/floor/steel_dirty,
 /area/phobos/living/hydro)
 "Xd" = (
 /obj/structure/sign/warning/radioactive{
@@ -11583,7 +11902,7 @@
 	icon_state = "map"
 	},
 /obj/structure/catwalk,
-/turf/simulated/floor/plating,
+/turf/simulated/floor,
 /area/phobos/hallway/eva)
 "Xj" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/fuel,
@@ -11631,8 +11950,12 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
+/obj/floor_decal/techfloor,
+/obj/floor_decal/techfloor{
+	dir = 1
+	},
 /turf/simulated/floor/tiled/techfloor/grid,
-/area/space)
+/area/ship/interseptor)
 "Xv" = (
 /obj/machinery/door/airlock/multi_tile/glass/medical{
 	dir = 8;
@@ -11739,7 +12062,7 @@
 	amount = 50
 	},
 /obj/item/stack/material/plastic/fifty,
-/turf/simulated/floor/tiled,
+/turf/simulated/floor/steel_dirty,
 /area/phobos/engine)
 "XM" = (
 /obj/structure/table/marble,
@@ -11758,7 +12081,7 @@
 "XQ" = (
 /obj/structure/closet/emcloset,
 /obj/item/device/radio/map_preset/phobos,
-/turf/simulated/floor/tiled,
+/turf/simulated/floor/steel_dirty,
 /area/phobos/engine)
 "XT" = (
 /obj/item/soap,
@@ -11944,7 +12267,7 @@
 /turf/simulated/floor/reinforced{
 	map_airless = 1
 	},
-/area/space)
+/area/ship/interseptor)
 "Yw" = (
 /obj/structure/table/standard,
 /obj/structure/sign/warning/smoking{
@@ -12005,7 +12328,18 @@
 /obj/machinery/atmospherics/pipe/simple/hidden{
 	dir = 4
 	},
-/turf/simulated/floor/airless,
+/obj/machinery/door/airlock/external/bolted/cycling{
+	name = "Docking Port Airlock";
+	id_tag = "interseptor_dock_airlock_inner"
+	},
+/obj/machinery/access_button{
+	command = "cycle_interior";
+	master_tag = "interseptor_dock_airlock";
+	name = "interior access button";
+	pixel_x = -24;
+	pixel_y = -22
+	},
+/turf/simulated/floor,
 /area/phobos/hallway/eva)
 "YH" = (
 /obj/item/reagent_containers/spray/cleaner,
@@ -12094,7 +12428,7 @@
 /turf/simulated/floor/reinforced{
 	map_airless = 1
 	},
-/area/space)
+/area/ship/interseptor)
 "Zg" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -12153,7 +12487,8 @@
 	dir = 1;
 	name = "north bump";
 	pixel_x = 0;
-	pixel_y = 24
+	pixel_y = 24;
+	req_access = list("ACCESS_PHOBOS")
 	},
 /obj/floor_decal/industrial/outline/red,
 /obj/item/clothing/under/solgov/utility/fleet/combat/security,
@@ -12187,7 +12522,7 @@
 	pixel_x = 0;
 	pixel_y = -32
 	},
-/turf/simulated/floor/tiled,
+/turf/simulated/floor/steel_dirty,
 /area/phobos/engine)
 "Zs" = (
 /obj/machinery/portable_atmospherics/powered/pump,
@@ -12207,7 +12542,8 @@
 	target_pressure = 200
 	},
 /obj/machinery/alarm{
-	pixel_y = 24
+	pixel_y = 24;
+	req_access = list("ACCESS_PHOBOS")
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/phobos/hallway/eva)
@@ -12292,7 +12628,8 @@
 	dir = 1;
 	name = "north bump";
 	pixel_x = 0;
-	pixel_y = 24
+	pixel_y = 24;
+	req_access = list("ACCESS_PHOBOS")
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/phobos/maint/port)
@@ -25454,7 +25791,7 @@ AW
 jm
 qa
 AW
-ty
+UN
 tX
 FX
 bP
@@ -28479,13 +28816,13 @@ bP
 bP
 bP
 bP
-Jv
+um
 GX
 lS
 rI
 mq
 GX
-xW
+dU
 bP
 bP
 bP

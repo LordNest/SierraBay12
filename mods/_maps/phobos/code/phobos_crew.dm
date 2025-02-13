@@ -69,7 +69,7 @@
 	economic_power = 8
 	outfit_type = /singleton/hierarchy/outfit/job/phobos/command/pilot
 	required_language = LANGUAGE_HUMAN_EURO
-	whitelisted_species = list(HUMAN_SPECIES)
+	whitelisted_species = list(SPECIES_HUMAN,HUMAN_SPECIES)
 	allowed_branches = list(
 		/datum/mil_branch/fleet
 	)
@@ -91,7 +91,7 @@
 	selection_color = "#601c1c"
 	outfit_type = /singleton/hierarchy/outfit/job/phobos/security/sergeant
 	required_language = LANGUAGE_HUMAN_EURO
-	whitelisted_species = list(HUMAN_SPECIES)
+	whitelisted_species = list(SPECIES_HUMAN,HUMAN_SPECIES)
 	allowed_branches = list(
 		/datum/mil_branch/fleet
 	)
@@ -120,7 +120,7 @@
 	selection_color = "#601c1c"
 	outfit_type = /singleton/hierarchy/outfit/job/phobos/security
 	required_language = LANGUAGE_HUMAN_EURO
-	whitelisted_species = list(HUMAN_SPECIES)
+	whitelisted_species = list(SPECIES_HUMAN,HUMAN_SPECIES)
 	allowed_branches = list(
 		/datum/mil_branch/fleet
 	)
@@ -150,7 +150,7 @@
 	economic_power = 10
 	outfit_type = /singleton/hierarchy/outfit/job/phobos/medical/senior
 	required_language = LANGUAGE_HUMAN_EURO
-	whitelisted_species = list(HUMAN_SPECIES)
+	whitelisted_species = list(SPECIES_HUMAN,HUMAN_SPECIES)
 	allowed_branches = list(
 		/datum/mil_branch/fleet
 	)
@@ -193,7 +193,7 @@
 	max_skill = list(   SKILL_MEDICAL     = SKILL_MAX,
 	                    SKILL_CHEMISTRY   = SKILL_MAX)
 	required_language = LANGUAGE_HUMAN_EURO
-	whitelisted_species = list(HUMAN_SPECIES)
+	whitelisted_species = list(SPECIES_HUMAN,HUMAN_SPECIES)
 	skill_points = 22
 
 /datum/job/submap/engineer
@@ -218,7 +218,7 @@
 		/datum/mil_rank/fleet/e5,
 	)
 	required_language = LANGUAGE_HUMAN_EURO
-	whitelisted_species = list(HUMAN_SPECIES)
+	whitelisted_species = list(SPECIES_HUMAN,HUMAN_SPECIES)
 	min_skill = list(   SKILL_COMPUTER     = SKILL_BASIC,
 	                    SKILL_EVA          = SKILL_BASIC,
 	                    SKILL_CONSTRUCTION = SKILL_TRAINED,
