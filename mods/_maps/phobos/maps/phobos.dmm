@@ -11,7 +11,8 @@
 	dir = 8
 	},
 /obj/structure/window/reinforced,
-/obj/floor_decal/corner/paleblue/mono,
+/obj/floor_decal/corner/blue/mono,
+/obj/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/phobos/bridge)
 "ac" = (
@@ -21,7 +22,7 @@
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
 	dir = 1
 	},
-/obj/floor_decal/corner/paleblue/border{
+/obj/floor_decal/corner/blue/border{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/dark,
@@ -31,10 +32,10 @@
 	dir = 1;
 	icon_state = "pipe-c"
 	},
-/obj/floor_decal/corner/paleblue/border{
+/obj/floor_decal/corner/blue/border{
 	dir = 4
 	},
-/obj/floor_decal/corner/paleblue{
+/obj/floor_decal/corner/blue{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/dark,
@@ -42,7 +43,6 @@
 "ae" = (
 /obj/machinery/door/airlock/sol{
 	name = "Commanding Officer";
-	req_access = list("ACCESS_CAPTAIN");
 	secured_wires = 1
 	},
 /obj/structure/cable/green{
@@ -200,9 +200,7 @@
 /area/phobos/bridge/co_office)
 "aK" = (
 /obj/machinery/door/airlock/sol{
-	autoset_access = 0;
 	name = "CO's Quarters";
-	req_access = list("ACCESS_CAPTAIN");
 	secured_wires = 1
 	},
 /obj/machinery/door/firedoor,
@@ -244,10 +242,6 @@
 /turf/simulated/floor/wood/walnut,
 /area/phobos/bridge/co_office)
 "aR" = (
-/obj/structure/closet/secure_closet{
-	name = "Commanding Officer's locker";
-	req_access = list("ACCESS_CAPTAIN")
-	},
 /obj/item/disk/secret_project/science,
 /obj/item/clothing/suit/armor/pcarrier/navy,
 /obj/item/clothing/accessory/storage/pouches/navy,
@@ -258,12 +252,10 @@
 /obj/item/clothing/accessory/arm_guards/navy,
 /obj/item/clothing/under/solgov/utility/fleet/combat/command,
 /obj/item/clothing/under/solgov/utility/fleet/polopants/command,
-/obj/item/gun/energy/gun,
 /obj/item/clothing/accessory/armor_plate/medium,
 /obj/item/clothing/head/helmet/solgov/command,
 /obj/item/clothing/accessory/helmet_cover/navy,
 /obj/item/melee/telebaton,
-/obj/item/gun/projectile/revolver/medium,
 /obj/item/clothing/head/beret/solgov/fleet/command,
 /obj/item/clothing/under/solgov/utility/fleet/command,
 /obj/item/clothing/accessory/solgov/fleet_patch/third,
@@ -278,6 +270,11 @@
 /obj/item/clothing/glasses/sunglasses,
 /obj/item/clothing/gloves/thick/duty/solgov/cmd,
 /obj/item/clothing/accessory/solgov/specialty/officer,
+/obj/structure/closet/secure_closet/CO_phobos,
+/obj/item/gun/energy/stunrevolver/secure{
+	req_access = list("ACCESS_PHOBOS_ARMORY")
+	},
+/obj/item/storage/belt/holster/security,
 /turf/simulated/floor/wood/walnut,
 /area/phobos/bridge/co_office)
 "aT" = (
@@ -288,7 +285,7 @@
 	},
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply,
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,
-/turf/simulated/floor/tiled/dark/monotile,
+/turf/simulated/floor/tiled,
 /area/phobos/hallway)
 "aV" = (
 /obj/structure/catwalk,
@@ -312,7 +309,6 @@
 /turf/simulated/floor/wood/walnut,
 /area/phobos/bridge/co_office)
 "aZ" = (
-/obj/item/clothing/accessory/solgov/rank/fleet/officer/o4,
 /turf/simulated/floor/wood/walnut,
 /area/phobos/bridge/co_office)
 "ba" = (
@@ -344,7 +340,7 @@
 	dir = 2;
 	icon_state = "pipe-c"
 	},
-/obj/floor_decal/corner/paleblue/border,
+/obj/floor_decal/corner/blue/border,
 /turf/simulated/floor/tiled/dark,
 /area/phobos/bridge)
 "bg" = (
@@ -406,6 +402,8 @@
 /obj/item/clothing/suit/armor/pcarrier/navy,
 /obj/item/clothing/accessory/arm_guards/navy,
 /obj/item/clothing/accessory/solgov/specialty/pilot,
+/obj/structure/closet/secure_closet/bridgeofficer_phobos,
+/obj/item/storage/belt/holster/security,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/phobos/bridge)
 "bs" = (
@@ -441,7 +439,7 @@
 /turf/simulated/floor/reinforced{
 	map_airless = 1
 	},
-/area/phobos/bridge)
+/area/phobos/disperser/storage)
 "bw" = (
 /obj/machinery/power/smes/buildable/preset/on_full,
 /obj/structure/cable/green{
@@ -460,7 +458,7 @@
 /turf/simulated/floor/reinforced{
 	map_airless = 1
 	},
-/area/phobos/bridge)
+/area/phobos/disperser/storage)
 "by" = (
 /obj/structure/table/standard,
 /obj/machinery/reagentgrinder/juicer,
@@ -482,7 +480,8 @@
 "bA" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply,
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,
-/turf/simulated/floor/tiled/dark/monotile,
+/obj/catwalk_plated,
+/turf/simulated/floor/plating,
 /area/phobos/hallway)
 "bB" = (
 /obj/structure/cable/green{
@@ -518,7 +517,7 @@
 /obj/machinery/door/firedoor,
 /obj/wallframe_spawn/reinforced,
 /obj/paint/dark_gunmetal,
-/turf/simulated/floor/plating,
+/turf/simulated/floor,
 /area/phobos/disperser)
 "bF" = (
 /obj/structure/lattice,
@@ -526,7 +525,9 @@
 /turf/space,
 /area/space)
 "bG" = (
-/obj/structure/closet/secure_closet/guncabinet,
+/obj/structure/closet/secure_closet/guncabinet{
+	req_access = list("ACCESS_PHOBOS")
+	},
 /obj/item/gun/energy/ionrifle,
 /obj/item/gun/energy/stunrevolver/rifle,
 /obj/item/gun/energy/stunrevolver/rifle,
@@ -540,6 +541,9 @@
 /obj/item/ammo_magazine/shotholder,
 /obj/item/ammo_magazine/shotholder,
 /obj/item/ammo_magazine/shotholder,
+/obj/machinery/light/small{
+	dir = 8
+	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/phobos/bridge)
 "bI" = (
@@ -560,7 +564,6 @@
 	},
 /area/space)
 "bK" = (
-/obj/item/clothing/accessory/solgov/rank/fleet/officer,
 /turf/simulated/floor/tiled/dark,
 /area/phobos/bridge)
 "bL" = (
@@ -607,7 +610,8 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/door/firedoor,
-/turf/simulated/floor/tiled/techfloor/grid,
+/obj/floor_decal/industrial/hatch/yellow,
+/turf/simulated/floor/tiled/monotile,
 /area/phobos/security/lobby)
 "bP" = (
 /obj/structure/lattice,
@@ -627,7 +631,6 @@
 /area/phobos/hallway/eva)
 "bR" = (
 /obj/structure/table/rack,
-/obj/floor_decal/industrial/outline/red,
 /obj/item/gun/projectile/shotgun/pump/combat,
 /obj/item/storage/box/ammo/shotgunammo,
 /obj/item/storage/box/ammo/shotgunammo,
@@ -635,6 +638,13 @@
 /obj/item/storage/box/ammo/shotgunammo,
 /obj/item/storage/box/ammo/manstoppershells,
 /obj/item/storage/box/ammo/manstoppershells,
+/obj/machinery/light/small{
+	dir = 4;
+	icon_state = "bulb1"
+	},
+/obj/floor_decal/techfloor{
+	dir = 5
+	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/phobos/security)
 "bS" = (
@@ -653,6 +663,7 @@
 /obj/floor_decal/corner/red/bordercee{
 	dir = 8
 	},
+/obj/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/techfloor,
 /area/phobos/disperser/storage)
 "bT" = (
@@ -678,6 +689,7 @@
 /obj/floor_decal/corner/red/bordercee{
 	dir = 4
 	},
+/obj/floor_decal/industrial/outline/orange,
 /turf/simulated/floor/tiled/techfloor,
 /area/phobos/disperser/storage)
 "bV" = (
@@ -688,10 +700,12 @@
 	dir = 8;
 	icon_state = "railing0-1"
 	},
+/obj/floor_decal/industrial/outline/grey,
 /turf/simulated/floor/tiled/techfloor,
 /area/phobos/disperser/storage)
 "bW" = (
 /obj/structure/table/steel_reinforced,
+/obj/item/material/bell,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/phobos/security/lobby)
 "bX" = (
@@ -710,6 +724,7 @@
 /obj/floor_decal/corner/red/bordercee{
 	dir = 8
 	},
+/obj/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/techfloor,
 /area/phobos/disperser/storage)
 "bY" = (
@@ -780,12 +795,14 @@
 /area/phobos/disperser)
 "ce" = (
 /obj/machinery/computer/ship/sensors,
+/obj/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/phobos/bridge)
 "cg" = (
 /obj/machinery/light,
 /obj/machinery/atmospherics/unary/tank/hydrogen{
-	start_pressure = 6000
+	start_pressure = 6000;
+	dir = 1
 	},
 /obj/floor_decal/industrial/outline/grey,
 /turf/simulated/floor/tiled/techfloor,
@@ -795,6 +812,7 @@
 /obj/machinery/alarm{
 	pixel_y = 24
 	},
+/obj/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/phobos/bridge)
 "ci" = (
@@ -805,6 +823,7 @@
 	pixel_y = 24
 	},
 /obj/item/tableflag,
+/obj/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/phobos/bridge)
 "cj" = (
@@ -816,6 +835,7 @@
 /obj/machinery/photocopier/faxmachine{
 	department = "phobos - Bridge"
 	},
+/obj/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/phobos/bridge)
 "ck" = (
@@ -889,7 +909,7 @@
 	dir = 1;
 	icon_state = "comfychair_preview"
 	},
-/obj/floor_decal/corner/paleblue/diagonal,
+/obj/floor_decal/corner/blue/diagonal,
 /turf/simulated/floor/tiled/dark,
 /area/phobos/bridge)
 "cs" = (
@@ -900,11 +920,11 @@
 	pixel_x = -5;
 	pixel_y = 28
 	},
-/obj/floor_decal/corner/paleblue/diagonal,
+/obj/floor_decal/corner/blue/diagonal,
 /turf/simulated/floor/tiled/dark,
 /area/phobos/bridge)
 "ct" = (
-/obj/floor_decal/corner/paleblue/diagonal,
+/obj/floor_decal/corner/blue/diagonal,
 /turf/simulated/floor/tiled/dark,
 /area/phobos/bridge)
 "cu" = (
@@ -914,6 +934,15 @@
 "cw" = (
 /turf/simulated/wall/prepainted,
 /area/phobos/living)
+"cz" = (
+/obj/paint/red,
+/obj/structure/sign/warning/hot_exhaust,
+/obj/machinery/atmospherics/pipe/simple/hidden/fuel{
+	dir = 5;
+	icon_state = "intact"
+	},
+/turf/simulated/wall/r_titanium,
+/area/space)
 "cC" = (
 /obj/structure/fireaxecabinet{
 	pixel_y = 32
@@ -938,14 +967,13 @@
 /area/phobos/bridge)
 "cF" = (
 /obj/machinery/door/airlock/multi_tile/glass/security{
-	locked = 1;
-	name = "Security Lobby";
-	welded = 1
+	name = "Security Lobby"
 	},
 /obj/machinery/door/firedoor,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/turf/simulated/floor/tiled/techfloor/grid,
+/obj/floor_decal/industrial/hatch/yellow,
+/turf/simulated/floor/tiled/monotile,
 /area/phobos/security)
 "cG" = (
 /obj/machinery/door/firedoor,
@@ -977,7 +1005,7 @@
 /turf/simulated/floor/reinforced{
 	map_airless = 1
 	},
-/area/phobos/bridge)
+/area/phobos/disperser)
 "cK" = (
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/airless,
@@ -986,6 +1014,14 @@
 /obj/structure/railing/mapped,
 /obj/structure/catwalk,
 /obj/structure/disposalpipe/segment,
+/obj/machinery/turretid/lethal{
+	dir = 4;
+	id_tag = "phobos_turret_58";
+	locked = 0;
+	name = "SGV phobos Defence Turret control panel";
+	pixel_x = -28;
+	req_access = list("ACCESS_PHOBOS")
+	},
 /turf/simulated/floor/plating,
 /area/phobos/disperser)
 "cN" = (
@@ -994,13 +1030,6 @@
 /turf/simulated/floor/plating,
 /area/phobos/disperser)
 "cO" = (
-/obj/machinery/turretid/lethal{
-	dir = 4;
-	id_tag = "phobos_turret_58";
-	locked = 0;
-	name = "SGV phobos Defence Turret control panel";
-	pixel_x = -28
-	},
 /obj/structure/disposalpipe/segment{
 	dir = 4;
 	icon_state = "pipe-c"
@@ -1011,6 +1040,10 @@
 "cQ" = (
 /obj/paint/red,
 /obj/structure/sign/warning/hot_exhaust,
+/obj/machinery/atmospherics/pipe/simple/hidden/fuel{
+	dir = 6;
+	icon_state = "intact"
+	},
 /turf/simulated/wall/r_titanium,
 /area/space)
 "cS" = (
@@ -1018,18 +1051,9 @@
 	dir = 4;
 	icon_state = "pipe-j2"
 	},
-/obj/floor_decal/corner/paleblue/border,
+/obj/floor_decal/corner/blue/border,
 /turf/simulated/floor/tiled/dark,
 /area/phobos/bridge)
-"cT" = (
-/obj/structure/lattice,
-/obj/structure/railing/mapped{
-	dir = 8;
-	icon_state = "railing0-1"
-	},
-/obj/structure/railing/mapped,
-/turf/space,
-/area/space)
 "cV" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/fuel{
 	dir = 4
@@ -1050,7 +1074,8 @@
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
 	dir = 1
 	},
-/turf/simulated/floor/tiled/dark/monotile,
+/obj/catwalk_plated,
+/turf/simulated/floor/plating,
 /area/phobos/hallway)
 "cW" = (
 /obj/structure/table/steel_reinforced,
@@ -1065,6 +1090,7 @@
 	pixel_y = 3
 	},
 /obj/item/book/manual/sol_sop,
+/obj/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/phobos/bridge)
 "cY" = (
@@ -1079,14 +1105,16 @@
 	icon_state = "tube1"
 	},
 /obj/item/device/radio/map_preset/phobos,
-/obj/floor_decal/industrial/hatch/blue,
-/turf/simulated/floor/tiled/dark,
+/obj/floor_decal/corner/blue{
+	dir = 9
+	},
+/turf/simulated/floor/tiled,
 /area/phobos/hallway)
 "cZ" = (
-/obj/floor_decal/corner/red/half{
-	dir = 1
+/obj/floor_decal/corner/red{
+	dir = 5
 	},
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled,
 /area/phobos/hallway)
 "da" = (
 /obj/structure/disposalpipe/segment{
@@ -1151,7 +1179,8 @@
 /obj/structure/window/reinforced{
 	dir = 8
 	},
-/obj/floor_decal/corner/paleblue/mono,
+/obj/floor_decal/corner/blue/mono,
+/obj/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/phobos/bridge)
 "dh" = (
@@ -1176,11 +1205,12 @@
 /obj/machinery/computer/modular/preset/cardslot/command{
 	dir = 4
 	},
-/obj/floor_decal/corner/paleblue/mono,
+/obj/floor_decal/corner/blue/mono,
+/obj/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/phobos/bridge)
 "dm" = (
-/obj/floor_decal/corner/paleblue,
+/obj/floor_decal/corner/blue,
 /turf/simulated/floor/tiled/dark,
 /area/phobos/bridge)
 "dn" = (
@@ -1188,21 +1218,18 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/unary/vent_pump/on,
-/obj/floor_decal/corner/paleblue/half{
-	dir = 4
-	},
 /turf/simulated/floor/tiled/dark,
 /area/phobos/bridge)
 "do" = (
 /obj/machinery/door/airlock/sol{
 	name = "Bridge";
-	secured_wires = 1;
-	welded = 1
+	secured_wires = 1
 	},
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
 /obj/machinery/door/firedoor,
+/obj/floor_decal/industrial/hatch/yellow,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/phobos/bridge)
 "dp" = (
@@ -1214,10 +1241,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/obj/floor_decal/corner/paleblue/half{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled,
 /area/phobos/hallway)
 "dq" = (
 /obj/machinery/shipsensors/upgraded,
@@ -1231,9 +1255,11 @@
 	},
 /area/space)
 "dr" = (
-/obj/item/clothing/accessory/solgov/rank/fleet/officer/o3,
-/turf/simulated/floor/tiled/techfloor,
-/area/phobos/security/detective)
+/obj/floor_decal/corner/paleblue{
+	dir = 10
+	},
+/turf/simulated/floor/tiled,
+/area/phobos/hallway)
 "ds" = (
 /obj/machinery/pointdefense{
 	initial_id_tag = "interceptor_primary_pd"
@@ -1418,7 +1444,8 @@
 /obj/structure/window/reinforced{
 	dir = 8
 	},
-/obj/floor_decal/corner/paleblue/mono,
+/obj/floor_decal/corner/blue/mono,
+/obj/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/phobos/bridge)
 "dG" = (
@@ -1446,18 +1473,6 @@
 /obj/floor_decal/industrial/outline/grey,
 /turf/simulated/floor/tiled/techfloor,
 /area/phobos/engine/thrusterport)
-"dO" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/obj/floor_decal/corner/green/three_quarters{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/white,
-/area/phobos/medbay)
 "dQ" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -1479,11 +1494,14 @@
 	dir = 9
 	},
 /obj/structure/table/rack,
-/obj/item/rig/ert/fleet,
-/obj/item/clothing/accessory/armband/bluegold/away_solpatrol,
 /obj/item/clothing/mask/gas/half,
-/obj/floor_decal/corner/darkblue/mono,
-/obj/item/cell/hyper,
+/obj/item/rig/ert/fleet{
+	req_access = list("ACCESS_PHOBOS")
+	},
+/obj/floor_decal/corner/red/diagonal,
+/obj/floor_decal/corner/orange/diagonal{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/techfloor,
 /area/phobos/security/detective)
 "ef" = (
@@ -1525,7 +1543,8 @@
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
 	dir = 1
 	},
-/turf/simulated/floor/tiled/dark/monotile,
+/obj/catwalk_plated,
+/turf/simulated/floor/plating,
 /area/phobos/hallway)
 "en" = (
 /obj/structure/cable/yellow{
@@ -1546,28 +1565,39 @@
 /obj/structure/catwalk,
 /turf/simulated/floor/airless,
 /area/phobos/engine/solar/starboard)
-"er" = (
-/obj/machinery/sleeper{
-	dir = 4
-	},
-/obj/floor_decal/corner/paleblue/mono,
-/turf/simulated/floor/tiled/white/monotile,
-/area/phobos/medbay)
 "eu" = (
-/obj/floor_decal/corner/green/half,
-/turf/simulated/floor/tiled/dark,
-/area/phobos/hallway)
+/obj/structure/shuttle/engine/heater{
+	dir = 4;
+	pixel_x = -32
+	},
+/obj/structure/window/boron_reinforced,
+/obj/machinery/atmospherics/unary/engine{
+	dir = 8
+	},
+/turf/simulated/floor/reinforced{
+	map_airless = 1
+	},
+/area/space)
 "ew" = (
 /obj/structure/cable/green{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/structure/disposalpipe/segment{
-	dir = 8;
-	icon_state = "pipe-c"
+/obj/structure/disposalpipe/trunk{
+	dir = 8
 	},
-/turf/simulated/floor/tiled/techfloor,
+/obj/machinery/disposal/small{
+	dir = 1;
+	pixel_y = 24
+	},
+/obj/structure/sign/warning/secure_area/armory{
+	pixel_y = 32
+	},
+/obj/floor_decal/corner/red{
+	dir = 5
+	},
+/turf/simulated/floor/tiled,
 /area/phobos/security)
 "ez" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden{
@@ -1585,6 +1615,14 @@
 "eD" = (
 /turf/simulated/floor/tiled/dark,
 /area/phobos/living/mess)
+"eK" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/floor_decal/corner/red{
+	dir = 9
+	},
+/turf/simulated/floor/tiled,
+/area/phobos/security)
 "eL" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -1599,16 +1637,6 @@
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/phobos/hallway/eva)
-"eM" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/obj/floor_decal/corner/green/diagonal,
-/turf/simulated/floor/tiled/white,
-/area/phobos/medbay)
 "eP" = (
 /obj/paint/black,
 /obj/wallframe_spawn/reinforced/titanium,
@@ -1633,7 +1661,6 @@
 /obj/item/modular_computer/telescreen/preset/medical{
 	pixel_x = 32
 	},
-/obj/item/hand_labeler,
 /obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/structure/hygiene/sink{
@@ -1645,7 +1672,6 @@
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
 	dir = 4
 	},
-/obj/floor_decal/corner/green/diagonal,
 /turf/simulated/floor/tiled/white,
 /area/phobos/medbay)
 "eV" = (
@@ -1679,7 +1705,10 @@
 	dir = 4;
 	icon_state = "pipe-c"
 	},
-/turf/simulated/floor/tiled/dark,
+/obj/floor_decal/corner/green{
+	dir = 5
+	},
+/turf/simulated/floor/tiled,
 /area/phobos/hallway)
 "fb" = (
 /obj/machinery/hologram/holopad/longrange,
@@ -1687,26 +1716,36 @@
 /turf/simulated/floor/tiled/dark/monotile,
 /area/phobos/bridge)
 "fc" = (
-/obj/structure/disposalpipe/segment{
-	dir = 4
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
 	},
-/obj/floor_decal/corner/green/diagonal,
-/obj/random/medical,
-/turf/simulated/floor/tiled/white,
-/area/phobos/medbay)
+/obj/machinery/radio_beacon,
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
 "fd" = (
-/obj/structure/disposalpipe/segment{
-	dir = 4
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
 	},
-/obj/floor_decal/corner/green{
-	dir = 10
+/obj/structure/cable{
+	d2 = 4;
+	icon_state = "0-4"
 	},
-/turf/simulated/floor/tiled/white,
-/area/phobos/medbay)
+/obj/machinery/power/apc/hyper{
+	pixel_y = -24
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
 "ff" = (
 /obj/machinery/light{
 	dir = 8;
 	icon_state = "tube1"
+	},
+/obj/floor_decal/corner/green/three_quarters{
+	dir = 8
 	},
 /turf/simulated/floor/tiled,
 /area/phobos/living/hydro)
@@ -1735,7 +1774,9 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/phobos/security)
 "fp" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/cyan,
+/obj/machinery/atmospherics/pipe/manifold/hidden/cyan{
+	dir = 8
+	},
 /turf/simulated/floor/tiled/techfloor,
 /area/space)
 "fr" = (
@@ -1762,9 +1803,9 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/random/trash,
 /obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/submap_landmark/spawnpoint/phobos/senior_doctor,
 /turf/simulated/floor/tiled/white,
 /area/phobos/living)
 "fw" = (
@@ -1776,7 +1817,10 @@
 	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/turf/simulated/floor/tiled/techfloor,
+/obj/floor_decal/corner/red{
+	dir = 9
+	},
+/turf/simulated/floor/tiled,
 /area/phobos/security)
 "fx" = (
 /obj/structure/table/standard,
@@ -1789,9 +1833,7 @@
 /turf/simulated/floor/tiled/white/monotile,
 /area/phobos/medbay/chemistry)
 "fz" = (
-/obj/machinery/door/airlock/highsecurity{
-	name = "Security Armory"
-	},
+/obj/floor_decal/techfloor,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/phobos/security)
 "fA" = (
@@ -1820,8 +1862,7 @@
 	},
 /obj/machinery/atmospherics/valve/shutoff/supply,
 /obj/machinery/atmospherics/valve/shutoff/scrubbers,
-/obj/floor_decal/corner/lime/half,
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled,
 /area/phobos/hallway)
 "fK" = (
 /obj/structure/disposalpipe/segment{
@@ -1832,7 +1873,10 @@
 /turf/simulated/floor/plating,
 /area/phobos/maint/port)
 "fL" = (
-/turf/simulated/floor/tiled/techfloor,
+/obj/floor_decal/corner/red{
+	dir = 6
+	},
+/turf/simulated/floor/tiled,
 /area/phobos/security)
 "fP" = (
 /obj/structure/railing/mapped,
@@ -1867,7 +1911,6 @@
 /obj/structure/ship_munition/disperser_charge/emp,
 /obj/machinery/alarm{
 	dir = 1;
-	icon_state = "alarm0";
 	pixel_y = -22
 	},
 /obj/machinery/atmospherics/unary/vent_pump/on{
@@ -1887,6 +1930,7 @@
 /obj/floor_decal/corner/red/bordercee{
 	dir = 4
 	},
+/obj/floor_decal/industrial/outline/blue,
 /turf/simulated/floor/tiled/techfloor,
 /area/phobos/disperser/storage)
 "fS" = (
@@ -1907,6 +1951,9 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
+/obj/floor_decal/corner/red{
+	dir = 9
+	},
 /turf/simulated/floor/tiled/techfloor,
 /area/phobos/security/lobby)
 "fW" = (
@@ -1925,14 +1972,14 @@
 /turf/simulated/floor/reinforced{
 	map_airless = 1
 	},
-/area/phobos/bridge)
+/area/phobos/disperser)
 "fY" = (
 /obj/structure/disposalpipe/junction{
 	dir = 4;
 	icon_state = "pipe-j1"
 	},
 /obj/machinery/atmospherics/unary/vent_pump/on,
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled,
 /area/phobos/hallway)
 "gb" = (
 /obj/floor_decal/scglogo{
@@ -1969,7 +2016,9 @@
 /turf/simulated/floor/plating,
 /area/phobos/engine/atmos)
 "gl" = (
-/obj/machinery/vending/engivend,
+/obj/machinery/vending/engivend{
+	req_access = list("ACCESS_PHOBOS")
+	},
 /obj/machinery/alarm{
 	pixel_y = 24
 	},
@@ -1982,7 +2031,7 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/floor_decal/corner/paleblue/diagonal,
+/obj/floor_decal/corner/blue/diagonal,
 /turf/simulated/floor/tiled/dark,
 /area/phobos/bridge)
 "gr" = (
@@ -2002,16 +2051,6 @@
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/phobos/disperser)
-"gs" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 9
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 9
-	},
-/obj/floor_decal/corner/green/half,
-/turf/simulated/floor/tiled/dark,
-/area/phobos/hallway)
 "gv" = (
 /obj/structure/hygiene/drain,
 /turf/simulated/floor/tiled/freezer,
@@ -2038,15 +2077,12 @@
 	dir = 8;
 	pixel_x = -24
 	},
-/obj/machinery/light_switch{
-	pixel_x = -23;
-	pixel_y = 25
-	},
 /turf/simulated/floor/tiled/techfloor,
 /area/phobos/engine/thrusterstarboard)
 "gz" = (
 /obj/machinery/atmospherics/unary/tank/hydrogen{
-	start_pressure = 6000
+	start_pressure = 6000;
+	dir = 1
 	},
 /obj/floor_decal/industrial/outline/grey,
 /obj/machinery/light,
@@ -2062,25 +2098,17 @@
 	map_airless = 1
 	},
 /area/phobos/disperser)
-"gD" = (
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/machinery/atmospherics/unary/vent_pump/on{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/techfloor/grid,
-/area/space)
 "gN" = (
 /obj/machinery/light,
+/obj/floor_decal/corner/green{
+	dir = 10
+	},
 /turf/simulated/floor/tiled,
 /area/phobos/living/hydro)
 "gP" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled,
 /area/phobos/hallway)
 "gQ" = (
 /turf/simulated/floor/reinforced{
@@ -2088,7 +2116,9 @@
 	},
 /area/phobos/hallway/eva)
 "gS" = (
-/obj/structure/closet/secure_closet/guncabinet,
+/obj/structure/closet/secure_closet/guncabinet{
+	req_access = list("ACCESS_PHOBOS")
+	},
 /obj/item/gun/energy/laser,
 /obj/item/gun/energy/laser,
 /obj/item/gun/energy/laser,
@@ -2115,6 +2145,12 @@
 /obj/machinery/atmospherics/unary/vent_pump/on,
 /turf/simulated/floor/tiled,
 /area/phobos/engine)
+"gX" = (
+/obj/floor_decal/corner/green{
+	dir = 10
+	},
+/turf/simulated/floor/tiled,
+/area/phobos/hallway)
 "ha" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/fuel,
 /obj/structure/cable/green{
@@ -2124,6 +2160,7 @@
 	},
 /obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/submap_landmark/spawnpoint/phobos/doctor,
 /turf/simulated/floor/tiled/white,
 /area/phobos/living)
 "hb" = (
@@ -2138,7 +2175,8 @@
 /obj/machinery/computer/modular/preset/security{
 	dir = 4
 	},
-/obj/floor_decal/corner/paleblue/mono,
+/obj/floor_decal/corner/blue/mono,
+/obj/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/phobos/bridge)
 "hc" = (
@@ -2146,8 +2184,18 @@
 	pixel_y = 24
 	},
 /obj/machinery/atmospherics/unary/vent_pump/on,
+/obj/floor_decal/techfloor{
+	dir = 1
+	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/phobos/security)
+"he" = (
+/obj/machinery/conveyor{
+	dir = 8;
+	id = "phobos_md_58_con"
+	},
+/turf/simulated/floor,
+/area/phobos/disperser)
 "hi" = (
 /obj/machinery/atmospherics/pipe/manifold/visible/cyan{
 	dir = 4;
@@ -2169,7 +2217,10 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
-/turf/simulated/floor/tiled/techfloor,
+/obj/floor_decal/corner/red{
+	dir = 5
+	},
+/turf/simulated/floor/tiled,
 /area/phobos/security)
 "hv" = (
 /obj/structure/cable/green{
@@ -2188,6 +2239,12 @@
 "hw" = (
 /turf/simulated/wall/prepainted,
 /area/phobos/disperser)
+"hz" = (
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
+	id_tag = "interseptor_shuttle_pump"
+	},
+/turf/simulated/floor/airless,
+/area/phobos/hallway/eva)
 "hE" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -2212,8 +2269,7 @@
 	dir = 2;
 	pixel_y = 24
 	},
-/obj/floor_decal/industrial/hatch/blue,
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled,
 /area/phobos/hallway)
 "hO" = (
 /obj/structure/cable/green{
@@ -2230,7 +2286,7 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/turf/simulated/floor/tiled/techfloor,
+/turf/simulated/floor/tiled,
 /area/phobos/security)
 "hP" = (
 /obj/machinery/computer/air_control{
@@ -2321,7 +2377,7 @@
 /obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/valve/shutoff/supply,
 /obj/machinery/atmospherics/valve/shutoff/scrubbers,
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled,
 /area/phobos/hallway)
 "iq" = (
 /obj/structure/sign/warning/internals_required{
@@ -2351,29 +2407,34 @@
 /area/phobos/engine/atmos)
 "iA" = (
 /obj/structure/cable{
-	d1 = 1;
+	d1 = 4;
 	d2 = 8;
-	icon_state = "1-8"
+	icon_state = "4-8"
 	},
+/obj/machinery/atmospherics/portables_connector{
+	dir = 1
+	},
+/obj/machinery/portable_atmospherics/canister/empty,
+/obj/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/space)
 "iC" = (
 /obj/machinery/alarm{
 	dir = 1;
-	icon_state = "alarm0";
 	pixel_y = -22
 	},
-/obj/floor_decal/corner/green{
-	dir = 5
+/obj/machinery/bodyscanner{
+	dir = 4
 	},
-/turf/simulated/floor/tiled/white,
+/obj/floor_decal/corner/pink/mono,
+/turf/simulated/floor/tiled/white/monotile,
 /area/phobos/medbay)
 "iH" = (
 /obj/machinery/vending/medical{
 	dir = 4;
-	products = list(/obj/item/reagent_containers/glass/bottle/antitoxin = 0, /obj/item/reagent_containers/glass/bottle/inaprovaline = 0, /obj/item/reagent_containers/glass/bottle/stoxin = 1, /obj/item/reagent_containers/syringe/antiviral = 2, /obj/item/reagent_containers/pill/antitox = 1, /obj/item/reagent_containers/syringe = 7, /obj/item/device/scanner/health = 1, /obj/item/reagent_containers/glass/beaker = 1, /obj/item/reagent_containers/dropper = 2, /obj/item/stack/medical/advanced/bruise_pack = 0, /obj/item/stack/medical/advanced/ointment = 0, /obj/item/stack/medical/splint = 0, /obj/item/reagent_containers/hypospray/autoinjector/pain = 0)
+	products = list(/obj/item/reagent_containers/glass/bottle/antitoxin = 0, /obj/item/reagent_containers/glass/bottle/inaprovaline = 0, /obj/item/reagent_containers/glass/bottle/stoxin = 1, /obj/item/reagent_containers/syringe/antiviral = 2, /obj/item/reagent_containers/pill/antitox = 1, /obj/item/reagent_containers/syringe = 7, /obj/item/device/scanner/health = 1, /obj/item/reagent_containers/glass/beaker = 1, /obj/item/reagent_containers/dropper = 2, /obj/item/stack/medical/advanced/bruise_pack = 0, /obj/item/stack/medical/advanced/ointment = 0, /obj/item/stack/medical/splint = 0, /obj/item/reagent_containers/hypospray/autoinjector/pain = 0);
+	req_access = list("ACCESS_PHOBOS")
 	},
-/obj/floor_decal/corner/paleblue/diagonal,
 /turf/simulated/floor/tiled/white,
 /area/phobos/medbay)
 "iJ" = (
@@ -2391,7 +2452,7 @@
 /obj/structure/ship_munition/ap_slug{
 	dir = 8
 	},
-/turf/simulated/floor/airless,
+/turf/simulated/floor,
 /area/phobos/disperser)
 "iS" = (
 /obj/machinery/porta_turret{
@@ -2416,10 +2477,25 @@
 /turf/simulated/floor/tiled/dark,
 /area/phobos/bridge)
 "iV" = (
-/obj/machinery/smartfridge/secure/medbay,
+/obj/machinery/smartfridge/secure/medbay{
+	req_access = list("ACCESS_PHOBOS")
+	},
 /obj/machinery/door/firedoor,
 /turf/simulated/floor/plating,
 /area/phobos/medbay/chemistry)
+"iZ" = (
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/machinery/firealarm{
+	dir = 2;
+	pixel_y = 24
+	},
+/obj/floor_decal/corner/red{
+	dir = 5
+	},
+/turf/simulated/floor/tiled,
+/area/phobos/hallway)
 "ja" = (
 /obj/machinery/computer/ship/engines{
 	dir = 8
@@ -2429,10 +2505,11 @@
 	d2 = 8;
 	icon_state = "2-8"
 	},
+/obj/machinery/atmospherics/pipe/manifold/hidden/fuel,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/space)
 "jb" = (
-/obj/floor_decal/corner/paleblue/border{
+/obj/floor_decal/corner/blue/border{
 	dir = 4
 	},
 /obj/overmap/visitable/ship/phobos,
@@ -2477,20 +2554,25 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/light,
-/obj/item/ammo_casing/rifle/used,
 /obj/machinery/atmospherics/valve/shutoff/supply{
 	dir = 4
 	},
 /obj/machinery/atmospherics/valve/shutoff/scrubbers{
 	dir = 4
 	},
-/turf/simulated/floor/tiled/dark,
+/obj/floor_decal/corner/green{
+	dir = 10
+	},
+/turf/simulated/floor/tiled,
 /area/phobos/hallway)
 "jj" = (
 /obj/machinery/newscaster{
 	pixel_y = 32
 	},
-/turf/simulated/floor/tiled/dark,
+/obj/floor_decal/corner/yellow{
+	dir = 5
+	},
+/turf/simulated/floor/tiled,
 /area/phobos/hallway)
 "jl" = (
 /obj/machinery/pointdefense{
@@ -2555,14 +2637,13 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/fuel{
 	dir = 4
 	},
-/obj/item/clothing/accessory/solgov/rank/fleet/enlisted/e6,
 /turf/simulated/floor/tiled,
 /area/phobos/engine)
 "jx" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/obj/floor_decal/corner/paleblue/border,
+/obj/floor_decal/corner/blue/border,
 /turf/simulated/floor/tiled/dark,
 /area/phobos/bridge)
 "jy" = (
@@ -2590,10 +2671,29 @@
 /obj/structure/hygiene/sink/kitchen{
 	pixel_y = -32
 	},
+/obj/floor_decal/corner/green{
+	dir = 10
+	},
 /turf/simulated/floor/tiled,
 /area/phobos/living/hydro)
+"jC" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/floor_decal/corner/pink{
+	dir = 10
+	},
+/turf/simulated/floor/tiled/white,
+/area/phobos/medbay)
 "jF" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/submap_landmark/spawnpoint/phobos/engineer,
+/obj/machinery/light{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/white,
 /area/phobos/living)
 "jI" = (
@@ -2619,22 +2719,11 @@
 /obj/random/tech_supply,
 /obj/structure/railing/mapped,
 /obj/machinery/alarm{
-	pixel_y = 24
+	pixel_y = 24;
+	req_access = list(ACCESS_PHOBOS)
 	},
 /turf/simulated/floor/plating,
 /area/phobos/maint/port)
-"jL" = (
-/obj/machinery/ion_engine{
-	dir = 8
-	},
-/obj/structure/shuttle/engine/heater{
-	dir = 4;
-	pixel_x = -32
-	},
-/turf/simulated/floor/reinforced{
-	map_airless = 1
-	},
-/area/space)
 "jQ" = (
 /obj/floor_decal/spline/fancy/wood{
 	dir = 1
@@ -2672,9 +2761,7 @@
 	pixel_y = 6
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/floor_decal/corner/paleblue/half{
-	dir = 4
-	},
+/obj/submap_landmark/joinable_submap/phobos,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/phobos/bridge)
 "kc" = (
@@ -2717,7 +2804,6 @@
 	pixel_y = -32
 	},
 /obj/structure/table/woodentable_reinforced/ebony/walnut,
-/obj/item/clothing/accessory/inf_pin/scgpin,
 /turf/simulated/floor/wood/walnut,
 /area/phobos/bridge/co_office)
 "kx" = (
@@ -2729,6 +2815,9 @@
 /obj/machinery/light{
 	dir = 1;
 	icon_state = "tube1"
+	},
+/obj/structure/window/reinforced{
+	dir = 8
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/phobos/security/lobby)
@@ -2744,6 +2833,7 @@
 /obj/structure/ship_munition/ap_slug{
 	dir = 8
 	},
+/obj/floor_decal/industrial/outline/grey,
 /turf/simulated/floor/tiled/techfloor,
 /area/phobos/disperser/storage)
 "kC" = (
@@ -2783,13 +2873,10 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/space)
 "kF" = (
-/obj/floor_decal/industrial/outline/blue,
-/obj/machinery/portable_atmospherics/canister/air,
-/obj/machinery/atmospherics/portables_connector{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/techfloor/grid,
-/area/space)
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/submap_landmark/spawnpoint/phobos/officer,
+/turf/simulated/floor/tiled/white,
+/area/phobos/living)
 "kG" = (
 /obj/machinery/atmospherics/portables_connector,
 /obj/machinery/portable_atmospherics/canister/air/airlock,
@@ -2812,7 +2899,10 @@
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 4
 	},
-/turf/simulated/floor/tiled/techfloor,
+/obj/floor_decal/corner/red{
+	dir = 9
+	},
+/turf/simulated/floor/tiled,
 /area/phobos/security)
 "kR" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden{
@@ -2843,6 +2933,9 @@
 	name = "west bump";
 	pixel_x = -24
 	},
+/obj/floor_decal/corner/green{
+	dir = 9
+	},
 /turf/simulated/floor/tiled,
 /area/phobos/living/hydro)
 "lb" = (
@@ -2851,7 +2944,7 @@
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
 	dir = 1
 	},
-/turf/simulated/floor/tiled/dark/monotile,
+/turf/simulated/floor/tiled,
 /area/phobos/hallway)
 "lc" = (
 /obj/structure/railing/mapped{
@@ -2869,12 +2962,7 @@
 /obj/structure/ship_munition/disperser_charge/fire/military,
 /obj/structure/ship_munition/disperser_charge/fire/military,
 /obj/structure/ship_munition/disperser_charge/fire/military,
-/obj/structure/ship_munition/disperser_charge/fire/military{
-	pixel_y = 10
-	},
-/obj/structure/ship_munition/disperser_charge/fire/military{
-	pixel_y = -10
-	},
+/obj/floor_decal/industrial/outline/orange,
 /turf/simulated/floor/tiled/techfloor,
 /area/phobos/disperser/storage)
 "lg" = (
@@ -2960,6 +3048,9 @@
 	d2 = 4;
 	icon_state = "1-4"
 	},
+/obj/machinery/atmospherics/pipe/simple/hidden/cyan{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/space)
 "lw" = (
@@ -2982,15 +3073,14 @@
 	pixel_x = 0;
 	pixel_y = 24
 	},
-/turf/simulated/floor/tiled/techfloor,
+/obj/floor_decal/corner/red/three_quarters{
+	dir = 8
+	},
+/turf/simulated/floor/tiled,
 /area/phobos/security)
 "lA" = (
 /obj/machinery/atmospherics/pipe/simple/visible/green{
 	dir = 5
-	},
-/obj/machinery/light_switch{
-	pixel_x = -24;
-	pixel_y = -6
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 6
@@ -3017,14 +3107,15 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
-/turf/simulated/floor/tiled/dark/monotile,
+/obj/floor_decal/industrial/hatch/yellow,
+/turf/simulated/floor/tiled/monotile,
 /area/phobos/hallway)
 "lC" = (
 /obj/machinery/atmospherics/pipe/manifold/visible/green,
 /obj/machinery/alarm{
 	dir = 1;
-	icon_state = "alarm0";
-	pixel_y = -22
+	pixel_y = -22;
+	req_access = list(ACCESS_PHOBOS)
 	},
 /obj/machinery/meter,
 /obj/structure/railing/mapped{
@@ -3052,7 +3143,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
-/turf/simulated/floor/tiled/dark/monotile,
+/turf/simulated/floor/tiled,
 /area/phobos/hallway)
 "lE" = (
 /obj/structure/cable/green{
@@ -3129,19 +3220,11 @@
 /turf/simulated/floor/plating,
 /area/phobos/engine/thrusterport)
 "lS" = (
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
+	id_tag = "interseptor_shuttle_pump"
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/dark,
-/area/phobos/hallway)
+/turf/simulated/floor/airless,
+/area/space)
 "lT" = (
 /turf/simulated/wall/prepainted,
 /area/phobos/security/equipment)
@@ -3201,32 +3284,65 @@
 /turf/simulated/floor/tiled/monotile,
 /area/phobos/security/equipment)
 "mn" = (
+/obj/machinery/light,
+/obj/item/gun/projectile/pistol/m19,
+/obj/item/clothing/head/beret/solgov/fleet/medical,
+/obj/item/clothing/under/solgov/utility/fleet/combat/medical,
+/obj/item/clothing/under/solgov/utility/fleet/polopants/medical,
+/obj/item/clothing/accessory/solgov/department/medical/fleet,
+/obj/item/clothing/suit/storage/jacket/solgov/fleet/medical,
+/obj/item/clothing/accessory/storage/holster/thigh,
+/obj/item/device/flashlight/upgraded,
+/obj/item/ammo_magazine/pistol,
+/obj/item/clothing/glasses/hud/health/goggle,
+/obj/item/clothing/gloves/thick/duty/solgov/med,
+/obj/item/clothing/gloves/latex,
+/obj/item/clothing/gloves/latex/nitrile,
+/obj/item/clothing/suit/armor/pcarrier/navy,
+/obj/item/clothing/accessory/armor_tag/solgov/fleet,
+/obj/item/clothing/accessory/armor_tag/solgov/medic,
+/obj/item/clothing/accessory/armor_plate/medium,
+/obj/item/clothing/head/helmet/solgov,
+/obj/item/clothing/accessory/helmet_cover/navy,
+/obj/item/clothing/accessory/solgov/fleet_patch/third,
 /obj/structure/cable/green{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/machinery/light,
-/obj/floor_decal/corner/green/diagonal,
+/obj/structure/closet/secure_closet/medical3{
+	req_access = list("ACCESS_PHOBOS")
+	},
+/obj/floor_decal/corner/paleblue{
+	dir = 10
+	},
+/obj/floor_decal/corner/paleblue{
+	dir = 5
+	},
 /turf/simulated/floor/tiled/white,
 /area/phobos/medbay)
 "mo" = (
-/obj/floor_decal/corner/paleblue/diagonal,
-/turf/simulated/floor/tiled/white,
+/obj/machinery/body_scanconsole{
+	dir = 4
+	},
+/obj/floor_decal/corner/pink/mono,
+/turf/simulated/floor/tiled/white/monotile,
 /area/phobos/medbay)
 "mq" = (
-/obj/structure/railing/mapped{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	dir = 1;
-	icon_state = "railing0-1"
+	id_tag = "interseptor_shuttle_pump"
 	},
-/obj/structure/lattice,
-/turf/space,
+/turf/simulated/floor/airless,
 /area/space)
 "mr" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 1
 	},
-/turf/simulated/floor/tiled/dark,
+/obj/floor_decal/corner/green{
+	dir = 10
+	},
+/turf/simulated/floor/tiled,
 /area/phobos/hallway)
 "mt" = (
 /obj/item/airalarm_electronics,
@@ -3250,7 +3366,8 @@
 	dir = 4
 	},
 /obj/machinery/door/firedoor,
-/turf/simulated/floor/tiled/dark/monotile,
+/obj/floor_decal/industrial/hatch/yellow,
+/turf/simulated/floor/tiled/monotile,
 /area/phobos/hallway)
 "mv" = (
 /obj/machinery/disposal,
@@ -3269,14 +3386,12 @@
 	d2 = 8;
 	icon_state = "2-8"
 	},
-/obj/structure/closet/emcloset,
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/item/device/radio/map_preset/phobos,
-/obj/item/storage/med_pouch/radiation,
+/obj/structure/closet/radiation,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/phobos/engine/atmos)
 "mz" = (
@@ -3327,6 +3442,9 @@
 	icon_state = "tube1"
 	},
 /obj/structure/disposalpipe/trunk,
+/obj/structure/sign/warning/secure_area/armory{
+	pixel_y = 32
+	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/phobos/bridge)
 "mI" = (
@@ -3346,7 +3464,9 @@
 /obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/turf/simulated/floor/tiled/dark,
+/obj/structure/table/reinforced,
+/obj/item/material/bell,
+/turf/simulated/floor/tiled,
 /area/phobos/medbay)
 "mK" = (
 /obj/machinery/atmospherics/pipe/simple/visible/fuel,
@@ -3357,6 +3477,12 @@
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/phobos/engine/thrusterstarboard)
+"mP" = (
+/obj/floor_decal/corner/red{
+	dir = 5
+	},
+/turf/simulated/floor/tiled,
+/area/phobos/security)
 "mR" = (
 /obj/structure/table/standard,
 /obj/structure/window/reinforced{
@@ -3373,6 +3499,13 @@
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/phobos/medbay)
+"mT" = (
+/obj/machinery/light,
+/obj/floor_decal/corner/green{
+	dir = 10
+	},
+/turf/simulated/floor/tiled,
+/area/phobos/hallway)
 "mV" = (
 /obj/machinery/power/smes/buildable/preset/patrol/shuttle,
 /obj/structure/cable,
@@ -3467,7 +3600,6 @@
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 1
 	},
-/obj/floor_decal/corner/paleblue/diagonal,
 /turf/simulated/floor/tiled/white,
 /area/phobos/medbay)
 "ne" = (
@@ -3476,7 +3608,10 @@
 /area/phobos/living)
 "nk" = (
 /obj/machinery/atmospherics/unary/vent_pump/on,
-/turf/simulated/floor/tiled/dark,
+/obj/floor_decal/corner/yellow{
+	dir = 5
+	},
+/turf/simulated/floor/tiled,
 /area/phobos/hallway)
 "nl" = (
 /turf/simulated/wall/r_wall/hull,
@@ -3559,6 +3694,7 @@
 /obj/machinery/computer/ship/engines{
 	dir = 1
 	},
+/obj/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/phobos/bridge)
 "nQ" = (
@@ -3624,13 +3760,18 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/turf/simulated/floor/tiled/dark,
+/obj/floor_decal/corner/red{
+	dir = 5
+	},
+/turf/simulated/floor/tiled,
 /area/phobos/hallway)
 "oc" = (
-/obj/floor_decal/corner/green/half{
-	dir = 4
+/obj/structure/window/reinforced{
+	dir = 1
 	},
-/turf/simulated/floor/tiled/dark,
+/obj/structure/table/reinforced,
+/obj/item/reagent_containers/spray/cleaner,
+/turf/simulated/floor/tiled,
 /area/phobos/medbay)
 "od" = (
 /obj/machinery/hologram/holopad,
@@ -3644,7 +3785,8 @@
 	pixel_y = 24
 	},
 /obj/machinery/door/firedoor,
-/turf/simulated/floor/tiled/dark,
+/obj/floor_decal/industrial/hatch/yellow,
+/turf/simulated/floor/tiled/monotile,
 /area/phobos/hallway)
 "oj" = (
 /obj/machinery/conveyor{
@@ -3655,7 +3797,7 @@
 	dir = 8;
 	icon_state = "pipe-c"
 	},
-/turf/simulated/floor/airless,
+/turf/simulated/floor,
 /area/phobos/disperser)
 "ol" = (
 /obj/structure/cable/green{
@@ -3663,23 +3805,19 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/structure/table/rack,
-/obj/item/rig_module/vision/nvg,
-/obj/item/rig_module/vision/nvg,
-/obj/item/rig_module/vision/nvg,
-/obj/item/rig_module/power_sink,
-/obj/item/rig_module/power_sink,
-/obj/item/rig_module/power_sink,
-/obj/item/rig_module/cooling_unit,
-/obj/item/rig_module/cooling_unit,
-/obj/item/rig_module/cooling_unit,
-/obj/item/rig_module/device/healthscanner,
-/obj/floor_decal/corner/red/full,
+/obj/machinery/light{
+	dir = 8;
+	icon_state = "tube1"
+	},
+/obj/machinery/suit_storage_unit/security/alt{
+	req_access = list("ACCESS_PHOBOS")
+	},
 /turf/simulated/floor/tiled/techfloor,
 /area/phobos/security/detective)
 "on" = (
 /obj/machinery/alarm{
-	pixel_y = 24
+	pixel_y = 24;
+	req_access = list(ACCESS_PHOBOS)
 	},
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 4
@@ -3720,9 +3858,6 @@
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
 	dir = 1
 	},
-/obj/floor_decal/corner/paleblue/half{
-	dir = 4
-	},
 /turf/simulated/floor/tiled/dark,
 /area/phobos/bridge)
 "os" = (
@@ -3737,7 +3872,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 9
 	},
-/obj/floor_decal/corner/paleblue/border{
+/obj/floor_decal/corner/blue/border{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/dark,
@@ -3764,6 +3899,7 @@
 "ou" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
+/obj/floor_decal/techfloor,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/phobos/security)
 "ov" = (
@@ -3774,7 +3910,8 @@
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
 	dir = 1
 	},
-/turf/simulated/floor/tiled/dark/monotile,
+/obj/catwalk_plated,
+/turf/simulated/floor/plating,
 /area/phobos/hallway)
 "oE" = (
 /obj/structure/table/standard,
@@ -3806,13 +3943,14 @@
 /turf/simulated/floor/wood/ebony,
 /area/phobos/living/mess)
 "oJ" = (
-/obj/machinery/ion_engine{
-	dir = 8
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
 	},
-/turf/simulated/floor/reinforced{
-	map_airless = 1
-	},
-/area/phobos/engine/thrusterport)
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/turf/simulated/floor/tiled/techfloor,
+/area/space)
 "oK" = (
 /obj/structure/table/steel,
 /obj/item/paper_bin{
@@ -3855,6 +3993,7 @@
 /obj/structure/table/standard,
 /obj/item/modular_computer/pda/chemistry,
 /obj/floor_decal/corner/beige/mono,
+/obj/item/clothing/suit/storage/toggle/labcoat/chemist,
 /turf/simulated/floor/tiled/white/monotile,
 /area/phobos/medbay/chemistry)
 "oQ" = (
@@ -3885,12 +4024,6 @@
 /obj/paint/dark_gunmetal,
 /turf/simulated/floor/plating,
 /area/phobos/living/hydro)
-"pb" = (
-/obj/structure/sign/solgov{
-	pixel_x = -32
-	},
-/turf/space,
-/area/space)
 "pf" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -3899,7 +4032,10 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/turf/simulated/floor/tiled/dark,
+/obj/floor_decal/corner/red{
+	dir = 5
+	},
+/turf/simulated/floor/tiled,
 /area/phobos/hallway)
 "pg" = (
 /obj/structure/sign/directions/infm{
@@ -3914,6 +4050,10 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
+	},
+/obj/floor_decal/industrial/hatch/yellow,
+/obj/machinery/door/airlock/glass/medical{
+	name = "Infrimary"
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/phobos/medbay)
@@ -3974,6 +4114,7 @@
 	d2 = 8;
 	icon_state = "0-8"
 	},
+/obj/machinery/atmospherics/pipe/simple/hidden/fuel,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/space)
 "pB" = (
@@ -3996,13 +4137,15 @@
 	dir = 1
 	},
 /obj/item/device/radio/map_preset/phobos,
+/obj/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/phobos/bridge)
 "pD" = (
 /obj/machinery/door/firedoor,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/turf/simulated/floor/tiled/techfloor,
+/obj/floor_decal/industrial/hatch/yellow,
+/turf/simulated/floor/tiled/monotile,
 /area/phobos/security)
 "pG" = (
 /obj/machinery/door/airlock/maintenance{
@@ -4048,7 +4191,8 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
-/turf/simulated/floor/tiled/dark/monotile,
+/obj/catwalk_plated,
+/turf/simulated/floor/plating,
 /area/phobos/hallway)
 "pL" = (
 /turf/simulated/wall/prepainted,
@@ -4068,14 +4212,11 @@
 	dir = 8;
 	pixel_x = -24
 	},
-/obj/structure/hygiene/sink{
-	dir = 8;
-	icon_state = "sink";
-	pixel_x = -12;
-	pixel_y = 2
+/obj/machinery/sleeper{
+	dir = 4
 	},
-/obj/floor_decal/corner/green/diagonal,
-/turf/simulated/floor/tiled/white,
+/obj/floor_decal/corner/paleblue/mono,
+/turf/simulated/floor/tiled/white/monotile,
 /area/phobos/medbay)
 "pS" = (
 /obj/item/device/radio/intercom/map_preset/phobos{
@@ -4170,15 +4311,10 @@
 	color = "#aa5f61"
 	},
 /obj/structure/ship_munition/disperser_charge/emp,
-/obj/structure/ship_munition/disperser_charge/emp{
-	pixel_y = 10
-	},
-/obj/structure/ship_munition/disperser_charge/emp{
-	pixel_y = -10
-	},
 /obj/machinery/light/small/red{
 	dir = 1
 	},
+/obj/floor_decal/industrial/outline/blue,
 /turf/simulated/floor/tiled/techfloor,
 /area/phobos/disperser/storage)
 "qo" = (
@@ -4210,10 +4346,10 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/cyan{
-	dir = 9
-	},
 /obj/machinery/hologram/holopad/longrange,
+/obj/machinery/atmospherics/pipe/manifold/hidden/cyan{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/techfloor,
 /area/space)
 "qw" = (
@@ -4261,12 +4397,14 @@
 	icon_state = "pipe-c"
 	},
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
-/turf/simulated/floor/plating,
+/obj/floor_decal/corner/red{
+	dir = 5
+	},
+/turf/simulated/floor/tiled,
 /area/phobos/security)
 "qD" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/floor_decal/corner/green/diagonal,
 /turf/simulated/floor/tiled/white,
 /area/phobos/medbay)
 "qF" = (
@@ -4282,7 +4420,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
-/obj/floor_decal/corner/green/diagonal,
 /turf/simulated/floor/tiled/white,
 /area/phobos/medbay)
 "qG" = (
@@ -4300,8 +4437,6 @@
 	dir = 1;
 	icon_state = "term"
 	},
-/obj/item/clothing/head/radiation,
-/obj/item/clothing/suit/radiation,
 /obj/structure/catwalk,
 /turf/simulated/floor/plating,
 /area/phobos/engine/atmos)
@@ -4335,6 +4470,7 @@
 	icon_state = "railing0-1"
 	},
 /obj/machinery/light/small/red,
+/obj/floor_decal/industrial/outline/grey,
 /turf/simulated/floor/tiled/techfloor,
 /area/phobos/disperser/storage)
 "qQ" = (
@@ -4342,7 +4478,7 @@
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 1
 	},
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled,
 /area/phobos/hallway)
 "qR" = (
 /turf/simulated/floor/tiled/techmaint,
@@ -4356,22 +4492,10 @@
 /obj/structure/catwalk,
 /turf/simulated/floor/plating,
 /area/phobos/maint/port)
-"qU" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/obj/floor_decal/corner/green/three_quarters{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/white,
-/area/phobos/medbay)
 "qX" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/turf/simulated/floor/tiled/techfloor,
+/turf/simulated/floor/tiled,
 /area/phobos/security)
 "qY" = (
 /obj/structure/sign/warning/lethal_turrets,
@@ -4381,6 +4505,9 @@
 /obj/machinery/light{
 	dir = 4;
 	icon_state = "tube1"
+	},
+/obj/floor_decal/corner/green/three_quarters{
+	dir = 1
 	},
 /turf/simulated/floor/tiled,
 /area/phobos/living/hydro)
@@ -4404,6 +4531,7 @@
 	},
 /obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/submap_landmark/spawnpoint/phobos,
 /turf/simulated/floor/tiled/white,
 /area/phobos/living)
 "rj" = (
@@ -4413,9 +4541,13 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 6
 	},
-/turf/simulated/floor/tiled/dark/monotile,
+/obj/catwalk_plated,
+/turf/simulated/floor/plating,
 /area/phobos/hallway)
 "rk" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/cyan{
+	dir = 5
+	},
 /turf/simulated/floor/tiled/techfloor,
 /area/space)
 "rm" = (
@@ -4517,24 +4649,26 @@
 	dir = 1;
 	pixel_y = -31
 	},
-/turf/simulated/floor/tiled/techfloor,
+/obj/floor_decal/corner/red{
+	dir = 10
+	},
+/turf/simulated/floor/tiled,
 /area/phobos/security)
 "rI" = (
-/obj/structure/catwalk,
 /obj/structure/cable/green{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
-	dir = 4;
-	id_tag = "skipjack_shuttle_pump"
+/obj/machinery/atmospherics/pipe/manifold/hidden/cyan{
+	dir = 8
 	},
+/obj/structure/catwalk,
 /turf/simulated/floor/plating,
 /area/space)
 "rJ" = (
-/obj/random/trash,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/submap_landmark/spawnpoint/phobos/engineer,
 /turf/simulated/floor/tiled/white,
 /area/phobos/living)
 "rK" = (
@@ -4544,6 +4678,7 @@
 /obj/structure/disposalpipe/segment,
 /obj/machinery/door/firedoor,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/floor_decal/industrial/hatch/yellow,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/phobos/living/mess)
 "rN" = (
@@ -4564,15 +4699,14 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/obj/floor_decal/corner/green/diagonal,
 /turf/simulated/floor/tiled/white,
 /area/phobos/medbay)
 "rT" = (
-/obj/floor_decal/corner/green/half{
-	dir = 8
+/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
+	dir = 4
 	},
-/turf/simulated/floor/tiled/dark,
-/area/phobos/hallway)
+/turf/simulated/floor/tiled/techfloor,
+/area/space)
 "rU" = (
 /obj/structure/cable/yellow{
 	d1 = 1;
@@ -4618,7 +4752,7 @@
 "se" = (
 /obj/machinery/atmospherics/pipe/manifold4w/hidden/supply,
 /obj/machinery/atmospherics/pipe/manifold4w/hidden/scrubbers,
-/turf/simulated/floor/tiled/techfloor,
+/turf/simulated/floor/tiled,
 /area/phobos/security)
 "si" = (
 /obj/structure/catwalk,
@@ -4653,18 +4787,21 @@
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 4
 	},
-/obj/machinery/body_scanconsole{
-	dir = 8
-	},
-/obj/floor_decal/corner/paleblue/mono,
-/turf/simulated/floor/tiled/white/monotile,
+/turf/simulated/floor/tiled/white,
 /area/phobos/medbay)
 "sm" = (
-/obj/structure/table/rack,
-/obj/floor_decal/industrial/outline/red,
+/obj/machinery/atmospherics/unary/vent_pump/on{
+	dir = 4
+	},
+/obj/structure/closet/secure_closet/guncabinet/phobos,
+/obj/item/storage/box/ammo/light_bullpup,
 /obj/item/gun/projectile/automatic/bullpup_rifle/light,
-/obj/item/storage/box/ammo/light_bullpup,
-/obj/item/storage/box/ammo/light_bullpup,
+/obj/floor_decal/techfloor{
+	dir = 9
+	},
+/obj/machinery/light/small{
+	dir = 8
+	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/phobos/security)
 "so" = (
@@ -4680,14 +4817,20 @@
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,
-/turf/simulated/floor/tiled/dark/monotile,
+/obj/catwalk_plated,
+/turf/simulated/floor/plating,
 /area/phobos/hallway)
+"st" = (
+/obj/floor_decal/corner/green{
+	dir = 5
+	},
+/turf/simulated/floor/tiled,
+/area/phobos/living/hydro)
 "su" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 4
 	},
 /obj/floor_decal/corner/red/diagonal,
-/obj/item/clothing/accessory/solgov/rank/fleet/enlisted/e5,
 /turf/simulated/floor/tiled,
 /area/phobos/security/equipment)
 "sv" = (
@@ -4699,15 +4842,9 @@
 /obj/machinery/newscaster{
 	pixel_x = -32
 	},
-/obj/structure/table/rack,
-/obj/item/rig_module/chem_dispenser/combat,
-/obj/item/rig_module/chem_dispenser/combat,
-/obj/item/rig_module/chem_dispenser/combat,
-/obj/item/rig_module/maneuvering_jets,
-/obj/item/rig_module/maneuvering_jets,
-/obj/item/rig_module/maneuvering_jets,
-/obj/item/rig_module/device/flash/advanced,
-/obj/floor_decal/corner/red/full,
+/obj/machinery/suit_storage_unit/security/alt{
+	req_access = list("ACCESS_PHOBOS")
+	},
 /turf/simulated/floor/tiled/techfloor,
 /area/phobos/security/detective)
 "sw" = (
@@ -4730,16 +4867,19 @@
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/phobos/maint/port)
-"sB" = (
-/obj/structure/lattice,
-/obj/structure/railing/mapped,
-/turf/space,
-/area/space)
+"sz" = (
+/obj/structure/disposaloutlet,
+/obj/structure/disposalpipe/trunk,
+/turf/simulated/floor,
+/area/phobos/disperser)
 "sC" = (
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
+	},
+/obj/floor_decal/corner/red{
+	dir = 9
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/phobos/security/lobby)
@@ -4750,7 +4890,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/turf/simulated/floor/tiled/dark/monotile,
+/turf/simulated/floor/tiled,
 /area/phobos/hallway)
 "sG" = (
 /obj/machinery/atmospherics/unary/engine{
@@ -4762,7 +4902,6 @@
 "sH" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
-/obj/floor_decal/corner/orange/diagonal,
 /turf/simulated/floor/tiled/dark,
 /area/phobos/security)
 "sJ" = (
@@ -4773,7 +4912,7 @@
 /obj/structure/ship_munition/ap_slug{
 	dir = 8
 	},
-/turf/simulated/floor/airless,
+/turf/simulated/floor,
 /area/phobos/disperser)
 "sK" = (
 /obj/structure/cable/green{
@@ -4806,12 +4945,17 @@
 	d2 = 4;
 	icon_state = "2-4"
 	},
-/obj/floor_decal/corner/green/diagonal,
+/obj/floor_decal/corner/pink{
+	dir = 9
+	},
 /turf/simulated/floor/tiled/white,
 /area/phobos/medbay)
 "sT" = (
-/turf/simulated/floor/tiled/dark,
-/area/phobos/medbay)
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 10
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/space)
 "sU" = (
 /obj/machinery/atmospherics/unary/tank/oxygen{
 	dir = 4
@@ -4865,9 +5009,11 @@
 	dir = 2;
 	pixel_y = 24
 	},
-/obj/floor_decal/corner/green/diagonal,
 /obj/structure/iv_stand,
 /obj/structure/roller_bed,
+/obj/floor_decal/spline/plain/blue{
+	dir = 10
+	},
 /turf/simulated/floor/tiled/white,
 /area/phobos/medbay)
 "tn" = (
@@ -4882,6 +5028,7 @@
 /obj/machinery/door/firedoor,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/floor_decal/industrial/hatch/yellow,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/phobos/living/bunk)
 "tr" = (
@@ -4891,7 +5038,10 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
-/turf/simulated/floor/tiled/techfloor,
+/obj/floor_decal/corner/red{
+	dir = 10
+	},
+/turf/simulated/floor/tiled,
 /area/phobos/security)
 "tv" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/fuel{
@@ -4936,13 +5086,8 @@
 	init_color = "#aa5f61";
 	color = "#aa5f61"
 	},
-/obj/structure/ship_munition/disperser_charge/explosive/military{
-	pixel_y = 10
-	},
 /obj/structure/ship_munition/disperser_charge/explosive/military,
-/obj/structure/ship_munition/disperser_charge/explosive/military{
-	pixel_y = -10
-	},
+/obj/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/techfloor,
 /area/phobos/disperser/storage)
 "tE" = (
@@ -4982,10 +5127,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/floor_decal/corner/yellow/half{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled,
 /area/phobos/hallway)
 "tR" = (
 /obj/machinery/atmospherics/pipe/manifold/visible/fuel{
@@ -5053,6 +5195,11 @@
 "ue" = (
 /obj/machinery/telecomms/receiver/map_preset/phobos,
 /obj/floor_decal/industrial/outline/yellow,
+/obj/machinery/alarm{
+	dir = 8;
+	pixel_x = 24;
+	req_access = list(ACCESS_PHOBOS)
+	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/phobos/ven)
 "uf" = (
@@ -5101,6 +5248,10 @@
 "un" = (
 /obj/structure/table/steel,
 /obj/item/modular_computer/tablet/lease/preset/command,
+/obj/machinery/light{
+	dir = 4;
+	icon_state = "tube1"
+	},
 /turf/simulated/floor/tiled/techfloor,
 /area/phobos/security/detective)
 "up" = (
@@ -5114,19 +5265,16 @@
 /area/phobos/engine/solar/starboard)
 "uq" = (
 /obj/structure/bed/padded,
-/obj/floor_decal/corner/orange/diagonal,
 /turf/simulated/floor/tiled/dark,
 /area/phobos/security)
 "ur" = (
-/obj/structure/bed/chair/padded/blue{
-	dir = 1;
-	icon_state = "chair_preview"
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
+/obj/machinery/atmospherics/pipe/manifold/visible{
+	dir = 8
 	},
 /obj/floor_decal/corner/paleblue/diagonal,
-/obj/item/clothing/accessory/solgov/rank/fleet/officer/o2,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 6
+	},
 /turf/simulated/floor/tiled/white,
 /area/phobos/medbay)
 "us" = (
@@ -5134,14 +5282,8 @@
 /area/phobos/security/questioning)
 "uw" = (
 /obj/floor_decal/corner/red/diagonal,
-/obj/item/clothing/accessory/solgov/rank/fleet/enlisted/e5,
 /turf/simulated/floor/tiled,
 /area/phobos/security/equipment)
-"uA" = (
-/obj/structure/sign/warning/lethal_turrets,
-/obj/paint/red,
-/turf/simulated/wall/r_wall/hull,
-/area/phobos/engine/thrusterstarboard)
 "uB" = (
 /obj/item/stack/material/steel{
 	amount = 50
@@ -5232,7 +5374,8 @@
 /obj/machinery/computer/modular/preset/cardslot/command{
 	dir = 4
 	},
-/obj/floor_decal/corner/paleblue/mono,
+/obj/floor_decal/corner/blue/mono,
+/obj/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/phobos/bridge)
 "vc" = (
@@ -5245,8 +5388,11 @@
 /turf/simulated/floor/tiled/freezer,
 /area/phobos/living)
 "ve" = (
-/obj/floor_decal/corner/green/diagonal,
-/turf/simulated/floor/tiled/white,
+/obj/machinery/sleeper{
+	dir = 4
+	},
+/obj/floor_decal/corner/paleblue/mono,
+/turf/simulated/floor/tiled/white/monotile,
 /area/phobos/medbay)
 "vg" = (
 /obj/machinery/door/airlock/glass/security{
@@ -5255,7 +5401,8 @@
 	},
 /obj/machinery/door/firedoor,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/turf/simulated/floor/tiled/steel_ridged,
+/obj/floor_decal/industrial/hatch/yellow,
+/turf/simulated/floor/tiled/monotile,
 /area/phobos/security/equipment)
 "vi" = (
 /obj/structure/cable/green{
@@ -5273,7 +5420,7 @@
 	dir = 5;
 	id = "phobos_md_58_con"
 	},
-/turf/simulated/floor/airless,
+/turf/simulated/floor,
 /area/phobos/disperser)
 "vm" = (
 /obj/machinery/atmospherics/unary/outlet_injector{
@@ -5291,7 +5438,7 @@
 	icon_state = "railing0-1"
 	},
 /obj/machinery/light/small/red,
-/turf/simulated/floor/airless,
+/turf/simulated/floor,
 /area/phobos/disperser)
 "vp" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
@@ -5304,6 +5451,7 @@
 /obj/structure/ship_munition/ap_slug{
 	dir = 8
 	},
+/obj/floor_decal/industrial/outline/grey,
 /turf/simulated/floor/tiled/techfloor,
 /area/phobos/disperser/storage)
 "vs" = (
@@ -5327,7 +5475,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 9
 	},
-/obj/item/clothing/accessory/solgov/rank/fleet/enlisted/e7,
 /turf/simulated/floor/tiled,
 /area/phobos/engine)
 "vx" = (
@@ -5362,13 +5509,10 @@
 /turf/simulated/floor/tiled/dark/monotile,
 /area/phobos/disperser)
 "vI" = (
-/obj/floor_decal/corner/green/half{
-	dir = 8
-	},
-/obj/structure/roller_bed,
-/obj/structure/iv_stand,
-/turf/simulated/floor/tiled/dark,
-/area/phobos/hallway)
+/obj/machinery/portable_atmospherics/canister/oxygen,
+/obj/floor_decal/industrial/outline/blue,
+/turf/simulated/floor/tiled/techfloor,
+/area/phobos/security/detective)
 "vJ" = (
 /obj/floor_decal/spline/fancy/wood{
 	dir = 5
@@ -5380,13 +5524,23 @@
 /turf/simulated/floor/carpet,
 /area/phobos/living/bunk)
 "vT" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/floor_decal/corner/green{
-	dir = 6
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
 	},
-/turf/simulated/floor/tiled/white,
-/area/phobos/medbay)
+/obj/machinery/atmospherics/portables_connector{
+	dir = 1
+	},
+/obj/structure/fuel_port{
+	pixel_x = 32
+	},
+/obj/machinery/portable_atmospherics/canister/carbon_dioxide{
+	start_pressure = 7559.63
+	},
+/obj/floor_decal/industrial/outline/grey,
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
 "wa" = (
 /obj/floor_decal/industrial/danger,
 /obj/structure/sign/warning/secure_area{
@@ -5412,9 +5566,6 @@
 	},
 /turf/simulated/floor/plating,
 /area/phobos/maint/port)
-"we" = (
-/turf/simulated/floor/tiled/dark,
-/area/phobos/hallway)
 "wf" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -5424,10 +5575,11 @@
 /turf/simulated/wall/r_wall/hull,
 /area/phobos/ven)
 "wg" = (
-/obj/structure/table/reinforced,
-/obj/random/mre/main,
-/obj/floor_decal/corner/paleblue/mono,
-/turf/simulated/floor/tiled/white/monotile,
+/obj/floor_decal/industrial/warning/full,
+/obj/machinery/atmospherics/unary/freezer{
+	icon_state = "freezer"
+	},
+/turf/simulated/floor/tiled/white,
 /area/phobos/medbay)
 "wh" = (
 /obj/structure/cable/green{
@@ -5438,7 +5590,10 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/turf/simulated/floor/tiled/techfloor,
+/obj/floor_decal/corner/red{
+	dir = 5
+	},
+/turf/simulated/floor/tiled,
 /area/phobos/security)
 "wj" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/fuel{
@@ -5501,6 +5656,7 @@
 /obj/machinery/door/firedoor,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/floor_decal/industrial/hatch/yellow,
 /turf/simulated/floor/tiled/white/monotile,
 /area/phobos/living/mess)
 "wr" = (
@@ -5513,18 +5669,26 @@
 /obj/item/storage/pill_bottle,
 /obj/item/storage/pill_bottle/antidexafen,
 /obj/item/storage/pill_bottle/paracetamol,
-/obj/floor_decal/corner/green/diagonal,
 /obj/random/medical/lite,
 /obj/random/medical/lite,
 /obj/random/medical,
 /obj/random/medical,
+/obj/floor_decal/corner/paleblue{
+	dir = 5
+	},
+/obj/floor_decal/corner/paleblue{
+	dir = 10
+	},
 /turf/simulated/floor/tiled/white,
 /area/phobos/medbay)
 "wt" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 8
 	},
-/turf/simulated/floor/tiled/techfloor,
+/obj/floor_decal/corner/red{
+	dir = 6
+	},
+/turf/simulated/floor/tiled,
 /area/phobos/security)
 "wu" = (
 /turf/simulated/wall/prepainted,
@@ -5568,7 +5732,10 @@
 /obj/structure/disposalpipe/trunk{
 	dir = 1
 	},
-/turf/simulated/floor/tiled/dark,
+/obj/floor_decal/corner/paleblue/three_quarters{
+	dir = 4
+	},
+/turf/simulated/floor/tiled,
 /area/phobos/hallway)
 "wG" = (
 /obj/structure/bed/chair/shuttle/black{
@@ -5610,6 +5777,7 @@
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 1
 	},
+/obj/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/phobos/bridge)
 "wP" = (
@@ -5654,7 +5822,18 @@
 	name = "south bump";
 	pixel_y = -24
 	},
-/obj/floor_decal/corner/green/diagonal,
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/obj/structure/closet/secure_closet/medical1{
+	req_access = list("ACCESS_PHOBOS")
+	},
+/obj/floor_decal/corner/paleblue{
+	dir = 10
+	},
+/obj/floor_decal/corner/paleblue{
+	dir = 5
+	},
 /turf/simulated/floor/tiled/white,
 /area/phobos/medbay)
 "wV" = (
@@ -5680,11 +5859,20 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/phobos/engine/thrusterport)
 "xa" = (
-/obj/floor_decal/corner/green/three_quarters{
-	dir = 4
+/obj/structure/shuttle/engine/heater{
+	dir = 4;
+	pixel_x = -32
 	},
-/turf/simulated/floor/tiled/dark,
-/area/phobos/medbay)
+/obj/structure/window/boron_reinforced{
+	dir = 1
+	},
+/obj/machinery/atmospherics/unary/engine{
+	dir = 8
+	},
+/turf/simulated/floor/reinforced{
+	map_airless = 1
+	},
+/area/space)
 "xc" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -5695,11 +5883,14 @@
 	pixel_x = -32;
 	pixel_y = 0
 	},
-/turf/simulated/floor/tiled/dark,
+/obj/floor_decal/corner/blue{
+	dir = 9
+	},
+/turf/simulated/floor/tiled,
 /area/phobos/hallway)
 "xd" = (
 /obj/machinery/light,
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled,
 /area/phobos/hallway)
 "xf" = (
 /obj/machinery/door/airlock/engineering{
@@ -5724,14 +5915,17 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/machinery/alarm{
-	pixel_y = 24
+/obj/item/stack/material/plastic/fifty,
+/obj/item/stack/material/glass/fifty{
+	pixel_x = 4;
+	pixel_y = 4
 	},
-/obj/item/rig/ert/fleet,
-/obj/structure/table/rack,
-/obj/item/clothing/accessory/armband/bluegold/away_solpatrol,
-/obj/floor_decal/corner/red/full,
-/obj/item/cell/hyper,
+/obj/item/stack/material/steel/fifty,
+/obj/item/stack/material/aluminium,
+/obj/machinery/fabricator/hacked{
+	desc = "Your typical Special Forces Autolathe.";
+	name = "Autolathe"
+	},
 /turf/simulated/floor/tiled/techfloor,
 /area/phobos/security/detective)
 "xl" = (
@@ -5822,7 +6016,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
-/obj/floor_decal/corner/paleblue/border{
+/obj/floor_decal/corner/blue/border{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/dark,
@@ -5852,10 +6046,12 @@
 	},
 /obj/machinery/alarm{
 	dir = 8;
-	icon_state = "alarm0";
-	pixel_x = 24
+	pixel_x = 24;
+	req_access = list(ACCESS_PHOBOS)
 	},
-/obj/floor_decal/corner/orange/diagonal,
+/obj/floor_decal/corner/red{
+	dir = 5
+	},
 /turf/simulated/floor/tiled/dark,
 /area/phobos/security)
 "xN" = (
@@ -5874,8 +6070,10 @@
 /obj/item/rig_module/maneuvering_jets,
 /obj/item/rig_module/device/healthscanner,
 /obj/item/rig_module/power_sink,
-/obj/item/rig_module/vision/multi,
-/obj/floor_decal/corner/darkblue/mono,
+/obj/floor_decal/corner/red/diagonal,
+/obj/floor_decal/corner/orange/diagonal{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/techfloor,
 /area/phobos/security/detective)
 "xS" = (
@@ -5929,7 +6127,10 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
-/turf/simulated/floor/tiled/techfloor,
+/obj/floor_decal/corner/red{
+	dir = 10
+	},
+/turf/simulated/floor/tiled,
 /area/phobos/security)
 "xZ" = (
 /obj/machinery/atmospherics/pipe/simple/hidden,
@@ -6008,7 +6209,8 @@
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,
-/turf/simulated/floor/tiled/dark/monotile,
+/obj/catwalk_plated,
+/turf/simulated/floor/plating,
 /area/phobos/hallway)
 "yv" = (
 /turf/simulated/wall/r_wall/hull,
@@ -6021,12 +6223,21 @@
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/space)
+"yC" = (
+/obj/machinery/atmospherics/unary/tank/hydrogen{
+	start_pressure = 6000;
+	dir = 1
+	},
+/obj/floor_decal/industrial/outline/grey,
+/turf/simulated/floor/tiled/techfloor,
+/area/phobos/engine/thrusterstarboard)
 "yD" = (
 /obj/machinery/button/mass_driver{
 	desc = "A remote control switch for phobos Mass Driver Launcher.";
 	id_tag = "phobos_md_58";
 	pixel_x = -25;
-	pixel_y = -26
+	pixel_y = -26;
+	req_access = list("ACCESS_PHOBOS")
 	},
 /obj/structure/bed/chair/comfy/black{
 	dir = 8
@@ -6072,27 +6283,13 @@
 /turf/simulated/floor/plating,
 /area/phobos/engine/thrusterport)
 "yK" = (
-/obj/structure/railing/mapped{
-	dir = 4;
-	icon_state = "railing0-1";
-	init_color = "#aa5f61";
-	color = "#aa5f61"
+/obj/paint/red,
+/obj/machinery/atmospherics/pipe/simple/hidden/fuel{
+	dir = 9;
+	icon_state = "intact"
 	},
-/obj/structure/railing/mapped{
-	dir = 8;
-	icon_state = "railing0-1";
-	init_color = "#aa5f61";
-	color = "#aa5f61"
-	},
-/obj/structure/ship_munition/disperser_charge/explosive/military,
-/obj/structure/ship_munition/disperser_charge/explosive/military{
-	pixel_y = -10
-	},
-/obj/structure/ship_munition/disperser_charge/explosive/military{
-	pixel_y = 10
-	},
-/turf/simulated/floor/tiled/techfloor,
-/area/phobos/disperser/storage)
+/turf/simulated/wall/r_titanium,
+/area/space)
 "yM" = (
 /obj/machinery/atmospherics/pipe/simple/visible/universal{
 	dir = 4
@@ -6120,7 +6317,12 @@
 	pixel_x = -24
 	},
 /obj/machinery/atmospherics/unary/vent_pump/on,
-/obj/floor_decal/corner/orange/diagonal,
+/obj/machinery/light/small{
+	dir = 1
+	},
+/obj/floor_decal/corner/red{
+	dir = 5
+	},
 /turf/simulated/floor/tiled/dark,
 /area/phobos/security)
 "yP" = (
@@ -6134,23 +6336,25 @@
 /obj/item/reagent_containers/ivbag,
 /obj/item/reagent_containers/ivbag,
 /obj/item/reagent_containers/ivbag,
-/obj/floor_decal/corner/green/diagonal,
 /obj/item/reagent_containers/ivbag,
 /obj/item/reagent_containers/ivbag,
+/obj/structure/iv_stand,
+/obj/floor_decal/corner/paleblue{
+	dir = 5
+	},
+/obj/floor_decal/corner/paleblue{
+	dir = 10
+	},
 /turf/simulated/floor/tiled/white,
 /area/phobos/medbay)
 "yY" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/turf/simulated/floor/tiled/dark/monotile,
+/turf/simulated/floor/tiled,
 /area/phobos/hallway)
 "yZ" = (
 /obj/structure/table/standard,
-/obj/machinery/cell_charger{
-	pixel_x = -5;
-	pixel_y = -2
-	},
 /obj/machinery/cell_charger{
 	pixel_x = -5;
 	pixel_y = 10
@@ -6167,13 +6371,8 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 9
 	},
-/turf/simulated/floor/tiled/dark/monotile,
+/turf/simulated/floor/tiled,
 /area/phobos/hallway)
-"zb" = (
-/obj/machinery/disposal,
-/obj/structure/disposalpipe/trunk,
-/turf/simulated/floor/tiled/dark/monotile,
-/area/phobos/security)
 "ze" = (
 /obj/structure/cable/green{
 	d2 = 8;
@@ -6205,17 +6404,9 @@
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
 	dir = 1
 	},
-/turf/simulated/floor/tiled/dark,
+/obj/catwalk_plated,
+/turf/simulated/floor/plating,
 /area/phobos/hallway)
-"zh" = (
-/obj/structure/lattice,
-/obj/structure/railing/mapped,
-/obj/structure/railing/mapped{
-	dir = 4;
-	icon_state = "railing0-1"
-	},
-/turf/space,
-/area/space)
 "zi" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -6247,7 +6438,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/floor_decal/corner/paleblue/diagonal,
+/obj/floor_decal/corner/blue/diagonal,
 /turf/simulated/floor/tiled/dark,
 /area/phobos/bridge)
 "zu" = (
@@ -6295,7 +6486,10 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
-/turf/simulated/floor/tiled/techfloor,
+/obj/floor_decal/corner/red{
+	dir = 10
+	},
+/turf/simulated/floor/tiled,
 /area/phobos/security)
 "zz" = (
 /obj/structure/dispenser/oxygen,
@@ -6309,7 +6503,10 @@
 	},
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply,
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,
-/turf/simulated/floor/tiled/techfloor,
+/obj/floor_decal/corner/red{
+	dir = 10
+	},
+/turf/simulated/floor/tiled,
 /area/phobos/security)
 "zG" = (
 /turf/simulated/wall/r_wall/prepainted,
@@ -6321,7 +6518,7 @@
 /obj/machinery/door/firedoor,
 /obj/wallframe_spawn/reinforced,
 /obj/paint/dark_gunmetal,
-/turf/simulated/floor/plating,
+/turf/simulated/floor,
 /area/phobos/disperser)
 "zO" = (
 /obj/machinery/atmospherics/pipe/manifold4w/visible/fuel,
@@ -6355,6 +6552,10 @@
 	d2 = 4;
 	icon_state = "1-4"
 	},
+/obj/machinery/atmospherics/pipe/simple/hidden/fuel{
+	dir = 6;
+	icon_state = "intact"
+	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/space)
 "Ad" = (
@@ -6362,7 +6563,10 @@
 	dir = 2;
 	icon_state = "pipe-c"
 	},
-/turf/simulated/floor/tiled/dark,
+/obj/floor_decal/corner/green{
+	dir = 5
+	},
+/turf/simulated/floor/tiled,
 /area/phobos/hallway)
 "Ae" = (
 /obj/random/trash,
@@ -6372,6 +6576,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
+/obj/submap_landmark/spawnpoint/phobos/officer,
 /turf/simulated/floor/tiled/white,
 /area/phobos/living)
 "Ak" = (
@@ -6389,10 +6594,8 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
-/obj/floor_decal/corner/green/half{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/dark,
+/obj/machinery/hologram/holopad,
+/turf/simulated/floor/tiled,
 /area/phobos/medbay)
 "Ao" = (
 /obj/machinery/door/airlock/glass/atmos{
@@ -6411,8 +6614,16 @@
 	},
 /turf/simulated/floor/tiled/steel_ridged,
 /area/phobos/engine)
+"Ax" = (
+/obj/structure/table/marble,
+/obj/machinery/door/firedoor,
+/obj/item/material/bell,
+/turf/simulated/floor/tiled/white/monotile,
+/area/phobos/living/mess)
 "Ay" = (
-/obj/machinery/suit_storage_unit/away_cavalry_fly,
+/obj/machinery/suit_storage_unit/security/alt{
+	req_access = list("ACCESS_PHOBOS_BRIDGE")
+	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/phobos/hallway/eva)
 "Az" = (
@@ -6420,7 +6631,8 @@
 	name = "Engineering Bay"
 	},
 /obj/machinery/door/firedoor,
-/turf/simulated/floor/tiled/steel_ridged,
+/obj/floor_decal/industrial/hatch/yellow,
+/turf/simulated/floor/tiled/monotile,
 /area/phobos/engine)
 "AA" = (
 /obj/machinery/seed_storage/garden,
@@ -6428,19 +6640,22 @@
 	dir = 4;
 	pixel_x = 26
 	},
+/obj/floor_decal/corner/green{
+	dir = 6
+	},
 /turf/simulated/floor/tiled,
 /area/phobos/living/hydro)
 "AB" = (
-/obj/machinery/door/airlock/glass/medical{
-	id_tag = "inf_recep";
-	name = "Infirmary Reception"
-	},
 /obj/machinery/door/firedoor,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
+	},
+/obj/floor_decal/industrial/hatch/yellow,
+/obj/machinery/door/airlock/glass/medical{
+	name = "Cryo"
 	},
 /turf/simulated/floor/tiled/white,
 /area/phobos/medbay)
@@ -6458,38 +6673,26 @@
 /turf/simulated/floor/carpet,
 /area/phobos/living/bunk)
 "AE" = (
-/obj/structure/disposalpipe/segment,
-/obj/machinery/atmospherics/valve/shutoff/supply,
-/obj/machinery/atmospherics/valve/shutoff/scrubbers,
-/obj/floor_decal/corner/red/half{
-	dir = 1
+/obj/structure/disposalpipe/segment{
+	dir = 4
 	},
-/turf/simulated/floor/tiled/dark,
+/obj/floor_decal/corner/green{
+	dir = 5
+	},
+/turf/simulated/floor/tiled,
 /area/phobos/hallway)
 "AI" = (
+/obj/floor_decal/industrial/warning,
+/obj/floor_decal/corner/paleblue/diagonal,
+/obj/machinery/atmospherics/pipe/simple/visible{
+	dir = 9
+	},
+/obj/machinery/atmospherics/unary/vent_pump/on{
+	icon_state = "map_vent_out";
+	dir = 1
+	},
 /obj/machinery/light,
-/obj/floor_decal/corner/paleblue/mono,
-/obj/item/gun/projectile/pistol/m19,
-/obj/item/clothing/head/beret/solgov/fleet/medical,
-/obj/item/clothing/under/solgov/utility/fleet/combat/medical,
-/obj/item/clothing/under/solgov/utility/fleet/polopants/medical,
-/obj/item/clothing/accessory/solgov/department/medical/fleet,
-/obj/item/clothing/suit/storage/jacket/solgov/fleet/medical,
-/obj/item/clothing/accessory/storage/holster/thigh,
-/obj/item/device/flashlight/upgraded,
-/obj/item/ammo_magazine/pistol,
-/obj/item/clothing/glasses/hud/health/goggle,
-/obj/item/clothing/gloves/thick/duty/solgov/med,
-/obj/item/clothing/gloves/latex,
-/obj/item/clothing/gloves/latex/nitrile,
-/obj/item/clothing/suit/armor/pcarrier/navy,
-/obj/item/clothing/accessory/armor_tag/solgov/fleet,
-/obj/item/clothing/accessory/armor_tag/solgov/medic,
-/obj/item/clothing/accessory/armor_plate/medium,
-/obj/item/clothing/head/helmet/solgov,
-/obj/item/clothing/accessory/helmet_cover/navy,
-/obj/item/clothing/accessory/solgov/fleet_patch/third,
-/turf/simulated/floor/tiled/white/monotile,
+/turf/simulated/floor/tiled/white,
 /area/phobos/medbay)
 "AL" = (
 /obj/machinery/door/airlock/glass/civilian{
@@ -6504,7 +6707,8 @@
 /obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/turf/simulated/floor/tiled/steel_ridged,
+/obj/floor_decal/industrial/hatch/yellow,
+/turf/simulated/floor/tiled/monotile,
 /area/phobos/living)
 "AM" = (
 /obj/structure/cable/yellow{
@@ -6546,8 +6750,8 @@
 	d2 = 4;
 	icon_state = "1-4"
 	},
-/obj/machinery/atmospherics/pipe/manifold/hidden/cyan{
-	dir = 1
+/obj/machinery/atmospherics/pipe/simple/hidden/cyan{
+	dir = 6
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/space)
@@ -6604,7 +6808,6 @@
 	d2 = 8;
 	icon_state = "0-8"
 	},
-/obj/item/device/geiger,
 /obj/structure/catwalk,
 /turf/simulated/floor/plating,
 /area/phobos/engine/atmos)
@@ -6665,14 +6868,19 @@
 /turf/simulated/floor/wood/ebony,
 /area/phobos/living/mess)
 "By" = (
-/obj/item/pen,
-/obj/machinery/atmospherics/unary/vent_pump/on{
-	dir = 4
+/obj/structure/table/standard,
+/obj/floor_decal/industrial/warning{
+	dir = 8
 	},
-/obj/machinery/atmospherics/unary/vent_pump/on{
-	dir = 4
+/obj/item/storage/box/masks,
+/obj/item/storage/box/freezer,
+/obj/item/storage/box/nitrilegloves,
+/obj/machinery/vending/wallmed1{
+	dir = 4;
+	pixel_x = -24
 	},
 /obj/floor_decal/corner/paleblue/diagonal,
+/obj/machinery/atmospherics/binary/pump/on,
 /turf/simulated/floor/tiled/white,
 /area/phobos/medbay)
 "BD" = (
@@ -6800,17 +7008,19 @@
 	d2 = 8;
 	icon_state = "0-8"
 	},
-/obj/machinery/power/apc{
-	dir = 1;
-	lighting = 0;
-	locked = 0;
-	name = "lighting off north bump";
-	pixel_y = 24
-	},
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/turf/simulated/floor/tiled/dark,
+/obj/floor_decal/corner/yellow{
+	dir = 5
+	},
+/obj/machinery/power/apc{
+	dir = 1;
+	name = "north bump";
+	pixel_x = 0;
+	pixel_y = 24
+	},
+/turf/simulated/floor/tiled,
 /area/phobos/hallway)
 "Cg" = (
 /obj/structure/sign/warning/lethal_turrets,
@@ -6821,8 +7031,16 @@
 	dir = 4;
 	icon_state = "pipe-j1"
 	},
-/turf/simulated/floor/tiled/dark/monotile,
+/turf/simulated/floor/tiled,
 /area/phobos/hallway)
+"Ck" = (
+/obj/machinery/atmospherics/unary/tank/hydrogen{
+	start_pressure = 6000;
+	dir = 1
+	},
+/obj/floor_decal/industrial/outline/grey,
+/turf/simulated/floor/tiled/techfloor,
+/area/phobos/engine/thrusterport)
 "Cl" = (
 /obj/machinery/firealarm{
 	dir = 8;
@@ -6902,7 +7120,10 @@
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 8
 	},
-/turf/simulated/floor/tiled/techfloor,
+/obj/floor_decal/corner/red{
+	dir = 6
+	},
+/turf/simulated/floor/tiled,
 /area/phobos/security)
 "CI" = (
 /obj/machinery/door/airlock/security{
@@ -6912,6 +7133,7 @@
 /obj/machinery/door/firedoor,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/floor_decal/industrial/hatch/yellow,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/phobos/security/lobby)
 "CM" = (
@@ -6939,9 +7161,6 @@
 /turf/simulated/floor/plating,
 /area/phobos/maint/port)
 "CS" = (
-/obj/floor_decal/corner/green/three_quarters{
-	dir = 4
-	},
 /turf/simulated/floor/tiled/white,
 /area/phobos/medbay)
 "CV" = (
@@ -6960,7 +7179,6 @@
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 4
 	},
-/obj/floor_decal/corner/paleblue/diagonal,
 /turf/simulated/floor/tiled/white,
 /area/phobos/medbay)
 "De" = (
@@ -7027,10 +7245,7 @@
 	d2 = 8;
 	icon_state = "1-8"
 	},
-/obj/floor_decal/corner/red/half{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled,
 /area/phobos/hallway)
 "Dw" = (
 /obj/machinery/alarm{
@@ -7042,9 +7257,11 @@
 /area/phobos/living)
 "Dy" = (
 /obj/structure/table/rack,
-/obj/floor_decal/industrial/outline/red,
 /obj/item/gun/energy/stunrevolver/rifle,
 /obj/item/gun/energy/stunrevolver/rifle,
+/obj/floor_decal/techfloor{
+	dir = 6
+	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/phobos/security)
 "DE" = (
@@ -7077,10 +7294,7 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
-/obj/floor_decal/corner/yellow/half{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled,
 /area/phobos/hallway)
 "DO" = (
 /obj/floor_decal/corner/red/bordercee{
@@ -7092,8 +7306,8 @@
 	},
 /area/phobos/disperser)
 "DR" = (
-/obj/floor_decal/corner/green/half,
-/turf/simulated/floor/tiled/dark,
+/obj/structure/filingcabinet/chestdrawer,
+/turf/simulated/floor/tiled,
 /area/phobos/medbay)
 "DV" = (
 /obj/structure/table/rack,
@@ -7101,6 +7315,10 @@
 /obj/item/clothing/head/helmet/ablative,
 /obj/item/clothing/suit/armor/bulletproof,
 /obj/item/clothing/head/helmet/ballistic,
+/obj/machinery/light/small{
+	dir = 4;
+	icon_state = "bulb1"
+	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/phobos/bridge)
 "DW" = (
@@ -7120,15 +7338,22 @@
 /obj/machinery/computer/modular/preset/engineering{
 	dir = 1
 	},
+/obj/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/phobos/bridge)
 "DY" = (
-/obj/machinery/bodyscanner{
-	dir = 8
+/obj/structure/closet/secure_closet/guncabinet/phobos,
+/obj/item/gun/projectile/automatic/sol_smg/empty,
+/obj/item/gun/projectile/automatic/sol_smg/empty,
+/obj/item/gun/projectile/automatic/sol_smg/empty,
+/obj/item/storage/box/ammo/smg_sol,
+/obj/item/storage/box/ammo/smg_sol,
+/obj/item/storage/box/ammo/smg_sol,
+/obj/floor_decal/techfloor{
+	dir = 10
 	},
-/obj/floor_decal/corner/paleblue/mono,
-/turf/simulated/floor/tiled/white/monotile,
-/area/phobos/medbay)
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/phobos/security)
 "DZ" = (
 /obj/structure/cable{
 	d1 = 4;
@@ -7156,7 +7381,9 @@
 	dir = 1;
 	icon_state = "tube1"
 	},
-/obj/machinery/suit_storage_unit/away_cavalry_med,
+/obj/machinery/suit_storage_unit/medical/alt{
+	req_access = list("ACCESS_PHOBOS")
+	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/phobos/hallway/eva)
 "Ek" = (
@@ -7169,14 +7396,13 @@
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/manifold4w/hidden/scrubbers,
-/turf/simulated/floor/tiled/techfloor,
+/turf/simulated/floor/tiled,
 /area/phobos/security)
 "El" = (
 /obj/machinery/disposal,
 /obj/structure/disposalpipe/trunk{
 	dir = 1
 	},
-/obj/floor_decal/corner/green/diagonal,
 /turf/simulated/floor/tiled/white,
 /area/phobos/medbay)
 "Ep" = (
@@ -7194,18 +7420,6 @@
 /obj/floor_decal/industrial/outline/red,
 /obj/floor_decal/industrial/danger{
 	dir = 9
-	},
-/turf/simulated/floor/reinforced{
-	map_airless = 1
-	},
-/area/space)
-"Er" = (
-/obj/structure/shuttle/engine/propulsion{
-	dir = 4
-	},
-/obj/structure/shuttle/engine/heater{
-	dir = 4;
-	pixel_x = -32
 	},
 /turf/simulated/floor/reinforced{
 	map_airless = 1
@@ -7269,6 +7483,7 @@
 /obj/item/clothing/head/helmet/solgov,
 /obj/item/clothing/accessory/helmet_cover/navy,
 /obj/item/clothing/accessory/solgov/fleet_patch/third,
+/obj/item/storage/belt/utility/full,
 /turf/simulated/floor/tiled/steel_grid,
 /area/phobos/engine)
 "ED" = (
@@ -7286,30 +7501,26 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/phobos/disperser/storage)
 "EK" = (
-/obj/structure/lattice,
-/obj/structure/railing/mapped{
-	dir = 8;
-	icon_state = "railing0-1"
+/obj/machinery/door/blast/shutters{
+	dir = 2;
+	id_tag = "sparmory";
+	name = "Armory Shutters"
 	},
-/obj/structure/railing/mapped{
-	dir = 1;
-	icon_state = "railing0-1"
-	},
-/turf/space,
-/area/space)
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/phobos/security)
 "EN" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
 /obj/machinery/door/firedoor,
-/turf/simulated/floor/tiled/dark,
+/obj/floor_decal/industrial/hatch/yellow,
+/turf/simulated/floor/tiled/monotile,
 /area/phobos/hallway)
 "EP" = (
-/obj/item/rig/ert/fleet,
-/obj/structure/table/rack,
-/obj/item/clothing/accessory/armband/bluegold/away_solpatrol,
-/obj/floor_decal/corner/red/full,
-/obj/item/cell/hyper,
+/obj/machinery/alarm{
+	pixel_y = 24;
+	req_access = list(ACCESS_PHOBOS)
+	},
 /turf/simulated/floor/tiled/techfloor,
 /area/phobos/security/detective)
 "EQ" = (
@@ -7337,7 +7548,9 @@
 /turf/simulated/floor/plating,
 /area/phobos/engine/atmos)
 "EX" = (
-/obj/machinery/suit_storage_unit/away_cavalry_med,
+/obj/machinery/suit_storage_unit/medical/alt{
+	req_access = list("ACCESS_PHOBOS")
+	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/phobos/hallway/eva)
 "EY" = (
@@ -7356,7 +7569,7 @@
 /obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/valve/shutoff/supply,
 /obj/machinery/atmospherics/valve/shutoff/scrubbers,
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled,
 /area/phobos/hallway)
 "Fm" = (
 /obj/floor_decal/corner/yellow/border{
@@ -7383,6 +7596,7 @@
 /obj/item/clothing/head/helmet/solgov,
 /obj/item/clothing/accessory/helmet_cover/navy,
 /obj/item/clothing/accessory/solgov/fleet_patch/third,
+/obj/item/storage/belt/utility/full,
 /turf/simulated/floor/tiled/steel_grid,
 /area/phobos/engine)
 "Fo" = (
@@ -7393,7 +7607,10 @@
 	pixel_y = 24
 	},
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
-/turf/simulated/floor/tiled/dark,
+/obj/floor_decal/corner/yellow{
+	dir = 5
+	},
+/turf/simulated/floor/tiled,
 /area/phobos/hallway)
 "Fu" = (
 /turf/simulated/wall/r_wall/prepainted,
@@ -7471,14 +7688,12 @@
 /obj/machinery/alarm{
 	dir = 8;
 	icon_state = "alarm0";
-	pixel_x = 24
+	pixel_x = 24;
+	req_access = list(ACCESS_PHOBOS)
 	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/phobos/security/questioning)
 "FN" = (
-/obj/structure/sign/ecplaque{
-	pixel_y = -30
-	},
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 8;
@@ -7527,10 +7742,10 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 6
 	},
-/obj/floor_decal/corner/paleblue/border{
+/obj/floor_decal/corner/blue/border{
 	dir = 4
 	},
-/obj/floor_decal/corner/paleblue{
+/obj/floor_decal/corner/blue{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/dark,
@@ -7556,7 +7771,10 @@
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
 	dir = 8
 	},
-/turf/simulated/floor/tiled/techfloor,
+/obj/floor_decal/corner/red{
+	dir = 9
+	},
+/turf/simulated/floor/tiled,
 /area/phobos/security)
 "FX" = (
 /turf/simulated/wall/r_wall/hull,
@@ -7612,16 +7830,8 @@
 	dir = 4;
 	pixel_x = -24
 	},
-/obj/item/stack/material/plastic/fifty,
-/obj/item/stack/material/glass/fifty{
-	pixel_x = 4;
-	pixel_y = 4
-	},
-/obj/item/stack/material/steel/fifty,
-/obj/item/stack/material/aluminium,
-/obj/machinery/fabricator/hacked{
-	desc = "Your typical Special Forces Autolathe.";
-	name = "Autolathe"
+/obj/machinery/suit_storage_unit/security/alt{
+	req_access = list("ACCESS_PHOBOS")
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/phobos/security/detective)
@@ -7633,6 +7843,7 @@
 	dir = 4;
 	icon_state = "railing0-1"
 	},
+/obj/floor_decal/industrial/outline/grey,
 /turf/simulated/floor/tiled/techfloor,
 /area/phobos/disperser/storage)
 "Gn" = (
@@ -7641,7 +7852,6 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/floor_decal/corner/green/diagonal,
 /turf/simulated/floor/tiled/white,
 /area/phobos/medbay)
 "Go" = (
@@ -7666,15 +7876,16 @@
 /turf/simulated/floor/tiled/dark,
 /area/phobos/security/questioning)
 "GH" = (
-/obj/floor_decal/corner/paleblue{
+/obj/floor_decal/corner/blue{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/dark,
 /area/phobos/bridge)
 "GI" = (
-/obj/structure/table/reinforced,
-/obj/floor_decal/corner/paleblue/mono,
-/turf/simulated/floor/tiled/white/monotile,
+/obj/floor_decal/industrial/warning/full,
+/obj/machinery/atmospherics/portables_connector,
+/obj/machinery/portable_atmospherics/canister/oxygen,
+/turf/simulated/floor/tiled/white,
 /area/phobos/medbay)
 "GM" = (
 /turf/simulated/wall/prepainted,
@@ -7716,8 +7927,17 @@
 /turf/simulated/wall/r_titanium,
 /area/space)
 "GY" = (
-/turf/simulated/wall/r_wall/hull,
-/area/phobos/bridge)
+/obj/machinery/porta_turret{
+	auto_repair = 1;
+	id_tag = "phobos_turret_58";
+	lethal = 1;
+	name = "SGV phobos Defence Turret";
+	shot_delay = 10
+	},
+/turf/simulated/floor/reinforced{
+	map_airless = 1
+	},
+/area/phobos/disperser)
 "Hd" = (
 /obj/structure/closet/secure_closet/medical_wall{
 	name = "Medical Equipment Cabinet";
@@ -7725,10 +7945,15 @@
 	pixel_y = 32
 	},
 /obj/random/medical/lite,
-/obj/floor_decal/corner/green/diagonal,
 /obj/random/medical/lite,
 /obj/random/medical,
 /obj/random/medical,
+/obj/floor_decal/corner/paleblue{
+	dir = 5
+	},
+/obj/floor_decal/corner/paleblue{
+	dir = 10
+	},
 /turf/simulated/floor/tiled/white,
 /area/phobos/medbay)
 "Hf" = (
@@ -7767,7 +7992,10 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/turf/simulated/floor/tiled/dark,
+/obj/floor_decal/corner/yellow{
+	dir = 5
+	},
+/turf/simulated/floor/tiled,
 /area/phobos/hallway)
 "Hp" = (
 /obj/machinery/vending/tool,
@@ -7779,6 +8007,7 @@
 	pixel_y = 32
 	},
 /obj/machinery/door/firedoor,
+/obj/floor_decal/industrial/hatch/yellow,
 /turf/simulated/floor/tiled/white/monotile,
 /area/phobos/medbay)
 "Ht" = (
@@ -7798,14 +8027,14 @@
 /turf/simulated/floor/reinforced{
 	map_airless = 1
 	},
-/area/phobos/bridge)
+/area/phobos/disperser)
 "Hy" = (
 /obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/floor_decal/corner/white{
 	dir = 10
 	},
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled,
 /area/phobos/hallway)
 "Hz" = (
 /obj/floor_decal/industrial/outline/yellow,
@@ -7813,15 +8042,21 @@
 /obj/machinery/light{
 	dir = 4
 	},
-/turf/simulated/floor/tiled/dark/monotile,
+/turf/simulated/floor/tiled,
 /area/phobos/hallway)
 "HB" = (
 /obj/machinery/portable_atmospherics/hydroponics,
-/obj/machinery/newscaster{
-	pixel_y = 32
-	},
+/obj/floor_decal/corner/green/mono,
 /turf/simulated/floor/tiled/monotile,
 /area/phobos/living/hydro)
+"HF" = (
+/obj/paint/red,
+/obj/machinery/atmospherics/pipe/simple/hidden/fuel{
+	dir = 6;
+	icon_state = "intact"
+	},
+/turf/simulated/wall/r_titanium,
+/area/space)
 "HH" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -7868,9 +8103,12 @@
 /turf/simulated/floor/plating,
 /area/phobos/living/mess)
 "HS" = (
-/obj/floor_decal/corner/green/three_quarters,
-/turf/simulated/floor/tiled/white,
-/area/phobos/medbay)
+/obj/structure/table/steel_reinforced,
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/phobos/security/lobby)
 "HT" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 1
@@ -7882,7 +8120,10 @@
 	dir = 1;
 	pixel_y = -24
 	},
-/turf/simulated/floor/tiled/dark,
+/obj/floor_decal/corner/green{
+	dir = 10
+	},
+/turf/simulated/floor/tiled,
 /area/phobos/hallway)
 "HW" = (
 /obj/machinery/light,
@@ -7905,12 +8146,14 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
-/turf/simulated/floor/tiled/techfloor,
+/obj/floor_decal/corner/red{
+	dir = 10
+	},
+/turf/simulated/floor/tiled,
 /area/phobos/security)
 "Ib" = (
 /obj/machinery/atmospherics/pipe/manifold4w/hidden/supply,
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,
-/obj/floor_decal/corner/green/diagonal,
 /turf/simulated/floor/tiled/white,
 /area/phobos/medbay)
 "Id" = (
@@ -7928,13 +8171,14 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/turf/simulated/floor/tiled/techfloor,
+/turf/simulated/floor/tiled,
 /area/phobos/security)
 "If" = (
 /obj/machinery/chem_master/condimaster{
 	name = "CondiMaster Neo";
 	pixel_x = -5
 	},
+/obj/floor_decal/corner/green/three_quarters,
 /turf/simulated/floor/tiled,
 /area/phobos/living/hydro)
 "Il" = (
@@ -7943,10 +8187,10 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/floor_decal/corner/paleblue/half{
-	dir = 8
+/obj/floor_decal/corner/blue{
+	dir = 9
 	},
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled,
 /area/phobos/hallway)
 "In" = (
 /obj/machinery/light{
@@ -7954,13 +8198,9 @@
 	icon_state = "tube1"
 	},
 /obj/floor_decal/industrial/outline/red,
-/obj/structure/closet{
-	name = "security wardrobe"
-	},
 /obj/item/clothing/under/solgov/utility/fleet/combat/security,
 /obj/item/storage/belt/holster/security/tactical,
 /obj/item/device/radio/headset/map_preset/phobos,
-/obj/item/gun/energy/gun,
 /obj/item/gun/projectile/pistol/m22f,
 /obj/item/clothing/accessory/storage/holster/thigh,
 /obj/item/clothing/accessory/armor_tag/solgov,
@@ -7980,6 +8220,8 @@
 /obj/item/ammo_magazine/pistol/double,
 /obj/item/ammo_magazine/pistol/double,
 /obj/item/clothing/gloves/thick/duty/solgov/sec,
+/obj/structure/closet/secure_closet/security_phobos,
+/obj/item/gun/energy/gun/small,
 /turf/simulated/floor/tiled/monotile,
 /area/phobos/security/equipment)
 "Ix" = (
@@ -7994,9 +8236,6 @@
 /obj/item/folder/white,
 /obj/item/folder/blue,
 /obj/machinery/light,
-/obj/machinery/newscaster{
-	pixel_x = 32
-	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/phobos/bridge)
 "IB" = (
@@ -8023,10 +8262,28 @@
 /obj/floor_decal/corner/red/diagonal,
 /turf/simulated/floor/tiled/dark,
 /area/phobos/disperser)
+"ID" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/fuel{
+	dir = 4
+	},
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/catwalk_plated,
+/turf/simulated/floor/plating,
+/area/phobos/hallway)
 "IE" = (
 /obj/machinery/atmospherics/valve/shutoff/supply,
 /obj/machinery/atmospherics/valve/shutoff/scrubbers,
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled,
 /area/phobos/hallway)
 "II" = (
 /obj/machinery/power/solar/improved{
@@ -8080,7 +8337,6 @@
 	dir = 8
 	},
 /obj/floor_decal/corner/red/diagonal,
-/obj/item/clothing/accessory/solgov/rank/fleet/enlisted/e5,
 /turf/simulated/floor/tiled,
 /area/phobos/security/equipment)
 "IX" = (
@@ -8154,9 +8410,9 @@
 	name = "Chemistry Desk"
 	},
 /obj/structure/table/reinforced,
-/obj/item/storage/pill_bottle/zoom,
 /obj/machinery/door/firedoor,
 /obj/floor_decal/corner/beige/mono,
+/obj/item/material/bell,
 /turf/simulated/floor/tiled/white/monotile,
 /area/phobos/medbay/chemistry)
 "Jf" = (
@@ -8230,10 +8486,10 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/obj/floor_decal/corner/red/half{
-	dir = 1
+/obj/floor_decal/corner/red{
+	dir = 5
 	},
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled,
 /area/phobos/hallway)
 "Jv" = (
 /obj/floor_decal/industrial/danger{
@@ -8243,14 +8499,13 @@
 	map_airless = 1
 	},
 /area/space)
-"JA" = (
-/obj/machinery/ion_engine{
-	dir = 8
+"Jy" = (
+/obj/floor_decal/spline/plain/blue{
+	dir = 6
 	},
-/turf/simulated/floor/reinforced{
-	map_airless = 1
-	},
-/area/phobos/engine/thrusterstarboard)
+/obj/structure/roller_bed,
+/turf/simulated/floor/tiled/white,
+/area/phobos/medbay)
 "JB" = (
 /obj/machinery/power/apc/super/critical{
 	dir = 2;
@@ -8273,9 +8528,11 @@
 /turf/simulated/floor/tiled,
 /area/phobos/engine)
 "JN" = (
-/obj/machinery/portable_atmospherics/hydroponics,
-/turf/simulated/floor/tiled/monotile,
-/area/phobos/living/hydro)
+/obj/floor_decal/techfloor{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/phobos/security)
 "JO" = (
 /obj/shuttle_landmark/nav_phobos/nav2,
 /turf/space,
@@ -8284,8 +8541,8 @@
 /obj/structure/catwalk,
 /obj/machinery/alarm{
 	dir = 1;
-	icon_state = "alarm0";
-	pixel_y = -22
+	pixel_y = -22;
+	req_access = list(ACCESS_PHOBOS)
 	},
 /turf/simulated/floor/plating,
 /area/phobos/disperser/storage)
@@ -8294,7 +8551,8 @@
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 1
 	},
-/turf/simulated/floor/tiled/dark,
+/obj/floor_decal/corner/paleblue,
+/turf/simulated/floor/tiled,
 /area/phobos/hallway)
 "JT" = (
 /obj/machinery/light{
@@ -8333,9 +8591,15 @@
 /turf/simulated/floor/wood/ebony,
 /area/phobos/living/mess)
 "Kd" = (
-/obj/machinery/door/firedoor,
-/turf/simulated/floor/tiled/techfloor/grid,
-/area/phobos/security)
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/catwalk_plated,
+/turf/simulated/floor/plating,
+/area/phobos/hallway)
 "Kg" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -8362,7 +8626,7 @@
 /obj/floor_decal/corner/white{
 	dir = 10
 	},
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled,
 /area/phobos/hallway)
 "Km" = (
 /obj/machinery/atmospherics/pipe/manifold4w/visible/fuel,
@@ -8380,7 +8644,7 @@
 /obj/floor_decal/corner/white{
 	dir = 10
 	},
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled,
 /area/phobos/hallway)
 "Ks" = (
 /obj/structure/cable/yellow,
@@ -8391,6 +8655,15 @@
 /obj/floor_decal/solarpanel,
 /turf/simulated/floor/airless,
 /area/phobos/engine/solar/starboard)
+"Ku" = (
+/obj/structure/disposalpipe/segment,
+/obj/machinery/atmospherics/valve/shutoff/supply,
+/obj/machinery/atmospherics/valve/shutoff/scrubbers,
+/obj/floor_decal/corner/paleblue{
+	dir = 10
+	},
+/turf/simulated/floor/tiled,
+/area/phobos/hallway)
 "Kv" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -8412,7 +8685,6 @@
 /obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply,
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,
-/obj/floor_decal/corner/green/diagonal,
 /turf/simulated/floor/tiled/white,
 /area/phobos/medbay)
 "Ky" = (
@@ -8440,7 +8712,9 @@
 "KA" = (
 /obj/structure/window/reinforced,
 /obj/structure/table/steel_reinforced,
-/obj/machinery/turretid/lethal,
+/obj/machinery/turretid/lethal{
+	req_access = list("ACCESS_PHOBOS")
+	},
 /turf/simulated/floor/tiled/techfloor,
 /area/space)
 "KE" = (
@@ -8452,16 +8726,12 @@
 /area/phobos/engine/atmos)
 "KF" = (
 /obj/machinery/hologram/holopad,
-/obj/machinery/recharger/wallcharger{
-	pixel_x = 0;
-	pixel_y = 24
-	},
 /obj/structure/cable/green{
 	d1 = 2;
 	d2 = 8;
 	icon_state = "2-8"
 	},
-/turf/simulated/floor/tiled/techfloor,
+/turf/simulated/floor/tiled,
 /area/phobos/security)
 "KH" = (
 /obj/item/storage/box/cups,
@@ -8532,7 +8802,10 @@
 	dir = 2;
 	icon_state = "pipe-c"
 	},
-/turf/simulated/floor/tiled/dark,
+/obj/floor_decal/corner/yellow{
+	dir = 5
+	},
+/turf/simulated/floor/tiled,
 /area/phobos/hallway)
 "KQ" = (
 /turf/simulated/floor/tiled/white,
@@ -8588,7 +8861,8 @@
 /area/phobos/hallway/eva)
 "Le" = (
 /obj/machinery/door/firedoor,
-/turf/simulated/floor/tiled/dark,
+/obj/floor_decal/industrial/hatch/yellow,
+/turf/simulated/floor/tiled/monotile,
 /area/phobos/hallway)
 "Lf" = (
 /obj/structure/cable/green{
@@ -8643,7 +8917,8 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
-/turf/simulated/floor/tiled/dark/monotile,
+/obj/catwalk_plated,
+/turf/simulated/floor/plating,
 /area/phobos/hallway)
 "Lp" = (
 /obj/machinery/computer/ship/sensors{
@@ -8665,7 +8940,10 @@
 	},
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply,
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,
-/turf/simulated/floor/tiled/dark,
+/obj/floor_decal/corner/green{
+	dir = 10
+	},
+/turf/simulated/floor/tiled,
 /area/phobos/hallway)
 "Lu" = (
 /obj/structure/disposalpipe/segment{
@@ -8674,7 +8952,10 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/turf/simulated/floor/tiled/dark,
+/obj/floor_decal/corner/red{
+	dir = 5
+	},
+/turf/simulated/floor/tiled,
 /area/phobos/hallway)
 "Lv" = (
 /obj/structure/cable/green{
@@ -8707,7 +8988,6 @@
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 8
 	},
-/obj/random/loot,
 /obj/floor_decal/corner/beige/diagonal,
 /turf/simulated/floor/tiled/white,
 /area/phobos/medbay/chemistry)
@@ -8760,10 +9040,15 @@
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 8
 	},
-/turf/simulated/floor/tiled/techfloor,
+/obj/floor_decal/corner/red/three_quarters{
+	dir = 1
+	},
+/turf/simulated/floor/tiled,
 /area/phobos/security)
 "LN" = (
-/obj/machinery/suit_storage_unit/away_cavalry_eng,
+/obj/machinery/suit_storage_unit/engineering/alt{
+	req_access = list("ACCESS_PHOBOS")
+	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/phobos/engine)
 "LP" = (
@@ -8784,10 +9069,11 @@
 "LQ" = (
 /obj/machinery/alarm{
 	dir = 8;
-	icon_state = "alarm0";
-	pixel_x = 24
+	pixel_x = 24;
+	req_access = list(ACCESS_PHOBOS)
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/submap_landmark/spawnpoint/phobos/officer,
 /turf/simulated/floor/tiled/white,
 /area/phobos/living)
 "LS" = (
@@ -8816,13 +9102,13 @@
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
 	dir = 4
 	},
-/obj/floor_decal/corner/green/diagonal,
 /turf/simulated/floor/tiled/white,
 /area/phobos/medbay)
 "Ma" = (
 /obj/structure/table/steel_reinforced,
 /obj/item/storage/slide_projector,
 /obj/random/powercell,
+/obj/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/phobos/bridge)
 "Mb" = (
@@ -8847,12 +9133,13 @@
 /obj/item/clothing/accessory/armband/solgov/ma,
 /obj/item/clothing/accessory/armor_tag/solgov/fleet,
 /obj/item/clothing/under/solgov/utility/fleet/combat/command,
-/obj/item/gun/energy/stunrevolver/secure,
+/obj/item/gun/energy/stunrevolver/secure{
+	req_access = list("ACCESS_PHOBOS_ARMORY")
+	},
 /obj/item/clothing/glasses/ballistic/security,
 /obj/item/clothing/accessory/helmet_cover/navy,
 /obj/item/clothing/head/helmet/tactical,
 /obj/item/clothing/accessory/armor_plate/tactical,
-/obj/floor_decal/corner/darkblue/mono,
 /obj/item/device/flashlight/maglight,
 /obj/item/melee/telebaton,
 /obj/item/device/radio/headset/map_preset/phobos,
@@ -8868,15 +9155,13 @@
 	name = "\improper Tactical Gloves"
 	},
 /obj/item/clothing/accessory/solgov/specialty/officer,
+/obj/floor_decal/corner/red/diagonal,
+/obj/floor_decal/corner/orange/diagonal{
+	dir = 4
+	},
+/obj/structure/closet/secure_closet/brigchief_phobos,
 /turf/simulated/floor/tiled/techfloor,
 /area/phobos/security/detective)
-"Mm" = (
-/obj/structure/sign/solgov{
-	pixel_x = 32;
-	pixel_y = 32
-	},
-/turf/space,
-/area/space)
 "Mn" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -8893,6 +9178,7 @@
 /obj/item/storage/firstaid/security,
 /obj/item/storage/firstaid/security,
 /obj/item/storage/firstaid/security,
+/obj/floor_decal/industrial/outline,
 /turf/simulated/floor/tiled/techfloor,
 /area/phobos/security/detective)
 "Mq" = (
@@ -8910,6 +9196,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
+/obj/floor_decal/industrial/hatch/yellow,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/phobos/bridge)
 "Mr" = (
@@ -8945,9 +9232,8 @@
 /area/phobos/living/bunk)
 "My" = (
 /obj/structure/table/standard,
-/obj/random/loot,
-/obj/floor_decal/corner/paleblue/mono,
 /obj/item/clothing/gloves/latex/nitrile,
+/obj/floor_decal/corner/paleblue/mono,
 /turf/simulated/floor/tiled/white/monotile,
 /area/phobos/medbay)
 "MA" = (
@@ -8973,15 +9259,16 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/phobos/engine/thrusterstarboard)
 "MC" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
+/obj/machinery/atmospherics/binary/pump{
+	dir = 1
 	},
-/obj/floor_decal/corner/paleblue/diagonal,
-/turf/simulated/floor/tiled/white/monotile,
-/area/phobos/medbay)
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
 "MG" = (
 /turf/simulated/wall/r_wall/prepainted,
 /area/phobos/security/equipment)
@@ -8996,7 +9283,11 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 5
 	},
-/turf/simulated/floor/tiled/dark,
+/obj/structure/bed/chair/padded/blue{
+	dir = 1;
+	icon_state = "chair_preview"
+	},
+/turf/simulated/floor/tiled,
 /area/phobos/medbay)
 "MK" = (
 /obj/machinery/door/airlock/security{
@@ -9043,10 +9334,7 @@
 /obj/machinery/atmospherics/valve/shutoff/scrubbers{
 	dir = 4
 	},
-/obj/floor_decal/corner/paleblue/half{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled,
 /area/phobos/hallway)
 "MU" = (
 /obj/structure/table/marble,
@@ -9066,9 +9354,6 @@
 /turf/simulated/floor/plating,
 /area/phobos/disperser)
 "MZ" = (
-/obj/item/clothing/suit/storage/toggle/labcoat/chemist{
-	was_bloodied = 1
-	},
 /obj/structure/cable/green{
 	d1 = 2;
 	d2 = 8;
@@ -9144,7 +9429,10 @@
 /obj/machinery/alarm{
 	pixel_y = 24
 	},
-/turf/simulated/floor/tiled/techfloor,
+/obj/floor_decal/corner/red{
+	dir = 5
+	},
+/turf/simulated/floor/tiled,
 /area/phobos/security)
 "Nr" = (
 /obj/structure/cable/green{
@@ -9165,11 +9453,11 @@
 /turf/simulated/floor/plating,
 /area/phobos/engine/atmos)
 "Nt" = (
-/obj/structure/disposalpipe/segment{
+/obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 4
 	},
-/turf/simulated/floor/tiled/dark,
-/area/phobos/hallway)
+/turf/simulated/floor/tiled/techfloor,
+/area/space)
 "Nv" = (
 /obj/structure/window/reinforced{
 	dir = 1
@@ -9229,10 +9517,6 @@
 	dir = 8;
 	pixel_x = -24
 	},
-/obj/machinery/light_switch{
-	pixel_x = -23;
-	pixel_y = -25
-	},
 /turf/simulated/floor/tiled/techfloor,
 /area/phobos/engine/thrusterport)
 "NP" = (
@@ -9258,6 +9542,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 6
 	},
+/obj/submap_landmark/spawnpoint/phobos/sergeant,
 /turf/simulated/floor/tiled/white,
 /area/phobos/living)
 "NT" = (
@@ -9271,13 +9556,11 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
-/turf/simulated/floor/tiled/dark/monotile,
+/turf/simulated/floor/tiled,
 /area/phobos/hallway)
 "NY" = (
 /obj/machinery/door/airlock/multi_tile/glass/security{
-	locked = 1;
-	name = "Security Lobby";
-	welded = 1
+	name = "Security Lobby"
 	},
 /obj/structure/cable/green{
 	d1 = 1;
@@ -9285,7 +9568,8 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/door/firedoor,
-/turf/simulated/floor/tiled/techfloor/grid,
+/obj/floor_decal/industrial/hatch/yellow,
+/turf/simulated/floor/tiled/monotile,
 /area/phobos/security/lobby)
 "Oc" = (
 /obj/machinery/atmospherics/pipe/simple/hidden{
@@ -9315,7 +9599,10 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
-/turf/simulated/floor/tiled/techfloor,
+/obj/floor_decal/corner/red{
+	dir = 10
+	},
+/turf/simulated/floor/tiled,
 /area/phobos/security)
 "Og" = (
 /obj/structure/hygiene/toilet{
@@ -9340,17 +9627,23 @@
 	dir = 1;
 	icon_state = "railing0-1"
 	},
-/turf/simulated/floor/airless,
+/turf/simulated/floor,
 /area/phobos/disperser)
 "Ov" = (
+/obj/machinery/atmospherics/pipe/simple/visible{
+	dir = 9
+	},
+/obj/floor_decal/industrial/warning{
+	dir = 4;
+	icon_state = "warning"
+	},
+/obj/floor_decal/corner/paleblue/diagonal,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 6
+	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
-/obj/machinery/atmospherics/unary/vent_scrubber/on{
-	dir = 4
-	},
-/obj/floor_decal/corner/paleblue/diagonal,
-/obj/item/clothing/accessory/solgov/rank/fleet/enlisted/e6,
 /turf/simulated/floor/tiled/white,
 /area/phobos/medbay)
 "Ox" = (
@@ -9367,18 +9660,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/wood/ebony,
 /area/phobos/living/bunk)
-"Oy" = (
-/obj/structure/lattice,
-/obj/structure/railing/mapped{
-	dir = 1;
-	icon_state = "railing0-1"
-	},
-/obj/structure/railing/mapped{
-	dir = 4;
-	icon_state = "railing0-1"
-	},
-/turf/space,
-/area/space)
 "OA" = (
 /obj/machinery/firealarm{
 	dir = 4;
@@ -9407,10 +9688,9 @@
 /turf/simulated/floor/tiled/white,
 /area/phobos/living)
 "OE" = (
-/obj/structure/table/reinforced,
-/obj/item/reagent_containers/spray/cleaner,
-/obj/floor_decal/corner/paleblue/mono,
-/turf/simulated/floor/tiled/white/monotile,
+/obj/machinery/atmospherics/unary/cryo_cell,
+/obj/floor_decal/industrial/warning/full,
+/turf/simulated/floor/tiled/white,
 /area/phobos/medbay)
 "OI" = (
 /obj/machinery/atmospherics/pipe/simple/visible/fuel{
@@ -9420,6 +9700,7 @@
 /area/phobos/engine/thrusterstarboard)
 "OM" = (
 /obj/machinery/portable_atmospherics/powered/scrubber,
+/obj/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/techfloor,
 /area/phobos/maint/starboard/bridge)
 "OP" = (
@@ -9437,7 +9718,7 @@
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
 	dir = 8
 	},
-/turf/simulated/floor/tiled/techfloor,
+/turf/simulated/floor/tiled,
 /area/phobos/security)
 "OY" = (
 /obj/structure/closet/crate/freezer/rations,
@@ -9449,6 +9730,9 @@
 	dir = 8
 	},
 /obj/floor_decal/industrial/outline/yellow,
+/obj/machinery/atmospherics/unary/vent_pump/on{
+	dir = 8
+	},
 /turf/simulated/floor/tiled/techfloor,
 /area/space)
 "Pa" = (
@@ -9468,6 +9752,10 @@
 	},
 /obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/submap_landmark/spawnpoint/phobos/pilot,
+/obj/machinery/light{
+	dir = 8
+	},
 /turf/simulated/floor/tiled/white,
 /area/phobos/living)
 "Pc" = (
@@ -9483,7 +9771,8 @@
 /obj/machinery/door/firedoor,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/turf/simulated/floor/tiled/techfloor/grid,
+/obj/floor_decal/industrial/hatch/yellow,
+/turf/simulated/floor/tiled/monotile,
 /area/phobos/security/lobby)
 "Ph" = (
 /obj/structure/cable/green{
@@ -9522,14 +9811,10 @@
 /turf/simulated/floor/plating,
 /area/phobos/engine/atmos)
 "Pv" = (
-/obj/machinery/door/airlock/multi_tile/glass/medical{
-	dir = 8;
-	id_tag = null;
-	name = "Treatment Center"
-	},
-/obj/machinery/door/firedoor,
-/turf/simulated/floor/tiled/white/monotile,
-/area/phobos/medbay)
+/obj/paint/red,
+/obj/machinery/atmospherics/pipe/simple/hidden/fuel,
+/turf/simulated/wall/r_titanium,
+/area/space)
 "Pw" = (
 /obj/machinery/recharger/wallcharger{
 	dir = 4;
@@ -9569,7 +9854,7 @@
 /obj/machinery/conveyor{
 	id_tag = "phobos_md_58_con"
 	},
-/turf/simulated/floor/airless,
+/turf/simulated/floor,
 /area/phobos/disperser)
 "PE" = (
 /obj/structure/window/reinforced{
@@ -9578,10 +9863,14 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/phobos/hallway/eva)
 "PG" = (
-/obj/machinery/newscaster{
-	pixel_y = 32
+/obj/machinery/recharger/wallcharger{
+	pixel_x = 0;
+	pixel_y = 24
 	},
-/turf/simulated/floor/tiled/techfloor,
+/obj/floor_decal/corner/red{
+	dir = 5
+	},
+/turf/simulated/floor/tiled,
 /area/phobos/security)
 "PJ" = (
 /obj/machinery/pointdefense{
@@ -9652,7 +9941,6 @@
 /obj/item/reagent_containers/glass/beaker/large,
 /obj/machinery/alarm{
 	dir = 1;
-	icon_state = "alarm0";
 	pixel_y = -22
 	},
 /obj/machinery/light_switch{
@@ -9670,29 +9958,20 @@
 /turf/simulated/floor/tiled/dark,
 /area/phobos/bridge)
 "PX" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
+/obj/wallframe_spawn/reinforced/titanium,
+/obj/machinery/door/blast/regular/open{
+	dir = 4;
+	id_tag = "interceptor_sensor_lock";
+	name = "Interceptor Drop Blast Doors"
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/obj/floor_decal/corner/green/diagonal,
-/obj/structure/iv_stand,
-/turf/simulated/floor/tiled/white,
-/area/phobos/medbay)
+/turf/simulated/floor/airless,
+/area/space)
 "Qc" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 4
 	},
+/obj/item/storage/box/flashbangs,
 /obj/structure/table/rack,
-/obj/item/gun/projectile/automatic/bullpup_rifle,
-/obj/floor_decal/corner/darkblue/mono,
-/obj/item/ammo_magazine/mil_rifle/heavy,
-/obj/item/ammo_magazine/mil_rifle/heavy,
-/obj/item/ammo_magazine/mil_rifle/heavy,
-/obj/item/ammo_magazine/mil_rifle/heavy,
-/obj/item/ammo_magazine/mil_rifle/heavy,
-/obj/item/ammo_magazine/mil_rifle/heavy,
 /turf/simulated/floor/tiled/techfloor,
 /area/phobos/security/detective)
 "Qh" = (
@@ -9705,7 +9984,8 @@
 /obj/machinery/alarm{
 	dir = 4;
 	pixel_x = -23;
-	pixel_y = 0
+	pixel_y = 0;
+	req_access = list(ACCESS_PHOBOS)
 	},
 /turf/simulated/floor/plating,
 /area/phobos/disperser)
@@ -9748,6 +10028,30 @@
 	},
 /turf/simulated/wall/r_wall/hull,
 /area/phobos/engine/atmos)
+"Qp" = (
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
+	dir = 1;
+	id_tag = "interseptor_shuttle_pump"
+	},
+/turf/simulated/floor/airless,
+/area/phobos/hallway/eva)
+"Qr" = (
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/floor_decal/corner/green{
+	dir = 10
+	},
+/turf/simulated/floor/tiled,
+/area/phobos/hallway)
 "Qt" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -9755,7 +10059,10 @@
 /obj/structure/closet/hydrant{
 	pixel_y = 32
 	},
-/turf/simulated/floor/tiled/dark,
+/obj/floor_decal/corner/yellow{
+	dir = 5
+	},
+/turf/simulated/floor/tiled,
 /area/phobos/hallway)
 "Qz" = (
 /obj/structure/cable/green{
@@ -9773,7 +10080,7 @@
 /turf/simulated/wall/r_wall/prepainted,
 /area/phobos/security/lobby)
 "QF" = (
-/turf/simulated/floor/tiled/dark/monotile,
+/turf/simulated/floor/tiled,
 /area/phobos/hallway)
 "QG" = (
 /obj/machinery/atmospherics/omni/filter{
@@ -9792,21 +10099,6 @@
 	},
 /turf/simulated/floor/plating,
 /area/phobos/engine/atmos)
-"QN" = (
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/obj/machinery/door/firedoor,
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/dark,
-/area/phobos/hallway)
 "QQ" = (
 /obj/machinery/door/airlock/security{
 	name = "Security Interview Room"
@@ -9819,6 +10111,7 @@
 /obj/machinery/door/firedoor,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/floor_decal/industrial/hatch/yellow,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/phobos/security/questioning)
 "QR" = (
@@ -9865,8 +10158,11 @@
 /obj/machinery/vending/hydronutrients/generic,
 /obj/machinery/alarm{
 	dir = 8;
-	icon_state = "alarm0";
-	pixel_x = 24
+	pixel_x = 24;
+	req_access = list(ACCESS_PHOBOS)
+	},
+/obj/floor_decal/corner/green{
+	dir = 6
 	},
 /turf/simulated/floor/tiled,
 /area/phobos/living/hydro)
@@ -9887,7 +10183,8 @@
 	},
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply,
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,
-/turf/simulated/floor/tiled/dark/monotile,
+/obj/catwalk_plated,
+/turf/simulated/floor/plating,
 /area/phobos/hallway)
 "Rf" = (
 /obj/machinery/atmospherics/pipe/simple/visible/fuel{
@@ -9910,15 +10207,10 @@
 	color = "#aa5f61"
 	},
 /obj/structure/ship_munition/disperser_charge/explosive/military,
-/obj/structure/ship_munition/disperser_charge/explosive/military{
-	pixel_y = -10
-	},
-/obj/structure/ship_munition/disperser_charge/explosive/military{
-	pixel_y = 10
-	},
 /obj/machinery/light/small/red{
 	dir = 1
 	},
+/obj/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/techfloor,
 /area/phobos/disperser/storage)
 "Ri" = (
@@ -9955,7 +10247,8 @@
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,
-/turf/simulated/floor/tiled/dark/monotile,
+/obj/catwalk_plated,
+/turf/simulated/floor/plating,
 /area/phobos/hallway)
 "Rx" = (
 /obj/machinery/disposal,
@@ -10010,25 +10303,9 @@
 	color = "#aa5f61"
 	},
 /obj/structure/ship_munition/disperser_charge/explosive/military,
-/obj/structure/ship_munition/disperser_charge/explosive/military{
-	pixel_y = -10
-	},
-/obj/structure/ship_munition/disperser_charge/explosive/military{
-	pixel_y = 10
-	},
+/obj/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/techfloor,
 /area/phobos/disperser/storage)
-"RD" = (
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/machinery/atmospherics/unary/vent_scrubber/on{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/techfloor/grid,
-/area/space)
 "RF" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -10037,19 +10314,8 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled,
 /area/phobos/hallway)
-"RH" = (
-/obj/structure/cable{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/red{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/techfloor/grid,
-/area/space)
 "RJ" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -10057,8 +10323,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
-/obj/floor_decal/corner/paleblue/mono,
-/turf/simulated/floor/tiled/white/monotile,
+/turf/simulated/floor/tiled/white,
 /area/phobos/medbay)
 "RK" = (
 /obj/structure/cable/green{
@@ -10131,6 +10396,9 @@
 	dir = 4;
 	pixel_x = -24
 	},
+/obj/floor_decal/corner/green{
+	dir = 9
+	},
 /turf/simulated/floor/tiled,
 /area/phobos/living/hydro)
 "Se" = (
@@ -10150,7 +10418,7 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/floor_decal/corner/paleblue/diagonal,
+/obj/floor_decal/corner/blue/diagonal,
 /turf/simulated/floor/tiled/dark,
 /area/phobos/bridge)
 "Sh" = (
@@ -10158,7 +10426,7 @@
 	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/turf/simulated/floor/tiled/techfloor,
+/turf/simulated/floor/tiled,
 /area/phobos/security)
 "Sm" = (
 /obj/structure/catwalk,
@@ -10185,19 +10453,49 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
-/turf/simulated/floor/tiled/techfloor,
+/obj/floor_decal/corner/red{
+	dir = 10
+	},
+/turf/simulated/floor/tiled,
 /area/phobos/security)
 "Sr" = (
+/obj/item/gun/projectile/pistol/m19,
+/obj/item/clothing/head/beret/solgov/fleet/medical,
+/obj/item/clothing/under/solgov/utility/fleet/combat/medical,
+/obj/item/clothing/under/solgov/utility/fleet/polopants/medical,
+/obj/item/clothing/accessory/solgov/department/medical/fleet,
+/obj/item/clothing/suit/storage/jacket/solgov/fleet/medical,
+/obj/item/clothing/accessory/storage/holster/thigh,
+/obj/item/device/flashlight/upgraded,
+/obj/item/ammo_magazine/pistol,
+/obj/item/clothing/glasses/hud/health/goggle,
+/obj/item/clothing/gloves/thick/duty/solgov/med,
+/obj/item/clothing/gloves/latex,
+/obj/item/clothing/gloves/latex/nitrile,
+/obj/item/clothing/suit/armor/pcarrier/navy,
+/obj/item/clothing/accessory/armor_tag/solgov/fleet,
+/obj/item/clothing/accessory/armor_tag/solgov/medic,
+/obj/item/clothing/accessory/armor_plate/medium,
+/obj/item/clothing/head/helmet/solgov,
+/obj/item/clothing/accessory/helmet_cover/navy,
+/obj/item/clothing/accessory/solgov/fleet_patch/third,
 /obj/structure/cable/green{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/item/device/radio/intercom/map_preset/phobos{
-	dir = 1;
-	pixel_y = -31
+/obj/structure/closet/secure_closet/medical3{
+	req_access = list("ACCESS_PHOBOS")
 	},
-/obj/floor_decal/corner/green/diagonal,
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/floor_decal/corner/paleblue{
+	dir = 10
+	},
+/obj/floor_decal/corner/paleblue{
+	dir = 5
+	},
 /turf/simulated/floor/tiled/white,
 /area/phobos/medbay)
 "St" = (
@@ -10270,6 +10568,7 @@
 "SL" = (
 /obj/structure/table/steel_reinforced,
 /obj/item/book/manual/sol_sop,
+/obj/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/phobos/bridge)
 "SM" = (
@@ -10309,22 +10608,9 @@
 	color = "#aa5f61"
 	},
 /obj/structure/ship_munition/disperser_charge/emp,
-/obj/structure/ship_munition/disperser_charge/emp{
-	pixel_y = 10
-	},
-/obj/structure/ship_munition/disperser_charge/emp{
-	pixel_y = -10
-	},
+/obj/floor_decal/industrial/outline/blue,
 /turf/simulated/floor/tiled/techfloor,
 /area/phobos/disperser/storage)
-"SS" = (
-/obj/floor_decal/industrial/outline/blue,
-/obj/machinery/portable_atmospherics/canister/empty,
-/obj/machinery/atmospherics/portables_connector{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/techfloor/grid,
-/area/space)
 "SV" = (
 /obj/structure/cable/yellow{
 	d1 = 1;
@@ -10479,21 +10765,13 @@
 /turf/simulated/floor/plating,
 /area/phobos/maint/port)
 "TI" = (
-/obj/floor_decal/corner/paleblue/mono,
-/turf/simulated/floor/tiled/white/monotile,
-/area/phobos/medbay)
-"TK" = (
-/obj/machinery/porta_turret{
-	auto_repair = 1;
-	id_tag = "phobos_turret_58";
-	lethal = 1;
-	name = "SGV phobos Defence Turret";
-	shot_delay = 10
+/obj/machinery/atmospherics/unary/engine{
+	dir = 8
 	},
 /turf/simulated/floor/reinforced{
 	map_airless = 1
 	},
-/area/phobos/bridge)
+/area/space)
 "TM" = (
 /obj/structure/disposalpipe/segment{
 	dir = 2;
@@ -10505,7 +10783,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 6
 	},
-/obj/floor_decal/corner/green/diagonal,
 /turf/simulated/floor/tiled/white,
 /area/phobos/medbay)
 "TN" = (
@@ -10522,10 +10799,15 @@
 /area/phobos/living/bunk)
 "TO" = (
 /obj/structure/cable{
-	d1 = 2;
+	d1 = 4;
 	d2 = 8;
-	icon_state = "2-8"
+	icon_state = "4-8"
 	},
+/obj/machinery/atmospherics/portables_connector{
+	dir = 8
+	},
+/obj/machinery/portable_atmospherics/canister/air,
+/obj/floor_decal/industrial/outline/blue,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/space)
 "TP" = (
@@ -10538,7 +10820,8 @@
 /area/phobos/disperser)
 "TQ" = (
 /obj/machinery/door/firedoor,
-/turf/simulated/floor/tiled/techfloor,
+/obj/floor_decal/industrial/hatch/yellow,
+/turf/simulated/floor/tiled/monotile,
 /area/phobos/security)
 "TR" = (
 /turf/simulated/wall/r_wall/hull,
@@ -10580,7 +10863,7 @@
 "Ue" = (
 /obj/floor_decal/industrial/outline/yellow,
 /obj/random/vendor,
-/turf/simulated/floor/tiled/dark/monotile,
+/turf/simulated/floor/tiled,
 /area/phobos/hallway)
 "Uh" = (
 /obj/structure/table/standard,
@@ -10589,13 +10872,17 @@
 /obj/item/stack/nanopaste,
 /turf/simulated/floor/tiled/white/monotile,
 /area/phobos/medbay)
+"Ui" = (
+/obj/machinery/hologram/holopad,
+/turf/simulated/floor/tiled/white,
+/area/phobos/medbay)
 "Uj" = (
-/obj/structure/sign/solgov{
-	pixel_x = 32;
-	pixel_y = -32
+/obj/structure/window/reinforced{
+	dir = 1
 	},
-/turf/space,
-/area/space)
+/obj/structure/table/reinforced,
+/turf/simulated/floor/tiled,
+/area/phobos/medbay)
 "Um" = (
 /turf/simulated/wall/prepainted,
 /area/phobos/maint/port)
@@ -10607,7 +10894,7 @@
 "UE" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled,
 /area/phobos/hallway)
 "UH" = (
 /turf/simulated/wall/r_wall/hull,
@@ -10619,7 +10906,7 @@
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
 	dir = 1
 	},
-/turf/simulated/floor/tiled/techfloor,
+/turf/simulated/floor/tiled,
 /area/phobos/security)
 "UJ" = (
 /obj/machinery/atmospherics/pipe/manifold4w/visible/fuel,
@@ -10645,10 +10932,12 @@
 /obj/machinery/firealarm{
 	pixel_y = 21
 	},
-/obj/floor_decal/industrial/hatch/blue,
 /obj/structure/closet/emcloset,
 /obj/item/device/radio/map_preset/phobos,
-/turf/simulated/floor/tiled/dark,
+/obj/floor_decal/corner/red/three_quarters{
+	dir = 1
+	},
+/turf/simulated/floor/tiled,
 /area/phobos/hallway)
 "UP" = (
 /obj/structure/window/reinforced{
@@ -10679,28 +10968,15 @@
 /turf/simulated/floor/tiled/white,
 /area/phobos/medbay/chemistry)
 "UY" = (
-/obj/floor_decal/corner/paleblue/mono,
-/obj/item/gun/projectile/pistol/m19,
-/obj/item/clothing/head/beret/solgov/fleet/medical,
-/obj/item/clothing/under/solgov/utility/fleet/combat/medical,
-/obj/item/clothing/under/solgov/utility/fleet/polopants/medical,
-/obj/item/clothing/accessory/solgov/department/medical/fleet,
-/obj/item/clothing/suit/storage/jacket/solgov/fleet/medical,
-/obj/item/clothing/accessory/storage/holster/thigh,
-/obj/item/device/flashlight/upgraded,
-/obj/item/ammo_magazine/pistol,
-/obj/item/clothing/glasses/hud/health/goggle,
-/obj/item/clothing/gloves/thick/duty/solgov/med,
-/obj/item/clothing/gloves/latex,
-/obj/item/clothing/gloves/latex/nitrile,
-/obj/item/clothing/suit/armor/pcarrier/navy,
-/obj/item/clothing/accessory/armor_tag/solgov/fleet,
-/obj/item/clothing/accessory/armor_tag/solgov/medic,
-/obj/item/clothing/accessory/armor_plate/medium,
-/obj/item/clothing/head/helmet/solgov,
-/obj/item/clothing/accessory/helmet_cover/navy,
-/obj/item/clothing/accessory/solgov/fleet_patch/third,
-/turf/simulated/floor/tiled/white/monotile,
+/obj/floor_decal/industrial/warning{
+	dir = 6;
+	icon_state = "warning"
+	},
+/obj/floor_decal/corner/paleblue/diagonal,
+/obj/machinery/atmospherics/unary/vent_scrubber/on{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/white,
 /area/phobos/medbay)
 "UZ" = (
 /obj/machinery/door/airlock/hatch/maintenance,
@@ -10726,7 +11002,7 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/manifold4w/hidden/scrubbers,
-/turf/simulated/floor/tiled/techfloor,
+/turf/simulated/floor/tiled,
 /area/phobos/security)
 "Vb" = (
 /turf/simulated/floor/tiled/freezer,
@@ -10749,7 +11025,6 @@
 "Vk" = (
 /obj/machinery/alarm{
 	dir = 1;
-	icon_state = "alarm0";
 	pixel_y = -22
 	},
 /obj/machinery/atmospherics/unary/vent_pump/on{
@@ -10778,7 +11053,10 @@
 	dir = 2;
 	pixel_y = 24
 	},
-/turf/simulated/floor/tiled/dark,
+/obj/floor_decal/corner/yellow{
+	dir = 5
+	},
+/turf/simulated/floor/tiled,
 /area/phobos/hallway)
 "Vo" = (
 /obj/structure/bed/chair/padded/beige{
@@ -10829,7 +11107,10 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/unary/vent_pump/on,
-/turf/simulated/floor/tiled/techfloor,
+/obj/floor_decal/corner/red{
+	dir = 5
+	},
+/turf/simulated/floor/tiled,
 /area/phobos/security)
 "Vt" = (
 /obj/machinery/computer/modular/preset/cardslot/command,
@@ -10861,15 +11142,10 @@
 	color = "#aa5f61"
 	},
 /obj/structure/ship_munition/disperser_charge/fire/military,
-/obj/structure/ship_munition/disperser_charge/fire/military{
-	pixel_y = -10
-	},
-/obj/structure/ship_munition/disperser_charge/fire/military{
-	pixel_y = 10
-	},
 /obj/machinery/light/small/red{
 	dir = 1
 	},
+/obj/floor_decal/industrial/outline/orange,
 /turf/simulated/floor/tiled/techfloor,
 /area/phobos/disperser/storage)
 "VA" = (
@@ -10944,7 +11220,10 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,
-/turf/simulated/floor/tiled/techfloor,
+/obj/floor_decal/corner/red{
+	dir = 10
+	},
+/turf/simulated/floor/tiled,
 /area/phobos/security)
 "VK" = (
 /obj/structure/hygiene/sink{
@@ -10958,7 +11237,12 @@
 	pixel_x = -24
 	},
 /obj/machinery/atmospherics/unary/vent_pump/on,
-/obj/floor_decal/corner/orange/diagonal,
+/obj/machinery/light/small{
+	dir = 1
+	},
+/obj/floor_decal/corner/red{
+	dir = 5
+	},
 /turf/simulated/floor/tiled/dark,
 /area/phobos/security)
 "VL" = (
@@ -10996,16 +11280,10 @@
 /obj/structure/catwalk,
 /turf/simulated/floor/plating,
 /area/phobos/engine/atmos)
-"VS" = (
-/obj/machinery/sleeper{
-	dir = 8
-	},
-/obj/floor_decal/corner/paleblue/mono,
-/turf/simulated/floor/tiled/white/monotile,
-/area/phobos/medbay)
 "VT" = (
 /obj/machinery/alarm{
-	pixel_y = 24
+	pixel_y = 24;
+	req_access = list(ACCESS_PHOBOS)
 	},
 /turf/simulated/floor/wood/ebony,
 /area/phobos/living/bunk)
@@ -11015,7 +11293,9 @@
 /turf/simulated/floor/tiled/steel_grid,
 /area/phobos/engine)
 "VY" = (
-/obj/machinery/vending/engineering,
+/obj/machinery/vending/engineering{
+	req_access = list("ACCESS_PHOBOS")
+	},
 /obj/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/steel_grid,
 /area/phobos/engine)
@@ -11024,8 +11304,8 @@
 /obj/random/coin,
 /obj/machinery/alarm{
 	dir = 8;
-	icon_state = "alarm0";
-	pixel_x = 24
+	pixel_x = 24;
+	req_access = list(ACCESS_PHOBOS)
 	},
 /obj/floor_decal/spline/fancy/wood{
 	dir = 1
@@ -11044,7 +11324,8 @@
 /obj/machinery/door/firedoor,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/turf/simulated/floor/tiled,
+/obj/floor_decal/industrial/hatch/yellow,
+/turf/simulated/floor/tiled/monotile,
 /area/phobos/living/hydro)
 "Wc" = (
 /obj/machinery/light/small,
@@ -11056,9 +11337,7 @@
 /area/phobos/disperser)
 "Wf" = (
 /obj/machinery/door/airlock/maintenance{
-	locked = 1;
-	name = "Infirmary Maintenance Access";
-	welded = 1
+	name = "Infirmary Maintenance Access"
 	},
 /obj/structure/cable/green{
 	d1 = 1;
@@ -11069,10 +11348,12 @@
 /turf/simulated/floor/tiled/steel_ridged,
 /area/phobos/medbay)
 "Wi" = (
-/obj/floor_decal/corner/green/borderfull,
-/obj/machinery/hologram/holopad,
-/turf/simulated/floor/tiled/white/monotile,
-/area/phobos/medbay)
+/obj/paint/red,
+/obj/machinery/atmospherics/pipe/manifold/hidden/fuel{
+	dir = 1
+	},
+/turf/simulated/wall/r_titanium,
+/area/space)
 "Wj" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -11112,25 +11393,30 @@
 /obj/structure/disposalpipe/segment,
 /obj/machinery/door/firedoor,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/floor_decal/industrial/hatch/yellow,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/phobos/living/mess)
+"Wv" = (
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/structure/closet/hydrant{
+	pixel_y = 32
+	},
+/obj/floor_decal/corner/red{
+	dir = 5
+	},
+/turf/simulated/floor/tiled,
+/area/phobos/hallway)
 "Ww" = (
-/obj/machinery/ion_engine{
-	dir = 8
-	},
-/turf/simulated/floor/reinforced{
-	map_airless = 1
-	},
+/obj/landmark/map_data,
+/turf/space,
 /area/space)
 "Wx" = (
 /obj/random/trash,
 /obj/machinery/disposal,
 /obj/structure/disposalpipe/trunk{
 	dir = 4
-	},
-/obj/machinery/light_switch{
-	pixel_x = -23;
-	pixel_y = 25
 	},
 /turf/simulated/floor/tiled/white,
 /area/phobos/living)
@@ -11151,18 +11437,9 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
+/obj/floor_decal/industrial/hatch/yellow,
 /turf/simulated/floor/plating,
 /area/phobos/hallway/eva)
-"WD" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/obj/floor_decal/corner/green/three_quarters,
-/turf/simulated/floor/tiled/dark,
-/area/phobos/hallway)
 "WM" = (
 /obj/structure/catwalk,
 /obj/structure/cable/green{
@@ -11182,11 +11459,12 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/phobos/engine/thrusterstarboard)
 "WO" = (
-/obj/floor_decal/corner/green{
-	dir = 9
+/obj/paint/red,
+/obj/machinery/atmospherics/pipe/manifold/hidden/fuel{
+	dir = 8
 	},
-/turf/simulated/floor/tiled/white,
-/area/phobos/medbay)
+/turf/simulated/wall/r_titanium,
+/area/space)
 "WP" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -11206,7 +11484,13 @@
 	dir = 8;
 	id = "phobos_md_58_con"
 	},
-/turf/simulated/floor/airless,
+/obj/machinery/door/blast/regular{
+	dir = 4;
+	id_tag = "phobos_md_58_bd";
+	name = "Mass Driver Blast Door";
+	begins_closed = 0
+	},
+/turf/simulated/floor,
 /area/phobos/disperser)
 "WT" = (
 /obj/structure/cable/green{
@@ -11223,13 +11507,12 @@
 /area/phobos/maint/port)
 "WV" = (
 /obj/item/shield/riot/metal,
-/obj/item/shield/energy,
 /obj/machinery/button/blast_door{
 	id_tag = "parmory";
 	name = "Desk Shutters Control";
 	pixel_x = -8;
 	pixel_y = 26;
-	req_access = list("ACCESS_CAVALRY_EMERG_ARMORY")
+	req_access = list("ACCESS_PHOBOS_ARMORY")
 	},
 /obj/structure/table/steel,
 /turf/simulated/floor/tiled/techfloor,
@@ -11240,13 +11523,19 @@
 	name = "Cell 1 Control";
 	pixel_y = 29
 	},
-/turf/simulated/floor/tiled/techfloor,
+/obj/floor_decal/corner/red{
+	dir = 5
+	},
+/turf/simulated/floor/tiled,
 /area/phobos/security)
 "WZ" = (
 /obj/structure/reagent_dispensers/watertank,
 /obj/machinery/light_switch{
 	pixel_x = 22;
 	pixel_y = 6
+	},
+/obj/floor_decal/corner/green/three_quarters{
+	dir = 4
 	},
 /turf/simulated/floor/tiled,
 /area/phobos/living/hydro)
@@ -11284,17 +11573,17 @@
 /turf/simulated/floor/tiled/steel_ridged,
 /area/phobos/engine/thrusterstarboard)
 "Xi" = (
-/obj/item/device/radio/intercom/map_preset/phobos{
-	dir = 1;
-	pixel_y = -31
-	},
-/obj/structure/catwalk,
 /obj/structure/cable/green{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/turf/simulated/floor/airless,
+/obj/machinery/atmospherics/pipe/manifold/hidden{
+	dir = 4;
+	icon_state = "map"
+	},
+/obj/structure/catwalk,
+/turf/simulated/floor/plating,
 /area/phobos/hallway/eva)
 "Xj" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/fuel,
@@ -11307,7 +11596,8 @@
 /obj/machinery/door/firedoor,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/turf/simulated/floor/tiled/steel_ridged,
+/obj/floor_decal/industrial/hatch/yellow,
+/turf/simulated/floor/tiled/monotile,
 /area/phobos/engine)
 "Xn" = (
 /obj/structure/disposalpipe/segment{
@@ -11356,8 +11646,30 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
+/obj/floor_decal/industrial/hatch/yellow,
 /turf/simulated/floor/tiled/white/monotile,
 /area/phobos/medbay)
+"Xz" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/floor_decal/corner/pink{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/white,
+/area/phobos/medbay)
+"XC" = (
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/floor_decal/corner/yellow{
+	dir = 5
+	},
+/turf/simulated/floor/tiled,
+/area/phobos/hallway)
 "XD" = (
 /obj/structure/curtain/open/shower/engineering,
 /obj/machinery/atmospherics/pipe/simple/hidden/fuel{
@@ -11458,9 +11770,6 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/phobos/maint/port)
 "XX" = (
-/obj/structure/closet{
-	name = "security wardrobe"
-	},
 /obj/machinery/firealarm{
 	dir = 2;
 	pixel_y = 24
@@ -11470,7 +11779,6 @@
 /obj/item/storage/belt/holster/security/tactical,
 /obj/item/device/radio/headset/map_preset/phobos,
 /obj/item/gun/energy/gun,
-/obj/item/gun/projectile/pistol/m22f,
 /obj/item/clothing/accessory/storage/holster/thigh,
 /obj/item/clothing/accessory/armor_tag/solgov,
 /obj/item/clothing/accessory/storage/black_drop,
@@ -11489,6 +11797,8 @@
 /obj/item/ammo_magazine/pistol/double,
 /obj/item/ammo_magazine/pistol/double,
 /obj/item/clothing/gloves/thick/duty/solgov/sec,
+/obj/structure/closet/secure_closet/security_phobos,
+/obj/item/gun/energy/gun/small,
 /turf/simulated/floor/tiled/monotile,
 /area/phobos/security/equipment)
 "Yd" = (
@@ -11519,7 +11829,7 @@
 /obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/turf/simulated/floor/tiled/dark/monotile,
+/turf/simulated/floor/tiled,
 /area/phobos/hallway)
 "Yg" = (
 /turf/simulated/wall/r_wall/prepainted,
@@ -11601,8 +11911,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
-/obj/floor_decal/corner/paleblue/diagonal,
-/turf/simulated/floor/tiled/white/monotile,
+/turf/simulated/floor/tiled/white,
 /area/phobos/medbay)
 "Yu" = (
 /obj/machinery/atmospherics/binary/pump/on{
@@ -11670,8 +11979,34 @@
 /obj/machinery/door/firedoor,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/machinery/button/blast_door{
+	id_tag = "sparmory";
+	name = "Desk Shutters Control";
+	pixel_x = 25;
+	pixel_y = 9;
+	req_access = list("ACCESS_PHOBOS_ARMORY")
+	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/phobos/security)
+"YE" = (
+/obj/machinery/light,
+/obj/floor_decal/corner/paleblue{
+	dir = 10
+	},
+/turf/simulated/floor/tiled,
+/area/phobos/hallway)
+"YG" = (
+/obj/structure/catwalk,
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden{
+	dir = 4
+	},
+/turf/simulated/floor/airless,
+/area/phobos/hallway/eva)
 "YH" = (
 /obj/item/reagent_containers/spray/cleaner,
 /obj/structure/table/rack,
@@ -11685,6 +12020,9 @@
 /obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/floor_decal/corner/red{
+	dir = 6
+	},
 /turf/simulated/floor/tiled/techfloor,
 /area/phobos/security/lobby)
 "YN" = (
@@ -11736,7 +12074,7 @@
 /turf/simulated/floor/wood/ebony,
 /area/phobos/living/mess)
 "YW" = (
-/obj/machinery/suit_storage_unit/away_cavalry_com,
+/obj/machinery/suit_storage_unit/phobos,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/phobos/hallway/eva)
 "YZ" = (
@@ -11776,14 +12114,12 @@
 	},
 /obj/machinery/atmospherics/valve/shutoff/supply,
 /obj/machinery/atmospherics/valve/shutoff/scrubbers,
-/obj/floor_decal/corner/red/half{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled,
 /area/phobos/hallway)
 "Zl" = (
 /obj/machinery/atmospherics/unary/tank/hydrogen{
-	start_pressure = 6000
+	start_pressure = 6000;
+	dir = 4
 	},
 /obj/floor_decal/industrial/outline/grey,
 /turf/simulated/floor/tiled/techfloor,
@@ -11805,7 +12141,8 @@
 	dir = 4
 	},
 /obj/floor_decal/corner/beige/diagonal,
-/turf/simulated/floor/tiled/white,
+/obj/floor_decal/industrial/hatch/yellow,
+/turf/simulated/floor/tiled/white/monotile,
 /area/phobos/medbay/chemistry)
 "Zp" = (
 /obj/structure/cable/green{
@@ -11818,14 +12155,10 @@
 	pixel_x = 0;
 	pixel_y = 24
 	},
-/obj/structure/closet{
-	name = "security wardrobe"
-	},
 /obj/floor_decal/industrial/outline/red,
 /obj/item/clothing/under/solgov/utility/fleet/combat/security,
 /obj/item/storage/belt/holster/security/tactical,
 /obj/item/device/radio/headset/map_preset/phobos,
-/obj/item/gun/energy/gun,
 /obj/item/gun/projectile/pistol/m22f,
 /obj/item/clothing/accessory/storage/holster/thigh,
 /obj/item/clothing/accessory/armor_tag/solgov,
@@ -11845,6 +12178,8 @@
 /obj/item/ammo_magazine/pistol/double,
 /obj/item/ammo_magazine/pistol/double,
 /obj/item/clothing/gloves/thick/duty/solgov/sec,
+/obj/structure/closet/secure_closet/security_phobos,
+/obj/item/gun/energy/gun/small,
 /turf/simulated/floor/tiled/monotile,
 /area/phobos/security/equipment)
 "Zr" = (
@@ -11856,6 +12191,7 @@
 /area/phobos/engine)
 "Zs" = (
 /obj/machinery/portable_atmospherics/powered/pump,
+/obj/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/techfloor,
 /area/phobos/maint/starboard/bridge)
 "Zt" = (
@@ -11906,7 +12242,8 @@
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
 	dir = 1
 	},
-/turf/simulated/floor/tiled/dark/monotile,
+/obj/catwalk_plated,
+/turf/simulated/floor/plating,
 /area/phobos/hallway)
 "ZN" = (
 /obj/structure/cable/green{
@@ -11920,18 +12257,26 @@
 	id_tag = "detdoor";
 	name = "Locker Fire Group"
 	},
-/turf/simulated/floor/tiled/steel_ridged,
+/obj/floor_decal/industrial/hatch/yellow,
+/turf/simulated/floor/tiled/monotile,
 /area/phobos/security/equipment)
 "ZR" = (
-/obj/structure/filingcabinet/chestdrawer{
-	dir = 1
+/obj/structure/table/standard,
+/obj/floor_decal/industrial/warning{
+	dir = 10;
+	icon_state = "warning"
 	},
-/obj/item/folder/blue,
-/obj/item/folder/white,
-/obj/item/folder,
-/obj/random/loot,
-/obj/floor_decal/corner/paleblue/mono,
-/turf/simulated/floor/tiled/white/monotile,
+/obj/machinery/cell_charger,
+/obj/item/reagent_containers/glass/beaker/cryoxadone,
+/obj/machinery/light{
+	dir = 8;
+	icon_state = "tube1"
+	},
+/obj/floor_decal/corner/paleblue/diagonal,
+/obj/machinery/atmospherics/pipe/simple/visible{
+	dir = 5
+	},
+/turf/simulated/floor/tiled/white,
 /area/phobos/medbay)
 "ZV" = (
 /obj/structure/reagent_dispensers/watertank,
@@ -12102,7 +12447,7 @@ aa
 aa
 aa
 aa
-aa
+Ww
 "}
 (2,1,1) = {"
 aa
@@ -17043,7 +17388,7 @@ cJ
 Hu
 DO
 fX
-TK
+GY
 bP
 aa
 aa
@@ -17180,13 +17525,13 @@ aa
 aa
 aa
 aa
-TK
+bP
 aa
 aa
 aa
 aa
 aa
-aa
+GY
 bP
 aa
 Bf
@@ -17201,12 +17546,12 @@ Bf
 aa
 bP
 aa
+GY
 aa
 aa
 aa
 aa
-aa
-TK
+bP
 aa
 aa
 aa
@@ -17338,9 +17683,9 @@ aa
 aa
 aa
 aa
-OR
-OR
-OR
+Bf
+Bf
+Bf
 Bf
 Bf
 Bf
@@ -17488,7 +17833,7 @@ bM
 bu
 bu
 bu
-GY
+OR
 bv
 OR
 bS
@@ -17640,7 +17985,7 @@ bP
 bP
 bP
 OR
-GY
+OR
 bx
 uV
 bT
@@ -17792,8 +18137,8 @@ aa
 aa
 OR
 OR
-GY
-GY
+OR
+OR
 VI
 bT
 bY
@@ -17810,7 +18155,7 @@ Ew
 Wc
 hw
 WR
-Ot
+Bf
 Bf
 Bf
 aa
@@ -18265,7 +18610,7 @@ Pc
 Pc
 zN
 hw
-WR
+he
 vn
 Bf
 Bf
@@ -18414,7 +18759,7 @@ RA
 JT
 BP
 Pc
-cn
+sz
 oj
 PD
 vk
@@ -19007,7 +19352,7 @@ aa
 aa
 OR
 OR
-yK
+tD
 JP
 bb
 bb
@@ -19910,7 +20255,7 @@ aa
 aa
 aa
 aa
-TK
+aa
 bP
 bM
 bM
@@ -19948,7 +20293,7 @@ aa
 bM
 bM
 bP
-TK
+aa
 aa
 aa
 aa
@@ -20066,7 +20411,7 @@ aa
 aa
 bM
 bP
-TK
+aa
 bP
 nl
 Ak
@@ -20535,14 +20880,14 @@ YL
 YL
 YL
 Pg
-AE
+Ff
 sF
 bA
 QF
-we
-sT
-sT
+dr
+oc
 DR
+wu
 GI
 By
 ZR
@@ -20685,16 +21030,16 @@ zx
 QE
 kx
 bW
-bW
+HS
 mW
 cZ
 Ci
 em
 Yf
-Ff
+Ku
 mJ
 MJ
-DR
+wu
 OE
 ur
 AI
@@ -20843,10 +21188,10 @@ cZ
 yY
 NW
 QF
-we
-oc
+dr
+Uj
 Am
-xa
+wu
 wg
 Ov
 UY
@@ -20998,7 +21343,7 @@ JS
 wC
 wu
 pg
-Pv
+wu
 wu
 AB
 wu
@@ -21152,7 +21497,7 @@ wu
 qF
 ve
 pO
-eM
+RJ
 iH
 Nv
 md
@@ -21297,13 +21642,13 @@ BR
 mD
 el
 Lu
-NW
-we
+Kd
+dr
 wu
 yZ
 LW
 qD
-vT
+qD
 Ib
 nd
 FK
@@ -21448,15 +21793,15 @@ hZ
 GC
 oQ
 el
-Nt
-NW
-we
+Jr
+Kd
+dr
 wu
 nB
 rS
+Ui
 CS
-VS
-dO
+jC
 mo
 mR
 Uh
@@ -21601,14 +21946,14 @@ qp
 Mu
 el
 ob
-NW
-we
+Kd
+dr
 wu
 My
-fd
-TI
-Wi
-RJ
+rS
+CS
+CS
+jC
 iC
 wu
 wu
@@ -21742,8 +22087,8 @@ bP
 yv
 yv
 sm
+DY
 Yg
-zb
 ew
 Of
 us
@@ -21752,15 +22097,15 @@ us
 us
 us
 el
-Nt
+Jr
 NW
-xd
+YE
 wu
 yP
 rS
-HS
-er
-qU
+CS
+CS
+Xz
 sR
 Wf
 qN
@@ -21893,9 +22238,9 @@ Ks
 bP
 yv
 yv
+JN
 fz
-Yg
-Yg
+EK
 KF
 Ia
 Yd
@@ -21904,15 +22249,15 @@ Gg
 ol
 sv
 zG
-Nt
+Jr
 NW
-we
+dr
 wu
 Hd
 rS
-ve
-WO
-PX
+CS
+CS
+RJ
 Sr
 wu
 nr
@@ -22056,15 +22401,15 @@ Vd
 Vd
 rs
 zG
-Nt
-NW
-we
+Jr
+Kd
+dr
 wu
 wr
 rS
-mo
-DY
-MC
+CS
+CS
+RJ
 mn
 wu
 Ms
@@ -22203,17 +22548,17 @@ Yg
 Nq
 tr
 SW
-EP
+vI
 Vd
 Vd
 Qc
 zG
-Nt
-NW
-we
+Jr
+Kd
+dr
 wu
 tm
-fc
+rS
 CW
 sl
 Yt
@@ -22357,14 +22702,14 @@ tr
 SW
 Mp
 Vd
-dr
+Vd
 Mb
 zG
 Lu
-NW
-we
+Kd
+dr
 wu
-ve
+Jy
 TM
 eU
 Gn
@@ -22656,20 +23001,20 @@ yv
 xH
 uq
 lX
-fL
-Of
+mP
+rH
 kv
 WV
 un
 Vd
 xR
 zG
-Vn
+iZ
+Kd
+QF
+QF
+QF
 NW
-we
-vI
-rT
-WD
 EY
 pZ
 LE
@@ -22809,19 +23154,19 @@ VC
 VC
 VC
 WW
-rH
+tr
 kv
 kv
 kv
 MK
 kv
 zG
-Qt
+Wv
 ZG
 IE
 UE
 UE
-gs
+za
 Jd
 tj
 MZ
@@ -22966,14 +23311,14 @@ pD
 FW
 fw
 qX
-qX
+eK
 cF
 Zi
 bA
-we
-we
-we
-eu
+QF
+QF
+QF
+QF
 EY
 HM
 UW
@@ -23119,10 +23464,10 @@ CD
 wt
 fL
 fL
-Kd
-Jr
+TQ
+yY
 NW
-we
+QF
 py
 Ue
 Hz
@@ -23418,14 +23763,14 @@ Lg
 ez
 KE
 nC
-JN
+HB
 ff
 Sd
 kY
 If
 oY
-Nt
-NW
+AE
+Kd
 Kl
 HQ
 Rx
@@ -23570,8 +23915,8 @@ fQ
 xS
 Pe
 nC
-JN
-NP
+HB
+st
 NP
 Bt
 jB
@@ -23723,7 +24068,7 @@ ET
 qR
 nC
 HB
-NP
+st
 ge
 by
 LH
@@ -23874,8 +24219,8 @@ KI
 aV
 Vk
 nC
-JN
-NP
+HB
+st
 NP
 NP
 gN
@@ -23888,7 +24233,7 @@ uU
 Bw
 Pk
 oI
-XM
+Ax
 KQ
 KQ
 Kn
@@ -24026,13 +24371,13 @@ NT
 IX
 Jm
 nC
-JN
+HB
 qZ
 AA
 QX
 WZ
 oY
-Nt
+AE
 pK
 Kl
 HQ
@@ -24186,7 +24531,7 @@ nC
 nC
 Vn
 pK
-xd
+mT
 AW
 AW
 AW
@@ -24507,7 +24852,7 @@ FX
 Tu
 pt
 wP
-TK
+aa
 aa
 aa
 aa
@@ -24642,7 +24987,7 @@ xz
 Xj
 tP
 Ra
-we
+gX
 AW
 VT
 TA
@@ -24946,7 +25291,7 @@ XQ
 aE
 Cb
 lD
-we
+gX
 AW
 kA
 AW
@@ -25096,7 +25441,7 @@ aE
 XD
 aE
 aE
-Nt
+XC
 lD
 HU
 AW
@@ -25250,7 +25595,7 @@ Oe
 aE
 Qt
 lD
-xd
+mT
 AW
 vJ
 Mx
@@ -25400,9 +25745,9 @@ zu
 vt
 EC
 aE
-Nt
-lD
-we
+XC
+ID
+gX
 AW
 AW
 AW
@@ -25857,7 +26202,7 @@ LN
 aE
 aE
 Le
-QN
+lB
 cw
 cw
 cw
@@ -26008,8 +26353,8 @@ SK
 LN
 aE
 hJ
-we
-lS
+QF
+Qr
 cw
 TT
 cw
@@ -26017,7 +26362,7 @@ OB
 rJ
 jF
 LQ
-jF
+kF
 GR
 cw
 UZ
@@ -26326,7 +26671,7 @@ vc
 cw
 lQ
 gx
-dK
+Ck
 FD
 bP
 aa
@@ -26610,7 +26955,7 @@ WN
 TZ
 Cm
 Km
-Zl
+yC
 KZ
 bQ
 KV
@@ -26630,7 +26975,7 @@ LJ
 cw
 vx
 Bl
-dK
+Ck
 FD
 bF
 aa
@@ -26914,7 +27259,7 @@ mK
 Ex
 Tz
 PC
-Zl
+yC
 KZ
 EX
 tZ
@@ -27066,7 +27411,7 @@ Nz
 Fw
 nb
 Rf
-Zl
+yC
 KZ
 Ay
 tZ
@@ -27210,7 +27555,7 @@ aa
 aa
 aa
 bP
-TK
+bP
 bP
 aa
 aa
@@ -27240,7 +27585,7 @@ Zg
 aa
 aa
 aa
-TK
+bP
 bP
 aa
 aa
@@ -27368,9 +27713,9 @@ aa
 aa
 jl
 aa
-JA
-uA
-JA
+aa
+bF
+aa
 UH
 UH
 HX
@@ -27384,9 +27729,9 @@ Uc
 uY
 mI
 UH
-oJ
-Ep
-oJ
+aa
+bF
+aa
 aa
 jl
 aa
@@ -27529,7 +27874,7 @@ UH
 UH
 KZ
 KZ
-gh
+YG
 KZ
 KZ
 UH
@@ -27680,9 +28025,9 @@ UH
 UH
 UH
 UH
-UH
+hz
 Xi
-UH
+Qp
 UH
 UH
 UH
@@ -27981,15 +28326,15 @@ bM
 aa
 bP
 aa
-Uj
 aa
-dq
+aa
 GX
+PX
 Sm
-GX
+PX
 GX
 aa
-Mm
+aa
 aa
 bP
 aa
@@ -28133,15 +28478,15 @@ bF
 bP
 bP
 bP
-zh
+bP
+Jv
 GX
-GX
-GX
+lS
 rI
+mq
 GX
-GX
-GX
-Oy
+xW
+bP
 bP
 bP
 bP
@@ -28287,11 +28632,11 @@ aa
 aa
 Eq
 GX
-kF
+GX
 GX
 fW
 GX
-SS
+GX
 GX
 iS
 aa
@@ -28443,7 +28788,7 @@ AT
 fp
 qt
 rk
-RH
+yx
 xF
 Nh
 xW
@@ -28595,7 +28940,7 @@ DZ
 OZ
 rW
 OZ
-Xq
+fd
 GX
 GX
 wa
@@ -28739,7 +29084,7 @@ aa
 bM
 bP
 bP
-sB
+bP
 Ge
 Tt
 kE
@@ -28751,7 +29096,7 @@ Xq
 wG
 mb
 du
-mq
+bP
 bP
 bP
 bM
@@ -28895,11 +29240,11 @@ aa
 Za
 Tt
 GS
-gD
+DZ
 lO
 fA
 KA
-RD
+Xq
 zS
 mb
 LV
@@ -29048,9 +29393,9 @@ ds
 Ti
 uO
 lu
-rk
+Nt
 RK
-rk
+Nt
 KM
 bd
 Ti
@@ -29196,17 +29541,17 @@ bF
 bF
 aa
 aa
-cT
+bP
 GX
 GX
 TO
-zY
-pA
-yx
+sT
+oJ
+rT
 iA
 GX
 GX
-EK
+bP
 aa
 aa
 bF
@@ -29350,13 +29695,13 @@ aa
 aa
 bP
 CV
-cQ
-BM
-ja
-mV
-VL
-BM
-cQ
+GX
+fc
+zY
+pA
+MC
+vT
+GX
 CV
 bP
 aa
@@ -29502,13 +29847,13 @@ aa
 aa
 bP
 aa
-Ww
-BM
-BM
-BM
-BM
-BM
-Ww
+cQ
+Pv
+ja
+mV
+VL
+HF
+cz
 aa
 bP
 aa
@@ -29649,23 +29994,23 @@ aa
 aa
 aa
 aa
-bM
+bF
 aa
 aa
 bP
 aa
-aa
+TI
 BM
-jL
-Er
-jL
-BM
-aa
+Wi
+Pv
+WO
+yK
+TI
 aa
 bP
 aa
 aa
-bM
+bF
 aa
 aa
 aa
@@ -29802,21 +30147,21 @@ aa
 aa
 aa
 bM
-bM
-aa
-bP
-aa
-aa
-pb
-aa
-aa
-aa
-pb
 aa
 aa
 bP
 aa
-bM
+aa
+BM
+eu
+dq
+xa
+BM
+aa
+aa
+bP
+aa
+aa
 bM
 aa
 aa
@@ -29953,23 +30298,23 @@ aa
 aa
 aa
 aa
-TK
-eV
 bM
 bM
+aa
 bP
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
 bP
+aa
 bM
 bM
-bM
-bM
-bM
-bP
-bP
-bM
-bM
-eV
-TK
 aa
 aa
 aa
@@ -30106,21 +30451,21 @@ aa
 aa
 aa
 aa
-aa
-aa
-bF
-bF
-bF
-bF
-aa
-aa
-aa
-bF
-bF
-bF
-bF
-aa
-aa
+eV
+bM
+bM
+bP
+bP
+bM
+bM
+bM
+bM
+bM
+bP
+bP
+bM
+bM
+eV
 aa
 aa
 aa
@@ -30260,17 +30605,17 @@ aa
 aa
 aa
 aa
+bF
+bF
+bF
+bF
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+bF
+bF
+bF
+bF
 aa
 aa
 aa

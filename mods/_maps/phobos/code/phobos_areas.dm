@@ -1,6 +1,6 @@
 /area/phobos
-	icon = 'maps/away/phobos/phobos_icons.dmi'
-
+	icon = 'mods/_maps/phobos/icons/phobos_icons.dmi'
+	req_access = (access_away_phobos)
 
 
 /area/phobos/ven
@@ -10,10 +10,13 @@
 /area/phobos/bridge
 	name = "\improper SGV Bridge"
 	icon_state = "bridge"
+	req_access = (access_away_phobos_bridge)
 
 /area/phobos/bridge/co_office
 	name = "\improper SGV phobos Commanding Officer Office"
 	icon_state = "bridge"
+	req_access = (access_away_phobos_commander)
+
 /area/phobos/living
 	name = "\improper SGV phobos Cryogenic Storage"
 	icon_state = "cryo"
@@ -68,6 +71,7 @@
 /area/phobos/security
 	name = "\improper SGV phobos Security"
 	icon_state = "security"
+	req_access = (access_away_phobos_security)
 
 /area/phobos/security/lobby
 	name = "\improper SGV phobos Security - Lobby"
@@ -96,18 +100,23 @@
 /area/phobos/disperser
 	name = "\improper SGV phobos Disperser"
 	icon_state = "disperser"
+
 /area/phobos/disperser/storage
 	name = "\improper SGV phobos Disperser - Storage"
 	icon_state = "disperser"
+
 /area/phobos/maint
 	name = "\improper SGV phobos Maintenance"
 	icon_state = "maintcentral"
+
 /area/phobos/maint/port
 	name = "\improper SGV phobos - Port Maintenance"
 	icon_state = "maintcentral"
+
 /area/phobos/maint/starboard
 	name = "\improper SGV phobos - Starboard Maintenance"
 	icon_state = "maintcentral"
+
 /area/phobos/maint/starboard/bridge
 	name = "\improper SGV phobos - Bridge Starboard Maintenance"
 	icon_state = "maintcentral"

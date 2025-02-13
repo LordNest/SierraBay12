@@ -40,7 +40,7 @@
 	color = "#ccecff"
 	access = list(access_away_phobos)
 
-/obj/item/card/id/phobos/fleet/commander
+/obj/item/card/id/phobos/commander
 	desc = "A card issued to Third Fleet vessel CO's."
 	detail_color = COLOR_COMMAND_BLUE
 	extra_details = list("onegoldstripe")
@@ -107,12 +107,15 @@
 		list(mode_name="short bursts",   burst=5, fire_delay=null, move_delay=4,    one_hand_penalty=6, burst_accuracy=list(0,-1,-1,-1,-2), dispersion=list(0.6, 0.6, 1.0, 1.0, 1.2)),
 		)
 
-/obj/item/gun/projectile/automatic/merc_smg/on_update_icon()
+/obj/item/gun/projectile/automatic/sol_smg/on_update_icon()
 	..()
 	if(ammo_magazine)
 		icon_state = "solsmg-[round(length(ammo_magazine.stored_ammo),5)]"
 	else
 		icon_state = "solsmg"
+
+/obj/item/gun/projectile/automatic/sol_smg/empty
+	starts_loaded = FALSE
 
 /datum/fabricator_recipe/arms_ammo/hidden/magazine_smg_sol
 	name = "ammunition (SOLMAG submachine gun)"
@@ -134,3 +137,7 @@
 
 /obj/item/ammo_magazine/smg_sol/empty
 	initial_ammo = 0
+
+/obj/item/storage/box/ammo/smg_sol
+	name = "box of SOLMAG SMG magazines"
+	startswith = list(/obj/item/ammo_magazine/smg_sol = 6)
