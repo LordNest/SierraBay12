@@ -1,0 +1,4 @@
+author: Lexanx
+changes:
+  - {bugfix: Пофиксил баг не сохраняющий языки у ксеноты}
+delete-after: true

@@ -1,0 +1,14 @@
+author: rootoo807
+changes:
+  - {rscadd: Adds 14 new festive food recipes.}
+  - {rscadd: 'Adds space spice, a general use spice condiment. Can be found in kitchen
+      cabinets near you.'}
+  - {tweak: 'Tofurkey uses a new sprite, can be sliced like roast chicken, and has
+      had its recipe changed (4 tofu, 1 stuffing).'}
+  - {tweak: 'Bread recipe has been changed from 2 dough + 1 egg to just 2 dough (so
+      bread, in theory, can be skrell-safe).'}
+  - {tweak: 'Potatoes, onions, and garlic are less juicy and have less sad-tasting
+      juice.'}
+  - {tweak: 'Minor changes: Updates sprites on several food items. Adds filling colors
+      to some food items that were missing them. Milosoup is now miso soup.'}
+delete-after: true
