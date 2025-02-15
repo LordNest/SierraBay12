@@ -1,5 +1,5 @@
 //Ceti
-/obj/item/clothing/suit/space/void/ceti/
+/obj/item/clothing/suit/space/void/ceti
 	name = "CTI Voidsuit"
 	desc = "A xenoarcheology voidsuit designed for CTI researchers, by CTI researchers. Tools not included."
 	icon = 'mods/_maps/verne/icons/verne_void_obj.dmi'

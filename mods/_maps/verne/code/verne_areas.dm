@@ -1,4 +1,4 @@
-/area/verne/
+/area/verne
 	icon = 'mods/_maps/verne/icons/verne.dmi'
 	req_access = list("ACCESS_VERNE")
 
