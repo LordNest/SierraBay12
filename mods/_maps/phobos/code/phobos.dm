@@ -34,6 +34,11 @@
 	spawn_cost = 50 // We're testing this
 	area_usage_test_exempted_root_areas = list(/area/phobos)
 	shuttles_to_initialise = list(/datum/shuttle/autodock/overmap/interseptor)
+// We're deep in frontier. So no elite troops or terrans
+	ban_ruins = list(
+		/datum/map_template/ruin/away_site/farfleet,
+		/datum/map_template/ruin/away_site/patrol
+		)
 
 /obj/shuttle_landmark/nav_phobos/nav1
 	name = "Ship Navpoint #1"
