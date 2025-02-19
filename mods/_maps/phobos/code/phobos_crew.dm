@@ -203,11 +203,6 @@
 	supervisors = "Commanding Officer"
 	economic_power = 5
 	selection_color = "#5b4d20"
-	alt_titles = list(
-		"Damage Control Technician",
-		"Electrician",
-		"Atmospheric Technician",
-		)
 	outfit_type = /singleton/hierarchy/outfit/job/phobos/engineering
 	allowed_branches = list(
 		/datum/mil_branch/fleet
