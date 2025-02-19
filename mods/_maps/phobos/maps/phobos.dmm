@@ -125,14 +125,6 @@
 /area/phobos/maint/port)
 "av" = (
 /obj/structure/table/woodentable_reinforced/ebony/walnut,
-/obj/item/reagent_containers/food/drinks/glass2/wine,
-/obj/item/reagent_containers/food/drinks/bottle/premiumwine{
-	name = "Special Uve De Blanc"
-	},
-/obj/item/paper{
-	info = "Captain![br] We recently received this bottle of wine. When they gave it to us, they said to tell you to enjoy this wonderful wine, because the time has almost come. Maybe it means something to you, Captain.";
-	name = "Captain Wine"
-	},
 /turf/simulated/floor/carpet/blue,
 /area/phobos/bridge/co_office)
 "az" = (
