@@ -4,119 +4,119 @@
 
 
 /area/phobos/ven
-	name = "\improper SGV phobos"
+	name = "\improper Telecomms Relay"
 	icon_state = "phobos"
 
 /area/phobos/bridge
-	name = "\improper SGV Bridge"
+	name = "\improper Patrol Craft Bridge"
 	icon_state = "bridge"
 	req_access = (access_away_phobos_bridge)
 
 /area/phobos/bridge/co_office
-	name = "\improper SGV phobos Commanding Officer Office"
+	name = "\improper Commanding Officer Office"
 	icon_state = "bridge"
 	req_access = (access_away_phobos_commander)
 
 /area/phobos/living
-	name = "\improper SGV phobos Cryogenic Storage"
+	name = "\improper Cryogenic Storage"
 	icon_state = "cryo"
 
 /area/phobos/living/mess
-	name = "\improper SGV phobos Mess Hall"
+	name = "\improper Mess Hall"
 	icon_state = "cryo"
 
 /area/phobos/living/bunk
-	name = "\improper SGV phobos Bunk Room"
+	name = "\improper Bunk Room"
 	icon_state = "cryo"
 
 /area/phobos/living/hydro
-	name = "\improper SGV phobos Hydroponics"
+	name = "\improper Hydroponics"
 	icon_state = "cryo"
 
 /area/phobos/engine
-	name = "\improper SGV phobos Engineering"
+	name = "\improper  Engineering"
 	icon_state = "engineering"
 
 /area/phobos/engine/thrusterport
-	name = "\improper SGV phobos Port Thrusters"
+	name = "\improper Port Thrusters"
 	icon_state = "engineering"
 
 /area/phobos/engine/thrusterstarboard
-	name = "\improper SGV phobos Starboard Thrusters"
+	name = "\improper Starboard Thrusters"
 	icon_state = "engineering"
 
 /area/phobos/engine/atmos
-	name = "\improper SGV phobos Atmospherics"
+	name = "\improper Atmospherics"
 	icon_state = "engineering"
 
 /area/phobos/engine/solar
-	name = "\improper SGV phobos Solars"
+	name = "\improper Solars"
 	area_flags = AREA_FLAG_EXTERNAL
 	requires_power = 1
 	always_unpowered = 1
 	has_gravity = FALSE
 	base_turf = /turf/space
 /area/phobos/engine/solar/port
-	name = "\improper SGV phobos Port Solars"
+	name = "\improper Port Solars"
 /area/phobos/engine/solar/starboard
-	name = "\improper SGV phobos Starboard Solars"
+	name = "\improper Starboard Solars"
 /area/phobos/hallway
-	name = "\improper SGV phobos Hallway"
+	name = "\improper Hallway"
 	icon_state = "hallway"
 
 /area/phobos/hallway/eva
-	name = "\improper SGV phobos - E.V.A."
+	name = "\improper E.V.A."
 	icon_state = "hallway"
 
 /area/phobos/security
-	name = "\improper SGV phobos Security"
+	name = "\improper Security"
 	icon_state = "security"
 	req_access = (access_away_phobos_security)
 
 /area/phobos/security/lobby
-	name = "\improper SGV phobos Security - Lobby"
+	name = "\improper Security - Lobby"
 	icon_state = "security"
 
 /area/phobos/security/detective
-	name = "\improper SGV phobos Security - Investigation"
+	name = "\improper Security - Investigation"
 	icon_state = "security"
 
 /area/phobos/security/equipment
-	name = "\improper SGV phobos Security - Equipment Room"
+	name = "\improper Security - Equipment Room"
 	icon_state = "security"
 
 /area/phobos/security/questioning
-	name = "\improper SGV phobos Security - Interview Room"
+	name = "\improper Security - Interview Room"
 	icon_state = "security"
 
 /area/phobos/medbay
-	name = "\improper SGV phobos Medbay"
+	name = "\improper Medbay"
 	icon_state = "medbay"
 
 /area/phobos/medbay/chemistry
-	name = "\improper SGV phobos Medbay - Infirmary"
+	name = "\improper Medbay - Infirmary"
 	icon_state = "medbay"
 
 /area/phobos/disperser
-	name = "\improper SGV phobos Disperser"
+	name = "\improper Disperser"
 	icon_state = "disperser"
 
 /area/phobos/disperser/storage
-	name = "\improper SGV phobos Disperser - Storage"
+	name = "\improper Disperser - Storage"
 	icon_state = "disperser"
 
 /area/phobos/maint
-	name = "\improper SGV phobos Maintenance"
+	name = "\improper Maintenance"
 	icon_state = "maintcentral"
 
 /area/phobos/maint/port
-	name = "\improper SGV phobos - Port Maintenance"
+	name = "\improper - Port Maintenance"
 	icon_state = "maintcentral"
 
 /area/phobos/maint/starboard
-	name = "\improper SGV phobos - Starboard Maintenance"
+	name = "\improper - Starboard Maintenance"
 	icon_state = "maintcentral"
 
 /area/phobos/maint/starboard/bridge
-	name = "\improper SGV phobos - Bridge Starboard Maintenance"
+	name = "\improper - Bridge Starboard Maintenance"
 	icon_state = "maintcentral"
