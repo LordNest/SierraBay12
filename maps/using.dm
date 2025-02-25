@@ -7,4 +7,5 @@
 	//#include "example\map.dm"
 	//#include "torch\map.dm"
 	#include "sierra\map.dm"
+	#include "verne\code\verne_map.dm"
 #endif
