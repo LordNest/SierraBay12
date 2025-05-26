@@ -26,10 +26,10 @@
 
 /datum/managed_browser/hereticpaths/get_html()
 	var/list/dat = list("<html><body>")
-	var/geneticpoints_current = my_client.mob.mind.heretic.geneticpoints
-	var/geneticpoints_max = my_client.mob.mind.heretic.max_geneticpoints
+	var/knowledgepoints_current = my_client.mob.mind.heretic.knowledgepoints
+	var/knowledgepoints_max = my_client.mob.mind.heretic.max_knowledgepoints
 
-	dat += "<center>Genetic Points Available: [geneticpoints_current] / [geneticpoints_max] <br>"
+	dat += "<center>Genetic Points Available: [knowledgepoints_current] / [knowledgepoints_max] <br>"
 	dat += "Obtain more by feeding on your own kind. <br> <hr>"
 	dat += "<a style='background-color:#c72121;' href='?src=\ref[src];tutorial=1'>What am I?</a><br><hr>"
 	dat += "<a style='background-color:#c72121;' href='?src=\ref[src];inherent=1'>Inherent</a>"
@@ -95,12 +95,12 @@
 			to_chat(M.current, "You already have this ability! Inform a dev of this error.") /// Should not be possible
 			return
 
-		if(C.geneticpoints < Thepower.knowledgecost)
+		if(C.knowledgepoints < Thepower.knowledgecost)
 			to_chat(M.current, "We cannot evolve this... yet.  We must acquire more DNA.")
 			return
 
 		C.purchased_powers += Thepower /// Set it to purchased
-		C.geneticpoints -= Thepower.knowledgecost
+		C.knowledgepoints -= Thepower.knowledgecost
 		generate_abilitylist(Thepower.power_category) /// Refresh the UI
 
 		my_client.mob.mind.heretic.purchasePower(M, Thepower)
@@ -381,7 +381,7 @@
 				<td align='center'>
 					<span styly='font-size: 24px'><b>Changling Evolution Menu</b></span><br>
 					Hover over a power to see more information<br>
-					Current evolution points left to evolve with: [geneticpoints]<br>
+					Current evolution points left to evolve with: [knowledgepoints]<br>
 					Absorb genomes to acquire more evolution points
 					<p>
 				</td>
@@ -655,7 +655,7 @@
 				<td align='center'>
 					<font size='5'><b>Changeling Evolution Menu</b></font><br>
 					Hover over a power to see more information<br>
-					Current evolution points left to evolve with: [geneticpoints]<br>
+					Current evolution points left to evolve with: [knowledgepoints]<br>
 					Absorb other heretics to acquire more evolution points
 					<p>
 				</td>
@@ -758,11 +758,11 @@
 		return
 
 
-	if(geneticpoints < Thepower.knowledgecost)
+	if(knowledgepoints < Thepower.knowledgecost)
 		to_chat(M.current, "We cannot evolve this... yet.  We must acquire more DNA.")
 		return
 
-	geneticpoints -= Thepower.knowledgecost
+	knowledgepoints -= Thepower.knowledgecost
 
 	purchasedpowers += Thepower
 

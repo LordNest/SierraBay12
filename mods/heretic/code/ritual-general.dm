@@ -112,6 +112,13 @@ Carving Knife, как с ТГ но не как с ТГ.
 */
 
 /obj/item/material/knife/heretic
+	name = "ritual knife"
+	desc = "The unearthly energies that once powered this blade are now dormant."
+	icon = 'icons/obj/cult.dmi'
+	icon_state = "render"
+	base_parry_chance = 30
+	applies_material_colour = FALSE
+	applies_material_name = FALSE
 
 /*
 Наши универсальные силы
@@ -127,10 +134,16 @@ Carving Knife, как с ТГ но не как с ТГ.
 	name = "Transmutation: Codex Cicatrix"
 	desc = "Создаёт в случае отсутствия или призывает уже имеющийся Кодекс, необходимый для проведения ряда ритуалов."
 	knowledgecost = 0
-	verbpath = /mob/proc/create_circle
+	verbpath = /mob/proc/summon_codex
 
 /datum/power/heretic/blade
 	name = "Transmutation: Eldrich Blade"
 	desc = "Превращает нож в ритуальный кинжал."
 	knowledgecost = 0
-	verbpath = /mob/proc/create_circle
+	verbpath = /mob/proc/summon_blade
+
+/datum/power/heretic/choose_path
+	name = "Choose Path of Enlightment"
+	desc = "Выберете Путь Просветления. Это действие нельзя отменить, выбирайте с умом."
+	knowledgecost = 0
+	verbpath = /mob/proc/choose_path

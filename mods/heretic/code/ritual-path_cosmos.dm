@@ -1,5 +1,8 @@
 /// Blade
 
+/obj/item/material/knife/heretic/cosmos
+
+
 /// Sacrifice
 
 /// Tier 1

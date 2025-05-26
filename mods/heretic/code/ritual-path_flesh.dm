@@ -5,6 +5,8 @@
 
 /// Blade
 
+/obj/item/material/knife/heretic/flesh
+
 /// Sacrifice
 
 /// Tier 1
@@ -57,12 +59,6 @@ datum/power/heretic/grasping_limbs
 	name = "Transmutation: Grasping limbs"
 	desc = "Трансмутирует две руки и мышеловку в капкан, игнорирующий еретика, но на долго останавливающий остальных."
 	knowledgecost = 1
-	verbpath = /mob/proc/create_circle
-
-datum/power/heretic/chameleon_cloack
-	name = "Transmutation: Grasping limbs"
-	desc = "Трансмутирует две руки и мышеловку в капкан, игнорирующий еретика, но на долго останавливающий остальных."
-	knowledgecost = 2
 	verbpath = /mob/proc/create_circle
 
 // Заклинания
