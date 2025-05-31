@@ -29,9 +29,9 @@
 
 // Заклинания
 
-/datum/power/heretic/huntsman_whiste
-	name = "Huntsman Whiste"
-	desc = "Все лампы в зоне видимости с треском перегорают, а персональные источники света отключаются."
+/datum/power/heretic/feather_fall
+	name = "Feather Fall"
+	desc = "Пассивная. Вместо урона от падения вы получаете урон по стамине."
 	knowledgecost = 1
 	verbpath = /mob/proc/create_circle
 
@@ -75,9 +75,9 @@
 
 // Трансмутации
 
-/datum/power/heretic/huntsman_garb
-	name = "Transmutation: Huntsman Garb"
-	desc = "Трансмутирует кожу, шлем, броню и мёртвое животное в комплект брони охотника, которая неплохо защищает от лазеров."
+/datum/power/heretic/pocket_watch
+	name = "Transmutation: Pocket Watch"
+	desc = "Трансмутирует добавить в карманные часы, отматывающие время, позицию и состояние тела до момента, когда были использованы. При использовании дольше минуты - принудительно возвращают. Перезарядка 10 минут."
 	knowledgecost = 1
 	verbpath = /mob/proc/create_circle
 
