@@ -21,7 +21,32 @@
 	..()
 	new /obj/item/stack/material/silver(get_turf(holder.my_atom), created_volume)
 
+/singleton/reaction/concrete
+	name = "concrete"
+	result = null
+	required_reagents = list(/datum/reagent/silicon = 20, /datum/reagent/iron = 5, /datum/reagent/aluminium = 5, /datum/reagent/water = 20)
+	result_amount = 5
+	mix_message = "The solution solidifies into a grey mass."
 
+/obj/item/stack/material/concrete
+	name = "concrete brick"
+	default_type = MATERIAL_CONCRETE
+
+/singleton/reaction/concrete/on_reaction(datum/reagents/holder, created_volume, reaction_flags)
+	..()
+	new /obj/item/stack/material/concrete(get_turf(holder.my_atom), created_volume)
+
+/singleton/reaction/uranchemy
+	name = "Uranium"
+	result = null
+	required_reagents = list(/datum/reagent/frostoil = 5, /datum/reagent/uranium = 20)
+	catalysts = list(/datum/reagent/crystal=5)
+	result_amount = 1
+	mix_message = "The solution solidifies into a greeny mass."
+
+/singleton/reaction/uranchemy/on_reaction(datum/reagents/holder, created_volume, reaction_flags)
+	..()
+	new /obj/item/stack/material/uranium(get_turf(holder.my_atom), created_volume)
 
 /singleton/reaction/kompot
 	name = "Kompot"
@@ -29,6 +54,20 @@
 	required_reagents = list(/datum/reagent/water = 2, /datum/reagent/drink/juice/berry = 1, /datum/reagent/drink/juice/apple = 1, /datum/reagent/drink/juice/pear = 1)
 	result_amount = 5
 	mix_message = "The mixture turns a soft orange, bubbling faintly"
+
+/singleton/reaction/github
+	name = "GitHub"
+	result = /datum/reagent/ethanol/github
+	required_reagents = list(/datum/reagent/drink/juice/watermelon = 1, /datum/reagent/fuel = 1, /datum/reagent/iron = 1)
+	result_amount = 10
+	mix_message = "Microchips are starting to blur in the water..."
+
+/singleton/reaction/discord
+	name = "Discord"
+	result = /datum/reagent/ethanol/discord
+	required_reagents = list(/datum/reagent/drink/juice/grape = 1, /datum/reagent/fuel = 1, /datum/reagent/iron = 1)
+	result_amount = 10
+	mix_message = "Voice yelling and memes are starting to blur in the water..."
 
 //REAGENTS//
 
@@ -41,6 +80,25 @@
 	glass_name = "Kompot"
 	glass_desc = "Traditional Terran drink. Grandma would be proud."
 
+/datum/reagent/ethanol/github
+	name = "GitHub"
+	description = "The famous cocktail. Coined by programmers for programmers. Made not from programmers. Where's my merge, Elar?"
+	taste_description = "sweet microchips, steel and Elar's merge"
+	color = "#3d3d3d"
+	strength = 20
+
+	glass_name = "github cocktail"
+	glass_desc = "The famous cocktail. Coined by programmers for programmers. Made not from programmers. Where's my merge, Elar?"
+
+/datum/reagent/ethanol/discord
+	name = "Discord"
+	description = "You did it, Verhniy! Where's the Discord Nitro cocktail, though?"
+	taste_description = "Well Played Good Games and CO-OP"
+	color = "#36393f"
+	strength = 10
+
+	glass_name = "Discord cocktail"
+	glass_desc = "You did it, Verhniy! Where's the Discord Nitro cocktail, though?"
 
 // SLIME REACTIONS //
 
@@ -82,6 +140,60 @@
 	required_reagents = list(/datum/reagent/water = 1)
 	result_amount = 10
 	required = /obj/item/slime_extract/oil
+
+//Black
+/singleton/reaction/slime/psimutate
+	name = "Mule Mutation Toxin"
+	result = /datum/reagent/psislimetoxin
+	required_reagents = list(/datum/reagent/blood = 1)
+	result_amount = 1
+	required = /obj/item/slime_extract/black
+
+/singleton/reaction/slime/psimutate/get_reaction_flags(datum/reagents/holder)
+	for(var/datum/reagent/blood/blood in holder.reagent_list)
+		var/weakref/donor_ref = islist(blood.data) && blood.data["donor"]
+		if(istype(donor_ref))
+			var/mob/living/donor = donor_ref.resolve()
+			if(istype(donor) && (donor.psi || (donor.mind && GLOB.wizards.is_antagonist(donor.mind))))
+				return TRUE
+
+// Turning monkeys into mule
+
+/* Transformations */
+/datum/reagent/psislimetoxin
+	name = "Twisted Mutation Toxin"
+	description = "A corruptive toxin produced by slimes. This one looks like vomit."
+	taste_description = "sludge"
+	reagent_state = LIQUID
+	color = "#96c921"
+	metabolism = REM * 0.2
+	value = 2
+	should_admin_log = TRUE
+
+/datum/reagent/psislimetoxin/affect_blood(mob/living/carbon/M, removed)
+	if(HAS_TRANSFORMATION_MOVEMENT_HANDLER(M))
+		return
+	if(M.species.name != SPECIES_MONKEY)
+		return
+	to_chat(M, SPAN_DANGER("Your flesh rapidly mutates!"))
+	ADD_TRANSFORMATION_MOVEMENT_HANDLER(M)
+	M.icon = null
+	M.ClearOverlays()
+	M.set_invisibility(INVISIBILITY_ABSTRACT)
+	for(var/obj/item/W in M)
+		if(istype(W, /obj/item/implant))
+			qdel(W)
+			continue
+		M.drop_from_inventory(W)
+	var/mob/living/carbon/human/new_mob = new /mob/living/carbon/human(M.loc)
+	new_mob.skin_tone = 35
+	new_mob.species = GLOB.species_by_name[SPECIES_MULE]
+	if(M.mind)
+		M.mind.transfer_to(new_mob)
+		new_mob.languages = list(LANGUAGE_HUMAN_EURO)
+	else
+		new_mob.key = M.key
+	qdel(M)
 
 // Turning man into lizards
 

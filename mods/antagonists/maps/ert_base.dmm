@@ -1,7 +1,11 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "ab" = (
-/obj/machinery/mech_recharger,
+/obj/item/device/radio/intercom/specops{
+	dir = 2;
+	pixel_y = 22
+	},
 /mob/living/exosuit/premade/light,
+/obj/machinery/mech_recharger,
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
@@ -375,20 +379,6 @@
 	dir = 2;
 	pixel_y = 22
 	},
-/obj/structure/table/rack,
-/obj/item/ammo_magazine/proto_smg/mech,
-/obj/item/ammo_magazine/proto_smg/mech,
-/obj/item/ammo_magazine/proto_smg/mech,
-/turf/unsimulated/floor{
-	icon_state = "dark"
-	},
-/area/map_template/rescue_base/base)
-"aV" = (
-/obj/structure/table/rack,
-/obj/item/mech_equipment/light,
-/obj/item/mech_equipment/light{
-	pixel_y = 12
-	},
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
@@ -589,7 +579,7 @@
 "bw" = (
 /obj/structure/table/reinforced,
 /obj/floor_decal/corner/blue/diagonal,
-/obj/machinery/microwave,
+/obj/machinery/appliance/cooker/microwave,
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
@@ -646,7 +636,17 @@
 	},
 /area/map_template/rescue_base/base)
 "bF" = (
-/obj/structure/table/reinforced,
+/obj/structure/table/rack,
+/obj/item/mech_external_armor/laserproof,
+/obj/item/mech_external_armor/laserproof,
+/obj/item/mech_external_armor/laserproof,
+/obj/item/mech_external_armor/laserproof,
+/obj/item/mech_external_armor/laserproof,
+/obj/item/mech_external_armor/laserproof,
+/obj/item/mech_external_armor/laserproof,
+/obj/item/mech_external_armor/laserproof,
+/obj/item/mech_external_armor/laserproof,
+/obj/item/mech_external_armor/laserproof,
 /turf/unsimulated/floor/techfloor{
 	icon_state = "techfloor_grid"
 	},
@@ -1005,9 +1005,11 @@
 /area/map_template/rescue_base/base)
 "co" = (
 /obj/structure/table/rack,
-/obj/item/mech_equipment/clamp,
 /obj/item/mech_equipment/clamp{
-	pixel_y = 9
+	pixel_y = 8
+	},
+/obj/item/mech_equipment/catapult{
+	pixel_y = -6
 	},
 /turf/unsimulated/floor{
 	icon_state = "dark"
@@ -1750,14 +1752,6 @@
 /obj/item/storage/firstaid/surgery,
 /turf/simulated/floor/tiled/dark/monotile,
 /area/map_template/rescue_base/start)
-"dU" = (
-/obj/structure/table/rack,
-/obj/item/mech_equipment/ballistic_shield,
-/obj/item/mech_equipment/mounted_system/melee/mechete,
-/turf/unsimulated/floor{
-	icon_state = "dark"
-	},
-/area/map_template/rescue_base/base)
 "dV" = (
 /obj/structure/window/reinforced/crescent,
 /obj/structure/table/rack,
@@ -2214,7 +2208,17 @@
 	},
 /area/map_template/rescue_base/base)
 "eK" = (
-/obj/structure/table/reinforced,
+/obj/structure/table/rack,
+/obj/item/ammo_magazine/proto_smg/mech,
+/obj/item/ammo_magazine/proto_smg/mech,
+/obj/item/ammo_magazine/proto_smg/mech,
+/obj/item/ammo_magazine/proto_smg/mech,
+/obj/item/ammo_magazine/shotgunmag/mech,
+/obj/item/ammo_magazine/shotgunmag/mech,
+/obj/item/ammo_magazine/shotgunmag/mech,
+/obj/item/ammo_magazine/shotgunmag/mech,
+/obj/item/ammo_magazine/shotgunmag/mech,
+/obj/item/ammo_magazine/shotgunmag/mech,
 /obj/item/ammo_magazine/shotgunmag/mech,
 /obj/item/ammo_magazine/shotgunmag/mech,
 /obj/item/ammo_magazine/shotgunmag/mech,
@@ -2232,13 +2236,6 @@
 "eN" = (
 /obj/floor_decal/industrial/loading,
 /turf/unsimulated/floor/techfloor,
-/area/map_template/rescue_base/base)
-"eO" = (
-/obj/structure/table/rack,
-/obj/item/mech_equipment/catapult,
-/turf/unsimulated/floor{
-	icon_state = "dark"
-	},
 /area/map_template/rescue_base/base)
 "eP" = (
 /obj/floor_decal/industrial/warning,
@@ -3106,6 +3103,7 @@
 /area/map_template/rescue_base/start)
 "gZ" = (
 /obj/structure/table/rack,
+/obj/item/mech_equipment/mounted_system/taser/ballistic/smg,
 /turf/unsimulated/floor/techfloor{
 	icon_state = "techfloor_grid"
 	},
@@ -3231,12 +3229,61 @@
 	icon_state = "dark"
 	},
 /area/map_template/rescue_base/base)
+"jn" = (
+/obj/structure/table/rack,
+/obj/item/ammo_magazine/pistol/nullglass,
+/obj/item/ammo_magazine/pistol/nullglass,
+/obj/item/ammo_magazine/pistol/nullglass,
+/obj/item/ammo_magazine/pistol/nullglass,
+/obj/item/ammo_magazine/pistol/nullglass,
+/obj/item/ammo_magazine/pistol/nullglass,
+/turf/unsimulated/floor/techfloor{
+	icon_state = "techfloor_grid"
+	},
+/area/map_template/rescue_base/base)
 "jp" = (
 /turf/space,
 /area/map_template/rescue_base/base)
 "lg" = (
-/obj/machinery/mech_recharger,
-/mob/living/exosuit/premade/heavy,
+/obj/structure/table/rack,
+/obj/item/mech_external_armor/buletproof,
+/obj/item/mech_external_armor/buletproof,
+/obj/item/mech_external_armor/buletproof,
+/obj/item/mech_external_armor/buletproof,
+/obj/item/mech_external_armor/buletproof,
+/obj/item/mech_external_armor/buletproof,
+/obj/item/mech_external_armor/buletproof,
+/obj/item/mech_external_armor/buletproof,
+/obj/item/mech_external_armor/buletproof,
+/obj/item/mech_external_armor/buletproof,
+/turf/unsimulated/floor/techfloor{
+	icon_state = "techfloor_grid"
+	},
+/area/map_template/rescue_base/base)
+"lM" = (
+/obj/structure/table/rack,
+/obj/item/ammo_casing/rpg_rocket/aussec/frag{
+	pixel_y = 8
+	},
+/obj/item/ammo_casing/rpg_rocket/aussec/frag{
+	pixel_y = 8
+	},
+/obj/item/ammo_casing/rpg_rocket/aussec/frag{
+	pixel_y = 8
+	},
+/obj/item/ammo_casing/rpg_rocket/aussec/frag{
+	pixel_y = 8
+	},
+/obj/item/ammo_casing/rpg_rocket/aussec/heat,
+/obj/item/ammo_casing/rpg_rocket/aussec/heat,
+/obj/item/ammo_casing/rpg_rocket/aussec/heat,
+/obj/item/ammo_casing/rpg_rocket/aussec/heat,
+/obj/item/ammo_casing/rpg_rocket/aussec/tandem{
+	step_y = -8
+	},
+/obj/item/ammo_casing/rpg_rocket/aussec/tandem{
+	step_y = -8
+	},
 /turf/unsimulated/floor/techfloor{
 	icon_state = "techfloor_grid"
 	},
@@ -3259,8 +3306,12 @@
 	},
 /area/map_template/rescue_base/base)
 "pt" = (
-/obj/structure/table/reinforced,
-/obj/item/robot_parts/robot_component/armour/exosuit/combat,
+/obj/machinery/door/blast/regular{
+	id_tag = "heavyrescue";
+	name = "Combat Exosuit";
+	dir = 4;
+	health_max = 100000
+	},
 /turf/unsimulated/floor/techfloor{
 	icon_state = "techfloor_grid"
 	},
@@ -3320,12 +3371,9 @@
 /turf/simulated/floor/plating,
 /area/map_template/rescue_base/start)
 "xd" = (
-/obj/structure/table/rack,
-/obj/item/ammo_magazine/shotgunmag/mech,
-/obj/item/ammo_magazine/shotgunmag/mech,
-/obj/item/ammo_magazine/shotgunmag/mech,
 /turf/unsimulated/floor{
-	icon_state = "dark"
+	icon_state = "vault";
+	dir = 8
 	},
 /area/map_template/rescue_base/base)
 "xK" = (
@@ -3365,8 +3413,8 @@
 	},
 /area/map_template/rescue_base/base)
 "Al" = (
-/obj/structure/table/rack,
-/obj/item/robot_parts/robot_component/armour/exosuit/combat,
+/mob/living/exosuit/premade/heavy,
+/obj/machinery/mech_recharger,
 /turf/unsimulated/floor/techfloor{
 	icon_state = "techfloor_grid"
 	},
@@ -3377,6 +3425,36 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/map_template/rescue_base/start)
+"BD" = (
+/obj/structure/table/rack,
+/obj/item/gun/projectile/pistol/sec/empty{
+	pixel_y = -8;
+	pixel_x = 5
+	},
+/obj/item/gun/projectile/pistol/sec/empty{
+	pixel_y = -1;
+	pixel_x = 5
+	},
+/obj/item/gun/projectile/pistol/sec/empty{
+	pixel_y = 7;
+	pixel_x = 5
+	},
+/obj/item/gun/projectile/pistol/sec/empty{
+	pixel_y = 7;
+	pixel_x = -4
+	},
+/obj/item/gun/projectile/pistol/sec/empty{
+	pixel_y = -1;
+	pixel_x = -4
+	},
+/obj/item/gun/projectile/pistol/sec/empty{
+	pixel_y = -8;
+	pixel_x = -4
+	},
+/turf/unsimulated/floor/techfloor{
+	icon_state = "techfloor_grid"
+	},
+/area/map_template/rescue_base/base)
 "Cc" = (
 /obj/structure/table/rack,
 /obj/item/rig_module/mounted/energy/taser,
@@ -3446,8 +3524,16 @@
 	},
 /area/map_template/rescue_base/base)
 "DZ" = (
-/obj/machinery/mech_recharger,
-/mob/living/exosuit/premade/ert,
+/obj/structure/table/rack,
+/obj/item/mech_equipment/ballistic_shield,
+/obj/item/mech_equipment/mounted_system/melee/mechete,
+/turf/unsimulated/floor/techfloor{
+	icon_state = "techfloor_grid"
+	},
+/area/map_template/rescue_base/base)
+"Eh" = (
+/obj/structure/table/rack,
+/obj/item/gun/projectile/rocket/aussec,
 /turf/unsimulated/floor/techfloor{
 	icon_state = "techfloor_grid"
 	},
@@ -3477,8 +3563,8 @@
 	},
 /area/map_template/rescue_base/base)
 "Kd" = (
-/obj/structure/table/rack,
-/obj/item/robot_parts/robot_component/armour/exosuit/em,
+/mob/living/exosuit/premade/ert,
+/obj/machinery/mech_recharger,
 /turf/unsimulated/floor/techfloor{
 	icon_state = "techfloor_grid"
 	},
@@ -3493,9 +3579,14 @@
 	icon_state = "dark"
 	},
 /area/map_template/rescue_base/base)
-"Mx" = (
-/obj/structure/table/rack,
-/obj/item/mech_equipment/mounted_system/taser/ballistic/smg,
+"KX" = (
+/obj/structure/table/reinforced,
+/obj/item/clothing/head/helmet/psipump/active,
+/obj/item/clothing/head/helmet/psipump/active,
+/obj/item/clothing/head/helmet/psipump/active,
+/obj/item/implanter/psi,
+/obj/item/implanter/psi,
+/obj/item/implanter/psi,
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
@@ -3515,22 +3606,6 @@
 /obj/item/storage/box/emps,
 /obj/item/gun/launcher/grenade,
 /turf/unsimulated/floor/techfloor,
-/area/map_template/rescue_base/base)
-"XB" = (
-/obj/machinery/door/blast/regular{
-	id_tag = "heavyrescue";
-	name = "Combat Exosuit";
-	dir = 4;
-	health_max = 100000
-	},
-/turf/unsimulated/floor/plating,
-/area/map_template/rescue_base/base)
-"Zn" = (
-/obj/structure/table/reinforced,
-/obj/item/robot_parts/robot_component/armour/exosuit/em,
-/turf/unsimulated/floor/techfloor{
-	icon_state = "techfloor_grid"
-	},
 /area/map_template/rescue_base/base)
 "ZT" = (
 /obj/machinery/atmospherics/unary/tank/air{
@@ -4635,7 +4710,7 @@ dK
 "}
 (18,1,1) = {"
 ad
-cB
+KX
 ao
 ao
 ar
@@ -5170,8 +5245,8 @@ ao
 ao
 ao
 ao
-ba
-eO
+ar
+ar
 ar
 ar
 ad
@@ -5359,9 +5434,9 @@ Wi
 ad
 aU
 ar
-ar
-ar
-ar
+ao
+ao
+ao
 ar
 ar
 ar
@@ -5421,13 +5496,13 @@ bB
 bB
 bP
 ad
-xd
-ar
 Kx
-Mx
-dU
+Kx
+xd
+ao
+ao
 ar
-aV
+ba
 co
 aG
 ad
@@ -5486,11 +5561,11 @@ bB
 bB
 ad
 ad
-XB
 ad
+pt
+pt
+pt
 ad
-ad
-XB
 ad
 ad
 ad
@@ -5549,13 +5624,13 @@ fB
 yR
 cp
 ad
-eK
 nZ
-pt
-ad
-Zn
 nZ
-bF
+nZ
+nZ
+nZ
+nZ
+nZ
 ad
 ew
 ad
@@ -5616,10 +5691,10 @@ ad
 gZ
 DZ
 Kd
-ad
+eK
 Al
 lg
-gZ
+bF
 ad
 ew
 ad
@@ -5733,15 +5808,15 @@ ar
 ar
 ar
 ad
+Eh
 nZ
 nZ
 nZ
 nZ
 nZ
 nZ
-nZ
+jn
 ad
-ew
 ew
 ew
 ew
@@ -5797,15 +5872,15 @@ ar
 ar
 ar
 ad
+lM
 nZ
 nZ
 nZ
 nZ
 nZ
 nZ
-nZ
+BD
 ad
-ew
 ew
 ew
 ew
@@ -5869,7 +5944,7 @@ cs
 cs
 cs
 ad
-ew
+ad
 ew
 ew
 ew

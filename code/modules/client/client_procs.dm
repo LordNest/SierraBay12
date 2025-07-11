@@ -160,6 +160,9 @@
 	GLOB.clients += src
 	GLOB.ckey_directory[ckey] = src
 
+	if(byond_version >= 516)
+		winset(src, null, list("browser-options" = "find,refresh"))
+
 	//Admin Authorisation
 	holder = admin_datums[ckey]
 	if(holder)
@@ -415,6 +418,7 @@
 		'html/images/leaguelogo.png',
 		'html/images/ouerelogo.png',
 		'html/images/terstenlogo.png',
+		'html/images/kmslogo.png',
 		// [/SIERRA-ADD]
 		'html/images/zhlogo.png'
 		)
