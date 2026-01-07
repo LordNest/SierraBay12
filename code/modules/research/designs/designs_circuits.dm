@@ -12,19 +12,21 @@
 	if(build_path)
 		var/obj/item/stock_parts/circuitboard/C = build_path
 		if(initial(C.board_type) == "machine")
-			name = "Machine circuit design ([item_name])"
+			name = "Machine circuit design ([C.name])"
 			category = list("Machine Circuit")
 		else if(initial(C.board_type) == "computer")
-			name = "Computer circuit design ([item_name])"
+			name = "Computer circuit design ([C.name])"
 			category = list("Computer Circuit")
 		else
-			name = "Circuit design ([item_name])"
+			name = "([C.name])"
 			category = list("Circuit")
-//[/SIERRA-EDIT] - MODPACK_RND
 
 /datum/design/circuit/AssembleDesignDesc()
-	if(!desc)
-		desc = "Allows for the construction of \a [item_name] circuit board."
+	if(build_path)
+		var/obj/item/stock_parts/circuitboard/C = build_path
+		if(!desc)
+			desc = "Allows for the construction of \a [C.desc] circuit board."
+//[/SIERRA-EDIT] - MODPACK_RND
 
 /datum/design/circuit/arcademachine
 	name = "battle arcade machine"
@@ -224,14 +226,14 @@
 	req_tech = list(TECH_DATA = 2, TECH_ENGINEERING = 2)
 	build_path = /obj/item/stock_parts/circuitboard/autolathe
 	sort_string = "HABAD"
-
+/*
 /datum/design/circuit/replicator
 	name = "replicator board"
 	id = "replicator"
 	req_tech = list(TECH_DATA = 2, TECH_ENGINEERING = 3, TECH_BIO = 3)
 	build_path = /obj/item/stock_parts/circuitboard/replicator
 	sort_string = "HABAE"
-
+*/
 /datum/design/circuit/microlathe
 	name = "microlathe board"
 	id = "microlathe"
@@ -542,33 +544,6 @@
 	req_tech = list(TECH_DATA = 4, TECH_ENGINEERING = 3)
 	build_path = /obj/item/stock_parts/circuitboard/helm
 	sort_string = "JFAAB"
-
-/datum/design/circuit/nav
-	name = "navigation control console"
-	id = "nav"
-	req_tech = list(TECH_DATA = 2, TECH_ENGINEERING = 1)
-	build_path = /obj/item/stock_parts/circuitboard/nav
-	sort_string = "JFAAC"
-
-/datum/design/circuit/nav/tele
-	name = "navigation telescreen"
-	id = "nav_tele"
-	build_path = /obj/item/stock_parts/circuitboard/nav/tele
-	sort_string = "JFAAD"
-
-/datum/design/circuit/sensors
-	name = "ship sensor control console"
-	id = "sensors"
-	req_tech = list(TECH_DATA = 4)
-	build_path = /obj/item/stock_parts/circuitboard/sensors
-	sort_string = "JFAAE"
-
-/datum/design/circuit/engine
-	name = "ship engine control console"
-	id = "shipengine"
-	req_tech = list(TECH_DATA = 2, TECH_POWER = 2, TECH_ENGINEERING = 2)
-	build_path = /obj/item/stock_parts/circuitboard/engine
-	sort_string = "JFAAF"
 
 /datum/design/circuit/shuttle
 	name = "basic shuttle console"

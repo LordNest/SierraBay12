@@ -328,6 +328,7 @@
 	return !failed_last_breath
 
 /mob/living/carbon/human/handle_environment(datum/gas_mixture/environment)
+	. = ..()
 	if(!environment || (MUTATION_SPACERES in mutations))
 		return
 
@@ -427,6 +428,10 @@
 		for(var/obj/item/organ/external/O in parts)
 			if(QDELETED(O) || !(O.owner == src))
 				continue
+			//[SIERRA-ADD] - IPC_MODS
+			if(BP_IS_ROBOTIC(O))
+				continue
+			//[/SIERRA-ADD] - IPC_MODS
 			if(O.damage + (LOW_PRESSURE_DAMAGE) < O.min_broken_damage) //vacuum does not break bones
 				O.take_external_damage(brute = LOW_PRESSURE_DAMAGE, used_weapon = "Low Pressure")
 		if(getOxyLoss() < 55) // 11 OxyLoss per 4 ticks when wearing internals;    unconsciousness in 16 ticks, roughly half a minute
@@ -547,19 +552,13 @@
 	var/datum/reagents/metabolism/ingested = get_ingested_reagents()
 
 	if(reagents)
-		if(touching) touching.metabolize()
-		if(bloodstr) bloodstr.metabolize()
-		if(ingested) metabolize_ingested_reagents()
+		if (touching) touching.metabolize()
+		if (ingested) metabolize_ingested_reagents()
+		if (bloodstr) bloodstr.metabolize()
 
-	// Trace chemicals
-	for(var/T in chem_doses)
-		if(bloodstr?.has_reagent(T) || ingested?.has_reagent(T) || touching?.has_reagent(T))
-			continue
-		var/datum/reagent/R = T
-		chem_doses[T] -= initial(R.metabolism)*2
-		if(chem_doses[T] <= 0)
-			chem_doses -= T
-
+	handle_metabolites()
+	handle_protein()
+	handle_sugar()
 	updatehealth()
 
 // Check if we should die.
@@ -872,8 +871,8 @@
 		vomit_score += 0.5 * getToxLoss()
 	if(chem_effects[CE_ALCOHOL_TOXIC])
 		vomit_score += 10 * chem_effects[CE_ALCOHOL_TOXIC]
-	if(chem_effects[CE_ALCOHOL])
-		vomit_score += 10
+	if(chem_effects[CE_ALCOHOL] > 1)
+		vomit_score += 10 * chem_effects[CE_ALCOHOL]/2
 	if(stat != DEAD && vomit_score > 25 && prob(10))
 		vomit(vomit_score, vomit_score/25)
 
@@ -974,7 +973,7 @@
 				break
 
 //SIERRA-ADD
-		if(stat == DEAD || status_flags & FAKEDEATH)
+		if(is_dead())
 			holder.icon_state = "0" 	// X_X
 		else if(is_asystole())
 			holder.icon_state = "flatline"
@@ -984,7 +983,7 @@
 
 	if (GET_BIT(hud_updateflag, LIFE_HUD) && hud_list[LIFE_HUD])
 		var/image/holder = hud_list[LIFE_HUD]
-		if(stat == DEAD || status_flags & FAKEDEATH)
+		if(is_dead())
 			holder.icon_state = "huddead"
 //SIERRA-ADD VIRUSOLOGY
 		else if(foundVirus)
@@ -1009,7 +1008,7 @@
 			holder.icon_state = "hudhealthy"
 
 		var/image/holder2 = hud_list[STATUS_HUD_OOC]
-		if(stat == DEAD)
+		if(is_real_dead())
 			holder2.icon_state = "huddead"
 		else if(has_brain_worms())
 			holder2.icon_state = "hudbrainworm"
@@ -1136,12 +1135,12 @@
 	..()
 	adjust_stamina(100)
 	UpdateAppearance()
-
+/* Ушло в оверрайд //[SIERRA-REMOVE] fix FOV for consoles
 /mob/living/carbon/human/reset_view(atom/A)
 	..()
 	if(machine_visual && machine_visual != A)
 		machine_visual.remove_visual(src)
-
+*/
 /mob/living/carbon/human/handle_vision()
 	if(client)
 		client.screen.Remove(GLOB.global_hud.nvg, GLOB.global_hud.thermal, GLOB.global_hud.meson, GLOB.global_hud.science)

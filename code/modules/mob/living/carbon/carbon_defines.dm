@@ -1,7 +1,7 @@
 /mob/living/carbon
 	gender = MALE
 	pronouns = PRONOUNS_THEY_THEM
-	var/datum/species/species //Contains icon generation and language information, set during New().
+	var/singleton/species/species //Contains icon generation and language information, set during New().
 
 	var/life_tick = 0      // The amount of life ticks that have processed on this mob.
 	var/obj/item/handcuffed = null //Whether or not the mob is handcuffed
@@ -10,11 +10,16 @@
 	//Active emote/pose
 	var/pose = null
 	var/list/chem_effects = list()
-	var/list/chem_doses = list()
+
+	///Metabolized contains the breakdown products of processed reagents in the body. Most are inert, but some exert an effect. No reactions occur in this holder.
+	var/datum/reagents/metabolism/metabolized = null
+	///Keeps track of the last world time a metabolite level increased; used to keep track of when to start breaking it down.
+	var/list/last_time_metabolite = list()
+	///Reagents contained in the bloodstream/skin and waiting to be processed. Usually then moved into metabolized. A third reagent container exists under stomach.
 	var/datum/reagents/metabolism/bloodstr = null
 	var/datum/reagents/metabolism/touching = null
-	var/losebreath = 0 //if we failed to breathe last tick
 
+	var/losebreath = 0 //if we failed to breathe last tick
 	var/coughedtime = null
 
 	var/cpr_time = 1.0

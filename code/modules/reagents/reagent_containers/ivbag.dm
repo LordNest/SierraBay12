@@ -282,7 +282,7 @@
 	if (!(blood_type in GLOB.blood_types))
 		crash_with({"Invalid blood_type supplied to [src]- "[blood_type]""})
 		return INITIALIZE_HINT_QDEL
-	var/datum/species/species = all_species[blood_species]
+	var/singleton/species/species = GLOB.species_by_name[blood_species]
 	if (!species)
 		crash_with({"Invalid blood_species supplied to [src]- "[blood_species]""})
 		return INITIALIZE_HINT_QDEL
@@ -290,7 +290,7 @@
 		"donor" = null,
 		"blood_DNA" = null,
 		"blood_type" = blood_type,
-		"trace_chem" = null,
+		"blood_chem" = null,
 		"blood_species" = blood_species,
 		"blood_colour" = species.blood_color,
 //SIERRA-ADD MODPACK VIRUSOLOGY

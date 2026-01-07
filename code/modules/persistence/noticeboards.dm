@@ -83,14 +83,14 @@
 	dismantle()
 
 /obj/structure/noticeboard/on_update_icon()
-	icon_state = "[base_icon_state][LAZYLEN(notices)]"
+	icon_state = "[base_icon_state][min(LAZYLEN(notices), 5)]"
 
 
 /obj/structure/noticeboard/use_tool(obj/item/tool, mob/user, list/click_params)
 	if (istype(tool, /obj/item/material/shard/caltrop/tack))
 		user.unEquip(tool, loc)
-		var/click_x = text2num_or_default(click_params["icon-x"], 16)
-		var/click_y = text2num_or_default(click_params["icon-y"], 16)
+		var/click_x = text2num_or_default(click_params[MOUSE_ICON_X], 16)
+		var/click_y = text2num_or_default(click_params[MOUSE_ICON_Y], 16)
 		tool.pixel_x = pixel_x + click_x - 16
 		tool.pixel_y = pixel_y + click_y - 16
 		user.visible_message(
@@ -174,10 +174,10 @@
 	for(var/thing in notices)
 		LAZYADD(dat, "<tr><td>[thing]</td><td>")
 		if(istype(thing, /obj/item/paper))
-			LAZYADD(dat, "<a href='?src=\ref[src];read=\ref[thing]'>Read</a><a href='?src=\ref[src];write=\ref[thing]'>Write</a>")
+			LAZYADD(dat, "<a href='byond://?src=\ref[src];read=\ref[thing]'>Read</a><a href='byond://?src=\ref[src];write=\ref[thing]'>Write</a>")
 		else if(istype(thing, /obj/item/photo))
-			LAZYADD(dat, "<a href='?src=\ref[src];look=\ref[thing]'>Look</a>")
-		LAZYADD(dat, "<a href='?src=\ref[src];remove=\ref[thing]'>Remove</a></td></tr>")
+			LAZYADD(dat, "<a href='byond://?src=\ref[src];look=\ref[thing]'>Look</a>")
+		LAZYADD(dat, "<a href='byond://?src=\ref[src];remove=\ref[thing]'>Remove</a></td></tr>")
 	var/datum/browser/popup = new(user, "noticeboard-\ref[src]", "Noticeboard")
 	popup.set_content(jointext(dat, null))
 	popup.open()

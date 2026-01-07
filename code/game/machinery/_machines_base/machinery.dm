@@ -39,12 +39,8 @@
 	var/list/uncreated_component_parts = list(/obj/item/stock_parts/power/apc)
 	/// List of componant paths and the maximum number of that specific path that can be inserted into the machine. `null` - no max. `list(type part = number max)`.
 	var/list/maximum_component_parts = list(/obj/item/stock_parts = 10)
-	/// Numeric unique ID number. Set to the value of `gl_uid++` when used.
-	var/uid
 	/// Boolean. Whether or not the maintenance panel is open.
 	var/panel_open = FALSE
-	/// Numeric unique ID number tracker. Used for ensuring `uid` is unique.
-	var/static/gl_uid = 1
 	/// Boolean. Can the machine be interacted with while de-powered.
 	var/interact_offline = FALSE
 	/// Sound played on succesful interface use by a carbon lifeform.
@@ -439,7 +435,7 @@
 	else if((!is_powered()) && !interact_offline)
 		to_chat(user, SPAN_WARNING("It is not receiving power."))
 	if(construct_state && construct_state.mechanics_info())
-		to_chat(user, SPAN_NOTICE("It can be <a href='?src=\ref[src];mechanics_text=1'>manipulated</a> using tools."))
+		to_chat(user, SPAN_NOTICE("It can be <a href='byond://?src=\ref[src];mechanics_text=1'>manipulated</a> using tools."))
 	var/list/missing = missing_parts()
 	if(missing)
 		var/list/parts = list()
@@ -527,3 +523,6 @@
 /// Called by `/mob/Login()` if the mob has an associated `machine`.
 /obj/machinery/proc/on_user_login(mob/M)
 	return
+
+/obj/machinery/proc/set_id_tag(new_id_tag)
+	id_tag = new_id_tag

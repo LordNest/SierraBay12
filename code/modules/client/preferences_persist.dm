@@ -1,4 +1,10 @@
-#define PREF_SER_VERSION 3
+// You will want to increment this for each migration you create.
+// Migrations:
+// 1: Base version
+// 2: Booster -> human species migration
+// 3: Pronouns
+// 4: Tram/oxy, alcohol, antidepressant retyping
+#define PREF_SER_VERSION 4
 
 /datum/preferences/proc/get_path(ckey, record_key, extension="json")
 	return "data/player_saves/[copytext_char(ckey,1,2)]/[ckey]/[record_key].[extension]"
@@ -41,6 +47,17 @@
 	if(!R)
 		R = new /datum/pref_record_reader/null(PREF_SER_VERSION)
 	player_setup.load_preferences(R)
+	for(var/datum/preferences_slot/slot in slot_priority_list)
+		var/datum/pref_record_reader/SR = load_pref_record(get_slot_key(slot.slot))
+		if(!SR)
+			SR = new /datum/pref_record_reader/null(PREF_SER_VERSION)
+		player_setup.load_slot(SR, slot)
+
+/datum/preferences/proc/load_slot(datum/preferences_slot/slot)
+	var/datum/pref_record_reader/R = load_pref_record(get_slot_key(slot.slot))
+	if(!R)
+		R = new /datum/pref_record_reader/null(PREF_SER_VERSION)
+	player_setup.load_slot(R, slot)
 
 /datum/preferences/proc/save_preferences()
 	var/datum/pref_record_writer/json_list/W = new(PREF_SER_VERSION)

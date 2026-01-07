@@ -93,20 +93,20 @@
 
 /singleton/reaction/tramadol
 	name = "Tramadol"
-	result = /datum/reagent/tramadol
+	result = /datum/reagent/opiate/tramadol
 	required_reagents = list(/datum/reagent/inaprovaline = 1, /datum/reagent/ethanol = 1, /datum/reagent/acetone = 1)
 	result_amount = 3
 
 /singleton/reaction/paracetamol
 	name = "Paracetamol"
 	result = /datum/reagent/paracetamol
-	required_reagents = list(/datum/reagent/tramadol = 1, /datum/reagent/sugar = 1, /datum/reagent/water = 1)
+	required_reagents = list(/datum/reagent/opiate/tramadol = 1, /datum/reagent/sugar = 1, /datum/reagent/water = 1)
 	result_amount = 3
 
 /singleton/reaction/oxycodone
 	name = "Oxycodone"
-	result = /datum/reagent/tramadol/oxycodone
-	required_reagents = list(/datum/reagent/ethanol = 1, /datum/reagent/tramadol = 1)
+	result = /datum/reagent/opiate/oxycodone
+	required_reagents = list(/datum/reagent/ethanol = 1, /datum/reagent/opiate/tramadol = 1)
 	catalysts = list(/datum/reagent/toxin/phoron = 5)
 	result_amount = 1
 
@@ -299,6 +299,13 @@
 	required_reagents = list(/datum/reagent/carbon = 1, /datum/reagent/hydrazine = 1, /datum/reagent/dylovene = 1)
 	result_amount = 3
 
+/singleton/reaction/naloxone
+	name = "Naloxone"
+	result = /datum/reagent/naloxone
+	required_reagents = list(/datum/reagent/ethanol = 1, /datum/reagent/inaprovaline = 1)
+	catalysts = list(/datum/reagent/toxin/phoron = 5)
+	result_amount = 2
+
 /singleton/reaction/ethylredoxrazine
 	name = "Ethylredoxrazine"
 	result = /datum/reagent/ethylredoxrazine
@@ -441,13 +448,13 @@
 
 /singleton/reaction/citalopram
 	name = "Citalopram"
-	result = /datum/reagent/citalopram
+	result = /datum/reagent/antidepressant/citalopram
 	required_reagents = list(/datum/reagent/drugs/mindbreaker = 1, /datum/reagent/carbon = 1)
 	result_amount = 3
 
 /singleton/reaction/paroxetine
 	name = "Paroxetine"
-	result = /datum/reagent/paroxetine
+	result = /datum/reagent/antidepressant/paroxetine
 	required_reagents = list(/datum/reagent/drugs/mindbreaker = 1, /datum/reagent/acetone = 1, /datum/reagent/inaprovaline = 1)
 	result_amount = 3
 
@@ -461,7 +468,7 @@
 /singleton/reaction/noexcutite
 	name = "Noexcutite"
 	result = /datum/reagent/noexcutite
-	required_reagents = list(/datum/reagent/tramadol/oxycodone = 1, /datum/reagent/dylovene = 1)
+	required_reagents = list(/datum/reagent/opiate/oxycodone = 1, /datum/reagent/dylovene = 1)
 	result_amount = 2
 
 /singleton/reaction/methyl_bromide
@@ -1595,7 +1602,7 @@
 	..()
 	var/location = get_turf(holder.my_atom)
 	for(var/i = 1, i <= created_volume, i++)
-		new /obj/item/reagent_containers/food/snacks/dough(location)
+		new /obj/item/reagent_containers/food/snacks/dough/vegan(location)
 
 //batter reaction as food precursor, for things that don't use pliable dough precursor.
 
@@ -1614,11 +1621,18 @@
 	mix_message = "The sugar lightens the batter and gives it a sweet smell."
 
 /singleton/reaction/soybatter
-	name = "Vegan Batter"
-	result = /datum/reagent/nutriment/batter
-	required_reagents = list(/datum/reagent/nutriment/softtofu = 3, /datum/reagent/nutriment/flour = 5, /datum/reagent/drink/milk = 5)
+	name = "Soy Batter"
+	result = /datum/reagent/nutriment/batter/soy
+	required_reagents = list(/datum/reagent/nutriment/softtofu = 3, /datum/reagent/nutriment/flour = 5, /datum/reagent/drink/milk/soymilk = 5)
 	result_amount = 10
 	mix_message = "The solution thickens into a glossy batter."
+
+/singleton/reaction/soycakebatter
+	name = "Soy Cake Batter"
+	result = /datum/reagent/nutriment/batter/cakebatter/soy
+	required_reagents = list(/datum/reagent/nutriment/honey = 1, /datum/reagent/nutriment/batter/soy = 2)
+	result_amount = 3
+	mix_message = "The honey lightens the batter and gives it a sweet smell."
 
 /singleton/reaction/syntiflesh
 	name = "Syntiflesh"
@@ -2879,7 +2893,7 @@
 
 /singleton/reaction/qokkhrona
 	name = "Qokk'Hrona"
-	result = /datum/reagent/ethanol/qokkhrona
+	result = /datum/reagent/ethanol/qokkloa/qokkhrona
 	required_reagents = list(/datum/reagent/ethanol/qokkloa = 2, /datum/reagent/ethanol/wine = 1)
 	catalysts = list(/datum/reagent/enzyme = 5)
 	result_amount = 3

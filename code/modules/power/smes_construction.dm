@@ -144,6 +144,8 @@
 		capacity *= 1.2
 		input_level_max *= 2
 		output_level_max *= 2
+	input_level = clamp(input_level, 0, input_level_max)
+	output_level = clamp(output_level, 0, output_level_max)
 	charge = clamp(charge, 0, capacity)
 
 // Proc: total_system_failure()
@@ -178,7 +180,7 @@
 		var/obj/item/clothing/gloves/G = h_user.gloves
 		if(G.siemens_coefficient == 0)
 			user_protected = 1
-	log_and_message_admins("SMES FAILURE: <b>[src.x]X [src.y]Y [src.z]Z</b> User: [usr.ckey], Intensity: [intensity]/100 - <A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[src.x];Y=[src.y];Z=[src.z]'>JMP</a>")
+	log_and_message_admins("SMES FAILURE: <b>[src.x]X [src.y]Y [src.z]Z</b> User: [usr.ckey], Intensity: [intensity]/100 - <a href='byond://?_src_=holder;adminplayerobservecoodjump=1;X=[src.x];Y=[src.y];Z=[src.z]'>JMP</a>")
 
 
 	switch (intensity)

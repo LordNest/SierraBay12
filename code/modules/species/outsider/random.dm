@@ -1,4 +1,4 @@
-/datum/species/alium
+/singleton/species/alium
 	name = SPECIES_ALIEN
 	name_plural = "Humanoids"
 	description = "Some alien humanoid species, unknown to humanity. How exciting."
@@ -28,20 +28,20 @@
 		/singleton/emote/exertion/biological/pant
 	)
 
-/datum/species/alium/New()
+/singleton/species/alium/New()
 	//Coloring
 	blood_color = RANDOM_RGB
 	flesh_color = RANDOM_RGB
 	base_color  = RANDOM_RGB
 
 	//Combat stats
-	total_health = round(total_health * Frand(0.8, 1.2), 0.1)
-	brute_mod = round(brute_mod * Frand(0.5, 1.5), 0.1)
-	burn_mod = round(burn_mod * Frand(0.8, 1.2), 0.1)
-	oxy_mod = round(oxy_mod * Frand(0.5, 1.5), 0.1)
-	toxins_mod = round(toxins_mod * Frand(0, 2), 0.1)
-	radiation_mod = round(radiation_mod * Frand(0, 2), 0.1)
-	flash_mod = round(flash_mod * Frand(0.5, 1.5), 0.1)
+	total_health = round(total_health * frand(0.8, 1.2), 0.1)
+	brute_mod = round(brute_mod * frand(0.5, 1.5), 0.1)
+	burn_mod = round(burn_mod * frand(0.8, 1.2), 0.1)
+	oxy_mod = round(oxy_mod * frand(0.5, 1.5), 0.1)
+	toxins_mod = round(toxins_mod * frand(0, 2), 0.1)
+	radiation_mod = round(radiation_mod * frand(0, 2), 0.1)
+	flash_mod = round(flash_mod * frand(0.5, 1.5), 0.1)
 
 	if(brute_mod < 1 && prob(40))
 		species_flags |= SPECIES_FLAG_NO_MINOR_CUT
@@ -96,10 +96,10 @@
 
 	..()
 
-/datum/species/alium/get_bodytype(mob/living/carbon/human/H)
+/singleton/species/alium/get_bodytype(mob/living/carbon/human/H)
 	return SPECIES_HUMAN
 
-/datum/species/alium/proc/adapt_to_atmosphere(datum/gas_mixture/atmosphere)
+/singleton/species/alium/proc/adapt_to_atmosphere(datum/gas_mixture/atmosphere)
 	var/temp_comfort_shift = atmosphere.temperature - body_temperature
 
 	cold_level_1 += temp_comfort_shift

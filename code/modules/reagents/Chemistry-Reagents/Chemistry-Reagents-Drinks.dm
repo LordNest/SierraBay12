@@ -10,23 +10,16 @@
 	var/adj_sleepy = 0
 	var/adj_temp = 0
 	value = 0.1
-
-/datum/reagent/drink/affect_blood(mob/living/carbon/M, removed)
-	M.adjustToxLoss(removed) // Probably not a good idea; not very deadly though
-	return
+	bioavailability = 1
 
 /datum/reagent/drink/affect_ingest(mob/living/carbon/M, removed)
-	if (protein_amount)
-		handle_protein(M, src)
-	if (sugar_amount)
-		handle_sugar(M, src)
 	if(nutrition)
 		M.adjust_nutrition(nutrition * removed)
 	if(hydration)
 		M.adjust_hydration(hydration * removed)
 	M.dizziness = max(0, M.dizziness + adj_dizzy)
 	M.drowsyness = max(0, M.drowsyness + adj_drowsy)
-	M.sleeping = max(0, M.sleeping + adj_sleepy)
+	M.AdjustSleeping(adj_sleepy)
 	if(adj_temp > 0 && M.bodytemperature < 310) // 310 is the normal bodytemp. 310.055
 		M.bodytemperature = min(310, M.bodytemperature + (adj_temp * TEMPERATURE_DAMAGE_COEFFICIENT))
 	if(adj_temp < 0 && M.bodytemperature > 310)
@@ -35,6 +28,7 @@
 // Juices
 /datum/reagent/drink/juice
 	sugar_amount = 0.5
+	nutrition = 1
 
 /datum/reagent/drink/juice/affect_ingest(mob/living/carbon/human/M, removed)
 	..()
@@ -139,8 +133,8 @@
 /datum/reagent/drink/juice/potato
 	name = "Potato Juice"
 	description = "Juice of the potato. Bleh."
-	taste_description = "irish sadness and potatoes"
-	nutrition = 2
+	taste_description = "potato"
+	nutrition = 3
 	color = "#302000"
 
 	glass_name = "potato juice"
@@ -149,8 +143,8 @@
 /datum/reagent/drink/juice/garlic
 	name = "Garlic Juice"
 	description = "Who would even drink this?"
-	taste_description = "bad breath"
-	nutrition = 1
+	taste_description = "garlic"
+	nutrition = 2
 	color = "#eeddcc"
 
 	glass_name = "garlic juice"
@@ -159,8 +153,8 @@
 /datum/reagent/drink/juice/onion
 	name = "Onion Juice"
 	description = "Juice from an onion, for when you need to cry."
-	taste_description = "stinging tears"
-	nutrition = 1
+	taste_description = "onion"
+	nutrition = 2
 	color = "#ffeedd"
 
 	glass_name = "onion juice"
@@ -245,7 +239,7 @@
 	glass_name = "th'oom juice"
 	glass_desc = "sweet and savory goodness!"
 	sugar_amount = 0.5
-	nutrition = 4
+	nutrition = 5
 	hydration = 3
 
 
@@ -345,7 +339,7 @@
 	..()
 	M.add_chemical_effect(CE_PULSE, 2)
 
-/datum/reagent/drink/coffee/overdose(mob/living/carbon/M)
+/datum/reagent/drink/coffee/process_overdose(mob/living/carbon/M)
 	if (IS_METABOLICALLY_INERT(M))
 		return
 	M.make_jittery(5)
@@ -1465,7 +1459,7 @@
 	description = "Wine made from various fruits from the swamps of Moghes."
 	taste_description = "swampy fruit"
 	color = "#6b596b"
-	strength = 10
+	metabolite_potency = 2.5
 	glass_name = "wasgaelhi"
 	glass_desc = "Wine made from various fruits from the swamps of Moghes."
 
