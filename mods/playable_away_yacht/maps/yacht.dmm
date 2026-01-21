@@ -379,7 +379,7 @@
 /turf/simulated/floor/wood/walnut,
 /area/playable_yacht/bridge)
 "bv" = (
-/obj/machinery/computer/ship/sensors,
+/obj/machinery/computer/modular/preset/sensors,
 /turf/simulated/floor/wood/walnut,
 /area/playable_yacht/bridge)
 "bw" = (
@@ -869,6 +869,7 @@
 	dir = 4;
 	icon_state = "tube_map"
 	},
+/obj/item/crowbar/red,
 /turf/simulated/floor/wood/walnut,
 /area/playable_yacht/living)
 "db" = (
@@ -1114,7 +1115,7 @@
 /turf/simulated/floor/tiled/monotile,
 /area/playable_yacht/right_engine)
 "dW" = (
-/obj/machinery/computer/ship/navigation/telescreen{
+/obj/item/modular_computer/telescreen/preset/navigation{
 	dir = 3;
 	pixel_y = 32
 	},
@@ -1466,6 +1467,11 @@
 	d1 = 2;
 	d2 = 8;
 	icon_state = "2-8"
+	},
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
 	},
 /turf/simulated/floor/wood/walnut,
 /area/playable_yacht/main_corridor)
@@ -1987,7 +1993,7 @@
 /turf/simulated/floor/tiled/monotile,
 /area/playable_yacht/right_engine)
 "Jh" = (
-/obj/machinery/computer/ship/engines,
+/obj/machinery/computer/modular/preset/helm,
 /obj/machinery/alarm{
 	dir = 4;
 	pixel_x = -24;

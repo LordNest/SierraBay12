@@ -559,7 +559,7 @@
 	name = "poppies"
 	seed_name = "poppy"
 	display_name = "poppy patch"
-	chems = list(/datum/reagent/nutriment = list(1,20), /datum/reagent/tramadol = list(1,10))
+	chems = list(/datum/reagent/nutriment = list(1,20), /datum/reagent/opiate = list(1,10))
 	kitchen_tag = "poppy"
 
 /datum/seed/flower/poppy/New()
@@ -648,7 +648,7 @@
 	name = "peanut"
 	seed_name = "peanut"
 	display_name = "peanut plant"
-	chems = list(/datum/reagent/nutriment/groundpeanuts = list(3,5))
+	chems = list(/datum/reagent/nutriment/peanut/groundpeanuts = list(3,5))
 	kitchen_tag = "peanut"
 
 /datum/seed/peanuts/New()
