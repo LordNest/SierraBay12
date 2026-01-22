@@ -5,14 +5,32 @@
 
 #include "code/antagonist.dm"
 #include "code/gamemode.dm"
+#include "code/heretic_powers.dm"
 #include "code/hereticpaths.dm"
-#include "code/ritual-general.dm"
-#include "code/ritual-path_cosmos.dm"
-#include "code/ritual-path_flesh.dm"
-#include "code/ritual-path_hunt.dm"
-#include "code/ritual-path_riddle.dm"
-#include "code/ritual-sidepaths.dm"
 
-#include "code/powers/alchemy.dm"
+#include "code/alchemy/alchemy.dm"
+	#include "code/alchemy/ritual-path_cosmos.dm"
+	#include "code/alchemy/ritual-path_flesh.dm"
+	#include "code/alchemy/ritual-path_hunt.dm"
+	#include "code/alchemy/ritual-path_riddle.dm"
+	#include "code/alchemy/ritual-sidepaths.dm"
+
+	#include "code/items/general.dm"
+	#include "code/items/items-path_flesh.dm"
+	#include "code/items/items-path_hunt.dm"
+	#include "code/items/items-path_riddle.dm"
+
+	#include "code/spells/spells-cosmos.dm"
+	#include "code/spells/spells-flesh.dm"
+	#include "code/spells/spells-hunt.dm"
+	#include "code/spells/spells-riddle.dm"
+	#include "code/spells/spells-side-cf.dm"
+	#include "code/spells/spells-side-fh.dm"
+
+
+
+#include "code/sacrificed_mobs.dm"
+
+
 
 #endif

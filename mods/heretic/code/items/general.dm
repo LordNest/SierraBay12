@@ -22,7 +22,7 @@
 			to_chat(user, SPAN_NOTICE("\The [src] seems full of illegible scribbles. Is this a joke?"))
 		else
 			to_chat(user, "Сила сокрытая в \ [src] недавно была использована и востановится в течение минуты. Имей терпение.")
-	if(!iscultist(user) | !isheretic(user))
+	if(!iscultist(user) || !isheretic(user))
 		to_chat(user, SPAN_NOTICE("\The [src] seems full of illegible scribbles. Is this a joke?"))
 	else
 		to_chat(user, "Держи \ [src] в руке, во время жертвоприношений и создания алхимического круга. Обезоружь жертву, целясь книгой в глаза, чтобы открыть ярко сияющую страницу и ослепить её.")
@@ -31,7 +31,7 @@
 
 /obj/item/book/codex/examine(mob/user)
 	. = ..()
-	if(!iscultist(user) | !isheretic(user))
+	if(!iscultist(user) || !isheretic(user))
 		to_chat(user, "An old, dusty tome with frayed edges and a sinister looking cover.")
 	else
 		to_chat(user, "Некрономикон мой некрономикон.")
@@ -68,21 +68,24 @@
 				SPAN_NOTICE("\The [user] shows \the [src] to \the [M]."),
 				SPAN_NOTICE("You open up \the [src] intended to blind [M] but powers of the book still asleep and you casually show it to \the [M].")
 			)
-		var/obj/item/nullrod/N = locate() in M
-		if(N)
-			continue
 		if(iscarbon(M))
-			M.flash_eyes()
-			M.eye_blurry += 50
-			M.Weaken(3)
-			M.Stun(5)
+		var/obj/item/nullrod/N = locate() in M
+			if(N)
+				user.visible_message(
+					SPAN_NOTICE("\The [user] shows \the [src] to \the [M]."),
+					SPAN_NOTICE("You open up \the [src] intended to blind [M] but powers of the book still asleep and you casually show it to \the [M]."))
+			else
+				M.flash_eyes()
+				M.eye_blurry += 50
+				M.Weaken(3)
+				M.Stun(5)
 		else if(issilicon(M))
 			M.Weaken(10)
 		user.visible_message(
 			SPAN_NOTICE("\The [user] shows \the [src], emitting blinding light to \the [M]."),
 			SPAN_NOTICE("You open up \the [src], it's pages bright with searing light, and show it to \the [M]."))
 		last_used = world.time
-		recharging(1)
+		recharging++
 		if (iscultist(M))
 			if (user != M)
 				to_chat(user, SPAN_NOTICE("But they already know all there is to know."))
@@ -100,7 +103,7 @@
 		if(last_used+600 > world.time)
 			break
 		last_used += 600
-		times_used -= 1
+		recharging -= 1
 	last_used = world.time
 	recharging = max(0,round(recharging)) //sanity
 
@@ -119,31 +122,3 @@ Carving Knife, как с ТГ но не как с ТГ.
 	base_parry_chance = 30
 	applies_material_colour = FALSE
 	applies_material_name = FALSE
-
-/*
-Наши универсальные силы
-*/
-
-/datum/power/heretic/create_circle
-	name = "Create Transmutation Circle"
-	desc = "Создаёт алхимический круг, необходимый для проведения всех трансмутаций."
-	knowledgecost = 0
-	verbpath = /mob/proc/create_circle
-
-/datum/power/heretic/summon_codex
-	name = "Transmutation: Codex Cicatrix"
-	desc = "Создаёт в случае отсутствия или призывает уже имеющийся Кодекс, необходимый для проведения ряда ритуалов."
-	knowledgecost = 0
-	verbpath = /mob/proc/summon_codex
-
-/datum/power/heretic/blade
-	name = "Transmutation: Eldrich Blade"
-	desc = "Превращает нож в ритуальный кинжал."
-	knowledgecost = 0
-	verbpath = /mob/proc/summon_blade
-
-/datum/power/heretic/choose_path
-	name = "Choose Path of Enlightment"
-	desc = "Выберете Путь Просветления. Это действие нельзя отменить, выбирайте с умом."
-	knowledgecost = 0
-	verbpath = /mob/proc/choose_path

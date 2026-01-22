@@ -11,6 +11,7 @@ T4 Когда всё готово к возвышению, у нас начин�
 /// Blade
 
 /obj/item/material/knife/heretic/hunt
+	name = "hunter saw"
 
 /// Sacrifice
 
@@ -36,20 +37,6 @@ T4 Когда всё готово к возвышению, у нас начин�
 	knowledgecost = 1
 	verbpath = /mob/proc/create_circle
 
-// Заклинания
-
-/datum/power/heretic/huntsman_whiste
-	name = "Huntsman Whiste"
-	desc = "Все лампы в зоне видимости с треском перегорают, а персональные источники света отключаются."
-	knowledgecost = 1
-	verbpath = /mob/proc/create_circle
-
-/datum/power/heretic/huntsman_passion
-	name = "Huntsman Passion"
-	desc = "Ощутив прилив адреналина вы на время избавляетесь от всех эффектов замедляющих передвижение и даже боль, кажется, проходит."
-	knowledgecost = 1
-	verbpath = /mob/proc/create_circle
-
 /// Tier 2
 
 // Трансмутации
@@ -66,20 +53,6 @@ T4 Когда всё готово к возвышению, у нас начин�
 	knowledgecost = 1
 	verbpath = /mob/proc/create_circle
 
-// Заклинания
-
-/datum/power/heretic/huntsman_instinct
-	name = "Huntsman Instincts"
-	desc = "Пассивная возможность слышать шаги за стенами, а также отсутствие ФОВ в броне и мехах."
-	knowledgecost = 1
-	verbpath = /mob/proc/create_circle
-
-/datum/power/heretic/huntsman_return
-	name = "Huntsman Return"
-	desc = "Возвращает вас к последнему фонарю из которого вы перемещались в сон."
-	knowledgecost = 1
-	verbpath = /mob/proc/create_circle
-
 /// Tier 3
 
 // Трансмутации
@@ -93,14 +66,6 @@ T4 Когда всё готово к возвышению, у нас начин�
 /datum/power/heretic/astral_bell
 	name = "Transmutation: Astral Bell"
 	desc = "Трансмутирует почки, колокольчик и пакет порченой крови в колокол, призывающий монстров, агрессивно настроенных ко всем вокруг."
-	knowledgecost = 1
-	verbpath = /mob/proc/create_circle
-
-// Заклинания
-
-/datum/power/heretic/miststep
-	name = "Miststep"
-	desc = "Вы становитесь невидимы и можете проходить сквозь стены на короткий промежуток времени."
 	knowledgecost = 1
 	verbpath = /mob/proc/create_circle
 

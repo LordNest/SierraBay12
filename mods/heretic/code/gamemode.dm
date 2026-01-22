@@ -1,5 +1,3 @@
-#define MODE_HERETIC     "heretic"
-
 #define HERETIC_POWER_GENERAL        "General"     // Общие силы, призыв книги, круг и т.п.
 #define HERETIC_POWER_FLESH    "Path of Flesh"     // Путь плоти, биопанк, счастье, бодихоррор
 #define HERETIC_POWER_HUNT "Path of Moonhunter"    // Бладборн референс, играем от вирусов

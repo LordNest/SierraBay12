@@ -1,7 +1,7 @@
 /// Blade
 
 /obj/item/material/knife/heretic/cosmos
-
+	name = "cosmic sikle"
 
 /// Sacrifice
 

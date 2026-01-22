@@ -90,7 +90,7 @@ GLOBAL_TYPED_NEW(heretic, /datum/antagonist/heretic)
 		return
 
 	global_objectives = list()
-		global_objectives |= new /datum/objective/heretic/ascend
+	global_objectives |= new /datum/objective/heretic/ascend
 
 	var/datum/objective/heretic/sacrifice/sacrifice = new()
 	sacrifice.find_target()
@@ -118,11 +118,19 @@ GLOBAL_TYPED_NEW(heretic, /datum/antagonist/heretic)
 	if(istype(S))
 		T.forceMove(S)
 
+/datum/antagonist/cultist/add_antagonist(datum/mind/player, ignore_role, do_not_equip, move_to_spawn, do_not_announce, preserve_appearance)
+	. = ..()
+	if(.)
+		to_chat(player, SPAN_OCCULT("[conversion_blurb]"))
+		if(player.current && !istype(player.current, /mob/living/simple_animal/construct))
+			player.current.add_language(LANGUAGE_CULT)
+
 /datum/antagonist/heretic/remove_antagonist(datum/mind/player, show_message, implanted)
 	if(!..())
 		return 0
 	to_chat(player.current, SPAN_DANGER("Все накопленные знания, всё понимание истинной сущности мироздания ускользают от тебя и превращаются в ничто. Это было дело всей твоей жизни. Или просто сон? Ничего не осталось кроме дороги к безумию."))
 	player.ClearMemories(type)
+	player.current.remove_language(LANGUAGE_CULT)
 	remove_heretic_magic(player.current)
 
 /datum/antagonist/heretic/proc/update_heretic_magic(list/to_update)
@@ -130,17 +138,17 @@ GLOBAL_TYPED_NEW(heretic, /datum/antagonist/heretic)
 		for(var/datum/mind/H in GLOB.heretic.current_antagonists)
 			if(H.current)
 				to_chat(H.current, SPAN_OCCULT("То, что было теорией стало пугающей практикой. Картина начинает складываться воедино. Ты на шаг ближе к апофеозу"))
-				add_heretic_magic(H.current)
+				unlock_heretic_magic(H.current)
 	if(HERETIC_LEVEL_2 in to_update)
 		for(var/datum/mind/H in GLOB.heretic.current_antagonists)
 			if(H.current)
 				to_chat(H.current, SPAN_OCCULT("Ещё! Ещё! Трансмутация за трансмутацией ты становишься ближе к сути. Ты на шаг ближе к апофеозу"))
-				add_heretic_magic(H.current)
+				unlock_heretic_magic(H.current)
 	if(HERETIC_LEVEL_3 in to_update)
 		for(var/datum/mind/H in GLOB.heretic.current_antagonists)
 			if(H.current)
 				to_chat(H.current, SPAN_OCCULT("Последний ритуал. Последние жертвы. Порог апофеоза перед тобой. Пусть эти жертвы не будут напрасными"))
-				add_heretic_magic(H.current)
+				unlock_heretic_magic(H.current)
 
 // Предполагается, что абилки будут достаточно самодостаточны, чтобы давать их сразу все. Поэтому мы не "выдаём", а "разблокируем" их для покупки за очки.
 

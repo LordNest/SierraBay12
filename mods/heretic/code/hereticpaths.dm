@@ -1,3 +1,12 @@
+// READ: Don't use the apostrophe in name or desc. Causes script errors.
+
+//Ling power's evolution menu entry datum should be contained alongside the mob proc for the actual power, in their own file.
+
+var/global/list/powers_h = typesof(/datum/power/heretic) - /datum/power/heretic	//needed for the badmin verb for now
+GLOBAL_LIST_EMPTY(powerinstances_h)
+
+var/global/list/datum/power/heretic/powerinstances_h = list()
+
 /*
 Браузер аналогично браузеру генокрада
 */
@@ -75,12 +84,12 @@
 	if(href_list["enhancements"])
 		generate_abilitylist(CHANGELING_POWER_ENHANCEMENTS)
 
-	if(href_list["evolve"])
+	if(href_list["research"])
 		var/datum/mind/M = my_client.mob.mind
 		var/datum/heretic/C = my_client.mob.mind.heretic
-		var/datum/power/heretic/Thepower = href_list["evolve"]
+		var/datum/power/heretic/Thepower = href_list["research"]
 
-		for (var/datum/power/heretic/P in GLOB.powerinstances)
+		for (var/datum/power/heretic/P in GLOB.powerinstances_h)
 			if(P.name == Thepower)
 				Thepower = P
 				break
@@ -96,7 +105,7 @@
 			return
 
 		if(C.knowledgepoints < Thepower.knowledgecost)
-			to_chat(M.current, "We cannot evolve this... yet.  We must acquire more DNA.")
+			to_chat(M.current, "We cannot research this... yet.  We must acquire more DNA.")
 			return
 
 		C.purchased_powers += Thepower /// Set it to purchased
@@ -124,7 +133,7 @@
 	var/list/ability_list = list()
 	var/info = ""
 	var/catname = ""
-	for(var/datum/power/heretic/P in GLOB.powerinstances)
+	for(var/datum/power/heretic/P in GLOB.powerinstances_h)
 		if(P.power_category == cat)
 			ability_list[LIST_PRE_INC(ability_list)] = P
 	switch(cat)
@@ -162,17 +171,17 @@
 		if(powerdata.enhancedtext != "")
 			textbody += "<font color='#F7F7ED'><b>WHEN EHANCED: </b><i>[powerdata.enhancedtext]</i></font><br>"
 		if(powerdata in my_client.mob.mind.heretic.purchased_powers)
-			textbody += "<center><font color='#F7F7ED'><i><b>This ability is already evolved!</b></i></font></center>"
+			textbody += "<center><font color='#F7F7ED'><i><b>This ability is already researchd!</b></i></font></center>"
 		else if(cat != "Inherent")
-			textbody += "<center><a style='background-color:#c72121;' href='?src=\ref[src];evolve=[A]'>Evolve</a></center>"
+			textbody += "<center><a style='background-color:#c72121;' href='?src=\ref[src];research=[A]'>Research</a></center>"
 		textbody += "</td></tr>"
 	display()
 
 /// Мастер-спелл, отвечает за покупку
 
 /datum/power/heretic
-	icon = "тут путь к иконкам"
-	/// Cost for the changling to evolve this power.
+
+	/// Cost for the changling to research this power.
 	var/knowledgecost = 500000
 	/// _defines/gamemode.dm
 	var/power_category = null
@@ -180,18 +189,18 @@
 
 // Пощади человек-джаваскрипт
 
-/datum/heretic/proc/EvolutionMenu()//The new one
-	set category = "Changeling"
+/datum/heretic/proc/AlchemyMenu()//The new one
+	set category = "Heretic"
 	set desc = "Level up!"
 
 	if(!usr || !usr.mind || !usr.mind.heretic)	return
 	src = usr.mind.heretic
 
-	if(!length(powerinstances))
-		for(var/P in powers)
-			powerinstances += new P()
+	if(!length(powerinstances_h))
+		for(var/P in powers_h)
+			powerinstances_h += new P()
 
-	var/dat = "<html><head><title>Changling Evolution Menu</title></head>"
+	var/dat = "<html><head><title>Heretic Alchemy Menu</title></head>"
 
 	//javascript, the part that does most of the work~
 	dat += {"
@@ -266,7 +275,7 @@
 
 					if(!ownsthis)
 					{
-						body += "<a href='byond://?src=\ref[src];P="+power+"'>Evolve</a>"
+						body += "<a href='byond://?src=\ref[src];P="+power+"'>Research</a>"
 					}
 
 					body += "</td><td align='center'>";
@@ -381,7 +390,7 @@
 				<td align='center'>
 					<span styly='font-size: 24px'><b>Changling Evolution Menu</b></span><br>
 					Hover over a power to see more information<br>
-					Current evolution points left to evolve with: [knowledgepoints]<br>
+					Current evolution points left to research with: [knowledgepoints]<br>
 					Absorb genomes to acquire more evolution points
 					<p>
 				</td>
@@ -401,10 +410,10 @@
 		<table width='560' align='center' cellspacing='0' cellpadding='5' id='maintable_data'>"}
 
 	var/i = 1
-	for(var/datum/power/heretic/P in powerinstances)
+	for(var/datum/power/heretic/P in powerinstances_h)
 		var/ownsthis = 0
 
-		if(P in purchasedpowers)
+		if(P in purchased_powers)
 			ownsthis = 1
 
 
@@ -421,7 +430,7 @@
 					<a id='link[i]'
 					onmouseover='expand("item[i]","[P.name]","[P.desc]","[P.helptext]","[P]",[ownsthis])'
 					>
-					<span id='search[i]'><b>Evolve [P] - Cost: [ownsthis ? "Purchased" : P.knowledgecost]</b></span>
+					<span id='search[i]'><b>Research [P] - Cost: [ownsthis ? "Purchased" : P.knowledgecost]</b></span>
 					</a>
 					<br><span id='item[i]'></span>
 				</td>
@@ -444,23 +453,23 @@
 	</body></html>
 	"}
 
-	show_browser(usr, dat, "window=powers;size=900x480")
+	show_browser(usr, dat, "window=powers_h;size=900x480")
 
 /// Второе такое же дерево. Помогите...
 
-/datum/heretic/proc/EvolutionTree()//The new one
-	set name = "-Evolution Tree-"
-	set category = "Changeling"
+/datum/heretic/proc/AlchemyTree()//The new one
+	set name = "-Alchemy Tree-"
+	set category = "Heretic"
 	set desc = "Adapt yourself carefully."
 
 	if(!usr || !usr.mind || !usr.mind.heretic)	return
 	src = usr.mind.heretic
 
-	if(!length(GLOB.powerinstances))
-		for(var/P in powers)
-			GLOB.powerinstances += new P()
+	if(!length(GLOB.powerinstances_h))
+		for(var/P in powers_h)
+			GLOB.powerinstances_h += new P()
 
-	var/dat = "<html><head><title>Changeling Evolution Tree</title></head>"
+	var/dat = "<html><head><title>Heretic Alchemy Tree</title></head>"
 
 	//javascript, the part that does most of the work~
 	dat += {"
@@ -540,7 +549,7 @@
 
 					if(!ownsthis)
 					{
-						body += "<a href='byond://?src=\ref[src];P="+power+"'>Evolve</a>"
+						body += "<a href='byond://?src=\ref[src];P="+power+"'>Research</a>"
 					}
 
 					body += "</td><td align='center'>";
@@ -655,7 +664,7 @@
 				<td align='center'>
 					<font size='5'><b>Changeling Evolution Menu</b></font><br>
 					Hover over a power to see more information<br>
-					Current evolution points left to evolve with: [knowledgepoints]<br>
+					Current evolution points left to research with: [knowledgepoints]<br>
 					Absorb other heretics to acquire more evolution points
 					<p>
 				</td>
@@ -675,7 +684,7 @@
 		<table width='560' align='center' cellspacing='0' cellpadding='5' id='maintable_data'>"}
 
 	var/i = 1
-	for(var/datum/power/heretic/P in GLOB.powerinstances)
+	for(var/datum/power/heretic/P in GLOB.powerinstances_h)
 		var/ownsthis = 0
 
 		if(P in purchased_powers)
@@ -695,7 +704,7 @@
 					<a id='link[i]'
 					onmouseover='expand("item[i]","[P.name]","[P.desc]","[P.helptext]","[P.enhancedtext]","[P]",[ownsthis])'
 					>
-					<span id='search[i]'><b>Evolve [P] - Cost: [ownsthis ? "Purchased" : P.knowledgecost]</b></span>
+					<span id='search[i]'><b>Research [P] - Cost: [ownsthis ? "Purchased" : P.knowledgecost]</b></span>
 					</a>
 					<br><span id='item[i]'></span>
 				</td>
@@ -718,7 +727,7 @@
 	</body></html>
 	"}
 
-	show_browser(usr, dat, "window=powers;size=900x480")
+	show_browser(usr, dat, "window=powers_h;size=900x480")
 
 /datum/heretic/Topic(href, href_list)
 	..()
@@ -730,7 +739,7 @@
 		if(!istype(M))
 			return
 		purchasePower(M, href_list["P"])
-		call(TYPE_PROC_REF(/datum/heretic, EvolutionMenu))()
+		call(TYPE_PROC_REF(/datum/heretic, AlchemyMenu))()
 
 
 
@@ -741,7 +750,7 @@
 	var/datum/power/heretic/Thepower = Pname
 
 
-	for (var/datum/power/heretic/P in powerinstances)
+	for (var/datum/power/heretic/P in powerinstances_h)
 //		log_debug("[P] - [Pname] = [P.name == Pname ? "True" : "False"]")
 
 		if(P.name == Pname)
@@ -753,18 +762,18 @@
 		CRASH("This is awkward.  Changeling power purchase failed, please report this bug to a coder!")
 		return
 
-	if(Thepower in purchasedpowers)
-		to_chat(M.current, "We have already evolved this ability!")
+	if(Thepower in purchased_powers)
+		to_chat(M.current, "We have already researchd this ability!")
 		return
 
 
 	if(knowledgepoints < Thepower.knowledgecost)
-		to_chat(M.current, "We cannot evolve this... yet.  We must acquire more DNA.")
+		to_chat(M.current, "We cannot research this... yet.  We must acquire more DNA.")
 		return
 
 	knowledgepoints -= Thepower.knowledgecost
 
-	purchasedpowers += Thepower
+	purchased_powers += Thepower
 
 	if(!Thepower.isVerb && Thepower.verbpath)
 		call(M.current, Thepower.verbpath)()

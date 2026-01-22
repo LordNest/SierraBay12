@@ -6,6 +6,7 @@
 /// Blade
 
 /obj/item/material/knife/heretic/flesh
+	name = "maniac knife"
 
 /// Sacrifice
 
@@ -31,20 +32,6 @@
 	knowledgecost = 1
 	verbpath = /mob/proc/create_circle
 
-// Заклинания
-
-/datum/power/heretic/flesh_mend
-	name = "Flesh Mend"
-	desc = "Ценой голода лечит урон, нанесённый владельцу. Может использоваться даже в бессознательном состоянии."
-	knowledgecost = 1
-	verbpath = /mob/proc/create_circle
-
-/datum/power/heretic/sensory_overload
-	name = "Sensory Overload"
-	desc = "Воздействие на ЦНС или её подобие заставляет жертву испытывать жуткую агонию, после того, как вы её коснетесь"
-	knowledgecost = 1
-	verbpath = /mob/proc/create_circle
-
 /// Tier 2
 
 // Трансмутации
@@ -55,23 +42,9 @@
 	knowledgecost = 2
 	verbpath = /mob/proc/create_circle
 
-datum/power/heretic/grasping_limbs
+/datum/power/heretic/grasping_limbs
 	name = "Transmutation: Grasping limbs"
 	desc = "Трансмутирует две руки и мышеловку в капкан, игнорирующий еретика, но на долго останавливающий остальных."
-	knowledgecost = 1
-	verbpath = /mob/proc/create_circle
-
-// Заклинания
-
-/datum/power/heretic/create_ghoul
-	name = "Create Ghoul"
-	desc = "Призывает дединсайда, который делает других дедаутсайдами. Извините. Переписать."
-	knowledgecost = 2
-	verbpath = /mob/proc/create_circle
-
-/datum/power/heretic/blood_siphon
-	name = "Blood Siphon"
-	desc = "вытягивает в АоЕ кровь, лечит раны, собирает кровь с пола (привет культ, как вы там?)."
 	knowledgecost = 1
 	verbpath = /mob/proc/create_circle
 
@@ -91,18 +64,10 @@ datum/power/heretic/grasping_limbs
 	knowledgecost = 2
 	verbpath = /mob/proc/create_circle
 
-// Заклинания
-
-/datum/power/heretic/cleave
-	name = "Cleave"
-	desc = "Рвём наручники, смирительные рубашки, микростаним всех вокруг на 1 секунду."
-	knowledgecost = 1
-	verbpath = /mob/proc/create_circle
-
 /// Tier 4
 
 /datum/power/heretic/ascend_flesh
 	name = "Ascention: Path of Flesh"
-	desc = "Трансмутирует ДОБАВИТЬ в раскладываемый маяк, который лечит еретика и его созданий."
+	desc = "Возвышение мастера плоти."
 	knowledgecost = 2
 	verbpath = /mob/proc/create_circle

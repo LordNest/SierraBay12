@@ -9,12 +9,7 @@
 	verbpath = /mob/proc/create_circle
 
 //T2
-
-/datum/power/heretic/flex
-	name = "Flex"
-	desc = "Рвём наручники, смирительные рубашки, микростаним всех вокруг на 1 секунду."
-	knowledgecost = 1
-	verbpath = /mob/proc/create_circle
+// Spell
 
 //T3
 
@@ -61,23 +56,34 @@
 	verbpath = /mob/proc/create_circle
 
 //T2
+//Spell
 
-/datum/power/heretic/evil_twin
-	name = "Twin from Beyond"
-	desc = "На одну минуту на выбранного человека накладывается эффект блюспейс перемещения с его блюспейс тенью, спутанностью движений и получением урона по мозгу при соприкосновении с двойником."
-	knowledgecost = 1
+//T3
+
+/datum/power/heretic/drink_me
+	name = "Transmutation: Drink Me"
+	desc = "Трансмутирует добавить список и создаёт зелье, которое полностью излечивает от ран и болезней, но станит на одну минуту (Ether of Newborn)."
+	knowledgecost = 2
 	verbpath = /mob/proc/create_circle
-
-///T3
-
-
 
 /// Cosmos/Flesh
 
+//T1
+
+/datum/power/heretic/vessel_of_transfusion
+	name = "Transmutation: Vessel of Transfusion"
+	desc = "Трансмутирует добавить список в сосуд, который мгновенно вводит в кровь реагент, который в нём находится. Не-еретик при подборе сосуда также введёт себе реагет. Пустой сосуд берёт кровь "
+	helptext = "Объём сосуда - 5 юнитов."
+	knowledgecost = 1
+	verbpath = /mob/proc/create_circle
+
 // T2
 
-datum/power/heretic/chameleon_cloack
+/datum/power/heretic/chameleon_cloack
 	name = "Transmutation: Chameleon Cloak"
 	desc = "Базовый войд клоак с ТГ."
 	knowledgecost = 2
 	verbpath = /mob/proc/create_circle
+
+//T3
+//Spell

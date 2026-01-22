@@ -51,6 +51,8 @@
 	var/faction 			//associated faction
 	var/datum/changeling/changeling		//changeling holde
 
+	var/datum/heretic/heretic		//heretic holde
+
 	///String. Last spoken message.
 	var/last_words
 
