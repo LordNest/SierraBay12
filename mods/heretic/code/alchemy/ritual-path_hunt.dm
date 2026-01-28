@@ -8,10 +8,6 @@ A Hoonter must Hoont.
 T4 Когда всё готово к возвышению, у нас начинается локальный филиал ада. Все заражённые превращаются в монстров с задачей убить еретика
 */
 
-/// Blade
-
-/obj/item/material/knife/heretic/hunt
-	name = "hunter saw"
 
 /// Sacrifice
 

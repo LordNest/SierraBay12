@@ -57,6 +57,7 @@
 			to_chat(M, SPAN_NOTICE("\The [src] seems full of illegible scribbles. Is this a joke?"))
 		user.setClickCooldown(DEFAULT_QUICK_COOLDOWN)
 	if (user.a_intent == I_DISARM && user.zone_sel.selecting == BP_EYES)
+	for(var/mob/living/carbon/M in viewers(src))
 		if(!isheretic(user))
 			user.visible_message(
 				SPAN_NOTICE("\The [user] shows \the [src] to \the [M]."),

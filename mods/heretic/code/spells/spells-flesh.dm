@@ -121,12 +121,12 @@ TIER TWO
 				should_wait = 0
 				break //Don't need to check anymore.
 		if(should_wait)
-			addtimer(new Callback(src,PROC_REF(check_for_revoke),targets), 30 SECONDS)
+			addtimer(new Callback(src,PROC_REF(check_for_ghoul),targets), 30 SECONDS)
 		else
 			return TRUE
 
 
-/spell/targeted/revoke/proc/check_for_revoke(list/targets)
+/spell/targeted/revoke/proc/check_for_ghoul(list/targets)
 	for(var/t in targets)
 		var/mob/M = t
 		if(M.client)

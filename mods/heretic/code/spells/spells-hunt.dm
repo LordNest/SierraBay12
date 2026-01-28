@@ -17,7 +17,7 @@ TIER ONE
 	hud_state = "friendly"
 
 	var/mob/living/carbon/human/C = src
-	to_chat(C, "<span class='notice'>Energy rushes through us.  [C.lying ? "We arise." : ""]</span>")
+//	to_chat(C,SPAN_NOTICE("Energy rushes through us.  [C.lying ? "We arise." : ""]</span>"))
 	C.set_stat(CONSCIOUS)
 	C.SetParalysis(0)
 	C.SetStunned(0)

@@ -47,7 +47,7 @@
 	knowledgecost = 0
 	verbpath = /mob/proc/summon_codex
 
-/mob/proc/summon_codex
+/mob/proc/summon_codex()
 
 /datum/power/heretic/blade
 	name = "Transmutation: Eldrich Blade"
