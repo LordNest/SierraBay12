@@ -1,0 +1,6076 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"ae" = (
+/obj/random/junk,
+/turf/template_noop,
+/area/map_template/ruin_checkpoint_north)
+"ah" = (
+/obj/floor_decal/techfloor/orange/corner{
+	dir = 4
+	},
+/obj/floor_decal/techfloor/orange/corner,
+/turf/simulated/floor/redgrid,
+/area/map_template/ruin_battle_robot_bay)
+"as" = (
+/obj/floor_decal/industrial/hatch/red,
+/obj/structure/droppod_door{
+	dir = 4;
+	name = "heavy door"
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/map_template/ruin_battle_robot_bay)
+"aJ" = (
+/obj/floor_decal/techfloor{
+	dir = 1
+	},
+/obj/structure/table/steel_reinforced,
+/obj/random/energy,
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/ruin_headquarters)
+"aT" = (
+/obj/paint/sfv_arbiter,
+/turf/simulated/wall/titanium,
+/area/map_template/ruin_headquarters)
+"ba" = (
+/obj/machinery/nav_light/port,
+/obj/structure/catwalk,
+/turf/simulated/floor/plating,
+/area/map_template/ruin_checkpoint_south)
+"bp" = (
+/obj/floor_decal/techfloor/corner{
+	dir = 1
+	},
+/obj/floor_decal/techfloor/corner{
+	dir = 8
+	},
+/obj/floor_decal/steeldecal/steel_decals9,
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/ruin_headquarters)
+"br" = (
+/obj/paint/sfv_arbiter,
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/wall/titanium,
+/area/map_template/ruin_electrical_substation)
+"bU" = (
+/obj/floor_decal/techfloor{
+	dir = 10
+	},
+/obj/decal/cleanable/cobweb2{
+	dir = 1
+	},
+/obj/random/closet,
+/obj/random/solgov,
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/ruin_headquarters)
+"ce" = (
+/obj/floor_decal/steeldecal/steel_decals10,
+/obj/decal/cleanable/dirt,
+/obj/machinery/light/small{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/ruin_headquarters)
+"cq" = (
+/obj/item/robot_parts/robot_component/armour,
+/obj/structure/table/rack/dark,
+/obj/floor_decal/techfloor{
+	dir = 6
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/map_template/ruin_battle_robot_bay)
+"cw" = (
+/obj/wallframe_spawn/reinforced/titanium,
+/obj/paint/dark_gunmetal,
+/turf/simulated/floor/plating,
+/area/map_template/ruin_checkpoint_north)
+"cL" = (
+/obj/random/maintenance,
+/turf/template_noop,
+/area/space)
+"cN" = (
+/obj/floor_decal/techfloor{
+	dir = 8
+	},
+/obj/floor_decal/steeldecal/steel_decals10{
+	dir = 8
+	},
+/obj/floor_decal/steeldecal/steel_decals10{
+	dir = 1
+	},
+/obj/decal/cleanable/dirt,
+/obj/floor_decal/industrial/loading{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/map_template/ruin_battle_robot_bay)
+"de" = (
+/obj/decal/cleanable/dirt,
+/obj/structure/bed/chair{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/ruin_assembly_robot_Bay)
+"dk" = (
+/obj/floor_decal/techfloor{
+	dir = 4
+	},
+/obj/machinery/light{
+	dir = 4
+	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/ruin_battle_robot_bay)
+"dl" = (
+/obj/floor_decal/techfloor/orange{
+	dir = 5
+	},
+/obj/decal/cleanable/cobweb2,
+/obj/machinery/power/terminal{
+	dir = 8
+	},
+/obj/structure/cable/yellow,
+/obj/structure/railing/mapped{
+	color = "#393f43";
+	init_color = "#393f43"
+	},
+/obj/structure/table/rack/dark,
+/obj/random/maintenance,
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/map_template/ruin_electrical_substation)
+"dr" = (
+/obj/floor_decal/techfloor{
+	dir = 10
+	},
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/ruin_headquarters)
+"dA" = (
+/obj/floor_decal/techfloor/orange,
+/obj/machinery/power/breakerbox/activated,
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/map_template/ruin_electrical_substation)
+"dH" = (
+/obj/forcefield/blocker,
+/obj/structure/cable/cyan{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/turf/template_noop,
+/area/space)
+"ej" = (
+/obj/decal/cleanable/dirt,
+/obj/structure/cable/yellow{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/turf/simulated/floor/exoplanet/concrete/reinforced/road,
+/area/space)
+"el" = (
+/obj/floor_decal/techfloor/orange/corner{
+	dir = 4
+	},
+/obj/floor_decal/techfloor/orange/corner,
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/floor/redgrid,
+/area/map_template/ruin_battle_robot_bay)
+"ev" = (
+/obj/decal/cleanable/dirt,
+/obj/structure/catwalk,
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/plating,
+/area/space)
+"eL" = (
+/obj/structure/starlink_antenna{
+	pixel_y = 20
+	},
+/turf/template_noop,
+/area/space)
+"eV" = (
+/obj/decal/cleanable/dirt,
+/obj/structure/barrier{
+	dir = 8
+	},
+/obj/structure/barrier,
+/turf/simulated/floor/exoplanet/concrete/reinforced/damaged,
+/area/space)
+"eX" = (
+/obj/floor_decal/techfloor{
+	dir = 8
+	},
+/obj/floor_decal/steeldecal/steel_decals10{
+	dir = 1
+	},
+/obj/floor_decal/steeldecal/steel_decals10{
+	dir = 8
+	},
+/obj/decal/cleanable/dirt,
+/obj/floor_decal/industrial/loading{
+	dir = 4
+	},
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/map_template/ruin_battle_robot_bay)
+"fd" = (
+/obj/structure/starlink_antenna{
+	pixel_y = -8;
+	pixel_x = 3
+	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/structure/catwalk,
+/turf/simulated/floor/plating,
+/area/space)
+"fn" = (
+/obj/floor_decal/steeldecal/steel_decals2,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/ruin_headquarters)
+"fu" = (
+/obj/structure/barrier,
+/turf/template_noop,
+/area/map_template/ruin_checkpoint_south)
+"fx" = (
+/obj/floor_decal/techfloor/orange/corner,
+/obj/floor_decal/techfloor/orange/corner{
+	dir = 4
+	},
+/obj/decal/cleanable/dirt,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/map_template/ruin_electrical_substation)
+"fT" = (
+/obj/floor_decal/industrial/traffic,
+/obj/decal/cleanable/dirt,
+/turf/simulated/floor/exoplanet/concrete/reinforced/road,
+/area/space)
+"gf" = (
+/obj/floor_decal/industrial/traffic{
+	dir = 10
+	},
+/obj/decal/cleanable/dirt,
+/turf/simulated/floor/exoplanet/concrete/reinforced/road,
+/area/map_template/ruin_checkpoint_south)
+"gj" = (
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/turf/template_noop,
+/area/space)
+"gA" = (
+/obj/floor_decal/borderfloor{
+	dir = 4
+	},
+/obj/machinery/recharger/wallcharger{
+	dir = 8;
+	pixel_x = 22
+	},
+/obj/structure/closet/secure_closet/guncabinet,
+/obj/random/energy,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/map_template/ruin_checkpoint_south)
+"gM" = (
+/obj/machinery/cryopod/robot,
+/obj/floor_decal/techfloor/orange/corner,
+/obj/floor_decal/techfloor/orange/corner{
+	dir = 4
+	},
+/turf/simulated/floor/redgrid,
+/area/map_template/ruin_battle_robot_bay)
+"gO" = (
+/obj/floor_decal/steeldecal/steel_decals10{
+	dir = 4
+	},
+/obj/decal/cleanable/dirt,
+/obj/machinery/light/small{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/ruin_headquarters)
+"gV" = (
+/obj/floor_decal/techfloor{
+	dir = 5
+	},
+/obj/structure/table/steel_reinforced,
+/obj/random/solgov,
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/ruin_headquarters)
+"gW" = (
+/obj/random/junk,
+/obj/structure/mine,
+/turf/template_noop,
+/area/space)
+"hl" = (
+/obj/floor_decal/borderfloor{
+	dir = 1
+	},
+/obj/floor_decal/borderfloor,
+/obj/floor_decal/industrial/hatch/grey,
+/obj/machinery/door/airlock/hatch,
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/map_template/ruin_checkpoint_north)
+"hm" = (
+/obj/floor_decal/borderfloor,
+/obj/decal/cleanable/dirt,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/obj/machinery/light/small,
+/turf/simulated/floor/tiled/dark,
+/area/map_template/ruin_checkpoint_south)
+"hD" = (
+/obj/floor_decal/industrial/traffic/corner,
+/obj/decal/cleanable/dirt,
+/turf/simulated/floor/exoplanet/concrete/reinforced/road,
+/area/space)
+"hE" = (
+/obj/floor_decal/borderfloor{
+	dir = 8
+	},
+/obj/decal/cleanable/dirt,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/machinery/light/small{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/dark,
+/area/map_template/ruin_checkpoint_north)
+"ik" = (
+/obj/structure/cable/cyan{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/turf/template_noop,
+/area/space)
+"im" = (
+/mob/living/simple_animal/hostile/hivebot/ranged_damage/fleet_robot{
+	name = "\improper fleet security robot";
+	faction = "fleet"
+	},
+/obj/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/ruin_battle_robot_bay)
+"iy" = (
+/obj/floor_decal/industrial/traffic{
+	dir = 8
+	},
+/obj/decal/cleanable/dirt,
+/obj/random/junk,
+/turf/simulated/floor/exoplanet/concrete/reinforced/road,
+/area/map_template/ruin_checkpoint_south)
+"iz" = (
+/obj/structure/droppod_door{
+	dir = 4;
+	name = "heavy door"
+	},
+/obj/floor_decal/industrial/hatch/red,
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/map_template/ruin_battle_robot_bay)
+"iD" = (
+/obj/random/tech_supply,
+/turf/template_noop,
+/area/space)
+"iH" = (
+/obj/structure/cable/cyan{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/template_noop,
+/area/space)
+"iM" = (
+/obj/decal/cleanable/dirt,
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/obj/structure/catwalk,
+/turf/simulated/floor/plating,
+/area/space)
+"iT" = (
+/mob/living/simple_animal/hostile/hivebot/ranged_damage/fleet_robot/ion,
+/obj/decal/cleanable/dirt,
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/ruin_battle_robot_bay)
+"iW" = (
+/obj/floor_decal/techfloor{
+	dir = 8
+	},
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/ruin_headquarters)
+"iX" = (
+/obj/structure/cable/cyan{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/turf/template_noop,
+/area/space)
+"je" = (
+/obj/decal/cleanable/dirt,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/dark,
+/area/map_template/ruin_checkpoint_south)
+"jh" = (
+/obj/paint/dark_gunmetal,
+/turf/simulated/wall/r_titanium,
+/area/map_template/ruin_checkpoint_north)
+"jn" = (
+/obj/floor_decal/techfloor{
+	dir = 9
+	},
+/obj/item/ammobox{
+	pixel_y = 15;
+	pixel_x = -9
+	},
+/obj/item/ammobox{
+	pixel_y = 15;
+	pixel_x = 8
+	},
+/obj/item/ammobox{
+	pixel_y = 25
+	},
+/obj/item/ammobox{
+	pixel_y = 8;
+	pixel_x = 2
+	},
+/obj/item/ammobox{
+	pixel_y = 18;
+	pixel_x = 2
+	},
+/obj/item/ammobox{
+	pixel_y = 31;
+	pixel_x = 2
+	},
+/obj/random/handgun{
+	pixel_y = -9;
+	pixel_x = -6
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/map_template/ruin_battle_robot_bay)
+"jE" = (
+/obj/floor_decal/techfloor/orange{
+	dir = 4
+	},
+/obj/decal/cleanable/dirt,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/obj/machinery/light/small{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/map_template/ruin_electrical_substation)
+"jF" = (
+/obj/structure/cable/cyan{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/forcefield/blocker,
+/turf/template_noop,
+/area/space)
+"jH" = (
+/obj/floor_decal/borderfloor{
+	dir = 8
+	},
+/obj/decal/cleanable/dirt,
+/obj/machinery/light/small{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/dark,
+/area/map_template/ruin_checkpoint_north)
+"jZ" = (
+/obj/floor_decal/techfloor{
+	dir = 1
+	},
+/obj/floor_decal/techfloor/hole{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/ruin_headquarters)
+"ka" = (
+/obj/decal/cleanable/dirt,
+/turf/simulated/floor/exoplanet/concrete/reinforced/damaged,
+/area/space)
+"kb" = (
+/obj/structure/starlink_antenna{
+	pixel_y = 22
+	},
+/turf/template_noop,
+/area/space)
+"kf" = (
+/obj/structure/barrier{
+	dir = 4
+	},
+/turf/template_noop,
+/area/space)
+"kj" = (
+/obj/floor_decal/techfloor/orange{
+	dir = 1
+	},
+/obj/floor_decal/techfloor/hole/right{
+	dir = 1
+	},
+/obj/machinery/power/breakerbox/activated,
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/map_template/ruin_electrical_substation)
+"kt" = (
+/obj/paint/red,
+/turf/simulated/wall/r_titanium,
+/area/map_template/ruin_checkpoint_north)
+"ky" = (
+/obj/floor_decal/borderfloor/corner,
+/obj/structure/barrier{
+	dir = 8
+	},
+/obj/decal/cleanable/dirt,
+/obj/structure/cable/yellow{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/map_template/ruin_checkpoint_south)
+"kD" = (
+/obj/floor_decal/borderfloor{
+	dir = 4
+	},
+/obj/decal/cleanable/dirt,
+/obj/structure/bed/chair{
+	dir = 8
+	},
+/obj/structure/cable{
+	d2 = 2;
+	icon_state = "0-2"
+	},
+/obj/machinery/power/apc{
+	dir = 4;
+	name = "east bump";
+	pixel_x = 24
+	},
+/turf/simulated/floor/tiled/dark,
+/area/map_template/ruin_checkpoint_north)
+"kF" = (
+/obj/floor_decal/industrial/traffic{
+	dir = 4
+	},
+/obj/decal/cleanable/dirt,
+/turf/simulated/floor/exoplanet/concrete/reinforced/road,
+/area/map_template/ruin_checkpoint_south)
+"kH" = (
+/obj/wallframe_spawn/reinforced/titanium,
+/obj/paint/sfv_arbiter,
+/turf/simulated/floor/plating,
+/area/map_template/ruin_assembly_robot_Bay)
+"lf" = (
+/obj/decal/cleanable/dirt,
+/obj/structure/catwalk,
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/plating,
+/area/space)
+"ln" = (
+/obj/decal/cleanable/dirt,
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/structure/catwalk,
+/turf/simulated/floor/plating,
+/area/space)
+"lw" = (
+/obj/paint/sfv_arbiter,
+/turf/simulated/wall/r_titanium,
+/area/map_template/ruin_ai_core)
+"lD" = (
+/obj/floor_decal/techfloor{
+	dir = 1
+	},
+/obj/random/solgov,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/ruin_assembly_robot_Bay)
+"lF" = (
+/obj/floor_decal/techfloor{
+	dir = 4
+	},
+/obj/floor_decal/steeldecal/steel_decals10{
+	dir = 4
+	},
+/obj/floor_decal/steeldecal/steel_decals10,
+/obj/random/junk,
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/map_template/ruin_battle_robot_bay)
+"lM" = (
+/obj/paint/sfv_arbiter,
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/turf/simulated/wall/titanium,
+/area/map_template/ruin_electrical_substation)
+"lS" = (
+/obj/floor_decal/techfloor/orange{
+	dir = 4
+	},
+/obj/floor_decal/techfloor/hole/right{
+	dir = 4
+	},
+/obj/random/tech_supply,
+/obj/decal/cleanable/blood/oil,
+/obj/decal/cleanable/dirt,
+/obj/machinery/power/terminal,
+/obj/structure/cable/yellow{
+	d2 = 4;
+	icon_state = "0-4"
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/ruin_electrical_substation)
+"lT" = (
+/obj/floor_decal/techfloor/corner{
+	dir = 4
+	},
+/obj/floor_decal/techfloor/corner{
+	dir = 1
+	},
+/obj/decal/cleanable/dirt,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/ruin_headquarters)
+"mj" = (
+/obj/decal/cleanable/dirt,
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/turf/simulated/floor/exoplanet/concrete/reinforced/road,
+/area/space)
+"mk" = (
+/obj/floor_decal/borderfloor{
+	dir = 8
+	},
+/obj/structure/table/steel_reinforced,
+/obj/machinery/turretid/lethal,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/map_template/ruin_checkpoint_south)
+"mr" = (
+/obj/floor_decal/techfloor/orange{
+	dir = 1
+	},
+/obj/machinery/power/smes/buildable/max_cap_in_out,
+/obj/structure/cable{
+	d2 = 2;
+	icon_state = "0-2"
+	},
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/map_template/ruin_electrical_substation)
+"mF" = (
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/obj/structure/catwalk,
+/turf/simulated/floor/plating,
+/area/space)
+"mL" = (
+/obj/floor_decal/techfloor{
+	dir = 8
+	},
+/obj/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/ruin_battle_robot_bay)
+"mS" = (
+/obj/floor_decal/borderfloor,
+/obj/decal/cleanable/dirt,
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/obj/machinery/light/small,
+/turf/simulated/floor/tiled/dark,
+/area/map_template/ruin_checkpoint_south)
+"mT" = (
+/obj/floor_decal/industrial/traffic{
+	dir = 4
+	},
+/obj/machinery/button/blast_door{
+	id_tag = "south_g";
+	pixel_y = 26;
+	pixel_x = 26
+	},
+/obj/decal/cleanable/dirt,
+/turf/simulated/floor/exoplanet/concrete/reinforced/road,
+/area/map_template/ruin_checkpoint_south)
+"mV" = (
+/obj/floor_decal/steeldecal/steel_decals9,
+/obj/decal/cleanable/dirt,
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/ruin_assembly_robot_Bay)
+"mX" = (
+/obj/item/robot_parts/robot_component/camera,
+/obj/structure/table/rack/dark,
+/obj/floor_decal/techfloor{
+	dir = 1
+	},
+/obj/machinery/recharger/wallcharger{
+	pixel_y = 24
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/map_template/ruin_battle_robot_bay)
+"mY" = (
+/obj/structure/AIcore/deactivated,
+/obj/structure/cable{
+	d2 = 4;
+	icon_state = "0-4"
+	},
+/turf/simulated/floor/greengrid,
+/area/map_template/ruin_ai_core)
+"mZ" = (
+/turf/template_noop,
+/area/map_template/ruin_checkpoint_north)
+"nq" = (
+/obj/floor_decal/industrial/traffic/corner{
+	dir = 4
+	},
+/obj/decal/cleanable/dirt,
+/turf/simulated/floor/exoplanet/concrete/reinforced/road,
+/area/space)
+"nG" = (
+/obj/floor_decal/techfloor{
+	dir = 9
+	},
+/obj/structure/table/steel_reinforced,
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/item/documents/scgr,
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/ruin_headquarters)
+"nP" = (
+/obj/floor_decal/techfloor{
+	dir = 4
+	},
+/obj/structure/table/steel_reinforced,
+/obj/random/tool,
+/obj/item/device/kit/mech,
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/ruin_assembly_robot_Bay)
+"oo" = (
+/obj/floor_decal/techfloor/orange/corner,
+/obj/decal/cleanable/dirt,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/map_template/ruin_electrical_substation)
+"op" = (
+/obj/floor_decal/borderfloor/corner{
+	dir = 4
+	},
+/obj/floor_decal/borderfloor/corner{
+	dir = 1
+	},
+/obj/decal/cleanable/dirt,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/turf/simulated/floor/tiled/dark,
+/area/map_template/ruin_checkpoint_south)
+"ot" = (
+/obj/floor_decal/industrial/traffic{
+	dir = 8
+	},
+/obj/decal/cleanable/dirt,
+/obj/structure/cable/yellow{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/exoplanet/concrete/reinforced/road,
+/area/map_template/ruin_checkpoint_south)
+"oK" = (
+/obj/floor_decal/steeldecal/steel_decals2,
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/ruin_battle_robot_bay)
+"oM" = (
+/obj/structure/catwalk,
+/obj/structure/cable/yellow{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/plating,
+/area/space)
+"oQ" = (
+/obj/structure/barrier{
+	dir = 1
+	},
+/obj/decal/cleanable/dirt,
+/turf/simulated/floor/exoplanet/concrete/reinforced/road,
+/area/space)
+"ph" = (
+/obj/floor_decal/industrial/traffic,
+/obj/decal/cleanable/dirt,
+/obj/structure/destroyed_apc{
+	dir = 4
+	},
+/turf/simulated/floor/exoplanet/concrete/reinforced/road,
+/area/space)
+"pk" = (
+/obj/random/solgov,
+/turf/template_noop,
+/area/space)
+"px" = (
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/structure/cable/yellow{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/obj/forcefield/blocker,
+/turf/template_noop,
+/area/space)
+"pL" = (
+/obj/floor_decal/techfloor,
+/obj/structure/table/steel_reinforced,
+/obj/random/solgov,
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/ruin_headquarters)
+"pV" = (
+/obj/floor_decal/steeldecal/steel_decals_central7,
+/obj/random/loot,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/ruin_electrical_substation)
+"qd" = (
+/obj/floor_decal/borderfloor/corner{
+	dir = 8
+	},
+/obj/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/map_template/ruin_checkpoint_north)
+"qi" = (
+/obj/decal/cleanable/dirt,
+/obj/floor_decal/industrial/loading{
+	dir = 8
+	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/ruin_assembly_robot_Bay)
+"qk" = (
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/structure/catwalk,
+/obj/structure/cable/yellow{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/plating,
+/area/space)
+"ql" = (
+/obj/structure/barrier{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/ruin_headquarters)
+"qD" = (
+/turf/template_noop,
+/area/space)
+"qF" = (
+/obj/floor_decal/techfloor{
+	dir = 4
+	},
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/ruin_battle_robot_bay)
+"qI" = (
+/obj/wallframe_spawn/reinforced/titanium,
+/obj/paint/sfv_arbiter,
+/obj/structure/cable/yellow{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/plating,
+/area/map_template/ruin_headquarters)
+"qY" = (
+/obj/floor_decal/steeldecal/steel_decals2,
+/obj/decal/cleanable/dirt,
+/obj/structure/bed/chair,
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/ruin_headquarters)
+"rp" = (
+/obj/paint/sfv_arbiter,
+/turf/simulated/wall/titanium,
+/area/map_template/ruin_assembly_robot_Bay)
+"ru" = (
+/obj/floor_decal/techfloor/orange{
+	dir = 10
+	},
+/obj/random/tech_supply,
+/obj/decal/cleanable/blood/oil,
+/obj/structure/cable,
+/obj/machinery/power/apc{
+	name = "south bump";
+	pixel_y = -24
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/map_template/ruin_electrical_substation)
+"rx" = (
+/obj/decal/cleanable/dirt,
+/obj/floor_decal/industrial/loading{
+	dir = 8
+	},
+/obj/machinery/light/small{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/ruin_assembly_robot_Bay)
+"rB" = (
+/obj/floor_decal/techfloor{
+	dir = 6
+	},
+/obj/random/tech_supply,
+/obj/machinery/power/breakerbox/activated,
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/ruin_headquarters)
+"sh" = (
+/obj/wallframe_spawn/reinforced/titanium,
+/obj/paint/sfv_arbiter,
+/turf/simulated/floor/plating,
+/area/map_template/ruin_headquarters)
+"si" = (
+/obj/floor_decal/borderfloor{
+	dir = 8
+	},
+/obj/structure/table/steel_reinforced,
+/obj/random/loot,
+/obj/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/map_template/ruin_checkpoint_south)
+"sk" = (
+/obj/decal/cleanable/dirt,
+/obj/structure/catwalk,
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/plating,
+/area/space)
+"sq" = (
+/obj/floor_decal/techfloor{
+	dir = 1
+	},
+/obj/item/robot_parts/robot_component/armour/exosuit,
+/obj/structure/cable{
+	d2 = 2;
+	icon_state = "0-2"
+	},
+/obj/machinery/power/apc{
+	dir = 1;
+	name = "north bump";
+	pixel_y = 24
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/ruin_assembly_robot_Bay)
+"ss" = (
+/obj/floor_decal/techfloor/orange,
+/obj/floor_decal/steeldecal/steel_decals_central7{
+	pixel_y = 10
+	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/greengrid,
+/area/map_template/ruin_ai_core)
+"sH" = (
+/obj/floor_decal/industrial/traffic{
+	dir = 8
+	},
+/obj/decal/cleanable/dirt,
+/obj/structure/cable/yellow{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/exoplanet/concrete/reinforced/road,
+/area/space)
+"sQ" = (
+/obj/structure/cable/yellow{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/obj/forcefield/blocker,
+/turf/template_noop,
+/area/space)
+"sX" = (
+/obj/floor_decal/techfloor{
+	dir = 10
+	},
+/obj/machinery/recharge_station,
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/map_template/ruin_battle_robot_bay)
+"td" = (
+/obj/floor_decal/industrial/traffic{
+	dir = 1
+	},
+/obj/decal/cleanable/dirt,
+/turf/simulated/floor/exoplanet/concrete/reinforced/road,
+/area/space)
+"tq" = (
+/obj/decal/cleanable/dirt,
+/obj/structure/cable/yellow{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/exoplanet/concrete/reinforced/road,
+/area/map_template/ruin_checkpoint_south)
+"tB" = (
+/obj/floor_decal/techfloor{
+	dir = 10
+	},
+/obj/structure/table/steel_reinforced,
+/obj/random/loot,
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/ruin_headquarters)
+"tG" = (
+/obj/floor_decal/techfloor{
+	dir = 4
+	},
+/obj/floor_decal/techfloor/hole{
+	dir = 4
+	},
+/obj/structure/table/steel_reinforced,
+/obj/item/device/personal_shield,
+/obj/random/solgov,
+/obj/machinery/recharger/wallcharger{
+	dir = 8;
+	pixel_x = 22
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/ruin_assembly_robot_Bay)
+"tN" = (
+/obj/floor_decal/techfloor{
+	dir = 6
+	},
+/obj/random/closet,
+/obj/random/medical,
+/obj/random/medical,
+/obj/random/medical,
+/obj/random/solgov,
+/obj/decal/cleanable/dirt,
+/obj/machinery/light,
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/ruin_headquarters)
+"tQ" = (
+/obj/floor_decal/techfloor,
+/obj/floor_decal/techfloor/hole,
+/obj/machinery/power/breakerbox/activated,
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/map_template/ruin_battle_robot_bay)
+"uj" = (
+/obj/floor_decal/industrial/traffic/corner{
+	dir = 1
+	},
+/obj/decal/cleanable/dirt,
+/turf/simulated/floor/exoplanet/concrete/reinforced/road,
+/area/map_template/ruin_checkpoint_north)
+"uo" = (
+/mob/living/simple_animal/hostile/hivebot/ranged_damage/fleet_robot/ion,
+/obj/floor_decal/steeldecal/steel_decals10,
+/obj/random/junk,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/ruin_electrical_substation)
+"uA" = (
+/obj/paint/sfv_arbiter,
+/obj/structure/cable/yellow{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/wall/titanium,
+/area/map_template/ruin_headquarters)
+"uE" = (
+/obj/floor_decal/borderfloor{
+	dir = 4
+	},
+/obj/floor_decal/borderfloor{
+	dir = 8
+	},
+/obj/floor_decal/industrial/hatch/grey,
+/obj/machinery/door/airlock/hatch,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/map_template/ruin_checkpoint_south)
+"uG" = (
+/obj/floor_decal/borderfloor{
+	dir = 9
+	},
+/obj/structure/table/steel_reinforced,
+/obj/machinery/button/blast_door{
+	id_tag = "south_g";
+	dir = 4
+	},
+/obj/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/map_template/ruin_checkpoint_south)
+"uK" = (
+/obj/structure/cable/yellow{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/obj/forcefield/blocker,
+/turf/template_noop,
+/area/space)
+"uY" = (
+/obj/decal/cleanable/dirt,
+/obj/structure/barrier{
+	dir = 8
+	},
+/turf/simulated/floor/exoplanet/concrete/reinforced/road,
+/area/map_template/ruin_checkpoint_south)
+"vc" = (
+/obj/paint/sfv_arbiter,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/wall/titanium,
+/area/map_template/ruin_headquarters)
+"vA" = (
+/obj/floor_decal/steeldecal/steel_decals_central4,
+/obj/floor_decal/industrial/outline/red,
+/obj/decal/cleanable/dirt,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/ruin_battle_robot_bay)
+"vS" = (
+/obj/floor_decal/techfloor/corner,
+/obj/floor_decal/techfloor/corner{
+	dir = 4
+	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/ruin_assembly_robot_Bay)
+"wk" = (
+/obj/floor_decal/steeldecal/steel_decals10{
+	dir = 9
+	},
+/obj/decal/cleanable/dirt,
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/obj/machinery/light/small{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/ruin_headquarters)
+"wm" = (
+/obj/machinery/power/debug_items/infinite_generator/big_sollar_panels,
+/obj/structure/cable/yellow{
+	d2 = 4;
+	icon_state = "0-4"
+	},
+/obj/forcefield/blocker,
+/turf/template_noop,
+/area/space)
+"wn" = (
+/obj/floor_decal/techfloor{
+	dir = 8
+	},
+/obj/floor_decal/techfloor{
+	dir = 4
+	},
+/obj/decal/cleanable/blood/oil,
+/obj/floor_decal/industrial/hatch/blue,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/machinery/door/airlock/hatch{
+	name = "\improper Airtight Headquarters Hatch"
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/map_template/ruin_headquarters)
+"wo" = (
+/obj/floor_decal/industrial/traffic/corner{
+	dir = 4
+	},
+/obj/decal/cleanable/dirt,
+/turf/simulated/floor/exoplanet/concrete/reinforced/road,
+/area/map_template/ruin_checkpoint_north)
+"ws" = (
+/turf/template_noop,
+/area/map_template/ruin_checkpoint_south)
+"ww" = (
+/obj/floor_decal/industrial/traffic/corner{
+	dir = 8
+	},
+/obj/decal/cleanable/dirt,
+/turf/simulated/floor/exoplanet/concrete/reinforced/road,
+/area/space)
+"wG" = (
+/obj/floor_decal/techfloor/corner{
+	dir = 4
+	},
+/obj/floor_decal/techfloor/corner,
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/ruin_headquarters)
+"wH" = (
+/obj/structure/cable/yellow{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/structure/catwalk,
+/turf/simulated/floor/plating,
+/area/space)
+"wT" = (
+/obj/decal/cleanable/dirt,
+/obj/structure/cable/yellow{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/ruin_headquarters)
+"xn" = (
+/obj/floor_decal/techfloor,
+/obj/structure/table/steel_reinforced,
+/obj/machinery/light,
+/obj/item/documents/scg/verified,
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/ruin_headquarters)
+"xA" = (
+/obj/floor_decal/techfloor,
+/obj/machinery/drone_fabricator/derelict,
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/ruin_headquarters)
+"xG" = (
+/obj/machinery/cryopod/robot,
+/obj/floor_decal/techfloor/orange/corner{
+	dir = 4
+	},
+/obj/decal/cleanable/cobweb2{
+	dir = 1
+	},
+/turf/simulated/floor/redgrid,
+/area/map_template/ruin_battle_robot_bay)
+"xK" = (
+/obj/floor_decal/industrial/outline/yellow,
+/obj/item/mech_component/chassis/combat,
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/ruin_assembly_robot_Bay)
+"xY" = (
+/obj/floor_decal/techfloor{
+	dir = 5
+	},
+/obj/random/closet,
+/obj/random/ammo,
+/obj/random/ammo,
+/obj/random/ammo,
+/obj/random/ammo_magazine_smug,
+/obj/random/ammo_magazine_smug,
+/obj/random/solgov,
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/ruin_headquarters)
+"yl" = (
+/obj/floor_decal/techfloor/corner{
+	dir = 4
+	},
+/obj/floor_decal/steeldecal/steel_decals_central6{
+	dir = 1
+	},
+/obj/decal/cleanable/dirt,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/ruin_headquarters)
+"yo" = (
+/obj/paint/sfv_arbiter,
+/obj/structure/cable/yellow{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/structure/cable/yellow{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/turf/simulated/wall/titanium,
+/area/map_template/ruin_electrical_substation)
+"ys" = (
+/obj/structure/barrier{
+	dir = 4
+	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/structure/catwalk,
+/turf/simulated/floor/plating,
+/area/space)
+"yO" = (
+/obj/floor_decal/techfloor/orange/corner{
+	dir = 8
+	},
+/obj/floor_decal/techfloor/orange/corner{
+	dir = 1
+	},
+/obj/floor_decal/steeldecal/steel_decals7,
+/obj/decal/cleanable/dirt,
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/ruin_electrical_substation)
+"yQ" = (
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/structure/catwalk,
+/turf/simulated/floor/plating,
+/area/space)
+"yV" = (
+/obj/paint/sfv_arbiter,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/wall/titanium,
+/area/map_template/ruin_assembly_robot_Bay)
+"zb" = (
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/obj/structure/catwalk,
+/turf/simulated/floor/plating,
+/area/space)
+"zj" = (
+/obj/floor_decal/techfloor/corner,
+/obj/floor_decal/techfloor/corner{
+	dir = 8
+	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/ruin_headquarters)
+"zm" = (
+/obj/floor_decal/industrial/traffic{
+	dir = 4
+	},
+/obj/machinery/button/blast_door{
+	id_tag = "north_g";
+	pixel_y = -24;
+	pixel_x = 25;
+	dir = 1
+	},
+/obj/decal/cleanable/dirt,
+/turf/simulated/floor/exoplanet/concrete/reinforced/road,
+/area/map_template/ruin_checkpoint_north)
+"zs" = (
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/forcefield/blocker,
+/turf/template_noop,
+/area/space)
+"zu" = (
+/obj/structure/barrier{
+	dir = 1
+	},
+/obj/decal/cleanable/dirt,
+/obj/structure/barrier{
+	dir = 4
+	},
+/turf/simulated/floor/exoplanet/concrete/reinforced/road,
+/area/space)
+"zA" = (
+/obj/floor_decal/borderfloor{
+	dir = 10
+	},
+/obj/machinery/power/breakerbox/activated,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/map_template/ruin_checkpoint_south)
+"zC" = (
+/obj/floor_decal/industrial/outline/red,
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/ruin_battle_robot_bay)
+"Aa" = (
+/obj/floor_decal/techfloor,
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/ruin_headquarters)
+"Ah" = (
+/obj/floor_decal/industrial/traffic{
+	dir = 8
+	},
+/obj/decal/cleanable/dirt,
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/exoplanet/concrete/reinforced/road,
+/area/space)
+"Al" = (
+/obj/floor_decal/techfloor{
+	dir = 1
+	},
+/obj/structure/noticeboard{
+	pixel_y = 32
+	},
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/ruin_headquarters)
+"An" = (
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/obj/structure/catwalk,
+/turf/simulated/floor/plating,
+/area/space)
+"As" = (
+/obj/floor_decal/techfloor{
+	dir = 1
+	},
+/obj/structure/pvo_control,
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/ruin_headquarters)
+"Av" = (
+/obj/decal/cleanable/dirt,
+/obj/decal/cleanable/blood/oil,
+/obj/forcefield/blocker,
+/turf/simulated/floor/exoplanet/concrete/reinforced/road,
+/area/space)
+"AC" = (
+/obj/floor_decal/techfloor{
+	dir = 4
+	},
+/obj/floor_decal/techfloor/hole{
+	dir = 4
+	},
+/obj/random/tech_supply,
+/obj/decal/cleanable/dirt,
+/obj/machinery/power/apc{
+	dir = 4;
+	name = "east bump";
+	pixel_x = 24
+	},
+/obj/structure/cable,
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/ruin_battle_robot_bay)
+"AK" = (
+/obj/floor_decal/techfloor/corner{
+	dir = 1
+	},
+/obj/decal/cleanable/dirt,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/machinery/light/small{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/map_template/ruin_battle_robot_bay)
+"AV" = (
+/obj/random/tool,
+/turf/template_noop,
+/area/space)
+"AW" = (
+/obj/floor_decal/borderfloor,
+/obj/decal/cleanable/dirt,
+/obj/machinery/light,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/turf/simulated/floor/tiled/dark,
+/area/map_template/ruin_checkpoint_south)
+"Ba" = (
+/obj/floor_decal/industrial/traffic/fulltile,
+/obj/decal/cleanable/dirt,
+/obj/machinery/door/blast/regular{
+	name = "South Gate Blast Door";
+	id_tag = "south_g"
+	},
+/turf/simulated/floor/exoplanet/concrete/reinforced/road,
+/area/map_template/ruin_checkpoint_south)
+"Be" = (
+/obj/floor_decal/techfloor,
+/obj/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/ruin_headquarters)
+"Bw" = (
+/obj/floor_decal/techfloor/orange{
+	dir = 8
+	},
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/turf/simulated/floor/greengrid,
+/area/map_template/ruin_ai_core)
+"BH" = (
+/obj/floor_decal/techfloor/orange{
+	dir = 4
+	},
+/obj/floor_decal/techfloor/hole{
+	dir = 4
+	},
+/obj/machinery/power/smes/batteryrack,
+/obj/structure/cable,
+/obj/structure/cable{
+	d2 = 8;
+	icon_state = "0-8"
+	},
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/simulated/floor/greengrid,
+/area/map_template/ruin_ai_core)
+"BI" = (
+/obj/floor_decal/industrial/traffic{
+	dir = 9
+	},
+/obj/decal/cleanable/dirt,
+/turf/simulated/floor/exoplanet/concrete/reinforced/road,
+/area/map_template/ruin_checkpoint_north)
+"BL" = (
+/obj/decal/cleanable/dirt,
+/turf/simulated/floor/exoplanet/concrete/reinforced/road,
+/area/space)
+"BO" = (
+/obj/floor_decal/techfloor/orange/corner{
+	dir = 4
+	},
+/obj/floor_decal/techfloor/orange/corner,
+/obj/floor_decal/techfloor/corner{
+	dir = 1
+	},
+/obj/floor_decal/techfloor/corner{
+	dir = 8
+	},
+/obj/floor_decal/industrial/hatch/red,
+/obj/structure/droppod_door{
+	dir = 4;
+	name = "heavy door"
+	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/map_template/ruin_ai_core)
+"BP" = (
+/obj/structure/barrier,
+/obj/floor_decal/industrial/traffic{
+	dir = 8
+	},
+/obj/decal/cleanable/dirt,
+/turf/simulated/floor/exoplanet/concrete/reinforced/road,
+/area/map_template/ruin_checkpoint_south)
+"BV" = (
+/obj/floor_decal/industrial/traffic{
+	dir = 6
+	},
+/obj/decal/cleanable/dirt,
+/turf/simulated/floor/exoplanet/concrete/reinforced/road,
+/area/space)
+"BY" = (
+/obj/floor_decal/industrial/traffic/corner{
+	dir = 8
+	},
+/obj/decal/cleanable/dirt,
+/turf/simulated/floor/exoplanet/concrete/reinforced/road,
+/area/map_template/ruin_checkpoint_south)
+"Cz" = (
+/obj/floor_decal/techfloor/orange{
+	dir = 1
+	},
+/obj/floor_decal/steeldecal/steel_decals_central7{
+	pixel_y = -6
+	},
+/obj/structure/cable{
+	d2 = 4;
+	icon_state = "0-4"
+	},
+/obj/machinery/power/apc{
+	dir = 1;
+	name = "north bump";
+	pixel_y = 24
+	},
+/turf/simulated/floor/greengrid,
+/area/map_template/ruin_ai_core)
+"CB" = (
+/obj/floor_decal/borderfloor/corner{
+	dir = 8
+	},
+/obj/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/map_template/ruin_checkpoint_south)
+"CH" = (
+/obj/floor_decal/techfloor{
+	dir = 9
+	},
+/obj/random/closet,
+/obj/random/material_rnd_steel,
+/obj/random/material_rnd_steel,
+/obj/random/material_rnd_glass,
+/obj/random/material_rnd_glass,
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/ruin_headquarters)
+"CI" = (
+/obj/structure/barrier,
+/obj/decal/cleanable/dirt,
+/turf/simulated/floor/exoplanet/concrete/reinforced/road,
+/area/map_template/ruin_checkpoint_south)
+"CK" = (
+/obj/floor_decal/industrial/outline/yellow,
+/obj/decal/cleanable/blood/oil,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/ruin_assembly_robot_Bay)
+"CT" = (
+/obj/floor_decal/industrial/traffic{
+	dir = 8
+	},
+/obj/decal/cleanable/dirt,
+/turf/simulated/floor/exoplanet/concrete/reinforced/road,
+/area/map_template/ruin_checkpoint_south)
+"Dk" = (
+/obj/floor_decal/borderfloor/corner{
+	dir = 1
+	},
+/obj/floor_decal/borderfloor/corner{
+	dir = 8
+	},
+/obj/decal/cleanable/dirt,
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/map_template/ruin_checkpoint_north)
+"Dp" = (
+/obj/floor_decal/techfloor,
+/obj/floor_decal/techfloor{
+	dir = 1
+	},
+/obj/floor_decal/industrial/hatch/blue,
+/obj/machinery/door/airlock/hatch{
+	name = "\improper Airtight Headquarters Hatch"
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/map_template/ruin_headquarters)
+"Du" = (
+/obj/decal/cleanable/dirt,
+/obj/decal/cleanable/blood/oil,
+/turf/simulated/floor/exoplanet/concrete/reinforced/road,
+/area/space)
+"DA" = (
+/obj/floor_decal/techfloor{
+	dir = 8
+	},
+/obj/random/closet,
+/obj/random/technology_scanner,
+/obj/random/tech_supply,
+/obj/random/tech_supply,
+/obj/random/tool,
+/obj/random/tool,
+/obj/random/toolbox,
+/obj/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/ruin_headquarters)
+"DH" = (
+/obj/structure/anti_aircraft,
+/obj/structure/cable/cyan{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/forcefield/blocker,
+/turf/template_noop,
+/area/space)
+"DI" = (
+/obj/floor_decal/techfloor{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/ruin_battle_robot_bay)
+"DL" = (
+/obj/floor_decal/steeldecal/steel_decals10{
+	dir = 4
+	},
+/obj/floor_decal/steeldecal/steel_decals10,
+/obj/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/ruin_headquarters)
+"DN" = (
+/obj/floor_decal/borderfloor{
+	dir = 4
+	},
+/obj/machinery/recharger/wallcharger{
+	dir = 8;
+	pixel_x = 22
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/map_template/ruin_checkpoint_south)
+"Eb" = (
+/obj/paint/sfv_arbiter,
+/obj/structure/cable/yellow{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/turf/simulated/wall/titanium,
+/area/map_template/ruin_electrical_substation)
+"Ec" = (
+/obj/floor_decal/techfloor{
+	dir = 1
+	},
+/obj/floor_decal/techfloor,
+/obj/floor_decal/industrial/hatch/blue,
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/door/airlock/hatch{
+	name = "\improper Airtight Headquarters Hatch"
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/map_template/ruin_headquarters)
+"Ee" = (
+/obj/floor_decal/techfloor{
+	dir = 1
+	},
+/obj/structure/table/steel_reinforced,
+/obj/item/storage/belt/holster/security{
+	pixel_y = 5
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/ruin_headquarters)
+"Eh" = (
+/obj/structure/cable/cyan{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8";
+	dir = 4
+	},
+/turf/template_noop,
+/area/space)
+"Es" = (
+/obj/floor_decal/techfloor{
+	dir = 1
+	},
+/obj/random/tool,
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/ruin_assembly_robot_Bay)
+"Eu" = (
+/obj/floor_decal/techfloor{
+	dir = 5
+	},
+/obj/machinery/power/smes/batteryrack,
+/obj/structure/cable{
+	d2 = 8;
+	icon_state = "0-8"
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/ruin_headquarters)
+"Ey" = (
+/obj/structure/mine,
+/turf/template_noop,
+/area/space)
+"Ez" = (
+/obj/floor_decal/techfloor{
+	dir = 1
+	},
+/obj/machinery/recharger/wallcharger{
+	pixel_y = 24
+	},
+/obj/structure/table/steel_reinforced,
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/ruin_headquarters)
+"EB" = (
+/obj/floor_decal/techfloor/orange,
+/obj/decal/cleanable/dirt,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/obj/machinery/light,
+/obj/structure/railing/mapped{
+	dir = 1;
+	color = "#393f43";
+	init_color = "#393f43"
+	},
+/obj/structure/table/rack/dark,
+/obj/random/tech_supply,
+/obj/random/loot,
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/map_template/ruin_electrical_substation)
+"EP" = (
+/obj/decal/cleanable/dirt,
+/obj/structure/barrier{
+	dir = 8
+	},
+/obj/structure/barrier,
+/turf/simulated/floor/exoplanet/concrete/reinforced/road,
+/area/map_template/ruin_checkpoint_south)
+"EX" = (
+/obj/floor_decal/industrial/traffic/corner,
+/obj/decal/cleanable/dirt,
+/turf/simulated/floor/exoplanet/concrete/reinforced/road,
+/area/map_template/ruin_checkpoint_south)
+"Fi" = (
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/structure/catwalk,
+/turf/simulated/floor/plating,
+/area/space)
+"Fj" = (
+/obj/paint/sfv_arbiter,
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/turf/simulated/wall/titanium,
+/area/map_template/ruin_electrical_substation)
+"Fk" = (
+/obj/decal/cleanable/dirt,
+/obj/structure/barrier{
+	dir = 4
+	},
+/turf/simulated/floor/exoplanet/concrete/reinforced/road,
+/area/space)
+"Fx" = (
+/obj/floor_decal/techfloor/corner{
+	dir = 8
+	},
+/obj/decal/cleanable/dirt,
+/obj/machinery/light/small{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/map_template/ruin_battle_robot_bay)
+"FC" = (
+/obj/paint/sfv_arbiter,
+/turf/simulated/wall/titanium,
+/area/map_template/ruin_battle_robot_bay)
+"FF" = (
+/obj/paint/sfv_arbiter,
+/obj/structure/cable/yellow{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/turf/simulated/wall/titanium,
+/area/map_template/ruin_headquarters)
+"FT" = (
+/obj/structure/cable/cyan{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/turf/template_noop,
+/area/space)
+"FX" = (
+/obj/floor_decal/techfloor/orange{
+	dir = 6
+	},
+/obj/structure/backup_server{
+	pixel_x = 6
+	},
+/obj/machinery/power/terminal{
+	dir = 1
+	},
+/obj/structure/cable{
+	d2 = 8;
+	icon_state = "0-8"
+	},
+/turf/simulated/floor/redgrid,
+/area/map_template/ruin_ai_core)
+"Gg" = (
+/obj/forcefield/blocker,
+/turf/template_noop,
+/area/space)
+"Gr" = (
+/obj/floor_decal/industrial/outline/red,
+/obj/random/junk,
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/ruin_battle_robot_bay)
+"GB" = (
+/obj/floor_decal/industrial/traffic{
+	dir = 4
+	},
+/obj/decal/cleanable/dirt,
+/turf/simulated/floor/exoplanet/concrete/reinforced/road,
+/area/space)
+"GP" = (
+/obj/floor_decal/techfloor,
+/obj/decal/cleanable/blood/oil,
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/ruin_headquarters)
+"GR" = (
+/obj/floor_decal/techfloor{
+	dir = 8
+	},
+/obj/structure/table/steel_reinforced,
+/obj/machinery/recharger,
+/obj/structure/cable{
+	d2 = 4;
+	icon_state = "0-4"
+	},
+/obj/machinery/power/apc{
+	dir = 8;
+	name = "west bump";
+	pixel_x = -24
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/ruin_headquarters)
+"GT" = (
+/obj/floor_decal/industrial/traffic{
+	dir = 5
+	},
+/obj/decal/cleanable/dirt,
+/turf/simulated/floor/exoplanet/concrete/reinforced/road,
+/area/map_template/ruin_checkpoint_north)
+"Ha" = (
+/obj/floor_decal/techfloor{
+	dir = 8
+	},
+/obj/machinery/robotics_fabricator,
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/ruin_assembly_robot_Bay)
+"Hb" = (
+/obj/floor_decal/borderfloor{
+	dir = 8
+	},
+/obj/decal/cleanable/dirt,
+/obj/structure/table/steel_reinforced,
+/obj/random/loot,
+/turf/simulated/floor/tiled/dark,
+/area/map_template/ruin_checkpoint_north)
+"Hd" = (
+/obj/floor_decal/techfloor/orange/corner{
+	dir = 4
+	},
+/obj/floor_decal/techfloor/orange/corner,
+/obj/random/loot,
+/turf/simulated/floor/redgrid,
+/area/map_template/ruin_battle_robot_bay)
+"Hg" = (
+/obj/structure/cable/yellow{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/turf/template_noop,
+/area/space)
+"Hh" = (
+/obj/floor_decal/borderfloor{
+	dir = 5
+	},
+/obj/decal/cleanable/cobweb2,
+/obj/structure/cable{
+	d2 = 8;
+	icon_state = "0-8"
+	},
+/obj/machinery/power/apc{
+	dir = 4;
+	name = "east bump";
+	pixel_x = 24
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/map_template/ruin_checkpoint_south)
+"HD" = (
+/obj/paint/red,
+/turf/simulated/wall/r_titanium,
+/area/map_template/ruin_checkpoint_south)
+"HF" = (
+/obj/structure/barrier{
+	dir = 8
+	},
+/turf/template_noop,
+/area/space)
+"HP" = (
+/obj/random/junk,
+/turf/template_noop,
+/area/map_template/ruin_checkpoint_south)
+"HY" = (
+/obj/decal/cleanable/dirt,
+/obj/structure/barrier{
+	dir = 1
+	},
+/turf/simulated/floor/exoplanet/concrete/reinforced/damaged,
+/area/space)
+"Ia" = (
+/obj/machinery/door/blast/regular/open{
+	name = "North Gate Blast Doors";
+	id_tag = "north_g"
+	},
+/obj/floor_decal/industrial/traffic/fulltile,
+/obj/decal/cleanable/dirt,
+/turf/simulated/floor/exoplanet/concrete/reinforced/road,
+/area/map_template/ruin_checkpoint_north)
+"Ik" = (
+/obj/structure/cable/yellow{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/structure/catwalk,
+/obj/machinery/nav_light/starboard,
+/obj/machinery/light,
+/turf/simulated/floor/plating,
+/area/map_template/ruin_checkpoint_south)
+"Il" = (
+/obj/floor_decal/techfloor/orange{
+	dir = 9
+	},
+/obj/machinery/recharge_station,
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/map_template/ruin_electrical_substation)
+"Ir" = (
+/obj/floor_decal/steeldecal/steel_decals10{
+	dir = 9
+	},
+/obj/floor_decal/steeldecal/steel_decals10{
+	dir = 10
+	},
+/obj/decal/cleanable/dirt,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/ruin_headquarters)
+"Iy" = (
+/obj/decal/cleanable/dirt,
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/exoplanet/concrete/reinforced/road,
+/area/space)
+"IL" = (
+/obj/floor_decal/techfloor{
+	dir = 8
+	},
+/obj/random/junk,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/ruin_headquarters)
+"IM" = (
+/obj/structure/cable/yellow{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/obj/structure/catwalk,
+/turf/simulated/floor/plating,
+/area/space)
+"Ja" = (
+/obj/floor_decal/borderfloor{
+	dir = 6
+	},
+/obj/structure/table/rack/dark,
+/obj/random/solgov,
+/obj/decal/cleanable/dirt,
+/obj/random/loot,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/map_template/ruin_checkpoint_south)
+"Jo" = (
+/obj/floor_decal/techfloor{
+	dir = 10
+	},
+/obj/structure/table/rack/dark,
+/obj/item/stack/material/steel{
+	amount = 25
+	},
+/obj/random/tool,
+/obj/decal/cleanable/cobweb2{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/ruin_assembly_robot_Bay)
+"Jr" = (
+/obj/paint/dark_gunmetal,
+/turf/simulated/wall/r_titanium,
+/area/space)
+"JE" = (
+/obj/floor_decal/borderfloor{
+	dir = 8
+	},
+/obj/random/junk,
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/turf/simulated/floor/tiled/dark,
+/area/map_template/ruin_checkpoint_north)
+"JI" = (
+/obj/machinery/nav_light/starboard,
+/obj/structure/catwalk,
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/simulated/floor/plating,
+/area/map_template/ruin_checkpoint_north)
+"JK" = (
+/obj/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/ruin_assembly_robot_Bay)
+"JN" = (
+/obj/floor_decal/techfloor{
+	dir = 4
+	},
+/obj/floor_decal/steeldecal/steel_decals10{
+	dir = 4
+	},
+/obj/floor_decal/steeldecal/steel_decals10,
+/obj/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/map_template/ruin_battle_robot_bay)
+"Ke" = (
+/obj/floor_decal/techfloor{
+	dir = 9
+	},
+/obj/decal/cleanable/cobweb2{
+	dir = 4
+	},
+/obj/random/tech_supply,
+/obj/structure/bed/chair,
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/ruin_headquarters)
+"Ki" = (
+/obj/floor_decal/techfloor/orange,
+/obj/floor_decal/techfloor/orange{
+	dir = 1
+	},
+/obj/floor_decal/industrial/hatch/orange,
+/obj/machinery/door/airlock/hatch,
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/map_template/ruin_electrical_substation)
+"Kv" = (
+/mob/living/simple_animal/hostile/hivebot/ranged_damage/fleet_robot{
+	name = "\improper fleet security robot";
+	faction = "fleet"
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/ruin_assembly_robot_Bay)
+"Kx" = (
+/obj/machinery/cryopod/robot,
+/obj/floor_decal/techfloor/orange/corner,
+/obj/decal/cleanable/cobweb2{
+	dir = 4
+	},
+/turf/simulated/floor/redgrid,
+/area/map_template/ruin_battle_robot_bay)
+"KA" = (
+/obj/floor_decal/techfloor,
+/obj/machinery/external_cooling_device,
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/ruin_assembly_robot_Bay)
+"KG" = (
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/ruin_headquarters)
+"KJ" = (
+/obj/floor_decal/techfloor{
+	dir = 6
+	},
+/obj/machinery/recharge_station,
+/obj/decal/cleanable/cobweb2{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/ruin_headquarters)
+"KY" = (
+/obj/structure/grille/broken,
+/turf/template_noop,
+/area/space)
+"La" = (
+/obj/floor_decal/techfloor{
+	dir = 4
+	},
+/obj/random/junk,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/ruin_headquarters)
+"Lc" = (
+/obj/floor_decal/techfloor/corner{
+	dir = 1
+	},
+/obj/floor_decal/techfloor/corner{
+	dir = 8
+	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/ruin_headquarters)
+"Le" = (
+/obj/floor_decal/industrial/traffic{
+	dir = 4
+	},
+/obj/decal/cleanable/dirt,
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/exoplanet/concrete/reinforced/road,
+/area/space)
+"Lf" = (
+/obj/paint/dark_gunmetal,
+/turf/simulated/wall/r_titanium,
+/area/map_template/ruin_checkpoint_south)
+"Lo" = (
+/obj/floor_decal/steeldecal/steel_decals9,
+/obj/decal/cleanable/dirt,
+/obj/item/robot_parts/robot_component/actuator,
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/ruin_assembly_robot_Bay)
+"Lz" = (
+/obj/structure/barrier{
+	dir = 8
+	},
+/obj/structure/barrier,
+/obj/decal/cleanable/dirt,
+/turf/template_noop,
+/area/space)
+"LG" = (
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/template_noop,
+/area/space)
+"LP" = (
+/obj/decal/cleanable/dirt,
+/obj/structure/barrier,
+/turf/simulated/floor/exoplanet/concrete/reinforced/damaged,
+/area/space)
+"LQ" = (
+/obj/decal/cleanable/dirt,
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/exoplanet/concrete/reinforced/road,
+/area/space)
+"LW" = (
+/obj/floor_decal/steeldecal/steel_decals1,
+/obj/floor_decal/industrial/outline/red,
+/obj/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/ruin_battle_robot_bay)
+"Mx" = (
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/structure/catwalk,
+/turf/simulated/floor/plating,
+/area/space)
+"My" = (
+/obj/floor_decal/techfloor,
+/obj/decal/cleanable/dirt,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/ruin_headquarters)
+"ME" = (
+/obj/floor_decal/industrial/traffic{
+	dir = 8
+	},
+/obj/decal/cleanable/dirt,
+/turf/simulated/floor/exoplanet/concrete/reinforced/road,
+/area/space)
+"MI" = (
+/obj/floor_decal/industrial/traffic{
+	dir = 6
+	},
+/obj/decal/cleanable/dirt,
+/turf/simulated/floor/exoplanet/concrete/reinforced/road,
+/area/map_template/ruin_checkpoint_south)
+"ML" = (
+/obj/floor_decal/industrial/traffic{
+	dir = 8
+	},
+/obj/decal/cleanable/dirt,
+/turf/simulated/floor/exoplanet/concrete/reinforced/road,
+/area/map_template/ruin_checkpoint_north)
+"MS" = (
+/obj/structure/anti_aircraft/L,
+/obj/forcefield/blocker,
+/turf/template_noop,
+/area/space)
+"MU" = (
+/obj/floor_decal/borderfloor{
+	dir = 9
+	},
+/obj/structure/table/steel_reinforced,
+/obj/machinery/button/blast_door{
+	id_tag = "north_g"
+	},
+/obj/machinery/recharger/wallcharger{
+	pixel_y = 24
+	},
+/obj/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/map_template/ruin_checkpoint_north)
+"MV" = (
+/obj/structure/bed/chair{
+	dir = 8
+	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/dark,
+/area/map_template/ruin_checkpoint_south)
+"Ni" = (
+/obj/floor_decal/techfloor/orange{
+	dir = 4
+	},
+/obj/decal/cleanable/dirt,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/machinery/light/small{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/map_template/ruin_electrical_substation)
+"Nn" = (
+/obj/machinery/light/small/red,
+/turf/template_noop,
+/area/map_template/ruin_checkpoint_north)
+"Nt" = (
+/obj/floor_decal/industrial/traffic{
+	dir = 5
+	},
+/obj/decal/cleanable/dirt,
+/turf/simulated/floor/exoplanet/concrete/reinforced/road,
+/area/space)
+"NO" = (
+/obj/structure/cable/yellow{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/nav_light/starboard,
+/obj/structure/catwalk,
+/obj/machinery/light,
+/turf/simulated/floor/plating,
+/area/map_template/ruin_checkpoint_south)
+"Ob" = (
+/obj/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/ruin_headquarters)
+"Oi" = (
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/obj/structure/cable/yellow{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/structure/catwalk,
+/turf/simulated/floor/plating,
+/area/space)
+"Oq" = (
+/obj/floor_decal/techfloor{
+	dir = 4
+	},
+/obj/floor_decal/steeldecal/steel_decals10{
+	dir = 4
+	},
+/obj/floor_decal/steeldecal/steel_decals10,
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/map_template/ruin_battle_robot_bay)
+"Ot" = (
+/obj/floor_decal/steeldecal/steel_decals4,
+/obj/random/maintenance,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/ruin_headquarters)
+"Ou" = (
+/obj/floor_decal/techfloor/corner,
+/obj/floor_decal/techfloor/corner{
+	dir = 8
+	},
+/obj/floor_decal/steeldecal/steel_decals4,
+/obj/random/maintenance,
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/ruin_headquarters)
+"Ox" = (
+/obj/paint/sfv_arbiter,
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/turf/simulated/wall/titanium,
+/area/map_template/ruin_headquarters)
+"Oy" = (
+/obj/machinery/nav_light/port,
+/obj/structure/catwalk,
+/turf/simulated/floor/plating,
+/area/map_template/ruin_checkpoint_north)
+"Oz" = (
+/mob/living/simple_animal/hostile/hivebot/ranged_damage/fleet_robot{
+	name = "\improper fleet security robot";
+	faction = "fleet"
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/ruin_headquarters)
+"OA" = (
+/obj/floor_decal/borderfloor{
+	dir = 5
+	},
+/obj/structure/table/steel_reinforced,
+/obj/machinery/recharger/wallcharger{
+	pixel_y = 24
+	},
+/obj/decal/cleanable/cobweb2,
+/obj/machinery/turretid/lethal,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/map_template/ruin_checkpoint_north)
+"OD" = (
+/obj/item/robot_parts/robot_component/armour/exosuit/combat/tactical,
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/ruin_assembly_robot_Bay)
+"OF" = (
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/ruin_headquarters)
+"OL" = (
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/structure/catwalk,
+/obj/structure/cable/yellow{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/turf/simulated/floor/plating,
+/area/space)
+"OT" = (
+/obj/structure/barrier{
+	dir = 1
+	},
+/obj/floor_decal/industrial/traffic{
+	dir = 8
+	},
+/obj/decal/cleanable/dirt,
+/turf/simulated/floor/exoplanet/concrete/reinforced/road,
+/area/space)
+"OW" = (
+/obj/floor_decal/techfloor/corner{
+	dir = 4
+	},
+/obj/floor_decal/techfloor/corner,
+/obj/floor_decal/steeldecal/steel_decals2,
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/obj/machinery/power/terminal{
+	dir = 1
+	},
+/obj/structure/cable{
+	d2 = 2;
+	icon_state = "0-2"
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/ruin_headquarters)
+"OZ" = (
+/obj/floor_decal/techfloor{
+	dir = 1
+	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/ruin_headquarters)
+"Pj" = (
+/obj/floor_decal/steeldecal/steel_decals4,
+/obj/random/junk,
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/ruin_headquarters)
+"Pm" = (
+/obj/floor_decal/industrial/hatch/red,
+/obj/structure/droppod_door{
+	dir = 4;
+	name = "heavy door"
+	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/map_template/ruin_battle_robot_bay)
+"PM" = (
+/obj/floor_decal/techfloor,
+/obj/random/tech_supply,
+/obj/decal/cleanable/liquid_fuel,
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/ruin_assembly_robot_Bay)
+"PN" = (
+/obj/decal/cleanable/dirt,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/structure/catwalk,
+/turf/simulated/floor/plating,
+/area/space)
+"PT" = (
+/obj/floor_decal/techfloor{
+	dir = 5
+	},
+/obj/machinery/recharge_station,
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/ruin_headquarters)
+"Qb" = (
+/obj/decal/cleanable/dirt,
+/obj/forcefield/blocker,
+/turf/simulated/floor/exoplanet/concrete/reinforced/road,
+/area/space)
+"Qf" = (
+/obj/structure/barrier{
+	dir = 8
+	},
+/obj/decal/cleanable/dirt,
+/turf/template_noop,
+/area/space)
+"Ql" = (
+/obj/machinery/porta_turret,
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/floor_decal/industrial/outline/red,
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/map_template/ruin_checkpoint_south)
+"Qp" = (
+/obj/random/junk,
+/turf/template_noop,
+/area/space)
+"Qq" = (
+/obj/floor_decal/steeldecal/steel_decals9,
+/obj/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/ruin_headquarters)
+"QC" = (
+/obj/decal/cleanable/dirt,
+/turf/simulated/floor/exoplanet/concrete/reinforced/road,
+/area/map_template/ruin_checkpoint_south)
+"QM" = (
+/obj/structure/cable/cyan{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/obj/forcefield/blocker,
+/turf/template_noop,
+/area/space)
+"QO" = (
+/obj/decal/cleanable/dirt,
+/turf/simulated/floor/exoplanet/concrete/reinforced/road,
+/area/map_template/ruin_checkpoint_north)
+"QY" = (
+/obj/floor_decal/steeldecal/steel_decals2,
+/obj/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/ruin_headquarters)
+"Ra" = (
+/obj/floor_decal/techfloor{
+	dir = 8
+	},
+/obj/structure/table/rack/dark,
+/obj/item/storage/toolbox/mechanical,
+/obj/random/tool,
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/ruin_assembly_robot_Bay)
+"Rf" = (
+/obj/floor_decal/steeldecal/steel_decals3,
+/obj/decal/cleanable/dirt,
+/obj/structure/bed/chair{
+	dir = 1;
+	holographic = 1
+	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/ruin_headquarters)
+"Rj" = (
+/obj/floor_decal/techfloor{
+	dir = 8
+	},
+/obj/random/tech_supply,
+/obj/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/ruin_battle_robot_bay)
+"Rx" = (
+/obj/floor_decal/techfloor{
+	dir = 6
+	},
+/obj/structure/reagent_dispensers/fueltank,
+/obj/decal/cleanable/cobweb2{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/ruin_assembly_robot_Bay)
+"RA" = (
+/obj/wallframe_spawn/reinforced/titanium,
+/obj/paint/dark_gunmetal,
+/turf/simulated/floor/plating,
+/area/map_template/ruin_checkpoint_south)
+"RB" = (
+/obj/floor_decal/techfloor/orange/corner{
+	dir = 4
+	},
+/obj/decal/cleanable/dirt,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/map_template/ruin_electrical_substation)
+"RL" = (
+/obj/structure/barrier{
+	dir = 1
+	},
+/obj/structure/barrier{
+	dir = 8
+	},
+/turf/template_noop,
+/area/space)
+"RS" = (
+/obj/floor_decal/borderfloor{
+	dir = 10
+	},
+/obj/decal/cleanable/dirt,
+/obj/machinery/light,
+/obj/machinery/power/breakerbox/activated,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/map_template/ruin_checkpoint_north)
+"Sc" = (
+/obj/floor_decal/techfloor{
+	dir = 4
+	},
+/obj/random/closet,
+/obj/random/loot,
+/obj/random/loot,
+/obj/random/maintenance,
+/obj/random/maintenance,
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/ruin_headquarters)
+"Si" = (
+/obj/decal/cleanable/dirt,
+/turf/template_noop,
+/area/space)
+"Sn" = (
+/obj/floor_decal/techfloor/orange{
+	dir = 5
+	},
+/obj/decal/cleanable/cobweb2,
+/obj/structure/backup_server{
+	pixel_x = 6
+	},
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/turf/simulated/floor/redgrid,
+/area/map_template/ruin_ai_core)
+"SD" = (
+/obj/floor_decal/industrial/traffic/corner{
+	dir = 1
+	},
+/obj/decal/cleanable/dirt,
+/turf/simulated/floor/exoplanet/concrete/reinforced/road,
+/area/space)
+"SK" = (
+/obj/machinery/power/smes/buildable/max_cap_in_out,
+/obj/floor_decal/techfloor/orange{
+	dir = 6
+	},
+/obj/structure/cable{
+	d2 = 8;
+	icon_state = "0-8"
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/map_template/ruin_electrical_substation)
+"SO" = (
+/obj/structure/barrier{
+	dir = 1
+	},
+/turf/template_noop,
+/area/space)
+"SR" = (
+/obj/structure/barrier{
+	dir = 1
+	},
+/obj/floor_decal/industrial/traffic{
+	dir = 4
+	},
+/obj/decal/cleanable/dirt,
+/turf/simulated/floor/exoplanet/concrete/reinforced/road,
+/area/space)
+"SX" = (
+/obj/structure/grille,
+/turf/template_noop,
+/area/space)
+"Tb" = (
+/obj/floor_decal/techfloor{
+	dir = 4
+	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/ruin_headquarters)
+"Tg" = (
+/obj/structure/barrier,
+/obj/floor_decal/industrial/traffic{
+	dir = 4
+	},
+/obj/decal/cleanable/dirt,
+/turf/simulated/floor/exoplanet/concrete/reinforced/road,
+/area/map_template/ruin_checkpoint_south)
+"Tk" = (
+/obj/floor_decal/borderfloor/corner,
+/obj/floor_decal/borderfloor/corner{
+	dir = 8
+	},
+/obj/decal/cleanable/dirt,
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/map_template/ruin_checkpoint_south)
+"Tq" = (
+/obj/structure/cable/yellow{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/obj/structure/catwalk,
+/turf/simulated/floor/plating,
+/area/space)
+"Ts" = (
+/obj/floor_decal/steeldecal/steel_decals7,
+/obj/decal/cleanable/dirt,
+/obj/item/mech_component/sensors/combat,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/ruin_assembly_robot_Bay)
+"TB" = (
+/obj/floor_decal/techfloor{
+	dir = 1
+	},
+/obj/floor_decal/techfloor,
+/obj/floor_decal/industrial/hatch/yellow,
+/obj/machinery/door/airlock/hatch,
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/map_template/ruin_assembly_robot_Bay)
+"TH" = (
+/obj/floor_decal/industrial/traffic{
+	dir = 10
+	},
+/obj/decal/cleanable/dirt,
+/turf/simulated/floor/exoplanet/concrete/reinforced/road,
+/area/space)
+"TS" = (
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/obj/structure/catwalk,
+/turf/simulated/floor/plating,
+/area/space)
+"TZ" = (
+/obj/floor_decal/borderfloor/corner{
+	dir = 1
+	},
+/obj/decal/cleanable/dirt,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/map_template/ruin_checkpoint_north)
+"Ug" = (
+/obj/floor_decal/industrial/traffic{
+	dir = 8
+	},
+/obj/decal/cleanable/dirt,
+/obj/decal/cleanable/blood/oil,
+/turf/simulated/floor/exoplanet/concrete/reinforced/road,
+/area/space)
+"Uh" = (
+/obj/floor_decal/steeldecal/steel_decals10{
+	dir = 10
+	},
+/obj/floor_decal/steeldecal/steel_decals2,
+/obj/decal/cleanable/dirt,
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/machinery/light/small{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/ruin_headquarters)
+"Ui" = (
+/obj/floor_decal/techfloor/orange{
+	dir = 10
+	},
+/obj/floor_decal/techfloor/hole{
+	dir = 8
+	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/turf/simulated/floor/redgrid,
+/area/map_template/ruin_ai_core)
+"UC" = (
+/obj/floor_decal/steeldecal/steel_decals3,
+/obj/random/tech_supply,
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/ruin_assembly_robot_Bay)
+"UD" = (
+/obj/machinery/porta_turret,
+/obj/machinery/light,
+/obj/floor_decal/industrial/outline/red,
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/map_template/ruin_checkpoint_north)
+"UY" = (
+/obj/floor_decal/techfloor,
+/obj/random/junk,
+/obj/machinery/light,
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/ruin_assembly_robot_Bay)
+"Va" = (
+/obj/floor_decal/techfloor{
+	dir = 8
+	},
+/obj/floor_decal/techfloor{
+	dir = 4
+	},
+/obj/floor_decal/industrial/hatch/blue,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/machinery/door/airlock/hatch{
+	name = "\improper Airtight Headquarters Hatch"
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/map_template/ruin_headquarters)
+"Vb" = (
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/obj/forcefield/blocker,
+/turf/template_noop,
+/area/space)
+"VA" = (
+/obj/floor_decal/techfloor{
+	dir = 5
+	},
+/obj/machinery/vending/generic,
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/ruin_assembly_robot_Bay)
+"VE" = (
+/obj/item/robot_parts/robot_component/binary_communication_device,
+/obj/structure/table/rack/dark,
+/obj/floor_decal/techfloor{
+	dir = 5
+	},
+/obj/random/solgov,
+/obj/machinery/recharger/wallcharger{
+	pixel_y = 24
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/map_template/ruin_battle_robot_bay)
+"VP" = (
+/obj/floor_decal/steeldecal/steel_decals6,
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/ruin_assembly_robot_Bay)
+"VT" = (
+/mob/living/simple_animal/hostile/fleet_heavy{
+	faction = "fleet";
+	name = "\improper Fleet Anti-Armor Security Drone";
+	attack_delay = 5
+	},
+/obj/decal/cleanable/dirt,
+/turf/simulated/floor/exoplanet/concrete/reinforced/road,
+/area/space)
+"VX" = (
+/obj/floor_decal/techfloor{
+	dir = 8
+	},
+/obj/floor_decal/techfloor/hole{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/ruin_battle_robot_bay)
+"Wa" = (
+/obj/floor_decal/industrial/traffic{
+	dir = 9
+	},
+/obj/decal/cleanable/dirt,
+/turf/simulated/floor/exoplanet/concrete/reinforced/road,
+/area/space)
+"We" = (
+/obj/floor_decal/techfloor{
+	dir = 4
+	},
+/obj/structure/table/steel_reinforced,
+/obj/item/device/robotanalyzer,
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/ruin_assembly_robot_Bay)
+"Wq" = (
+/obj/floor_decal/industrial/traffic{
+	dir = 4
+	},
+/obj/decal/cleanable/dirt,
+/obj/structure/cable/yellow{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/exoplanet/concrete/reinforced/road,
+/area/space)
+"Wr" = (
+/obj/floor_decal/industrial/traffic{
+	dir = 4
+	},
+/obj/decal/cleanable/dirt,
+/obj/decal/cleanable/blood/oil,
+/obj/structure/cable/yellow{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/exoplanet/concrete/reinforced/road,
+/area/map_template/ruin_checkpoint_south)
+"Wt" = (
+/obj/floor_decal/techfloor{
+	dir = 8
+	},
+/obj/structure/table/rack/dark,
+/obj/item/device/paint_sprayer,
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/ruin_assembly_robot_Bay)
+"WI" = (
+/obj/floor_decal/techfloor{
+	dir = 4
+	},
+/obj/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/ruin_battle_robot_bay)
+"WM" = (
+/obj/decal/cleanable/dirt,
+/obj/decal/cleanable/dirt,
+/obj/structure/barrier{
+	dir = 8
+	},
+/turf/simulated/floor/exoplanet/concrete/reinforced/damaged,
+/area/space)
+"WW" = (
+/obj/paint/sfv_arbiter,
+/turf/simulated/wall/titanium,
+/area/map_template/ruin_electrical_substation)
+"Xa" = (
+/obj/decal/cleanable/dirt,
+/obj/structure/barrier{
+	dir = 8
+	},
+/turf/simulated/floor/exoplanet/concrete/reinforced/damaged,
+/area/space)
+"Xx" = (
+/obj/floor_decal/techfloor{
+	dir = 9
+	},
+/obj/structure/table/rack/dark,
+/obj/random/tool,
+/obj/item/clothing/glasses/welding,
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/ruin_assembly_robot_Bay)
+"XE" = (
+/obj/floor_decal/industrial/traffic{
+	dir = 4
+	},
+/obj/decal/cleanable/dirt,
+/turf/simulated/floor/exoplanet/concrete/reinforced/road,
+/area/map_template/ruin_checkpoint_north)
+"Yb" = (
+/obj/floor_decal/techfloor/orange{
+	dir = 9
+	},
+/obj/floor_decal/techfloor/hole{
+	dir = 1
+	},
+/turf/simulated/floor/redgrid,
+/area/map_template/ruin_ai_core)
+"Yj" = (
+/obj/wallframe_spawn/reinforced/titanium,
+/obj/paint/sfv_arbiter,
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/plating,
+/area/map_template/ruin_headquarters)
+"Yk" = (
+/obj/structure/cable/yellow{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/obj/forcefield/blocker,
+/turf/template_noop,
+/area/space)
+"YP" = (
+/obj/paint/sfv_arbiter,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/turf/simulated/wall/titanium,
+/area/map_template/ruin_headquarters)
+"YU" = (
+/mob/living/simple_animal/hostile/hivebot/ranged_damage/fleet_robot{
+	name = "\improper fleet security robot";
+	faction = "fleet"
+	},
+/obj/floor_decal/borderfloor/corner{
+	dir = 4
+	},
+/obj/floor_decal/borderfloor/corner,
+/obj/decal/cleanable/dirt,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/turf/simulated/floor/tiled/dark,
+/area/map_template/ruin_checkpoint_north)
+"Zl" = (
+/obj/decal/cleanable/dirt,
+/obj/structure/catwalk,
+/obj/structure/cable/yellow{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/obj/structure/cable/yellow{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/plating,
+/area/space)
+"Zr" = (
+/obj/decal/cleanable/blood/oil,
+/obj/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/ruin_assembly_robot_Bay)
+"Zs" = (
+/obj/floor_decal/borderfloor{
+	dir = 6
+	},
+/obj/structure/closet/secure_closet/guncabinet,
+/obj/random/solgov,
+/obj/random/solgov,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/map_template/ruin_checkpoint_north)
+"ZB" = (
+/obj/structure/cable/cyan{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/turf/template_noop,
+/area/space)
+"ZU" = (
+/obj/machinery/light/small/red{
+	dir = 1
+	},
+/turf/template_noop,
+/area/map_template/ruin_checkpoint_south)
+"ZZ" = (
+/obj/floor_decal/techfloor{
+	dir = 8
+	},
+/obj/random/solgov,
+/obj/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/techfloor,
+/area/map_template/ruin_battle_robot_bay)
+
+(1,1,1) = {"
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+"}
+(2,1,1) = {"
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+Ey
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+Ey
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+Ey
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+"}
+(3,1,1) = {"
+qD
+qD
+qD
+Ey
+qD
+qD
+qD
+qD
+Ey
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+Ey
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+Ey
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+"}
+(4,1,1) = {"
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+Qp
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+"}
+(5,1,1) = {"
+qD
+qD
+qD
+qD
+SX
+SX
+KY
+SX
+SX
+SX
+SX
+SX
+qD
+qD
+qD
+qD
+KY
+SX
+SX
+SX
+SX
+KY
+SX
+SX
+qD
+KY
+SX
+SX
+KY
+SX
+SX
+SX
+KY
+SX
+SX
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+"}
+(6,1,1) = {"
+qD
+qD
+qD
+qD
+SX
+qD
+qD
+qD
+qD
+qD
+qD
+Qp
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+SX
+qD
+qD
+Ey
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+"}
+(7,1,1) = {"
+qD
+Ey
+qD
+qD
+SX
+qD
+Jr
+Jr
+Jr
+Jr
+Jr
+Jr
+Jr
+Xa
+Xa
+WM
+Jr
+Jr
+Jr
+Jr
+Jr
+Jr
+Jr
+Jr
+Jr
+Jr
+Jr
+Jr
+Jr
+Jr
+Jr
+Jr
+Jr
+qD
+SX
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+"}
+(8,1,1) = {"
+qD
+qD
+qD
+qD
+SX
+qD
+Jr
+Jr
+Jr
+Jr
+Jr
+Jr
+Jr
+Jr
+ka
+ka
+ka
+Jr
+Jr
+Jr
+Jr
+Jr
+Jr
+Jr
+Jr
+Jr
+Jr
+Jr
+Jr
+Jr
+Jr
+Jr
+Jr
+qD
+KY
+qD
+qD
+qD
+qD
+qD
+Ey
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+"}
+(9,1,1) = {"
+qD
+qD
+qD
+qD
+KY
+qD
+Jr
+Jr
+qD
+qD
+Gg
+wm
+qD
+qD
+HF
+HF
+HF
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+Jr
+Jr
+qD
+SX
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+"}
+(10,1,1) = {"
+qD
+qD
+Ey
+qD
+KY
+qD
+Jr
+Jr
+qD
+qD
+Gg
+sQ
+zb
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+MS
+qD
+qD
+Jr
+Jr
+qD
+SX
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+Ey
+qD
+qD
+qD
+qD
+qD
+qD
+"}
+(11,1,1) = {"
+qD
+qD
+qD
+qD
+SX
+qD
+Jr
+Jr
+qD
+qD
+Gg
+Gg
+wH
+qD
+qD
+FC
+FC
+FC
+FC
+FC
+FC
+FC
+FC
+FC
+FC
+FC
+qD
+qD
+jF
+qD
+qD
+Jr
+Jr
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+"}
+(12,1,1) = {"
+qD
+qD
+Qp
+qD
+KY
+qD
+Jr
+Jr
+qD
+qD
+qD
+qD
+wH
+pk
+qD
+FC
+Kx
+el
+gM
+ah
+gM
+Hd
+gM
+el
+xG
+FC
+qD
+qD
+iH
+pk
+qD
+Jr
+Jr
+Xa
+eV
+qD
+Qp
+KY
+SX
+SX
+SX
+SX
+SX
+qD
+qD
+qD
+Ey
+qD
+qD
+qD
+"}
+(13,1,1) = {"
+qD
+qD
+qD
+qD
+SX
+qD
+Jr
+Jr
+qD
+qD
+Gg
+wm
+wH
+qD
+qD
+FC
+jn
+DI
+DI
+Rj
+DI
+VX
+mL
+ZZ
+sX
+FC
+qD
+qD
+iH
+AV
+qD
+Jr
+ka
+ka
+LP
+ka
+qD
+qD
+qD
+qD
+qD
+qD
+SX
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+"}
+(14,1,1) = {"
+qD
+SX
+SX
+KY
+SX
+qD
+Jr
+Jr
+qD
+qD
+Gg
+sQ
+Oi
+qD
+qD
+FC
+mX
+zC
+im
+LW
+oK
+Gr
+iT
+vA
+tQ
+FC
+qD
+AV
+iX
+ik
+kb
+LP
+ka
+ka
+Jr
+Jr
+Jr
+Jr
+Jr
+Jr
+Jr
+qD
+KY
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+"}
+(15,1,1) = {"
+qD
+KY
+qD
+qD
+qD
+qD
+Jr
+Jr
+qD
+qD
+Gg
+Gg
+IM
+zb
+qD
+FC
+VE
+WI
+qF
+lF
+JN
+Oq
+dk
+AC
+cq
+FC
+qD
+qD
+qD
+QM
+qD
+qD
+Xa
+Jr
+Jr
+Jr
+Jr
+Jr
+Jr
+Jr
+Jr
+qD
+KY
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+"}
+(16,1,1) = {"
+qD
+KY
+qD
+Jr
+Jr
+Jr
+Jr
+Jr
+Jr
+qD
+qD
+qD
+qD
+wH
+qD
+FC
+FC
+FC
+FC
+iz
+as
+Pm
+FC
+FC
+FC
+FC
+qD
+qD
+qD
+Gg
+qD
+qD
+qD
+qD
+Gg
+wm
+qD
+Gg
+wm
+Jr
+Jr
+qD
+SX
+qD
+Ey
+qD
+qD
+qD
+qD
+qD
+"}
+(17,1,1) = {"
+qD
+SX
+Nn
+Jr
+Jr
+Jr
+Jr
+Jr
+Jr
+Jr
+Jr
+Jr
+Jr
+wH
+qD
+qD
+qD
+qD
+Fx
+cN
+cN
+eX
+AK
+yQ
+yQ
+yQ
+yQ
+yQ
+yQ
+TS
+qD
+qD
+qD
+qD
+Gg
+sQ
+gj
+Yk
+Vb
+Jr
+Jr
+qD
+SX
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+"}
+(18,1,1) = {"
+qD
+qD
+mZ
+Oy
+ae
+mZ
+UD
+kt
+JI
+qD
+SO
+qD
+qD
+wH
+Wa
+ME
+ME
+ME
+ME
+ME
+ME
+ME
+ME
+ME
+ME
+ME
+TH
+kf
+kf
+ys
+qD
+qD
+qD
+qD
+Gg
+Gg
+Hg
+uK
+Gg
+Jr
+Jr
+qD
+KY
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+"}
+(19,1,1) = {"
+qD
+qD
+mZ
+BI
+ML
+ML
+ML
+Ia
+ML
+ME
+OT
+ME
+ME
+sH
+SD
+BL
+BL
+BL
+BL
+BL
+BL
+BL
+Du
+BL
+BL
+BL
+ww
+TH
+qD
+Mx
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+IM
+zb
+Jr
+Jr
+qD
+SX
+qD
+qD
+gW
+qD
+qD
+qD
+qD
+"}
+(20,1,1) = {"
+ME
+ME
+ML
+uj
+QO
+QO
+QO
+Ia
+QO
+BL
+zu
+Fk
+BL
+ej
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+Iy
+mj
+BL
+BL
+BL
+VT
+BL
+fT
+qD
+Mx
+rp
+rp
+kH
+kH
+kH
+kH
+rp
+rp
+wH
+Jr
+Jr
+qD
+SX
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+"}
+(21,1,1) = {"
+GB
+GB
+XE
+wo
+QO
+QO
+QO
+Ia
+QO
+BL
+BL
+BL
+oQ
+BL
+BL
+hD
+GB
+GB
+GB
+GB
+GB
+Wq
+GB
+nq
+BL
+Du
+BL
+fT
+qD
+Mx
+rp
+Xx
+Ha
+Wt
+Ra
+Ha
+Jo
+rp
+wH
+Jr
+Jr
+qD
+SX
+qD
+Ey
+qD
+qD
+Ey
+qD
+qD
+"}
+(22,1,1) = {"
+qD
+qD
+mZ
+GT
+XE
+XE
+zm
+Ia
+XE
+GB
+GB
+GB
+SR
+GB
+GB
+BV
+qD
+Ob
+ce
+DL
+gO
+wT
+qD
+Nt
+nq
+BL
+BL
+fT
+qD
+An
+yV
+lD
+Ts
+OD
+UC
+Zr
+UY
+rp
+wH
+Jr
+Jr
+qD
+SX
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+"}
+(23,1,1) = {"
+qD
+qD
+ae
+Oy
+mZ
+mZ
+UD
+kt
+JI
+qD
+qD
+qD
+SO
+qD
+qD
+qD
+qD
+aT
+aT
+Dp
+aT
+uA
+qD
+qD
+td
+BL
+BL
+fT
+qD
+qD
+rp
+sq
+CK
+JK
+Kv
+xK
+KA
+rp
+wH
+Jr
+Jr
+qD
+SX
+SX
+SX
+KY
+SX
+SX
+qD
+qD
+"}
+(24,1,1) = {"
+qD
+SX
+Nn
+Jr
+Jr
+Jr
+Jr
+jh
+jh
+cw
+cw
+jh
+jh
+qD
+qD
+qD
+qD
+aT
+Ke
+bp
+dr
+uA
+qD
+qD
+td
+BL
+BL
+fT
+qD
+qD
+rp
+Es
+mV
+VP
+de
+Lo
+PM
+rp
+wH
+Jr
+Jr
+qD
+qD
+qD
+qD
+qD
+qD
+KY
+qD
+qD
+"}
+(25,1,1) = {"
+qD
+SX
+qD
+Jr
+Jr
+Jr
+Jr
+jh
+MU
+Hb
+JE
+RS
+jh
+qD
+qD
+qD
+qD
+sh
+aJ
+QY
+GP
+qI
+qD
+qD
+td
+Qb
+Qb
+ph
+qD
+qD
+rp
+VA
+vS
+nP
+We
+tG
+Rx
+rp
+wH
+Jr
+Jr
+Jr
+Jr
+Jr
+Jr
+Jr
+qD
+SX
+qD
+qD
+"}
+(26,1,1) = {"
+qD
+KY
+qD
+qD
+qD
+qD
+Jr
+jh
+OA
+kD
+YU
+Zs
+jh
+HF
+HF
+qD
+qD
+sh
+Ee
+Pj
+Be
+qI
+qD
+qD
+td
+Av
+Qb
+fT
+qD
+qD
+rp
+rp
+TB
+rp
+rp
+rp
+rp
+rp
+wH
+Jr
+Jr
+Jr
+Jr
+Jr
+Jr
+Jr
+ZU
+SX
+qD
+qD
+"}
+(27,1,1) = {"
+qD
+SX
+SX
+KY
+SX
+qD
+Jr
+jh
+jh
+jh
+hl
+jh
+jh
+qD
+qD
+qD
+qD
+aT
+gV
+wG
+rB
+uA
+qD
+qD
+td
+Qb
+Av
+ww
+TH
+qD
+Si
+rx
+qi
+rx
+Si
+qD
+qD
+qD
+NO
+HD
+Ql
+fu
+ws
+ws
+ws
+ba
+ws
+qD
+qD
+qD
+"}
+(28,1,1) = {"
+qD
+qD
+qD
+qD
+SX
+qD
+Jr
+Jr
+qd
+jH
+Dk
+hE
+TZ
+yQ
+yQ
+vc
+vc
+vc
+YP
+Ec
+aT
+FF
+Ox
+qD
+td
+Qb
+Av
+BL
+ww
+ME
+ME
+ME
+Ah
+Ug
+ME
+ME
+ME
+ME
+ot
+Ba
+CT
+BP
+CT
+iy
+CT
+gf
+ws
+qD
+qD
+qD
+"}
+(29,1,1) = {"
+qD
+qD
+qD
+qD
+KY
+qD
+Jr
+Jr
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+aT
+nG
+GR
+iW
+Lc
+IL
+tB
+uA
+qD
+td
+BL
+BL
+BL
+BL
+BL
+BL
+BL
+LQ
+BL
+BL
+BL
+BL
+BL
+tq
+Ba
+QC
+CI
+QC
+QC
+QC
+BY
+CT
+ME
+ME
+ME
+"}
+(30,1,1) = {"
+qD
+Ey
+qD
+qD
+SX
+qD
+Jr
+Jr
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+aT
+As
+Rf
+Qq
+ql
+qY
+xn
+uA
+qD
+Nt
+nq
+BL
+BL
+BL
+BL
+BL
+Du
+LQ
+BL
+BL
+BL
+BL
+BL
+tq
+Ba
+QC
+QC
+uY
+EP
+QC
+EX
+kF
+GB
+GB
+GB
+"}
+(31,1,1) = {"
+qD
+qD
+qD
+qD
+SX
+qD
+Jr
+Jr
+qD
+qD
+qD
+qD
+eL
+qD
+qD
+aT
+Ez
+Ot
+KG
+Oz
+OF
+pL
+uA
+qD
+qD
+Nt
+GB
+GB
+GB
+GB
+GB
+GB
+Le
+GB
+GB
+GB
+GB
+GB
+Wr
+Ba
+mT
+kF
+kF
+Tg
+kF
+MI
+HP
+qD
+qD
+qD
+"}
+(32,1,1) = {"
+qD
+qD
+qD
+qD
+SX
+qD
+Jr
+Jr
+qD
+qD
+qD
+Gg
+qD
+qD
+qD
+aT
+Eu
+OW
+Tb
+La
+yl
+xA
+uA
+qD
+qD
+qD
+qD
+qD
+Si
+qD
+qD
+qD
+lf
+qD
+qD
+qD
+qD
+qD
+Ik
+HD
+Ql
+ws
+ws
+fu
+ws
+ba
+ws
+qD
+qD
+qD
+"}
+(33,1,1) = {"
+qD
+qD
+Ey
+qD
+KY
+qD
+Jr
+Jr
+qD
+qD
+qD
+Gg
+Eh
+ik
+qD
+lw
+lw
+BO
+lw
+lw
+OZ
+Aa
+FF
+Yj
+Yj
+Yj
+Ox
+Qf
+Si
+Qf
+Lz
+qD
+lf
+qD
+qD
+qD
+qD
+RL
+ky
+Lf
+Lf
+RA
+RA
+Lf
+Lf
+Jr
+ZU
+SX
+qD
+qD
+"}
+(34,1,1) = {"
+qD
+qD
+qD
+qD
+KY
+qD
+HY
+Jr
+qD
+qD
+qD
+qD
+iD
+iH
+qD
+lw
+Yb
+Bw
+Ui
+lw
+Al
+My
+aT
+CH
+DA
+bU
+FF
+Uh
+iM
+Si
+Si
+Si
+lf
+Qf
+Qf
+Qf
+qD
+Tq
+mS
+Lf
+uG
+si
+mk
+zA
+Lf
+Jr
+qD
+KY
+qD
+qD
+"}
+(35,1,1) = {"
+qD
+qD
+qD
+qD
+SX
+Qp
+HY
+ka
+SO
+qD
+pk
+iD
+ZB
+FT
+qD
+lw
+Cz
+mY
+ss
+lw
+jZ
+Ou
+Va
+lT
+fn
+zj
+wn
+Ir
+Zl
+Fi
+sk
+sk
+ev
+ln
+ln
+ln
+Fi
+mF
+Tk
+uE
+op
+je
+MV
+AW
+Lf
+Jr
+qD
+SX
+qD
+qD
+"}
+(36,1,1) = {"
+qD
+qD
+qD
+qD
+SX
+qD
+Jr
+ka
+SO
+qD
+qD
+qD
+DH
+cL
+qD
+lw
+Sn
+BH
+FX
+lw
+PT
+KJ
+aT
+xY
+Sc
+tN
+aT
+wk
+qk
+oo
+Ni
+fx
+jE
+RB
+PN
+yQ
+yQ
+fd
+hm
+Lf
+Hh
+DN
+gA
+Ja
+Lf
+Jr
+Qp
+SX
+qD
+qD
+"}
+(37,1,1) = {"
+qD
+qD
+qD
+qD
+KY
+qD
+Jr
+Jr
+qD
+qD
+qD
+qD
+Gg
+qD
+qD
+lw
+lw
+lw
+lw
+lw
+aT
+aT
+aT
+sh
+sh
+sh
+aT
+qD
+oM
+WW
+WW
+Ki
+WW
+WW
+Si
+qD
+qD
+Gg
+CB
+Lf
+Lf
+Lf
+Lf
+Lf
+Lf
+Jr
+qD
+KY
+qD
+qD
+"}
+(38,1,1) = {"
+qD
+qD
+Ey
+qD
+KY
+qD
+Jr
+Jr
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+oM
+WW
+Il
+yO
+ru
+WW
+qD
+iD
+qD
+dH
+qD
+Jr
+Jr
+Jr
+Jr
+Jr
+Jr
+Jr
+qD
+SX
+qD
+Ey
+"}
+(39,1,1) = {"
+qD
+qD
+qD
+qD
+SX
+qD
+Jr
+Jr
+Jr
+Jr
+Jr
+Jr
+Jr
+Jr
+Jr
+Jr
+Jr
+Jr
+Jr
+Jr
+qD
+qD
+qD
+Gg
+wm
+qD
+Gg
+wm
+oM
+WW
+kj
+pV
+dA
+WW
+qD
+qD
+ZB
+FT
+qD
+Jr
+Jr
+qD
+qD
+qD
+qD
+qD
+qD
+SX
+qD
+qD
+"}
+(40,1,1) = {"
+qD
+qD
+qD
+qD
+SX
+qD
+Jr
+Jr
+Jr
+Jr
+Jr
+Jr
+Jr
+Jr
+Jr
+Jr
+Jr
+Jr
+Jr
+Jr
+qD
+qD
+qD
+Gg
+sQ
+LG
+zs
+px
+OL
+lM
+mr
+uo
+EB
+WW
+qD
+qD
+DH
+iD
+qD
+Jr
+Jr
+qD
+SX
+SX
+KY
+SX
+KY
+SX
+qD
+qD
+"}
+(41,1,1) = {"
+qD
+qD
+qD
+qD
+KY
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+Jr
+Jr
+Jr
+Jr
+qD
+Gg
+Gg
+qD
+Gg
+Gg
+qD
+yo
+dl
+lS
+SK
+WW
+qD
+qD
+Gg
+qD
+qD
+Jr
+Jr
+qD
+SX
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+"}
+(42,1,1) = {"
+qD
+qD
+qD
+qD
+KY
+SX
+SX
+SX
+KY
+SX
+SX
+qD
+KY
+SX
+SX
+KY
+SX
+qD
+Jr
+Jr
+Jr
+Jr
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+Eb
+br
+Fj
+WW
+WW
+qD
+pk
+qD
+qD
+qD
+Jr
+Jr
+qD
+KY
+qD
+Qp
+qD
+qD
+Ey
+qD
+qD
+"}
+(43,1,1) = {"
+qD
+qD
+qD
+Ey
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+KY
+qD
+qD
+qD
+Jr
+Jr
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+Jr
+Jr
+qD
+KY
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+"}
+(44,1,1) = {"
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+Qp
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+SX
+SX
+SX
+qD
+Jr
+Jr
+Jr
+Jr
+Jr
+Jr
+Jr
+Jr
+Jr
+Jr
+Jr
+Jr
+Jr
+Jr
+Jr
+Jr
+Jr
+Jr
+Jr
+Jr
+Jr
+qD
+SX
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+"}
+(45,1,1) = {"
+qD
+qD
+qD
+qD
+qD
+qD
+Ey
+qD
+qD
+qD
+Ey
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+SX
+Qp
+Jr
+Jr
+Jr
+Jr
+Jr
+Jr
+Jr
+Jr
+Jr
+Jr
+Jr
+Jr
+Jr
+Jr
+Jr
+Jr
+Jr
+Jr
+Jr
+Jr
+Jr
+qD
+SX
+qD
+qD
+Ey
+qD
+qD
+qD
+qD
+"}
+(46,1,1) = {"
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+Ey
+qD
+qD
+Ey
+qD
+SX
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+Qp
+SX
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+"}
+(47,1,1) = {"
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+SX
+SX
+SX
+qD
+KY
+SX
+SX
+SX
+SX
+qD
+Qp
+qD
+qD
+KY
+SX
+SX
+SX
+KY
+SX
+SX
+SX
+SX
+KY
+SX
+SX
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+"}
+(48,1,1) = {"
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+"}
+(49,1,1) = {"
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+Ey
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+Ey
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+Ey
+qD
+qD
+qD
+qD
+qD
+qD
+Ey
+qD
+qD
+qD
+qD
+qD
+qD
+"}
+(50,1,1) = {"
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+Ey
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+Ey
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+Ey
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+qD
+"}

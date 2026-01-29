@@ -1,0 +1,245 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"a" = (
+/obj/decal/cleanable/dirt,
+/turf/simulated/floor/exoplanet/concrete/reinforced/road,
+/area/space)
+"c" = (
+/obj/floor_decal/industrial/traffic,
+/obj/decal/cleanable/dirt,
+/turf/simulated/floor/exoplanet/concrete/reinforced/road,
+/area/space)
+"i" = (
+/obj/floor_decal/industrial/traffic,
+/obj/decal/cleanable/dirt,
+/turf/simulated/floor/exoplanet/concrete/reinforced/damaged,
+/area/space)
+"j" = (
+/turf/template_noop,
+/area/space)
+"o" = (
+/obj/floor_decal/industrial/traffic{
+	dir = 4
+	},
+/obj/decal/cleanable/dirt,
+/turf/simulated/floor/exoplanet/concrete/reinforced/road,
+/area/space)
+"q" = (
+/obj/floor_decal/industrial/traffic{
+	dir = 10
+	},
+/obj/decal/cleanable/dirt,
+/turf/simulated/floor/exoplanet/concrete/reinforced/road,
+/area/space)
+"u" = (
+/obj/floor_decal/industrial/traffic{
+	dir = 8
+	},
+/obj/decal/cleanable/dirt,
+/turf/simulated/floor/exoplanet/concrete/reinforced/damaged,
+/area/space)
+"v" = (
+/obj/floor_decal/industrial/traffic/corner{
+	dir = 4
+	},
+/obj/decal/cleanable/dirt,
+/turf/simulated/floor/exoplanet/concrete/reinforced/damaged,
+/area/space)
+"B" = (
+/obj/floor_decal/industrial/traffic{
+	dir = 8
+	},
+/obj/decal/cleanable/dirt,
+/obj/structure/mine,
+/obj/random/junk,
+/turf/simulated/floor/exoplanet/concrete/reinforced/road,
+/area/space)
+"D" = (
+/obj/decal/cleanable/dirt,
+/obj/random/junk,
+/turf/simulated/floor/exoplanet/concrete/reinforced/road,
+/area/space)
+"G" = (
+/obj/floor_decal/industrial/traffic{
+	dir = 5
+	},
+/obj/decal/cleanable/dirt,
+/turf/simulated/floor/exoplanet/concrete/reinforced/road,
+/area/space)
+"H" = (
+/obj/decal/cleanable/dirt,
+/turf/simulated/floor/exoplanet/concrete/reinforced/damaged,
+/area/space)
+"I" = (
+/obj/floor_decal/industrial/traffic/corner{
+	dir = 4
+	},
+/obj/decal/cleanable/dirt,
+/turf/simulated/floor/exoplanet/concrete/reinforced/road,
+/area/space)
+"J" = (
+/obj/random/junk,
+/turf/template_noop,
+/area/space)
+"N" = (
+/obj/floor_decal/industrial/traffic,
+/obj/decal/cleanable/dirt,
+/obj/structure/mine,
+/obj/random/junk,
+/turf/simulated/floor/exoplanet/concrete/reinforced/road,
+/area/space)
+"O" = (
+/obj/floor_decal/industrial/traffic/corner{
+	dir = 8
+	},
+/obj/decal/cleanable/dirt,
+/turf/simulated/floor/exoplanet/concrete/reinforced/road,
+/area/space)
+"P" = (
+/obj/floor_decal/industrial/traffic{
+	dir = 5
+	},
+/obj/decal/cleanable/dirt,
+/turf/simulated/floor/exoplanet/concrete/reinforced/damaged,
+/area/space)
+"Q" = (
+/obj/floor_decal/industrial/traffic{
+	dir = 1
+	},
+/obj/decal/cleanable/dirt,
+/turf/simulated/floor/exoplanet/concrete/reinforced/road,
+/area/space)
+"T" = (
+/obj/floor_decal/industrial/traffic{
+	dir = 8
+	},
+/obj/decal/cleanable/dirt,
+/turf/simulated/floor/exoplanet/concrete/reinforced/road,
+/area/space)
+"V" = (
+/obj/floor_decal/industrial/traffic{
+	dir = 1
+	},
+/obj/decal/cleanable/dirt,
+/turf/simulated/floor/exoplanet/concrete/reinforced/damaged,
+/area/space)
+
+(1,1,1) = {"
+j
+j
+j
+j
+j
+j
+j
+j
+J
+j
+"}
+(2,1,1) = {"
+T
+T
+B
+T
+T
+q
+j
+j
+j
+j
+"}
+(3,1,1) = {"
+H
+a
+a
+a
+a
+O
+u
+q
+j
+j
+"}
+(4,1,1) = {"
+o
+o
+o
+v
+a
+D
+H
+O
+q
+j
+"}
+(5,1,1) = {"
+J
+j
+j
+P
+o
+I
+a
+a
+c
+j
+"}
+(6,1,1) = {"
+j
+j
+j
+j
+j
+G
+I
+D
+c
+j
+"}
+(7,1,1) = {"
+j
+j
+j
+J
+j
+j
+Q
+a
+i
+j
+"}
+(8,1,1) = {"
+j
+j
+j
+j
+j
+j
+Q
+a
+i
+j
+"}
+(9,1,1) = {"
+j
+j
+j
+j
+j
+j
+Q
+a
+N
+j
+"}
+(10,1,1) = {"
+j
+j
+j
+j
+j
+j
+V
+a
+c
+j
+"}

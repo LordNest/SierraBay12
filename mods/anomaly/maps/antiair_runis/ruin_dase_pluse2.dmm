@@ -1,0 +1,982 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"ah" = (
+/obj/floor_decal/industrial/traffic{
+	dir = 4
+	},
+/obj/decal/cleanable/dirt,
+/turf/simulated/floor/exoplanet/concrete/reinforced/road,
+/area/space)
+"aD" = (
+/obj/floor_decal/techfloor/corner{
+	dir = 4
+	},
+/obj/random/tech_supply,
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"bf" = (
+/obj/floor_decal/techfloor{
+	dir = 5
+	},
+/obj/decal/cleanable/liquid_fuel,
+/turf/simulated/floor/tiled/techfloor,
+/area/space)
+"bE" = (
+/obj/floor_decal/industrial/traffic{
+	dir = 10
+	},
+/obj/decal/cleanable/dirt,
+/turf/simulated/floor/exoplanet/concrete/reinforced/road,
+/area/space)
+"bG" = (
+/obj/structure/table/rack/dark,
+/obj/random/loot,
+/obj/random/loot,
+/obj/random/solgov,
+/obj/floor_decal/industrial/outline/grey,
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"bR" = (
+/obj/floor_decal/industrial/traffic{
+	dir = 8
+	},
+/obj/floor_decal/industrial/danger/corner{
+	dir = 4
+	},
+/obj/decal/cleanable/dirt,
+/turf/simulated/floor/exoplanet/concrete/reinforced/road,
+/area/space)
+"cs" = (
+/obj/structure/lattice,
+/turf/template_noop,
+/area/space)
+"dX" = (
+/obj/decal/cleanable/dirt,
+/obj/random/trash,
+/turf/simulated/floor/tiled/techfloor,
+/area/space)
+"es" = (
+/obj/structure/girder/displaced,
+/turf/simulated/floor/tiled/techfloor,
+/area/space)
+"eV" = (
+/obj/floor_decal/industrial/loading{
+	dir = 1
+	},
+/obj/decal/cleanable/dirt,
+/obj/machinery/door/blast/shutters/open{
+	id_tag = "north_garage"
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"fd" = (
+/obj/structure/lattice,
+/obj/decal/cleanable/greenglow,
+/turf/template_noop,
+/area/space)
+"fw" = (
+/obj/floor_decal/techfloor,
+/obj/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/techfloor,
+/area/space)
+"fU" = (
+/obj/floor_decal/techfloor{
+	dir = 1
+	},
+/obj/random/trash,
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"fV" = (
+/obj/machinery/door/airlock/hatch,
+/obj/floor_decal/industrial/hatch/red,
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"fW" = (
+/obj/decal/cleanable/dirt,
+/obj/random/tool,
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"gg" = (
+/obj/floor_decal/techfloor{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/space)
+"gj" = (
+/obj/structure/table/rack/dark,
+/obj/random/loot,
+/obj/floor_decal/industrial/outline/grey,
+/obj/random/toolbox,
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"gl" = (
+/obj/decal/cleanable/dirt,
+/obj/decal/cleanable/generic,
+/turf/simulated/floor/tiled/techfloor,
+/area/space)
+"gu" = (
+/obj/decal/cleanable/remains,
+/turf/template_noop,
+/area/space)
+"hi" = (
+/obj/floor_decal/techfloor{
+	dir = 6
+	},
+/obj/structure/table/steel_reinforced,
+/obj/machinery/power/apc{
+	dir = 4;
+	name = "east bump";
+	pixel_x = 24
+	},
+/obj/decal/cleanable/dirt,
+/obj/random/loot,
+/turf/simulated/floor/tiled/techfloor,
+/area/space)
+"hF" = (
+/obj/floor_decal/techfloor,
+/obj/decal/cleanable/dirt,
+/obj/random/tool,
+/turf/simulated/floor/tiled/techfloor,
+/area/space)
+"in" = (
+/obj/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/techfloor,
+/area/space)
+"iG" = (
+/obj/decal/cleanable/dirt,
+/obj/decal/cleanable/ling_vomit,
+/turf/simulated/floor/tiled/techfloor,
+/area/space)
+"lN" = (
+/obj/floor_decal/industrial/traffic/corner{
+	dir = 8
+	},
+/obj/decal/cleanable/dirt,
+/turf/simulated/floor/exoplanet/concrete/reinforced/road,
+/area/space)
+"mF" = (
+/obj/decal/cleanable/dirt,
+/obj/decal/cleanable/remains,
+/turf/simulated/floor/tiled/techfloor,
+/area/space)
+"mG" = (
+/obj/decal/cleanable/dirt,
+/turf/simulated/floor/exoplanet/concrete/reinforced/road,
+/area/space)
+"nf" = (
+/obj/decal/cleanable/liquid_fuel,
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"nn" = (
+/obj/floor_decal/techfloor{
+	dir = 1
+	},
+/obj/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"nq" = (
+/turf/simulated/wall/titanium,
+/area/space)
+"nT" = (
+/obj/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"nW" = (
+/obj/floor_decal/industrial/loading{
+	dir = 1
+	},
+/obj/machinery/door/blast/shutters{
+	id_tag = "north_garage"
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"oA" = (
+/obj/floor_decal/industrial/traffic{
+	dir = 1
+	},
+/obj/decal/cleanable/dirt,
+/turf/simulated/floor/exoplanet/concrete/reinforced/road,
+/area/space)
+"oC" = (
+/obj/floor_decal/techfloor{
+	dir = 10
+	},
+/obj/decal/cleanable/ling_vomit,
+/turf/simulated/floor/tiled/techfloor,
+/area/space)
+"oL" = (
+/obj/floor_decal/techfloor,
+/obj/decal/cleanable/dirt,
+/obj/decal/cleanable/remains,
+/turf/simulated/floor/tiled/techfloor,
+/area/space)
+"rC" = (
+/obj/floor_decal/industrial/traffic{
+	dir = 8
+	},
+/obj/decal/cleanable/dirt,
+/turf/simulated/floor/exoplanet/concrete/reinforced/road,
+/area/space)
+"rN" = (
+/turf/template_noop,
+/area/space)
+"rU" = (
+/obj/structure/lattice,
+/obj/structure/girder,
+/turf/template_noop,
+/area/space)
+"sA" = (
+/obj/floor_decal/techfloor{
+	dir = 1
+	},
+/obj/decal/cleanable/remains,
+/turf/simulated/floor/tiled/techfloor,
+/area/space)
+"sP" = (
+/obj/floor_decal/techfloor{
+	dir = 8
+	},
+/obj/decal/cleanable/liquid_fuel,
+/turf/simulated/floor/tiled/techfloor,
+/area/space)
+"tO" = (
+/obj/floor_decal/techfloor,
+/obj/decal/cleanable/dirt,
+/obj/structure/destroyed_combat_drone,
+/turf/simulated/floor/tiled/techfloor,
+/area/space)
+"tY" = (
+/obj/floor_decal/techfloor{
+	dir = 1
+	},
+/obj/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/techfloor,
+/area/space)
+"uK" = (
+/obj/floor_decal/techfloor{
+	dir = 5
+	},
+/obj/structure/bed/chair{
+	dir = 8
+	},
+/obj/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/techfloor,
+/area/space)
+"vu" = (
+/obj/decal/cleanable/dirt,
+/obj/decal/cleanable/liquid_fuel,
+/turf/simulated/floor/tiled/techfloor,
+/area/space)
+"vK" = (
+/obj/floor_decal/industrial/danger{
+	dir = 10
+	},
+/obj/decal/cleanable/dirt,
+/turf/simulated/floor/exoplanet/concrete/reinforced/road,
+/area/space)
+"wp" = (
+/obj/machinery/door/airlock/hatch,
+/obj/floor_decal/industrial/hatch/grey,
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"wt" = (
+/obj/structure/heavy_vehicle_frame,
+/obj/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/techfloor,
+/area/space)
+"wK" = (
+/obj/structure/destroyed_combat_drone,
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"yE" = (
+/obj/decal/cleanable/dirt,
+/obj/decal/cleanable/remains,
+/turf/simulated/floor/exoplanet/concrete/reinforced/road,
+/area/space)
+"zw" = (
+/obj/structure/closet/hydrant,
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"Af" = (
+/obj/floor_decal/industrial/loading{
+	dir = 1
+	},
+/obj/machinery/door/blast/shutters/open{
+	id_tag = "north_garage"
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"Ah" = (
+/obj/structure/railing/mapped{
+	dir = 4;
+	color = "#393f43";
+	init_color = "#393f43"
+	},
+/turf/template_noop,
+/area/space)
+"Ak" = (
+/obj/structure/girder/displaced,
+/turf/simulated/floor/plating,
+/area/space)
+"Bs" = (
+/obj/floor_decal/industrial/danger,
+/obj/floor_decal/industrial/traffic{
+	dir = 8
+	},
+/obj/decal/cleanable/dirt,
+/obj/decal/cleanable/remains,
+/turf/simulated/floor/exoplanet/concrete/reinforced/road,
+/area/space)
+"BV" = (
+/obj/floor_decal/techfloor/corner{
+	dir = 4
+	},
+/obj/floor_decal/techfloor/corner{
+	dir = 1
+	},
+/obj/decal/cleanable/blood,
+/obj/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/techfloor,
+/area/space)
+"Cx" = (
+/obj/floor_decal/techfloor{
+	dir = 6
+	},
+/obj/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/techfloor,
+/area/space)
+"CF" = (
+/obj/structure/destroyed_combat_drone,
+/obj/floor_decal/techfloor{
+	dir = 4
+	},
+/obj/decal/cleanable/liquid_fuel,
+/turf/simulated/floor/tiled/techfloor,
+/area/space)
+"Dk" = (
+/obj/machinery/recharge_station,
+/obj/floor_decal/industrial/outline/orange,
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"Ei" = (
+/obj/floor_decal/industrial/traffic,
+/obj/decal/cleanable/dirt,
+/turf/simulated/floor/exoplanet/concrete/reinforced/road,
+/area/space)
+"Fm" = (
+/obj/floor_decal/industrial/traffic{
+	dir = 5
+	},
+/obj/decal/cleanable/dirt,
+/turf/simulated/floor/exoplanet/concrete/reinforced/road,
+/area/space)
+"GD" = (
+/obj/floor_decal/industrial/traffic/corner{
+	dir = 4
+	},
+/obj/decal/cleanable/dirt,
+/turf/simulated/floor/exoplanet/concrete/reinforced/road,
+/area/space)
+"Jh" = (
+/turf/simulated/floor/exoplanet/concrete/reinforced/damaged,
+/area/space)
+"Ju" = (
+/obj/structure/gravemarker/cross,
+/turf/template_noop,
+/area/space)
+"Ke" = (
+/obj/decal/cleanable/dirt,
+/turf/simulated/floor/exoplanet/concrete/reinforced/damaged,
+/area/space)
+"LN" = (
+/obj/structure/pit/closed/grave,
+/obj/decal/cleanable/remains,
+/turf/template_noop,
+/area/space)
+"Ms" = (
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"Mx" = (
+/obj/structure/table/rack/dark,
+/obj/structure/plushie/drone,
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"MF" = (
+/turf/simulated/floor/tiled/techfloor,
+/area/space)
+"Om" = (
+/obj/floor_decal/industrial/danger,
+/obj/floor_decal/industrial/traffic{
+	dir = 4
+	},
+/obj/decal/cleanable/dirt,
+/turf/simulated/floor/exoplanet/concrete/reinforced/road,
+/area/space)
+"Oz" = (
+/obj/floor_decal/techfloor{
+	dir = 4
+	},
+/obj/floor_decal/techfloor/hole{
+	dir = 4
+	},
+/obj/decal/cleanable/dirt,
+/obj/random/masks,
+/turf/simulated/floor/tiled/techfloor,
+/area/space)
+"OC" = (
+/obj/structure/girder/displaced,
+/turf/template_noop,
+/area/space)
+"PD" = (
+/obj/wallframe_spawn/reinforced/titanium,
+/turf/simulated/floor/plating,
+/area/space)
+"PG" = (
+/obj/floor_decal/techfloor{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"Rd" = (
+/obj/machinery/porta_turret_construct,
+/obj/floor_decal/industrial/outline/red,
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"Sg" = (
+/obj/random/loot,
+/obj/structure/table/steel_reinforced,
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"SI" = (
+/obj/random/loot,
+/turf/simulated/floor/tiled/techfloor,
+/area/space)
+"TK" = (
+/obj/floor_decal/techfloor/corner{
+	dir = 1
+	},
+/obj/decal/cleanable/dirt,
+/obj/machinery/button/blast_door{
+	id_tag = "north_garage";
+	pixel_y = 24;
+	name = "Remote Protected Area Garage"
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"TL" = (
+/turf/unsimulated/floor/techfloor{
+	icon_state = "techfloor_grid"
+	},
+/area/space)
+"Vz" = (
+/obj/floor_decal/techfloor{
+	dir = 1
+	},
+/obj/floor_decal/techfloor/hole{
+	dir = 1
+	},
+/obj/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/techfloor,
+/area/space)
+"VA" = (
+/obj/floor_decal/industrial/loading{
+	dir = 1
+	},
+/obj/decal/cleanable/dirt,
+/obj/machinery/door/blast/shutters{
+	id_tag = "north_garage"
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"Wq" = (
+/obj/wallframe_spawn/reinforced/titanium,
+/turf/simulated/floor/tiled/techfloor,
+/area/space)
+"Wz" = (
+/obj/decal/cleanable/filth,
+/obj/decal/cleanable/liquid_fuel,
+/turf/simulated/floor/tiled/techfloor,
+/area/space)
+"Xi" = (
+/obj/structure/railing/mapped{
+	dir = 8;
+	color = "#393f43";
+	init_color = "#393f43"
+	},
+/turf/template_noop,
+/area/space)
+"Xj" = (
+/obj/floor_decal/techfloor{
+	dir = 4
+	},
+/obj/floor_decal/techfloor{
+	dir = 8
+	},
+/obj/floor_decal/stairs,
+/turf/unsimulated/floor/techfloor{
+	icon_state = "techfloor_grid"
+	},
+/area/space)
+"XQ" = (
+/obj/structure/girder,
+/turf/simulated/floor/plating,
+/area/space)
+"Yf" = (
+/obj/item/device/radio/phone,
+/obj/structure/table/steel_reinforced,
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"YT" = (
+/obj/machinery/power/apc{
+	dir = 8;
+	name = "west bump";
+	pixel_x = -24
+	},
+/obj/floor_decal/industrial/outline/yellow,
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"Ze" = (
+/obj/random/lilgun,
+/obj/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+
+(1,1,1) = {"
+rN
+rN
+rN
+rN
+rN
+rN
+rN
+rN
+rN
+rN
+rN
+rN
+rN
+rN
+rN
+rN
+rN
+rN
+rN
+rN
+"}
+(2,1,1) = {"
+rN
+rN
+rN
+rN
+rN
+rN
+rN
+rN
+rN
+rN
+rN
+rN
+rN
+rN
+rN
+rN
+rN
+rN
+rN
+rN
+"}
+(3,1,1) = {"
+rN
+rN
+rN
+rN
+rN
+gu
+rN
+rN
+rN
+rN
+rN
+rN
+rN
+rN
+rN
+rN
+rN
+rN
+rN
+rN
+"}
+(4,1,1) = {"
+rN
+rN
+rN
+rN
+rN
+rN
+rN
+rN
+rN
+rN
+rN
+rN
+rN
+rN
+rN
+rN
+rN
+rN
+rN
+rN
+"}
+(5,1,1) = {"
+rN
+gu
+rN
+cs
+nq
+PD
+PD
+nq
+nq
+rN
+rN
+rN
+rN
+rN
+rN
+rN
+rN
+rN
+rN
+rN
+"}
+(6,1,1) = {"
+rN
+rU
+rN
+rN
+fd
+Sg
+Yf
+YT
+nq
+nq
+nq
+rN
+rN
+rN
+rN
+rN
+rN
+rN
+rN
+rN
+"}
+(7,1,1) = {"
+rN
+nq
+cs
+rN
+rN
+cs
+wK
+Ze
+nf
+Dk
+Ak
+rN
+rN
+rN
+rN
+rN
+rN
+rN
+rN
+rN
+"}
+(8,1,1) = {"
+Rd
+nq
+aD
+cs
+OC
+cs
+cs
+sP
+oC
+Dk
+nq
+Rd
+rN
+rN
+rN
+rN
+rN
+rN
+rN
+rN
+"}
+(9,1,1) = {"
+Ke
+nW
+nn
+sA
+cs
+cs
+es
+mF
+hF
+Dk
+nq
+bR
+bE
+rN
+rN
+rN
+rN
+rN
+rN
+rN
+"}
+(10,1,1) = {"
+Ke
+VA
+nn
+tY
+SI
+vu
+MF
+dX
+tO
+nT
+fV
+vK
+lN
+bE
+rN
+rN
+rN
+rN
+rN
+rN
+"}
+(11,1,1) = {"
+Jh
+eV
+fU
+Vz
+vu
+Wz
+wt
+gl
+fw
+nT
+fV
+mG
+yE
+lN
+bE
+rN
+rN
+rN
+rN
+rN
+"}
+(12,1,1) = {"
+ah
+Af
+PG
+bf
+CF
+gg
+gg
+Oz
+Cx
+XQ
+cs
+rN
+rN
+GD
+lN
+bE
+rN
+rN
+rN
+rN
+"}
+(13,1,1) = {"
+Rd
+nq
+TK
+fW
+Ms
+nq
+nq
+Wq
+cs
+cs
+rN
+rN
+rN
+Fm
+GD
+Ei
+rN
+rN
+rN
+rN
+"}
+(14,1,1) = {"
+rN
+nq
+nq
+zw
+nT
+wp
+in
+iG
+dX
+cs
+rN
+rN
+rN
+rN
+oA
+lN
+bE
+rN
+rN
+rN
+"}
+(15,1,1) = {"
+rN
+rN
+Ak
+XQ
+Mx
+nq
+gj
+bG
+nq
+cs
+rN
+rN
+rN
+rN
+Fm
+GD
+lN
+Bs
+rC
+rC
+"}
+(16,1,1) = {"
+rN
+rN
+rN
+nq
+nq
+nq
+nq
+nq
+nq
+rN
+rN
+rN
+rN
+rN
+rN
+Fm
+ah
+Om
+ah
+ah
+"}
+(17,1,1) = {"
+rN
+rN
+rN
+rN
+rN
+rN
+rN
+rN
+rN
+rN
+rN
+rN
+rN
+Ah
+nq
+PD
+PD
+nq
+rN
+rN
+"}
+(18,1,1) = {"
+rN
+rN
+rN
+rN
+Ju
+Ju
+Ju
+rN
+rN
+rN
+rN
+rN
+rN
+TL
+Xj
+BV
+oL
+nq
+rN
+rN
+"}
+(19,1,1) = {"
+rN
+rN
+rN
+rN
+LN
+LN
+LN
+rN
+rN
+rN
+rN
+rN
+rN
+Xi
+nq
+uK
+hi
+nq
+rN
+rN
+"}
+(20,1,1) = {"
+rN
+rN
+rN
+rN
+rN
+rN
+rN
+rN
+rN
+rN
+rN
+rN
+rN
+rN
+nq
+nq
+nq
+nq
+rN
+rN
+"}

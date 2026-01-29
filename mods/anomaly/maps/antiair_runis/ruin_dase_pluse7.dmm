@@ -1,0 +1,478 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"a" = (
+/obj/floor_decal/borderfloor{
+	dir = 4
+	},
+/obj/machinery/power/apc{
+	dir = 4;
+	name = "east bump";
+	pixel_x = 24
+	},
+/obj/structure/cable{
+	d2 = 8;
+	icon_state = "0-8"
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/space)
+"b" = (
+/obj/floor_decal/borderfloor{
+	dir = 8
+	},
+/obj/structure/table/steel_reinforced,
+/obj/random/loot,
+/obj/random/loot,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/space)
+"c" = (
+/obj/floor_decal/borderfloor{
+	dir = 1
+	},
+/obj/structure/roller_bed,
+/obj/random/blood_packs,
+/turf/simulated/floor/tiled/techfloor,
+/area/space)
+"d" = (
+/turf/simulated/wall/r_titanium,
+/area/space)
+"f" = (
+/obj/floor_decal/borderfloor{
+	dir = 4
+	},
+/obj/structure/barrier{
+	dir = 1
+	},
+/obj/floor_decal/steeldecal/steel_decals_central2,
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"g" = (
+/obj/floor_decal/borderfloor/corner,
+/obj/machinery/door/airlock/vault/bolted,
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"h" = (
+/obj/floor_decal/borderfloor{
+	dir = 5
+	},
+/obj/machinery/vending/mredispenser,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/space)
+"i" = (
+/obj/floor_decal/borderfloor,
+/obj/random/loot,
+/obj/random/solgov,
+/obj/random/closet,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/space)
+"j" = (
+/obj/floor_decal/borderfloor{
+	dir = 10
+	},
+/obj/structure/table/steel_reinforced,
+/obj/item/reagent_containers/food/snacks/donut/chaos,
+/obj/random/drinkbottle,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/space)
+"m" = (
+/obj/structure/bed/chair/comfy{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/dark,
+/area/space)
+"p" = (
+/obj/floor_decal/borderfloor,
+/obj/decal/cleanable/blood/oil,
+/turf/simulated/floor/tiled/techfloor,
+/area/space)
+"q" = (
+/obj/floor_decal/borderfloor{
+	dir = 8
+	},
+/obj/machinery/door/airlock/hatch,
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"r" = (
+/obj/floor_decal/borderfloor{
+	dir = 9
+	},
+/obj/structure/table/steel_reinforced,
+/obj/machinery/microwave{
+	pixel_y = 12
+	},
+/obj/item/reagent_containers/food/drinks/glass2/coffeecup/britcup{
+	pixel_y = -4;
+	pixel_x = -5
+	},
+/obj/item/reagent_containers/food/drinks/glass2/coffeecup/SCG{
+	pixel_x = 6;
+	pixel_y = -4
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/space)
+"s" = (
+/obj/floor_decal/borderfloor{
+	dir = 1
+	},
+/mob/living/simple_animal/hostile/rogue_drone/hijacked,
+/obj/floor_decal/steeldecal/steel_decals7,
+/obj/item/ammo_casing/rifle/used{
+	dir = 5;
+	pixel_y = 4;
+	pixel_x = 11
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/space)
+"t" = (
+/mob/living/simple_animal/hostile/hivebot/tele/range{
+	faction = "fleet";
+	name = "Point Defense"
+	},
+/turf/template_noop,
+/area/space)
+"u" = (
+/obj/floor_decal/borderfloor,
+/obj/structure/bed/chair/office{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/space)
+"v" = (
+/obj/floor_decal/borderfloor/corner,
+/obj/item/ammo_casing/rifle/used{
+	pixel_y = 13
+	},
+/obj/item/ammo_casing/rifle/used{
+	dir = 10;
+	pixel_x = 5
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/space)
+"w" = (
+/obj/floor_decal/borderfloor{
+	dir = 4
+	},
+/obj/machinery/door/airlock/hatch,
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"x" = (
+/obj/floor_decal/borderfloor/corner{
+	dir = 4
+	},
+/obj/structure/barrier{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/dark,
+/area/space)
+"y" = (
+/obj/floor_decal/borderfloor{
+	dir = 1
+	},
+/obj/structure/table/steel_reinforced,
+/obj/structure/noticeboard{
+	pixel_y = 32
+	},
+/obj/random/cash,
+/obj/random/cash,
+/obj/random/cash,
+/obj/random/cash,
+/obj/item/storage/box/donkpocket_fruit{
+	pixel_y = 12
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/space)
+"A" = (
+/obj/floor_decal/borderfloor{
+	dir = 8
+	},
+/obj/structure/barrier{
+	dir = 1
+	},
+/obj/floor_decal/steeldecal/steel_decals_central2,
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"E" = (
+/obj/floor_decal/borderfloor/corner{
+	dir = 1
+	},
+/obj/floor_decal/steeldecal/steel_decals6,
+/obj/item/ammo_casing/rifle/used{
+	dir = 8;
+	pixel_x = 11
+	},
+/obj/item/ammo_casing/rifle/used{
+	pixel_y = 13
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/space)
+"F" = (
+/obj/floor_decal/borderfloor/corner{
+	dir = 8
+	},
+/mob/living/simple_animal/hostile/rogue_drone/hijacked,
+/obj/floor_decal/steeldecal/steel_decals1,
+/obj/item/ammo_casing/rifle/used{
+	dir = 10;
+	pixel_x = 5;
+	pixel_y = 5
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/space)
+"G" = (
+/obj/floor_decal/borderfloor{
+	dir = 1
+	},
+/obj/structure/reagent_dispensers/water_cooler{
+	pixel_y = 10;
+	pixel_x = 8
+	},
+/obj/item/ammobox/pistol{
+	pixel_x = -6;
+	pixel_y = 16
+	},
+/obj/item/ammobox/pistol{
+	pixel_x = -6;
+	pixel_y = 8
+	},
+/obj/item/ammobox/pistol,
+/obj/item/ammobox/pistol{
+	pixel_x = -5;
+	pixel_y = 19
+	},
+/turf/simulated/floor/tiled/dark/monotile,
+/area/space)
+"H" = (
+/obj/floor_decal/borderfloor{
+	dir = 9
+	},
+/obj/structure/reagent_dispensers/fueltank,
+/turf/simulated/floor/tiled/techfloor,
+/area/space)
+"I" = (
+/obj/floor_decal/borderfloor/corner{
+	dir = 1
+	},
+/obj/structure/barrier{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/dark,
+/area/space)
+"J" = (
+/obj/floor_decal/borderfloor/corner{
+	dir = 4
+	},
+/mob/living/simple_animal/hostile/rogue_drone/hijacked,
+/obj/decal/cleanable/blood/oil,
+/turf/simulated/floor/tiled/techfloor,
+/area/space)
+"K" = (
+/obj/floor_decal/borderfloor{
+	dir = 6
+	},
+/obj/structure/table/steel_reinforced,
+/obj/item/storage/pill_bottle/zoom,
+/obj/random/loot,
+/obj/random/medical,
+/turf/simulated/floor/tiled/techfloor,
+/area/space)
+"M" = (
+/obj/floor_decal/borderfloor/corner{
+	dir = 8
+	},
+/obj/machinery/door/airlock/vault/bolted,
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"O" = (
+/obj/floor_decal/borderfloor{
+	dir = 10
+	},
+/obj/structure/table/rack/dark,
+/obj/item/clothing/glasses/welding,
+/obj/random/tool,
+/obj/random/tool,
+/obj/random/tool,
+/obj/random/tank,
+/obj/item/storage/toolbox/electrical,
+/turf/simulated/floor/tiled/techfloor,
+/area/space)
+"Q" = (
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled/dark,
+/area/space)
+"R" = (
+/obj/floor_decal/borderfloor,
+/obj/random/loot,
+/obj/structure/table/steel_reinforced,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/space)
+"T" = (
+/obj/floor_decal/borderfloor{
+	dir = 5
+	},
+/obj/structure/table/steel_reinforced,
+/obj/random/firstaid,
+/obj/machinery/vending/wallmed1{
+	dir = 8;
+	pixel_x = 26
+	},
+/obj/random/medical/lite,
+/turf/simulated/floor/tiled/techfloor,
+/area/space)
+"U" = (
+/obj/floor_decal/borderfloor,
+/obj/machinery/power/breakerbox/activated,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/space)
+"W" = (
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/random/energy,
+/turf/simulated/floor/tiled/dark,
+/area/space)
+"Y" = (
+/obj/floor_decal/borderfloor{
+	dir = 6
+	},
+/obj/structure/bed,
+/turf/simulated/floor/tiled/dark/monotile,
+/area/space)
+"Z" = (
+/obj/item/ammo_casing/pistol,
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/turf/simulated/floor/tiled/dark,
+/area/space)
+
+(1,1,1) = {"
+t
+d
+d
+d
+d
+d
+d
+d
+d
+t
+"}
+(2,1,1) = {"
+d
+d
+d
+d
+d
+d
+d
+d
+d
+d
+"}
+(3,1,1) = {"
+d
+d
+H
+O
+d
+r
+b
+j
+d
+d
+"}
+(4,1,1) = {"
+d
+d
+s
+p
+d
+y
+m
+R
+d
+d
+"}
+(5,1,1) = {"
+M
+A
+E
+F
+q
+I
+Z
+U
+d
+d
+"}
+(6,1,1) = {"
+g
+f
+J
+v
+w
+x
+Q
+U
+d
+d
+"}
+(7,1,1) = {"
+d
+d
+c
+u
+d
+G
+W
+i
+d
+d
+"}
+(8,1,1) = {"
+d
+d
+T
+K
+d
+h
+a
+Y
+d
+d
+"}
+(9,1,1) = {"
+d
+d
+d
+d
+d
+d
+d
+d
+d
+d
+"}
+(10,1,1) = {"
+t
+d
+d
+d
+d
+d
+d
+d
+d
+t
+"}

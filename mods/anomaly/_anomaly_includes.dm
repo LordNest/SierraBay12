@@ -23,4 +23,7 @@
 #include "code\functions\locating.dm"
 #include "maps\new_ruins_includes.dm"
 
+// Anti-air
+#include "code\antiair\honk_structures.dm"
+
 #endif

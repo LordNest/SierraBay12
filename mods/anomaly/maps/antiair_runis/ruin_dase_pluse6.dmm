@@ -1,0 +1,115 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"a" = (
+/turf/template_noop,
+/area/space)
+"e" = (
+/obj/floor_decal/industrial/traffic,
+/obj/decal/cleanable/dirt,
+/turf/simulated/floor/exoplanet/concrete/reinforced/road,
+/area/space)
+"o" = (
+/obj/floor_decal/industrial/traffic/corner{
+	dir = 8
+	},
+/obj/decal/cleanable/dirt,
+/turf/simulated/floor/exoplanet/concrete/reinforced/road,
+/area/space)
+"A" = (
+/obj/floor_decal/industrial/traffic/corner{
+	dir = 4
+	},
+/obj/decal/cleanable/dirt,
+/turf/simulated/floor/exoplanet/concrete/reinforced/road,
+/area/space)
+"C" = (
+/obj/random/junk,
+/turf/template_noop,
+/area/space)
+"D" = (
+/obj/floor_decal/industrial/traffic/corner{
+	dir = 4
+	},
+/obj/decal/cleanable/dirt,
+/obj/structure/mine,
+/obj/random/junk,
+/turf/simulated/floor/exoplanet/concrete/reinforced/road,
+/area/space)
+"F" = (
+/obj/decal/cleanable/dirt,
+/turf/simulated/floor/exoplanet/concrete/reinforced/damaged,
+/area/space)
+"I" = (
+/obj/floor_decal/industrial/traffic{
+	dir = 5
+	},
+/obj/decal/cleanable/dirt,
+/turf/simulated/floor/exoplanet/concrete/reinforced/road,
+/area/space)
+"J" = (
+/obj/decal/cleanable/dirt,
+/obj/random/junk,
+/turf/simulated/floor/exoplanet/concrete/reinforced/damaged,
+/area/space)
+"P" = (
+/obj/floor_decal/industrial/traffic{
+	dir = 1
+	},
+/obj/decal/cleanable/dirt,
+/turf/simulated/floor/exoplanet/concrete/reinforced/road,
+/area/space)
+"R" = (
+/obj/floor_decal/industrial/traffic{
+	dir = 8
+	},
+/obj/decal/cleanable/dirt,
+/turf/simulated/floor/exoplanet/concrete/reinforced/road,
+/area/space)
+
+(1,1,1) = {"
+a
+F
+F
+e
+a
+a
+"}
+(2,1,1) = {"
+a
+P
+J
+e
+C
+a
+"}
+(3,1,1) = {"
+a
+I
+A
+o
+F
+a
+"}
+(4,1,1) = {"
+a
+a
+I
+D
+F
+R
+"}
+(5,1,1) = {"
+a
+a
+a
+I
+A
+J
+"}
+(6,1,1) = {"
+a
+C
+a
+a
+I
+F
+"}

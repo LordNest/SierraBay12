@@ -1,0 +1,211 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"a" = (
+/turf/template_noop,
+/area/space)
+"e" = (
+/obj/floor_decal/techfloor,
+/obj/decal/cleanable/dirt,
+/obj/structure/table/rack/dark,
+/obj/random/tool,
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"f" = (
+/obj/floor_decal/techfloor{
+	dir = 10
+	},
+/obj/decal/cleanable/dirt,
+/obj/random/tool,
+/turf/simulated/floor/tiled/techfloor,
+/area/space)
+"h" = (
+/obj/floor_decal/techfloor{
+	dir = 8
+	},
+/obj/decal/cleanable/dirt,
+/obj/structure/destroyed_combat_drone,
+/turf/simulated/floor/tiled/techfloor,
+/area/space)
+"j" = (
+/turf/simulated/wall/titanium,
+/area/space)
+"o" = (
+/obj/structure/lattice,
+/turf/template_noop,
+/area/space)
+"s" = (
+/obj/floor_decal/techfloor{
+	dir = 10
+	},
+/obj/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"v" = (
+/obj/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/techfloor,
+/area/space)
+"w" = (
+/obj/floor_decal/techfloor,
+/obj/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/techfloor,
+/area/space)
+"C" = (
+/obj/structure/lattice,
+/obj/decal/cleanable/remains,
+/turf/template_noop,
+/area/space)
+"J" = (
+/obj/floor_decal/techfloor{
+	dir = 8
+	},
+/obj/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"L" = (
+/obj/structure/girder,
+/turf/simulated/floor/plating,
+/area/space)
+"M" = (
+/obj/decal/cleanable/remains,
+/turf/template_noop,
+/area/space)
+"R" = (
+/obj/floor_decal/techfloor{
+	dir = 8
+	},
+/obj/decal/cleanable/dirt,
+/obj/decal/cleanable/remains,
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"V" = (
+/obj/floor_decal/techfloor,
+/obj/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/space)
+"X" = (
+/obj/floor_decal/techfloor{
+	dir = 8
+	},
+/obj/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/techfloor,
+/area/space)
+
+(1,1,1) = {"
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+"}
+(2,1,1) = {"
+a
+a
+j
+L
+L
+j
+j
+j
+a
+a
+"}
+(3,1,1) = {"
+a
+o
+o
+J
+R
+J
+s
+L
+a
+a
+"}
+(4,1,1) = {"
+a
+o
+a
+X
+h
+f
+V
+j
+a
+a
+"}
+(5,1,1) = {"
+a
+a
+o
+o
+v
+w
+e
+j
+a
+a
+"}
+(6,1,1) = {"
+a
+a
+M
+o
+o
+w
+V
+j
+a
+a
+"}
+(7,1,1) = {"
+a
+a
+a
+a
+a
+o
+V
+L
+a
+a
+"}
+(8,1,1) = {"
+a
+a
+a
+a
+a
+C
+o
+L
+a
+a
+"}
+(9,1,1) = {"
+a
+a
+a
+a
+a
+a
+o
+j
+a
+a
+"}
+(10,1,1) = {"
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+"}
