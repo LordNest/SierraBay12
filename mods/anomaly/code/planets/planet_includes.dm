@@ -17,3 +17,6 @@
 #include "another_planets.dm"
 #include "vulcanic\vulcanic.dm"
 #include "sargas.dm"
+
+// Swanp
+#include "swamp\swamp.dm"
