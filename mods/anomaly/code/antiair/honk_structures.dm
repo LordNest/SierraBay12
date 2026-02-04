@@ -6,7 +6,7 @@
 	layer = 5
 	power_generation_rate = 5000
 
-/obj/structure/starlink_antenna
+/obj/structure/sargas_antenna
 	name = "Antenna"
 	icon_state = "starlink"
 	icon = 'mods/anomaly/icons/solar_and_starlink.dmi'
@@ -30,24 +30,3 @@
 
 /obj/structure/anti_aircraft/L
 	icon_state = "pvo_L"
-
-/area/map_template/ruin_headquarters
-	name = "headquarters"
-
-/area/map_template/ruin_battle_robot_bay
-	name = "battle robot bay"
-
-/area/map_template/ruin_assembly_robot_Bay
-	name = "assembly robot Bay"
-
-/area/map_template/ruin_electrical_substation
-	name = "electrical substation"
-
-/area/map_template/ruin_ai_core
-	name = "ai core"
-
-/area/map_template/ruin_checkpoint_north
-	name = "checkpoint north"
-
-/area/map_template/ruin_checkpoint_south
-	name = "checkpoint south"

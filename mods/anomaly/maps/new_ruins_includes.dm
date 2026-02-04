@@ -15,5 +15,8 @@
 #include "water_ruins\skat\teleport_landmarks.dm"
 #include "water_ruins\avanpost\avanpost.dm"
 #include "water_ruins\ranger\ranger.dm"
+
+#include "sargas_ruins\ruin_base.dm"
+
 //ТЕСТ
 #include "test_ruin.dm"

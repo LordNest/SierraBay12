@@ -13,10 +13,8 @@
 #include "titan\titan.dm"
 #include "titan\water_structures.dm"
 
+#include "sargas\sargas.dm"
+
 #include "_planet_spawn_core.dm"
 #include "another_planets.dm"
 #include "vulcanic\vulcanic.dm"
-#include "sargas.dm"
-
-// Swanp
-#include "swamp\swamp.dm"

@@ -1,23 +1,22 @@
-/* Не доделан
 /obj/overmap/visitable/sector/exoplanet/swamp
 	name = "Sargas"
-	desc = "Wild and mysterious planet, covered in vast swamplands and impenetrable swamps that provide both spectacular and dangerous terrain. Its unique ecosystem includes a variety of species of flora and fauna that have adapted to the conditions of such an environment."
+	desc = "Planet, covered in vast swamplands and impenetrable swamps that provide both spectacular and dangerous terrain. Its unique ecosystem includes a variety of species of flora and fauna that have adapted to the conditions of such an environment."
 	color = "#054515"
 	rock_colors = list(COLOR_WHITE)
-	can_spawn_anomalies = TRUE
-	anomalies_type = list()
-	min_anomaly_size = 4
-	max_anomaly_size = 9
-	min_anomalies_ammount = 250
-	max_anomalies_ammount = 400
+
+	possible_themes = list(
+		/datum/exoplanet_theme = 100,
+		)
+
 	planetary_area = /area/exoplanet/swamp
 	map_generators = list(/datum/random_map/noise/exoplanet/swamp)
 	ruin_tags_blacklist = RUIN_HABITAT|RUIN_WATER|RUIN_HOT_ANOMALIES|RUIN_ELECTRA_ANOMALIES|RUIN_GRAVI_ANOMALIES|RUIN_CHUDO_ANOMALIES
 	surface_color = "#ffffff"
 	water_color = "#263908"
+	ruin_tags_whitelist = RUIN_SWAMP_BASE
 	habitability_weight = HABITABILITY_EXTREME
 	has_trees = FALSE
-	flora_diversity = 0
+	flora_diversity = 3
 
 
 /obj/overmap/visitable/sector/exoplanet/swamp/get_atmosphere_color()
@@ -29,15 +28,15 @@
 /obj/overmap/visitable/sector/exoplanet/swamp/generate_atmosphere()
 	..()
 	var/generator/new_temp = generator("num", 250, 300, NORMAL_RAND)
-	atmosphere.temperature = new_temp.Rand()
-	atmosphere.update_values()
+	exterior_atmosphere.temperature = new_temp.Rand()
+	exterior_atmosphere.update_values()
 
 
 /datum/random_map/noise/exoplanet/swamp
 	descriptor = "ice exoplanet"
 	smoothing_iterations = 5
 	land_type = /turf/simulated/floor/exoplanet/grass
-	water_type = /turf/simulated/floor/exoplanet/swamp
+	water_type = /turf/simulated/floor/exoplanet/water/shallow //turf/simulated/floor/exoplanet/swamp
 	water_level_min = 5
 	water_level_max = 6
 	fauna_prob = 0
@@ -49,15 +48,16 @@
 	ambience = list('sound/effects/wind/tundra0.ogg','sound/effects/wind/tundra1.ogg','sound/effects/wind/tundra2.ogg','sound/effects/wind/spooky0.ogg','sound/effects/wind/spooky1.ogg')
 	base_turf = /turf/simulated/floor/exoplanet/grass
 
+/*
 /turf/simulated/floor/exoplanet/swamp
-	name = "блядская вода"
-	desc = "В ней немного тонешь, хуя"
+	name = "shallow swamp"
+	desc = "Shallow swamp, probably less than a meter deep"
 
 /turf/simulated/floor/exoplanet/swamp/medium
-	name = "Средняя вода"
-	desc = "По пузо"
+	name = "swamp"
+	desc = "Swamp at least a meter deep"
 
 /turf/simulated/floor/exoplanet/swamp/deep
-	name = "Глубокая вода"
-	desc = "По горло"
+	name = "swale swamp"
+	desc = "Deep swamp, the kind that perfectly preserve fossils. Or corpses."
 */
