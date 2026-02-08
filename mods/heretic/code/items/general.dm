@@ -57,44 +57,42 @@
 			to_chat(M, SPAN_NOTICE("\The [src] seems full of illegible scribbles. Is this a joke?"))
 		user.setClickCooldown(DEFAULT_QUICK_COOLDOWN)
 	if (user.a_intent == I_DISARM && user.zone_sel.selecting == BP_EYES)
-	for(var/mob/living/carbon/M in viewers(src))
-		if(!isheretic(user))
-			user.visible_message(
-				SPAN_NOTICE("\The [user] shows \the [src] to \the [M]."),
-				SPAN_NOTICE("You open up \the [src] and show it to \the [M].")
-			)
-			return
-		if(recharging)
-			user.visible_message(
-				SPAN_NOTICE("\The [user] shows \the [src] to \the [M]."),
-				SPAN_NOTICE("You open up \the [src] intended to blind [M] but powers of the book still asleep and you casually show it to \the [M].")
-			)
-		if(iscarbon(M))
-		var/obj/item/nullrod/N = locate() in M
-			if(N)
+		for(M in viewers(src))
+			if(!isheretic(user))
 				user.visible_message(
 					SPAN_NOTICE("\The [user] shows \the [src] to \the [M]."),
-					SPAN_NOTICE("You open up \the [src] intended to blind [M] but powers of the book still asleep and you casually show it to \the [M]."))
+					SPAN_NOTICE("You open up \the [src] and show it to \the [M].")
+				)
+				return
+			if(recharging)
+				user.visible_message(
+					SPAN_NOTICE("\The [user] shows \the [src] to \the [M]."),
+					SPAN_NOTICE("You open up \the [src] intended to blind [M] but powers of the book still asleep and you casually show it to \the [M].")
+				)
+			if(iscarbon(M))
+				var/obj/item/nullrod/N = locate() in M
+				if(N)
+					continue
+				if(issilicon(M))
+					M.Weaken(10)
+				else
+					M.flash_eyes()
+					M.eye_blurry += 50
+					M.Weaken(3)
+					M.Stun(5)
+			user.visible_message(
+				SPAN_NOTICE("\The [user] shows \the [src], emitting blinding light to \the [M]."),
+				SPAN_NOTICE("You open up \the [src], it's pages bright with searing light, and show it to \the [M]."))
+			last_used = world.time
+			recharging++
+			if (iscultist(M))
+				if (user != M)
+					to_chat(user, SPAN_NOTICE("But they already know all there is to know."))
+				to_chat(M, SPAN_NOTICE("But you already know all there is to know."))
 			else
-				M.flash_eyes()
-				M.eye_blurry += 50
-				M.Weaken(3)
-				M.Stun(5)
-		else if(issilicon(M))
-			M.Weaken(10)
-		user.visible_message(
-			SPAN_NOTICE("\The [user] shows \the [src], emitting blinding light to \the [M]."),
-			SPAN_NOTICE("You open up \the [src], it's pages bright with searing light, and show it to \the [M]."))
-		last_used = world.time
-		recharging++
-		if (iscultist(M))
-			if (user != M)
-				to_chat(user, SPAN_NOTICE("But they already know all there is to know."))
-			to_chat(M, SPAN_NOTICE("But you already know all there is to know."))
-		else
-			to_chat(M, SPAN_NOTICE("\The [src] seems full of illegible scribbles. Is this a joke?"))
-		codex_recharge()
-		return TRUE
+				to_chat(M, SPAN_NOTICE("\The [src] seems full of illegible scribbles. Is this a joke?"))
+			codex_recharge()
+			return TRUE
 
 // Хотим как флешка раз в минуту поднимать чардж
 

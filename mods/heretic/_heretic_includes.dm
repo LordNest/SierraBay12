@@ -16,10 +16,12 @@
 	#include "code/alchemy/ritual-sidepaths.dm"
 
 	#include "code/items/general.dm"
+	#include "code/items/livingheart.dm"
 	#include "code/items/items-path_flesh.dm"
 	#include "code/items/items-path_hunt.dm"
 	#include "code/items/items-path_riddle.dm"
 
+	#include "code/spells/spells.dm"
 	#include "code/spells/spells-cosmos.dm"
 	#include "code/spells/spells-flesh.dm"
 	#include "code/spells/spells-hunt.dm"

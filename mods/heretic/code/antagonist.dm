@@ -183,5 +183,5 @@ var/global/list/Tier3Alchemy = list(
 )
 
 var/global/list/Tier4Alchemy = list(
-	/mob/proc/ascend
+//	/mob/proc/ascend
 	)

@@ -34,7 +34,7 @@
 	verbs.Add(/datum/heretic/proc/AlchemyTree)
 	add_language("cult")
 
-	var/has_core = FALSE
+	var/has_livingheart = FALSE
 	if(!length(GLOB.powerinstances_h))
 		for(var/P in powers)
 			GLOB.powerinstances_h += new P()
@@ -63,14 +63,14 @@
 
 	var/mob/living/carbon/human/H = src
 	if(istype(H))
-	for(var/obj/item/organ/internal/augment/lingcore/C in H.internal_organs)
-		has_core++
-	if(has_core == 0 && istype(src,/mob/living/carbon/human))
-		var/obj/item/organ/external/chest = H.get_organ(BP_CHEST)
-		var/obj/item/organ/internal/augment/core = new /obj/item/organ/internal/augment/lingcore
-		core.forceMove(src)
-		core.replaced(src, chest)
-		core = null
+		for(var/obj/item/organ/internal/augment/active/livingheart/C in H.internal_organs)
+			has_livingheart++
+		if(has_livingheart == 0 && istype(src,/mob/living/carbon/human))
+			var/obj/item/organ/external/chest = H.get_organ(BP_CHEST)
+			var/obj/item/organ/internal/augment/active/heart = new /obj/item/organ/internal/augment/active/livingheart
+			heart.forceMove(src)
+			heart.replaced(src, chest)
+			heart = null
 	return 1
 
 //removes our heretic verbs

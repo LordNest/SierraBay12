@@ -53,10 +53,10 @@
 	name = "Transmutation: Eldrich Blade"
 	desc = "Превращает нож в ритуальный кинжал."
 	knowledgecost = 0
-	verbpath = /mob/proc/summon_blade
+//	verbpath = /mob/proc/summon_blade
 
 /datum/power/heretic/choose_path
 	name = "Choose Path of Enlightment"
 	desc = "Выберете Путь Просветления. Это действие нельзя отменить, выбирайте с умом."
 	knowledgecost = 0
-	verbpath = /mob/proc/choose_path
+//	verbpath = /mob/proc/choose_path

@@ -1,3 +1,39 @@
+/datum/spellbook/heretic/flesh
+	name = "\improper Pale Herald Grimoure"
+	feedback = "FL"
+	desc = "It smells like an air freshener."
+	book_desc = "Summons, nature, and a bit o' healin."
+	title = "Druidic Guide on how to be smug about nature"
+	title_desc = "Buy spells using your available spell slots. Artefacts may also be bought however their cost is permanent."
+	book_flags = NOREVERT|NO_LOCKING
+	max_uses = 6
+
+	spells = list(/spell/targeted/heal_target = 					1,
+				/spell/targeted/heal_target/sacrifice = 			1,
+				/spell/aoe_turf/conjure/mirage = 					1,
+				/spell/aoe_turf/conjure/summon/bats = 				1,
+				/spell/targeted/equip_item/party_hardy = 			1,
+				/spell/targeted/equip_item/seed = 					1,
+				/spell/targeted/shapeshift/avian = 					1,
+				/spell/aoe_turf/disable_tech = 						1,
+				/spell/hand/charges/entangle = 						1,
+				/spell/aoe_turf/conjure/grove/sanctuary = 			1,
+				/spell/aoe_turf/knock = 							1,
+				/spell/area_teleport = 								2,
+				/spell/portal_teleport = 							2,
+				/spell/noclothes = 									1,
+				/obj/structure/closet/wizard/souls = 				1,
+				/obj/item/magic_rock = 						1,
+				/obj/item/summoning_stone = 					2,
+				/obj/item/contract/wizard/telepathy = 		1,
+				/obj/item/contract/apprentice = 				1
+				)
+	sacrifice_objects = list(/obj/item/seeds,
+							/obj/item/wirecutters/clippers,
+							/obj/item/device/scanner/plant,
+							/obj/item/material/hatchet,
+							/obj/item/material/minihoe)
+
 /*
 TIER ONE
 */
@@ -5,11 +41,10 @@ TIER ONE
 /spell/targeted/fleshmend
 	name = "Fleshmend"
 	desc = "Ценой голода лечит урон, нанесённый владельцу. Может использоваться даже в бессознательном состоянии."
-	helptext = "Может быть использован в бессознательном состоянии."
-	enhancedtext = "Healing is twice as effective."
 	hud_state = "friendly"
-	knowledgecost = 1
-	icon = 'mods/heretic/icons/heretic_powers.dmi'
+	school = "heretical"
+//	knowledgecost = 1
+//	icon = 'mods/heretic/icons/heretic_powers.dmi'
 	range = 0
 	max_targets = 1
 
@@ -60,10 +95,10 @@ TIER ONE
 /spell/targeted/sensory_overload
 	name = "Sensory Overload"
 	desc = "Воздействие на ЦНС или её подобие заставляет жертву испытывать жуткую агонию, после того, как вы её коснетесь"
-	knowledgecost = 1
+//	knowledgecost = 1
 
 	range = 1
-	max_target = 1
+//	max_target = 1
 
 /*
 TIER TWO
@@ -73,7 +108,7 @@ TIER TWO
 	name = "Blood Siphon"
 	desc = "вытягивает в АоЕ кровь, лечит раны, собирает кровь с пола (привет культ, как вы там?)."
 	feedback = "BO"
-	school = "transmutation"
+	school = "heretical"
 	charge_max = 300
 	spell_flags = 0
 	invocation_type = SpI_NONE
@@ -101,6 +136,7 @@ TIER TWO
 	name = "Create Ghoul"
 	desc = "Призывает дединсайда, который делает других дедаутсайдами. Извините. Переписать."
 	feedback = "RK"
+	school = "heretical"
 
 	spell_flags = SELECTABLE
 
@@ -126,7 +162,7 @@ TIER TWO
 			return TRUE
 
 
-/spell/targeted/revoke/proc/check_for_ghoul(list/targets)
+/spell/targeted/galvanization/proc/check_for_ghoul(list/targets)
 	for(var/t in targets)
 		var/mob/M = t
 		if(M.client)
@@ -141,13 +177,6 @@ TIER THREE
 /spell/targeted/vicissitude
 	name = "Vicissitude"
 	desc = "Позволяет проводить хирургические операции (в том числе на себе) без необходимых навыков и без инструментов"
-	helptext = "Боль и иные критические состояния всё ещё не игнорируются"
-	enhancedtext = "More frequent escapes."
-	ability_icon_state = "flesh_4"
-	knowledgecost = 3
-	verbpath = /mob/proc/vicissitude
-
-/mob/proc/vicissitude()
-	set category = "heretic"
-	set name = "Vicissitude"
-	set desc = "Perform surgery without anything, but your bare hands."
+	school = "heretical"
+	hud_state = "flesh_4"
+//	knowledgecost = 3

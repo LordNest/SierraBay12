@@ -1,40 +1,72 @@
+/datum/spellbook/heretic/hunt
+	name = "\improper Huntsman Catalogue"
+	feedback = "HT"
+	desc = "It smells like an air freshener."
+	book_desc = "Summons, nature, and a bit o' healin."
+	title = "Druidic Guide on how to be smug about nature"
+	title_desc = "Buy spells using your available spell slots. Artefacts may also be bought however their cost is permanent."
+	book_flags = NOREVERT|NO_LOCKING
+	max_uses = 6
+
+	spells = list(/spell/targeted/heal_target = 					1,
+				/spell/targeted/heal_target/sacrifice = 			1,
+				/spell/aoe_turf/conjure/mirage = 					1,
+				/spell/aoe_turf/conjure/summon/bats = 				1,
+				/spell/targeted/equip_item/party_hardy = 			1,
+				/spell/targeted/equip_item/seed = 					1,
+				/spell/targeted/shapeshift/avian = 					1,
+				/spell/aoe_turf/disable_tech = 						1,
+				/spell/hand/charges/entangle = 						1,
+				/spell/aoe_turf/conjure/grove/sanctuary = 			1,
+				/spell/aoe_turf/knock = 							1,
+				/spell/area_teleport = 								2,
+				/spell/portal_teleport = 							2,
+				/spell/noclothes = 									1,
+				/obj/structure/closet/wizard/souls = 				1,
+				/obj/item/magic_rock = 						1,
+				/obj/item/summoning_stone = 					2,
+				/obj/item/contract/wizard/telepathy = 		1,
+				/obj/item/contract/apprentice = 				1
+				)
+	sacrifice_objects = list(/obj/item/seeds,
+							/obj/item/wirecutters/clippers,
+							/obj/item/device/scanner/plant,
+							/obj/item/material/hatchet,
+							/obj/item/material/minihoe)
+
 /*
 TIER ONE
 */
 
 /spell/targeted/heal_target/hunter
-	name = "Cure Light Wounds"
+	name = "Huntsman Passion"
 	desc = "a rudimentary spell used mainly by wizards to heal papercuts. Does not require wizard garb."
 	feedback = "CL"
-	school = "transmutation"
+	school = "heretical"
 	charge_max = 20 SECONDS
 	spell_flags = INCLUDEUSER | NO_SOMATIC
 	invocation = "Di'Nath!"
 	invocation_type = SpI_SHOUT
-	range = 2
+	range = 0
 	max_targets = 1
 
-	hud_state = "friendly"
+	hud_state = "heal_minor"
+	cast_sound = 'sound/magic/staff_healing.ogg'
 
-	var/mob/living/carbon/human/C = src
-//	to_chat(C,SPAN_NOTICE("Energy rushes through us.  [C.lying ? "We arise." : ""]</span>"))
-	C.set_stat(CONSCIOUS)
-	C.SetParalysis(0)
-	C.SetStunned(0)
-	C.SetWeakened(0)
-	C.setHalLoss(0)
-	C.lying = 0
-	C.blinded = 0
-	C.eye_blind = 0
-	C.eye_blurry = 0
-	C.ear_deaf = 0
-	C.ear_damage = 0
-	C.clear_confused()
-	C.sleeping = 0
-//	C.reagents.add_reagent("toxin", 10)
-	C.reagents.add_reagent("synaptizine", 10)
+	amt_weakened = -5
+	amt_paralysis = -5
+	amt_stunned = -5
 
-	return TRUE
+	amt_dizziness = -5
+	amt_confused = -5
+	amt_stuttering = -5
+
+	effect_state = "green_sparkles"
+	effect_duration = 5
+
+	// Vars expect a constant at compile time, so we can't use macros for spans here
+	message = "<span class='notice'><b>You feel a rush on adrenaline in your body as .</b></span>"
+
 
 //////////////////////////////////////////////////////
 
@@ -49,8 +81,7 @@ TIER TWO
 /spell/targeted/huntsman_instincts
 	name = "Huntsman Instincts"
 	desc = "Пассивная возможность слышать шаги за стенами, а также отсутствие ФОВ в броне и мехах."
-	knowledgecost = 1
-	verbpath = /mob/proc/huntsman_instinct
+//	knowledgecost = 1
 
 /mob/proc/huntsman_instinct()
 	set category = "heretic"
@@ -66,7 +97,7 @@ TIER TWO
 	name = "Huntsman Return"
 	desc = "Возвращает вас к последнему фонарю из которого вы перемещались в сон."
 	feedback = "MK"
-	school = "conjuration"
+	school = "heretical"
 	charge_max = 600 //1 minutes for how OP this shit is (apparently not as op as I thought)
 	spell_flags = Z2NOCAST
 	invocation = "Re-Alki R'natha."
@@ -80,15 +111,14 @@ TIER TWO
 
 	cast_sound = 'sound/effects/teleport.ogg'
 	hud_state = "wiz_mark"
-	var/mark = null
 
-/spell/mark_recall/choose_targets()
+/spell/mark_recall/huntsman_return/choose_targets()
 	if(!mark)
 		return list("magical fairy dust") //because why not
 	else
 		return list(mark)
 
-/spell/mark_recall/cast(list/targets,mob/user)
+/spell/mark_recall/huntsman_return/cast(list/targets,mob/user)
 	if(!length(targets))
 		return 0
 	var/target = targets[1]
@@ -103,7 +133,7 @@ TIER TWO
 	user.forceMove(T)
 	..()
 
-/spell/mark_recall/empower_spell()
+/spell/mark_recall/huntsman_return/empower_spell()
 	if(!..())
 		return 0
 
@@ -121,25 +151,23 @@ TIER TWO
 	unacidable = TRUE
 	layer = TURF_LAYER
 
-	var/spell/mark_recall/spell
-
-/obj/cleanable/wizard_mark/New(newloc,mrspell)
+/obj/cleanable/wizard_mark/lanthern/New(newloc,mrspell)
 	..()
 	spell = mrspell
 
-/obj/cleanable/wizard_mark/Destroy()
+/obj/cleanable/wizard_mark/lanthern/Destroy()
 	spell.mark = null //dereference pls.
 	spell = null
 	..()
 
-/obj/cleanable/wizard_mark/attack_hand(mob/user)
+/obj/cleanable/wizard_mark/lanthern/attack_hand(mob/user)
 	if(user == spell.holder)
 		user.visible_message("\The [user] mutters an incantation and \the [src] disappears!")
 		qdel(src)
 	..()
 
 
-/obj/cleanable/wizard_mark/use_tool(obj/item/tool, mob/user, list/click_params)
+/obj/cleanable/wizard_mark/lanthern/use_tool(obj/item/tool, mob/user, list/click_params)
 	// Null Rod or Spell Book - Remove mark
 	if (is_type_in_list(tool, list(/obj/item/nullrod, /obj/item/spellbook)))
 		user.visible_message(
@@ -159,7 +187,7 @@ TIER THREE
 	name = "Miststep"
 	desc = "This spell creates your ethereal form, temporarily making you invisible and able to pass through walls."
 	feedback = "EJ"
-	school = "transmutation"
+	school = "heretical"
 	charge_max = 30 SECONDS
 	spell_flags = Z2NOCAST | INCLUDEUSER
 	invocation = "none"
