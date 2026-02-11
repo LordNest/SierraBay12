@@ -85,4 +85,6 @@
 			dat += "<center><a href='byond://?src=\ref[src];book=1'>Choose different spellbook.</a></center>"
 		if(!(spellbook.book_flags & NO_LOCKING))
 			dat += "<center><a href='byond://?src=\ref[src];lock=1'>[spellbook.book_flags & LOCKED ? "Unlock" : "Lock"] the spellbook.</a></center>"
-	show_browser(user, dat,"window=spellbook")
+	var/datum/browser/popup = new(user, "spellbook", name, 340, 540)
+	popup.set_content(dat)
+	popup.open()
