@@ -28,23 +28,20 @@
 				/obj/item/contract/wizard/telepathy = 		1,
 				/obj/item/contract/apprentice = 				1
 				)
-	sacrifice_objects = list(/obj/item/seeds,
-							/obj/item/wirecutters/clippers,
-							/obj/item/device/scanner/plant,
-							/obj/item/material/hatchet,
-							/obj/item/material/minihoe)
 
 /*
 TIER ONE
 */
 
 /spell/targeted/feather_fall
+	tier = HERETIC_TIER_ONE
 	name = "Feather Fall"
 	desc = "Пассивная. Вместо урона от падения вы получаете урон по стамине."
 	school = "heretical"
 
 
 /spell/targeted/riddle_of_man
+	tier = HERETIC_TIER_ONE
 	name = "Riddle of Man"
 	desc = "Цель на короткое время страдает от дезориентации и говорит чужим голосом и языком, который не знает."
 	school = "heretical"

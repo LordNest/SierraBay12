@@ -2,6 +2,14 @@
 // Может реворкнем?
 // Обязательно реворкнем. И не раз. Но потом.
 
+#define HERETIC_TIER_ONE   1
+#define HERETIC_TIER_TWO   2
+#define HERETIC_TIER_THREE 3
+#define HERETIC_TIER_FOUR  4
+/spell
+
+var/tier = null
+
 /obj/screen/ability/spell/heretic
 	icon = 'mods/heretic/icons/heretic_powers.dmi'
 	icon_state = "grey_spell_base"

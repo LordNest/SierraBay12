@@ -8,37 +8,25 @@
 	book_flags = NOREVERT|NO_LOCKING
 	max_uses = 6
 
-	spells = list(/spell/targeted/heal_target = 					1,
-				/spell/targeted/heal_target/sacrifice = 			1,
-				/spell/aoe_turf/conjure/mirage = 					1,
-				/spell/aoe_turf/conjure/summon/bats = 				1,
-				/spell/targeted/equip_item/party_hardy = 			1,
-				/spell/targeted/equip_item/seed = 					1,
-				/spell/targeted/shapeshift/avian = 					1,
-				/spell/aoe_turf/disable_tech = 						1,
-				/spell/hand/charges/entangle = 						1,
-				/spell/aoe_turf/conjure/grove/sanctuary = 			1,
-				/spell/aoe_turf/knock = 							1,
-				/spell/area_teleport = 								2,
-				/spell/portal_teleport = 							2,
-				/spell/noclothes = 									1,
+	spells = list(/spell/targeted/fleshmend = 					1,
+				/spell/targeted/sensory_overload = 				1,
+				/spell/targeted/blood_siphon = 					1,
+				/spell/targeted/galvanization = 				1,
+				/spell/targeted/flex =		 					1,
+				/spell/targeted/vicissitude = 					1,
+				/spell/cleave = 								1,
 				/obj/structure/closet/wizard/souls = 				1,
 				/obj/item/magic_rock = 						1,
 				/obj/item/summoning_stone = 					2,
 				/obj/item/contract/wizard/telepathy = 		1,
-				/obj/item/contract/apprentice = 				1
 				)
-	sacrifice_objects = list(/obj/item/seeds,
-							/obj/item/wirecutters/clippers,
-							/obj/item/device/scanner/plant,
-							/obj/item/material/hatchet,
-							/obj/item/material/minihoe)
 
 /*
 TIER ONE
 */
 
 /spell/targeted/fleshmend
+	tier = HERETIC_TIER_ONE
 	name = "Fleshmend"
 	desc = "Ценой голода лечит урон, нанесённый владельцу. Может использоваться даже в бессознательном состоянии."
 	hud_state = "friendly"
@@ -93,6 +81,7 @@ TIER ONE
 //////////////////////////////////////////////////////
 
 /spell/targeted/sensory_overload
+	tier = HERETIC_TIER_ONE
 	name = "Sensory Overload"
 	desc = "Воздействие на ЦНС или её подобие заставляет жертву испытывать жуткую агонию, после того, как вы её коснетесь"
 //	knowledgecost = 1
@@ -105,9 +94,10 @@ TIER TWO
 */
 
 /spell/targeted/blood_siphon
+	tier = HERETIC_TIER_TWO
 	name = "Blood Siphon"
 	desc = "вытягивает в АоЕ кровь, лечит раны, собирает кровь с пола (привет культ, как вы там?)."
-	feedback = "BO"
+	feedback = "BS"
 	school = "heretical"
 	charge_max = 300
 	spell_flags = 0
@@ -133,33 +123,34 @@ TIER TWO
 //////////////////////////////////////////////////////
 
 /spell/targeted/galvanization
+	tier = HERETIC_TIER_TWO
 	name = "Create Ghoul"
-	desc = "Призывает дединсайда, который делает других дедаутсайдами. Извините. Переписать."
-	feedback = "RK"
+	desc = "Resurrects dead target in form of a loyal ghoul. You can only have three ghouls."
+	feedback = "CG"
 	school = "heretical"
 
 	spell_flags = SELECTABLE
 
 	charge_type = Sp_CHARGES
-	charge_max = 1
+	charge_max = 3
 	invocation = "Di Le Nal Yen Nath!"
 	invocation_type = SpI_SHOUT
 	range = 1
 	hud_state = "heal_revoke"
 
 /spell/targeted/galvanization/cast(list/targets, mob/living/user)
-	if(alert(user, "Are you sure?", "Alert", "Yes", "No") == "Yes" && alert(user, "Are you ABSOLUTELY SURE?", "Alert", "Absolutely!", "No") == "Absolutely!")
-		var/should_wait = 1
-		for(var/t in targets)
-			var/mob/living/M = t
-			M.rejuvenate()
-			if(M.client) //We've got a dude
-				should_wait = 0
-				break //Don't need to check anymore.
-		if(should_wait)
-			addtimer(new Callback(src,PROC_REF(check_for_ghoul),targets), 30 SECONDS)
-		else
-			return TRUE
+	var/should_wait = 1
+	for(var/t in targets)
+		var/mob/living/M = t
+		M.rejuvenate()
+		M.Drain()
+		if(M.client) //We've got a dude
+			should_wait = 0
+			break //Don't need to check anymore.
+	if(should_wait)
+		addtimer(new Callback(src,PROC_REF(check_for_ghoul),targets), 30 SECONDS)
+	else
+		return TRUE
 
 
 /spell/targeted/galvanization/proc/check_for_ghoul(list/targets)
@@ -167,8 +158,8 @@ TIER TWO
 		var/mob/M = t
 		if(M.client)
 			return
-	charge_counter = charge_max
-	to_chat(holder,SPAN_NOTICE("\The [src] refreshes as it seems it could not bring back the souls of those you healed."))
+	charge_counter += 1
+	to_chat(holder,SPAN_NOTICE("You cannot galvanize soulles husk."))
 
 /*
 TIER THREE

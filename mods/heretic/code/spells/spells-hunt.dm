@@ -28,17 +28,13 @@
 				/obj/item/contract/wizard/telepathy = 		1,
 				/obj/item/contract/apprentice = 				1
 				)
-	sacrifice_objects = list(/obj/item/seeds,
-							/obj/item/wirecutters/clippers,
-							/obj/item/device/scanner/plant,
-							/obj/item/material/hatchet,
-							/obj/item/material/minihoe)
 
 /*
 TIER ONE
 */
 
 /spell/targeted/heal_target/hunter
+	tier = HERETIC_TIER_ONE
 	name = "Huntsman Passion"
 	desc = "a rudimentary spell used mainly by wizards to heal papercuts. Does not require wizard garb."
 	feedback = "CL"
@@ -71,6 +67,7 @@ TIER ONE
 //////////////////////////////////////////////////////
 
 /spell/hunter_whiste
+	tier = HERETIC_TIER_ONE
 	name = "Huntsman Whiste"
 	desc = "Все лампы в зоне видимости с треском перегорают, а персональные источники света отключаются."
 
