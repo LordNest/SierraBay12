@@ -57,7 +57,7 @@
 	required_tech_levels = list()
 	cost = 750
 
-	unlocks_designs = list("advancedflash", "stunrevolver")
+	unlocks_designs = list("advancedflash", "stunrevolver", "neutralizer")
 
 /datum/technology/combat/riotgun
 	name = "Riot Gun"
@@ -119,6 +119,21 @@
 	cost = 1500
 
 	unlocks_designs = list("lasercannon")
+
+/datum/technology/combat/xray
+	name = "X-ray Laser Weapons"
+	desc = "X-ray Laser Weapons"
+	id = "xray"
+
+	x = 0.5
+	y = 0.7
+	icon = "xray"
+
+	required_technologies = list(/datum/technology/combat/laser)
+	required_tech_levels = list()
+	cost = 3000
+
+	unlocks_designs = list("xraypistol", "xrayrifle")
 
 /datum/technology/combat/wt550
 	name = "WT550"

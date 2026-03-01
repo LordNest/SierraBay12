@@ -102,7 +102,7 @@
 	required_tech_levels = list()
 	cost = 500
 
-	unlocks_designs = list("netcard_wired")
+	unlocks_designs = list("netcard_wired", "ship_interface")
 
 /datum/technology/data/netcard_adv
 	name = "Advanced Netcard"
@@ -282,7 +282,7 @@
 	required_tech_levels = list()
 	cost = 750
 
-	unlocks_designs = list("scan_reagent", "scan_medical", "scan_atmos","scan_robotic")
+	unlocks_designs = list("scan_reagent", "scan_medical", "scan_atmos","scan_robotic", "scan_flora")
 
 
 /datum/technology/data/ai_laws
