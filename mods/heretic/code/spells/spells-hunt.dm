@@ -78,7 +78,7 @@ TIER TWO
 /spell/targeted/huntsman_instincts
 	name = "Huntsman Instincts"
 	desc = "Пассивная возможность слышать шаги за стенами, а также отсутствие ФОВ в броне и мехах."
-//	knowledgecost = 1
+//
 
 /mob/proc/huntsman_instinct()
 	set category = "heretic"

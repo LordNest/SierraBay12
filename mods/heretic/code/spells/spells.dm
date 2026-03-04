@@ -6,13 +6,14 @@
 #define HERETIC_TIER_TWO   2
 #define HERETIC_TIER_THREE 3
 #define HERETIC_TIER_FOUR  4
+
 /spell
 
-var/tier = null
+	var/tier = null
 
 /obj/screen/ability/spell/heretic
 	icon = 'mods/heretic/icons/heretic_powers.dmi'
-	icon_state = "grey_spell_base"
+	icon_state = "heretic_spell_base"
 	maptext_x = 3
 	background_base_state = "heretic"
 
@@ -57,7 +58,7 @@ var/tier = null
 				info = SPAN_COLOR("#ff33cc", "[initial(S.max_uses)] Spell Slots")
 			else if(ispath(spellbook.spells[i],/obj))
 				var/obj/O = spellbook.spells[i]
-				name = "Artefact: [capitalize(initial(O.name))]" //because 99.99% of objects don't have capitals in them and it makes it look weird.
+				name = "Ritual: [capitalize(initial(O.name))]" //because 99.99% of objects don't have capitals in them and it makes it look weird.
 				desc = initial(O.desc)
 			else if(ispath(spellbook.spells[i],/spell))
 				var/spell/S = spellbook.spells[i]
@@ -84,15 +85,79 @@ var/tier = null
 			dat += "<br><i>[desc]</i><br><br>"
 		dat += "<br>"
 		dat += "<center><a href='byond://?src=\ref[src];reset=1'>Re-memorize your spellbook.</a></center>"
-		if(spellbook.book_flags & INVESTABLE)
-			if(investing_time)
-				dat += "<center><b>Currently investing in a slot...</b></center>"
-			else
-				dat += "<center><a href='byond://?src=\ref[src];invest=1'>Invest a Spell Slot</a><br><i>Investing a spellpoint will return two spellpoints back in 15 minutes.<br>Some say a sacrifice could even shorten the time...</i></center>"
 		if(!(spellbook.book_flags & NOREVERT))
 			dat += "<center><a href='byond://?src=\ref[src];book=1'>Choose different spellbook.</a></center>"
-		if(!(spellbook.book_flags & NO_LOCKING))
-			dat += "<center><a href='byond://?src=\ref[src];lock=1'>[spellbook.book_flags & LOCKED ? "Unlock" : "Lock"] the spellbook.</a></center>"
 	var/datum/browser/popup = new(user, "spellbook", name, 340, 540)
 	popup.set_content(dat)
 	popup.open()
+
+
+/obj/item/spellbook/heretic/OnTopic(mob/living/carbon/human/user, href_list)
+	if(href_list["lock"] && !(spellbook.book_flags & NO_LOCKING))
+		if(spellbook.book_flags & LOCKED)
+			spellbook.book_flags &= ~LOCKED
+		else
+			spellbook.book_flags |= LOCKED
+		. = TOPIC_REFRESH
+
+	else if(href_list["temp"])
+		temp = null
+		. = TOPIC_REFRESH
+
+	else if(href_list["book"])
+		if(initial(spellbook.max_uses) != spellbook.max_uses || uses != spellbook.max_uses)
+			temp = "You've already purchased things using this spellbook!"
+		else
+			src.set_spellbook(/datum/spellbook)
+			temp = "You have reverted back to the Book of Tomes."
+		. = TOPIC_REFRESH
+
+	else if(href_list["invest"])
+		temp = invest()
+		. = TOPIC_REFRESH
+
+	else if(href_list["path"])
+		var/path = locate(href_list["path"]) in spellbook.spells
+		if(!path)
+			return TOPIC_HANDLED
+		if(uses < spellbook.spells[path])
+			to_chat(user, SPAN_NOTICE("You do not have enough spell slots to purchase this."))
+			return TOPIC_HANDLED
+		if(ispath(path,/datum/spellbook))
+			src.set_spellbook(path)
+			temp = "You have chosen a new spellbook."
+		else
+			if(href_list["contract"])
+				if(!(spellbook.book_flags & CAN_MAKE_CONTRACTS))
+					return //no
+				uses -= spellbook.spells[path]
+				spellbook.max_uses -= spellbook.spells[path] //no basksies
+				var/obj/O = new /obj/item/contract/boon(get_turf(user),path)
+				temp = "You have purchased \the [O]."
+			else
+				if(ispath(path,/spell))
+					temp = src.add_spell(user,path)
+					if(temp)
+						uses -= spellbook.spells[path]
+				else
+					var/obj/O = new path(get_turf(user))
+					temp = "You have purchased \a [O]."
+					uses -= spellbook.spells[path]
+					spellbook.max_uses -= spellbook.spells[path]
+					//finally give it a bit of an oomf
+					playsound(get_turf(user),'sound/effects/phasein.ogg',50,1)
+		. = TOPIC_REFRESH
+
+	else if(href_list["reset"] && !(spellbook.book_flags & NOREVERT))
+		var/area/map_template/wizard_station/A = get_area(user)
+		if(istype(A))
+			uses = spellbook.max_uses
+			investing_time = 0
+			has_sacrificed = 0
+			user.spellremove()
+			temp = "All spells and investments have been removed. You may now memorize a new set of spells."
+		else
+			to_chat(user, SPAN_WARNING("You must be in the wizard academy to re-memorize your spells."))
+		. = TOPIC_REFRESH
+
+	src.interact(user)

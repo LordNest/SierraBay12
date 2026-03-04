@@ -3,7 +3,7 @@
 	name = "Flex"
 	desc = "Рвём наручники, смирительные рубашки, микростаним всех вокруг на 1 секунду."
 	hud_state = "flesh_4"
-//	knowledgecost = 2
+//
 
 //Escape Cuffs. By design this does not escape from straight jackets
 

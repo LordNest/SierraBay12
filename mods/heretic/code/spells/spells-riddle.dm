@@ -87,6 +87,6 @@ TIER THREE
 /datum/power/heretic/miststep
 	name = "Miststep"
 	desc = "Вы становитесь невидимы и можете проходить сквозь стены на короткий промежуток времени."
-	knowledgecost = 1
-	verbpath = /mob/proc/create_circle
+
+
 */

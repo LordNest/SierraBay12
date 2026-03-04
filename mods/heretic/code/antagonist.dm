@@ -22,23 +22,98 @@ P.S. Большинство комментариев будет убрано в 
 
 #define HERETIC_MAX_LEVEL 3000 // When this value is reached, the game stops checking for updates so we don't recheck every time a tile is converted in endgame
 
-GLOBAL_TYPED_NEW(heretic, /datum/antagonist/heretic)
+GLOBAL_TYPED_NEW(heretics, /datum/antagonist/heretic)
+
+GLOBAL_LIST_EMPTY(heretic_powerinstances)
+
+/datum/mind
+	var/datum/heretic/heretic
+
+/datum/heretic
+	var/path = null
+
+	var/list/known_rituals = list()
+	var/list/sacrificed = list()
+	var/list/purchased_powers = list(/datum/power/heretic/circle)
+
+/datum/heretic/New(gender=FEMALE)
+	..()
+
+/mob/proc/make_heretic()
+
+	if(!mind)				return
+	if(!mind.heretic)	mind.heretic = new /datum/heretic(gender)
+
+	mind.heretic.known_rituals += /datum/ritual/book
+	mind.heretic.known_rituals += /datum/ritual/sacrifice
+	message_admins("Выдаём ритуалы.")
+//	mind.heretic.purchased_powers += /datum/power/heretic/circle
+	add_language(LANGUAGE_CULT)
+
+	if(!length(GLOB.powerinstances))
+		for(var/P in powers)
+			GLOB.powerinstances += new P()
+
+	// Code to auto-purchase free powers.
+	for(var/datum/power/changeling/P in GLOB.powerinstances)
+
+	for(var/datum/power/heretic/P in mind.heretic.purchased_powers)
+		if(P.isVerb)
+			if(!(P in src.verbs))
+				verbs.Add(P.verbpath)
+			if(P.make_hud_button)
+				if(!src.ability_master)
+					src.ability_master = new /obj/screen/movable/ability_master(null, src)
+				src.ability_master.add_heretic_ability(
+					object_given = src,
+					verb_given = P.verbpath,
+					name_given = P.name,
+					ability_icon_given = P.ability_icon_state,
+					arguments = list()
+					)
+
+//heretic Abilities
+/obj/screen/ability/verb_based/heretic
+	icon = 'mods/heretic/icons/heretic_powers.dmi'
+	icon_state = "heretic_spell_base"
+	background_base_state = "bg_heretic_border"
+
+//use this to force add powers
+/obj/screen/movable/ability_master/proc/add_heretic_ability(object_given, verb_given, name_given, ability_icon_given, arguments)
+	if(!object_given)
+		message_admins("ERROR: add_heretic_ability() was not given an object in its arguments.")
+	if(!verb_given)
+		message_admins("ERROR: add_heretic_ability() was not given a verb/proc in its arguments.")
+	if(get_ability_by_PROC_REF(verb_given))
+		return // Duplicate
+	var/obj/screen/ability/verb_based/heretic/A = new /obj/screen/ability/verb_based/heretic()
+	A.ability_master = src
+	A.object_used = object_given
+	A.verb_to_call = verb_given
+	A.ability_icon_state = ability_icon_given
+	A.SetName(name_given)
+	if(arguments)
+		A.arguments_to_use = arguments
+	ability_objects.Add(A)
+	if(my_mob.client)
+		toggle_open(2) //forces the icons to refresh on screen
+
 
 /// Копипаст культа, проверка на то, кто мы такие
 /proc/isheretic(mob/subject)
 	var/datum/mind/mind = subject
 	if (ismob(mind))
 		mind = subject.mind
-	return istype(mind) && (mind in GLOB.heretic?.current_antagonists)
+	return istype(mind) && (player_is_antag(mind))
 
 /datum/antagonist/heretic
 	id = MODE_HERETIC
-	role_text = "heretic"
-	role_text_plural = "heretics"
+	role_text = "Heretic"
+	role_text_plural = "Heretics"
 	restricted_jobs = list(/datum/job/lawyer, /datum/job/captain, /datum/job/hos, /datum/job/officer, /datum/job/warden, /datum/job/detective)
 	blacklisted_jobs = list(/datum/job/ai, /datum/job/cyborg, /datum/job/chaplain, /datum/job/psychiatrist, /datum/job/submap)
 	feedback_tag = "heretic_objective"
-	antag_indicator = "hudheretic"
+	antag_indicator = "hudhunter" // Заглушка
 	welcome_text = "You have a tome in your possession; one that will help you start the heretic. Use it well and remember - there are others."
 	victory_text = "The heretic wins! It has succeeded in serving its dark masters!"
 	loss_text = "The staff managed to stop the heretic!"
@@ -50,16 +125,15 @@ GLOBAL_TYPED_NEW(heretic, /datum/antagonist/heretic)
 	hard_cap_round = 1
 	initial_spawn_req = 4
 	initial_spawn_target = 6
-	antaghud_indicator = "hudheretic"
+	antaghud_indicator = "hudhunter" // Заглушка
 	skill_setter = /datum/antag_skill_setter/station
 
 	var/allow_ascend = 1
 	var/powerless = 0
 	var/datum/mind/sacrifice_target
-	var/list/sacrificed = list()
 	var/heretic_rating = 0
 	var/list/heretic_rating_bounds = list(HERETIC_LEVEL_1, HERETIC_LEVEL_2, HERETIC_LEVEL_3)
-	var/max_heretic_rating = 0
+	var/max_heretic_rating = 4
 	var/servitude_blurb = "Что-то пафосное про то, как ты теперь хочешь служить робастеру на еретике, не забыть придумать."
 	var/station_summon_only = TRUE
 	var/no_shuttle_summon = TRUE
@@ -78,7 +152,7 @@ GLOBAL_TYPED_NEW(heretic, /datum/antagonist/heretic)
 	var/list/possible_targets = list()
 	if(!length(possible_targets))
 		for(var/mob/living/carbon/human/player in GLOB.player_list)
-			if(player.mind && !(player.mind in GLOB.heretic.current_antagonists))
+			if(player.mind)
 				possible_targets += player.mind
 	if(length(possible_targets) > 0)
 		target = pick(possible_targets)
@@ -96,6 +170,11 @@ GLOBAL_TYPED_NEW(heretic, /datum/antagonist/heretic)
 	sacrifice.find_target()
 	sacrifice_target = sacrifice.target
 	global_objectives |= sacrifice
+
+/datum/antagonist/heretic/update_antag_mob(datum/mind/player)
+	..()
+	player.current.make_heretic()
+	player.current.verbs += /mob/proc/alchemy_rune
 
 /datum/antagonist/heretic/equip(mob/living/carbon/human/player)
 
@@ -118,70 +197,19 @@ GLOBAL_TYPED_NEW(heretic, /datum/antagonist/heretic)
 	if(istype(S))
 		T.forceMove(S)
 
-/datum/antagonist/cultist/add_antagonist(datum/mind/player, ignore_role, do_not_equip, move_to_spawn, do_not_announce, preserve_appearance)
-	. = ..()
-	if(.)
-		to_chat(player, SPAN_OCCULT("[conversion_blurb]"))
-		if(player.current && !istype(player.current, /mob/living/simple_animal/construct))
-			player.current.add_language(LANGUAGE_CULT)
-
 /datum/antagonist/heretic/remove_antagonist(datum/mind/player, show_message, implanted)
 	if(!..())
 		return 0
 	to_chat(player.current, SPAN_DANGER("Все накопленные знания, всё понимание истинной сущности мироздания ускользают от тебя и превращаются в ничто. Это было дело всей твоей жизни. Или просто сон? Ничего не осталось кроме дороги к безумию."))
 	player.ClearMemories(type)
 	player.current.remove_language(LANGUAGE_CULT)
-	remove_heretic_magic(player.current)
 
-/datum/antagonist/heretic/proc/update_heretic_magic(list/to_update)
-	if(HERETIC_LEVEL_1 in to_update)
-		for(var/datum/mind/H in GLOB.heretic.current_antagonists)
-			if(H.current)
-				to_chat(H.current, SPAN_OCCULT("То, что было теорией стало пугающей практикой. Картина начинает складываться воедино. Ты на шаг ближе к апофеозу"))
-				unlock_heretic_magic(H.current)
-	if(HERETIC_LEVEL_2 in to_update)
-		for(var/datum/mind/H in GLOB.heretic.current_antagonists)
-			if(H.current)
-				to_chat(H.current, SPAN_OCCULT("Ещё! Ещё! Трансмутация за трансмутацией ты становишься ближе к сути. Ты на шаг ближе к апофеозу"))
-				unlock_heretic_magic(H.current)
-	if(HERETIC_LEVEL_3 in to_update)
-		for(var/datum/mind/H in GLOB.heretic.current_antagonists)
-			if(H.current)
-				to_chat(H.current, SPAN_OCCULT("Последний ритуал. Последние жертвы. Порог апофеоза перед тобой. Пусть эти жертвы не будут напрасными"))
-				unlock_heretic_magic(H.current)
-
-// Предполагается, что абилки будут достаточно самодостаточны, чтобы давать их сразу все. Поэтому мы не "выдаём", а "разблокируем" их для покупки за очки.
-
-/datum/antagonist/heretic/proc/unlock_heretic_magic(mob/M)
-	M.verbs += Tier1Alchemy
-
-	if(max_heretic_rating >= HERETIC_LEVEL_1)
-		M.verbs += Tier2Alchemy
-
-		if(max_heretic_rating >= HERETIC_LEVEL_2)
-			M.verbs += Tier3Alchemy
-
-			if(max_heretic_rating >= HERETIC_LEVEL_3)
-				M.verbs += Tier4Alchemy
-
-/datum/antagonist/heretic/proc/remove_heretic_magic(mob/M)
-	M.verbs -= Tier1Alchemy
-	M.verbs -= Tier2Alchemy
-	M.verbs -= Tier3Alchemy
-	M.verbs -= Tier4Alchemy
-
-var/global/list/Tier1Alchemy = list(
-	/mob/proc/create_circle
-	)
-
-var/global/list/Tier2Alchemy = list(
-	/mob/proc/
-	)
-
-var/global/list/Tier3Alchemy = list(
-	/mob/proc/
-)
-
-var/global/list/Tier4Alchemy = list(
-//	/mob/proc/ascend
-	)
+//removes our heretic verbs
+/mob/proc/remove_heretic_powers()
+	if(!mind || !mind.heretic)	return
+	for(var/datum/power/heretic/P in mind.heretic.purchased_powers)
+		if(P.isVerb)
+			verbs.Remove(P.verbpath)
+			var/obj/screen/ability/verb_based/heretic/C = ability_master.get_ability_by_PROC_REF(P.verbpath)
+			if(C)
+				ability_master.remove_ability(C)

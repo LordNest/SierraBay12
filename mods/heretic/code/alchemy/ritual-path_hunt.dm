@@ -18,20 +18,20 @@ T4 Когда всё готово к возвышению, у нас начин�
 /datum/power/heretic/plauge
 	name = "Transmutation: Ravarkanian Plauge"
 	desc = "Трансмутируйте пакет крови и ягоды, чтобы создать зараженную раварканской чумой кровь, которая при выпивании будет лечить вас."
-	knowledgecost = 1
-	verbpath = /mob/proc/create_circle
+
+
 
 /datum/power/heretic/music_box
 	name = "Transmutation: Music Box"
 	desc = "Трансмутируйте диктофон, цветок мака и 5 кусков древесины, чтобы создать шкатулку, которая при использовании оглушает. Зараженные чумой оглушаются на большее время."
-	knowledgecost = 1
-	verbpath = /mob/proc/create_circle
+
+
 
 /datum/power/heretic/lanthern
 	name = "Transmutation: Mist Lanthern"
 	desc = "Трансмутируйте диктофон, цветок мака и 5 кусков древесины, чтобы создать шкатулку, которая при использовании оглушает. Зараженные чумой оглушаются на большее время."
-	knowledgecost = 1
-	verbpath = /mob/proc/create_circle
+
+
 
 /// Tier 2
 
@@ -40,14 +40,14 @@ T4 Когда всё готово к возвышению, у нас начин�
 /datum/power/heretic/huntsman_eyes
 	name = "Transmutation: Eyes of the Hunter"
 	desc = "Трансмутирует глаза, перевязочный пакет и укрепленное стекло в фетиш, дарующий отличное ночное зрение."
-	knowledgecost = 2
-	verbpath = /mob/proc/create_circle
+
+
 
 /datum/power/heretic/hunterpaste
 	name = "Transmutation: Hunterpaste"
 	desc = "Трансмутирует нанопасту и пакет чумной крови в инструмент с помощью которого эффекты чумы могут примениться к силиковым помощникам на охоте."
-	knowledgecost = 1
-	verbpath = /mob/proc/create_circle
+
+
 
 /// Tier 3
 
@@ -56,19 +56,17 @@ T4 Когда всё готово к возвышению, у нас начин�
 /datum/power/heretic/huntsman_garb
 	name = "Transmutation: Huntsman Garb"
 	desc = "Трансмутирует кожу, шлем, броню и мёртвое животное в комплект брони охотника, которая неплохо защищает от лазеров."
-	knowledgecost = 1
-	verbpath = /mob/proc/create_circle
+
+
 
 /datum/power/heretic/astral_bell
 	name = "Transmutation: Astral Bell"
 	desc = "Трансмутирует почки, колокольчик и пакет порченой крови в колокол, призывающий монстров, агрессивно настроенных ко всем вокруг."
-	knowledgecost = 1
-	verbpath = /mob/proc/create_circle
+
+
 
 /// Tier 4
 
 /datum/power/heretic/ascend_hunt
 	name = "Ascention: Path of Hunt"
 	desc = "Возвышение охотника. Добавить описание."
-	knowledgecost = 2
-	verbpath = /mob/proc/create_circle

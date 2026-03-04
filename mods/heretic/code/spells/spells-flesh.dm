@@ -31,52 +31,14 @@ TIER ONE
 	desc = "Ценой голода лечит урон, нанесённый владельцу. Может использоваться даже в бессознательном состоянии."
 	hud_state = "friendly"
 	school = "heretical"
-//	knowledgecost = 1
+//
 //	icon = 'mods/heretic/icons/heretic_powers.dmi'
 	range = 0
 	max_targets = 1
 
-/mob/proc/end_hereticmend()
-	to_chat(src, "<span class='notice'>Our regeneration has slowed to normal levels.</span>")
-	src.verbs += /mob/proc/heretic_fleshmend
-	var/datum/heretic/heretic = src.mind.heretic
-	heretic.already_regenerating = FALSE
 
 //Starts healing you every second for 50 seconds. Can be used whilst unconscious.
 
-/mob/proc/heretic_fleshmend()
-	set category = "heretic"
-	set name = "Fleshmend (10)"
-	set desc = "Begins a slow rengeration of our form.  Does not effect stuns or chemicals."
-	set waitfor = FALSE
-	var/datum/heretic/heretic = heretic_power(10,0,100,UNCONSCIOUS)
-	if(!heretic)
-		return
-	var/mob/living/carbon/human/C = src
-	if(C.on_fire)
-		to_chat(src,SPAN_DANGER("We cannot regenerate while engulfed in flames!"))
-		return
-	if(heretic.already_regenerating)
-		to_chat(src,SPAN_DANGER("We are already regenerating our flesh."))
-		return
-	var/heal_amount = 2
-	if(src.mind.heretic.recursive_enhancement)
-		src.mind.heretic.recursive_enhancement = FALSE
-		heal_amount = heal_amount * 2
-		to_chat(src, "<span class='notice'>We will heal much faster.</span>")
-
-	to_chat(src, "<span class='notice'>We begin to heal ourselves.</span>")
-	heretic.already_regenerating = TRUE
-	for(var/i = 0, i<50,i++)
-		if(C && !C.on_fire)
-			C.adjustBruteLoss(-heal_amount)
-			C.adjustOxyLoss(-heal_amount)
-			C.adjustFireLoss(-heal_amount)
-			C.regenerate_icons()
-			sleep(1 SECOND)
-
-	src.verbs -= /mob/proc/heretic_fleshmend
-	addtimer(new Callback(src,/mob/.proc/end_hereticmend), 50 SECONDS)
 
 //////////////////////////////////////////////////////
 
@@ -84,7 +46,7 @@ TIER ONE
 	tier = HERETIC_TIER_ONE
 	name = "Sensory Overload"
 	desc = "Воздействие на ЦНС или её подобие заставляет жертву испытывать жуткую агонию, после того, как вы её коснетесь"
-//	knowledgecost = 1
+//
 
 	range = 1
 //	max_target = 1
@@ -141,7 +103,7 @@ TIER TWO
 /spell/targeted/galvanization/cast(list/targets, mob/living/user)
 	var/should_wait = 1
 	for(var/t in targets)
-		var/mob/living/M = t
+		var/mob/living/carbon/human/M = t
 		M.rejuvenate()
 		M.Drain()
 		if(M.client) //We've got a dude
@@ -155,7 +117,7 @@ TIER TWO
 
 /spell/targeted/galvanization/proc/check_for_ghoul(list/targets)
 	for(var/t in targets)
-		var/mob/M = t
+		var/mob/living/carbon/human/M = t
 		if(M.client)
 			return
 	charge_counter += 1
