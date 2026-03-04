@@ -1,0 +1,4 @@
+author: thekekman666
+changes:
+  - rscdel: Убираем броню мехов
+delete-after: true
