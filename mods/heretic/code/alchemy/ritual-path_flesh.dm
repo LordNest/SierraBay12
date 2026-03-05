@@ -10,31 +10,60 @@
 
 // Трансмутации
 
-/datum/power/heretic/stitcher_gloves
-	name = "Transmutation: Stitcher Gloves"
+/datum/ritual/flesh/gloves
+	name = "Stitcher Gloves"
 	desc = "Трансмутирует латексные перчатки, сырое мясо и очиститель в не оставляющие отпечатков, но крайне подозрительные перчатки."
+	icon = "necronimicon"
+	result = /obj/item/clothing/gloves/forensic/stitcher
+	components = list(
+		/obj/item/clothing/gloves/latex,
+		/obj/item/reagent_containers/food/snacks/meat,
+		/obj/item/reagent_containers/spray/cleaner
+	)
+	tier = HERETIC_TIER_ONE
 
 
-
-/datum/power/heretic/fungoid_flesh
-	name = "Transmutation: Fungoid Flesh"
+/datum/ritual/flesh/fungus
+	name = "Fungoid Flesh"
 	desc = "Трансмутирует грибы и кровь в грибное сердце, что моментально разрастётся, перекрывая проход для всех, кроме еретика."
+	icon = "necronimicon"
+	result = /obj/item/grenade/spawnergrenade/blob
+	components = list(
+		/obj/item/reagent_containers/food/snacks/grown/mushroom,
+		/obj/decal/cleanable/blood,
+		/obj/item/reagent_containers/spray/cleaner
+	)
+	tier = HERETIC_TIER_ONE
 
 
-
-/datum/power/heretic/meatcoat
-	name = "Transmutation: Great Meatcoat"
+/datum/ritual/flesh/coat
+	name = "Great Meatcoat"
 	desc = "Трансмутирует плащ и мясо в предмет одежды, быстрее восстанавливающий выносливость и голод, пока надет."
-
+	icon = "necronimicon"
+	result = /obj/item/clothing/suit/greatcoat/meat
+	components = list(
+		/obj/item/clothing/accessory/cloak,
+		/obj/item/reagent_containers/food/snacks/meat
+	)
+	tier = HERETIC_TIER_ONE
 
 
 /// Tier 2
 
 // Трансмутации
 
-/datum/power/heretic/harbringer_eyes
-	name = "Transmutation: Eyes of Harbringer"
+/datum/ritual/flesh/eyes
+	name = "Eyes of Harbringer"
 	desc = "Трансмутирует глаза, противоожоговый пакет и укрепленное стекло в фетиш, дарующий термальное зрение."
+	icon = "necronimicon"
+	result =
+	components = list(
+		/obj/item/organ/internal/eyes,
+		/obj/item/storage/med_pouch/burn
+	)
+	tier = HERETIC_TIER_ONE
+
+
 
 
 

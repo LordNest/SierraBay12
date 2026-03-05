@@ -4,7 +4,7 @@
 #include "_heretic.dm"
 
 #include "code/antagonist.dm"
-#include "code/gamemode.dm"
+#include "code/_defines.dm"
 
 #include "code/alchemy/alchemy.dm"
 	#include "code/alchemy/ritual-path_cosmos.dm"

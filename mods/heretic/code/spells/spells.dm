@@ -2,10 +2,7 @@
 // Может реворкнем?
 // Обязательно реворкнем. И не раз. Но потом.
 
-#define HERETIC_TIER_ONE   1
-#define HERETIC_TIER_TWO   2
-#define HERETIC_TIER_THREE 3
-#define HERETIC_TIER_FOUR  4
+
 
 /spell
 

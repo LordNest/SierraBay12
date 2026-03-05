@@ -36,6 +36,8 @@ GLOBAL_LIST_EMPTY(heretic_powerinstances)
 	var/list/sacrificed = list()
 	var/list/purchased_powers = list(/datum/power/heretic/circle)
 
+	var/book = /datum/spellbook/heretic
+
 /datum/heretic/New(gender=FEMALE)
 	..()
 

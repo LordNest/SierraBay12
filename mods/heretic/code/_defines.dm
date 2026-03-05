@@ -8,3 +8,8 @@
 #define HERETIC_POWER_SIDE_HR   "Side Path - Hunt and Riddle"
 #define HERETIC_POWER_SIDE_RC "Side Path - Riddle and Cosmos"
 #define HERETIC_POWER_SIDE_FC  "Side Path - Cosmos and Flesh"
+
+#define HERETIC_TIER_ONE   1
+#define HERETIC_TIER_TWO   2
+#define HERETIC_TIER_THREE 3
+#define HERETIC_TIER_FOUR  4

@@ -64,24 +64,27 @@
 /// Базовая ритуальная часть
 
 /datum/ritual
-	var/name = null
+	var/name = "Етого никто не должен видеть"
 	var/desc = "Master ritual holder, if you see this, inform your local wizard"
 	var/icon = null               // Иконка для радиального меню
 	var/result = null             // Предмет-результат
 	var/list/components = list()  // Компоненты для ритуала
 	var/tier = null               // Тир ритуала
 
+/// Общие ритуалы
 /datum/ritual/sacrifice
-	icon = "sacrifice"
+	name = "Sacrifice"
+	icon = "manequin"
 	result = null
 	components = list()
-	tier = 1
+	tier = HERETIC_TIER_ONE
 
 /datum/ritual/book
+	name = "Codex Cicatrix"
 	icon = "necronimicon"
 	result = /obj/item/book/codex
-	components = list()
-	tier = 1
+	components = list(/obj/item/book)
+	tier = HERETIC_TIER_ONE
 
 
 
@@ -91,7 +94,7 @@
 	icon = 'icons/effects/crayondecal.dmi'
 	icon_state = "rune3"
 
-	var/ritual = null
+	var/datum/ritual/ritual
 
 	var/list/req = list()
 
@@ -122,15 +125,16 @@
 	var/radial = list()
 	for (var/alchemy in user.mind.heretic.known_rituals)
 		var/datum/ritual/rite = alchemy
-		radial[alchemy] = mutable_appearance('mods/heretic/icons/heretic_misc.dmi', rite.icon)
+		radial[rite] = mutable_appearance('mods/heretic/icons/heretic_misc.dmi', rite.icon)
 	var/choice = show_radial_menu(user, user, radial, require_near = TRUE, radius = 42, tooltips = TRUE, check_locs = list(src))
 	if (!choice || !user.use_sanity_check(src))
 		return
-	ritual = choice
-	to_chat(user, SPAN_NOTICE("Changed ritual to \"[choice]\"."))
+	ritual = new choice
+	to_chat(user, SPAN_NOTICE("Changed ritual to \"[ritual.name]\"."))
 	playsound(src, 'sound/effects/pop.ogg', 50, FALSE)
 
 /obj/rune/alchemy/proc/convoke(mob/living/user)
+	user = usr
 	if(istype(ritual, /datum/ritual/sacrifice))
 		var/list/mob/living/carbon/human/heretics = get_heretics()
 		if(victim)
@@ -166,16 +170,28 @@
 			sleep(40)
 		if(victim)
 			victim = null
-	// Здесь должна быть проверка на наличие на турфе запчастей для ритуала
-	if(!istype(ritual, /datum/ritual/sacrifice))
+	// Ритуалы помимо жертвоприношения
+	if(ritual && !istype(ritual, /datum/ritual/sacrifice))
+
 		var/turf/T = get_turf(src)
-		for(var/atom/A in T.contents)
-			if(!A.simulated)
-				continue
-			if(!istype(A, req))
-				continue
+		var/list/missing = list()
+		for(var/comp_path in ritual.components)
+			if(!locate(comp_path) in T)
+				// Получаем имя компонента
+				var/name = initial(null)
+				if(ispath(comp_path))
+					var/obj/O = new comp_path
+					name = O.name // Тихо пиздим имя компонента и удаляем его. (Можно подход лучше придумать, но я делаю на так пока что)
+					qdel(O)
+				else
+					name = "[comp_path]"
+				missing += name
+		if(length(missing))
+			to_chat(user, SPAN_WARNING("Не хватает компонентов для ритуала: [jointext(missing, ", ")]"))
+			return
+		else
+			to_chat(user, SPAN_COLOR("#ff69b4", "🐴 РИТУАЛ УСПЕШНО СОВЕРШЁН! 🐎"))
 	if(!ritual)
-		to_chat(user, SPAN_WARNING("Ни один ритуал не подготовлен для исполнения."))
-		return fizzle(user)
+		to_chat(user, SPAN_WARNING("Не выбран ритуал"))
 
 /obj/rune/alchemy/proc/heretic_sacrifice()
