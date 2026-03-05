@@ -4,22 +4,18 @@
 	name = "Draw Circle"
 	desc = "Prepare alchemy circle for ritual perfomance."
 	ability_icon_state = "hunt_1"
-	verbpath = /mob/proc/make_circle
+	verbpath = /mob/proc/alchemy_rune
 
 /mob/proc/alchemy_rune()
 	set category = "Heretic"
 	set name = "Draw Circle"
+	set desc = "Prepare alchemy circle for ritual perfomance"
 
 	make_circle(/obj/rune/alchemy, cost = 0, codex_required = 0)
 
 /mob/proc/make_circle(rune, cost = 0, codex_required = 0)
-	set category = "Heretic"
-	set name = "Draw Circle"
-	set desc = "Prepare alchemy circle for ritual perfomance."
 
-
-
- 	var/has_codex = !!IsHolding(/obj/item/book/codex)
+	var/has_codex = !!IsHolding(/obj/item/book/codex)
 	var/has_robes = 0
 
 	if(!has_codex && codex_required)
@@ -65,11 +61,15 @@
 		return 1
 	return 0
 
+/// Базовая ритуальная часть
+
 /datum/ritual
-	var/icon = null
-	var/result = null
-	var/list/components = list()
-	var/tier = null
+	var/name = null
+	var/desc = "Master ritual holder, if you see this, inform your local wizard"
+	var/icon = null               // Иконка для радиального меню
+	var/result = null             // Предмет-результат
+	var/list/components = list()  // Компоненты для ритуала
+	var/tier = null               // Тир ритуала
 
 /datum/ritual/sacrifice
 	icon = "sacrifice"
@@ -78,10 +78,12 @@
 	tier = 1
 
 /datum/ritual/book
-	icon = "codex"
+	icon = "necronimicon"
 	result = /obj/item/book/codex
 	components = list()
 	tier = 1
+
+
 
 /obj/rune/alchemy
 	name = "rune"
@@ -89,7 +91,9 @@
 	icon = 'icons/effects/crayondecal.dmi'
 	icon_state = "rune3"
 
-	var/ritual
+	var/ritual = null
+
+	var/list/req = list()
 
 	var/mob/living/victim
 
@@ -118,16 +122,16 @@
 	var/radial = list()
 	for (var/alchemy in user.mind.heretic.known_rituals)
 		var/datum/ritual/rite = alchemy
-		radial[alchemy] = mutable_appearance('icons/screen/radial.dmi', rite.icon)
+		radial[alchemy] = mutable_appearance('mods/heretic/icons/heretic_misc.dmi', rite.icon)
 	var/choice = show_radial_menu(user, user, radial, require_near = TRUE, radius = 42, tooltips = TRUE, check_locs = list(src))
 	if (!choice || !user.use_sanity_check(src))
 		return
 	ritual = choice
-	to_chat(user, SPAN_NOTICE("Changed dispensing mode to \"[choice]\"."))
+	to_chat(user, SPAN_NOTICE("Changed ritual to \"[choice]\"."))
 	playsound(src, 'sound/effects/pop.ogg', 50, FALSE)
 
 /obj/rune/alchemy/proc/convoke(mob/living/user)
-	if(ritual == /datum/ritual/sacrifice)
+	if(istype(ritual, /datum/ritual/sacrifice))
 		var/list/mob/living/carbon/human/heretics = get_heretics()
 		if(victim)
 			to_chat(user, SPAN_WARNING("You are already sarcificing \the [victim] on this rune."))
@@ -162,7 +166,16 @@
 			sleep(40)
 		if(victim)
 			victim = null
+	// Здесь должна быть проверка на наличие на турфе запчастей для ритуала
+	if(!istype(ritual, /datum/ritual/sacrifice))
+		var/turf/T = get_turf(src)
+		for(var/atom/A in T.contents)
+			if(!A.simulated)
+				continue
+			if(!istype(A, req))
+				continue
 	if(!ritual)
+		to_chat(user, SPAN_WARNING("Ни один ритуал не подготовлен для исполнения."))
 		return fizzle(user)
 
 /obj/rune/alchemy/proc/heretic_sacrifice()
