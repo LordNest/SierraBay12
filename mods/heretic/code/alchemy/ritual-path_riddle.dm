@@ -12,6 +12,18 @@
 
 // Трансмутации
 
+/datum/ritual/riddle/blade
+	name = "Vorpal Blade"
+	desc = "Трансмутирует нож, ботанический топор и колоду карт в ритуальный кинжал."
+	icon = "necronimicon"
+	result = /obj/item/material/knife/heretic/riddle
+	components = list(
+		/obj/item/material/knife,
+		/obj/item/material/hatchet,
+		/obj/item/stack/material/wood
+	)
+	tier = HERETIC_TIER_ONE
+
 /datum/power/heretic/shroom_cap
 	name = "Transmutation: Shroom Cap"
 	desc = "Трансмутирует добавить список в грибную шляпку, которая позволяет уменьшаться в размерах и пролезать через систему вентиляции."

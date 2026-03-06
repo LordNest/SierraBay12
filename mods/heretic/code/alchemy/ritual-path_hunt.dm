@@ -15,6 +15,18 @@ T4 Когда всё готово к возвышению, у нас начин�
 
 // Трансмутации
 
+/datum/ritual/hunt/blade
+	name = "Hunter's Saw"
+	desc = "Трансмутирует нож, ботанический топор и доску в ритуальный кинжал."
+	icon = "necronimicon"
+	result = /obj/item/material/knife/heretic/hunt
+	components = list(
+		/obj/item/material/knife,
+		/obj/item/material/hatchet,
+		/obj/item/stack/material/wood
+	)
+	tier = HERETIC_TIER_ONE
+
 /datum/power/heretic/plauge
 	name = "Transmutation: Ravarkanian Plauge"
 	desc = "Трансмутируйте пакет крови и ягоды, чтобы создать зараженную раварканской чумой кровь, которая при выпивании будет лечить вас."

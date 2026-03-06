@@ -10,6 +10,18 @@
 
 // Трансмутации
 
+/datum/ritual/flesh/blade
+	name = "Maniac's Knife"
+	desc = "Трансмутирует нож, скальпель и пакет крови в ритуальный кинжал."
+	icon = "necronimicon"
+	result = /obj/item/material/knife/heretic/flesh
+	components = list(
+		/obj/item/material/knife,
+		/obj/item/scalpel/basic,
+		/obj/item/reagent_containers/ivbag
+	)
+	tier = HERETIC_TIER_ONE
+
 /datum/ritual/flesh/gloves
 	name = "Stitcher Gloves"
 	desc = "Трансмутирует латексные перчатки, сырое мясо и очиститель в не оставляющие отпечатков, но крайне подозрительные перчатки."
@@ -56,36 +68,46 @@
 	name = "Eyes of Harbringer"
 	desc = "Трансмутирует глаза, противоожоговый пакет и укрепленное стекло в фетиш, дарующий термальное зрение."
 	icon = "necronimicon"
-	result =
+	result = /obj/item/clothing/glasses/thermal
 	components = list(
 		/obj/item/organ/internal/eyes,
 		/obj/item/storage/med_pouch/burn
 	)
-	tier = HERETIC_TIER_ONE
+	tier = HERETIC_TIER_TWO
 
 
-
-
-
-/datum/power/heretic/grasping_limbs
-	name = "Transmutation: Grasping limbs"
-	desc = "Трансмутирует две руки и мышеловку в капкан, игнорирующий еретика, но на долго останавливающий остальных."
-
-
+/datum/ritual/flesh/linbs
+	name = "Grasping limbs"
+	desc = "Трансмутирует две руки и мышеловку в капкан, игнорирующий еретика, но надолго останавливающий остальных."
+	icon = "necronimicon"
+	result = /obj/item/beartrap/arms
+	components = list(
+		/obj/item/device/assembly/mousetrap,
+		/obj/item/organ/external/arm,
+		/obj/item/organ/external/arm/right
+	)
+	tier = HERETIC_TIER_TWO
 
 /// Tier 3
 
 // Трансмутации
 
-/datum/power/heretic/metal_to_flesh
-	name = "Transmutation: Metal into Flesh"
+/datum/ritual/flesh/metal_into_flesh
+	name = "Metal into Flesh"
 	desc = "Трансмутирует синтетика, ППТ, ИПС или Адхеранта в слугу, который способен быстро захватывать жертв."
+	icon = "necronimicon"
+	result = /mob/living/simple_animal/flesh_construct
+	components = list()
+	tier = HERETIC_TIER_THREE
 
 
-
-/datum/power/heretic/node_of_flesh
-	name = "Transmutation: Node of Flesh"
+/datum/ritual/flesh/node
+	name = "Node of Flesh"
 	desc = "Трансмутирует ДОБАВИТЬ в раскладываемый маяк, который лечит еретика и его созданий."
+	icon = "necronimicon"
+	result = /obj/item/supply_beacon
+	components = list()
+	tier = HERETIC_TIER_THREE
 
 
 
