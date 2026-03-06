@@ -17,32 +17,54 @@ T4 Когда всё готово к возвышению, у нас начин�
 
 /datum/ritual/hunt/blade
 	name = "Hunter's Saw"
-	desc = "Трансмутирует нож, ботанический топор и доску в ритуальный кинжал."
+	desc = "Трансмутирует нож, циркулярную пилу и доску в ритуальный кинжал."
 	icon = "necronimicon"
 	result = /obj/item/material/knife/heretic/hunt
 	components = list(
 		/obj/item/material/knife,
-		/obj/item/material/hatchet,
+		/obj/item/circular_saw,
 		/obj/item/stack/material/wood
 	)
 	tier = HERETIC_TIER_ONE
 
-/datum/power/heretic/plauge
-	name = "Transmutation: Ravarkanian Plauge"
+/datum/ritual/hunt/plague
+	name = "Ravarkanian Plauge"
 	desc = "Трансмутируйте пакет крови и ягоды, чтобы создать зараженную раварканской чумой кровь, которая при выпивании будет лечить вас."
+	icon = "necronimicon"
+	result = /obj/item/reagent_containers/ivbag/blood/plague
+	components = list(
+		/obj/item/reagent_containers/ivbag,
+		/obj/item/reagent_containers/food/snacks/grown/harebell,
+		/obj/item/reagent_containers/food/snacks/grown/poppy,
+		/obj/item/reagent_containers/food/snacks/grown/berry
+	)
+	tier = HERETIC_TIER_ONE
 
 
-
-/datum/power/heretic/music_box
-	name = "Transmutation: Music Box"
+/datum/ritual/hunt/music_box
+	name = "Music Box"
 	desc = "Трансмутируйте диктофон, цветок мака и 5 кусков древесины, чтобы создать шкатулку, которая при использовании оглушает. Зараженные чумой оглушаются на большее время."
+	icon = "necronimicon"
+	result = /obj/item/bikehorn/music_box
+	components = list(
+		/obj/item/device/taperecorder,
+		/obj/item/reagent_containers/food/snacks/grown/poppy,
+		/obj/item/stack/material/wood
+	)
+	tier = HERETIC_TIER_ONE
 
 
-
-/datum/power/heretic/lanthern
-	name = "Transmutation: Mist Lanthern"
-	desc = "Трансмутируйте диктофон, цветок мака и 5 кусков древесины, чтобы создать шкатулку, которая при использовании оглушает. Зараженные чумой оглушаются на большее время."
-
+/datum/ritual/hunt/lanthern
+	name = "Music Box"
+	desc = "Трансмутируйте лампаду, цветок мака и банный веник, чтобы создать лампу на при использовании которой можно телепортироваться в сон и обратно. Две лампы нельзя ставить в одной и той же зоне и в космосе."
+	icon = "necronimicon"
+	result = /obj/item/supply_beacon
+	components = list(
+		/obj/item/device/flashlight/lantern,
+		/obj/item/reagent_containers/food/snacks/grown/poppy,
+		/obj/item/mop/broom
+	)
+	tier = HERETIC_TIER_ONE
 
 
 /// Tier 2
@@ -55,10 +77,17 @@ T4 Когда всё готово к возвышению, у нас начин�
 
 
 
-/datum/power/heretic/hunterpaste
-	name = "Transmutation: Hunterpaste"
-	desc = "Трансмутирует нанопасту и пакет чумной крови в инструмент с помощью которого эффекты чумы могут примениться к силиковым помощникам на охоте."
-
+/datum/ritual/hunt/nanopaste
+	name = "Hunterpaste"
+	desc = "Трансмутирует нанопасту, колокльчик и пакет чумной крови в инструмент с помощью которого эффекты чумы могут примениться к силиковым помощникам на охоте."
+	icon = "necronimicon"
+	result = /obj/item/stack/nanopaste/cursed
+	components = list(
+		/obj/item/reagent_containers/ivbag/blood/plague,
+		/obj/item/stack/nanopaste,
+		/obj/item/reagent_containers/food/snacks/grown/harebell
+	)
+	tier = HERETIC_TIER_TWO
 
 
 /// Tier 3
