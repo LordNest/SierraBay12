@@ -8,3 +8,5 @@
 /obj/item/grenade/spawnergrenade/blob
 
 /obj/item/clothing/suit/greatcoat/meat
+
+/obj/item/beartrap/arms

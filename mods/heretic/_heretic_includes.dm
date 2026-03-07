@@ -27,7 +27,7 @@
 	#include "code/spells/spells-side-cf.dm"
 	#include "code/spells/spells-side-fh.dm"
 
-
+	#include "code/mobs/path_flesh.dm"
 
 #include "code/sacrificed_mobs.dm"
 

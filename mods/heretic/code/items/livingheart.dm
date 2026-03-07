@@ -46,3 +46,12 @@
 		//	attack_target(owner)
 		if("Gulp")
 		//	gulp(owner)
+
+/obj/item/organ/internal/heart/livingheart
+	name = "compound eyes"
+	action_button_name = "Toggle Eye Shields"
+
+/obj/item/organ/internal/heart/livingheart/attack_self(mob/user)
+	. = ..()
+	if(.)
+		owner.mind.heretic.book.attack_self(owner)

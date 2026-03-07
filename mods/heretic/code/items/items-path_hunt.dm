@@ -8,3 +8,5 @@
 /obj/item/bikehorn/music_box
 
 /obj/item/stack/nanopaste/cursed
+
+/obj/item/storage/backpack/satchel/leather/hunter

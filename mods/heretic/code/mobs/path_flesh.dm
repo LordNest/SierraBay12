@@ -1,5 +1,5 @@
 /mob/living/simple_animal/flesh_construct
-	name = "cortical flesh_construct"
+/* 	name = "cortical flesh_construct"
 	real_name = "cortical flesh_construct"
 	desc = "A small, quivering sluglike creature."
 	speak_emote = list("chirrups")
@@ -264,3 +264,4 @@
 /mob/living/simple_animal/flesh_construct/flash_eyes(intensity, override_blindness_check, affect_silicon, visual, type)
 	intensity *= 1.5
 	. = ..()
+ */

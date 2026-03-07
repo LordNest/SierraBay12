@@ -94,16 +94,31 @@ T4 Когда всё готово к возвышению, у нас начин�
 
 // Трансмутации
 
-/datum/power/heretic/huntsman_garb
+/datum/ritual/hunt/huntsman_garb
 	name = "Transmutation: Huntsman Garb"
 	desc = "Трансмутирует кожу, шлем, броню и мёртвое животное в комплект брони охотника, которая неплохо защищает от лазеров."
+	icon = "necronimicon"
+	result = /obj/item/storage/backpack/satchel/leather/hunter
+	components = list(
+		/obj/item/stack/material/leather,
+		/obj/item/clothing/head/helmet,
+		/obj/item/clothing/suit/armor/vest,
+		/mob/living/simple_animal
+	)
+	tier = HERETIC_TIER_THREE
 
 
-
-/datum/power/heretic/astral_bell
+/datum/ritual/hunt/huntsman_garb
 	name = "Transmutation: Astral Bell"
 	desc = "Трансмутирует почки, колокольчик и пакет порченой крови в колокол, призывающий монстров, агрессивно настроенных ко всем вокруг."
-
+	icon = "necronimicon"
+	result = /obj/item/storage/backpack/satchel/leather/hunter
+	components = list(
+		/obj/item/organ/internal/kidneys,
+		/obj/item/material/bell,
+/obj/item/reagent_containers/ivbag/blood/plague
+	)
+	tier = HERETIC_TIER_THREE
 
 
 /// Tier 4
