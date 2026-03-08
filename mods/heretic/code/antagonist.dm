@@ -24,82 +24,6 @@ P.S. Большинство комментариев будет убрано в 
 
 GLOBAL_TYPED_NEW(heretics, /datum/antagonist/heretic)
 
-GLOBAL_LIST_EMPTY(heretic_powerinstances)
-
-/datum/mind
-	var/datum/heretic/heretic
-
-/datum/heretic
-	var/path = null
-
-	var/list/known_rituals = list()
-	var/list/sacrificed = list()
-	var/list/purchased_powers = list(/datum/power/heretic/circle)
-
-	var/book = new /obj/item/spellbook/heretic
-
-/datum/heretic/New(gender=FEMALE)
-	..()
-
-/mob/proc/make_heretic()
-
-	if(!mind)				return
-	if(!mind.heretic)	mind.heretic = new /datum/heretic(gender)
-
-	mind.heretic.known_rituals += /datum/ritual/book
-	mind.heretic.known_rituals += /datum/ritual/sacrifice
-	message_admins("Выдаём ритуалы.")
-//	mind.heretic.purchased_powers += /datum/power/heretic/circle
-	add_language(LANGUAGE_CULT)
-
-	if(!length(GLOB.powerinstances))
-		for(var/P in powers)
-			GLOB.powerinstances += new P()
-
-	// Code to auto-purchase free powers.
-	for(var/datum/power/changeling/P in GLOB.powerinstances)
-
-	for(var/datum/power/heretic/P in mind.heretic.purchased_powers)
-		if(P.isVerb)
-			if(!(P in src.verbs))
-				verbs.Add(P.verbpath)
-			if(P.make_hud_button)
-				if(!src.ability_master)
-					src.ability_master = new /obj/screen/movable/ability_master(null, src)
-				src.ability_master.add_heretic_ability(
-					object_given = src,
-					verb_given = P.verbpath,
-					name_given = P.name,
-					ability_icon_given = P.ability_icon_state,
-					arguments = list()
-					)
-
-//heretic Abilities
-/obj/screen/ability/verb_based/heretic
-	icon = 'mods/heretic/icons/heretic_powers.dmi'
-	icon_state = "heretic_spell_base"
-	background_base_state = "bg_heretic_border"
-
-//use this to force add powers
-/obj/screen/movable/ability_master/proc/add_heretic_ability(object_given, verb_given, name_given, ability_icon_given, arguments)
-	if(!object_given)
-		message_admins("ERROR: add_heretic_ability() was not given an object in its arguments.")
-	if(!verb_given)
-		message_admins("ERROR: add_heretic_ability() was not given a verb/proc in its arguments.")
-	if(get_ability_by_PROC_REF(verb_given))
-		return // Duplicate
-	var/obj/screen/ability/verb_based/heretic/A = new /obj/screen/ability/verb_based/heretic()
-	A.ability_master = src
-	A.object_used = object_given
-	A.verb_to_call = verb_given
-	A.ability_icon_state = ability_icon_given
-	A.SetName(name_given)
-	if(arguments)
-		A.arguments_to_use = arguments
-	ability_objects.Add(A)
-	if(my_mob.client)
-		toggle_open(2) //forces the icons to refresh on screen
-
 
 /// Копипаст культа, проверка на то, кто мы такие
 /proc/isheretic(mob/subject)
@@ -110,8 +34,8 @@ GLOBAL_LIST_EMPTY(heretic_powerinstances)
 
 /datum/antagonist/heretic
 	id = MODE_HERETIC
-	role_text = "Heretic"
-	role_text_plural = "Heretics"
+	role_text = ANTAG_HERETIC
+	role_text_plural = ANTAG_HERETIC + "s"
 	restricted_jobs = list(/datum/job/lawyer, /datum/job/captain, /datum/job/hos, /datum/job/officer, /datum/job/warden, /datum/job/detective)
 	blacklisted_jobs = list(/datum/job/ai, /datum/job/cyborg, /datum/job/chaplain, /datum/job/psychiatrist, /datum/job/submap)
 	feedback_tag = "heretic_objective"

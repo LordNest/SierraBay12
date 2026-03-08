@@ -1,3 +1,6 @@
+/obj/item/spellbook/heretic/cosmos
+	spellbook_type = /datum/spellbook/heretic/cosmos
+
 /datum/spellbook/heretic/cosmos
 	name = "\improper Madman Notebook"
 	feedback = "CS"

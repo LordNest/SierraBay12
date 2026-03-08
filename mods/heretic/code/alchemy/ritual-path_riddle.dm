@@ -24,39 +24,31 @@
 	)
 	tier = HERETIC_TIER_ONE
 
-/datum/power/heretic/shroom_cap
+/datum/ritual/riddle/shroom_cap
 	name = "Transmutation: Shroom Cap"
 	desc = "Трансмутирует добавить список в грибную шляпку, которая позволяет уменьшаться в размерах и пролезать через систему вентиляции."
 
 
 
 
-/datum/power/heretic/code_of_confusion
+/datum/ritual/riddle/code_of_confusion
 	name = "Transmutation: Code of Confusion"
 	desc = "Трансмутирует добавить список в лист, на котором написан код от аплинка. Аплинк выдаётся аналогично аплинку ниндзи без телекристаллов"
 
-
-
-/*
-/datum/power/heretic/blue_elixir
-	name = "Transmutation: Blue Elixir"
-	desc = "Трансмутирует добавить список в эликсир, который при выпивании позволяет сливаться с окружащим миром, делая вас полупрозрачным на короткий промежуток времени."
-
-
-*/
+/datum/ritual/riddle/keys
 
 
 /// Tier 2
 
 // Трансмутации
 
-/datum/power/heretic/riddle_of_blood
+/datum/ritual/riddle/riddle_of_blood
 	name = "Transmutation: Riddle of Blood"
 	desc = "Трансмутирует добавить и кровь человека в зелье, выпив которое человек станет копией того, чья кровь была использована (вылита на пол)."
 
 
 
-/datum/power/heretic/riddle_of_steel
+/datum/ritual/riddle/riddle_of_steel
 	name = "Transmutation: Riddle of Steel"
 	desc = "Трансмутирует большое количество металлов и крови, чтобы разгадать загадку стали и изготовить тяжёлый доспех, отлично защищающий от пуль и ближнего боя"
 
@@ -66,13 +58,13 @@
 
 // Трансмутации
 
-/datum/power/heretic/pocket_watch
+/datum/ritual/riddle/pocket_watch
 	name = "Transmutation: Pocket Watch"
 	desc = "Трансмутирует добавить в карманные часы, отматывающие время, позицию и состояние тела до момента, когда были использованы. При использовании дольше минуты - принудительно возвращают. Перезарядка 10 минут."
 
 
 
-/datum/power/heretic/riddle_of_passion
+/datum/ritual/riddle/riddle_of_passion
 	name = "Transmutation: Riddle of Passion"
 	desc = "Трансмутирует добавить цветы в эликсир, которым необходмио прокапать глаза спящего, который влюбится в первого, кого увидит после пробуждения."
 
@@ -81,6 +73,6 @@
 
 /// Tier 4
 
-/datum/power/heretic/ascend_riddle
+/datum/ritual/riddle/ascend_riddle
 	name = "Ascention: Path of Riddle"
 	desc = "Возвышение Алисы. Добавить описание."

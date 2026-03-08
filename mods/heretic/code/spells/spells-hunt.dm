@@ -1,3 +1,6 @@
+/* /obj/item/spellbook/heretic/hunt
+	spellbook_type = /datum/spellbook/heretic/hunt
+
 /datum/spellbook/heretic/hunt
 	name = "\improper Huntsman Catalogue"
 	feedback = "HT"
@@ -27,89 +30,82 @@
 				/obj/item/summoning_stone = 					2,
 				/obj/item/contract/wizard/telepathy = 		1,
 				/obj/item/contract/apprentice = 				1
-				)
+				) */
 
 /*
 TIER ONE
 */
 
-/spell/targeted/heal_target/hunter
+/datum/power/heretic/hunt
+	path = HERETIC_POWER_HUNT
+	make_hud_button = 1
+
+/datum/power/heretic/hunt/passion
 	tier = HERETIC_TIER_ONE
 	name = "Huntsman Passion"
 	desc = "a rudimentary spell used mainly by wizards to heal papercuts. Does not require wizard garb."
-	feedback = "CL"
-	school = "heretical"
-	charge_max = 20 SECONDS
-	spell_flags = INCLUDEUSER | NO_SOMATIC
-	invocation = "Di'Nath!"
-	invocation_type = SpI_SHOUT
-	range = 0
-	max_targets = 1
+	ability_icon_state = "surge"
+	knowledgecost = 1
+	make_hud_button = 1
+	verbpath = /mob/proc/hunter_passion
 
-	hud_state = "heal_minor"
-	cast_sound = 'sound/magic/staff_healing.ogg'
-
-	amt_weakened = -5
-	amt_paralysis = -5
-	amt_stunned = -5
-
-	amt_dizziness = -5
-	amt_confused = -5
-	amt_stuttering = -5
-
-	effect_state = "green_sparkles"
-	effect_duration = 5
-
-	// Vars expect a constant at compile time, so we can't use macros for spans here
-	message = "<span class='notice'><b>You feel a rush on adrenaline in your body as .</b></span>"
-
+/mob/proc/hunter_passion()
+	set category = "Heretic"
+	set name = "Huntsman Passion"
+	set desc = "Добавить"
 
 //////////////////////////////////////////////////////
 
-/spell/hunter_whiste
+/datum/power/heretic/hunt/hunter_whiste
 	tier = HERETIC_TIER_ONE
 	name = "Huntsman Whiste"
 	desc = "Все лампы в зоне видимости с треском перегорают, а персональные источники света отключаются."
+	ability_icon_state = "scream"
+	knowledgecost = 1
+	make_hud_button = 1
+	verbpath = /mob/proc/hunter_whiste
+
+/mob/proc/hunter_whiste()
+	set category = "Heretic"
+	set name = "Huntsman Whiste"
+	set desc = "Добавить"
 
 /*
 TIER TWO
 */
 
-/spell/targeted/huntsman_instincts
+/datum/power/heretic/hunt/huntsman_instincts
 	name = "Huntsman Instincts"
 	desc = "Пассивная возможность слышать шаги за стенами, а также отсутствие ФОВ в броне и мехах."
-//
+	ability_icon_state = "instinct_off"
+	knowledgecost = 1
+	make_hud_button = 1
+	verbpath = /mob/proc/huntsman_instinct
 
 /mob/proc/huntsman_instinct()
-	set category = "heretic"
-	set name = "Adrenaline Surge (20)"
-	set desc = "Removes all stuns instantly, and reduces future stuns."
+	set category = "Heretic"
+	set name = "Huntsman Instincts"
+	set desc = "Добавить"
 
 	var/mob/living/carbon/human/C = src
 	C.resomi_sonar_ping()
 
 //////////////////////////////////////////////////////
 
-/spell/mark_recall/huntsman_return
+/datum/power/heretic/hunt/huntsman_return
 	name = "Huntsman Return"
 	desc = "Возвращает вас к последнему фонарю из которого вы перемещались в сон."
-	feedback = "MK"
-	school = "heretical"
-	charge_max = 600 //1 minutes for how OP this shit is (apparently not as op as I thought)
-	spell_flags = Z2NOCAST
-	invocation = "Re-Alki R'natha."
-	invocation_type = SpI_WHISPER
-	cooldown_min = 300
+	ability_icon_state = "return"
+	knowledgecost = 1
+	make_hud_button = 1
+	verbpath = /mob/proc/huntsman_return
 
-	smoke_amt = 1
-	smoke_spread = 5
+/mob/proc/huntsman_return()
+	set category = "Heretic"
+	set name = "Huntsman Return"
+	set desc = "Добавить"
 
-	level_max = list(Sp_TOTAL = 4, Sp_SPEED = 4, Sp_POWER = 1)
-
-	cast_sound = 'sound/effects/teleport.ogg'
-	hud_state = "wiz_mark"
-
-/spell/mark_recall/huntsman_return/choose_targets()
+/* /spell/mark_recall/huntsman_return/choose_targets()
 	if(!mark)
 		return list("magical fairy dust") //because why not
 	else
@@ -136,7 +132,7 @@ TIER TWO
 
 	spell_flags = NO_SOMATIC
 
-	return "You will always be able to cast this spell, even while unconscious or handcuffed."
+	return "You will always be able to cast this spell, even while unconscious or handcuffed." */
 
 /obj/cleanable/wizard_mark/lanthern
 	name = "\improper Mark of the Wizard"
@@ -180,19 +176,15 @@ TIER TWO
 TIER THREE
 */
 
-/spell/targeted/ethereal_jaunt/hunter
+/datum/power/heretic/hunt/miststep
 	name = "Miststep"
 	desc = "This spell creates your ethereal form, temporarily making you invisible and able to pass through walls."
-	feedback = "EJ"
-	school = "heretical"
-	charge_max = 30 SECONDS
-	spell_flags = Z2NOCAST | INCLUDEUSER
-	invocation = "none"
-	invocation_type = SpI_NONE
-	range = 0
-	max_targets = 1
-	level_max = list(Sp_TOTAL = 4, Sp_SPEED = 4, Sp_POWER = 3)
-	cooldown_min = 10 SECONDS //50 deciseconds reduction per rank
-	duration = 5 SECONDS
+	ability_icon_state = "miststep"
+	knowledgecost = 1
+	make_hud_button = 1
+	verbpath = /mob/proc/huntsman_miststep
 
-	hud_state = "wiz_jaunt"
+/mob/proc/huntsman_miststep()
+	set category = "Heretic"
+	set name = "Miststep"
+	set desc = "Добавить"

@@ -4,7 +4,7 @@
 
 
 
-/spell
+/* /spell
 
 	var/tier = null
 
@@ -12,10 +12,10 @@
 	icon = 'mods/heretic/icons/heretic_powers.dmi'
 	icon_state = "heretic_spell_base"
 	maptext_x = 3
-	background_base_state = "heretic"
+	background_base_state = "heretic" */
 
 // Да, мы работаем как книжка у нас в голове
-
+/*
 /obj/item/spellbook/heretic
 	spellbook_type = /datum/spellbook/heretic
 
@@ -34,6 +34,28 @@
 				/datum/spellbook/heretic/cosmos = 1
 				)
 
+/obj/item/spellbook/heretic/attack_self(mob/user as mob)
+	if(!user.mind)
+		return
+	if (user.mind.special_role != ANTAG_HERETIC)
+		if (user.mind.special_role != ANTAG_APPRENTICE)
+			to_chat(user, "You can't make heads or tails of this book.")
+			return
+		if (spellbook.book_flags & LOCKED)
+			to_chat(user, SPAN_WARNING("Drat! This spellbook's apprentice-proof lock is on!"))
+			return
+	else if (spellbook.book_flags & LOCKED)
+		to_chat(user, "You notice the apprentice-proof lock is on. Luckily you are beyond such things.")
+	interact(user)
+
+/obj/item/spellbook/heretic/set_spellbook(type)
+	if(spellbook)
+		qdel(spellbook)
+	spellbook = new type()
+	uses = spellbook.max_uses
+	name = spellbook.name
+	desc = spellbook.desc
+
 // УИ уходит в небо
 
 /obj/item/spellbook/heretic/interact(mob/user as mob)
@@ -48,7 +70,7 @@
 			var/name = "" //name of target
 			var/desc = "" //description of target
 			var/info = "" //additional information
-			if(ispath(spellbook.spells[i],/datum/spellbook))
+			if(ispath(spellbook.spells[i],/datum/spellbook/heretic))
 				var/datum/spellbook/heretic/S = spellbook.spells[i]
 				name = initial(S.name)
 				desc = initial(S.book_desc)
@@ -90,6 +112,7 @@
 
 
 /obj/item/spellbook/heretic/OnTopic(mob/living/carbon/human/user, href_list)
+
 	if(href_list["lock"] && !(spellbook.book_flags & NO_LOCKING))
 		if(spellbook.book_flags & LOCKED)
 			spellbook.book_flags &= ~LOCKED
@@ -105,7 +128,7 @@
 		if(initial(spellbook.max_uses) != spellbook.max_uses || uses != spellbook.max_uses)
 			temp = "You've already purchased things using this spellbook!"
 		else
-			src.set_spellbook(/datum/spellbook)
+			src.set_spellbook(/datum/spellbook/heretic)
 			temp = "You have reverted back to the Book of Tomes."
 		. = TOPIC_REFRESH
 
@@ -158,3 +181,4 @@
 		. = TOPIC_REFRESH
 
 	src.interact(user)
+ */

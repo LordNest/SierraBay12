@@ -30,7 +30,7 @@
 	#include "code/mobs/path_flesh.dm"
 
 #include "code/sacrificed_mobs.dm"
-
+#include "code/powers.dm"
 
 
 #endif

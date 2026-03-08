@@ -1,3 +1,6 @@
+/* /obj/item/spellbook/heretic/riddle
+	spellbook_type = /datum/spellbook/heretic/riddle
+
 /datum/spellbook/heretic/riddle
 	name = "\improper Puzzled Cookbook"
 	feedback = "RD"
@@ -27,66 +30,73 @@
 				/obj/item/summoning_stone = 					2,
 				/obj/item/contract/wizard/telepathy = 		1,
 				/obj/item/contract/apprentice = 				1
-				)
+				) */
 
 /*
 TIER ONE
 */
 
-/spell/targeted/feather_fall
+/datum/power/heretic/riddle
+	path = HERETIC_POWER_RIDDLE
+	make_hud_button = 1
+
+/datum/power/heretic/riddle/feather_fall
 	tier = HERETIC_TIER_ONE
 	name = "Feather Fall"
 	desc = "Пассивная. Вместо урона от падения вы получаете урон по стамине."
-	school = "heretical"
+	ability_icon_state = "surge"
+	knowledgecost = 1
+	make_hud_button = 0
+	verbpath = /mob/proc/feather_fall
 
+/mob/proc/feather_fall()
 
-/spell/targeted/riddle_of_man
+/datum/power/heretic/riddle/riddle_of_man
 	tier = HERETIC_TIER_ONE
 	name = "Riddle of Man"
 	desc = "Цель на короткое время страдает от дезориентации и говорит чужим голосом и языком, который не знает."
-	school = "heretical"
+	ability_icon_state = "surge"
+	knowledgecost = 1
+	make_hud_button = 1
+	verbpath = /mob/proc/riddle_of_man
+
+/mob/proc/riddle_of_man()
 
 /*
 TIER TWO
 */
 
-/spell/targeted/hysteria
+/datum/power/heretic/riddle/hysteria
 	name = "Hysteria"
 	desc = "Ценой урона мозгу во время действия заклинания, еретик получает уменьшенный урон от атак, его рейтинг силы повышается, а скорость собственных атак и передвижения увеличены."
-	school = "heretical"
+	helptext = "Базированный сандевистан, только красный."
+	ability_icon_state = "surge"
+	knowledgecost = 1
+	make_hud_button = 1
+	verbpath = /mob/proc/hysteria
 
-/spell/targeted/projectile/dumbfire/passage/butterfly
+/mob/proc/hysteria()
+
+/datum/power/heretic/riddle/butterfly
 	name = "Passage"
 	desc = "throw a spell towards an area and teleport to it."
-	feedback = "PA"
-	proj_type = /obj/item/projectile/spell_projectile/passage
+	ability_icon_state = "surge"
+	knowledgecost = 1
+	make_hud_button = 1
+	verbpath = /mob/proc/butterfly
 
-
-	school = "heretical"
-	charge_max = 250
-	spell_flags = 0
-	invocation = "A'YASAMA"
-	invocation_type = SpI_SHOUT
-	range = 15
-
-
-	level_max = list(Sp_TOTAL = 1, Sp_SPEED = 0, Sp_POWER = 1)
-	spell_flags = NEEDSCLOTHES
-	duration = 15
-
-	proj_step_delay = 1
-
-	hud_state = "gen_project"
-	cast_sound = 'sound/magic/lightning_bolt.ogg'
+/mob/proc/butterfly()
 
 /*
 TIER THREE
 */
 
-/*
-/datum/power/heretic/miststep
-	name = "Miststep"
-	desc = "Вы становитесь невидимы и можете проходить сквозь стены на короткий промежуток времени."
+/datum/power/heretic/riddle/cards
+	name = "Deck of Cards"
+	desc = "В зависимости от выпавшей карты накладываем рандомный эффект."
+	ability_icon_state = "surge"
+	knowledgecost = 1
+	make_hud_button = 1
+	verbpath = /mob/proc/riddle_of_cards
 
-
-*/
+/mob/proc/riddle_of_cards()

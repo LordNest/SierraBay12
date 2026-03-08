@@ -1,7 +1,7 @@
 // Живое сердце
 // Точно не предмет порочной связи между ядром линга и книжкой мага
 
-/obj/item/organ/internal/augment/active/livingheart
+/* /obj/item/organ/internal/augment/active/livingheart
 	name = "bizarre mass"
 	desc = "a twitching, pulsating mass that almost resembles a deformed embryo"
 	icon_state = "lingcore"
@@ -45,13 +45,24 @@
 		if("Bite")
 		//	attack_target(owner)
 		if("Gulp")
-		//	gulp(owner)
+*/		//	gulp(owner)
+
+/datum/action/item_action/organ
+	action_type = AB_ITEM_USE_ICON
+	button_icon = 'mods/heretic/icons/heretic_misc.dmi'
 
 /obj/item/organ/internal/heart/livingheart
-	name = "compound eyes"
-	action_button_name = "Toggle Eye Shields"
+	name = "Living Heart"
+	icon_state = "heart"
+	action_button_name = "Use Living Heart"
+	default_action_type = /datum/action/item_action/organ/heretic
+
+/obj/item/organ/internal/heart/livingheart/refresh_action_button()
+	. = ..()
+	if(.)
+		action.button_icon_state = "heart-on"
+		if(action.button) action.button.UpdateIcon()
 
 /obj/item/organ/internal/heart/livingheart/attack_self(mob/user)
 	. = ..()
-	if(.)
-		owner.mind.heretic.book.attack_self(owner)
+//	if(.)

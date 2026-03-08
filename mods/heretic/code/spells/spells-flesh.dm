@@ -1,3 +1,6 @@
+/* /obj/item/spellbook/heretic/flesh
+	spellbook_type = /datum/spellbook/heretic/flesh
+
 /datum/spellbook/heretic/flesh
 	name = "\improper Pale Herald Grimoure"
 	feedback = "FL"
@@ -20,87 +23,86 @@
 				/obj/item/summoning_stone = 					2,
 				/obj/item/contract/wizard/telepathy = 		1,
 				)
-
+ */
 /*
 TIER ONE
 */
 
-/spell/targeted/fleshmend
+/datum/power/heretic/flesh
+	path = HERETIC_POWER_FLESH
+	make_hud_button = 1
+
+/datum/power/heretic/flesh/fleshmend
 	tier = HERETIC_TIER_ONE
 	name = "Fleshmend"
 	desc = "Ценой голода лечит урон, нанесённый владельцу. Может использоваться даже в бессознательном состоянии."
-	hud_state = "friendly"
-	school = "heretical"
-//
-//	icon = 'mods/heretic/icons/heretic_powers.dmi'
-	range = 0
-	max_targets = 1
+	ability_icon_state = "fleshmend"
+	knowledgecost = 1
+	make_hud_button = 1
+	verbpath = /mob/proc/heretic_fleshmend
 
+/mob/proc/heretic_fleshmend()
+	set category = "Heretic"
+	set name = "Fleshmend"
+	set desc = "Ценой голода лечит урон, нанесённый владельцу. Может использоваться даже в бессознательном состоянии."
 
 //Starts healing you every second for 50 seconds. Can be used whilst unconscious.
 
 
 //////////////////////////////////////////////////////
 
-/spell/targeted/sensory_overload
+/datum/power/heretic/flesh/sensory_overload
 	tier = HERETIC_TIER_ONE
 	name = "Sensory Overload"
 	desc = "Воздействие на ЦНС или её подобие заставляет жертву испытывать жуткую агонию, после того, как вы её коснетесь"
-//
+	ability_icon_state = "overload"
+	knowledgecost = 1
+	make_hud_button = 1
+	verbpath = /mob/proc/sensory_overload
 
-	range = 1
-//	max_target = 1
+/mob/proc/sensory_overload()
+	set category = "Heretic"
+	set name = "Sensory Overload"
+	set desc = "Добавить"
 
 /*
 TIER TWO
 */
 
-/spell/targeted/blood_siphon
+/datum/power/heretic/flesh/blood_siphon
 	tier = HERETIC_TIER_TWO
 	name = "Blood Siphon"
 	desc = "вытягивает в АоЕ кровь, лечит раны, собирает кровь с пола (привет культ, как вы там?)."
-	feedback = "BS"
-	school = "heretical"
-	charge_max = 300
-	spell_flags = 0
-	invocation_type = SpI_NONE
-	range = 5
-	max_targets = 1
-	compatible_mobs = list(/mob/living/carbon/human)
+	ability_icon_state = "siphon"
+	knowledgecost = 1
+	make_hud_button = 1
+	verbpath = /mob/proc/blood_siphon
 
-	time_between_channels = 50
-	number_of_channels = 0
+/mob/proc/blood_siphon()
+	set category = "Heretic"
+	set name = "Blood Siphon"
+	set desc = "Добавить"
 
-	hud_state = "wiz_boilblood"
-
-/spell/targeted/blood_boil/cast(list/targets, mob/user)
-	var/mob/living/carbon/human/H = targets[1]
-	H.bodytemperature += 40
-	if(prob(10))
-		to_chat(H,SPAN_WARNING("\The [user] seems to radiate an uncomfortable amount of heat your direction."))
-	if(H.bodytemperature > H.getSpeciesOrSynthTemp(HEAT_LEVEL_3)) //Burst into flames
-		H.fire_stacks += 50
-		H.IgniteMob()
 
 //////////////////////////////////////////////////////
 
-/spell/targeted/galvanization
+/datum/power/heretic/flesh/galvanization
 	tier = HERETIC_TIER_TWO
 	name = "Create Ghoul"
 	desc = "Resurrects dead target in form of a loyal ghoul. You can only have three ghouls."
-	feedback = "CG"
-	school = "heretical"
+	ability_icon_state = "ghoul"
+	knowledgecost = 1
+	make_hud_button = 1
+	verbpath = /mob/proc/galvanization
 
-	spell_flags = SELECTABLE
+/mob/proc/galvanization()
 
-	charge_type = Sp_CHARGES
-	charge_max = 3
-	invocation = "Di Le Nal Yen Nath!"
-	invocation_type = SpI_SHOUT
-	range = 1
-	hud_state = "heal_revoke"
+/mob/proc/blood_siphon()
+	set category = "Heretic"
+	set name = "Create Ghoul"
+	set desc = "Добавить"
 
-/spell/targeted/galvanization/cast(list/targets, mob/living/user)
+/*
 	var/should_wait = 1
 	for(var/t in targets)
 		var/mob/living/carbon/human/M = t
@@ -113,8 +115,8 @@ TIER TWO
 		addtimer(new Callback(src,PROC_REF(check_for_ghoul),targets), 30 SECONDS)
 	else
 		return TRUE
-
-
+ */
+/*
 /spell/targeted/galvanization/proc/check_for_ghoul(list/targets)
 	for(var/t in targets)
 		var/mob/living/carbon/human/M = t
@@ -122,14 +124,21 @@ TIER TWO
 			return
 	charge_counter += 1
 	to_chat(holder,SPAN_NOTICE("You cannot galvanize soulles husk."))
+ */
 
 /*
 TIER THREE
 */
 
-/spell/targeted/vicissitude
+/datum/power/heretic/flesh/vicissitude
 	name = "Vicissitude"
 	desc = "Позволяет проводить хирургические операции (в том числе на себе) без необходимых навыков и без инструментов"
-	school = "heretical"
-	hud_state = "flesh_4"
-//	knowledgecost = 3
+	ability_icon_state = "vicissitude"
+	knowledgecost = 1
+	make_hud_button = 1
+	verbpath = /mob/proc/vicissitude
+
+/mob/proc/vicissitude()
+	set category = "Heretic"
+	set name = "Vicissitude"
+	set desc = "Добавить"

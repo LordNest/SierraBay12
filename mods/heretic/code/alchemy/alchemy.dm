@@ -3,7 +3,9 @@
 /datum/power/heretic/circle
 	name = "Draw Circle"
 	desc = "Prepare alchemy circle for ritual perfomance."
-	ability_icon_state = "hunt_1"
+	ability_icon_state = "wiz_mark"
+	knowledgecost = 0
+	make_hud_button = 1
 	verbpath = /mob/proc/alchemy_rune
 
 /mob/proc/alchemy_rune()
