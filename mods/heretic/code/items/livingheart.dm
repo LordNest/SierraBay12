@@ -47,7 +47,7 @@
 		if("Gulp")
 */		//	gulp(owner)
 
-/datum/action/item_action/organ
+/datum/action/item_action/organ/heretic
 	action_type = AB_ITEM_USE_ICON
 	button_icon = 'mods/heretic/icons/heretic_misc.dmi'
 

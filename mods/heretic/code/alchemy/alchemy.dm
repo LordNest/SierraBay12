@@ -3,7 +3,7 @@
 /datum/power/heretic/circle
 	name = "Draw Circle"
 	desc = "Prepare alchemy circle for ritual perfomance."
-	ability_icon_state = "wiz_mark"
+	ability_icon_state = "mark"
 	knowledgecost = 0
 	make_hud_button = 1
 	verbpath = /mob/proc/alchemy_rune
@@ -72,6 +72,7 @@
 	var/result = null             // Предмет-результат
 	var/list/components = list()  // Компоненты для ритуала
 	var/tier = null               // Тир ритуала
+	var/path = null               // Путь ритуала (FLESH, HUNT, RIDDLE, COSMOS, SIDE_*)
 
 /// Общие ритуалы
 /datum/ritual/sacrifice

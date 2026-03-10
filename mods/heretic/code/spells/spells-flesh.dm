@@ -1,38 +1,9 @@
-/* /obj/item/spellbook/heretic/flesh
-	spellbook_type = /datum/spellbook/heretic/flesh
-
-/datum/spellbook/heretic/flesh
-	name = "\improper Pale Herald Grimoure"
-	feedback = "FL"
-	desc = "It smells like an air freshener."
-	book_desc = "Summons, nature, and a bit o' healin."
-	title = "Druidic Guide on how to be smug about nature"
-	title_desc = "Buy spells using your available spell slots. Artefacts may also be bought however their cost is permanent."
-	book_flags = NOREVERT|NO_LOCKING
-	max_uses = 6
-
-	spells = list(/spell/targeted/fleshmend = 					1,
-				/spell/targeted/sensory_overload = 				1,
-				/spell/targeted/blood_siphon = 					1,
-				/spell/targeted/galvanization = 				1,
-				/spell/targeted/flex =		 					1,
-				/spell/targeted/vicissitude = 					1,
-				/spell/cleave = 								1,
-				/obj/structure/closet/wizard/souls = 				1,
-				/obj/item/magic_rock = 						1,
-				/obj/item/summoning_stone = 					2,
-				/obj/item/contract/wizard/telepathy = 		1,
-				)
- */
 /*
 TIER ONE
 */
 
-/datum/power/heretic/flesh
+/datum/power/heretic/fleshmend
 	path = HERETIC_POWER_FLESH
-	make_hud_button = 1
-
-/datum/power/heretic/flesh/fleshmend
 	tier = HERETIC_TIER_ONE
 	name = "Fleshmend"
 	desc = "Ценой голода лечит урон, нанесённый владельцу. Может использоваться даже в бессознательном состоянии."
@@ -51,7 +22,8 @@ TIER ONE
 
 //////////////////////////////////////////////////////
 
-/datum/power/heretic/flesh/sensory_overload
+/datum/power/heretic/sensory_overload
+	path = HERETIC_POWER_FLESH
 	tier = HERETIC_TIER_ONE
 	name = "Sensory Overload"
 	desc = "Воздействие на ЦНС или её подобие заставляет жертву испытывать жуткую агонию, после того, как вы её коснетесь"
@@ -69,7 +41,8 @@ TIER ONE
 TIER TWO
 */
 
-/datum/power/heretic/flesh/blood_siphon
+/datum/power/heretic/blood_siphon
+	path = HERETIC_POWER_FLESH
 	tier = HERETIC_TIER_TWO
 	name = "Blood Siphon"
 	desc = "вытягивает в АоЕ кровь, лечит раны, собирает кровь с пола (привет культ, как вы там?)."
@@ -86,7 +59,8 @@ TIER TWO
 
 //////////////////////////////////////////////////////
 
-/datum/power/heretic/flesh/galvanization
+/datum/power/heretic/galvanization
+	path = HERETIC_POWER_FLESH
 	tier = HERETIC_TIER_TWO
 	name = "Create Ghoul"
 	desc = "Resurrects dead target in form of a loyal ghoul. You can only have three ghouls."
@@ -96,8 +70,6 @@ TIER TWO
 	verbpath = /mob/proc/galvanization
 
 /mob/proc/galvanization()
-
-/mob/proc/blood_siphon()
 	set category = "Heretic"
 	set name = "Create Ghoul"
 	set desc = "Добавить"
@@ -130,7 +102,9 @@ TIER TWO
 TIER THREE
 */
 
-/datum/power/heretic/flesh/vicissitude
+/datum/power/heretic/vicissitude
+	path = HERETIC_POWER_FLESH
+	tier = HERETIC_TIER_THREE
 	name = "Vicissitude"
 	desc = "Позволяет проводить хирургические операции (в том числе на себе) без необходимых навыков и без инструментов"
 	ability_icon_state = "vicissitude"

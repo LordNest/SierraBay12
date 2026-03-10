@@ -71,8 +71,8 @@ T4 Когда всё готово к возвышению, у нас начин�
 
 // Трансмутации
 
-/datum/power/heretic/huntsman_eyes
-	name = "Transmutation: Eyes of the Hunter"
+/datum/ritual/hunt/nanopaste
+	name = "Eyes of the Hunter"
 	desc = "Трансмутирует глаза, перевязочный пакет и укрепленное стекло в фетиш, дарующий отличное ночное зрение."
 
 

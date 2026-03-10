@@ -21,6 +21,7 @@
 		/obj/item/reagent_containers/ivbag
 	)
 	tier = HERETIC_TIER_ONE
+	path = HERETIC_POWER_FLESH
 
 /datum/ritual/flesh/gloves
 	name = "Stitcher Gloves"
@@ -33,6 +34,7 @@
 		/obj/item/reagent_containers/spray/cleaner
 	)
 	tier = HERETIC_TIER_ONE
+	path = HERETIC_POWER_FLESH
 
 
 /datum/ritual/flesh/fungus
@@ -46,6 +48,7 @@
 		/obj/item/reagent_containers/spray/cleaner
 	)
 	tier = HERETIC_TIER_ONE
+	path = HERETIC_POWER_FLESH
 
 
 /datum/ritual/flesh/coat
@@ -58,7 +61,7 @@
 		/obj/item/reagent_containers/food/snacks/meat
 	)
 	tier = HERETIC_TIER_ONE
-
+	path = HERETIC_POWER_FLESH
 
 /// Tier 2
 
@@ -74,6 +77,7 @@
 		/obj/item/storage/med_pouch/burn
 	)
 	tier = HERETIC_TIER_TWO
+	path = HERETIC_POWER_FLESH
 
 
 /datum/ritual/flesh/linbs
@@ -87,6 +91,7 @@
 		/obj/item/organ/external/arm/right
 	)
 	tier = HERETIC_TIER_TWO
+	path = HERETIC_POWER_FLESH
 
 /// Tier 3
 
@@ -99,6 +104,7 @@
 	result = /mob/living/simple_animal/flesh_construct
 	components = list()
 	tier = HERETIC_TIER_THREE
+	path = HERETIC_POWER_FLESH
 
 
 /datum/ritual/flesh/node
@@ -108,6 +114,7 @@
 	result = /obj/item/supply_beacon
 	components = list()
 	tier = HERETIC_TIER_THREE
+	path = HERETIC_POWER_FLESH
 
 
 

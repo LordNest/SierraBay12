@@ -1,49 +1,12 @@
-/* /obj/item/spellbook/heretic/hunt
-	spellbook_type = /datum/spellbook/heretic/hunt
-
-/datum/spellbook/heretic/hunt
-	name = "\improper Huntsman Catalogue"
-	feedback = "HT"
-	desc = "It smells like an air freshener."
-	book_desc = "Summons, nature, and a bit o' healin."
-	title = "Druidic Guide on how to be smug about nature"
-	title_desc = "Buy spells using your available spell slots. Artefacts may also be bought however their cost is permanent."
-	book_flags = NOREVERT|NO_LOCKING
-	max_uses = 6
-
-	spells = list(/spell/targeted/heal_target = 					1,
-				/spell/targeted/heal_target/sacrifice = 			1,
-				/spell/aoe_turf/conjure/mirage = 					1,
-				/spell/aoe_turf/conjure/summon/bats = 				1,
-				/spell/targeted/equip_item/party_hardy = 			1,
-				/spell/targeted/equip_item/seed = 					1,
-				/spell/targeted/shapeshift/avian = 					1,
-				/spell/aoe_turf/disable_tech = 						1,
-				/spell/hand/charges/entangle = 						1,
-				/spell/aoe_turf/conjure/grove/sanctuary = 			1,
-				/spell/aoe_turf/knock = 							1,
-				/spell/area_teleport = 								2,
-				/spell/portal_teleport = 							2,
-				/spell/noclothes = 									1,
-				/obj/structure/closet/wizard/souls = 				1,
-				/obj/item/magic_rock = 						1,
-				/obj/item/summoning_stone = 					2,
-				/obj/item/contract/wizard/telepathy = 		1,
-				/obj/item/contract/apprentice = 				1
-				) */
-
 /*
 TIER ONE
 */
 
-/datum/power/heretic/hunt
+/datum/power/heretic/passion
 	path = HERETIC_POWER_HUNT
-	make_hud_button = 1
-
-/datum/power/heretic/hunt/passion
 	tier = HERETIC_TIER_ONE
 	name = "Huntsman Passion"
-	desc = "a rudimentary spell used mainly by wizards to heal papercuts. Does not require wizard garb."
+	desc = "Снимает статусы."
 	ability_icon_state = "surge"
 	knowledgecost = 1
 	make_hud_button = 1
@@ -56,7 +19,8 @@ TIER ONE
 
 //////////////////////////////////////////////////////
 
-/datum/power/heretic/hunt/hunter_whiste
+/datum/power/heretic/hunter_whiste
+	path = HERETIC_POWER_HUNT
 	tier = HERETIC_TIER_ONE
 	name = "Huntsman Whiste"
 	desc = "Все лампы в зоне видимости с треском перегорают, а персональные источники света отключаются."
@@ -70,11 +34,17 @@ TIER ONE
 	set name = "Huntsman Whiste"
 	set desc = "Добавить"
 
+	for(var/obj/machinery/light/L in range(5))
+		playsound(loc, 'sound/effects/ghost2.ogg', 50, TRUE)
+		L.broken()
+
 /*
 TIER TWO
 */
 
-/datum/power/heretic/hunt/huntsman_instincts
+/datum/power/heretic/huntsman_instincts
+	path = HERETIC_POWER_HUNT
+	tier = HERETIC_TIER_TWO
 	name = "Huntsman Instincts"
 	desc = "Пассивная возможность слышать шаги за стенами, а также отсутствие ФОВ в броне и мехах."
 	ability_icon_state = "instinct_off"
@@ -92,7 +62,9 @@ TIER TWO
 
 //////////////////////////////////////////////////////
 
-/datum/power/heretic/hunt/huntsman_return
+/datum/power/heretic/huntsman_return
+	path = HERETIC_POWER_HUNT
+	tier = HERETIC_TIER_TWO
 	name = "Huntsman Return"
 	desc = "Возвращает вас к последнему фонарю из которого вы перемещались в сон."
 	ability_icon_state = "return"
@@ -176,7 +148,9 @@ TIER TWO
 TIER THREE
 */
 
-/datum/power/heretic/hunt/miststep
+/datum/power/heretic/miststep
+	path = HERETIC_POWER_HUNT
+	tier = HERETIC_TIER_THREE
 	name = "Miststep"
 	desc = "This spell creates your ethereal form, temporarily making you invisible and able to pass through walls."
 	ability_icon_state = "miststep"
