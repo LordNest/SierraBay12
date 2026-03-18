@@ -515,7 +515,11 @@ ranks - ec
 	item_state_slots = list(
 		slot_l_hand_str = "shemagh",
 		slot_r_hand_str = "shemagh",
-		)
+	)
+
+	sprite_sheets = list(
+		SPECIES_UNATHI = 'mods/loadout_items/icons/unathi/onmob_accessory_unathi.dmi'
+	)
 
 	var/lowered_icon_state = "shemagh_scarf"
 	var/rised_icon_state = "shemagh_mask"
@@ -531,13 +535,3 @@ ranks - ec
 		icon_state = rised_icon_state
 		overlay_state = rised_icon_state
 		to_chat(user, SPAN_NOTICE("You rised your scarf. Feeling tacticool!"))
-
-/obj/item/clothing/accessory/storage/webbing
-	icon = 'mods/loadout_items/icons/obj_accessory.dmi'
-	accessory_icons = list(slot_w_uniform_str = 'mods/loadout_items/icons/onmob_accessory.dmi')
-	icon_state = "webbing_white"
-
-/obj/item/clothing/accessory/storage/webbing_large
-	icon = 'mods/loadout_items/icons/obj_accessory.dmi'
-	accessory_icons = list(slot_w_uniform_str = 'mods/loadout_items/icons/onmob_accessory.dmi')
-	icon_state = "webbing_large_white"
