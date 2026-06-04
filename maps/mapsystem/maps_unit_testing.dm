@@ -63,7 +63,8 @@
 		/area/lost_supply_base,
 		/area/magshield,
 		/area/shuttle/escape_pod,
-		/area/virtual_reality
+		/area/virtual_reality,
+		/area/heretic
 		)
 		// /area/mine, /area/bluespaceriver, /area/lar_maria, /area/casino, /area/meatstation, /area/lost_supply_base, /area/magshield, /area/shuttle/escape_pod //[SIERRA-ADD]
 

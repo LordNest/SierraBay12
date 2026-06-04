@@ -121,3 +121,10 @@ Carving Knife, как с ТГ но не как с ТГ.
 	base_parry_chance = 30
 	applies_material_colour = FALSE
 	applies_material_name = FALSE
+
+
+/*
+
+Зона плавных переходов - телепорты в прекрасное далёко
+
+*/

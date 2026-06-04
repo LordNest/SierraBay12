@@ -144,7 +144,7 @@
 			to_chat(user, SPAN_WARNING("You are already sarcificing \the [victim] on this rune."))
 			return
 		if(length(heretics) < 1)
-			to_chat(user, SPAN_WARNING("You need three heretics around this rune to make it work."))
+			to_chat(user, SPAN_WARNING("You need to be around the alchemical circle to make it work."))
 			return fizzle(user)
 		var/turf/T = get_turf(src)
 		for(var/mob/living/M in T)
@@ -164,12 +164,28 @@
 			for(var/mob/M in heretics | get_heretics())
 				to_chat(M, SPAN_WARNING("The Geometer of Blood accepts this offering."))
 			user.mind.heretic.sacrificed += victim.mind
-			if(victim.mind == GLOB.cult.sacrifice_target)
-				for(var/datum/mind/H in GLOB.cult.current_antagonists)
-					if(H.current)
-						to_chat(H.current, SPAN_OCCULT("Your objective is now complete."))
+
+			var/sacrifice_cost = null
+			if(!victim.mind.assigned_job)
+				to_chat(user, SPAN_WARNING("Your sacrifice has no role in this cruel world!"))
+				return fizzle(user)
+			if(victim.psi)
+				sacrifice_cost = SACRIFICE_PSIONIC
+			if(!victim.mind.assigned_job.available_by_default)
+				sacrifice_cost = SACRIFICE_AWAY
+			if(victim.mind.assigned_role in SSjobs.titles_by_department(COM))
+				sacrifice_cost = SACRIFICE_COMMAND
+			else
+				sacrifice_cost = SACRIFICE_COMMON
+
+				user.mind.heretic.knowledgepoints += sacrifice_cost
+				if(victim.mind == GLOB.cult.sacrifice_target)
+					for(var/datum/mind/H in GLOB.cult.current_antagonists)
+						if(H.current)
+							to_chat(H.current, SPAN_OCCULT("Your objective is now complete."))
 			to_chat(victim, SPAN_OCCULT("The Geometer of Blood claims your body."))
-			heretic_sacrifice(victim)
+			var/heretic_path = user.mind.heretic.selected_path
+			heretic_sacrifice(victim, heretic_path)
 			sleep(40)
 		if(victim)
 			victim = null
@@ -197,4 +213,19 @@
 	if(!ritual)
 		to_chat(user, SPAN_WARNING("Не выбран ритуал"))
 
-/obj/rune/alchemy/proc/heretic_sacrifice()
+/obj/rune/alchemy/proc/heretic_sacrifice(mob/living/victim, heretic_path)
+	if(heretic_path == HERETIC_POWER_FLESH)
+		to_chat(victim, SPAN_WARNING("Дебаг плоть"))
+	if(heretic_path == HERETIC_POWER_HUNT)
+
+		for(var/obj/landmark/LM in landmarks_list)
+			if(LM.name == "heretic_hunt")
+				to_chat(victim, SPAN_WARNING("Дебаг охота"))
+				victim.forceMove(get_turf(LM))
+				message_admins("Heretic sacrifice, [victim], was sent to [heretic_path] realm!")
+				break
+			else
+				message_admins("Failed to send [victim] to realms of [heretic_path] via teleporting!")
+
+	if(heretic_path == HERETIC_POWER_RIDDLE)
+		to_chat(victim, SPAN_WARNING("Дебаг загадка"))

@@ -13,3 +13,11 @@
 #define HERETIC_TIER_TWO   2
 #define HERETIC_TIER_THREE 3
 #define HERETIC_TIER_FOUR  4
+
+#define SACRIFICE_COMMON   1
+#define SACRIFICE_AWAY     2
+#define SACRIFICE_PSIONIC  3
+#define SACRIFICE_COMMAND  3
+
+
+// sound\ambience\meat_monster_arrival.ogg
