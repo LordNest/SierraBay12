@@ -11,8 +11,8 @@ var/global/list/heretic_powers = typesof(/datum/power/heretic) - /datum/power/he
 	var/list/sacrificed = list()
 	var/list/purchased_powers = list()
 
-	var/knowledgepoints = 15
-	var/max_knowledgepoints = 15
+	var/knowledgepoints = 3
+//	var/max_knowledgepoints = 15
 
 	var/list/purchased_powers_history = list() //Used for round-end report, includes respec uses too.
 

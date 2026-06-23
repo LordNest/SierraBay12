@@ -13,16 +13,13 @@
 	set name = "Draw Circle"
 	set desc = "Prepare alchemy circle for ritual perfomance"
 
-	make_circle(/obj/rune/alchemy, cost = 0, codex_required = 0)
+	make_circle(/obj/rune/alchemy, cost = 0)
 
-/mob/proc/make_circle(rune, cost = 0, codex_required = 0)
+/mob/proc/make_circle(rune, cost = 0)
 
 	var/has_codex = !!IsHolding(/obj/item/book/codex)
 	var/has_robes = 0
 
-	if(!has_codex && codex_required)
-		to_chat(src, SPAN_WARNING("This rune is too complex to draw by memory, you need to have a codex in your hand to draw it."))
-		return
 	if(istype(get_equipped_item(slot_head), /obj/item/clothing/head/culthood) && istype(get_equipped_item(slot_wear_suit), /obj/item/clothing/suit/cultrobes) && istype(get_equipped_item(slot_shoes), /obj/item/clothing/shoes/cult))
 		has_robes = 1
 	var/turf/T = get_turf(src)
@@ -77,18 +74,29 @@
 /// Общие ритуалы
 /datum/ritual/sacrifice
 	name = "Sacrifice"
+	desc = "Place your victim on the rune and strike them with your knife in order to feed on negative energies of ritual"
 	icon = "manequin"
 	result = null
 	components = list()
 	tier = HERETIC_TIER_ONE
 
+/datum/ritual/ascend
+	name = "Ascendance master ritual"
+	icon = "manequin"
+	result = null
+	components = list()
+	tier = HERETIC_TIER_FOUR
+
 /datum/ritual/book
 	name = "Codex Cicatrix"
 	icon = "necronimicon"
 	result = /obj/item/book/codex
-	components = list(/obj/item/book)
+	components = list(
+		/obj/item/book,
+		/obj/item/pen,
+		/obj/item/deck/tarot
+	)
 	tier = HERETIC_TIER_ONE
-
 
 
 /obj/rune/alchemy

@@ -88,7 +88,7 @@
 	components = list(
 		/obj/item/device/assembly/mousetrap,
 		/obj/item/organ/external/arm,
-		/obj/item/organ/external/arm/right
+		/obj/item/organ/external/arm //right
 	)
 	tier = HERETIC_TIER_TWO
 	path = HERETIC_POWER_FLESH
