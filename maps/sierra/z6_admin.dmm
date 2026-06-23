@@ -10107,7 +10107,7 @@
 /area/centcom/living)
 "fIV" = (
 /obj/floor_decal/borderfloorwhite,
-/obj/machinery/robotics_fabricator,
+/obj/machinery/fabricator/rnd/robotics,
 /obj/structure/railing/mapped{
 	dir = 4
 	},
@@ -17525,7 +17525,7 @@
 /obj/floor_decal/borderfloorwhite{
 	dir = 1
 	},
-/obj/machinery/robotics_fabricator,
+/obj/machinery/fabricator/rnd/robotics,
 /obj/structure/railing/mapped{
 	dir = 8
 	},
