@@ -12,11 +12,11 @@
 
 // Трансмутации
 
-/datum/ritual/riddle/blade
+/datum/heretic_ritual/riddle/blade
 	name = "Vorpal Blade"
 	desc = "Трансмутирует нож, ботанический топор и колоду карт в ритуальный кинжал."
 	icon = "necronimicon"
-	result = /obj/item/material/knife/heretic/riddle
+	result = list(/obj/item/material/knife/heretic/riddle)
 	components = list(
 		/obj/item/material/knife,
 		/obj/item/material/hatchet,
@@ -24,31 +24,31 @@
 	)
 	tier = HERETIC_TIER_ONE
 
-/datum/ritual/riddle/shroom_cap
+/datum/heretic_ritual/riddle/shroom_cap
 	name = "Transmutation: Shroom Cap"
 	desc = "Трансмутирует добавить список в грибную шляпку, которая позволяет уменьшаться в размерах и пролезать через систему вентиляции."
 
 
 
 
-/datum/ritual/riddle/code_of_confusion
+/datum/heretic_ritual/riddle/code_of_confusion
 	name = "Transmutation: Code of Confusion"
 	desc = "Трансмутирует добавить список в лист, на котором написан код от аплинка. Аплинк выдаётся аналогично аплинку ниндзи без телекристаллов"
 
-/datum/ritual/riddle/keys
+/datum/heretic_ritual/riddle/keys
 
 
 /// Tier 2
 
 // Трансмутации
 
-/datum/ritual/riddle/riddle_of_blood
+/datum/heretic_ritual/riddle/riddle_of_blood
 	name = "Transmutation: Riddle of Blood"
 	desc = "Трансмутирует добавить и кровь человека в зелье, выпив которое человек станет копией того, чья кровь была использована (вылита на пол)."
 
 
 
-/datum/ritual/riddle/riddle_of_steel
+/datum/heretic_ritual/riddle/riddle_of_steel
 	name = "Transmutation: Riddle of Steel"
 	desc = "Трансмутирует большое количество металлов и крови, чтобы разгадать загадку стали и изготовить тяжёлый доспех, отлично защищающий от пуль и ближнего боя"
 
@@ -58,13 +58,13 @@
 
 // Трансмутации
 
-/datum/ritual/riddle/pocket_watch
+/datum/heretic_ritual/riddle/pocket_watch
 	name = "Transmutation: Pocket Watch"
 	desc = "Трансмутирует добавить в карманные часы, отматывающие время, позицию и состояние тела до момента, когда были использованы. При использовании дольше минуты - принудительно возвращают. Перезарядка 10 минут."
 
 
 
-/datum/ritual/riddle/riddle_of_passion
+/datum/heretic_ritual/riddle/riddle_of_passion
 	name = "Transmutation: Riddle of Passion"
 	desc = "Трансмутирует добавить цветы в эликсир, которым необходмио прокапать глаза спящего, который влюбится в первого, кого увидит после пробуждения."
 
@@ -73,6 +73,6 @@
 
 /// Tier 4
 
-/datum/ritual/riddle/ascend_riddle
+/datum/heretic_ritual/riddle/ascend_riddle
 	name = "Ascention: Path of Riddle"
 	desc = "Возвышение Алисы. Добавить описание."

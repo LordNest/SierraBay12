@@ -15,11 +15,11 @@ T4 Когда всё готово к возвышению, у нас начин�
 
 // Трансмутации
 
-/datum/ritual/hunt/blade
+/datum/heretic_ritual/hunt/blade
 	name = "Hunter's Saw"
 	desc = "Трансмутирует нож, циркулярную пилу и доску в ритуальный кинжал."
 	icon = "necronimicon"
-	result = /obj/item/material/knife/heretic/hunt
+	result = list(/obj/item/material/knife/heretic/hunt)
 	components = list(
 		/obj/item/material/knife,
 		/obj/item/circular_saw,
@@ -27,11 +27,11 @@ T4 Когда всё готово к возвышению, у нас начин�
 	)
 	tier = HERETIC_TIER_ONE
 
-/datum/ritual/hunt/plague
+/datum/heretic_ritual/hunt/plague
 	name = "Ravarkanian Plauge"
 	desc = "Трансмутируйте пакет крови и ягоды, чтобы создать зараженную раварканской чумой кровь, которая при выпивании будет лечить вас."
 	icon = "necronimicon"
-	result = /obj/item/reagent_containers/ivbag/blood/plague
+	result = list(/obj/item/reagent_containers/ivbag/blood/plague)
 	components = list(
 		/obj/item/reagent_containers/ivbag,
 		/obj/item/reagent_containers/food/snacks/grown/harebell,
@@ -41,11 +41,11 @@ T4 Когда всё готово к возвышению, у нас начин�
 	tier = HERETIC_TIER_ONE
 
 
-/datum/ritual/hunt/music_box
+/datum/heretic_ritual/hunt/music_box
 	name = "Music Box"
 	desc = "Трансмутируйте диктофон, цветок мака и 5 кусков древесины, чтобы создать шкатулку, которая при использовании оглушает. Зараженные чумой оглушаются на большее время."
 	icon = "necronimicon"
-	result = /obj/item/bikehorn/music_box
+	result = list(/obj/item/bikehorn/music_box)
 	components = list(
 		/obj/item/device/taperecorder,
 		/obj/item/reagent_containers/food/snacks/grown/poppy,
@@ -54,11 +54,11 @@ T4 Когда всё готово к возвышению, у нас начин�
 	tier = HERETIC_TIER_ONE
 
 
-/datum/ritual/hunt/lanthern
+/datum/heretic_ritual/hunt/lanthern
 	name = "Music Box"
 	desc = "Трансмутируйте лампаду, цветок мака и банный веник, чтобы создать лампу на при использовании которой можно телепортироваться в сон и обратно. Две лампы нельзя ставить в одной и той же зоне и в космосе."
 	icon = "necronimicon"
-	result = /obj/item/supply_beacon
+	result = list(/obj/item/supply_beacon)
 	components = list(
 		/obj/item/device/flashlight/lantern,
 		/obj/item/reagent_containers/food/snacks/grown/poppy,
@@ -71,17 +71,17 @@ T4 Когда всё готово к возвышению, у нас начин�
 
 // Трансмутации
 
-/datum/ritual/hunt/nanopaste
+/datum/heretic_ritual/hunt/nanopaste
 	name = "Eyes of the Hunter"
 	desc = "Трансмутирует глаза, перевязочный пакет и укрепленное стекло в фетиш, дарующий отличное ночное зрение."
 
 
 
-/datum/ritual/hunt/nanopaste
+/datum/heretic_ritual/hunt/nanopaste
 	name = "Hunterpaste"
 	desc = "Трансмутирует нанопасту, колокльчик и пакет чумной крови в инструмент с помощью которого эффекты чумы могут примениться к силиковым помощникам на охоте."
 	icon = "necronimicon"
-	result = /obj/item/stack/nanopaste/cursed
+	result = list(/obj/item/stack/nanopaste/cursed)
 	components = list(
 		/obj/item/reagent_containers/ivbag/blood/plague,
 		/obj/item/stack/nanopaste,
@@ -94,29 +94,29 @@ T4 Когда всё готово к возвышению, у нас начин�
 
 // Трансмутации
 
-/datum/ritual/hunt/huntsman_garb
+/datum/heretic_ritual/hunt/huntsman_garb
 	name = "Transmutation: Huntsman Garb"
 	desc = "Трансмутирует кожу, шлем, броню и мёртвое животное в комплект брони охотника, которая неплохо защищает от лазеров."
 	icon = "necronimicon"
-	result = /obj/item/storage/backpack/satchel/leather/hunter
+	result = list(/obj/item/storage/backpack/satchel/leather/hunter)
 	components = list(
-		/obj/item/stack/material/leather,
-		/obj/item/clothing/head/helmet,
-		/obj/item/clothing/suit/armor/vest,
-		/mob/living/simple_animal
+		/obj/item/stack/material/leather = 1,
+		/obj/item/clothing/head/helmet = 1,
+		/obj/item/clothing/suit/armor/vest = 1,
+		/mob/living/simple_animal = 1
 	)
 	tier = HERETIC_TIER_THREE
 
 
-/datum/ritual/hunt/huntsman_garb
+/datum/heretic_ritual/hunt/huntsman_garb
 	name = "Transmutation: Astral Bell"
 	desc = "Трансмутирует почки, колокольчик и пакет порченой крови в колокол, призывающий монстров, агрессивно настроенных ко всем вокруг."
 	icon = "necronimicon"
-	result = /obj/item/storage/backpack/satchel/leather/hunter
+	result = list(/obj/item/storage/backpack/satchel/leather/hunter)
 	components = list(
-		/obj/item/organ/internal/kidneys,
-		/obj/item/material/bell,
-/obj/item/reagent_containers/ivbag/blood/plague
+		/obj/item/organ/internal/kidneys = 1,
+		/obj/item/material/bell = 1,
+		/obj/item/reagent_containers/ivbag/blood/plague = 1
 	)
 	tier = HERETIC_TIER_THREE
 

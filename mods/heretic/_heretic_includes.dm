@@ -7,6 +7,7 @@
 #include "code/_defines.dm"
 
 #include "code/alchemy/alchemy.dm"
+	#include "code/alchemy/ritual-common.dm"
 	#include "code/alchemy/ritual-path_cosmos.dm"
 	#include "code/alchemy/ritual-path_flesh.dm"
 	#include "code/alchemy/ritual-path_hunt.dm"
@@ -29,6 +30,8 @@
 
 	#include "code/turfs/heretic_turfs.dm"
 
+#include "code/mobs/heretic_summons.dm"
+	#include "code/mobs/maid_in_the_mirror.dm"
 	#include "code/mobs/path_flesh.dm"
 
 #include "code/sacrificed_mobs.dm"
