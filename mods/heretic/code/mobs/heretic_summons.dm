@@ -25,7 +25,7 @@
 	harm_intent_damage = 0
 	natural_weapon = /obj/item/natural_weapon/bite
 
-	/var/list/summons_spells = list()
+	var/list/summons_spells = list()
 
 /mob/living/simple_animal/heretic_summon/hud_type = /datum/hud/heretic_summon
 

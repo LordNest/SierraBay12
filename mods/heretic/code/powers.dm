@@ -12,7 +12,6 @@ var/global/list/heretic_powers = typesof(/datum/power/heretic) - /datum/power/he
 	var/list/purchased_powers = list()
 
 	var/knowledgepoints = 3
-//	var/max_knowledgepoints = 15
 
 	var/list/purchased_powers_history = list() //Used for round-end report, includes respec uses too.
 
@@ -25,7 +24,6 @@ var/global/list/heretic_powers = typesof(/datum/power/heretic) - /datum/power/he
 
 /mob/proc/make_heretic()
 
-	var/has_heart = FALSE
 
 	if(!mind)				return
 	if(!mind.heretic)	mind.heretic = new /datum/heretic(gender)
@@ -33,8 +31,8 @@ var/global/list/heretic_powers = typesof(/datum/power/heretic) - /datum/power/he
 	verbs.Add(/datum/heretic/proc/ResearchTree)
 	add_language(LANGUAGE_CULT)
 
-	mind.heretic.known_rituals += /datum/heretic_ritual/book
-	mind.heretic.known_rituals += /datum/heretic_ritual/sacrifice
+	mind.heretic.known_rituals += /datum/heretic_knowledge/book
+	// mind.heretic.known_rituals += /datum/heretic_knowledge/sacrifice
 	message_admins("Выдаём ритуалы.")
 
 	if(!length(GLOB.heretic_powerinstances))
@@ -43,8 +41,8 @@ var/global/list/heretic_powers = typesof(/datum/power/heretic) - /datum/power/he
 
 	// Инициализация списка ритуалов
 	if(!length(GLOB.heretic_ritualinstances))
-		for(var/R in typesof(/datum/heretic_ritual) - /datum/heretic_ritual/sacrifice - /datum/heretic_ritual/book)
-			var/datum/heretic_ritual/rit = new R()
+		for(var/R in typesof(/datum/heretic_knowledge) - /datum/heretic_knowledge/book) //datum/heretic_knowledge/sacrifice
+			var/datum/heretic_knowledge/rit = new R()
 			if(rit.tier)	// Только ритуалы с tier (пути и побочные)
 				GLOB.heretic_ritualinstances += rit
 
@@ -76,15 +74,6 @@ var/global/list/heretic_powers = typesof(/datum/power/heretic) - /datum/power/he
 	for(var/obj/item/organ/internal/I in parent.internal_organs)
 		if(istype(I,/obj/item/organ/internal/heart))
 			parent.internal_organs.Remove(I)
-
-	for(var/obj/item/organ/internal/heart/livingheart/L in H.internal_organs)
-		has_heart++
-	if(has_heart == 0 && istype(src,/mob/living/carbon/human))
-		var/obj/item/organ/external/chest = H.get_organ(BP_CHEST)
-		var/obj/item/organ/internal/heart/livingheart/heart = new /obj/item/organ/internal/heart/livingheart
-		heart.forceMove(src)
-		heart.replaced(src, chest)
-		heart = null
 
 	return TRUE
 
@@ -149,8 +138,8 @@ var/global/list/heretic_powers = typesof(/datum/power/heretic) - /datum/power/he
 			GLOB.heretic_powerinstances += new P()
 
 	if(!length(GLOB.heretic_ritualinstances))
-		for(var/R in typesof(/datum/heretic_ritual) - /datum/heretic_ritual/sacrifice - /datum/heretic_ritual/book)
-			var/datum/heretic_ritual/rit = new R()
+		for(var/R in typesof(/datum/heretic_knowledge) - /datum/heretic_knowledge/book)
+			var/datum/heretic_knowledge/rit = new R()
 			if(rit.tier)	// Только ритуалы с tier (пути и побочные)
 				GLOB.heretic_ritualinstances += rit
 
@@ -518,7 +507,7 @@ var/global/list/heretic_powers = typesof(/datum/power/heretic) - /datum/power/he
 		i++
 
 	// Добавляем ритуалы в таблицу
-	for(var/datum/heretic_ritual/R in GLOB.heretic_ritualinstances)
+	for(var/datum/heretic_knowledge/R in GLOB.heretic_ritualinstances)
 		var/ownsthis = 0
 
 		if(R in src.known_rituals)
@@ -634,7 +623,7 @@ var/global/list/heretic_powers = typesof(/datum/power/heretic) - /datum/power/he
 
 	return FALSE
 
-/datum/heretic/proc/canAccessRitual(datum/heretic_ritual/R, list/available_paths)
+/datum/heretic/proc/canAccessRitual(datum/heretic_knowledge/R, list/available_paths)
 	// Проверяем, принадлежит ли ритуал к одному из доступных путей
 	// Если у ритуала есть переменная path, используем её
 	if(R.path)
@@ -643,7 +632,7 @@ var/global/list/heretic_powers = typesof(/datum/power/heretic) - /datum/power/he
 		return FALSE
 
 	// Если path не задан, определяем по типу ритуала
-	var/ritual_type = lowertext(replacetext(R.type, "/datum/heretic_ritual/", ""))
+	var/ritual_type = lowertext(replacetext(R.type, "/datum/heretic_knowledge/", ""))
 	if(findtext(ritual_type, "flesh") && (HERETIC_POWER_FLESH in available_paths))
 		return TRUE
 	if(findtext(ritual_type, "hunt") && (HERETIC_POWER_HUNT in available_paths))
@@ -666,7 +655,7 @@ var/global/list/heretic_powers = typesof(/datum/power/heretic) - /datum/power/he
 
 	return FALSE
 
-/datum/heretic/proc/checkTierRequirementsRitual(datum/heretic_ritual/R)
+/datum/heretic/proc/checkTierRequirementsRitual(datum/heretic_knowledge/R)
 	// Проверяем, выполнены ли требования к tier для покупки ритуала
 	// Для tier 1 нет требований
 	if(R.tier == HERETIC_TIER_ONE)
@@ -675,7 +664,7 @@ var/global/list/heretic_powers = typesof(/datum/power/heretic) - /datum/power/he
 	// Определяем путь ритуала
 	var/ritual_path = R.path
 	if(!ritual_path)
-		var/ritual_type = lowertext(replacetext(R.type, "/datum/heretic_ritual/", ""))
+		var/ritual_type = lowertext(replacetext(R.type, "/datum/heretic_knowledge/", ""))
 		if(findtext(ritual_type, "flesh"))
 			ritual_path = HERETIC_POWER_FLESH
 		else if(findtext(ritual_type, "hunt"))
@@ -687,10 +676,10 @@ var/global/list/heretic_powers = typesof(/datum/power/heretic) - /datum/power/he
 
 	// Для tier 2 нужен хотя бы один купленный ритуал из tier 1 того же пути
 	if(R.tier == HERETIC_TIER_TWO)
-		for(var/datum/heretic_ritual/owned in known_rituals)
+		for(var/datum/heretic_knowledge/owned in known_rituals)
 			var/owned_path = owned.path
 			if(!owned_path)
-				var/owned_type = lowertext(replacetext(owned.type, "/datum/heretic_ritual/", ""))
+				var/owned_type = lowertext(replacetext(owned.type, "/datum/heretic_knowledge/", ""))
 				if(findtext(owned_type, "flesh"))
 					owned_path = HERETIC_POWER_FLESH
 				else if(findtext(owned_type, "hunt"))
@@ -705,10 +694,10 @@ var/global/list/heretic_powers = typesof(/datum/power/heretic) - /datum/power/he
 
 	// Для tier 3 нужен хотя бы один купленный ритуал из tier 2 того же пути
 	if(R.tier == HERETIC_TIER_THREE)
-		for(var/datum/heretic_ritual/owned in known_rituals)
+		for(var/datum/heretic_knowledge/owned in known_rituals)
 			var/owned_path = owned.path
 			if(!owned_path)
-				var/owned_type = lowertext(replacetext(owned.type, "/datum/heretic_ritual/", ""))
+				var/owned_type = lowertext(replacetext(owned.type, "/datum/heretic_knowledge/", ""))
 				if(findtext(owned_type, "flesh"))
 					owned_path = HERETIC_POWER_FLESH
 				else if(findtext(owned_type, "hunt"))
@@ -723,10 +712,10 @@ var/global/list/heretic_powers = typesof(/datum/power/heretic) - /datum/power/he
 
 	// Для tier 4 нужен хотя бы один купленный ритуал из tier 3 того же пути
 	if(R.tier == HERETIC_TIER_FOUR)
-		for(var/datum/heretic_ritual/owned in known_rituals)
+		for(var/datum/heretic_knowledge/owned in known_rituals)
 			var/owned_path = owned.path
 			if(!owned_path)
-				var/owned_type = lowertext(replacetext(owned.type, "/datum/heretic_ritual/", ""))
+				var/owned_type = lowertext(replacetext(owned.type, "/datum/heretic_knowledge/", ""))
 				if(findtext(owned_type, "flesh"))
 					owned_path = HERETIC_POWER_FLESH
 				else if(findtext(owned_type, "hunt"))
@@ -741,7 +730,7 @@ var/global/list/heretic_powers = typesof(/datum/power/heretic) - /datum/power/he
 
 	return FALSE
 
-/datum/heretic/proc/getRitualCost(datum/heretic_ritual/R)
+/datum/heretic/proc/getRitualCost(datum/heretic_knowledge/R)
 	// Возвращает стоимость ритуала на основе tier
 	if(R.tier == HERETIC_TIER_ONE)
 		return 5
@@ -842,10 +831,10 @@ var/global/list/heretic_powers = typesof(/datum/power/heretic) - /datum/power/he
 	if(!M || !M.heretic)
 		return
 
-	var/datum/heretic_ritual/TheRitual
+	var/datum/heretic_knowledge/TheRitual
 
 	// Ищем ритуал по имени
-	for (var/datum/heretic_ritual/R in GLOB.heretic_ritualinstances)
+	for (var/datum/heretic_knowledge/R in GLOB.heretic_ritualinstances)
 		if(R.name == ritual_name)
 			TheRitual = R
 			break

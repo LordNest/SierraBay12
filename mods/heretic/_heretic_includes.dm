@@ -3,16 +3,19 @@
 
 #include "_heretic.dm"
 
-#include "code/antagonist.dm"
 #include "code/_defines.dm"
+#include "code/_heretic_paths.dm"
+#include "code/antagonist.dm"
+#include "code/heretic_knowledge.dm"
 
 #include "code/alchemy/alchemy.dm"
-	#include "code/alchemy/ritual-common.dm"
 	#include "code/alchemy/ritual-path_cosmos.dm"
 	#include "code/alchemy/ritual-path_flesh.dm"
 	#include "code/alchemy/ritual-path_hunt.dm"
 	#include "code/alchemy/ritual-path_riddle.dm"
 	#include "code/alchemy/ritual-sidepaths.dm"
+	#include "code/alchemy/sacrifice.dm"
+	#include "code/alchemy/starting_lore.dm"
 
 	#include "code/items/general.dm"
 	#include "code/items/livingheart.dm"

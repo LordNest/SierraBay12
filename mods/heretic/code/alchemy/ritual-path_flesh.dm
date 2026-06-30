@@ -6,16 +6,18 @@
 
 /// Sacrifice
 
+// Жертвы получают органы, которые заставляют их хотеть есть мясо и они получают урон от битья еретика. Чем дальше в лес, тем больше изменений
+
 /// Tier 1
 
 // Трансмутации
 
-/datum/heretic_ritual/flesh/blade
+/datum/heretic_knowledge/flesh/blade
 	name = "Maniac's Knife"
 	desc = "Трансмутирует нож, скальпель и пакет крови в ритуальный кинжал."
 	icon = "necronimicon"
-	result = list(/obj/item/material/knife/heretic/flesh)
-	components = list(
+	result_atoms = list(/obj/item/material/knife/heretic/flesh)
+	required_atoms = list(
 		/obj/item/material/knife,
 		/obj/item/scalpel/basic,
 		/obj/item/reagent_containers/ivbag
@@ -23,12 +25,12 @@
 	tier = HERETIC_TIER_ONE
 	path = HERETIC_POWER_FLESH
 
-/datum/heretic_ritual/flesh/gloves
+/datum/heretic_knowledge/flesh/gloves
 	name = "Stitcher Gloves"
 	desc = "Трансмутирует латексные перчатки, сырое мясо и очиститель в не оставляющие отпечатков, но крайне подозрительные перчатки."
 	icon = "necronimicon"
-	result = list(/obj/item/clothing/gloves/forensic/stitcher)
-	components = list(
+	result_atoms = list(/obj/item/clothing/gloves/forensic/stitcher)
+	required_atoms = list(
 		/obj/item/clothing/gloves/latex,
 		/obj/item/reagent_containers/food/snacks/meat,
 		/obj/item/reagent_containers/spray/cleaner
@@ -37,12 +39,12 @@
 	path = HERETIC_POWER_FLESH
 
 
-/datum/heretic_ritual/flesh/fungus
+/datum/heretic_knowledge/flesh/fungus
 	name = "Fungoid Flesh"
 	desc = "Трансмутирует грибы и кровь в грибное сердце, что моментально разрастётся, перекрывая проход для всех, кроме еретика."
 	icon = "necronimicon"
-	result = list(/obj/item/grenade/spawnergrenade/blob)
-	components = list(
+	result_atoms = list(/obj/item/grenade/spawnergrenade/blob)
+	required_atoms = list(
 		/obj/item/reagent_containers/food/snacks/grown/mushroom,
 		/obj/decal/cleanable/blood,
 		/obj/item/reagent_containers/spray/cleaner
@@ -51,12 +53,12 @@
 	path = HERETIC_POWER_FLESH
 
 
-/datum/heretic_ritual/flesh/coat
+/datum/heretic_knowledge/flesh/coat
 	name = "Great Meatcoat"
 	desc = "Трансмутирует плащ и мясо в предмет одежды, быстрее восстанавливающий выносливость и голод, пока надет."
 	icon = "necronimicon"
-	result = list(/obj/item/clothing/suit/greatcoat/meat)
-	components = list(
+	result_atoms = list(/obj/item/clothing/suit/greatcoat/meat)
+	required_atoms = list(
 		/obj/item/clothing/accessory/cloak,
 		/obj/item/reagent_containers/food/snacks/meat
 	)
@@ -67,12 +69,12 @@
 
 // Трансмутации
 
-/datum/heretic_ritual/flesh/eyes
+/datum/heretic_knowledge/flesh/eyes
 	name = "Eyes of Harbringer"
 	desc = "Трансмутирует глаза, противоожоговый пакет и укрепленное стекло в фетиш, дарующий термальное зрение."
 	icon = "necronimicon"
-	result = list(/obj/item/clothing/glasses/thermal)
-	components = list(
+	result_atoms = list(/obj/item/clothing/glasses/thermal)
+	required_atoms = list(
 		/obj/item/organ/internal/eyes,
 		/obj/item/storage/med_pouch/burn
 	)
@@ -80,12 +82,12 @@
 	path = HERETIC_POWER_FLESH
 
 
-/datum/heretic_ritual/flesh/linbs
+/datum/heretic_knowledge/flesh/linbs
 	name = "Grasping limbs"
 	desc = "Трансмутирует две руки и мышеловку в капкан, игнорирующий еретика, но надолго останавливающий остальных."
 	icon = "necronimicon"
-	result = list(/obj/item/beartrap/arms)
-	components = list(
+	result_atoms = list(/obj/item/beartrap/arms)
+	required_atoms = list(
 		/obj/item/device/assembly/mousetrap,
 		/obj/item/organ/external/arm,
 		/obj/item/organ/external/arm //right
@@ -97,28 +99,30 @@
 
 // Трансмутации
 
-/datum/heretic_ritual/flesh/metal_into_flesh
+/datum/heretic_knowledge/flesh/metal_into_flesh
 	name = "Metal into Flesh"
 	desc = "Трансмутирует синтетика, ППТ, ИПС или Адхеранта в слугу, который способен быстро захватывать жертв."
 	icon = "necronimicon"
-	result = list(/mob/living/simple_animal/flesh_construct)
-	components = list()
+	result_atoms = list(/mob/living/simple_animal/flesh_construct)
+	required_atoms = list()
 	tier = HERETIC_TIER_THREE
 	path = HERETIC_POWER_FLESH
 
 
-/datum/heretic_ritual/flesh/node
+/datum/heretic_knowledge/flesh/node
 	name = "Node of Flesh"
 	desc = "Трансмутирует ДОБАВИТЬ в раскладываемый маяк, который лечит еретика и его созданий."
 	icon = "necronimicon"
-	result = list(/obj/item/supply_beacon)
-	components = list()
+	result_atoms = list(/obj/item/supply_beacon)
+	required_atoms = list()
 	tier = HERETIC_TIER_THREE
 	path = HERETIC_POWER_FLESH
 
 
 
 /// Tier 4
+
+// Возвышение - еретик превращается в мясного ИИ
 
 /datum/power/heretic/ascend_flesh
 	name = "Ascention: Path of Flesh"

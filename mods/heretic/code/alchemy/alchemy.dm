@@ -114,11 +114,11 @@
 
 	var/radial = list()
 	for (var/alchemy in rituals)
-		var/datum/heretic_ritual/ritual = alchemy
+		var/datum/heretic_knowledge/ritual = alchemy
 		radial[ritual] = mutable_appearance('mods/heretic/icons/heretic_misc.dmi', ritual.icon)
 	var/choice = show_radial_menu(user, user, radial, require_near = TRUE, radius = 42, tooltips = TRUE, check_locs = list(src))
 	var/chosen_ritual = new choice
-	if(!chosen_ritual || !istype(chosen_ritual, /datum/heretic_ritual))
+	if(!chosen_ritual || !istype(chosen_ritual, /datum/heretic_knowledge))
 		is_in_use = FALSE
 		return
 	playsound(src, 'sound/effects/pop.ogg', 50, FALSE)
@@ -126,7 +126,7 @@
 	do_ritual(user, chosen_ritual)
 	is_in_use = FALSE
 
-/obj/rune/alchemy/proc/do_ritual(mob/living/user, datum/heretic_ritual/ritual)
+/obj/rune/alchemy/proc/do_ritual(mob/living/user, datum/heretic_knowledge/ritual)
 
 	// Collect all nearby valid atoms over the rune for processing in rituals.
 	var/list/atom/movable/atoms_in_range = list()
@@ -142,7 +142,7 @@
 
 		atoms_in_range += close_atom
 
-	var/list/requirements_list = ritual.components.Copy()
+	var/list/requirements_list = ritual.required_atoms.Copy()
 	// A list of all atoms we've selected to use in this recipe.
 	var/list/selected_atoms = list()
 
@@ -202,7 +202,7 @@
 
 	if(length(what_are_we_missing))
 		// Let them know it screwed up
-		to_chat(user, SPAN_WARNING("ritual failed, missing components!"))
+		to_chat(user, SPAN_WARNING("ritual failed, missing required_atoms!"))
 		// Then let them know what they're missing
 		to_chat(user, SPAN_OCCULT("You are missing [english_list(what_are_we_missing)] in order to complete the ritual \"[ritual.name]\"."))
 		return FALSE
@@ -222,7 +222,7 @@
 					var/target_amount = our_stack.amount + amount_to_give
 					nearby_stack.transfer_to(our_stack, target_amount)
 
-	// If we made it here, the ritual had all necessary components, and we can try to cast it.
+	// If we made it here, the ritual had all necessary required_atoms, and we can try to cast it.
 	// This doesn't necessarily mean the ritual will succeed, but it's valid!
 	// Do the animations and associated feedback.
 	flick("[icon_state]_active", src)
@@ -236,7 +236,7 @@
 	for(var/atom/to_disappear as anything in selected_atoms)
 		to_disappear.set_invisibility(INVISIBILITY_ABSTRACT)
 
-	// All the components have been invisibled, time to actually do the ritual. Call on_finished_recipe
+	// All the required_atoms have been invisibled, time to actually do the ritual. Call on_finished_recipe
 	// (Note: on_finished_recipe may sleep in the case of some rituals like summons, which expect ghost candidates.)
 	// - If the ritual was success (Returned TRUE), proceede to clean up the atoms involved in the ritual. The result has already been spawned by this point.
 	// - If the ritual failed for some reason (Returned FALSE), likely due to no ghosts taking a role or an error, we shouldn't clean up anything, and reset.

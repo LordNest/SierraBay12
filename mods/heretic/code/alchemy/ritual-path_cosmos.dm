@@ -9,7 +9,7 @@
 
 // Трансмутации
 
-/datum/heretic_ritual
+/datum/heretic_knowledge
 
 // Заклинания
 
