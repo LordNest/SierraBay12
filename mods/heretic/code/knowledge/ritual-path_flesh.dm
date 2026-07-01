@@ -12,19 +12,6 @@
 
 // Трансмутации
 
-/datum/heretic_knowledge/flesh/blade
-	name = "Maniac's Knife"
-	desc = "Трансмутирует нож, скальпель и пакет крови в ритуальный кинжал."
-	icon = "necronimicon"
-	result_atoms = list(/obj/item/material/knife/heretic/flesh)
-	required_atoms = list(
-		/obj/item/material/knife,
-		/obj/item/scalpel/basic,
-		/obj/item/reagent_containers/ivbag
-	)
-	tier = HERETIC_TIER_ONE
-	path = HERETIC_POWER_FLESH
-
 /datum/heretic_knowledge/flesh/gloves
 	name = "Stitcher Gloves"
 	desc = "Трансмутирует латексные перчатки, сырое мясо и очиститель в не оставляющие отпечатков, но крайне подозрительные перчатки."

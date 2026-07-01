@@ -52,9 +52,6 @@
 	// First we have to check if the heretic has a Living Heart.
 	// You may wonder why we don't straight up prevent them from invoking the ritual if they don't have one -
 	// Hunt and sacrifice should always be invokable for clarity's sake, even if it'll fail immediately.
-	if(heretic_datum.has_living_heart() != HERETIC_HAS_LIVING_HEART)
-		to_chat(user, SPAN_WARNING( "ritual failed, no living heart!"))
-		return FALSE
 
 	// We've got no targets set, let's try to set some.
 	// If we recently failed to acquire targets, we will be unable to acquire any.

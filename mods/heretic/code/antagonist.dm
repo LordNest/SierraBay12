@@ -25,7 +25,7 @@ P.S. Большинство комментариев будет убрано в 
 GLOBAL_TYPED_NEW(heretics, /datum/antagonist/heretic)
 
 
-/// Копипаст культа, проверка на то, кто мы такие
+/// Same as iscultist() check if we're heretic
 /proc/isheretic(mob/subject)
 	var/datum/mind/mind = subject
 	if (ismob(mind))
@@ -100,8 +100,6 @@ GLOBAL_TYPED_NEW(heretics, /datum/antagonist/heretic)
 	var/passive_gain_timer = 40 MINUTES
 	/// Tracks how many knowledge points the heretic has aqcuired. Once you get enough points you lose the ability to blade break
 	var/knowledge_gained = 0
-	/// The organ slot we place our Living Heart in.
-	var/living_heart_organ_slot = BP_HEART
 	/// A list of TOTAL how many sacrifices completed. (Includes high value sacrifices)
 	var/total_sacrifices = 0
 	/// A list of TOTAL how many high value sacrifices completed. (Heads of staff)
@@ -168,21 +166,12 @@ GLOBAL_TYPED_NEW(heretics, /datum/antagonist/heretic)
 	if(!..())
 		return 0
 
-	var/obj/item/book/codex/T = new(get_turf(player))
-	var/list/slots = list (
-		"backpack" = slot_in_backpack,
-		"left pocket" = slot_l_store,
-		"right pocket" = slot_r_store,
-		"left hand" = slot_l_hand,
-		"right hand" = slot_r_hand,
-	)
-	for(var/slot in slots)
-		player.equip_to_slot(T, slot)
-		if(T.loc == player)
-			break
-	var/obj/item/storage/S = locate() in player.contents
-	if(istype(S))
-		T.forceMove(S)
+/datum/antagonist/heretic/add_antagonist(datum/mind/player)
+	. = ..()
+
+	var/datum/action/antag_info/A = new(src)
+	A.Grant(player.current)
+
 
 /datum/antagonist/heretic/remove_antagonist(datum/mind/player, show_message, implanted)
 	if(!..())
@@ -275,6 +264,136 @@ GLOBAL_TYPED_NEW(heretics, /datum/antagonist/heretic)
 		knowledge_data["desc"] = initial(knowledge.desc)
 	return knowledge_data
 
+/datum/antagonist/heretic/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null)
+	. = ..()
+	var/list/data = list()
+
+	ui = SSnano.try_update_ui(user, src, ui_key, ui, data)
+	if (!ui)
+		ui = new(user, src, ui_key, "mods-heretic.tmpl", "Necronimicon", 1200, 700)
+
+		ui.set_initial_data(data)
+		ui.open()
+		ui.set_auto_update(1)
+
+/datum/antagonist/heretic/ui_data(mob/user)
+	var/list/data = list("charges" = knowledge_points)
+
+	data["objectives"] = user.mind.objectives
+
+	data["paths"] = path_info
+	data["passive_level"] = passive_level
+
+	data["total_sacrifices"] = total_sacrifices
+	data["ascended"] = ascended
+	data["points_to_aura"] = points_to_aura
+
+	var/list/tree_data = list()
+	var/list/shop_knowledge = list()
+
+	// This should be cached in some way, but the fact that final knowledge
+	// has to update its disabled state based on whether all objectives are complete,
+	// makes this very difficult. I'll figure it out one day maybe
+	for(var/knowledge_path in researched_knowledge)
+		var/list/knowledge_info = researched_knowledge[knowledge_path]
+		/// draft knowledges are only shown post-research
+		var/list/knowledge_data = get_knowledge_data(knowledge_path, researched_knowledge, TRUE, knowledge_info[HKT_CATEGORY])
+		var/category = knowledge_info[HKT_CATEGORY]
+
+		var/depth = knowledge_info[HKT_DEPTH]
+		while(depth > length(tree_data))
+			tree_data += list(list("nodes" = list()))
+
+		if(category == HERETIC_KNOWLEDGE_SHOP || category == HERETIC_KNOWLEDGE_DRAFT)
+			shop_knowledge += list(knowledge_data)
+			continue
+
+		tree_data[depth]["nodes"] += list(knowledge_data)
+
+	// TODO: sanity for purchasing categories as bypasses are likely rn
+	var/list/heretic_tree = heretic_shops[HERETIC_KNOWLEDGE_TREE]
+	var/list/researchable_knowledges = get_researchable_knowledge()
+	for(var/datum/heretic_knowledge/knowledge_path as anything in heretic_tree)
+		if(ispath(knowledge_path, /datum/heretic_knowledge/limited_amount/starting))
+			continue
+		var/list/knowledge_info = heretic_tree[knowledge_path]
+		if(!(knowledge_info[HKT_ID] in researchable_knowledges))
+			continue
+		var/list/knowledge_data = get_knowledge_data(knowledge_path, heretic_tree, FALSE)
+
+		// Final knowledge can't be learned until all objectives are complete.
+		if(ispath(knowledge_path, /datum/heretic_knowledge/ultimate))
+			var/ascension_check = can_ascend()
+			if(ascension_check != HERETIC_CAN_ASCEND)
+				knowledge_data["disabled"] = TRUE
+				knowledge_data["tooltip"] = ascension_check
+
+
+		var/depth = knowledge_data[HKT_DEPTH]
+
+		while(depth > length(tree_data))
+			tree_data += list(list("nodes" = list()))
+
+		tree_data[depth]["nodes"] += list(knowledge_data)
+
+
+	if(!heretic_path)
+		data["knowledge_tiers"] = tree_data
+		return data
+
+	var/list/heretic_drafts = heretic_shops[HERETIC_KNOWLEDGE_DRAFT]
+	for(var/datum/heretic_knowledge/knowledge_path as anything in heretic_drafts)
+		var/list/knowledge_info = heretic_drafts[knowledge_path]
+		if(!(knowledge_info[HKT_ID] in researchable_knowledges))
+			continue
+		var/list/knowledge_data = get_knowledge_data(knowledge_path, heretic_drafts, FALSE, HERETIC_KNOWLEDGE_DRAFT)
+
+		var/depth = knowledge_data[HKT_DEPTH]
+		while(depth > length(tree_data))
+			tree_data += list(list("nodes" = list()))
+
+		tree_data[depth]["nodes"] += list(knowledge_data)
+
+	data["knowledge_tiers"] = tree_data
+	var/list/shop = heretic_shops[HERETIC_KNOWLEDGE_SHOP]
+	for(var/knowledge_path in shop)
+		var/list/knowledge_info = shop[knowledge_path]
+		if(!(knowledge_info[HKT_ID] in researchable_knowledges))
+			continue
+
+		var/list/knowledge_data = get_knowledge_data(knowledge_path, shop, FALSE, HERETIC_KNOWLEDGE_SHOP)
+		shop_knowledge += list(knowledge_data)
+
+	data["knowledge_shop"] = shop_knowledge
+
+/datum/antagonist/heretic/Topic(href, href_list)
+	if(..())
+		return 1
+
+	if(href_list["research"])
+		var/datum/heretic_knowledge/researched_path = href_list["path"]
+		if(!ispath(researched_path, /datum/heretic_knowledge))
+			CRASH("Heretic attempted to learn non-heretic_knowledge path! (Got: [researched_path || "invalid path"])")
+		var/shop_category = href_list["category"]
+		if(!researchable_knowledge(researched_path, shop_category))
+			message_admins("Heretic [key_name(owner)] potentially attempted to href exploit to learn knowledge they can't learn!")
+			CRASH("Heretic attempted to learn knowledge they can't learn! (Got: [researched_path])")
+		if(ispath(researched_path, /datum/heretic_knowledge/ultimate) & can_ascend() != HERETIC_CAN_ASCEND)
+			message_admins("Heretic [key_name(owner)] potentially attempted to href exploit to learn ascension knowledge without completing objectives!")
+			CRASH("Heretic attempted to learn a final knowledge despite not being able to ascend!")
+
+
+		if(!purchase_knowledge(researched_path, shop_category))
+			return FALSE
+		log_and_message_admins("[key_name(owner)] gained knowledge: [initial(researched_path.name)]")
+		return TRUE
+
+/datum/antagonist/heretic/proc/researchable_knowledge(datum/heretic_knowledge/knowledge_path, shop_category = HERETIC_KNOWLEDGE_TREE)
+	var/list/knowledge_info = heretic_shops[shop_category][knowledge_path]
+	if(knowledge_info[HKT_ID] in get_researchable_knowledge())
+		return TRUE
+	return FALSE
+
 /**
  * Create our objectives for our heretic.
  */
@@ -357,30 +476,170 @@ GLOBAL_TYPED_NEW(heretics, /datum/antagonist/heretic)
 	// if(update)
 	// REDO	update_data_for_all_viewers()
 
+/**
+ * Admin proc for easily adding / removing knowledge points.
+ */
+/datum/antagonist/heretic/proc/admin_change_points(mob/admin)
+	if(!admin.client?.holder)
+		to_chat(admin, SPAN_WARNING("You shouldn't be using this!"))
+		return
 
+	var/change_num = input(admin, "Add or remove knowledge points", "Points") as null | num
+	if(!change_num || QDELETED(src))
+		return
 
-
+	adjust_knowledge_points(change_num)
 
 /**
- * Helper to determine if a Heretic
- * - Has a Living Heart
- * - Has a an organ in the correct slot that isn't a living heart
- * - Is missing the organ they need in the slot to make a living heart
- *
- * Returns HERETIC_NO_HEART_ORGAN if they have no heart (organ) at all,
- * Returns HERETIC_NO_LIVING_HEART if they have a heart (organ) but it's not a living one,
- * and returns HERETIC_HAS_LIVING_HEART if they have a living heart
+ * Admin proc for giving a heretic a focus.
  */
-/datum/antagonist/heretic/proc/has_living_heart()
-	var/mob/living/carbon/human/H = owner.current
-	var/obj/item/organ/internal/our_living_heart = H.get_organ(BP_HEART)
-	if(!our_living_heart)
-		return HERETIC_NO_HEART_ORGAN
+/datum/antagonist/heretic/proc/admin_give_focus(mob/admin)
+	if(!admin.client?.holder)
+		to_chat(admin, SPAN_WARNING("You shouldn't be using this!"))
+		return
 
-//	if(!HAS_TRAIT(our_living_heart, TRAIT_LIVING_HEART))
-//		return HERETIC_NO_LIVING_HEART
+	var/mob/living/pawn = owner.current
+	pawn.equip_to_slot_if_possible(new /obj/item/clothing/accessory/badge/heretic_focus(get_turf(pawn)), SLOT_MASK, TRUE, TRUE)
+	to_chat(pawn, SPAN_OCCULT("The Mansus has manifested you a focus."))
 
-	return HERETIC_HAS_LIVING_HEART
+/datum/antagonist/heretic/get_additional_check_antag_output()
+	var/list/string_of_knowledge = list()
+
+	for(var/knowledge_path in researched_knowledge)
+		var/datum/heretic_knowledge/knowledge = researched_knowledge[knowledge_path][HKT_INSTANCE]
+		if(istype(knowledge, /datum/heretic_knowledge/ultimate))
+			string_of_knowledge += SPAN_BOLD(knowledge.name)
+		else
+			string_of_knowledge += knowledge.name
+
+	return "<br><b>Research Done:</b><br>[english_list(string_of_knowledge, and_text = ", and ")]<br>"
+
+/*
+/datum/antagonist/heretic/antag_panel_objectives()
+	. = ..()
+
+	. += "<br>"
+	. += "<i><b>Current Targets:</b></i><br>"
+	if(LAZYLEN(sac_targets))
+		for(var/mob/living/carbon/human/target as anything in sac_targets)
+			. += " - <b>[target.real_name]</b>, the [target.mind?.assigned_job?.title || "human"].<br>"
+
+	else
+		. += "<i>None!</i><br>"
+	. += "<br>"
+*/
+
+/datum/antagonist/heretic/proc/purchase_knowledge(datum/heretic_knowledge/knowledge_type, category = HERETIC_KNOWLEDGE_TREE, update = TRUE)
+	var/list/shop_list = heretic_shops[category]
+	if(!shop_list)
+		stack_trace("Heretic attempted to learn knowledge from a non-existent category! (Got: [category])")
+		return FALSE
+
+	var/list/knowledge_data = shop_list[knowledge_type]
+	if(!knowledge_data)
+		stack_trace("[type] purchase_knowledge was given a path that doesn't exist in the heretic [category] knowledge list! (Got: [knowledge_type])")
+		return FALSE
+
+	var/cost = knowledge_data[HKT_COST]
+	if(cost > knowledge_points)
+		return FALSE
+	if(!gain_knowledge(knowledge_type, category, update))
+		return FALSE
+	adjust_knowledge_points(-cost, FALSE)
+	return TRUE
+/**
+ * Learns the passed [typepath] of knowledge, creating a knowledge datum
+ * and adding it to our researched knowledge list.
+ *
+ * Returns TRUE if the knowledge was added successfully. FALSE otherwise.
+ */
+/datum/antagonist/heretic/proc/gain_knowledge(datum/heretic_knowledge/knowledge_type, category = HERETIC_KNOWLEDGE_TREE) //update = TRUE
+	var/list/knowledge_list = heretic_shops[category]
+	if(!ispath(knowledge_type))
+		stack_trace("[type] gain_knowledge was given an invalid path! (Got: [knowledge_type])")
+		return FALSE
+	var/list/knowledge_data = knowledge_list[knowledge_type]
+	if(!islist(knowledge_data))
+		knowledge_data = make_knowledge_entry(knowledge_type, category)
+		heretic_shops[category][knowledge_type] = knowledge_data
+	if(get_knowledge(knowledge_type))
+		return FALSE
+	var/datum/heretic_knowledge/initialized_knowledge = new knowledge_type()
+	if(!initialized_knowledge.pre_research(owner.current, src))
+		return FALSE
+	researched_knowledge[knowledge_type] = knowledge_data.Copy()
+	researched_knowledge[knowledge_type][HKT_INSTANCE] = initialized_knowledge
+	researched_knowledge[knowledge_type][HKT_CATEGORY] = category
+
+	// case for letting you modify depth post-purchase
+	var/purchased_depth = knowledge_data[HKT_PURCHASED_DEPTH]
+	if(purchased_depth != 0 && isnum(purchased_depth))
+		researched_knowledge[knowledge_type][HKT_DEPTH] = purchased_depth
+
+	knowledge_list -= knowledge_type
+
+	initialized_knowledge.on_research(owner.current, src)
+	// if(update)
+	//	update_data_for_all_viewers()
+
+	return TRUE
+
+/**
+ * Get a list of all knowledge IDs that we can currently research.
+ */
+/datum/antagonist/heretic/proc/get_researchable_knowledge()
+	var/list/researchable_knowledge = list()
+	var/list/banned_knowledge = list()
+	for(var/knowledge_type in researched_knowledge)
+		var/list/knowledge_info = researched_knowledge[knowledge_type]
+		researchable_knowledge |= knowledge_info[HKT_NEXT]
+		banned_knowledge |= knowledge_info[HKT_BAN]
+		banned_knowledge |= knowledge_type
+	researchable_knowledge -= banned_knowledge
+	return researchable_knowledge
+
+/**
+ * Check if the wanted type-path is in the list of research knowledge.
+ */
+/datum/antagonist/heretic/proc/get_knowledge(wanted)
+	var/list/knowledge_data = researched_knowledge[wanted]
+	if(knowledge_data)
+		return knowledge_data[HKT_INSTANCE]
+	return null
+
+/**
+ * Get a list of all rituals this heretic can invoke on a rune.
+ * Iterates over all of our knowledge and, if we can invoke it, adds it to our list.
+ *
+ * Returns an associated list of [knowledge name] to [knowledge datum] sorted by knowledge priority.
+ */
+/datum/antagonist/heretic/proc/get_rituals()
+	var/list/rituals = list()
+
+	for(var/knowledge_path in researched_knowledge)
+		var/datum/heretic_knowledge/knowledge = researched_knowledge[knowledge_path][HKT_INSTANCE]
+		if(!knowledge.can_be_invoked(src))
+			continue
+		rituals[knowledge.name] = knowledge
+
+	return sortTim(rituals, GLOBAL_PROC_REF(cmp_heretic_knowledge), associative = TRUE)
+
+/**
+ * Checks to see if our heretic can ccurrently ascend.
+ *
+ * Returns FALSE if not all of our objectives are complete, or TRUE otherwise.
+ */
+/datum/antagonist/heretic/proc/can_ascend()
+	if(feast_of_owls)
+		return "The owls have taken your right of ascension (denied ascension)." // We sold our ambition for immediate power :/
+	if(!length(all_sac_targets) >= 5)
+		return "Must sacrifice more crewmates before ascension."
+	var/config_time = 30 MINUTES
+
+	var/time_passed = world.time
+	if(config_time >= time_passed)
+		return "Too early, must wait [time2text(config_time - time_passed)] before ascending."
+	return HERETIC_CAN_ASCEND
 
 /datum/objective/pick_path
 	explanation_text = "Pick a path to pursue."

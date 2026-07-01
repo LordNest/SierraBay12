@@ -22,11 +22,6 @@
 
 // sound\ambience\meat_monster_arrival.ogg
 
-/// Defines are used in /proc/has_living_heart() to report if the heretic has no heart period, no living heart, or has a living heart.
-#define HERETIC_NO_HEART_ORGAN -1
-#define HERETIC_NO_LIVING_HEART 0
-#define HERETIC_HAS_LIVING_HEART 1
-
 #define HERETIC_DRAFT_TIER_MAX 5
 
 /// The default drain speed for heretic rift's, anything below this will be considered a fast drain, and be very noticeable and cause a overlay

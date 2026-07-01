@@ -371,6 +371,116 @@
 
 	return TRUE
 
+/// The amount of knowledge points the knowledge ritual gives on success.
+#define KNOWLEDGE_RITUAL_POINTS 4
+
+/**
+ * A subtype of knowledge that generates random ritual components.
+ */
+/datum/heretic_knowledge/knowledge_ritual
+	name = "Ritual of Knowledge"
+	desc = "A randomly generated transmutation ritual that rewards knowledge points and can only be completed once."
+	gain_text = "Everything can be a key to unlocking the secrets behind the Gates. I must be wary and wise."
+	abstract_type = /datum/heretic_knowledge/knowledge_ritual
+	cost = 1
+	priority = MAX_KNOWLEDGE_PRIORITY - 10 // A pretty important midgame ritual.
+	research_tree_icon_path = 'mods/heretic/icons/eldritch.dmi'
+	research_tree_icon_state = "book_open"
+	/// Whether we've done the ritual. Only doable once.
+	var/was_completed = FALSE
+
+/datum/heretic_knowledge/knowledge_ritual/New()
+	. = ..()
+	var/static/list/potential_organs = list(
+		/obj/item/organ/internal/appendix,
+		/obj/item/organ/internal/eyes,
+		/obj/item/organ/internal/heart,
+		/obj/item/organ/internal/liver,
+		/obj/item/organ/internal/stomach,
+		/obj/item/organ/internal/lungs,
+	)
+
+	var/static/list/potential_easy_items = list(
+		/obj/item/material/shard,
+		/obj/item/flame/candle,
+		/obj/item/book,
+		/obj/item/pen,
+		/obj/item/paper,
+		/obj/item/device/oxycandle,
+		/obj/item/device/flashlight,
+		/obj/item/material/clipboard,
+	)
+
+	var/static/list/potential_uncommoner_items = list(
+		/obj/item/handcuffs,
+		/obj/item/melee/baton,
+		/obj/item/circular_saw,
+		/obj/item/scalpel,
+		/obj/item/clothing/gloves/insulated,
+		/obj/item/clothing/glasses/sunglasses,
+	)
+
+	required_atoms = list()
+	// 1 Organ, 1 Easy, 1 Hard
+	required_atoms[pick(potential_organs)] += 1
+	required_atoms[pick(potential_easy_items)] += 1
+	required_atoms[pick(potential_uncommoner_items)] += 1
+
+/datum/heretic_knowledge/knowledge_ritual/on_research(mob/user, datum/antagonist/heretic/our_heretic)
+	. = ..()
+
+	var/list/requirements_string = list()
+
+	to_chat(user, SPAN_OCCULT("The [name] requires the following:"))
+	for(var/obj/item/path as anything in required_atoms)
+		var/amount_needed = required_atoms[path]
+		to_chat(user, SPAN_OCCULT("[amount_needed] [initial(path.name)]\s..."))
+		requirements_string += "[amount_needed == 1 ? "":"[amount_needed] "][initial(path.name)]\s"
+
+	to_chat(user, SPAN_OCCULT("Completing it will reward you [KNOWLEDGE_RITUAL_POINTS] knowledge points. You can check the knowledge in your Researched Knowledge to be reminded."))
+
+	desc = "Allows you to transmute [english_list(requirements_string)] for [KNOWLEDGE_RITUAL_POINTS] bonus knowledge points. This can only be completed once."
+
+/datum/heretic_knowledge/knowledge_ritual/can_be_invoked(datum/antagonist/heretic/invoker)
+	return !was_completed
+
+/datum/heretic_knowledge/knowledge_ritual/recipe_snowflake_check(mob/living/user, list/atoms, list/selected_atoms, turf/loc)
+	return !was_completed
+
+/datum/heretic_knowledge/knowledge_ritual/on_finished_recipe(mob/living/user, list/selected_atoms, turf/loc)
+	var/datum/antagonist/heretic/our_heretic = isheretic(user)
+	our_heretic.adjust_knowledge_points(KNOWLEDGE_RITUAL_POINTS)
+	was_completed = TRUE
+
+	var/drain_message = list(
+		"A SHIMMER... POTENTIAL... POWER.",
+		"A WHISPER.",
+		"COVERED AND FORGOTTEN.",
+		"CURSED LAND, CURSED MAN, CURSED MIND.",
+		"GREATER HEIGHTS.",
+		"I AM BEING WATCHED... FROM WHERE? FROM WHAT?",
+		"I AM LATE FOR MY DESTINY.",
+		"LIFE IS FLEETING, BUT WHAT YET STAYS?",
+		"RAIN OF BLOOD. REIGN OF BLOOD.",
+		"STRENGTH... UNPARALLELED. UNNATURAL.",
+		"THE GATES OF THE MANSUS IS HERE, IS OPEN.",
+		"THE HIGHER I RISE, THE MORE I SEE.",
+		"THE VEIL IS SHATTERED.",
+		"THEIR HAND IS AT MY SIDE.",
+		"THEY WALK THE WORLD. UNNOTICED.",
+		"TO WALK BETWEEN PLANES."
+	)
+
+	to_chat(user, SPAN_BOLD("[name] completed!"))
+	to_chat(user, SPAN_OCCULT("pick([drain_message])"))
+	desc += " (Completed!)"
+	log_and_message_admins("[key_name(user)] completed a [name] at [world.time].")
+	// user.AddMemory(/datum/memory/heretic_knowledge_ritual)
+	SEND_SIGNAL(our_heretic, COMSIG_HERETIC_PASSIVE_UPGRADE_FINAL)
+	return TRUE
+
+#undef KNOWLEDGE_RITUAL_POINTS
+
 /**
  * The special final tier of knowledges that unlocks ASCENSION.
  */

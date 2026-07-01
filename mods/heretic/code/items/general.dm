@@ -22,20 +22,18 @@
 			to_chat(user, SPAN_NOTICE("\The [src] seems full of illegible scribbles. Is this a joke?"))
 		else
 			to_chat(user, "Сила сокрытая в \ [src] недавно была использована и востановится в течение минуты. Имей терпение.")
-	if(!iscultist(user) || !isheretic(user))
-		to_chat(user, SPAN_NOTICE("\The [src] seems full of illegible scribbles. Is this a joke?"))
-	else
+	if(iscultist(user) || isheretic(user))
 		to_chat(user, "Держи \ [src] в руке, во время жертвоприношений и создания алхимического круга. Обезоружь жертву, целясь книгой в глаза, чтобы открыть ярко сияющую страницу и ослепить её.")
-
+	else
+		to_chat(user, SPAN_NOTICE("\The [src] seems full of illegible scribbles. Is this a joke?"))
 	codex_recharge()
 
 /obj/item/book/codex/examine(mob/user)
 	. = ..()
-	if(!iscultist(user) || !isheretic(user))
-		to_chat(user, "An old, dusty tome with frayed edges and a sinister looking cover.")
-	else
+	if(iscultist(user) || isheretic(user))
 		to_chat(user, "Некрономикон мой некрономикон.")
-
+	else
+		to_chat(user, "An old, dusty tome with frayed edges and a sinister looking cover.")
 	codex_recharge()
 
 // Люблю спагетти.
@@ -129,6 +127,9 @@ Carving Knife, как с ТГ но не как с ТГ.
 Зона плавных переходов - телепорты в прекрасное далёко
 
 */
+
+/obj/item/clothing/accessory/badge/heretic_focus
+	slot_flags = SLOT_MASK | SLOT_TIE
 
 /*!
  * Contains the eldritch robes for heretics, a suit of armor that they can make via a ritual

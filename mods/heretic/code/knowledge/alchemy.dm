@@ -117,6 +117,8 @@
 		var/datum/heretic_knowledge/ritual = alchemy
 		radial[ritual] = mutable_appearance('mods/heretic/icons/heretic_misc.dmi', ritual.icon)
 	var/choice = show_radial_menu(user, user, radial, require_near = TRUE, radius = 42, tooltips = TRUE, check_locs = list(src))
+	if(!choice)
+		return
 	var/chosen_ritual = new choice
 	if(!chosen_ritual || !istype(chosen_ritual, /datum/heretic_knowledge))
 		is_in_use = FALSE
@@ -265,21 +267,3 @@
 		to_chat(user, SPAN_OCCULT("ritual complete"))
 
 	return ritual_result
-
-
-/obj/rune/alchemy/proc/heretic_sacrifice(mob/living/victim, heretic_path)
-	if(heretic_path == HERETIC_POWER_FLESH)
-		to_chat(victim, SPAN_WARNING("Дебаг плоть"))
-	if(heretic_path == HERETIC_POWER_HUNT)
-
-		for(var/obj/landmark/LM in landmarks_list)
-			if(LM.name == "heretic_hunt")
-				to_chat(victim, SPAN_WARNING("Дебаг охота"))
-				victim.forceMove(get_turf(LM))
-				message_admins("Heretic sacrifice, [victim], was sent to [heretic_path] realm!")
-				break
-			else
-				message_admins("Failed to send [victim] to realms of [heretic_path] via teleporting!")
-
-	if(heretic_path == HERETIC_POWER_RIDDLE)
-		to_chat(victim, SPAN_WARNING("Дебаг загадка"))
