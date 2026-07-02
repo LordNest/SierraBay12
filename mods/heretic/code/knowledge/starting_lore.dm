@@ -1,4 +1,5 @@
 // Heretic starting knowledge.
+// Since we're Bay, Mansus Grasp and other stun spells deemed too powerful to be used
 
 /// Global list of all heretic knowledge that have is_starting_knowledge = TRUE. List of PATHS.
 GLOBAL_LIST_AS(heretic_start_knowledge, initialize_starting_knowledge())
@@ -12,24 +13,6 @@ GLOBAL_LIST_AS(heretic_start_knowledge, initialize_starting_knowledge())
 	for(var/datum/heretic_knowledge/knowledge as anything in subtypesof(/datum/heretic_knowledge))
 		if(initial(knowledge.is_starting_knowledge) == TRUE)
 			. += knowledge
-
-/*
- * The base heretic knowledge. Grants the Mansus Grasp spell.
- */
-/datum/heretic_knowledge/spell/basic
-	name = "Break of Dawn"
-	desc = "Starts your journey into the Mansus. \
-		Grants you the Mansus Grasp, a powerful and upgradable \
-		disabling spell that can be cast regardless of having a focus."
-	// action_to_add = /datum/action/cooldown/spell/touch/mansus_grasp
-	cost = 0
-	is_starting_knowledge = TRUE
-
-// Heretics can enhance their fishing rods to fish better - fishing content.
-// Lasts until successfully fishing something up.
-/datum/heretic_knowledge/spell/basic/on_gain(mob/user, datum/antagonist/heretic/our_heretic)
-	..()
-	// RegisterSignal(user, COMSIG_TOUCH_HANDLESS_CAST, PROC_REF(on_grasp_cast))
 
 /**
  * Allows the heretic to craft a spell focus.

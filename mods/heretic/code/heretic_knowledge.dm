@@ -204,7 +204,7 @@
 /datum/heretic_knowledge/spell
 	abstract_type = /datum/heretic_knowledge/spell
 	/// Spell path we add to the heretic. Type-path.
-	var/datum/action/action_to_add
+	var/action_to_add
 	/// The spell we actually created.
 	var/weakref/created_action_ref
 
@@ -212,18 +212,42 @@
 	QDEL_NULL(created_action_ref)
 	return ..()
 
-/datum/heretic_knowledge/spell/on_gain(mob/user, datum/antagonist/heretic/our_heretic)
-	// Added spells are tracked on the body, and not the mind,
-	// because we handle heretic mind transfers
-	// via the antag datum (on_gain and on_lose).
-	var/datum/action/created_action = created_action_ref?.resolve() || new action_to_add(user)
-	created_action.Grant(user)
-	created_action_ref = weakref(created_action)
+/datum/heretic_knowledge/spell/on_gain(mob/living/user, datum/antagonist/heretic/our_heretic)
 
-/datum/heretic_knowledge/spell/on_lose(mob/user, datum/antagonist/heretic/our_heretic)
-	var/datum/action/created_action = created_action_ref?.resolve() //datum/action/cooldown/spell
-	if(created_action?.owner == user)
-		created_action.Remove(user)
+	if(!user.ability_master)
+		user.ability_master = new /obj/screen/movable/ability_master/heretic(null, user)
+	user.ability_master.add_heretic_ability(object_given = user, verb_given = src.action_to_add, name_given = src.name, ability_icon_given = src.research_tree_icon_state, arguments = list())
+
+/obj/screen/movable/ability_master/heretic
+	name = "Abilities"
+	icon = 'mods/heretic/icons/screen_spells.dmi'
+	icon_state = "grey_spell_ready"
+
+//use this to force add powers
+/obj/screen/movable/ability_master/proc/add_heretic_ability(object_given, verb_given, name_given, ability_icon_given, arguments)
+	if(!object_given)
+		message_admins("ERROR: add_heretic_ability() was not given an object in its arguments.")
+	if(!verb_given)
+		message_admins("ERROR: add_heretic_ability() was not given a verb/proc in its arguments.")
+	if(get_ability_by_PROC_REF(verb_given))
+		return // Duplicate
+	var/obj/screen/ability/verb_based/heretic/A = new /obj/screen/ability/verb_based/heretic()
+	A.ability_master = src
+	A.object_used = object_given
+	A.verb_to_call = verb_given
+	A.ability_icon_state = ability_icon_given
+	A.SetName(name_given)
+	if(arguments)
+		A.arguments_to_use = arguments
+	ability_objects.Add(A)
+	if(my_mob.client)
+		toggle_open(2) //forces the icons to refresh on screen
+
+
+
+/datum/heretic_knowledge/spell/on_lose(mob/living/user, datum/antagonist/heretic/our_heretic)
+
+	user.ability_master.remove_ability(src)
 
 /**
  * A knowledge subtype for knowledge that can only

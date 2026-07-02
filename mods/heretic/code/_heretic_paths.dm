@@ -138,7 +138,7 @@ GLOBAL_LIST_AS(heretic_path_datums, init_heretic_path_datums())
 		starting_knowledges[t3_knowledge] = make_knowledge_entry(t3_knowledge, column_path, HERETIC_KNOWLEDGE_START, HKT_DEPTH_TIER_3)
 		starting_knowledges[t4_knowledge] = make_knowledge_entry(t4_knowledge, column_path, HERETIC_KNOWLEDGE_START, HKT_DEPTH_TIER_4)
 		// start the HKT_NEXT chain here
-		starting_knowledges[/datum/heretic_knowledge/spell/basic][HKT_NEXT] += starting_knowledges[start_knowledge][HKT_ID]
+		starting_knowledges[/datum/heretic_knowledge/amber_focus][HKT_NEXT] += starting_knowledges[start_knowledge][HKT_ID]
 		// notably, the heretic's tree isn't yet generated so we have to generate the ID here instead of fetching it, hopefully this doesn't break
 		starting_knowledges[start_knowledge][HKT_NEXT] += make_knowledge_id(t1_knowledge, HERETIC_KNOWLEDGE_TREE)
 		start_knowledges += start_knowledge

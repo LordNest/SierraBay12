@@ -169,7 +169,7 @@ GLOBAL_TYPED_NEW(heretics, /datum/antagonist/heretic)
 /datum/antagonist/heretic/add_antagonist(datum/mind/player)
 	. = ..()
 
-	var/datum/action/antag_info/A = new(src)
+	var/datum/action/datumized/antag_info/A = new(src)
 	A.Grant(player.current)
 
 
@@ -264,20 +264,11 @@ GLOBAL_TYPED_NEW(heretics, /datum/antagonist/heretic)
 		knowledge_data["desc"] = initial(knowledge.desc)
 	return knowledge_data
 
-/datum/antagonist/heretic/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null)
+/datum/antagonist/heretic/ui_interact(mob/living/user, ui_key = "main", datum/nanoui/ui = null)
 	. = ..()
 	var/list/data = list()
 
-	ui = SSnano.try_update_ui(user, src, ui_key, ui, data)
-	if (!ui)
-		ui = new(user, src, ui_key, "mods-heretic.tmpl", "Necronimicon", 1200, 700)
-
-		ui.set_initial_data(data)
-		ui.open()
-		ui.set_auto_update(1)
-
-/datum/antagonist/heretic/ui_data(mob/user)
-	var/list/data = list("charges" = knowledge_points)
+	data["charges"] = knowledge_points
 
 	data["objectives"] = user.mind.objectives
 
@@ -365,6 +356,14 @@ GLOBAL_TYPED_NEW(heretics, /datum/antagonist/heretic)
 		shop_knowledge += list(knowledge_data)
 
 	data["knowledge_shop"] = shop_knowledge
+
+	ui = SSnano.try_update_ui(user, src, ui_key, ui, data)
+	if (!ui)
+		ui = new(user, src, ui_key, "mods-heretic.tmpl", "Necronimicon", 1200, 700)
+
+		ui.set_initial_data(data)
+		ui.open()
+		ui.set_auto_update(0)
 
 /datum/antagonist/heretic/Topic(href, href_list)
 	if(..())

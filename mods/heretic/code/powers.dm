@@ -31,9 +31,10 @@ var/global/list/heretic_powers = typesof(/datum/power/heretic) - /datum/power/he
 	verbs.Add(/datum/heretic/proc/ResearchTree)
 	add_language(LANGUAGE_CULT)
 
-	mind.heretic.known_rituals += /datum/heretic_knowledge/book
-	// mind.heretic.known_rituals += /datum/heretic_knowledge/sacrifice
-	message_admins("Выдаём ритуалы.")
+	for(var/SK in GLOB.heretic_start_knowledge)
+		if(istype(SK, /datum/heretic_knowledge/spell))
+			continue
+		mind.heretic.known_rituals += SK
 
 	if(!length(GLOB.heretic_powerinstances))
 		for(var/P in heretic_powers)
@@ -41,7 +42,7 @@ var/global/list/heretic_powers = typesof(/datum/power/heretic) - /datum/power/he
 
 	// Инициализация списка ритуалов
 	if(!length(GLOB.heretic_ritualinstances))
-		for(var/R in typesof(/datum/heretic_knowledge) - /datum/heretic_knowledge/book) //datum/heretic_knowledge/sacrifice
+		for(var/R in typesof(/datum/heretic_knowledge) - GLOB.heretic_start_knowledge)
 			var/datum/heretic_knowledge/rit = new R()
 			if(rit.tier)	// Только ритуалы с tier (пути и побочные)
 				GLOB.heretic_ritualinstances += rit
@@ -59,7 +60,7 @@ var/global/list/heretic_powers = typesof(/datum/power/heretic) - /datum/power/he
 				verbs.Add(P.verbpath)
 			if(P.make_hud_button)
 				if(!src.ability_master)
-					src.ability_master = new /obj/screen/movable/ability_master(null, src)
+					src.ability_master = new /obj/screen/movable/ability_master/heretic(null, src)
 				src.ability_master.add_heretic_ability(
 					object_given = src,
 					verb_given = P.verbpath,
@@ -77,6 +78,9 @@ var/global/list/heretic_powers = typesof(/datum/power/heretic) - /datum/power/he
 
 	return TRUE
 
+/obj/screen/movable/ability_master/heretic
+	icon = 'mods/heretic/icons/screen_spells.dmi'
+
 //heretic Abilities
 /obj/screen/ability/verb_based/heretic
 	icon = 'mods/heretic/icons/heretic_powers.dmi'
@@ -91,28 +95,6 @@ var/global/list/heretic_powers = typesof(/datum/power/heretic) - /datum/power/he
 	if(ability_icon_state)
 		var/mutable_appearance/overlay = mutable_appearance(icon, ability_icon_state)
 		AddOverlays(overlay)
-
-//use this to force add powers
-/obj/screen/movable/ability_master/proc/add_heretic_ability(object_given, verb_given, name_given, ability_icon_given, arguments)
-	if(!object_given)
-		message_admins("ERROR: add_heretic_ability() was not given an object in its arguments.")
-	if(!verb_given)
-		message_admins("ERROR: add_heretic_ability() was not given a verb/proc in its arguments.")
-	if(get_ability_by_PROC_REF(verb_given))
-		return // Duplicate
-	var/obj/screen/ability/verb_based/heretic/A = new /obj/screen/ability/verb_based/heretic()
-	A.ability_master = src
-	A.object_used = object_given
-	A.verb_to_call = verb_given
-	A.ability_icon_state = ability_icon_given
-	A.SetName(name_given)
-	if(arguments)
-		A.arguments_to_use = arguments
-	ability_objects.Add(A)
-	if(my_mob.client)
-		toggle_open(2) //forces the icons to refresh on screen
-
-
 
 /datum/power/heretic
 	/// Cost for this power.
@@ -130,7 +112,8 @@ var/global/list/heretic_powers = typesof(/datum/power/heretic) - /datum/power/he
 	set category = "Heretic"
 	set desc = "Adapt yourself carefully."
 
-	if(!usr || !usr.mind || !usr.mind.heretic)	return
+	if(!usr || !usr.mind || !usr.mind.heretic)
+		return
 	src = usr.mind.heretic
 
 	if(!length(GLOB.heretic_powerinstances))
@@ -783,7 +766,7 @@ var/global/list/heretic_powers = typesof(/datum/power/heretic) - /datum/power/he
 
 
 	if(!Thepower)
-		to_chat(M.current, "This is awkward.  heretic power purchase failed, please report this bug to a coder!")
+		to_chat(M.current, "This is awkward. heretic power purchase failed, please report this bug to a coder!")
 		return
 
 	if(Thepower in M.heretic.purchased_powers)

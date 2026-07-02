@@ -1,239 +1,4 @@
-<!--
-Title: Necronomicon (Unified)
-Used In File(s): mods/heretic/code/antagonist.dm
--->
-
-<body>
-
-<div class="Window" id="AntagInfoHeretic" style="width: 750px; height: 635px;" data-theme="Heretic">
-	<div class="Window-Content">
-		<div class="Stack Stack-vertical" style="height: 100%;">
-
-			<!-- Main Tabs -->
-			<div class="Stack-Item">
-				<div class="Tabs fluid" id="MainTabs">
-					<div class="Tabs-Tab selected" data-index="0" data-label="Information">Information</div>
-					<div class="Tabs-Tab" data-index="1" data-label="Path Info">Path Info</div>
-					<div class="Tabs-Tab" data-index="2" data-label="Research">Research</div>
-				</div>
-			</div>
-
-			<!-- Tab 1: IntroductionSection -->
-			<div class="Stack-Item grow" id="IntroductionSection">
-				<div class="Section" style="font-size: 14px; height: 100%; box-sizing: border-box;">
-					<div class="Section-title">You are the Heretic!</div>
-					<div class="Stack Stack-vertical">
-
-						<!-- FlavorSection -->
-						<div class="Stack-Item" id="FlavorSection">
-							<div class="Stack Stack-vertical" style="text-align: center; font-size: 14px;">
-								<div class="Stack-Item">
-									<i>Another day at a meaningless job. You feel a&nbsp;
-										<span class="heretic-blue">shimmer</span>&nbsp;around you, as a realization of something&nbsp;
-										<span class="heretic-red">strange</span>&nbsp;in the air unfolds. You look inwards and discover something that will change your life.
-									</i>
-								</div>
-								<div class="Stack-Item">
-									<b>The <span class="heretic-purple">Gates of Mansus</span>&nbsp;open up to your mind.</b>
-								</div>
-							</div>
-						</div>
-
-						<hr>
-
-						<!-- GuideSection -->
-						<div class="Stack-Item" id="GuideSection">
-							<div class="Stack Stack-vertical" style="font-size: 12px;">
-								<div class="Stack-Item">- Find reality smashing&nbsp;<span class="heretic-purple">influences</span>&nbsp;around the station invisible to the normal eye and&nbsp;<b>right click</b> on them to harvest them for&nbsp;<span class="heretic-blue">knowledge points</span>. Tapping them makes them visible to all after a short time. Dreaming of Mansus may help to find them.</div>
-								<div class="Stack-Item">- Use your&nbsp;<span class="heretic-red">Living Heart action</span>&nbsp;to track down&nbsp;<span class="heretic-red">sacrifice targets</span>, but be careful: Pulsing it will produce a heartbeat sound that nearby people may hear. This action is tied to your <b>heart</b> - if you lose it, you must complete a ritual to regain it.</div>
-								<div class="Stack-Item">- Draw a&nbsp;<span class="heretic-green">transmutation rune</span> by using a drawing tool (a pen or crayon) on the floor while having&nbsp;<span class="heretic-green">Mansus Grasp</span>&nbsp;active in your other hand. This rune allows you to complete rituals and sacrifices.</div>
-								<div class="Stack-Item">- Follow your <span class="heretic-red">Living Heart</span> to find your targets. Bring them back to a&nbsp;<span class="heretic-green">transmutation rune</span> in critical or worse condition to&nbsp;<span class="heretic-red">sacrifice</span> them for&nbsp;<span class="heretic-blue">knowledge points</span>. The Mansus <b>ONLY</b> accepts targets pointed to by the&nbsp;<span class="heretic-red">Living Heart</span>.</div>
-								<div class="Stack-Item">- Make yourself a <span class="heretic-yellow">focus</span> to be able to cast various advanced spells to assist you in acquiring harder and harder sacrifices.</div>
-								<div class="Stack-Item">- Accomplish all of your objectives to be able to learn the&nbsp;<span class="heretic-yellow">final ritual</span>. Complete the ritual to become all powerful!</div>
-								<div class="Stack-Item">
-									<span class="heretic-red">WARNING!</span><br>
-									Keep in mind that using a&nbsp;<span class="heretic-purple">Codex Cicatrix</span> will also make you very obvious as a heretic when draining&nbsp;<span class="heretic-yellow">influences</span>
-								</div>
-							</div>
-						</div>
-
-						<hr>
-
-						<!-- InformationSection -->
-						<div class="Stack-Item" id="InformationSection">
-							<div class="Stack Stack-vertical">
-								<!-- Condition: ascended -->
-								<div class="Stack-Item" id="ascended_status" style="display: none;">
-									<div class="Stack" style="align-items: center;">
-										<div class="Stack-Item">You have</div>
-										<div class="Stack-Item" style="font-size: 24px;">
-											<span style="color: yellow; display: inline;">ASCENDED</span>!
-										</div>
-									</div>
-								</div>
-								<div class="Stack-Item">You have <b id="charges">{charges}</b>&nbsp;<span class="heretic-blue">knowledge point{charges !== 1 ? 's' : ''}</span>.</div>
-								<div class="Stack-Item">You have made a total of&nbsp;<b id="total_sacrifices">{total_sacrifices}</b>&nbsp;<span class="heretic-red">sacrifices</span>.</div>
-							</div>
-						</div>
-
-						<hr>
-
-						<!-- Objectives (ObjectivePrintout) -->
-						<div class="Stack-Item" id="ObjectivesSection">
-							<div class="Section" id="ObjectivePrintout" style="background: #252525;">
-								<div class="Section-title" id="titleMessage">
-									In order to ascend, you have these tasks to fulfill
-								</div>
-								<div class="Objectives-list" id="objectives">
-									<!-- {objectives.map(obj => <div>{obj.explanation}</div>)} -->
-								</div>
-								<div class="ObjectiveFollowup" id="ReplaceObjectivesButton">
-									<button class="red" title="Turn your back on the Mansus to accomplish a task of your choosing. Selecting this option will prevent you from ascending!">Reject Ascension</button>
-								</div>
-							</div>
-						</div>
-
-					</div>
-				</div>
-			</div>
-
-			<!-- Tab 2: PathInfo -->
-			<div class="Stack-Item grow" id="PathInfo" style="display: none;">
-				<div class="Stack" style="height: 100%;">
-					<div class="Stack-Item" id="PathTabs">
-						<div class="Tabs vertical" style="height: 100%;">
-							<!-- {paths.map((path, index) => ...) } -->
-							<div class="Tabs-Tab selected" data-route="{path.route}">{path.route}</div>
-						</div>
-					</div>
-					<div class="Stack-Item grow" id="PathContent">
-						<div class="Section" style="text-align: center; height: 100%; box-sizing: border-box; overflow-y: auto;">
-							<h1 class="PathTitle" id="path_route">{path.route}</h1>
-							<div class="Stack Stack-vertical">
-
-								<!-- Condition: !isPathSelected -->
-								<div class="Stack-Item" id="ChoosePath" style="vertical-align: middle;">
-									<h1>Choose Path:</h1>
-									<div class="KnowledgeNode" id="starting_knowledge" data-category="start">
-										<div class="KnowledgeNode-cost">{path.starting_knowledge.cost}</div>
-									</div>
-									<div>
-										<h3>Complexity: <span id="path_complexity" style="color: {path.complexity_color};">{path.complexity}</span></h3>
-									</div>
-								</div>
-
-								<div class="Stack-Item">
-									<b>Description:</b>
-									<div id="path_description">
-										<!-- {path.description.map((line, index) => <div key={index}>{line}</div>)} -->
-									</div>
-								</div>
-
-								<div class="Stack-Item" id="PassiveSection">
-									<b>Passive: <span id="passive_name">{name}</span>, level: <span id="passive_level">{passive_level}</span></b>
-									<div id="passive_description">
-										<!-- {description.map((line, index) => <div class="Passive">Level {index+1}<br>{line}</div>)} -->
-									</div>
-								</div>
-
-								<!-- Condition: !isPathSelected -->
-								<div class="Stack-Item" id="GuaranteedAbilities">
-									<b>Guaranteed Abilities:</b>
-									<div class="Stack" style="flex-wrap: wrap; justify-content: center;">
-										<!-- {path.preview_abilities.map(ability => <div class="KnowledgeNode" data-ability="{ability.name}"></div>)} -->
-									</div>
-								</div>
-
-								<!-- Condition: !isPathSelected -->
-								<div class="Stack-Item" id="ProsCons" style="text-align: left;">
-									<b>Pros:</b>
-									<div id="path_pros">
-										<!-- {path.pros.map(pro => <p>{pro}</p>)} -->
-									</div>
-									<b>Cons:</b>
-									<div id="path_cons">
-										<!-- {path.cons.map(con => <p>{con}</p>)} -->
-									</div>
-								</div>
-
-								<!-- Condition: isPathSelected -->
-								<div class="Stack-Item" id="TipsSection" style="text-align: left; margin-top: 8px; margin-bottom: 4px;">
-									<b>Tips:</b>
-									<ul id="path_tips">
-										<!-- {path.tips.map(tip => <li>{tip}</li>)} -->
-									</ul>
-								</div>
-
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<!-- Tab 3: ResearchInfo -->
-			<div class="Stack-Item grow" id="ResearchInfo" style="display: none;">
-				<div class="Stack-Item" style="margin-bottom: 6px; font-size: 20px; text-align: center;">
-					You have <b id="research_charges">{charges}</b>&nbsp;<span class="heretic-blue">knowledge point{charges !== 1 ? 's' : ''}</span> to spend.
-				</div>
-				<div class="Stack" style="height: calc(100% - 40px);">
-
-					<!-- KnowledgeTree -->
-					<div class="Stack-Item grow" id="KnowledgeTree">
-						<div class="Section" style="overflow-y: auto; height: 100%; box-sizing: border-box;">
-							<div style="text-align: center; font-size: 32px;">
-								<span class="heretic-yellow">DAWN</span>
-							</div>
-							<div class="Stack Stack-vertical" id="knowledge_tiers">
-								<!-- {nodesToShow.map((tier, i) => ...) } -->
-								<div class="Stack-Item" data-tier="{i}">
-									<div class="Stack" style="justify-content: center; align-items: center; flex-wrap: wrap;">
-										<!-- {tier.nodes.map(node => ...) } -->
-										<div class="KnowledgeNode" data-path="{node.path}" data-done="{node.done}" data-disabled="{node.disabled}">
-											<div class="KnowledgeNode-cost">{node.cost > 0 ? node.cost : 'FREE'}</div>
-										</div>
-									</div>
-									<hr>
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<!-- KnowledgeShop -->
-					<div class="Stack-Item grow" id="KnowledgeShop">
-						<div class="Section" style="overflow-y: auto; height: 100%; box-sizing: border-box;">
-							<div class="Section-title">Knowledge Shop</div>
-							<div class="Stack Stack-vertical" id="knowledge_shop_tiers">
-								<!-- {tiers.map((tier, index) => ...) } -->
-								<div class="Stack-Item" data-tier="tier-{index}">
-									Tier {index + 1}
-									<div class="Stack" style="flex-wrap: wrap;">
-										<!-- {tier.map(knowledge => ...) } -->
-										<div class="KnowledgeNode" data-path="{knowledge.path}">
-											<div class="KnowledgeNode-cost">{knowledge.cost}</div>
-										</div>
-									</div>
-									<hr>
-								</div>
-							</div>
-						</div>
-					</div>
-
-				</div>
-			</div>
-
-		</div>
-	</div>
-</div>
-
-</body>
-
-<!-- ============================================================ -->
-<!-- STYLES                                                       -->
-<!-- ============================================================ -->
-
-
 <style>
-	/* Color Variables from JS */
 	:root {
 		--heretic-red: #e03c3c;
 		--heretic-blue: #2185d0;
@@ -241,35 +6,31 @@ Used In File(s): mods/heretic/code/antagonist.dm
 		--heretic-green: #20b142;
 		--heretic-yellow: yellow;
 	}
-
-	/* Base TGUI-like Styles */
 	body {
 		background: #1a1a1a;
 		color: #e0e0e0;
 		font-family: Verdana, sans-serif;
 		font-size: 12px;
 		margin: 0;
-		padding: 10px;
+		padding: 0;
 	}
-
-	.heretic-red { color: var(--heretic-red); }
-	.heretic-blue { font-weight: bold; color: var(--heretic-blue); }
-	.heretic-purple { font-weight: bold; color: var(--heretic-purple); }
-	.heretic-green { font-weight: bold; color: var(--heretic-green); }
-	.heretic-yellow { font-weight: bold; color: var(--heretic-yellow); }
-
 	.Window {
 		border: 1px solid #444;
 		background: #222;
 		box-shadow: 0 0 10px rgba(0,0,0,0.5);
+		display: flex;
+		flex-direction: column;
+		height: 100%;
 	}
-	.Window-Content { padding: 8px; }
-
+	.Window-Content {
+		padding: 8px;
+		flex: 1;
+		overflow-y: auto;
+	}
 	.Stack { display: flex; }
 	.Stack-vertical { flex-direction: column; }
 	.Stack-Item { margin: 4px 0; }
 	.Stack-Item.grow { flex-grow: 1; }
-
 	.Section {
 		border: 1px solid #444;
 		padding: 10px;
@@ -284,7 +45,6 @@ Used In File(s): mods/heretic/code/antagonist.dm
 		padding-bottom: 4px;
 		font-size: 14px;
 	}
-
 	.Tabs { display: flex; border-bottom: 1px solid #555; margin-bottom: 10px; }
 	.Tabs.fluid { width: 100%; }
 	.Tabs.vertical { flex-direction: column; border-bottom: none; border-right: 1px solid #555; width: 150px; }
@@ -302,7 +62,6 @@ Used In File(s): mods/heretic/code/antagonist.dm
 		border-bottom: none;
 		border-right: 2px solid var(--heretic-purple);
 	}
-
 	.KnowledgeNode {
 		width: 64px;
 		height: 64px;
@@ -317,6 +76,8 @@ Used In File(s): mods/heretic/code/antagonist.dm
 		cursor: pointer;
 	}
 	.KnowledgeNode.ascension { width: 192px; height: 192px; }
+	.KnowledgeNode.done { border-color: var(--heretic-green); }
+	.KnowledgeNode.disabled { opacity: 0.4; cursor: not-allowed; }
 	.KnowledgeNode-cost {
 		position: absolute;
 		top: 2px;
@@ -328,18 +89,109 @@ Used In File(s): mods/heretic/code/antagonist.dm
 		padding: 2px 5px;
 		font-size: 10px;
 	}
-
-	.PathTitle { margin: 0 0 10px 0; }
-	.Passive { margin: 4px 0; font-style: italic; }
-	.Passive--Active { color: var(--heretic-green); font-weight: bold; }
-
-	button {
-		background: #333;
-		color: #ddd;
-		border: 1px solid #555;
-		padding: 4px 8px;
-		cursor: pointer;
-		border-radius: 3px;
-	}
-	button.red { background: #500; border-color: #800; color: #fcc; }
+	.heretic-red { color: var(--heretic-red); }
+	.heretic-blue { font-weight: bold; color: var(--heretic-blue); }
+	.heretic-purple { font-weight: bold; color: var(--heretic-purple); }
+	.heretic-green { font-weight: bold; color: var(--heretic-green); }
+	.heretic-yellow { font-weight: bold; color: var(--heretic-yellow); }
+	.small { font-size: 10px; color: #aaa; }
+	.panel { display: none; }
+	.panel.active { display: block; }
 </style>
+
+<div class="Window">
+	<div class="Window-Content">
+		<div class="Tabs">
+			<div class="Tabs-Tab selected" data-tab="info" onclick="showTab('info')">Information</div>
+			<div class="Tabs-Tab" data-tab="paths" onclick="showTab('paths')">Path Info</div>
+			<div class="Tabs-Tab" data-tab="research" onclick="showTab('research')">Research</div>
+		</div>
+
+		<div id="info" class="panel active">
+			<div class="Section">
+				You have <b class="heretic-blue">{{:data.charges}}</b> knowledge point{{if data.charges != 1}}s{{/if}}.
+			</div>
+			<div class="Section">
+				You have made <b class="heretic-red">{{:data.total_sacrifices}}</b> sacrifices.
+			</div>
+			<div class="Section">
+				Ascended: <b>{{if data.ascended}}Yes{{else}}No{{/if}}</b>
+			</div>
+			<div class="Section">
+				<div class="Section-title">Objectives</div>
+				{{for data.objectives :objective}}
+					<div>{{:objective.explanation}}</div>
+				{{/for}}
+			</div>
+		</div>
+
+		<div id="paths" class="panel">
+			<div class="Section">
+				<div style="display: flex; flex-wrap: wrap; gap: 8px;">
+					{{for data.paths :path}}
+						<div class="KnowledgeNode" onclick="window.location='byond://?src=\ref[src];research=1;path={{:path.starting_knowledge.path}};category=start'" title="{{:path.description[0]}}">
+							<img src="{{:path.icon.icon}}" style="width:40px;height:40px;" />
+							<div class="KnowledgeNode-cost">{{:path.starting_knowledge.cost}}</div>
+						</div>
+					{{/for}}
+				</div>
+			</div>
+			<div class="Section">
+				<div class="Section-title">Path selection</div>
+				<div class="small">Choose a starting node to begin your path.</div>
+			</div>
+		</div>
+
+		<div id="research" class="panel">
+			<div class="Section">
+				<span class="heretic-yellow">Research</span> — available points: <b>{{:data.charges}}</b>
+			</div>
+			{{for data.knowledge_tiers :tier}}
+				<div class="Section">
+					{{for tier.nodes :node}}
+						<div class="KnowledgeNode {{if node.done}}done{{/if}} {{if node.disabled}}disabled{{/if}}"
+							onclick="{{if !node.disabled}}window.location='byond://?src=\ref[src];research=1;path={{:node.path}};category={{:node.category}}'{{/if}}"
+							title="{{:node.desc}}">
+							<img src="{{:node.icon_params.icon}}" style="width:40px;height:40px;" />
+							<div class="KnowledgeNode-cost">{{:node.cost}}</div>
+						</div>
+					{{/for}}
+				</div>
+			{{/for}}
+			{{if data.knowledge_shop.length}}
+			<div class="Section">
+				<div class="Section-title">Knowledge shop</div>
+				{{for data.knowledge_shop :node}}
+					<div class="KnowledgeNode {{if node.done}}done{{/if}} {{if node.disabled}}disabled{{/if}}"
+						onclick="{{if !node.disabled}}window.location='byond://?src=\ref[src];research=1;path={{:node.path}};category={{:node.category}}'{{/if}}"
+						title="{{:node.desc}}">
+						<img src="{{:node.icon_params.icon}}" style="width:40px;height:40px;" />
+						<div class="KnowledgeNode-cost">{{:node.cost}}</div>
+					</div>
+				{{/for}}
+			</div>
+			{{/if}}
+		</div>
+	</div>
+</div>
+
+<script>
+	function showTab(name) {
+		var tabs = document.querySelectorAll('.Tabs-Tab');
+		for (var i = 0; i < tabs.length; i++) {
+			tabs[i].classList.remove('selected');
+		}
+		var panels = document.querySelectorAll('.panel');
+		for (var i = 0; i < panels.length; i++) {
+			panels[i].classList.remove('active');
+		}
+		var selectedTab = document.querySelector('.Tabs-Tab[data-tab="' + name + '"]');
+		if (selectedTab) {
+			selectedTab.classList.add('selected');
+		}
+		var selectedPanel = document.getElementById(name);
+		if (selectedPanel) {
+			selectedPanel.classList.add('active');
+		}
+	}
+</script>

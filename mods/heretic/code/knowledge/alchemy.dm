@@ -106,7 +106,7 @@
 /obj/rune/alchemy/proc/try_rituals(mob/living/user)
 	is_in_use = TRUE
 
-	var/list/rituals = user.mind.heretic.known_rituals
+	var/list/rituals = user.mind.heretic.known_rituals // researched_knowledge
 	if(!length(rituals))
 		to_chat(user, SPAN_WARNING("no rituals available!"))
 		is_in_use = FALSE
