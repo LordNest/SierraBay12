@@ -50,6 +50,15 @@
 #define PATH_COSMIC "Cosmic Path"
 #define PATH_LOCK "Lock Path"
 #define PATH_MOON "Moon Path"
+#define PATH_RIDDLE "Riddle Path"
+
+/// Display names for heretic path selection UI
+GLOBAL_LIST_AS(heretic_path_names, list(
+	PATH_FLESH = "Path of Flesh",
+	PATH_MOON = "Path of Moonhunter",
+	PATH_RIDDLE = "Path of Riddle",
+	PATH_COSMIC = "Path of Cosmos",
+))
 
 //Heretic knowledge tree defines
 #define HKT_NEXT "next"

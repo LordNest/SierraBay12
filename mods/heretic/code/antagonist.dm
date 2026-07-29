@@ -122,6 +122,12 @@ GLOBAL_TYPED_NEW(heretics, /datum/antagonist/heretic)
 	var/servitude_blurb = "Что-то пафосное про то, как ты теперь хочешь служить робастеру на еретике, не забыть придумать."
 	var/station_summon_only = TRUE
 	var/no_shuttle_summon = TRUE
+	/// Currently selected node in the research tree UI
+	var/selected_node_id
+	/// Route string of the branch currently open in the UI (null on hub)
+	var/ui_preview_route
+	/// When TRUE, show the path selection hub instead of a branch tree
+	var/ui_viewing_hub = TRUE
 
 	faction = "heretic"
 
@@ -167,10 +173,28 @@ GLOBAL_TYPED_NEW(heretics, /datum/antagonist/heretic)
 		return 0
 
 /datum/antagonist/heretic/add_antagonist(datum/mind/player)
+	owner = player
 	. = ..()
+	initialize_heretic_setup()
 
 	var/datum/action/datumized/antag_info/A = new(src)
 	A.Grant(player.current)
+
+/datum/antagonist/heretic/nano_host()
+	return owner?.current
+
+/datum/antagonist/heretic/proc/initialize_heretic_setup()
+	generate_heretic_starting_knowledge(heretic_shops[HERETIC_KNOWLEDGE_START])
+	path_info.Cut()
+	for(var/datum/heretic_knowledge_tree_column/path_type as anything in subtypesof_real(/datum/heretic_knowledge_tree_column))
+		var/datum/heretic_knowledge_tree_column/path = new path_type()
+		if(!path.start)
+			qdel(path)
+			continue
+		path_info += list(path.get_ui_data(src, HERETIC_KNOWLEDGE_START))
+		qdel(path)
+	for(var/starting_knowledge in GLOB.heretic_start_knowledge)
+		gain_knowledge(starting_knowledge, HERETIC_KNOWLEDGE_START, update = FALSE)
 
 
 /datum/antagonist/heretic/remove_antagonist(datum/mind/player, show_message, implanted)
@@ -192,43 +216,39 @@ GLOBAL_TYPED_NEW(heretics, /datum/antagonist/heretic)
 
 // =======================================================================================
 
+/datum/antagonist/heretic/proc/get_nano_icon(mob/user, icon_file, icon_state = "")
+	if(!user?.client || !icon_file)
+		return ""
+	var/icon/I = icon(icon_file, icon_state || "")
+	var/key = "[generate_asset_name(I)].png"
+	register_asset(key, I)
+	send_asset(user.client, key)
+	return key
+
 /datum/antagonist/heretic/proc/get_icon_of_knowledge(datum/heretic_knowledge/knowledge)
-	//basic icon parameters
 	var/icon_path = 'mods/heretic/icons/actions_ecult.dmi'
 	var/icon_state = "eye"
-	var/icon_frame = knowledge.research_tree_icon_frame
-	var/icon_dir = knowledge.research_tree_icon_dir
-	//can't imagine why you would want this one, so it can't be overridden by the knowledge
+	var/icon_frame = initial(knowledge.research_tree_icon_frame)
+	var/icon_dir = initial(knowledge.research_tree_icon_dir)
 	var/icon_moving = FALSE
 
-	//item transmutation knowledge does not generate its own icon due to implementation difficulties, the icons have to be specified in the override vars
+	if(!isnull(initial(knowledge.research_tree_icon_path)))
+		icon_path = initial(knowledge.research_tree_icon_path)
+		icon_state = initial(knowledge.research_tree_icon_state)
 
-	//if the knowledge has a special icon, use that
-	if(!isnull(knowledge.research_tree_icon_path))
-		icon_path = knowledge.research_tree_icon_path
-		icon_state = knowledge.research_tree_icon_state
-
-	//if the knowledge is a spell, use the spell's button
-	else if(ispath(knowledge,/datum/heretic_knowledge/spell))
+	else if(ispath(knowledge, /datum/heretic_knowledge/spell))
 		var/datum/heretic_knowledge/spell/spell_knowledge = knowledge
-		var/datum/action/result_action = spell_knowledge.action_to_add
-		icon_path = result_action.button_icon
-		icon_state = result_action.button_icon_state
+		var/datum/action/action_type = initial(spell_knowledge.action_to_add)
+		if(ispath(action_type, /datum/action))
+			icon_path = initial(action_type.button_icon)
+			icon_state = initial(action_type.button_icon_state)
 
-	//if the knowledge is a summon, use the mob sprite
-	else if(ispath(knowledge,/datum/heretic_knowledge/summon))
+	else if(ispath(knowledge, /datum/heretic_knowledge/summon))
 		var/datum/heretic_knowledge/summon/summon_knowledge = knowledge
-		var/mob/living/result_mob = summon_knowledge.mob_to_summon
-		icon_path = result_mob.icon
-		icon_state = result_mob.icon_state
-
-	/*
-	//if the knowledge is an ascension, use the achievement sprite
-	else if(ispath(knowledge,/datum/heretic_knowledge/ultimate))
-		var/datum/heretic_knowledge/ultimate/ascension_knowledge = knowledge
-			icon_path = ascension_knowledge.research_tree_icon_path
-			icon_state = ascension_knowledge.research_tree_icon_state
-	*/
+		var/mob/mob_type = initial(summon_knowledge.mob_to_summon)
+		if(ispath(mob_type, /mob))
+			icon_path = initial(mob_type.icon)
+			icon_state = initial(mob_type.icon_state)
 
 	var/list/result_parameters = list()
 	result_parameters["icon"] = icon_path
@@ -237,6 +257,212 @@ GLOBAL_TYPED_NEW(heretics, /datum/antagonist/heretic)
 	result_parameters["dir"] = icon_dir
 	result_parameters["moving"] = icon_moving
 	return result_parameters
+
+/datum/antagonist/heretic/proc/prepare_knowledge_for_nano(mob/user, datum/heretic_knowledge/knowledge, list/source_list, done = FALSE, category = HERETIC_KNOWLEDGE_TREE)
+	var/list/knowledge_data = get_knowledge_data(knowledge, source_list, done, category)
+	var/list/icon_params = knowledge_data["icon_params"]
+	var/list/safe = list(
+		"path" = "[knowledge_data["path"]]",
+		"name" = "[knowledge_data["name"]]",
+		"desc" = "[knowledge_data["desc"]]",
+		"cost" = knowledge_data["cost"],
+		"depth" = knowledge_data["depth"],
+		"bgr" = knowledge_data["bgr"],
+		"category" = knowledge_data[HKT_CATEGORY],
+		"ascension" = knowledge_data["ascension"],
+		"done" = knowledge_data["done"],
+		"icon_params" = list(
+			"icon" = "[icon_params["icon"]]",
+			"state" = "[icon_params["state"]]",
+		),
+	)
+	if(knowledge_data["gainFlavor"])
+		safe["gainFlavor"] = "[knowledge_data["gainFlavor"]]"
+	if(ispath(knowledge, /datum/heretic_knowledge/ultimate))
+		var/ascension_check = can_ascend()
+		if(ascension_check != HERETIC_CAN_ASCEND)
+			safe["disabled"] = TRUE
+			safe["tooltip"] = "[ascension_check]"
+	return safe
+
+/datum/antagonist/heretic/proc/build_path_selection_data(mob/user)
+	var/list/paths = list()
+	for(var/list/path_entry in path_info)
+		if(!islist(path_entry) || !islist(path_entry["starting_knowledge"]))
+			continue
+		var/list/starting = path_entry["starting_knowledge"]
+		var/list/icon_data = path_entry["icon"]
+		var/route = path_entry["route"]
+		var/list/card = list(
+			"route" = route,
+			"display_name" = "[GLOB.heretic_path_names[route] || route]",
+			"complexity" = "[path_entry["complexity"]]",
+			"complexity_color" = "[path_entry["complexity_color"]]",
+			"desc_summary" = islist(path_entry["description"]) && length(path_entry["description"]) ? "[path_entry["description"][1]]" : "",
+			"pros_summary" = islist(path_entry["pros"]) ? "[jointext(path_entry["pros"], "; ")]" : "",
+			"cons_summary" = islist(path_entry["cons"]) ? "[jointext(path_entry["cons"], "; ")]" : "",
+			"is_committed" = (heretic_path && heretic_path.route == route) ? 1 : 0,
+			"starting_knowledge" = list(
+				"path" = "[starting["path"]]",
+				"cost" = starting["cost"],
+			),
+		)
+		if(islist(icon_data) && user?.client)
+			card["icon_url"] = get_nano_icon(user, icon_data["icon"], icon_data["state"])
+		paths += list(card)
+	return paths
+
+/datum/antagonist/heretic/proc/format_tree_node(mob/user, datum/heretic_knowledge/knowledge, list/source_list, done = FALSE, category = HERETIC_KNOWLEDGE_TREE, list/researchable = null)
+	var/list/node = prepare_knowledge_for_nano(user, knowledge, source_list, done, category)
+	var/list/icon_params = get_icon_of_knowledge(knowledge)
+	node["icon"] = user?.client ? get_nano_icon(user, icon_params["icon"], icon_params["state"]) : ""
+	node["id"] = source_list[knowledge][HKT_ID]
+	node -= "icon_params"
+
+	var/disabled = node["disabled"] || FALSE
+	var/canunlock = 0
+	var/can_buy = 0
+	if(!isnull(researchable))
+		canunlock = (node["id"] in researchable) && !disabled
+		can_buy = canunlock && (source_list[knowledge][HKT_COST] <= knowledge_points)
+	node["canunlock"] = canunlock ? 1 : 0
+	node["can_buy"] = can_buy ? 1 : 0
+	node["isresearched"] = done ? 1 : 0
+	return node
+
+	node["isresearched"] = done ? 1 : 0
+	return node
+
+/datum/antagonist/heretic/proc/assemble_tree_display(mob/user, list/all_nodes, list/researchable)
+	var/list/tree_nodes = list()
+	var/list/tree_lines = list()
+	var/list/node_positions = list()
+
+	var/list/depth_groups = list()
+	for(var/knowledge_path in all_nodes)
+		var/list/entry = all_nodes[knowledge_path]
+		var/depth = entry["source"][knowledge_path][HKT_DEPTH]
+		if(!depth_groups["[depth]"])
+			depth_groups["[depth]"] = list()
+		depth_groups["[depth]"] += knowledge_path
+
+	for(var/depth_key in depth_groups)
+		var/list/group = depth_groups[depth_key]
+		var/depth = text2num(depth_key)
+		var/count = length(group)
+		var/index = 1
+		for(var/knowledge_path in group)
+			var/x_pos = round((index / (count + 1)) * 100)
+			var/y_pos = round((depth / HKT_DEPTH_ASCENSION) * 90)
+			node_positions[all_nodes[knowledge_path]["source"][knowledge_path][HKT_ID]] = list("x" = x_pos, "y" = y_pos)
+			index++
+
+	for(var/knowledge_path in all_nodes)
+		var/list/entry = all_nodes[knowledge_path]
+		var/list/source_list = entry["source"]
+		var/list/node = format_tree_node(user, knowledge_path, source_list, entry["done"], entry["category"], researchable)
+		var/list/pos = node_positions[node["id"]]
+		node["x"] = pos ? pos["x"] : 50
+		node["y"] = pos ? pos["y"] : 50
+		tree_nodes += list(node)
+
+		var/list/next_ids = source_list[knowledge_path][HKT_NEXT]
+		for(var/next_id in next_ids)
+			if(!node_positions[next_id] || !pos)
+				continue
+			var/list/next_pos = node_positions[next_id]
+			tree_lines += list(list(
+				"line_x" = min(pos["x"], next_pos["x"]),
+				"line_y" = min(pos["y"], next_pos["y"]),
+				"width" = abs(pos["x"] - next_pos["x"]),
+				"height" = abs(pos["y"] - next_pos["y"]),
+				"istop" = (next_pos["y"] > pos["y"]),
+				"isright" = (next_pos["x"] < pos["x"]),
+			))
+
+	var/list/selected_node = null
+	if(selected_node_id)
+		for(var/list/node in tree_nodes)
+			if(node["id"] == selected_node_id)
+				selected_node = node
+				break
+	if(!selected_node && length(tree_nodes))
+		selected_node = tree_nodes[1]
+		selected_node_id = selected_node["id"]
+
+	return list(
+		"tree_nodes" = tree_nodes,
+		"tree_lines" = tree_lines,
+		"selected_node_id" = selected_node_id,
+		"selected_node" = selected_node,
+	)
+
+/datum/antagonist/heretic/proc/build_branch_preview_tree(mob/user, route)
+	if(!length(GLOB.heretic_path_knowledges))
+		GLOB.heretic_path_knowledges = generate_global_heretic_tree()
+
+	var/list/path_tree = GLOB.heretic_path_knowledges[route]
+	if(!length(path_tree))
+		return list("tree_nodes" = list(), "tree_lines" = list(), "selected_node_id" = null, "selected_node" = null)
+
+	var/datum/heretic_knowledge_tree_column/column_path = GLOB.heretic_path_datums[route]
+	var/list/start_shop = heretic_shops[HERETIC_KNOWLEDGE_START]
+	var/list/all_nodes = list()
+
+	if(column_path?.start && start_shop[column_path.start])
+		all_nodes[column_path.start] = list(
+			"source" = start_shop,
+			"done" = !!researched_knowledge[column_path.start],
+			"category" = HERETIC_KNOWLEDGE_START,
+		)
+
+	for(var/knowledge_path in path_tree)
+		if(all_nodes[knowledge_path])
+			continue
+		all_nodes[knowledge_path] = list(
+			"source" = path_tree,
+			"done" = !!researched_knowledge[knowledge_path],
+			"category" = HERETIC_KNOWLEDGE_TREE,
+		)
+
+	return assemble_tree_display(user, all_nodes, null)
+
+/datum/antagonist/heretic/proc/get_path_starting_knowledge(route)
+	for(var/list/path_entry in path_info)
+		if(path_entry["route"] == route && islist(path_entry["starting_knowledge"]))
+			return path_entry["starting_knowledge"]
+	return null
+
+/datum/antagonist/heretic/proc/build_tree_ui_data(mob/user)
+	var/list/researchable = get_researchable_knowledge()
+	var/list/all_nodes = list()
+
+	for(var/knowledge_path in researched_knowledge)
+		var/list/knowledge_info = researched_knowledge[knowledge_path]
+		all_nodes[knowledge_path] = list(
+			"source" = researched_knowledge,
+			"done" = TRUE,
+			"category" = knowledge_info[HKT_CATEGORY],
+		)
+
+	var/list/shop_categories = list(HERETIC_KNOWLEDGE_TREE, HERETIC_KNOWLEDGE_DRAFT, HERETIC_KNOWLEDGE_SHOP)
+	for(var/shop_category in shop_categories)
+		var/list/shop = heretic_shops[shop_category]
+		for(var/knowledge_path in shop)
+			if(all_nodes[knowledge_path])
+				continue
+			if(ispath(knowledge_path, /datum/heretic_knowledge/limited_amount/starting))
+				continue
+			var/list/knowledge_info = shop[knowledge_path]
+			if(!(knowledge_info[HKT_ID] in researchable))
+				continue
+			all_nodes[knowledge_path] = list(
+				"source" = shop,
+				"done" = FALSE,
+				"category" = shop_category,
+			)
+
+	return assemble_tree_display(user, all_nodes, researchable)
 
 /datum/antagonist/heretic/proc/get_knowledge_data(datum/heretic_knowledge/knowledge, list/source_list, done = FALSE, category = HERETIC_KNOWLEDGE_TREE)
 	if(!length(source_list))
@@ -250,7 +476,7 @@ GLOBAL_TYPED_NEW(heretics, /datum/antagonist/heretic)
 	knowledge_data["cost"] = source_list[knowledge][HKT_COST]
 	knowledge_data["depth"] = source_list[knowledge][HKT_DEPTH]
 	knowledge_data["bgr"] = source_list[knowledge][HKT_UI_BGR]
-	knowledge_data[HKT_CATEGORY] = category
+	knowledge_data[HKT_CATEGORY] = source_list[knowledge][HKT_CATEGORY] || category
 	knowledge_data["ascension"] = ispath(knowledge, /datum/heretic_knowledge/ultimate)
 
 	knowledge_data["done"] = done
@@ -264,103 +490,49 @@ GLOBAL_TYPED_NEW(heretics, /datum/antagonist/heretic)
 		knowledge_data["desc"] = initial(knowledge.desc)
 	return knowledge_data
 
-/datum/antagonist/heretic/ui_interact(mob/living/user, ui_key = "main", datum/nanoui/ui = null)
-	. = ..()
+/datum/antagonist/heretic/ui_interact(mob/living/user, ui_key = "main", datum/nanoui/ui = null, force_open = 1, datum/nanoui/master_ui = null, datum/topic_state/state = GLOB.self_state)
+	if(user != owner?.current)
+		return
+
 	var/list/data = list()
-
 	data["charges"] = knowledge_points
-
-	data["objectives"] = user.mind.objectives
-
-	data["paths"] = path_info
 	data["passive_level"] = passive_level
-
 	data["total_sacrifices"] = total_sacrifices
 	data["ascended"] = ascended
 	data["points_to_aura"] = points_to_aura
 
-	var/list/tree_data = list()
-	var/list/shop_knowledge = list()
+	var/list/objective_data = list()
+	if(owner?.objectives)
+		for(var/datum/objective/objective in owner.objectives)
+			objective_data += list(list("explanation" = "[objective.explanation_text]"))
+	data["objectives"] = objective_data
+	data["committed_route"] = heretic_path ? heretic_path.route : ""
 
-	// This should be cached in some way, but the fact that final knowledge
-	// has to update its disabled state based on whether all objectives are complete,
-	// makes this very difficult. I'll figure it out one day maybe
-	for(var/knowledge_path in researched_knowledge)
-		var/list/knowledge_info = researched_knowledge[knowledge_path]
-		/// draft knowledges are only shown post-research
-		var/list/knowledge_data = get_knowledge_data(knowledge_path, researched_knowledge, TRUE, knowledge_info[HKT_CATEGORY])
-		var/category = knowledge_info[HKT_CATEGORY]
+	if(ui_viewing_hub || (!heretic_path && !ui_preview_route))
+		data["screen"] = "hub"
+		data["paths"] = build_path_selection_data(user)
+	else
+		var/route = ui_preview_route || heretic_path.route
+		var/can_research = heretic_path && heretic_path.route == route
+		data["screen"] = "branch"
+		data["preview_route"] = route
+		data["path_name"] = "[GLOB.heretic_path_names[route] || route]"
+		data["can_research"] = can_research ? 1 : 0
+		data["can_commit"] = heretic_path ? 0 : 1
+		if(can_research)
+			data += build_tree_ui_data(user)
+		else
+			data += build_branch_preview_tree(user, route)
+		var/list/starting = get_path_starting_knowledge(route)
+		if(starting)
+			data["starting_knowledge"] = list(
+				"path" = "[starting["path"]]",
+				"cost" = starting["cost"],
+			)
 
-		var/depth = knowledge_info[HKT_DEPTH]
-		while(depth > length(tree_data))
-			tree_data += list(list("nodes" = list()))
-
-		if(category == HERETIC_KNOWLEDGE_SHOP || category == HERETIC_KNOWLEDGE_DRAFT)
-			shop_knowledge += list(knowledge_data)
-			continue
-
-		tree_data[depth]["nodes"] += list(knowledge_data)
-
-	// TODO: sanity for purchasing categories as bypasses are likely rn
-	var/list/heretic_tree = heretic_shops[HERETIC_KNOWLEDGE_TREE]
-	var/list/researchable_knowledges = get_researchable_knowledge()
-	for(var/datum/heretic_knowledge/knowledge_path as anything in heretic_tree)
-		if(ispath(knowledge_path, /datum/heretic_knowledge/limited_amount/starting))
-			continue
-		var/list/knowledge_info = heretic_tree[knowledge_path]
-		if(!(knowledge_info[HKT_ID] in researchable_knowledges))
-			continue
-		var/list/knowledge_data = get_knowledge_data(knowledge_path, heretic_tree, FALSE)
-
-		// Final knowledge can't be learned until all objectives are complete.
-		if(ispath(knowledge_path, /datum/heretic_knowledge/ultimate))
-			var/ascension_check = can_ascend()
-			if(ascension_check != HERETIC_CAN_ASCEND)
-				knowledge_data["disabled"] = TRUE
-				knowledge_data["tooltip"] = ascension_check
-
-
-		var/depth = knowledge_data[HKT_DEPTH]
-
-		while(depth > length(tree_data))
-			tree_data += list(list("nodes" = list()))
-
-		tree_data[depth]["nodes"] += list(knowledge_data)
-
-
-	if(!heretic_path)
-		data["knowledge_tiers"] = tree_data
-		return data
-
-	var/list/heretic_drafts = heretic_shops[HERETIC_KNOWLEDGE_DRAFT]
-	for(var/datum/heretic_knowledge/knowledge_path as anything in heretic_drafts)
-		var/list/knowledge_info = heretic_drafts[knowledge_path]
-		if(!(knowledge_info[HKT_ID] in researchable_knowledges))
-			continue
-		var/list/knowledge_data = get_knowledge_data(knowledge_path, heretic_drafts, FALSE, HERETIC_KNOWLEDGE_DRAFT)
-
-		var/depth = knowledge_data[HKT_DEPTH]
-		while(depth > length(tree_data))
-			tree_data += list(list("nodes" = list()))
-
-		tree_data[depth]["nodes"] += list(knowledge_data)
-
-	data["knowledge_tiers"] = tree_data
-	var/list/shop = heretic_shops[HERETIC_KNOWLEDGE_SHOP]
-	for(var/knowledge_path in shop)
-		var/list/knowledge_info = shop[knowledge_path]
-		if(!(knowledge_info[HKT_ID] in researchable_knowledges))
-			continue
-
-		var/list/knowledge_data = get_knowledge_data(knowledge_path, shop, FALSE, HERETIC_KNOWLEDGE_SHOP)
-		shop_knowledge += list(knowledge_data)
-
-	data["knowledge_shop"] = shop_knowledge
-
-	ui = SSnano.try_update_ui(user, src, ui_key, ui, data)
-	if (!ui)
-		ui = new(user, src, ui_key, "mods-heretic.tmpl", "Necronimicon", 1200, 700)
-
+	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
+	if(!ui)
+		ui = new(user, src, ui_key, "mods-heretic.tmpl", "Necronimicon", 1200, 750, state = state)
 		ui.set_initial_data(data)
 		ui.open()
 		ui.set_auto_update(0)
@@ -369,8 +541,57 @@ GLOBAL_TYPED_NEW(heretics, /datum/antagonist/heretic)
 	if(..())
 		return 1
 
+	if(href_list["back_to_hub"])
+		ui_viewing_hub = TRUE
+		ui_preview_route = null
+		selected_node_id = null
+		if(owner?.current)
+			ui_interact(owner.current)
+		return TRUE
+
+	if(href_list["view_path"])
+		ui_viewing_hub = FALSE
+		ui_preview_route = href_list["view_path"]
+		selected_node_id = null
+		if(owner?.current)
+			ui_interact(owner.current)
+		return TRUE
+
+	if(href_list["commit_path"])
+		if(heretic_path)
+			return FALSE
+		var/route = href_list["route"]
+		var/datum/heretic_knowledge_tree_column/column_path = GLOB.heretic_path_datums[route]
+		if(!column_path?.start)
+			return FALSE
+		if(!purchase_knowledge(column_path.start, HERETIC_KNOWLEDGE_START))
+			if(owner?.current)
+				to_chat(owner.current, SPAN_WARNING("You cannot commit to this path right now."))
+			return FALSE
+		ui_viewing_hub = FALSE
+		ui_preview_route = route
+		selected_node_id = null
+		log_and_message_admins("[key_name(owner)] committed to heretic path: [GLOB.heretic_path_names[route] || route]")
+		if(owner?.current)
+			to_chat(owner.current, SPAN_NOTICE("You have embraced the [GLOB.heretic_path_names[route] || route]. The way forward is open."))
+			ui_interact(owner.current)
+		return TRUE
+
+	if(href_list["select_node"])
+		selected_node_id = href_list["select_node"]
+		if(owner?.current)
+			ui_interact(owner.current)
+		return TRUE
+
 	if(href_list["research"])
-		var/datum/heretic_knowledge/researched_path = href_list["path"]
+		if(!heretic_path)
+			if(owner?.current)
+				to_chat(owner.current, SPAN_WARNING("Choose a path before researching knowledge."))
+			return FALSE
+		var/knowledge_href = href_list["path"]
+		if(istext(knowledge_href))
+			knowledge_href = text2path(knowledge_href)
+		var/datum/heretic_knowledge/researched_path = knowledge_href
 		if(!ispath(researched_path, /datum/heretic_knowledge))
 			CRASH("Heretic attempted to learn non-heretic_knowledge path! (Got: [researched_path || "invalid path"])")
 		var/shop_category = href_list["category"]
@@ -383,6 +604,8 @@ GLOBAL_TYPED_NEW(heretics, /datum/antagonist/heretic)
 
 
 		if(!purchase_knowledge(researched_path, shop_category))
+			if(owner?.current)
+				to_chat(owner.current, SPAN_WARNING("You cannot research that knowledge right now."))
 			return FALSE
 		log_and_message_admins("[key_name(owner)] gained knowledge: [initial(researched_path.name)]")
 		return TRUE
@@ -552,14 +775,14 @@ GLOBAL_TYPED_NEW(heretics, /datum/antagonist/heretic)
  *
  * Returns TRUE if the knowledge was added successfully. FALSE otherwise.
  */
-/datum/antagonist/heretic/proc/gain_knowledge(datum/heretic_knowledge/knowledge_type, category = HERETIC_KNOWLEDGE_TREE) //update = TRUE
+/datum/antagonist/heretic/proc/gain_knowledge(datum/heretic_knowledge/knowledge_type, category = HERETIC_KNOWLEDGE_TREE, update = TRUE)
 	var/list/knowledge_list = heretic_shops[category]
 	if(!ispath(knowledge_type))
 		stack_trace("[type] gain_knowledge was given an invalid path! (Got: [knowledge_type])")
 		return FALSE
 	var/list/knowledge_data = knowledge_list[knowledge_type]
 	if(!islist(knowledge_data))
-		knowledge_data = make_knowledge_entry(knowledge_type, category)
+		knowledge_data = make_knowledge_entry(knowledge_type, null, category)
 		heretic_shops[category][knowledge_type] = knowledge_data
 	if(get_knowledge(knowledge_type))
 		return FALSE

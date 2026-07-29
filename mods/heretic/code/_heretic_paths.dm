@@ -85,31 +85,19 @@ GLOBAL_LIST_AS(heretic_path_datums, init_heretic_path_datums())
 	var/list/power_info = our_heretic.heretic_shops[category]
 	var/list/data = list(
 		"route" = route,
-		"icon" = icon.Copy(),
+		"icon" = list(
+			"icon" = "[icon["icon"]]",
+			"state" = "[icon["state"]]",
+		),
 		"complexity" = complexity,
 		"complexity_color" = complexity_color,
 		"description" = description.Copy(),
 		"pros" = pros.Copy(),
 		"cons" = cons.Copy(),
 		"tips" = tips.Copy(),
-		"starting_knowledge" = our_heretic.get_knowledge_data(start, power_info),
 	)
-
-	data["preview_abilities"] = list(
-		our_heretic.get_knowledge_data(knowledge_tier1, power_info, category = category),
-		our_heretic.get_knowledge_data(knowledge_tier2, power_info, category = category),
-		our_heretic.get_knowledge_data(knowledge_tier3, power_info, category = category),
-		our_heretic.get_knowledge_data(knowledge_tier4, power_info, category = category),
-	)
-
-	/*
-	var/datum/status_effect/heretic_passive/passive = new start.eldritch_passive()
-	data["passive"] = list(
-		"name" = initial(passive.name),
-		"description" = passive.passive_descriptions.Copy(),
-	)
-	qdel(passive)
-	*/
+	if(start && power_info[start])
+		data["starting_knowledge"] = our_heretic.prepare_knowledge_for_nano(null, start, power_info, category = HERETIC_KNOWLEDGE_START)
 	return data
 
 

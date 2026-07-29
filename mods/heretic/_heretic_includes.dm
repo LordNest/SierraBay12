@@ -11,6 +11,7 @@
 
 #include "code/knowledge/alchemy.dm"
 	// #include "code/knowledge/flesh_lore.dm"
+	#include "code/knowledge/heretic_paths.dm"
 	#include "code/knowledge/heretic_armor_knowledge.dm"
 	#include "code/knowledge/ritual-path_cosmos.dm"
 	#include "code/knowledge/ritual-path_flesh.dm"
