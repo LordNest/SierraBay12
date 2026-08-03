@@ -2,15 +2,16 @@
 TIER ONE
 */
 
-/datum/power/heretic/fleshmend
-	path = HERETIC_POWER_FLESH
-	tier = HERETIC_TIER_ONE
-	name = "Fleshmend"
-	desc = "Ценой голода лечит урон, нанесённый владельцу. Может использоваться даже в бессознательном состоянии."
-	ability_icon_state = "fleshmend"
-	knowledgecost = 1
-	make_hud_button = 1
-	verbpath = /mob/proc/heretic_fleshmend
+/spell/fleshmend
+
+	// path = HERETIC_POWER_FLESH
+	// tier = HERETIC_TIER_ONE
+	// name = "Fleshmend"
+	// desc = "Ценой голода лечит урон, нанесённый владельцу. Может использоваться даже в бессознательном состоянии."
+	// ability_icon_state = "fleshmend"
+	// knowledgecost = 1
+	// make_hud_button = 1
+	// verbpath = /mob/proc/heretic_fleshmend
 
 /mob/proc/heretic_fleshmend()
 	set category = "Heretic"
@@ -22,15 +23,16 @@ TIER ONE
 
 //////////////////////////////////////////////////////
 
-/datum/power/heretic/sensory_overload
-	path = HERETIC_POWER_FLESH
-	tier = HERETIC_TIER_ONE
-	name = "Sensory Overload"
-	desc = "Воздействие на ЦНС или её подобие заставляет жертву испытывать жуткую агонию, после того, как вы её коснетесь"
-	ability_icon_state = "overload"
-	knowledgecost = 1
-	make_hud_button = 1
-	verbpath = /mob/proc/sensory_overload
+/spell/targeted/sensory_overload
+
+	// path = HERETIC_POWER_FLESH
+	// tier = HERETIC_TIER_ONE
+	// name = "Sensory Overload"
+	// desc = "Воздействие на ЦНС или её подобие заставляет жертву испытывать жуткую агонию, после того, как вы её коснетесь"
+	// ability_icon_state = "overload"
+	// knowledgecost = 1
+	// make_hud_button = 1
+	// verbpath = /mob/proc/sensory_overload
 
 /mob/proc/sensory_overload()
 	set category = "Heretic"
@@ -101,6 +103,8 @@ TIER TWO
 /*
 TIER THREE
 */
+
+/spell/target/flesh_surgery
 
 /datum/power/heretic/vicissitude
 	path = HERETIC_POWER_FLESH

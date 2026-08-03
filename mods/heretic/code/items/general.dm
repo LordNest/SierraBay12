@@ -4,7 +4,7 @@
 Ну и нож, куда без него.
 */
 
-/obj/item/book/codex
+/obj/item/book/codex_cicatrix
 	name = "codex cicatrix"
 	icon = 'icons/obj/weapons/melee_physical.dmi'
 	icon_state = "tome"
@@ -16,7 +16,7 @@
 	var/recharging = 0
 	var/last_used = 0 //last world.time it was used.
 
-/obj/item/book/codex/attack_self(mob/living/user)
+/obj/item/book/codex_cicatrix/attack_self(mob/living/user)
 	if(recharging)
 		if(!isheretic(user))
 			to_chat(user, SPAN_NOTICE("\The [src] seems full of illegible scribbles. Is this a joke?"))
@@ -28,7 +28,7 @@
 		to_chat(user, SPAN_NOTICE("\The [src] seems full of illegible scribbles. Is this a joke?"))
 	codex_recharge()
 
-/obj/item/book/codex/examine(mob/user)
+/obj/item/book/codex_cicatrix/examine(mob/user)
 	. = ..()
 	if(iscultist(user) || isheretic(user))
 		to_chat(user, "Некрономикон мой некрономикон.")
@@ -38,7 +38,7 @@
 
 // Люблю спагетти.
 
-/obj/item/book/codex/use_before(mob/living/M, mob/living/user)
+/obj/item/book/codex_cicatrix/use_before(mob/living/M, mob/living/user)
 	. = FALSE
 	if (!istype(M))
 		return FALSE
@@ -94,7 +94,7 @@
 
 // Хотим как флешка раз в минуту поднимать чардж
 
-/obj/item/book/codex/proc/codex_recharge()
+/obj/item/book/codex_cicatrix/proc/codex_recharge()
 	//capacitor recharges over time
 	for(var/i=0, i<3, i++)
 		if(last_used+600 > world.time)
@@ -122,32 +122,136 @@ Carving Knife, как с ТГ но не как с ТГ.
 
 /obj/item/melee/sickly_blade
 
+/obj/item/material/coin/challenge/eldritch
+
+// Чашки
+
+/obj/item/reagent_containers/phylactery
+
+// Наркотики, алкоголь
+
+/obj/item/ether
+	name = "ether of the newborn"
+	desc = "A flask of nausea-inducing, thick green liquid. Restores your body completely, then places you into an enhanced sleep for a full minute."
+	icon = 'mods/heretic/icons/eldritch.dmi'
+	icon_state = "poison_flask"
+
+/obj/item/ether/attack_self(mob/living/user)
+	. = ..()
+	var/mob/living/carbon/human/H = user
+	user.revive()
+	for(var/obj/item/implant/I in user.contents)
+		for(var/obj/item/organ/external/organs in H.organs)
+			if(I in organs.implants)
+				Destroy(I)
+
+	// user.apply_status_effect(/datum/status_effect/eldritch_sleep)
+	user.SetSleeping(60 SECONDS)
+	qdel(src)
+
+
 /*
+ * Focuses, amulets, etc
+ */
 
-Зона плавных переходов - телепорты в прекрасное далёко
-
-*/
-
-/obj/item/clothing/accessory/badge/heretic_focus
+/obj/item/clothing/accessory/amulet/heretic_focus
+	icon_state = "taj_amulet"
+	icon = 'mods/tajara/icons/obj_accessories.dmi'
+	w_class = ITEM_SIZE_SMALL
 	slot_flags = SLOT_MASK | SLOT_TIE
+	wizard_garb = TRUE
 
-/*!
+/obj/item/clothing/accessory/amulet/eldritch_amulet
+	icon_state = "taj_amulet_3"
+	icon = 'mods/tajara/icons/obj_accessories.dmi'
+	w_class = ITEM_SIZE_SMALL
+	slot_flags = SLOT_MASK | SLOT_TIE
+	wizard_garb = TRUE
+
+/*
+ * Void Cloak zone
+ */
+
+/obj/item/clothing/suit/storage/hooded/cultrobes/void
+	icon = 'mods/heretic/icons/obj/obj_suit.dmi'
+	item_icons = list(slot_wear_suit_str = 'mods/heretic/icons/mob/onmob_suit.dmi')
+	icon_state = "void_cloak"
+
+	flags_inv = HIDEJUMPSUIT
+
+	item_flags = ITEM_FLAG_THICKMATERIAL
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
+	cold_protection = UPPER_TORSO | LOWER_TORSO | LEGS | ARMS
+
+	hoodtype = /obj/item/clothing/head/hooded/cult_hoodie/void
+	armor = list(
+		melee = ARMOR_MELEE_RESISTANT,
+		bullet = ARMOR_BALLISTIC_PISTOL,
+		laser = ARMOR_LASER_MAJOR,
+		energy = ARMOR_ENERGY_RESISTANT,
+		bomb = ARMOR_BOMB_PADDED,
+		bio = ARMOR_BIO_RESISTANT
+		)
+
+/obj/item/clothing/suit/storage/hooded/cultrobes/void/ToggleHood()
+	. = ..()
+	hood_up = TRUE
+	wizard_garb = FALSE
+	min_pressure_protection = 0 // Hard vacuum protection on
+	cold_protection = UPPER_TORSO | LOWER_TORSO | LEGS | FEET | ARMS | HANDS
+
+/obj/item/clothing/suit/storage/hooded/cultrobes/void/RemoveHood()
+	. = ..()
+	hood_up = FALSE
+	wizard_garb = TRUE
+	min_pressure_protection = null // Hard vacuum protection off
+	cold_protection = UPPER_TORSO | LOWER_TORSO | LEGS | ARMS
+
+// Since we can't have entire trait system on Bay, here's a temporal solution
+/obj/item/clothing/suit/storage/hooded/cultrobes/void/get_examine_line()
+	return
+
+/obj/item/clothing/head/hooded/cult_hoodie/void
+	icon = 'mods/heretic/icons/obj/obj_head.dmi'
+	icon_state = "void_cloak"
+	item_icons = list(slot_head_str = 'mods/heretic/icons/mob/onmob_head.dmi')
+	cold_protection = HEAD
+	armor = list(
+		melee = ARMOR_MELEE_RESISTANT,
+		bullet = ARMOR_BALLISTIC_PISTOL,
+		laser = ARMOR_LASER_MAJOR,
+		energy = ARMOR_ENERGY_RESISTANT,
+		bomb = ARMOR_BOMB_PADDED,
+		bio = ARMOR_BIO_RESISTANT
+		)
+	min_pressure_protection = 0
+
+// Since we can't have entire trait system on Bay, here's a temporal solution
+/obj/item/clothing/head/hooded/cult_hoodie/void/get_examine_line()
+	return
+
+/*
  * Contains the eldritch robes for heretics, a suit of armor that they can make via a ritual
  */
+
+	// Father of all heretic robes
+/obj/item/clothing/suit/storage/hooded/cultrobes
+	/// Whether the hood is flipped up
+	var/hood_up = FALSE
 
 // Eldritch armor. Looks cool, hood lets you cast heretic spells.
 /obj/item/clothing/suit/storage/hooded/cultrobes/eldritch
 	name = "ominous armor"
 	desc = "A ragged, dusty set of robes. Strange eyes line the inside."
-	icon = 'mods/psionics/icons/asamblee/asamblee.dmi'
-	item_icons = list(slot_wear_suit_str = 'mods/psionics/icons/asamblee/asamblee_onmob.dmi')
-	icon_state = "asamblee_red"
+	icon = 'mods/heretic/icons/obj/obj_suit.dmi'
+	item_icons = list(slot_wear_suit_str = 'mods/heretic/icons/mob/onmob_suit.dmi')
+	icon_state = "eldritch_armor"
 	flags_inv = HIDESHOES | HIDEJUMPSUIT
 
 	item_flags = ITEM_FLAG_THICKMATERIAL
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|FEET|ARMS|HANDS
 	cold_protection = UPPER_TORSO | LOWER_TORSO | LEGS | FEET | ARMS | HANDS
-	// allowed = list(/obj/item/melee/sickly_blade)
+	allowed = list(/obj/item/melee/sickly_blade)
 	action_button_name = "Toggle Mantle Hood"
 	hoodtype = /obj/item/clothing/head/cult_hoodie/eldritch
 	armor = list(
@@ -157,8 +261,7 @@ Carving Knife, как с ТГ но не как с ТГ.
 		energy = ARMOR_ENERGY_RESISTANT,
 		bomb = ARMOR_BOMB_PADDED
 		)
-	/// Whether the hood is flipped up
-	var/hood_up = FALSE
+	wizard_garb = TRUE
 
 /obj/item/clothing/suit/storage/hooded/cultrobes/eldritch/equipped(mob/user, slot, initial)
 	. = ..()
@@ -206,9 +309,9 @@ Carving Knife, как с ТГ но не как с ТГ.
 
 /obj/item/clothing/head/cult_hoodie/eldritch
 	name = "ominous hood"
-	icon = 'mods/psionics/icons/asamblee/asamblee.dmi'
-	icon_state = "asamblee_red_hood"
-	item_icons = list(slot_head_str = 'mods/psionics/icons/asamblee/asamblee_onmob.dmi')
+	icon = 'mods/heretic/icons/obj/obj_head.dmi'
+	icon_state = "eldritch"
+	item_icons = list(slot_wear_suit_str = 'mods/heretic/icons/mob/onmob_head.dmi')
 	desc = "A torn, dust-caked hood. Strange eyes line the inside."
 	flags_inv = HIDEMASK | HIDEEARS | HIDEEYES | HIDEFACE
 	item_flags = ITEM_FLAG_THICKMATERIAL | ITEM_FLAG_PHORONGUARD
@@ -222,6 +325,8 @@ Carving Knife, как с ТГ но не как с ТГ.
 		energy = ARMOR_ENERGY_RESISTANT,
 		bomb = ARMOR_BOMB_PADDED
 		)
+
+	wizard_garb = TRUE
 
 /obj/item/clothing/head/cult_hoodie/eldritch/Initialize(mapload)
 	. = ..()

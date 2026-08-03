@@ -10,7 +10,8 @@
 #include "code/heretic_knowledge.dm"
 
 #include "code/knowledge/alchemy.dm"
-	// #include "code/knowledge/flesh_lore.dm"
+	#include "code/knowledge/flesh_lore.dm"
+	#include "code/knowledge/hunter_lore.dm"
 	#include "code/knowledge/heretic_paths.dm"
 	#include "code/knowledge/heretic_armor_knowledge.dm"
 	#include "code/knowledge/ritual-path_cosmos.dm"
@@ -21,7 +22,7 @@
 	#include "code/knowledge/sacrifice.dm"
 	#include "code/knowledge/starting_lore.dm"
 	// #include "code/knowledge/tier_four.dm"
-	// #include "code/knowledge/tier_one.dm"
+	#include "code/knowledge/tier_one.dm"
 	// #include "code/knowledge/tier_three.dm"
 	// #include "code/knowledge/tier_two.dm"
 
@@ -30,7 +31,7 @@
 	#include "code/items/items-path_hunt.dm"
 	#include "code/items/items-path_riddle.dm"
 
-	#include "code/spells/spells.dm"
+	#include "code/spells/shadow_cloak.dm"
 	#include "code/spells/spells-cosmos.dm"
 	#include "code/spells/spells-flesh.dm"
 	#include "code/spells/spells-hunt.dm"

@@ -19,6 +19,7 @@
 #define SACRIFICE_PSIONIC  3
 #define SACRIFICE_COMMAND  3
 
+#define HERETIC_CHECK	FLAG_11	//used by construct spells - checks for nullrods
 
 // sound\ambience\meat_monster_arrival.ogg
 
@@ -49,7 +50,7 @@
 #define PATH_BLADE "Blade Path"
 #define PATH_COSMIC "Cosmic Path"
 #define PATH_LOCK "Lock Path"
-#define PATH_MOON "Moon Path"
+#define PATH_MOON "Moonhunter Path"
 #define PATH_RIDDLE "Riddle Path"
 
 /// Display names for heretic path selection UI

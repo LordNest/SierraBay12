@@ -51,7 +51,7 @@
 /datum/heretic_knowledge/book
 	name = "Codex Cicatrix"
 	icon = "necronimicon"
-	result_atoms = list(/obj/item/book/codex)
+	result_atoms = list(/obj/item/book/codex_cicatrix)
 	required_atoms = list(
 		/obj/item/book = 1,
 		/obj/item/pen = 1,
@@ -212,38 +212,49 @@
 	QDEL_NULL(created_action_ref)
 	return ..()
 
-/datum/heretic_knowledge/spell/on_gain(mob/living/user, datum/antagonist/heretic/our_heretic)
-
-	if(!user.ability_master)
-		user.ability_master = new /obj/screen/movable/ability_master/heretic(null, user)
-	user.ability_master.add_heretic_ability(object_given = user, verb_given = src.action_to_add, name_given = src.name, ability_icon_given = src.research_tree_icon_state, arguments = list())
-
-/obj/screen/movable/ability_master/heretic
-	name = "Abilities"
+// Our big override
+/obj/screen/ability
 	icon = 'mods/heretic/icons/screen_spells.dmi'
-	icon_state = "grey_spell_ready"
 
-//use this to force add powers
-/obj/screen/movable/ability_master/proc/add_heretic_ability(object_given, verb_given, name_given, ability_icon_given, arguments)
-	if(!object_given)
-		message_admins("ERROR: add_heretic_ability() was not given an object in its arguments.")
-	if(!verb_given)
-		message_admins("ERROR: add_heretic_ability() was not given a verb/proc in its arguments.")
-	if(get_ability_by_PROC_REF(verb_given))
-		return // Duplicate
-	var/obj/screen/ability/verb_based/heretic/A = new /obj/screen/ability/verb_based/heretic()
+/obj/screen/movable/ability_master
+	icon = 'mods/heretic/icons/screen_spells.dmi'
+
+/obj/screen/movable/ability_master/add_spell(spell/spell)
+	if(!spell) return
+
+	if(spell.spell_flags & NO_BUTTON) //no button to add if we don't get one
+		return
+
+	if(get_ability_by_spell(spell))
+		return
+
+	var/obj/screen/ability/spell/A = new()
 	A.ability_master = src
-	A.object_used = object_given
-	A.verb_to_call = verb_given
-	A.ability_icon_state = ability_icon_given
-	A.SetName(name_given)
-	if(arguments)
-		A.arguments_to_use = arguments
+	A.spell = spell
+	A.SetName(spell.name)
+
+	if(!spell.override_base) //if it's not set, we do basic checks
+		if(spell.spell_flags & CONSTRUCT_CHECK)
+			A.spell_base = "const" //construct spells
+		if(spell.spell_flags & HERETIC_CHECK)
+			A.spell_base = "heretic" //construct spells
+		else
+			A.spell_base = "wiz" //wizard spells
+	else
+		A.spell_base = spell.override_base
+	A.update_charge(1)
+	spell_objects.Add(A)
 	ability_objects.Add(A)
 	if(my_mob.client)
 		toggle_open(2) //forces the icons to refresh on screen
 
+/datum/heretic_knowledge/spell/on_gain(mob/living/user, datum/antagonist/heretic/our_heretic)
 
+	user.add_spell(new action_to_add, "heretic_spell_ready")
+
+	// if(!user.ability_master)
+	// 	user.ability_master = new /obj/screen/movable/ability_master/heretic(null, user)
+	// user.ability_master.add_heretic_ability(object_given = user, verb_given = src.action_to_add, name_given = src.name, ability_icon_given = src.research_tree_icon_state, arguments = list())
 
 /datum/heretic_knowledge/spell/on_lose(mob/living/user, datum/antagonist/heretic/our_heretic)
 

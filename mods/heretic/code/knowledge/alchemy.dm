@@ -18,7 +18,7 @@
 
 /mob/proc/make_circle(rune, cost = 0)
 
-	var/has_codex = !!IsHolding(/obj/item/book/codex)
+	var/has_codex = !!IsHolding(/obj/item/book/codex_cicatrix)
 	var/has_robes = 0
 
 	if(istype(get_equipped_item(slot_head), /obj/item/clothing/head/culthood) && istype(get_equipped_item(slot_wear_suit), /obj/item/clothing/suit/cultrobes) && istype(get_equipped_item(slot_shoes), /obj/item/clothing/shoes/cult))

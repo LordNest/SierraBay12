@@ -721,7 +721,7 @@ GLOBAL_TYPED_NEW(heretics, /datum/antagonist/heretic)
 		return
 
 	var/mob/living/pawn = owner.current
-	pawn.equip_to_slot_if_possible(new /obj/item/clothing/accessory/badge/heretic_focus(get_turf(pawn)), SLOT_MASK, TRUE, TRUE)
+	pawn.equip_to_slot_if_possible(new /obj/item/clothing/accessory/amulet/heretic_focus(get_turf(pawn)), SLOT_MASK, TRUE, TRUE)
 	to_chat(pawn, SPAN_OCCULT("The Mansus has manifested you a focus."))
 
 /datum/antagonist/heretic/get_additional_check_antag_output()

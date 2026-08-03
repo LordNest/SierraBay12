@@ -72,12 +72,6 @@ T4 Когда всё готово к возвышению, у нас начин�
 // Трансмутации
 
 /datum/heretic_knowledge/hunt/nanopaste
-	name = "Eyes of the Hunter"
-	desc = "Трансмутирует глаза, перевязочный пакет и укрепленное стекло в фетиш, дарующий отличное ночное зрение."
-
-
-
-/datum/heretic_knowledge/hunt/nanopaste
 	name = "Hunterpaste"
 	desc = "Трансмутирует нанопасту, колокльчик и пакет чумной крови в инструмент с помощью которого эффекты чумы могут примениться к силиковым помощникам на охоте."
 	icon = "necronimicon"
@@ -93,20 +87,6 @@ T4 Когда всё готово к возвышению, у нас начин�
 /// Tier 3
 
 // Трансмутации
-
-/datum/heretic_knowledge/hunt/huntsman_garb
-	name = "Transmutation: Huntsman Garb"
-	desc = "Трансмутирует кожу, шлем, броню и мёртвое животное в комплект брони охотника, которая неплохо защищает от лазеров."
-	icon = "necronimicon"
-	result_atoms = list(/obj/item/storage/backpack/satchel/leather/hunter)
-	required_atoms = list(
-		/obj/item/stack/material/leather = 1,
-		/obj/item/clothing/head/helmet = 1,
-		/obj/item/clothing/suit/armor/vest = 1,
-		/mob/living/simple_animal = 1
-	)
-	tier = HERETIC_TIER_THREE
-
 
 /datum/heretic_knowledge/hunt/huntsman_garb
 	name = "Transmutation: Astral Bell"

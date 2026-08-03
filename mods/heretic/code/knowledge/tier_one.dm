@@ -10,13 +10,13 @@
 		has pockets which can hold one of your blades, various ritual components (such as organs), and small heretical trinkets."
 	gain_text = "The Owl is the keeper of things that are not quite in practice, but in theory are. Many things are."
 	required_atoms = list(
-		/obj/item/shard = 1,
+		/obj/item/material/shard = 1,
 		/obj/item/clothing/suit = 1,
 		/obj/item/bedsheet = 1,
 	)
-	result_atoms = list(/obj/item/clothing/suit/hooded/cultrobes/void)
+	result_atoms = list(/obj/item/clothing/suit/storage/hooded/cultrobes/void)
 	cost = 1
-	research_tree_icon_path = 'icons/obj/clothing/suits/armor.dmi'
+	research_tree_icon_path = 'mods/heretic/icons/obj/obj_suit.dmi'
 	research_tree_icon_state = "void_cloak"
 	drafting_tier = 1
 
@@ -26,30 +26,30 @@
 		The Eldritch Medallion grants you thermal vision while worn, and also functions as a focus."
 	gain_text = "Piercing eyes guided them through the mundane. Neither darkness nor terror could stop them."
 	required_atoms = list(
-		/obj/item/organ/eyes = 1,
-		/obj/item/shard = 1,
-		/obj/item/flashlight/flare/candle = 1,
+		/obj/item/organ/internal/eyes = 1,
+		/obj/item/material/shard = 1,
+		/obj/item/flame/candle = 1,
 	)
-	result_atoms = list(/obj/item/clothing/neck/eldritch_amulet)
+	result_atoms = list(/obj/item/clothing/accessory/amulet/eldritch_amulet)
 	cost = 1
-	research_tree_icon_path = 'icons/obj/antags/eldritch.dmi'
+	research_tree_icon_path = 'mods/heretic/icons/eldritch.dmi'
 	research_tree_icon_state = "eye_medalion"
 	drafting_tier = 1
 
-/datum/heretic_knowledge/essence // AKA Eldritch Flask
-	name = "Priest's Ritual"
-	desc = "Allows you to transmute a tank of water and a glass shard into a Flask of Eldritch Essence. \
-		Eldritch Essence can be consumed for potent healing, or given to heathens for deadly poisoning."
-	gain_text = "This is an old recipe. The Owl whispered it to me. \
-		Created by the Priest - the Liquid that both was and is not."
+/datum/heretic_knowledge/stitcher
+	name = "Visitor's Gloves"
+	desc = "Allows you to transmute a latex gloves, meat and space cleaner bottle into Visitor's Gloves. \
+		This gloves can be used in manner of foresinc ones, but can mimic fingerprints of someone, which blood is on them."
+	gain_text = "Uncanny Visitor, which always been here. Always been around you. Turn around. He's here."
 	required_atoms = list(
-		/obj/structure/reagent_dispensers/watertank = 1,
-		/obj/item/shard = 1,
+		/obj/item/clothing/gloves/latex = 1,
+		/obj/item/reagent_containers/food/snacks/meat = 1,
+		/obj/item/reagent_containers/spray/cleaner = 1
 	)
-	result_atoms = list(/obj/item/reagent_containers/cup/beaker/eldritch)
+	result_atoms = list(/obj/item/clothing/gloves/forensic/stitcher)
 	cost = 1
-	research_tree_icon_path = 'icons/obj/antags/eldritch.dmi'
-	research_tree_icon_state = "eldritch_flask"
+	research_tree_icon_path = 'mods/heretic/icons/eldritch.dmi'
+	research_tree_icon_state = "spacehand_left"
 	drafting_tier = 1
 
 /datum/heretic_knowledge/phylactery
@@ -59,12 +59,12 @@
 	gain_text = "A tincture twisted into the shape of a bloodsucker vermin. \
 		Whether it chose the shape for itself, or this is the humor of the sickened mind that conjured this vile implement into being is something best not pondered."
 	required_atoms = list(
-		/obj/item/stack/sheet/glass = 1,
-		/obj/item/food/grown/poppy = 1,
+		/obj/item/stack/material/glass = 1,
+		/obj/item/reagent_containers/food/snacks/grown/poppy = 1,
 	)
-	result_atoms = list(/obj/item/reagent_containers/cup/phylactery)
+	result_atoms = list(/obj/item/reagent_containers/phylactery)
 	cost = 1
-	research_tree_icon_path = 'icons/obj/antags/eldritch.dmi'
+	research_tree_icon_path = 'mods/heretic/icons/eldritch.dmi'
 	research_tree_icon_state = "phylactery_2"
 	drafting_tier = 1
 
@@ -76,13 +76,13 @@
 		to fry its electronics, opening the airlock permanently unless bolted. "
 	gain_text = "The Mansus is a place of all sorts of sins. But greed held a special role."
 	required_atoms = list(
-		/obj/item/stack/sheet/mineral/diamond = 1,
-		/obj/item/stack/sheet/mineral/phoron = 1,
+		/obj/item/stack/material/diamond = 1,
+		/obj/item/stack/material/phoron = 1,
 	)
-	result_atoms = list(/obj/item/coin/eldritch)
+	result_atoms = list(/obj/item/material/coin/challenge/eldritch)
 	cost = 1
-	research_tree_icon_path = 'icons/obj/economy.dmi'
-	research_tree_icon_state = "coin_heretic"
+	research_tree_icon_path = 'icons/obj/materials/coin.dmi'
+	research_tree_icon_state = "syndie"
 	drafting_tier = 1
 
 /**
@@ -99,22 +99,22 @@
 	gain_text = "The occult leaves fragments of knowledge and power anywhere and everywhere. The Codex Cicatrix is one such example. \
 		Within the leather-bound faces and age old pages, a path into the Mansus is revealed."
 	required_atoms = list(
-		list(/obj/item/toy/eldritch_book, /obj/item/book) = 1,
+		/obj/item/book = 1,
 		/obj/item/pen = 1,
-		list(/mob/living, /obj/item/stack/sheet/leather, /obj/item/stack/sheet/animalhide, /obj/item/food/deadmouse) = 1,
+		list(/obj/item/stack/material/leather, /obj/item/stack/animalhide, /mob/living/simple_animal/passive/mouse) = 1, // /mob/living,
 	)
-	result_atoms = list(/obj/item/codex_cicatrix)
+	result_atoms = list(/obj/item/book/codex_cicatrix)
 	cost = 1
 	priority = MAX_KNOWLEDGE_PRIORITY - 4
 	drafting_tier = 1
 	is_shop_only = TRUE
-	research_tree_icon_path = 'icons/obj/antags/eldritch.dmi'
+	research_tree_icon_path = 'mods/heretic/icons/eldritch.dmi'
 	research_tree_icon_state = "book"
 
 	var/static/list/non_mob_bindings = typecacheof(list(
-		/obj/item/stack/sheet/leather,
-		/obj/item/stack/sheet/animalhide,
-		/obj/item/food/deadmouse,
+		/obj/item/stack/material/leather,
+		/obj/item/stack/animalhide,
+		/mob/living/simple_animal/passive/mouse,
 	))
 
 /datum/heretic_knowledge/codex_cicatrix/recipe_snowflake_check(mob/living/user, list/atoms, list/selected_atoms, turf/loc)
@@ -147,25 +147,25 @@
 	// If it is, we will damage a random bodypart, and check that bodypart for its body type, to select between 'skin' or 'exterior'.
 	if(iscarbon(body))
 		var/mob/living/carbon/carbody = body
-		var/obj/item/bodypart/bodypart = pick(carbody.get_bodyparts())
+		var/obj/item/organ/external/bodypart = pick(BP_ALL_LIMBS)
 		ripped_thing = bodypart
 
-		carbody.apply_damage(25, BRUTE, bodypart, sharpness = SHARP_EDGED)
-		if(!(bodypart.bodytype & BODYTYPE_ORGANIC))
+		carbody.apply_damage(25, DAMAGE_BRUTE, bodypart, DAMAGE_FLAG_SHARP)
+		if((bodypart.status & ORGAN_ROBOTIC))
 			exterior_text = "exterior"
 	else
-		body.apply_damage(25, BRUTE, sharpness = SHARP_EDGED)
+		body.apply_damage(25, DAMAGE_BRUTE, DAMAGE_FLAG_SHARP)
 		// If it is not a carbon mob, we will just check biotypes and damage it directly.
-		if(body.mob_biotypes & (MOB_MINERAL|MOB_ROBOTIC))
+		if(issilicon(body))
 			exterior_text = "exterior"
 
 	// Procure book for flavor text. This is why we call parent at the end.
 	var/obj/item/book/le_book = locate() in selected_atoms
 	if(!le_book)
 		stack_trace("Somehow, no book in codex cicatrix selected atoms! [english_list(selected_atoms)]")
-	playsound(body, 'sound/items/poster/poster_ripped.ogg', 100, TRUE)
-	body.do_jitter_animation()
-	body.visible_message(span_danger("An awful ripping sound is heard as [ripped_thing]'s [exterior_text] is ripped straight out, wrapping around [le_book || "the book"], turning into an eldritch shade of blue!"))
+	playsound(body, 'sound/items/poster_ripped.ogg', 100, TRUE)
+	body.do_jitter()
+	body.visible_message(SPAN_DANGER("An awful ripping sound is heard as [ripped_thing]'s [exterior_text] is ripped straight out, wrapping around [le_book || "the book"], turning into an eldritch shade of blue!"))
 	return ..()
 
 /**
@@ -184,36 +184,51 @@
 	required_atoms = list(
 		/obj/item/stack/cable_coil = 10,
 		/obj/item/paper = 1,
-		/obj/item/multitool = 1,
+		/obj/item/device/multitool = 1,
 	)
 	cost = 1
 	priority = MAX_KNOWLEDGE_PRIORITY - 3
 	drafting_tier = 1
-	research_tree_icon_path = 'icons/obj/card.dmi'
-	research_tree_icon_state = "eldritch"
+	research_tree_icon_path = 'icons/obj/tools/card.dmi'
+	research_tree_icon_state = "emag"
 
 /datum/heretic_knowledge/bookworm/recipe_snowflake_check(mob/living/user, list/atoms, list/selected_atoms, turf/loc)
 	. = ..()
 	for(var/obj/item/card/id/used_id in atoms)
 		selected_atoms += used_id
-	var/obj/item/card/user_card = user.get_idcard(hand_first = TRUE)
+	var/obj/item/card/user_card = user.GetIdCard()
 	if(user_card)
 		selected_atoms += user_card
 
 /datum/heretic_knowledge/bookworm/on_finished_recipe(mob/living/user, list/selected_atoms, turf/loc)
 	. = ..()
 	for(var/obj/item/card/id/improved_id in selected_atoms)
-		improved_id.add_access(list(ACCESS_MAINT_TUNNELS, ACCESS_EXTERNAL_AIRLOCKS, ACCESS_HERETIC), mode = FORCE_ADD_ALL)
+		improved_id.access.Add(list(access_maint_tunnels, access_external_airlocks, access_heretic))
 		selected_atoms -= improved_id
 	for(var/obj/machinery/door/airlock/door in view(7, loc))
-		door.req_one_access = null
-		door.req_access = list(ACCESS_HERETIC)
-		door.wires?.cut(WIRE_AI)
-		new /obj/effect/temp_visual/eldritch_sparks(door.loc)
-		var/obj/effect/light_emitter/light = new(door.loc)
-		light.set_light(1.75, 1.5, COLOR_PUCE)
-		QDEL_IN(light, 1 SECONDS)
-		playsound(door, 'sound/effects/magic.ogg', 20, vary = TRUE, extrarange = SILENCED_SOUND_EXTRARANGE, ignore_walls = FALSE)
-		playsound(door, SFX_SPARKS, 33, vary = TRUE, extrarange = SILENCED_SOUND_EXTRARANGE, ignore_walls = FALSE)
+		door.req_access = list(access_heretic)
+		door.wires.UpdateCut(AIRLOCK_WIRE_AI_CONTROL, mended = FALSE)
+		new /obj/sparks(door.loc)
 
 	return TRUE
+
+
+/*
+	SierraBay add - recipes not ported from TG
+*/
+
+/datum/heretic_knowledge/fungoid_heart
+	name = "Fungoid Heart"
+	desc = "Allows you to transmute a mushroom and a pool of blood to create a Fungoid Heart. \
+		The heart can be activated like grenade to spawn an auxiliary blob nucleus \
+		when timer expires. Blob hostile to everyone, including summoner. "
+	gain_text = "Just a small reflection of that force of nature that is trying to eat away at the foundations of the universe."
+	required_atoms = list(
+		/obj/item/reagent_containers/food/snacks/grown/mushroom = 1,
+		/obj/decal/cleanable/blood = 1
+	)
+	result_atoms = list(/obj/item/grenade/spawnergrenade/blob)
+	cost = 1
+	research_tree_icon_path = 'icons/mob/blob.dmi'
+	research_tree_icon_state = "core_sample_2"
+	drafting_tier = 1

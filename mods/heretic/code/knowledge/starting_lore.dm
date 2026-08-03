@@ -26,18 +26,18 @@ GLOBAL_LIST_AS(heretic_start_knowledge, initialize_starting_knowledge())
 		/obj/item/organ/internal/eyes = 1,
 		/obj/item/stack/material/glass = 1,
 	)
-	result_atoms = list(/obj/item/clothing/accessory/badge/heretic_focus)
+	result_atoms = list(/obj/item/clothing/accessory/amulet/heretic_focus)
 	cost = 0
 	priority = MAX_KNOWLEDGE_PRIORITY - 2 // Not as important as making a heart or sacrificing, but important enough.
 	is_starting_knowledge = TRUE
-	// research_tree_icon_path = 'icons/obj/clothing/neck.dmi'
+	research_tree_icon_path = 'mods/tajara/icons/obj_accessories.dmi'
 	research_tree_icon_state = "eldritch_necklace"
 
 /datum/heretic_knowledge/spell/cloak_of_shadows
 	name = "Cloak of Shadow"
 	desc = "Grants you the spell Cloak of Shadow. This spell will completely conceal your identity in a purple smoke \
 		for three minutes, assisting you in keeping secrecy. Requires a focus to cast."
-	// action_to_add = /datum/action/cooldown/spell/shadow_cloak
+	action_to_add = /spell/shadow_cloak
 	cost = 0
 	is_starting_knowledge = TRUE
 

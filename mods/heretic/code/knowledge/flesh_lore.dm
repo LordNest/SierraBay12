@@ -4,7 +4,7 @@
 	complexity = "Varies"
 	complexity_color = COLOR_ORANGE
 	icon = list(
-		"icon" = 'icons/obj/weapons/khopesh.dmi',
+		"icon" = 'mods/heretic/icons/khopesh.dmi',
 		"state" = "flesh_blade",
 		"frame" = 1,
 		"dir" = SOUTH,
@@ -27,7 +27,7 @@
 		"You are mostly focused around supporting your minions.",
 	)
 	tips = list(
-		"Your Mansus Grasp allows you to turn dead humanoids into ghouls (even mindshielded humanoids like security officers and the captain). It also Leaves a mark that causes heavy bleeding when triggered by your bloody blade.",
+		"Your Mansus Grasp allows you to turn dead humanoids into ghouls. It also Leaves a mark that causes heavy bleeding when triggered by your bloody blade.",
 		"As a Flesh Heretic, organs and dead bodies are your best friends! You can use them for rituals, to heal or to gain buffs.",
 		"Your Flesh Surgery spell can heal your summons. Your robes grant you an aura that also heals nearby summons (but not yourself).",
 		"Your Flesh Surgery spell also lets you steal organs from humanoids. Useful if you need a spare liver.",
@@ -39,12 +39,12 @@
 
 	start = /datum/heretic_knowledge/limited_amount/starting/base_flesh
 	knowledge_tier1 = /datum/heretic_knowledge/limited_amount/flesh_ghoul
-	guaranteed_side_tier1 = /datum/heretic_knowledge/limited_amount/risen_corpse
+	// guaranteed_side_tier1 = /datum/heretic_knowledge/limited_amount/risen_corpse
 	knowledge_tier2 = /datum/heretic_knowledge/spell/flesh_surgery
-	guaranteed_side_tier2 = /datum/heretic_knowledge/crucible
+	guaranteed_side_tier2 = /datum/heretic_knowledge/fungoid_heart // /datum/heretic_knowledge/crucible
 	robes = /datum/heretic_knowledge/armor/flesh
 	knowledge_tier3 = /datum/heretic_knowledge/summon/raw_prophet
-	guaranteed_side_tier3 = /datum/heretic_knowledge/spell/crimson_cleave
+	// guaranteed_side_tier3 = /datum/heretic_knowledge/spell/crimson_cleave
 	blade = /datum/heretic_knowledge/blade_upgrade/flesh
 	knowledge_tier4 = /datum/heretic_knowledge/summon/stalker
 	ascension = /datum/heretic_knowledge/ultimate/flesh_final
@@ -56,25 +56,25 @@
 		You can only create three at a time."
 	gain_text = "Hundreds of us starved, but not me... I found strength in my greed."
 	required_atoms = list(
-		/obj/item/knife = 1,
-		/obj/effect/decal/cleanable/blood = 1,
+		/obj/item/material/knife = 1,
+		/obj/decal/cleanable/blood = 1,
 	)
 	result_atoms = list(/obj/item/melee/sickly_blade/flesh)
 	limit = 3 // Bumped up so they can arm up their ghouls too.
-	research_tree_icon_path = 'icons/obj/weapons/khopesh.dmi'
+	research_tree_icon_path = 'mods/heretic/icons/khopesh.dmi'
 	research_tree_icon_state = "flesh_blade"
-	mark_type = /datum/status_effect/eldritch/flesh
-	eldritch_passive = /datum/status_effect/heretic_passive/flesh
+	// mark_type = /datum/status_effect/eldritch/flesh
+	// eldritch_passive = /datum/status_effect/heretic_passive/flesh
 
 /datum/heretic_knowledge/limited_amount/starting/base_flesh/on_research(mob/user, datum/antagonist/heretic/our_heretic)
 	. = ..()
-	var/datum/objective/heretic_summon/summon_objective = new()
-	summon_objective.owner = our_heretic.owner
-	our_heretic.objectives += summon_objective
+//	var/datum/objective/heretic_summon/summon_objective = new()
+//	summon_objective.owner = our_heretic.owner
+//	our_heretic.objectives += summon_objective
 
-	to_chat(user, span_hierophant("Undertaking the Path of Flesh, you are given another objective."))
-	our_heretic.owner.announce_objectives()
-
+//	to_chat(user, SPAN_OCCULT("Undertaking the Path of Flesh, you are given another objective."))
+//	our_heretic.owner.announce_objectives()
+/*
 /datum/heretic_knowledge/limited_amount/starting/base_flesh/on_mansus_grasp(mob/living/source, mob/living/target)
 	. = ..()
 
@@ -82,30 +82,30 @@
 		return
 
 	if(LAZYLEN(created_items) >= limit)
-		target.balloon_alert(source, "at ghoul limit!")
+		target.visible_message(source, "at ghoul limit!")
 		return COMPONENT_BLOCK_HAND_USE
 
 	if(HAS_TRAIT(target, TRAIT_HUSK))
-		target.balloon_alert(source, "husked!")
+		target.visible_message(source, "husked!")
 		return COMPONENT_BLOCK_HAND_USE
 
 	if(!IS_VALID_GHOUL_MOB(target))
-		target.balloon_alert(source, "invalid body!")
+		target.visible_message(source, "invalid body!")
 		return COMPONENT_BLOCK_HAND_USE
 
 	target.grab_ghost()
 
 	// The grab failed, so they're mindless or playerless. We can't continue
 	if(!target.mind || !target.client)
-		target.balloon_alert(source, "no soul!")
+		target.visible_message(source, "no soul!")
 		return COMPONENT_BLOCK_HAND_USE
 
 	make_ghoul(source, target)
-
+*/
 /// The max amount of health a ghoul has.
 #define GHOUL_MAX_HEALTH 25
 
-/// Makes [victim] into a ghoul.
+/* /// Makes [victim] into a ghoul.
 /datum/heretic_knowledge/limited_amount/starting/base_flesh/proc/make_ghoul(mob/living/user, mob/living/carbon/human/victim)
 	user.log_message("created a ghoul, controlled by [key_name(victim)].", LOG_GAME)
 	message_admins("[ADMIN_LOOKUPFLW(user)] created a ghoul, [ADMIN_LOOKUPFLW(victim)].")
@@ -125,6 +125,7 @@
 /// Callback for the ghoul status effect - Tracking all of our ghouls
 /datum/heretic_knowledge/limited_amount/starting/base_flesh/proc/remove_from_ghoul(mob/living/ghoul)
 	LAZYREMOVE(created_items, weakref(ghoul))
+*/
 
 /datum/heretic_knowledge/limited_amount/flesh_ghoul
 	name = "Imperfect Ritual"
@@ -135,13 +136,13 @@
 	gain_text = "I found notes of a dark ritual, unfinished... yet still, I pushed forward."
 	required_atoms = list(
 		/mob/living/carbon/human = 1,
-		/obj/item/food/grown/poppy = 1,
+		/obj/item/reagent_containers/food/snacks/grown/poppy = 1,
 	)
 	limit = 2
 	cost = 2
-	research_tree_icon_path = 'icons/ui_icons/antags/heretic/knowledge.dmi'
+	research_tree_icon_path = 'mods/heretic/icons/knowledge.dmi'
 	research_tree_icon_state = "ghoul_voiceless"
-
+/*
 /datum/heretic_knowledge/limited_amount/flesh_ghoul/recipe_snowflake_check(mob/living/user, list/atoms, list/selected_atoms, turf/loc)
 	. = ..()
 	if(!.)
@@ -151,30 +152,30 @@
 		if(body.stat != DEAD)
 			continue
 		if(!IS_VALID_GHOUL_MOB(body) || HAS_TRAIT(body, TRAIT_HUSK))
-			to_chat(user, span_hierophant_warning("[body] is not in a valid state to be made into a ghoul."))
+			to_chat(user, SPAN_OCCULT("[body] is not in a valid state to be made into a ghoul."))
 			continue
 
 		// We'll select any valid bodies here. If they're clientless, we'll give them a new one.
 		selected_atoms += body
 		return TRUE
 
-	loc.balloon_alert(user, "ritual failed, no valid body!")
+	loc.visible_message(user, "ritual failed, no valid body!")
 	return FALSE
 
 /datum/heretic_knowledge/limited_amount/flesh_ghoul/on_finished_recipe(mob/living/user, list/selected_atoms, turf/loc)
 	var/mob/living/carbon/human/soon_to_be_ghoul = locate() in selected_atoms
 	if(QDELETED(soon_to_be_ghoul)) // No body? No ritual
 		stack_trace("[type] reached on_finished_recipe without a human in selected_atoms to make a ghoul out of.")
-		loc.balloon_alert(user, "ritual failed, no valid body!")
+		loc.visible_message(user, "ritual failed, no valid body!")
 		return FALSE
 
 	soon_to_be_ghoul.grab_ghost()
 
 	if(!soon_to_be_ghoul.mind || !soon_to_be_ghoul.client)
 		message_admins("[ADMIN_LOOKUPFLW(user)] is creating a voiceless dead of a body with no player.")
-		var/mob/chosen_one = SSpolling.poll_ghosts_for_target("Do you want to play as [span_danger(soon_to_be_ghoul.real_name)], a [span_notice("voiceless dead")]?", check_jobban = ROLE_HERETIC, role = ROLE_HERETIC, poll_time = 5 SECONDS, checked_target = soon_to_be_ghoul, alert_pic = mutable_appearance('icons/mob/human/human.dmi', "husk"), jump_target = soon_to_be_ghoul, role_name_text = "voiceless dead")
+		var/mob/chosen_one = SSpolling.poll_ghosts_for_target("Do you want to play as [SPAN_DANGER(soon_to_be_ghoul.real_name)], a [SPAN_NOTICE("voiceless dead")]?", check_jobban = ROLE_HERETIC, role = ROLE_HERETIC, poll_time = 5 SECONDS, checked_target = soon_to_be_ghoul, alert_pic = mutable_appearance('icons/mob/human/human.dmi', "husk"), jump_target = soon_to_be_ghoul, role_name_text = "voiceless dead")
 		if(isnull(chosen_one))
-			loc.balloon_alert(user, "ritual failed, no ghosts!")
+			loc.visible_message(user, "ritual failed, no ghosts!")
 			return FALSE
 		message_admins("[key_name_admin(chosen_one)] has taken control of ([key_name_admin(soon_to_be_ghoul)]) to replace an AFK player.")
 		soon_to_be_ghoul.ghostize(FALSE)
@@ -209,7 +210,7 @@
 /datum/heretic_knowledge/limited_amount/flesh_ghoul/proc/remove_from_ghoul(mob/living/ghoul)
 	LAZYREMOVE(created_items, weakref(ghoul))
 	REMOVE_TRAIT(ghoul, TRAIT_MUTE, MAGIC_TRAIT)
-
+*/
 /datum/heretic_knowledge/spell/flesh_surgery
 	name = "Knitting of Flesh"
 	desc = "Grants you the spell Knit Flesh. This spell allows you to remove organs from victims \
@@ -217,7 +218,7 @@
 		This spell also allows you to heal your minions and summons, or restore failing organs to acceptable status."
 	gain_text = "But they were not out of my reach for long. With every step, the screams grew, until at last \
 		I learned that they could be silenced."
-	action_to_add = /datum/action/cooldown/spell/touch/flesh_surgery
+	action_to_add = /spell/target/flesh_surgery
 	cost = 2
 	drafting_tier = 5
 
@@ -227,12 +228,12 @@
 		Acts as a focus while hooded."
 	gain_text = "I tugged these wretched, slothing things about me, like one might a warm blanket. \
 				With eyes-not-mine, they will witness. With teeth-not-mine, they will clench. With limbs-not-mine, they will break."
-	result_atoms = list(/obj/item/clothing/suit/hooded/cultrobes/eldritch/flesh)
+	result_atoms = list(/obj/item/clothing/suit/storage/hooded/cultrobes/eldritch/flesh)
 	research_tree_icon_state = "flesh_armor"
 	required_atoms = list(
 		list(/obj/structure/table, /obj/item/clothing/suit) = 1,
 		/obj/item/clothing/mask = 1,
-		/obj/effect/decal/cleanable/blood = 1,
+		/obj/decal/cleanable/blood = 1,
 	)
 
 /datum/heretic_knowledge/summon/raw_prophet
@@ -244,10 +245,10 @@
 		The screams... once constant, now silenced by their wretched appearance. Nothing was out of reach."
 	required_atoms = list(
 		/obj/item/organ/internal/eyes = 1,
-		/obj/effect/decal/cleanable/blood = 1,
-		/obj/item/organ/external/arm/left = 1,
+		/obj/decal/cleanable/blood = 1,
+		/obj/item/organ/external/arm = 1,
 	)
-	mob_to_summon = /mob/living/basic/heretic_summon/raw_prophet
+//	mob_to_summon = /mob/living/basic/heretic_summon/raw_prophet
 	cost = 2
 
 
@@ -256,19 +257,19 @@
 	desc = "Your Bloody Blade now causes enemies to bleed heavily on attack."
 	gain_text = "The Uncanny Man was not alone. They led me to the Marshal. \
 		I finally began to understand. And then, blood rained from the heavens."
-	research_tree_icon_path = 'icons/ui_icons/antags/heretic/knowledge.dmi'
+	research_tree_icon_path = 'mods/heretic/icons/knowledge.dmi'
 	research_tree_icon_state = "blade_upgrade_flesh"
 	///What type of wound do we apply on hit
-	var/wound_type = /datum/wound/slash/flesh/severe
+//	var/wound_type = /datum/wound/slash/flesh/severe
 
-/datum/heretic_knowledge/blade_upgrade/flesh/do_melee_effects(mob/living/source, mob/living/target, obj/item/melee/sickly_blade/blade)
-	if(!iscarbon(target) || source == target)
-		return
+///datum/heretic_knowledge/blade_upgrade/flesh/do_melee_effects(mob/living/source, mob/living/target, obj/item/melee/sickly_blade/blade)
+//	if(!iscarbon(target) || source == target)
+//		return
 
-	var/mob/living/carbon/carbon_target = target
-	var/obj/item/organ/external/bodypart = pick(carbon_target.get_bodyparts())
-	var/datum/wound/crit_wound = new wound_type()
-	crit_wound.apply_wound(bodypart, attack_direction = get_dir(source, target))
+//	var/mob/living/carbon/carbon_target = target
+//	var/obj/item/organ/external/bodypart = pick(carbon_target.get_bodyparts())
+//	var/datum/wound/crit_wound = new wound_type()
+//	crit_wound.apply_wound(bodypart, attack_direction = get_dir(source, target))
 
 /datum/heretic_knowledge/summon/stalker
 	name = "Lonely Ritual"
@@ -284,7 +285,7 @@
 		/obj/item/pen = 1,
 		/obj/item/paper = 1,
 	)
-	mob_to_summon = /mob/living/basic/heretic_summon/stalker
+//	mob_to_summon = /mob/living/basic/heretic_summon/stalker
 	cost = 2
 
 	is_final_knowledge = TRUE
@@ -303,16 +304,16 @@
 		Men of this world, hear me, for the time has come! The Marshal guides my army! \
 		Reality will bend to THE LORD OF THE NIGHT or be unraveled! WITNESS MY ASCENSION!"
 	required_atoms = list(/mob/living/carbon/human = 4)
-	ascension_achievement = /datum/award/achievement/misc/flesh_ascension
+//	ascension_achievement = /datum/award/achievement/misc/flesh_ascension
 	announcement_text = "%SPOOKY% Ever coiling vortex. Reality unfolded. ARMS OUTREACHED, THE LORD OF THE NIGHT, %NAME% has ascended! Fear the ever twisting hand! %SPOOKY%"
-	announcement_sound = 'sound/music/antag/heretic/ascend_flesh.ogg'
+//	announcement_sound = 'sound/music/antag/heretic/ascend_flesh.ogg'
 
 /datum/heretic_knowledge/ultimate/flesh_final/on_finished_recipe(mob/living/user, list/selected_atoms, turf/loc)
 	. = ..()
-	var/datum/action/cooldown/spell/shapeshift/shed_human_form/worm_spell = new(user.mind)
-	worm_spell.Grant(user)
+//	var/datum/action/cooldown/spell/shapeshift/shed_human_form/worm_spell = new(user.mind)
+//	worm_spell.Grant(user)
 
-	var/datum/antagonist/heretic/heretic_datum = GET_HERETIC(user)
+	var/datum/antagonist/heretic/heretic_datum = isheretic(user)
 	var/datum/heretic_knowledge/limited_amount/starting/base_flesh/grasp_ghoul = heretic_datum.get_knowledge(/datum/heretic_knowledge/limited_amount/starting/base_flesh)
 	grasp_ghoul.limit *= 3
 	var/datum/heretic_knowledge/limited_amount/flesh_ghoul/ritual_ghoul = heretic_datum.get_knowledge(/datum/heretic_knowledge/limited_amount/flesh_ghoul)
@@ -320,5 +321,5 @@
 	var/datum/heretic_knowledge/limited_amount/starting/base_flesh/blade_ritual = heretic_datum.get_knowledge(/datum/heretic_knowledge/limited_amount/starting/base_flesh)
 	blade_ritual.limit = 999
 
-#undef GHOUL_MAX_HEALTH
-#undef MUTE_MAX_HEALTH
+// #undef GHOUL_MAX_HEALTH
+// #undef MUTE_MAX_HEALTH

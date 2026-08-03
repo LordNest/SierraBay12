@@ -2,40 +2,6 @@
  * Tier 2 knowledge: Defensive tools and curses
  */
 
-/**
- * Codex Morbus, an upgrade to the base codex
- * Functionally an upgraded version of the codex, but it also has the ability to cast curses by right clicking at a rune.
- * Requires you to have the blood of your victim in your off-hand
- */
-/datum/heretic_knowledge/codex_morbus
-	name = "Codex Morbus"
-	desc = "Allows you to to combine a codex cicatrix, and a body into a Codex Morbus. \
-		It draws runes and siphons essences a bit faster. \
-		Right Click on a rune to curse crewmembers, the target's blood is required in your off hand for a curse to take effect (Best combined with Phylactery Of Damnation)."
-	gain_text = "The spine of this leather-bound tome creaks with an eerily pained sigh. \
-		To ply page from place takes considerable effort, and I dare not linger on the suggestions the book makes for longer than necessary. \
-		It speaks of coming plagues, of waiting supplicants of dead and forgotten gods, and the undoing of mortal kind. \
-		It speaks of needles to peel the skin of the world back and leaving it to fester. And it speaks to me by name."
-	required_atoms = list(
-		/obj/item/codex_cicatrix = 1,
-		/mob/living/carbon/human = 1,
-	)
-	result_atoms = list(/obj/item/codex_cicatrix/morbus)
-	cost = 2
-	research_tree_icon_path = 'icons/obj/antags/eldritch.dmi'
-	research_tree_icon_state = "book_morbus"
-	drafting_tier = 2
-
-/datum/heretic_knowledge/codex_morbus/on_finished_recipe(mob/living/user, list/selected_atoms, turf/loc)
-	. = ..()
-	var/mob/living/carbon/human/to_fuck_up = locate() in selected_atoms
-	for(var/_limb in to_fuck_up.get_bodyparts())
-		var/obj/item/bodypart/limb = _limb
-		limb.force_wound_upwards(/datum/wound/slash/flesh/critical)
-	for(var/obj/item/bodypart/limb as anything in to_fuck_up.get_bodyparts())
-		to_fuck_up.cause_wound_of_type_and_severity(WOUND_BLUNT, limb, WOUND_SEVERITY_CRITICAL)
-	return TRUE
-
 /datum/heretic_knowledge/greaves_of_the_prophet
 	name = "Greaves Of The Prophet"
 	desc = "Allows you to combine a pair of shoes and 2 sheets of titanium or silver into a pair of Armored Greaves, they confer to the user full immunity to slips."
@@ -76,12 +42,12 @@
 		I can carve the monolith to reveal the chains!"
 	required_atoms = list(
 		/obj/item/knife = 1,
-		/obj/item/shard = 1,
+		/obj/item/material/shard = 1,
 		/obj/item/paper = 1,
 	)
 	result_atoms = list(/obj/item/melee/rune_carver)
 	cost = 2
-	research_tree_icon_path = 'icons/obj/antags/eldritch.dmi'
+	research_tree_icon_path = 'mods/heretic/icons/eldritch.dmi'
 	research_tree_icon_state = "rune_carver"
 	drafting_tier = 2
 
@@ -93,11 +59,11 @@
 		Through the haze, I find myself staring back in relief, or something grossly resembling my visage. \
 		It is this wretched thing that I consign to my fate, and whose own that I snatch through the haze of dreams. Fools that we are."
 	required_atoms = list(
-		/obj/item/shard = 1,
-		/obj/effect/decal/cleanable/vomit = 1,
+		/obj/item/material/shard = 1,
+		/obj/decal/cleanable/vomit = 1,
 	)
 	result_atoms = list(/obj/item/ether)
 	cost = 2
-	research_tree_icon_path = 'icons/obj/antags/eldritch.dmi'
+	research_tree_icon_path = 'mods/heretic/icons/eldritch.dmi'
 	research_tree_icon_state = "poison_flask"
 	drafting_tier = 2

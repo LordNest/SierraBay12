@@ -55,3 +55,61 @@
 	if(!owner.mind)
 		return FALSE
 	return TRUE
+
+// Yep, our own door access
+var/global/const/access_heretic = "ACCESS_HERETIC"
+/datum/access/heretic
+	id = access_heretic
+	desc = "Heretic"
+	region = ACCESS_REGION_NONE
+
+/*
+Spell zone
+*/
+/obj/item/spell
+	anchored = TRUE    // Never spawned outside of inventory, should be fine.
+	canremove = FALSE // You can use it while prone. Still deleted if the arm is destroyed.
+	w_class = ITEM_SIZE_TINY //technically it's just energy or something, I dunno
+	atom_flags = ATOM_FLAG_NO_TEMP_CHANGE | ATOM_FLAG_NO_BLOOD
+	var/mob/living/carbon/human/creator
+	var/range = 1
+
+/obj/item/spell/Process()
+	if (creator.handcuffed || (creator.stat != CONSCIOUS))
+		QDEL_IN(src, 0)
+
+	if (!creator || loc != creator || !creator.IsHolding(src))
+		// Tidy up a bit.
+		if(istype(loc,/mob/living))
+			var/mob/living/carbon/human/host = loc
+			if(istype(host))
+				for(var/obj/item/organ/external/organ in host.organs)
+					for(var/obj/item/O in organ.implants)
+						if(O == src)
+							organ.implants -= src
+			host.pinned -= src
+			host.embedded -= src
+			host.drop_from_inventory(src)
+		QDEL_IN(src, 0)
+
+
+/obj/item/spell/get_storage_cost()
+	return ITEM_SIZE_NO_CONTAINER
+
+/obj/item/spell/dropped()
+	..()
+	QDEL_IN(src, 0)
+
+/obj/item/spell/proc/do_spell_effect(atom/target, mob/user)
+	return
+
+/obj/item/spell/use_before(atom/target, mob/living/user, click_parameters)
+	. = ..()
+	var/distance = get_dist(user, target)
+	if(distance > range)
+		user.visible_message(SPAN_WARNING("Can't reach target without spell range!"))
+		return FALSE
+	else
+		do_spell_effect(target, user)
+		QDEL_IN(src, 0)
+		return TRUE

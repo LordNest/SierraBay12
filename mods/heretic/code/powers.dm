@@ -28,7 +28,7 @@ var/global/list/heretic_powers = typesof(/datum/power/heretic) - /datum/power/he
 	if(!mind)				return
 	if(!mind.heretic)	mind.heretic = new /datum/heretic(gender)
 
-	verbs.Add(/datum/heretic/proc/ResearchTree)
+	// verbs.Add(/datum/heretic/proc/ResearchTree)
 	add_language(LANGUAGE_CULT)
 
 	for(var/SK in GLOB.heretic_start_knowledge)
@@ -106,7 +106,27 @@ var/global/list/heretic_powers = typesof(/datum/power/heretic) - /datum/power/he
 
 	var/path = null
 
-// Modularheretic, totally stolen from the new player panel.  YAYY
+//use this to force add powers
+/obj/screen/movable/ability_master/proc/add_heretic_ability(object_given, verb_given, name_given, ability_icon_given, arguments)
+	if(!object_given)
+		message_admins("ERROR: add_heretic_ability() was not given an object in its arguments.")
+	if(!verb_given)
+		message_admins("ERROR: add_heretic_ability() was not given a verb/proc in its arguments.")
+	if(get_ability_by_PROC_REF(verb_given))
+		return // Duplicate
+	var/obj/screen/ability/verb_based/heretic/A = new /obj/screen/ability/verb_based/heretic()
+	A.ability_master = src
+	A.object_used = object_given
+	A.verb_to_call = verb_given
+	A.ability_icon_state = ability_icon_given
+	A.SetName(name_given)
+	if(arguments)
+		A.arguments_to_use = arguments
+	ability_objects.Add(A)
+	if(my_mob.client)
+		toggle_open(2) //forces the icons to refresh on screen
+
+/* // Modularheretic, totally stolen from the new player panel.  YAYY
 /datum/heretic/proc/ResearchTree()//The new one
 	set name = "-Research Tree-"
 	set category = "Heretic"
@@ -752,6 +772,7 @@ var/global/list/heretic_powers = typesof(/datum/power/heretic) - /datum/power/he
 		call(/datum/heretic/proc/ResearchTree)()
 		return
 
+ */
 /datum/heretic/proc/purchasePower(datum/mind/M, Pname, remake_verbs = 1)
 	if(!M || !M.heretic)
 		return
@@ -771,7 +792,7 @@ var/global/list/heretic_powers = typesof(/datum/power/heretic) - /datum/power/he
 
 	if(Thepower in M.heretic.purchased_powers)
 		return
-
+/*
 	// Проверяем, соответствует ли сила выбранному пути
 	var/list/available_paths = getAvailablePaths(M.heretic.selected_path)
 	if(!canAccessPower(Thepower, available_paths))
@@ -786,7 +807,7 @@ var/global/list/heretic_powers = typesof(/datum/power/heretic) - /datum/power/he
 	if(M.heretic.knowledgepoints < Thepower.knowledgecost)
 		to_chat(M.current, "We cannot Research this... yet.  We must acquire more DNA.")
 		return
-
+*/
 	M.heretic.knowledgepoints -= Thepower.knowledgecost
 
 	M.heretic.purchased_powers += Thepower
@@ -809,7 +830,7 @@ var/global/list/heretic_powers = typesof(/datum/power/heretic) - /datum/power/he
 		call(M.current, Thepower.verbpath)()
 	else if(remake_verbs)
 		M.current.make_heretic()
-
+/*
 /datum/heretic/proc/purchaseRitual(datum/mind/M, ritual_name, remake_verbs = 1)
 	if(!M || !M.heretic)
 		return
@@ -854,3 +875,4 @@ var/global/list/heretic_powers = typesof(/datum/power/heretic) - /datum/power/he
 		M.heretic.purchased_powers_history.Add("Ritual: [ritual_name] ([ritual_cost] points)")
 
 	to_chat(M.current, "Вы изучили ритуал: [TheRitual.name]")
+*/
