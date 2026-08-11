@@ -36,22 +36,6 @@
 	research_tree_icon_state = "eye_medalion"
 	drafting_tier = 1
 
-/datum/heretic_knowledge/stitcher
-	name = "Visitor's Gloves"
-	desc = "Allows you to transmute a latex gloves, meat and space cleaner bottle into Visitor's Gloves. \
-		This gloves can be used in manner of foresinc ones, but can mimic fingerprints of someone, which blood is on them."
-	gain_text = "Uncanny Visitor, which always been here. Always been around you. Turn around. He's here."
-	required_atoms = list(
-		/obj/item/clothing/gloves/latex = 1,
-		/obj/item/reagent_containers/food/snacks/meat = 1,
-		/obj/item/reagent_containers/spray/cleaner = 1
-	)
-	result_atoms = list(/obj/item/clothing/gloves/forensic/stitcher)
-	cost = 1
-	research_tree_icon_path = 'mods/heretic/icons/eldritch.dmi'
-	research_tree_icon_state = "spacehand_left"
-	drafting_tier = 1
-
 /datum/heretic_knowledge/phylactery
 	name = "Phylactery of Damnation"
 	desc = "Allows you to transmute a sheet of glass and a poppy into a Phylactery that can instantly draw blood, even from long distances. \
@@ -231,4 +215,20 @@
 	cost = 1
 	research_tree_icon_path = 'icons/mob/blob.dmi'
 	research_tree_icon_state = "core_sample_2"
+	drafting_tier = 1
+
+/datum/heretic_knowledge/stitcher
+	name = "Visitor's Gloves"
+	desc = "Allows you to transmute a latex gloves, meat and space cleaner bottle into Visitor's Gloves. \
+		This gloves can be used in manner of foresinc ones, but can mimic fingerprints of someone, which blood is on them."
+	gain_text = "Uncanny Visitor, which always been here. Always been around you. Turn around. He's here."
+	required_atoms = list(
+		/obj/item/clothing/gloves/latex = 1,
+		/obj/item/reagent_containers/food/snacks/meat = 1,
+		/obj/item/reagent_containers/spray/cleaner = 1
+	)
+	result_atoms = list(/obj/item/clothing/gloves/forensic/stitcher)
+	cost = 1
+	research_tree_icon_path = 'mods/heretic/icons/eldritch.dmi'
+	research_tree_icon_state = "spacehand_left"
 	drafting_tier = 1

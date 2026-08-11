@@ -56,11 +56,7 @@
 /turf/simulated/floor/exoplanet/concrete/reinforced/road,
 /area/centcom)
 "jGF" = (
-/obj/machinery/computer/modular/preset/full,
-/turf/simulated/floor/exoplanet/concrete/reinforced/road,
-/area/centcom)
-"jIh" = (
-/obj/machinery/fabricator/rnd/robotics/mech,
+/obj/item/clothing/suit/storage/hooded/cultrobes/eldritch/flesh,
 /turf/simulated/floor/exoplanet/concrete/reinforced/road,
 /area/centcom)
 "kSl" = (
@@ -104,7 +100,7 @@
 /turf/simulated/floor/exoplanet/titan_water/middle,
 /area/liberia/atmos)
 "ooX" = (
-/obj/machinery/fabricator/rnd/robotics,
+/mob/living/carbon/human,
 /turf/simulated/floor/exoplanet/concrete/reinforced/road,
 /area/centcom)
 "pnX" = (
@@ -292,7 +288,7 @@ nFA
 nFA
 nFA
 nFA
-ooX
+nFA
 nFA
 nFA
 nFA
@@ -322,7 +318,7 @@ dSB
 dSB
 dSB
 dSB
-jGF
+nFA
 nFA
 nFA
 nFA
@@ -352,13 +348,13 @@ djw
 djw
 djw
 dSB
-jIh
+nFA
 nFA
 qXU
 cpC
+jGF
 nFA
-nFA
-nFA
+ooX
 uzJ
 kWp
 kWp
@@ -388,7 +384,7 @@ nHe
 vpb
 nFA
 nFA
-nFA
+ooX
 uzJ
 kWp
 kWp
@@ -418,7 +414,7 @@ nFA
 nFA
 nFA
 nFA
-nFA
+ooX
 uzJ
 kWp
 kWp
@@ -448,7 +444,7 @@ pSk
 nFA
 nFA
 nFA
-nFA
+ooX
 uzJ
 kWp
 kWp

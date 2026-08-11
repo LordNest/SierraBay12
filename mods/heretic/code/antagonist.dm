@@ -330,8 +330,8 @@ GLOBAL_TYPED_NEW(heretics, /datum/antagonist/heretic)
 	node["isresearched"] = done ? 1 : 0
 	return node
 
-	node["isresearched"] = done ? 1 : 0
-	return node
+	// node["isresearched"] = done ? 1 : 0
+	// return node
 
 /datum/antagonist/heretic/proc/assemble_tree_display(mob/user, list/all_nodes, list/researchable)
 	var/list/tree_nodes = list()

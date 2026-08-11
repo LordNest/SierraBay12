@@ -67,6 +67,8 @@ var/global/const/access_heretic = "ACCESS_HERETIC"
 Spell zone
 */
 /obj/item/spell
+	name = "focused energy"
+	desc = "A concentrated beam of energy in your hand."
 	anchored = TRUE    // Never spawned outside of inventory, should be fine.
 	canremove = FALSE // You can use it while prone. Still deleted if the arm is destroyed.
 	w_class = ITEM_SIZE_TINY //technically it's just energy or something, I dunno
@@ -113,3 +115,82 @@ Spell zone
 		do_spell_effect(target, user)
 		QDEL_IN(src, 0)
 		return TRUE
+
+/spell/cast_check(skipcharge = 0,mob/user = usr, list/targets) //checks if the spell can be cast based on its settings; skipcharge is used when an additional cast_check is called inside the spell
+
+	if(silenced > 0)
+		return 0
+
+	if(!(src in user.mind.learned_spells) && holder == user && !(isanimal(user)))
+		error("[user] utilized the spell '[src]' without having it.")
+		to_chat(user, SPAN_WARNING("You shouldn't have this spell! Something's wrong."))
+		return 0
+
+	var/spell_leech = user.disrupts_psionics()
+	if(spell_leech)
+		to_chat(user, SPAN_WARNING("You try to marshal your energy, but find it leeched away by \the [spell_leech]!"))
+		return 0
+
+	var/turf/user_turf = get_turf(user)
+	if(!user_turf)
+		to_chat(user, SPAN_WARNING("You cannot cast spells in null space!"))
+
+	if((spell_flags & Z2NOCAST) && (user_turf.z in GLOB.using_map.admin_levels)) //Certain spells are not allowed on the centcomm zlevel
+		return 0
+
+	if(spell_flags & CONSTRUCT_CHECK)
+		for(var/turf/T in range(holder, 1))
+			if(findNullRod(T))
+				return 0
+
+	if(!src.check_charge(skipcharge, user)) //sees if we can cast based on charges alone
+		return 0
+
+	if(holder == user)
+		if(istype(user, /mob/living/simple_animal))
+			var/mob/living/simple_animal/SA = user
+			if(SA.purge)
+				to_chat(SA, SPAN_WARNING("The null sceptre's power interferes with your own!"))
+				return FALSE
+
+		if(!(spell_flags & GHOSTCAST))
+			if(!(spell_flags & NO_SOMATIC))
+				var/mob/living/L = user
+				if(L.incapacitated(INCAPACITATION_STUNNED|INCAPACITATION_RESTRAINED|INCAPACITATION_BUCKLED_FULLY|INCAPACITATION_FORCELYING|INCAPACITATION_KNOCKOUT))
+					to_chat(user, SPAN_WARNING("You can't cast spells while incapacitated!"))
+					return FALSE
+
+			if(ishuman(user) && !(invocation_type in list(SpI_EMOTE, SpI_NONE)))
+				if(istype(user.wear_mask, /obj/item/clothing/mask/muzzle))
+					to_chat(user, "Mmmf mrrfff!")
+					return FALSE
+
+		var/spell/noclothes/spell = locate() in user.mind.learned_spells
+		if((spell_flags & NEEDSCLOTHES) && !(spell && istype(spell)))//clothes check
+			if(!user.wearing_wiz_garb())
+				return FALSE
+		if((spell_flags & NEEDSFOCUS) && !(spell && istype(spell)))//clothes check
+			if(!user.wearing_focus())
+				return FALSE
+	return TRUE
+
+/obj/item/clothing/var/heretic_focus = FALSE
+
+// Does this clothing slot count as wizard garb? (Combines a few checks)
+/proc/is_heretic_focus(obj/item/clothing/C)
+	return istype(C) && C.heretic_focus
+
+/mob/proc/wearing_focus()
+	to_chat(src, "Silly creature, you're not a human. Only humans can cast this spell.")
+	return FALSE
+
+/mob/living/carbon/human/wearing_focus()
+	if(is_heretic_focus(src.wear_suit) && (src.species.hud || (slot_wear_suit in src.species.hud.equip_slots)))
+		return TRUE
+	else if(is_heretic_focus(get_active_hand(src)) || is_heretic_focus(get_inactive_hand(src)))
+		return TRUE
+	else if(is_heretic_focus(src.head) && (species.hud || (slot_head in src.species.hud.equip_slots)))
+		return TRUE
+	else
+		to_chat(src, SPAN_WARNING("I need focus to cast that spell."))
+		return FALSE

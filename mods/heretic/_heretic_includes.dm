@@ -5,6 +5,9 @@
 
 #include "code/_defines.dm"
 #include "code/_heretic_paths.dm"
+
+#include "code/_status_effect.dm"
+
 #include "code/antagonist.dm"
 #include "code/helpers.dm"
 #include "code/heretic_knowledge.dm"
@@ -14,26 +17,28 @@
 	#include "code/knowledge/hunter_lore.dm"
 	#include "code/knowledge/heretic_paths.dm"
 	#include "code/knowledge/heretic_armor_knowledge.dm"
-	#include "code/knowledge/ritual-path_cosmos.dm"
-	#include "code/knowledge/ritual-path_flesh.dm"
 	#include "code/knowledge/ritual-path_hunt.dm"
 	#include "code/knowledge/ritual-path_riddle.dm"
 	#include "code/knowledge/ritual-sidepaths.dm"
 	#include "code/knowledge/sacrifice.dm"
 	#include "code/knowledge/starting_lore.dm"
-	// #include "code/knowledge/tier_four.dm"
+	#include "code/knowledge/tier_four.dm"
 	#include "code/knowledge/tier_one.dm"
-	// #include "code/knowledge/tier_three.dm"
-	// #include "code/knowledge/tier_two.dm"
+	#include "code/knowledge/tier_three.dm"
+	#include "code/knowledge/tier_two.dm"
 
 	#include "code/items/general.dm"
 	#include "code/items/items-path_flesh.dm"
 	#include "code/items/items-path_hunt.dm"
 	#include "code/items/items-path_riddle.dm"
 
+	#include "code/spells/crimson_cleave.dm"
+	#include "code/spells/flesh_surgery.dm"
+	#include "code/spells/mist_jaunt.dm"
 	#include "code/spells/shadow_cloak.dm"
-	#include "code/spells/spells-cosmos.dm"
-	#include "code/spells/spells-flesh.dm"
+	// Tier 2
+	#include "code/spells/wave_of_desperation.dm"
+
 	#include "code/spells/spells-hunt.dm"
 	#include "code/spells/spells-riddle.dm"
 	#include "code/spells/spells-side-cf.dm"

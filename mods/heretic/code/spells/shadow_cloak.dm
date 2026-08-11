@@ -5,10 +5,9 @@
 	feedback = "ra"
 	invocation_type = SpI_EMOTE
 	invocation = "conjures a cloak of shadows around themselves."
-	spell_flags = NEEDSCLOTHES | HERETIC_CHECK
-	charge_max = 300
-	cooldown_min = 100
-	level_max = list(Sp_TOTAL = 2, Sp_SPEED = 2, Sp_POWER = 0)
+	spell_flags = NEEDSFOCUS | HERETIC_CHECK
+	charge_max = 180
+	cooldown_min = 180
 	cast_sound = 'sound/effects/snap.ogg'
 	duration = 60
 	hud_state = "invisibility"
@@ -18,7 +17,7 @@
 
 /spell/shadow_cloak/cast(list/targets, mob/user)
 	var/obj/aura/shadow_cloak/A = new(user)
-	QDEL_IN(A,duration)
+	addtimer(new Callback(A, TYPE_PROC_REF(/datum, Destroy)), duration SECONDS)
 
 /obj/aura/shadow_cloak
 	name = "shadow cloak"
@@ -28,8 +27,13 @@
 
 /obj/aura/shadow_cloak/added_to(mob/living/L)
 	..()
+	var/mob/living/carbon/human/H = user
+	H.add_cloaking_source(src)
 	to_chat(L,SPAN_NOTICE("A cloak of shadows envelops you."))
 
 /obj/aura/shadow_cloak/removed()
-	to_chat(user, SPAN_WARNING("Your concealing aura disappears."))
+	var/mob/living/carbon/human/H = user
+	H.remove_cloaking_source(src)
+	H.update_icon()
+	to_chat(H, SPAN_WARNING("Your concealing aura disappears."))
 	..()

@@ -124,6 +124,8 @@ Carving Knife, как с ТГ но не как с ТГ.
 
 /obj/item/material/coin/challenge/eldritch
 
+/obj/item/melee/rune_carver
+
 // Чашки
 
 /obj/item/reagent_containers/phylactery
@@ -159,14 +161,14 @@ Carving Knife, как с ТГ но не как с ТГ.
 	icon = 'mods/tajara/icons/obj_accessories.dmi'
 	w_class = ITEM_SIZE_SMALL
 	slot_flags = SLOT_MASK | SLOT_TIE
-	wizard_garb = TRUE
+	heretic_focus = TRUE
 
 /obj/item/clothing/accessory/amulet/eldritch_amulet
 	icon_state = "taj_amulet_3"
 	icon = 'mods/tajara/icons/obj_accessories.dmi'
 	w_class = ITEM_SIZE_SMALL
 	slot_flags = SLOT_MASK | SLOT_TIE
-	wizard_garb = TRUE
+	heretic_focus = TRUE
 
 /*
  * Void Cloak zone
@@ -196,14 +198,14 @@ Carving Knife, как с ТГ но не как с ТГ.
 /obj/item/clothing/suit/storage/hooded/cultrobes/void/ToggleHood()
 	. = ..()
 	hood_up = TRUE
-	wizard_garb = FALSE
+	heretic_focus = FALSE
 	min_pressure_protection = 0 // Hard vacuum protection on
 	cold_protection = UPPER_TORSO | LOWER_TORSO | LEGS | FEET | ARMS | HANDS
 
 /obj/item/clothing/suit/storage/hooded/cultrobes/void/RemoveHood()
 	. = ..()
 	hood_up = FALSE
-	wizard_garb = TRUE
+	heretic_focus = TRUE
 	min_pressure_protection = null // Hard vacuum protection off
 	cold_protection = UPPER_TORSO | LOWER_TORSO | LEGS | ARMS
 
@@ -238,6 +240,9 @@ Carving Knife, как с ТГ но не как с ТГ.
 /obj/item/clothing/suit/storage/hooded/cultrobes
 	/// Whether the hood is flipped up
 	var/hood_up = FALSE
+	action_button_name = "Toggle Mantle Hood"
+
+/obj/item/clothing/head/hooded/cult_hoodie
 
 // Eldritch armor. Looks cool, hood lets you cast heretic spells.
 /obj/item/clothing/suit/storage/hooded/cultrobes/eldritch
@@ -252,7 +257,6 @@ Carving Knife, как с ТГ но не как с ТГ.
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|FEET|ARMS|HANDS
 	cold_protection = UPPER_TORSO | LOWER_TORSO | LEGS | FEET | ARMS | HANDS
 	allowed = list(/obj/item/melee/sickly_blade)
-	action_button_name = "Toggle Mantle Hood"
 	hoodtype = /obj/item/clothing/head/cult_hoodie/eldritch
 	armor = list(
 		melee = ARMOR_MELEE_MAJOR,
@@ -261,7 +265,7 @@ Carving Knife, как с ТГ но не как с ТГ.
 		energy = ARMOR_ENERGY_RESISTANT,
 		bomb = ARMOR_BOMB_PADDED
 		)
-	wizard_garb = TRUE
+	heretic_focus = TRUE
 
 /obj/item/clothing/suit/storage/hooded/cultrobes/eldritch/equipped(mob/user, slot, initial)
 	. = ..()
@@ -313,7 +317,7 @@ Carving Knife, как с ТГ но не как с ТГ.
 	icon_state = "eldritch"
 	item_icons = list(slot_wear_suit_str = 'mods/heretic/icons/mob/onmob_head.dmi')
 	desc = "A torn, dust-caked hood. Strange eyes line the inside."
-	flags_inv = HIDEMASK | HIDEEARS | HIDEEYES | HIDEFACE
+	flags_inv = HIDEMASK | HIDEEARS | HIDEEYES | HIDEFACE | BLOCKHAIR
 	item_flags = ITEM_FLAG_THICKMATERIAL | ITEM_FLAG_PHORONGUARD
 	body_parts_covered = HEAD|FACE|EYES
 	flash_protection = FLASH_PROTECTION_MAJOR
@@ -326,7 +330,7 @@ Carving Knife, как с ТГ но не как с ТГ.
 		bomb = ARMOR_BOMB_PADDED
 		)
 
-	wizard_garb = TRUE
+	heretic_focus = TRUE
 
 /obj/item/clothing/head/cult_hoodie/eldritch/Initialize(mapload)
 	. = ..()

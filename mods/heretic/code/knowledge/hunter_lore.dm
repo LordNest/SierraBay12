@@ -34,7 +34,7 @@
 	knowledge_tier2 = /datum/heretic_knowledge/hunt/plague
 	// guaranteed_side_tier2 =
 	robes = /datum/heretic_knowledge/armor/hunt
-	knowledge_tier3 = /datum/heretic_knowledge/hunt/huntsman_garb
+	// knowledge_tier3 = /datum/heretic_knowledge/hunt/adrenaline
 	// guaranteed_side_tier3 = /datum/heretic_knowledge/spell/crimson_cleave
 	blade = /datum/heretic_knowledge/blade_upgrade/hunt
 	knowledge_tier4 = /datum/heretic_knowledge/hunt/music_box

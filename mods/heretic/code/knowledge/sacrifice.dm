@@ -15,7 +15,8 @@
 		If you have no targets, stand on a transmutation rune and invoke it to acquire some."
 	required_atoms = list(/mob/living/carbon/human = 1)
 	icon = "manequin"
-	tier = HERETIC_TIER_ONE
+	priority = MAX_KNOWLEDGE_PRIORITY // Should be at the top
+	is_starting_knowledge = TRUE
 	cost = 0
 	/// How many targets do we generate?
 	var/num_targets_to_generate = 5

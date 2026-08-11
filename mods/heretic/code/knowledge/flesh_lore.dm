@@ -27,7 +27,6 @@
 		"You are mostly focused around supporting your minions.",
 	)
 	tips = list(
-		"Your Mansus Grasp allows you to turn dead humanoids into ghouls. It also Leaves a mark that causes heavy bleeding when triggered by your bloody blade.",
 		"As a Flesh Heretic, organs and dead bodies are your best friends! You can use them for rituals, to heal or to gain buffs.",
 		"Your Flesh Surgery spell can heal your summons. Your robes grant you an aura that also heals nearby summons (but not yourself).",
 		"Your Flesh Surgery spell also lets you steal organs from humanoids. Useful if you need a spare liver.",
@@ -44,7 +43,7 @@
 	guaranteed_side_tier2 = /datum/heretic_knowledge/fungoid_heart // /datum/heretic_knowledge/crucible
 	robes = /datum/heretic_knowledge/armor/flesh
 	knowledge_tier3 = /datum/heretic_knowledge/summon/raw_prophet
-	// guaranteed_side_tier3 = /datum/heretic_knowledge/spell/crimson_cleave
+	guaranteed_side_tier3 = /datum/heretic_knowledge/spell/crimson_cleave
 	blade = /datum/heretic_knowledge/blade_upgrade/flesh
 	knowledge_tier4 = /datum/heretic_knowledge/summon/stalker
 	ascension = /datum/heretic_knowledge/ultimate/flesh_final
@@ -74,58 +73,6 @@
 
 //	to_chat(user, SPAN_OCCULT("Undertaking the Path of Flesh, you are given another objective."))
 //	our_heretic.owner.announce_objectives()
-/*
-/datum/heretic_knowledge/limited_amount/starting/base_flesh/on_mansus_grasp(mob/living/source, mob/living/target)
-	. = ..()
-
-	if(target.stat != DEAD)
-		return
-
-	if(LAZYLEN(created_items) >= limit)
-		target.visible_message(source, "at ghoul limit!")
-		return COMPONENT_BLOCK_HAND_USE
-
-	if(HAS_TRAIT(target, TRAIT_HUSK))
-		target.visible_message(source, "husked!")
-		return COMPONENT_BLOCK_HAND_USE
-
-	if(!IS_VALID_GHOUL_MOB(target))
-		target.visible_message(source, "invalid body!")
-		return COMPONENT_BLOCK_HAND_USE
-
-	target.grab_ghost()
-
-	// The grab failed, so they're mindless or playerless. We can't continue
-	if(!target.mind || !target.client)
-		target.visible_message(source, "no soul!")
-		return COMPONENT_BLOCK_HAND_USE
-
-	make_ghoul(source, target)
-*/
-/// The max amount of health a ghoul has.
-#define GHOUL_MAX_HEALTH 25
-
-/* /// Makes [victim] into a ghoul.
-/datum/heretic_knowledge/limited_amount/starting/base_flesh/proc/make_ghoul(mob/living/user, mob/living/carbon/human/victim)
-	user.log_message("created a ghoul, controlled by [key_name(victim)].", LOG_GAME)
-	message_admins("[ADMIN_LOOKUPFLW(user)] created a ghoul, [ADMIN_LOOKUPFLW(victim)].")
-
-	victim.apply_status_effect(
-		/datum/status_effect/ghoul,
-		GHOUL_MAX_HEALTH,
-		user.mind,
-		CALLBACK(src, PROC_REF(apply_to_ghoul)),
-		CALLBACK(src, PROC_REF(remove_from_ghoul)),
-	)
-
-/// Callback for the ghoul status effect - Tracking all of our ghouls
-/datum/heretic_knowledge/limited_amount/starting/base_flesh/proc/apply_to_ghoul(mob/living/ghoul)
-	LAZYADD(created_items, weakref(ghoul))
-
-/// Callback for the ghoul status effect - Tracking all of our ghouls
-/datum/heretic_knowledge/limited_amount/starting/base_flesh/proc/remove_from_ghoul(mob/living/ghoul)
-	LAZYREMOVE(created_items, weakref(ghoul))
-*/
 
 /datum/heretic_knowledge/limited_amount/flesh_ghoul
 	name = "Imperfect Ritual"
@@ -142,7 +89,7 @@
 	cost = 2
 	research_tree_icon_path = 'mods/heretic/icons/knowledge.dmi'
 	research_tree_icon_state = "ghoul_voiceless"
-/*
+
 /datum/heretic_knowledge/limited_amount/flesh_ghoul/recipe_snowflake_check(mob/living/user, list/atoms, list/selected_atoms, turf/loc)
 	. = ..()
 	if(!.)
@@ -151,7 +98,7 @@
 	for(var/mob/living/carbon/human/body in atoms)
 		if(body.stat != DEAD)
 			continue
-		if(!IS_VALID_GHOUL_MOB(body) || HAS_TRAIT(body, TRAIT_HUSK))
+		if(MUTATION_HUSK in body.mutations)
 			to_chat(user, SPAN_OCCULT("[body] is not in a valid state to be made into a ghoul."))
 			continue
 
@@ -169,48 +116,45 @@
 		loc.visible_message(user, "ritual failed, no valid body!")
 		return FALSE
 
-	soon_to_be_ghoul.grab_ghost()
 
+	for(var/mob/observer/G in GLOB.dead_mobs)
+		if(G.mind && G.mind.current == soon_to_be_ghoul && G.client)
+			to_chat(G, SPAN_NOTICE("<font size = 3><b>Your body has been revived, <b>Re-Enter Corpse</b> to return to it.</b></font>"))
+			break
+
+	// addtimer(new Callback(src,PROC_REF(check_for_revoke),targets), 20 SECONDS)
 	if(!soon_to_be_ghoul.mind || !soon_to_be_ghoul.client)
-		message_admins("[ADMIN_LOOKUPFLW(user)] is creating a voiceless dead of a body with no player.")
-		var/mob/chosen_one = SSpolling.poll_ghosts_for_target("Do you want to play as [SPAN_DANGER(soon_to_be_ghoul.real_name)], a [SPAN_NOTICE("voiceless dead")]?", check_jobban = ROLE_HERETIC, role = ROLE_HERETIC, poll_time = 5 SECONDS, checked_target = soon_to_be_ghoul, alert_pic = mutable_appearance('icons/mob/human/human.dmi', "husk"), jump_target = soon_to_be_ghoul, role_name_text = "voiceless dead")
-		if(isnull(chosen_one))
+		log_and_message_admins("[user] is creating a ghoul of a body with no player.")
+		// loc.visible_message(user, "ritual failed, no ghost within the body!")
+		// return FALSE
+		var/datum/ghosttrap/T = get_ghost_trap("heretic ghoul")
+		T.request_player(src, "A heretic's ghoul needs player.")
+		if(!soon_to_be_ghoul.key)
 			loc.visible_message(user, "ritual failed, no ghosts!")
 			return FALSE
-		message_admins("[key_name_admin(chosen_one)] has taken control of ([key_name_admin(soon_to_be_ghoul)]) to replace an AFK player.")
-		soon_to_be_ghoul.ghostize(FALSE)
-		soon_to_be_ghoul.PossessByPlayer(chosen_one.key)
+		else
+			log_and_message_admins("[key_name_admin(soon_to_be_ghoul.key)] has taken control of ([key_name_admin(soon_to_be_ghoul)] to replace an AFK player.")
 
 	selected_atoms -= soon_to_be_ghoul
 	make_ghoul(user, soon_to_be_ghoul)
 	return TRUE
 
-/// The max amount of health a voiceless dead has.
-#define MUTE_MAX_HEALTH 50
-
 /// Makes [victim] into a ghoul.
 /datum/heretic_knowledge/limited_amount/flesh_ghoul/proc/make_ghoul(mob/living/user, mob/living/carbon/human/victim)
-	user.log_message("created a voiceless dead, controlled by [key_name(victim)].", LOG_GAME)
-	message_admins("[ADMIN_LOOKUPFLW(user)] created a voiceless dead, [ADMIN_LOOKUPFLW(victim)].")
+	log_and_message_admins("[key_name_admin(user)] created a voiceless dead, [key_name_admin(victim)].")
+	if(victim.is_species(SPECIES_IPC) || victim.is_species(SPECIES_ADHERENT) || BP_IS_ROBOTIC(victim.organs_by_name[BP_CHEST]))
+		to_chat(victim, SPAN_DANGER("Suddenly you found yourself in new world full of PAIN!"))
+		victim.set_species(SPECIES_MOTH) // TO DO: KILL MOTH
+		alert(victim, "Ты теперь подчинен воле [user], служи ему слепо и верно, пока он не скажет обратного.", "Ты был порабощен")
+		GLOB.thralls.add_antagonist(victim.mind, new_controller = user)
+		return TRUE
+	else
+		victim.basic_revival()
+		victim.Drain()
+		alert(victim, "Ты теперь подчинен воле [user], служи ему слепо и верно, пока он не скажет обратного.", "Ты был порабощен")
+		GLOB.thralls.add_antagonist(victim.mind, new_controller = user)
+		return TRUE
 
-	victim.apply_status_effect(
-		/datum/status_effect/ghoul,
-		MUTE_MAX_HEALTH,
-		user.mind,
-		CALLBACK(src, PROC_REF(apply_to_ghoul)),
-		CALLBACK(src, PROC_REF(remove_from_ghoul)),
-	)
-
-/// Callback for the ghoul status effect - Tracks all of our ghouls and applies effects
-/datum/heretic_knowledge/limited_amount/flesh_ghoul/proc/apply_to_ghoul(mob/living/ghoul)
-	LAZYADD(created_items, weakref(ghoul))
-	ADD_TRAIT(ghoul, TRAIT_MUTE, MAGIC_TRAIT)
-
-/// Callback for the ghoul status effect - Tracks all of our ghouls and applies effects
-/datum/heretic_knowledge/limited_amount/flesh_ghoul/proc/remove_from_ghoul(mob/living/ghoul)
-	LAZYREMOVE(created_items, weakref(ghoul))
-	REMOVE_TRAIT(ghoul, TRAIT_MUTE, MAGIC_TRAIT)
-*/
 /datum/heretic_knowledge/spell/flesh_surgery
 	name = "Knitting of Flesh"
 	desc = "Grants you the spell Knit Flesh. This spell allows you to remove organs from victims \
@@ -218,7 +162,7 @@
 		This spell also allows you to heal your minions and summons, or restore failing organs to acceptable status."
 	gain_text = "But they were not out of my reach for long. With every step, the screams grew, until at last \
 		I learned that they could be silenced."
-	action_to_add = /spell/target/flesh_surgery
+	action_to_add = /spell/targeted/equip_item/flesh_surgery
 	cost = 2
 	drafting_tier = 5
 
@@ -304,7 +248,6 @@
 		Men of this world, hear me, for the time has come! The Marshal guides my army! \
 		Reality will bend to THE LORD OF THE NIGHT or be unraveled! WITNESS MY ASCENSION!"
 	required_atoms = list(/mob/living/carbon/human = 4)
-//	ascension_achievement = /datum/award/achievement/misc/flesh_ascension
 	announcement_text = "%SPOOKY% Ever coiling vortex. Reality unfolded. ARMS OUTREACHED, THE LORD OF THE NIGHT, %NAME% has ascended! Fear the ever twisting hand! %SPOOKY%"
 //	announcement_sound = 'sound/music/antag/heretic/ascend_flesh.ogg'
 
@@ -320,6 +263,3 @@
 	ritual_ghoul.limit *= 3
 	var/datum/heretic_knowledge/limited_amount/starting/base_flesh/blade_ritual = heretic_datum.get_knowledge(/datum/heretic_knowledge/limited_amount/starting/base_flesh)
 	blade_ritual.limit = 999
-
-// #undef GHOUL_MAX_HEALTH
-// #undef MUTE_MAX_HEALTH

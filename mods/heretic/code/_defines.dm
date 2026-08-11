@@ -19,6 +19,8 @@
 #define SACRIFICE_PSIONIC  3
 #define SACRIFICE_COMMAND  3
 
+#define NEEDSFOCUS	FLAG_15		//does it need the wizard garb to cast? Nonwizard spells should not have this
+
 #define HERETIC_CHECK	FLAG_11	//used by construct spells - checks for nullrods
 
 // sound\ambience\meat_monster_arrival.ogg

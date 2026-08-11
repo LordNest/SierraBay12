@@ -84,23 +84,6 @@ T4 Когда всё готово к возвышению, у нас начин�
 	tier = HERETIC_TIER_TWO
 
 
-/// Tier 3
-
-// Трансмутации
-
-/datum/heretic_knowledge/hunt/huntsman_garb
-	name = "Transmutation: Astral Bell"
-	desc = "Трансмутирует почки, колокольчик и пакет порченой крови в колокол, призывающий монстров, агрессивно настроенных ко всем вокруг."
-	icon = "necronimicon"
-	result_atoms = list(/obj/item/storage/backpack/satchel/leather/hunter)
-	required_atoms = list(
-		/obj/item/organ/internal/kidneys = 1,
-		/obj/item/material/bell = 1,
-		/obj/item/reagent_containers/ivbag/blood/plague = 1
-	)
-	tier = HERETIC_TIER_THREE
-
-
 /// Tier 4
 
 /datum/power/heretic/ascend_hunt
