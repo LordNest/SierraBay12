@@ -17,6 +17,7 @@
 #include "machinery/_machinery_includes.dm"
 #include "hairs_ports/_hairs_ports_includes.dm"
 #include "hardsuits/_hardsuits_includes.dm"
+#include "heretic/_heretic_includes.dm"
 #include "sprite_accessories/_sprite_accessories_includes.dm"
 #include "ipc_mods/_ipc_mods_includes.dm"
 #include "ssgunsetc/_ssgunsetc_includes.dm"

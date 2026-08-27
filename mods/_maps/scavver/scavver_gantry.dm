@@ -30,7 +30,7 @@
 	spawn_weight = 0.67
 	#ifndef DEV_MODE
 	ban_ruins = list(
-		/datum/map_template/ruin/away_site/salvage_ship,
+		//datum/map_template/ruin/away_site/salvage_ship,
 		//datum/map_template/ruin/away_site/normandite
 	)
 	#endif
