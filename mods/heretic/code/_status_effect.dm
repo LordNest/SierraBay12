@@ -51,7 +51,7 @@
 	/// The time until the next [proc/tick] call, gets set to [var/tick_interval] after every [proc/tick] call and decrements on every [proc/process] call.
 	var/time_until_next_tick
 	/// The mob affected by the status effect.
-	VAR_FINAL/mob/living/owner
+	VAR_FINAL/mob/living/carbon/human/owner
 	/// How many of the effect can be on one mob, and/or what happens when you try to add a duplicate.
 	var/status_type = STATUS_EFFECT_UNIQUE
 	/// If TRUE, we call [proc/on_remove] when owner is deleted. Otherwise, we call [proc/be_replaced].

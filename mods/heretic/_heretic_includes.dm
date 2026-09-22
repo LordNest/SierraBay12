@@ -11,6 +11,7 @@
 #include "code/antagonist.dm"
 #include "code/helpers.dm"
 #include "code/heretic_knowledge.dm"
+#include "code/heretic_passive.dm"
 
 #include "code/knowledge/alchemy.dm"
 	#include "code/knowledge/flesh_lore.dm"
