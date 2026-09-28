@@ -343,6 +343,7 @@ Carving Knife, как с ТГ но не как с ТГ.
 		return
 	..()
 
+/obj/item/storage/belt/unfathomable_curio
 
 // Organs
 
@@ -385,3 +386,9 @@ GLOBAL_LIST_EMPTY(heretic_sacrifice_landmarks)
 	name = "ash heretic sacrifice landmark"
 	for_heretic_path = PATH_ASH
 */
+
+/obj/item/gun/projectile/sniper/semistrip/hex
+
+/obj/item/ammo_magazine/speedloader/clip/hex
+
+/obj/item/clothing/mask/madness_mask

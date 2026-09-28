@@ -87,6 +87,7 @@
 	)
 	limit = 2
 	cost = 2
+	drafting_tier = 5
 	research_tree_icon_path = 'mods/heretic/icons/knowledge.dmi'
 	research_tree_icon_state = "ghoul_voiceless"
 
@@ -164,7 +165,6 @@
 		I learned that they could be silenced."
 	action_to_add = /spell/targeted/equip_item/flesh_surgery
 	cost = 2
-	drafting_tier = 5
 
 /datum/heretic_knowledge/armor/flesh
 	desc = "Allows you to transmute a table (or a suit), a mask and a pool of blood to create a writhing embrace. \

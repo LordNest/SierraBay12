@@ -14,11 +14,13 @@
 #include "code/heretic_passive.dm"
 
 #include "code/knowledge/alchemy.dm"
+
 	#include "code/knowledge/flesh_lore.dm"
 	#include "code/knowledge/hunter_lore.dm"
-	#include "code/knowledge/heretic_paths.dm"
+	#include "code/knowledge/riddle_lore.dm"
+	#include "code/knowledge/void_lore.dm"
+
 	#include "code/knowledge/heretic_armor_knowledge.dm"
-	#include "code/knowledge/ritual-path_hunt.dm"
 	#include "code/knowledge/ritual-path_riddle.dm"
 	#include "code/knowledge/ritual-sidepaths.dm"
 	#include "code/knowledge/sacrifice.dm"
@@ -33,7 +35,9 @@
 	#include "code/items/items-path_hunt.dm"
 	#include "code/items/items-path_riddle.dm"
 
+	#include "code/spells/adrenaline.dm"
 	#include "code/spells/crimson_cleave.dm"
+	#include "code/spells/hunter_whistle.dm"
 	#include "code/spells/flesh_surgery.dm"
 	#include "code/spells/mist_jaunt.dm"
 	#include "code/spells/shadow_cloak.dm"

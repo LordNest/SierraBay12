@@ -29,15 +29,15 @@
 	)
 
 	start = /datum/heretic_knowledge/limited_amount/starting/base_hunt
-	knowledge_tier1 = /datum/heretic_knowledge/hunt/blade
-	// guaranteed_side_tier1 = /datum/heretic_knowledge/limited_amount/risen_corpse
-	knowledge_tier2 = /datum/heretic_knowledge/hunt/plague
-	// guaranteed_side_tier2 =
+	knowledge_tier1 = /datum/heretic_knowledge/spell/mist_jaunt
+	guaranteed_side_tier1 = /datum/heretic_knowledge/vermin_ball
+	knowledge_tier2 = /datum/heretic_knowledge/spell/hunter_whistle
+	guaranteed_side_tier2 = /datum/heretic_knowledge/rune_carver
 	robes = /datum/heretic_knowledge/armor/hunt
-	// knowledge_tier3 = /datum/heretic_knowledge/hunt/adrenaline
-	// guaranteed_side_tier3 = /datum/heretic_knowledge/spell/crimson_cleave
+	knowledge_tier3 = /datum/heretic_knowledge/limited_amount/music_box
+	guaranteed_side_tier3 = /datum/heretic_knowledge/unfathomable_curio
 	blade = /datum/heretic_knowledge/blade_upgrade/hunt
-	knowledge_tier4 = /datum/heretic_knowledge/hunt/music_box
+	knowledge_tier4 = /datum/heretic_knowledge/spell/adrenaline
 	ascension = /datum/heretic_knowledge/ultimate/hunt_final
 
 /datum/heretic_knowledge/limited_amount/starting/base_hunt
@@ -54,6 +54,24 @@
 	cost = 1
 	research_tree_icon_path = 'mods/heretic/icons/khopesh.dmi'
 	research_tree_icon_state = "dark_blade"
+	eldritch_passive = /datum/status_effect/heretic_passive/hunt
+
+/datum/heretic_knowledge/spell/mist_jaunt
+	name = "Step through Mist"
+	desc = "Grants you the spell Step through Mist, a spell that lets you phase out of reality, \
+		allowing you to traverse a short distance, passing though any walls."
+	gain_text = "First Hunter knew how to walk between the planes."
+	action_to_add = /spell/targeted/ethereal_jaunt/mist_jaunt
+	cost = 2
+	drafting_tier = 5
+
+/datum/heretic_knowledge/spell/hunter_whistle
+	name = "Hunter's Whistle"
+	desc = "Grants you the spell Hunter's Whistle. This spell allows you to break lights in your vicinity. \
+		This spell also blinds silicons and anyone except you with synthetic eyes."
+	gain_text = "The hunt does not begin without a signal. If it is not given, even the best hunter will miss."
+	action_to_add = /spell/aoe_turf/hunter_whistle
+	cost = 2
 
 /datum/heretic_knowledge/armor/hunt
 	name = "Hunter's Garb"
@@ -75,6 +93,33 @@
 	cost = 1
 	research_tree_icon_path = 'mods/heretic/icons/khopesh.dmi'
 	research_tree_icon_state = "dark_blade"
+
+/datum/heretic_knowledge/limited_amount/music_box
+	name = "Music Box"
+	desc = "Allows you to transmute a corpse and a poppy to create a Voiceless Dead. \
+		The corpse does not need to have a soul. \
+		Voiceless Dead are mute ghouls and only have 50 health, but can use Bloody Blades effectively. \
+		You can only create two at a time."
+	gain_text = "I found notes of a dark ritual, unfinished... yet still, I pushed forward."
+	required_atoms = list(
+		/obj/item/device/taperecorder = 1,
+		/obj/item/reagent_containers/food/snacks/grown/poppy = 1,
+		/obj/item/reagent_containers/food/snacks/grown/harebell = 1,
+	)
+	limit = 1
+	cost = 2
+	result_atoms = /obj/item/bikehorn/music_box
+	research_tree_icon_path = 'mods/heretic/icons/knowledge.dmi'
+	research_tree_icon_state = "grasp_flesh"
+
+/datum/heretic_knowledge/spell/adrenaline
+	name = "Hunter's Whistle"
+	desc = "Grants you the spell Hunter's Whistle. This spell allows you to break lights in your vicinity. \
+		This spell also blinds silicons and anyone except you with synthetic eyes."
+	gain_text = "The hunt does not begin without a signal. If it is not given, even the best hunter will miss."
+	action_to_add = /spell/targeted/adrenaline
+	cost = 2
+	drafting_tier = 5
 
 /datum/heretic_knowledge/ultimate/hunt_final
 	name = "Ascension: Path of Moonhunter"

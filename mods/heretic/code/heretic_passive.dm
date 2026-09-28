@@ -251,7 +251,7 @@
 // Level 1 Shock immunity + Side knowledge is cheaper
 // Level 2 Gains X-ray Vision
 // Level 3 your grasp no longer goes on cooldown when opening things
-/datum/status_effect/heretic_passive/lock
+/datum/status_effect/heretic_passive/hunt
 	name = "Open Invitation"
 	id = "lock_passive"
 	passive_descriptions = list(
@@ -262,24 +262,24 @@
 	/// Tracks points needed to be spent to recharge
 	var/points_to_recharge = 2
 
-/datum/status_effect/heretic_passive/lock/on_apply()
+/datum/status_effect/heretic_passive/hunt/on_apply()
 	. = ..()
 	owner.mutations.Add(mShock)
 
-/datum/status_effect/heretic_passive/lock/heretic_level_upgrade()
+/datum/status_effect/heretic_passive/hunt/heretic_level_upgrade()
 	. = ..()
 	owner.mutations.Add(MUTATION_XRAY)
 	owner.update_sight()
 
-/datum/status_effect/heretic_passive/lock/heretic_level_final()
+/datum/status_effect/heretic_passive/hunt/heretic_level_final()
 	. = ..()
 
-/datum/status_effect/heretic_passive/lock/on_remove()
+/datum/status_effect/heretic_passive/hunt/on_remove()
 	owner.mutations.Remove(list(mShock, MUTATION_XRAY))
 	owner.update_sight()
 	return ..()
 
-/datum/status_effect/heretic_passive/lock/proc/on_shop_setup(datum/antagonist/heretic/heretic_datum)
+/datum/status_effect/heretic_passive/hunt/proc/on_shop_setup(datum/antagonist/heretic/heretic_datum)
 	SIGNAL_HANDLER
 	var/list/shop = heretic_datum.heretic_shops[HERETIC_KNOWLEDGE_SHOP]
 	for(var/knowledge_type in shop)
@@ -292,7 +292,7 @@
 // Prevents brain trauma
 // Level 2 grants sleep immunity
 // Level 3, Mind gate + Ringleader's rise will channel the moon amulet effects
-/datum/status_effect/heretic_passive/moon
+/datum/status_effect/heretic_passive/riddle
 	name = "Do You Hear The Voices Too?"
 	id = "moon_passive"
 	passive_descriptions = list(
@@ -301,13 +301,13 @@
 		"Mind gate and Ringleader's rise will channel the moon amulet effects, further inreases brain regeneration."
 	)
 
-/datum/status_effect/heretic_passive/moon/on_apply()
+/datum/status_effect/heretic_passive/riddle/on_apply()
 	. = ..()
 	var/obj/item/organ/internal/brain/our_brain = owner.get_organ(BP_BRAIN)
 	if(!our_brain)
 		return
 
-/datum/status_effect/heretic_passive/moon/tick(seconds_between_ticks)
+/datum/status_effect/heretic_passive/riddle/tick(seconds_between_ticks)
 	. = ..()
 	var/healing_amount = (-0.8 * passive_level * seconds_between_ticks)
 	if(heretic_datum.ascended)
@@ -318,14 +318,14 @@
 	if(!our_brain)
 		return
 
-/datum/status_effect/heretic_passive/moon/heretic_level_upgrade()
+/datum/status_effect/heretic_passive/riddle/heretic_level_upgrade()
 	. = ..()
 	owner.traits.Add(/singleton/trait/boon/clear_mind = TRAIT_LEVEL_MAJOR)
 
-/datum/status_effect/heretic_passive/moon/heretic_level_final()
+/datum/status_effect/heretic_passive/riddle/heretic_level_final()
 	. = ..()
 
-/datum/status_effect/heretic_passive/moon/on_remove()
+/datum/status_effect/heretic_passive/riddle/on_remove()
 	var/obj/item/organ/internal/brain/our_brain = owner.get_organ(BP_BRAIN)
 	if(!our_brain)
 		return ..()
