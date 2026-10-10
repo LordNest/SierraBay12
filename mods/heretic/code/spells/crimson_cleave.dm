@@ -27,6 +27,7 @@
 	icon = 'mods/heretic/icons/actions_ecult.dmi'
 	icon_state = "hand"
 	desc = "A concentrated beam of energy in the shape of a blade. Very stylish... and lethal."
+	range = 8
 
 /obj/item/spell/crimson_cleave/do_spell_effect(atom/target, mob/user)
 	. = ..()

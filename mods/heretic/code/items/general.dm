@@ -361,32 +361,6 @@ Carving Knife, как с ТГ но не как с ТГ.
 
 /obj/item/organ/internal/tongue/corrupt
 
-
-// Some various defines used in the heretic sacrifice map.
-
-/// A global assoc list of all landmarks that denote a heretic sacrifice location. [string heretic path] = [landmark].
-GLOBAL_LIST_EMPTY(heretic_sacrifice_landmarks)
-
-/// Lardmarks meant to designate where heretic sacrifices are sent.
-/obj/landmark/heretic
-	name = "default heretic sacrifice landmark"
-	icon_state = "x"
-	/// What path this landmark is intended for.
-	var/for_heretic_path = PATH_START
-
-/obj/landmark/heretic/Initialize(mapload)
-	. = ..()
-	GLOB.heretic_sacrifice_landmarks[for_heretic_path] = src
-
-/obj/landmark/heretic/Destroy()
-	GLOB.heretic_sacrifice_landmarks[for_heretic_path] = null
-	return ..()
-/*
-/obj/landmark/heretic/ash
-	name = "ash heretic sacrifice landmark"
-	for_heretic_path = PATH_ASH
-*/
-
 /obj/item/gun/projectile/sniper/semistrip/hex
 
 /obj/item/ammo_magazine/speedloader/clip/hex

@@ -1,3 +1,52 @@
+/datum/antagonist
+
+	///Mind that owns this datum
+	var/datum/mind/owner
+
+/datum/mind
+
+	/// List of antag datums on this mind
+	var/list/antag_datums
+
+// Datum antag mind procs
+/datum/mind/proc/add_antag_datum(datum_type_or_instance)
+	if(!datum_type_or_instance)
+		return
+	var/datum/antagonist/A
+	if(!ispath(datum_type_or_instance))
+		A = datum_type_or_instance
+		if(!istype(A))
+			return
+	else
+		A = new datum_type_or_instance()
+	A.owner = src
+	LAZYADD(antag_datums, A)
+	return A
+
+/datum/mind/proc/remove_antag_datum(datum_type)
+	if(!datum_type)
+		return
+	var/datum/antagonist/antag = has_antag_datum(datum_type)
+	if(isnull(antag))
+		return
+
+	qdel(antag)
+	return TRUE
+
+/datum/mind/proc/remove_all_antag_datums() //For the Lazy amongst us.
+	for(var/datum/antagonist/antag as anything in antag_datums)
+		qdel(antag)
+
+/datum/mind/proc/has_antag_datum(datum_type, check_subtypes = TRUE)
+	if(!datum_type)
+		return
+	for(var/a in antag_datums)
+		var/datum/antagonist/A = a
+		if(check_subtypes && istype(A, datum_type))
+			return A
+		else if(A.type == datum_type)
+			return A
+
 /datum/action/datumized
 	action_type = AB_GENERIC
 	var/cooldown = 0

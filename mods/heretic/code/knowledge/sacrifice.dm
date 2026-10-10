@@ -48,6 +48,23 @@
 	obtain_targets(user, silent = TRUE, heretic_datum = our_heretic)
 	heretic_mind = our_heretic.owner
 
+#ifndef UNIT_TESTS // This is a decently hefty thing to generate while unit testing, so we should skip it.
+	if(!heretic_level_generated)
+		heretic_level_generated = TRUE
+		log_game("Loading heretic lazytemplate for heretic sacrifices...")
+		var/datum/map_template/ruin/heretic/base = new
+		base.load_new_z()
+#endif
+/*
+/// Generate the sacrifice z-level.
+/datum/heretic_knowledge/hunt_and_sacrifice/proc/generate_heretic_z_level()
+	if(!SSmapping.load_new_z(LAZY_TEMPLATE_KEY_HERETIC_SACRIFICE))
+		log_game("The heretic sacrifice template failed to load.")
+		message_admins("The heretic sacrifice lazy template failed to load. Heretic sacrifices won't be teleported to the shadow realm. \
+			If you want, you can spawn an /obj/effect/landmark/heretic somewhere to stop that from happening.")
+		CRASH("Failed to lazy load heretic sacrifice template!")
+ */
+
 /datum/heretic_knowledge/hunt_and_sacrifice/recipe_snowflake_check(mob/living/carbon/human/user, list/atoms, list/selected_atoms, turf/loc)
 	var/datum/antagonist/heretic/heretic_datum = isheretic(user)
 	// First we have to check if the heretic has a Living Heart.
@@ -64,7 +81,7 @@
 	// Let's remove any humans in our atoms list that aren't a sac target
 	for(var/mob/living/carbon/human/sacrifice in atoms)
 		// If the mob's not in soft crit or worse, remove from list
-		if(sacrifice.stat < UNCONSCIOUS)
+		if(sacrifice.stat < UNCONSCIOUS) // INCAPACITATION_DEFAULT
 			atoms -= sacrifice
 		// Otherwise if it's neither a target nor a cultist, remove it
 		else if(!(sacrifice in heretic_datum.sac_targets) && !iscultist(sacrifice))
@@ -79,15 +96,10 @@
 	return FALSE
 
 /datum/heretic_knowledge/hunt_and_sacrifice/on_finished_recipe(mob/living/user, list/selected_atoms, turf/loc)
-	var/datum/antagonist/heretic/heretic_datum = isheretic(user)
-	// Force it to work if the sacrifice is a cultist, even if there's no targets.
 	var/mob/living/carbon/human/sac = selected_atoms[1]
-	if(!LAZYLEN(heretic_datum.sac_targets) && !iscultist(sac))
-		if(obtain_targets(user, heretic_datum = heretic_datum))
-			return TRUE
-		else
-			to_chat(user, SPAN_WARNING( "ritual failed, no targets found!"))
-			return FALSE
+	if(sac.is_dead())
+		to_chat(user, SPAN_WARNING( "ritual failed, no targets found!"))
+		return FALSE
 
 	sacrifice_process(user, selected_atoms, loc)
 	return TRUE
@@ -173,12 +185,12 @@
  */
 /datum/heretic_knowledge/hunt_and_sacrifice/proc/sacrifice_process(mob/living/user, list/selected_atoms, turf/loc)
 
-	var/datum/antagonist/heretic/heretic_datum = isheretic(user)
+	var/datum/antagonist/heretic/heretic_datum = GET_HERETIC(user)
 	var/mob/living/carbon/human/sacrifice = locate() in selected_atoms
 	if(!sacrifice)
 		CRASH("[type] sacrifice_process didn't have a human in the atoms list. How'd it make it so far?")
-	if(!(sacrifice in heretic_datum.sac_targets) && !iscultist(sacrifice))
-		CRASH("[type] sacrifice_process managed to get a non-target, non-cult human. This is incorrect.")
+	//if(!(sacrifice in heretic_datum.sac_targets) && !iscultist(sacrifice))
+	//	CRASH("[type] sacrifice_process managed to get a non-target, non-cult human. This is incorrect.")
 
 	if(sacrifice.mind)
 		LAZYADD(target_blacklist, sacrifice.mind)
@@ -231,7 +243,7 @@
 /datum/heretic_knowledge/hunt_and_sacrifice/proc/begin_sacrifice(mob/living/carbon/human/sac_target)
 	. = FALSE
 
-	var/datum/antagonist/heretic/our_heretic = isheretic(heretic_mind)
+	var/datum/antagonist/heretic/our_heretic = heretic_mind?.has_antag_datum(/datum/antagonist/heretic)
 	if(!our_heretic)
 		CRASH("[type] - begin_sacrifice was called, and no heretic [heretic_mind ? "antag datum":"mind"] could be found!")
 

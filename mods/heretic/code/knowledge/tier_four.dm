@@ -161,9 +161,9 @@
 
 	/// A list of calibers that the ritual will deny. Only ballistic calibers are allowed.
 	var/static/list/caliber_blacklist = list(
-		// CALIBER_LASER,
-		// CALIBER_ENERGY,
-		// CALIBER_FOAM,
+		CALIBER_CAPS,
+		CALIBER_DART,
+		// CALIBER_ROCKETS,
 		// CALIBER_ARROW,
 		// CALIBER_HARPOON,
 		// CALIBER_HOOK,

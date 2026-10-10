@@ -21,9 +21,10 @@
 	#include "code/knowledge/void_lore.dm"
 
 	#include "code/knowledge/heretic_armor_knowledge.dm"
-	#include "code/knowledge/ritual-path_riddle.dm"
-	#include "code/knowledge/ritual-sidepaths.dm"
+
 	#include "code/knowledge/sacrifice.dm"
+	#include "code/knowledge/sacrifice_map.dm"
+
 	#include "code/knowledge/starting_lore.dm"
 	#include "code/knowledge/tier_four.dm"
 	#include "code/knowledge/tier_one.dm"
@@ -31,6 +32,7 @@
 	#include "code/knowledge/tier_two.dm"
 
 	#include "code/items/general.dm"
+	#include "code/items/keyring.dm"
 	#include "code/items/items-path_flesh.dm"
 	#include "code/items/items-path_hunt.dm"
 	#include "code/items/items-path_riddle.dm"
@@ -41,13 +43,12 @@
 	#include "code/spells/flesh_surgery.dm"
 	#include "code/spells/mist_jaunt.dm"
 	#include "code/spells/shadow_cloak.dm"
+	#include "code/spells/void_shift.dm"
 	// Tier 2
 	#include "code/spells/wave_of_desperation.dm"
 
 	#include "code/spells/spells-hunt.dm"
 	#include "code/spells/spells-riddle.dm"
-	#include "code/spells/spells-side-cf.dm"
-	#include "code/spells/spells-side-fh.dm"
 
 	#include "code/turfs/heretic_turfs.dm"
 

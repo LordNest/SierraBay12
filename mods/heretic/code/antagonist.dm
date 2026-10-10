@@ -54,9 +54,6 @@ GLOBAL_TYPED_NEW(heretics, /datum/antagonist/heretic)
 	antaghud_indicator = "hudhunter" // Заглушка
 	skill_setter = /datum/antag_skill_setter/station
 
-	///Mind that owns this datum
-	var/datum/mind/owner
-
 	/// Contains multiple separate heretic shops so you can choose between multiple when buying.
 	var/list/heretic_shops = list(
 		HERETIC_KNOWLEDGE_START = list(),
@@ -174,6 +171,7 @@ GLOBAL_TYPED_NEW(heretics, /datum/antagonist/heretic)
 
 /datum/antagonist/heretic/add_antagonist(datum/mind/player)
 	owner = player
+	owner.add_antag_datum(/datum/antagonist/heretic)
 	. = ..()
 	initialize_heretic_setup()
 
@@ -201,6 +199,7 @@ GLOBAL_TYPED_NEW(heretics, /datum/antagonist/heretic)
 	if(!..())
 		return 0
 	to_chat(player.current, SPAN_DANGER("Все накопленные знания, всё понимание истинной сущности мироздания ускользают от тебя и превращаются в ничто. Это было дело всей твоей жизни. Или просто сон? Ничего не осталось кроме дороги к безумию."))
+	owner.remove_antag_datum(/datum/antagonist/heretic)
 	player.ClearMemories(type)
 	player.current.remove_language(LANGUAGE_CULT)
 

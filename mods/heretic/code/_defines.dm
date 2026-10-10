@@ -46,12 +46,12 @@
 #define PATH_START "Start Path"
 #define PATH_SIDE "Side Path"
 #define PATH_ASH "Ash Path"
-#define PATH_RUST "Rust Path"
+// #define PATH_RUST "Rust Path"
 #define PATH_FLESH "Flesh Path"
 #define PATH_VOID "Void Path"
-#define PATH_BLADE "Blade Path"
+// #define PATH_BLADE "Blade Path"
 #define PATH_COSMIC "Cosmic Path"
-#define PATH_LOCK "Lock Path"
+// #define PATH_LOCK "Lock Path"
 #define PATH_MOON "Moonhunter Path"
 #define PATH_RIDDLE "Riddle Path"
 
@@ -60,7 +60,7 @@ GLOBAL_LIST_AS(heretic_path_names, list(
 	PATH_FLESH = "Path of Flesh",
 	PATH_MOON = "Path of Moonhunter",
 	PATH_RIDDLE = "Path of Riddle",
-	PATH_COSMIC = "Path of Cosmos",
+	PATH_VOID = "Path of Voidwalker",
 ))
 
 //Heretic knowledge tree defines
@@ -125,3 +125,6 @@ GLOBAL_LIST_AS(heretic_path_names, list(
 #define COMSIG_HERETIC_PASSIVE_UPGRADE_FIRST "heretic_passive_upgrade_first"
 /// called on the antagonist datum, upgrades the passive to level 3
 #define COMSIG_HERETIC_PASSIVE_UPGRADE_FINAL "heretic_passive_upgrade_final"
+
+/// Checks if the given mob is a heretic and is guaranteed to return the datum if possible
+#define GET_HERETIC(mob) (mob.mind?.has_antag_datum(/datum/antagonist/heretic))

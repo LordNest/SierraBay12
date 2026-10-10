@@ -1,5 +1,5 @@
 /spell/targeted/equip_item/flesh_surgery
-	name = "Crimson Cleave"
+	name = "Flesh Surgery"
 	desc = "A targeted spell which siphons health in a small AOE. Cleanses all wounds upon casting."
 	feedback = "FS"
 	charge_type = Sp_RECHARGE
@@ -27,7 +27,7 @@
 /obj/item/spell/flesh_surgery
 	icon = 'mods/heretic/icons/actions_ecult.dmi'
 	icon_state = "mad_touch"
-
+	range = 1
 
 /obj/item/spell/flesh_surgery/do_spell_effect(atom/target, mob/user)
 	. = ..()
