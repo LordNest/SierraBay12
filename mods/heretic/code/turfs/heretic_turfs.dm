@@ -1,10 +1,3 @@
-/area/heretic/hunter
-	name = "\improper Hunter's Dream"
-	sound_env = PLAIN
-	dynamic_lighting = TRUE
-	forced_ambience = list('sound/effects/wind/tundra2.ogg')
-	connected_weather_manager = /datum/weather_manager/swamp
-
 /singleton/flooring/grass/cold
 	name = "grass"
 	desc = "Do they smoke grass out in space, Bowie? Or do they smoke AstroTurf?"

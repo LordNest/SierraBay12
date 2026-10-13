@@ -128,6 +128,9 @@ GLOBAL_TYPED_NEW(heretics, /datum/antagonist/heretic)
 
 	faction = "heretic"
 
+/datum/antagonist/heretic/get_extra_panel_options(datum/mind/player)
+	return "<a href='byond://?src=\ref[src];set_knowledge_points=\ref[player.current]'>\[set knowledge points\]</a>"
+
 /datum/objective/heretic/ascend
 	explanation_text = "Вознестись."
 

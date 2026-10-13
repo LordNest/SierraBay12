@@ -33,45 +33,43 @@ GLOBAL_LIST_EMPTY(heretic_sacrifice_landmarks)
 	name = "hunter heretic sacrifice landmark"
 	for_heretic_path = PATH_MOON
 
-/obj/landmark/heretic/lock
+/obj/landmark/heretic/riddle
 	name = "lock heretic sacrifice landmark"
 	for_heretic_path = PATH_RIDDLE
 
 // Rooms for where heretic sacrifices send people.
 /datum/map_template/ruin/heretic
-	name = "Wizard Base"
+	name = "Heretic Sacrificical Space"
 	prefix = list("mods/heretic/maps/")
 	suffixes = list("heretic_sacrifice.dmm")
 
-/area/map_template/heretic
-	name = "\improper Wizard's Den"
-	icon_state = "yellow"
-	requires_power = 0
-	dynamic_lighting = 0
-	req_access = list(access_syndicate)
-
-/area/centcom/heretic_sacrifice
-	name = "Mansus Gate"
+/area/map_template/heretic_sacrifice
+	name = "\improper Eldrich Gate"
 	icon_state = "heretic"
+	requires_power = FALSE
+	dynamic_lighting = TRUE
 	ambience = list('sound/effects/wind/wind_2_1.ogg','sound/effects/wind/wind_2_2.ogg','sound/effects/wind/wind_3_1.ogg','sound/effects/wind/wind_4_1.ogg','sound/effects/wind/wind_4_2.ogg','sound/effects/wind/wind_5_1.ogg')
 	sound_env = ASTEROID
 	area_flags = AREA_FLAG_NO_MODIFY
+	req_access = list(access_heretic)
 
-/area/centcom/heretic_sacrifice/ash //also, the default
-	name = "Mansus Ash Gate"
+/area/map_template/heretic_sacrifice/ash //also, the default
+	name = "Blasted Gate"
 
-/area/centcom/heretic_sacrifice/void
-	name = "Mansus Void Gate"
+/area/map_template/heretic_sacrifice/void
+	name = "Cosmic Void Gate"
 	sound_env = SPACE
 
-/area/centcom/heretic_sacrifice/flesh
-	name = "Mansus Flesh Gate"
+/area/map_template/heretic_sacrifice/flesh
+	name = "Endless Flesh Gate"
 	sound_env = STANDARD_STATION
 
-/area/centcom/heretic_sacrifice/hunt
-	name = "Mansus Rust Gate"
+/area/map_template/heretic_sacrifice/hunt
+	name = "Moonhunter Gate"
+	forced_ambience = list('sound/effects/wind/tundra2.ogg')
+	connected_weather_manager = /datum/weather_manager/swamp
 	sound_env = FOREST
 
-/area/centcom/heretic_sacrifice/riddle
-	name = "Mansus Lock Gate"
+/area/map_template/heretic_sacrifice/riddle
+	name = "Riddle Gate"
 	sound_env = PSYCHOTIC
