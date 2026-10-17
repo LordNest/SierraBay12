@@ -39,8 +39,9 @@ GLOBAL_LIST_EMPTY(heretic_sacrifice_landmarks)
 
 // Rooms for where heretic sacrifices send people.
 /datum/map_template/ruin/heretic
+	id = "heretic_sacrifice"
 	name = "Heretic Sacrificical Space"
-	prefix = list("mods/heretic/maps/")
+	prefix = "mods/antagonists/maps/"
 	suffixes = list("heretic_sacrifice.dmm")
 
 /area/map_template/heretic_sacrifice
@@ -73,3 +74,34 @@ GLOBAL_LIST_EMPTY(heretic_sacrifice_landmarks)
 /area/map_template/heretic_sacrifice/riddle
 	name = "Riddle Gate"
 	sound_env = PSYCHOTIC
+
+// Flesh arena props
+/obj/structure/cocoon
+	name = "\improper Pulsating Cocoon"
+	icon = 'mods/heretic/icons/obj/flesh.dmi'
+	icon_state = "cocoon"
+	desc = "Fleshy cocoon, pulsating from inside. Something definetly trying to break free!"
+
+/obj/structure/flesh_structure
+	name = "\improper Fleshy Structure"
+	icon = 'mods/heretic/icons/obj/flesh.dmi'
+	icon_state = "fleshprop"
+	desc = "Hideous amalgamation of flesh and bones."
+
+/obj/structure/flesh_structure/Initialize()
+	. = ..()
+	set_light(6, 2, l_color = COLOR_RED_LIGHT)
+	var/state = rand(2)
+	if (state)
+		icon_state = "[initial(icon_state)]_[state]"
+
+// Hunter's Dream props
+/obj/structure/lamppost
+	name = "\improper Lamp Post"
+	icon = 'mods/heretic/icons/tallstructure.dmi'
+	icon_state = "streetlantern1"
+	desc = "Lamp post in the middle of nowhere. Only thing you can cling to like a moth."
+
+/obj/structure/lamppost/Initialize()
+	. = ..()
+	set_light(8, 2, l_color = COLOR_PALE_ORANGE)

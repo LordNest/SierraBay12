@@ -51,7 +51,7 @@
 #ifndef UNIT_TESTS // This is a decently hefty thing to generate while unit testing, so we should skip it.
 	if(!heretic_level_generated)
 		heretic_level_generated = TRUE
-		log_game("Loading heretic lazytemplate for heretic sacrifices...")
+		log_game("Loading heretic template for heretic sacrifices...")
 		var/datum/map_template/ruin/heretic/base = new
 		base.load_new_z()
 #endif
