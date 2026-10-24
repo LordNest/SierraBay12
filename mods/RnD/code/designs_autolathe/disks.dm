@@ -105,6 +105,7 @@
 	designs = list(
 		/datum/design/autolathe/general,
 		/datum/design/autolathe/general/datacrystal,
+		/datum/design/autolathe/general/design_disk,
 		/datum/design/autolathe/general/flashlight,
 		/datum/design/autolathe/general/floor_light,
 		/datum/design/autolathe/general/extinguisher,
@@ -174,6 +175,22 @@
 		/datum/design/autolathe/device_component/conveyor_construct,
 		/datum/design/autolathe/device_component/conveyor_switch_construct,
 		/datum/design/autolathe/device_component/conveyor_switch_oneway_construct,
+		)
+
+/obj/item/stock_parts/computer/hard_drive/portable/design/cookware
+	name = "Cookware Designs"
+	icon_state = "turquoise"
+	designs = list(
+		/datum/design/autolathe/cookware,
+		/datum/design/autolathe/cookware/oven_dish,
+		/datum/design/autolathe/cookware/fryer_basket,
+		/datum/design/autolathe/cookware/grill_grate,
+		/datum/design/autolathe/cookware/microwave_plate,
+		/datum/design/autolathe/cookware/chopping_board,
+		/datum/design/autolathe/cookware/skillet,
+		/datum/design/autolathe/cookware/saucepan,
+		/datum/design/autolathe/cookware/mixing_bowl,
+		/datum/design/autolathe/cookware/cheesecloth,
 		)
 
 /obj/item/stock_parts/computer/hard_drive/portable/design/cuttery
@@ -306,6 +323,7 @@
 						/obj/item/stock_parts/computer/hard_drive/portable/design/engineering,
 						/obj/item/stock_parts/computer/hard_drive/portable/design/drinking,
 						/obj/item/stock_parts/computer/hard_drive/portable/design/medical,
+						/obj/item/stock_parts/computer/hard_drive/portable/design/cookware,
 						/obj/item/stock_parts/computer/hard_drive/portable/design/cuttery,
 						/obj/item/stock_parts/computer/hard_drive/portable/design/components,
 						/obj/item/stock_parts/computer/hard_drive/portable/design/general,
@@ -315,6 +333,7 @@
 /obj/item/storage/box/microlathe_designs
 	name = "box of basic microlathe designs"
 	desc = "A box with few of disks."
-	startswith = list(/obj/item/stock_parts/computer/hard_drive/portable/design/cuttery,
+	startswith = list(/obj/item/stock_parts/computer/hard_drive/portable/design/cookware,
+						/obj/item/stock_parts/computer/hard_drive/portable/design/cuttery,
 						/obj/item/stock_parts/computer/hard_drive/portable/design/drinking,
 						)

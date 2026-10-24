@@ -13,6 +13,13 @@
 	var/age
 
 /datum/preferences
+	// [SIERRA-ADD] - Keyboard preferences
+	/// Custom Keybindings
+	var/list/key_bindings = list()
+	var/hotkeys = TRUE
+	var/focus_chat_hotkey_nag = TRUE
+	// [/SIERRA-ADD]
+
 	//doohickeys for savefiles
 	var/is_guest = FALSE
 	var/default_slot = 1				//Holder so it doesn't default to slot 1, rather the last one used
@@ -56,6 +63,9 @@
 	..()
 
 /datum/preferences/proc/setup()
+	// [SIERRA-ADD] - Defaults must be available before loading saved bindings.
+	key_bindings = deepCopyList(get_default_keybindings())
+	// [/SIERRA-ADD]
 	if(!length(GLOB.skills))
 		GET_SINGLETON(/singleton/hierarchy/skill)
 	player_setup = new(src)
@@ -73,6 +83,11 @@
 	if(client && istype(client.mob, /mob/new_player))
 		var/mob/new_player/np = client.mob
 		np.new_player_panel(TRUE)
+
+	// [SIERRA-ADD] - Apply loaded and sanitized keybindings.
+	if(client)
+		client.set_macros()
+	// [/SIERRA-ADD]
 
 /datum/preferences/proc/load_data()
 	load_failed = null
@@ -303,7 +318,7 @@
 
 	update_setup_window(usr)
 
-/datum/preferences/proc/copy_to(mob/living/carbon/human/character, is_preview_copy = FALSE)
+/datum/preferences/proc/copy_to(mob/living/carbon/human/character, is_preview_copy = FALSE, apply_persist = TRUE) //[SIERRA-ADD]--> apply_persist = TRUE)
 	// Sanitizing rather than saving as someone might still be editing when copy_to occurs.
 	player_setup.sanitize_setup()
 	character.set_species(species)
@@ -462,6 +477,21 @@
 	if(!character.isSynthetic())
 		character.set_nutrition(rand(140,360))
 		character.set_hydration(rand(140,360))
+
+	if (!is_preview_copy && apply_persist)		//[SIERRA-ADD]--> apply_persist)
+		apply_character_persist(character)
+
+/// Overridden by mods/character_persist. Applies a saved body overlay after copy_to().
+/datum/preferences/proc/apply_character_persist(mob/living/carbon/human/character)
+	return
+
+/// Overridden by mods/character_persist. True if this slot has a live persist snapshot.
+/datum/preferences/proc/character_persist_is_locked()
+	return FALSE
+
+/// Overridden by mods/character_persist. True if medical records are locked by persist autofill.
+/datum/preferences/proc/character_persist_med_locked()
+	return FALSE
 
 /datum/preferences/proc/open_load_dialog(mob/user, details)
 	var/dat  = list()

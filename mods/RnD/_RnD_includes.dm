@@ -69,6 +69,7 @@
 #include "code/derelict_mission_configs.dm"
 #include "code/derelict_mission_virology.dm"
 #include "code/derelict_ghost_invasion.dm"
+#include "code/simple_animal_player_combat.dm"
 
 // Эксперименты и научные приборы
 #include "code/experiment.dm"
@@ -99,6 +100,7 @@
 
 // Дизайны автолата
 #include "code/designs_autolathe/designs_arms_ammo.dm"
+#include "code/designs_autolathe/designs_cookware.dm"
 #include "code/designs_autolathe/designs_cutlery.dm"
 #include "code/designs_autolathe/designs_devices_components.dm"
 #include "code/designs_autolathe/designs_engineering.dm"

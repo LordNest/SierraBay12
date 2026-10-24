@@ -288,6 +288,7 @@
 		if("Mech Equipment", "Mech armour", "Mech cockpit", \
 		   "Mech left arm", "Mech left leg", "Mech main", \
 		   "Mech right arm", "Mech right leg", "Mech sensors", \
+		   "Mech manipulators", "Mech propulsion", \
 		   "Doubled legs", "Exosuit Equipment", "Exosuit", "Hardsuits")
 			return "Exosuit"
 		// ── Electronics ──────────────────────────────────────────────────────
@@ -299,7 +300,7 @@
 			return "Medical"
 		// ── Autolathe ────────────────────────────────────────────────────────
 		if("Arms and Ammunition", "Drinking Glasses", "General", \
-		   "Devices and Components", "Cutlery", "Food", \
+		   "Devices and Components", "Cookware", "Cutlery", "Food", \
 		   "Tools", "Engineering")
 			return "Autolathe"
 		// ── Research (всё остальное: Weapon, Misc, RE) ────────────────────────
@@ -309,7 +310,7 @@
 /obj/machinery/r_n_d/server/proc/get_hdd_description(cat)
 	switch(cat)
 		if("Autolathe")
-			return "Arms and Ammunition, Drinking Glasses, General, Devices and Components, Cutlery, Food, Tools, Engineering"
+			return "Arms and Ammunition, Drinking Glasses, General, Devices and Components, Cookware, Cutlery, Food, Tools, Engineering"
 		if("Medical")
 			return "Medical, Augments, Optical"
 		if("Exosuit")

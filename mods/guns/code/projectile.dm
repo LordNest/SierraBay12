@@ -91,6 +91,7 @@
 
 /obj/item/gun/projectile/pistol/sec
 	name = "NT Mk58 pistol"
+	icon = 'mods/guns/icons/obj/pistol.dmi'
 
 /obj/item/gun/projectile/pistol/holdout
 	name = "P3 holdout pistol"
@@ -130,6 +131,7 @@
 	magazine_type = /obj/item/ammo_magazine/n10mm
 	allowed_magazines = /obj/item/ammo_magazine/n10mm
 	screen_shake = 0.5 //SMG
+	manufacturer = MANUFACTURER_NANOTRASEN
 
 	firemodes = list(
 		list("mode_name" = "semiauto",       burst=1, fire_delay=0,         one_hand_penalty=1, burst_accuracy=null, dispersion=null),
