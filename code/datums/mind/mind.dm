@@ -540,6 +540,20 @@
 						suplink.uses = crystals
 						log_and_message_admins("set the telecrystals for [key] to [crystals]")
 
+// [SIERRA-ADD]
+	else if(href_list["set_knowledge_points"])
+		if (usr.client.holder.rights & R_FUN)
+			var/datum/antagonist/heretic/our_heretic = src?.has_antag_datum(/datum/antagonist/heretic)
+			if(!our_heretic)
+				to_chat(usr, SPAN_WARNING("Failed to find a heretic."))
+				return
+			var/knowledge = our_heretic.knowledge_points
+			knowledge = input("Amount of knowledge points for [key]","Occult shop", knowledge) as null|num
+			if (!isnull(knowledge) && !QDELETED(our_heretic))
+				our_heretic.knowledge_points = knowledge
+				log_and_message_admins("set the heretic knowledge points for [key] to [knowledge]")
+// [/SIERRA-ADD]
+
 	else if (href_list["obj_announce"])
 		var/obj_count = 1
 		to_chat(current, SPAN_NOTICE("Your current objectives:"))

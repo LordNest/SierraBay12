@@ -1,0 +1,89 @@
+"a" = (/turf/simulated/floor/flesh,/area/map_template/heretic_sacrifice/flesh)
+"c" = (/obj/item/toy/plushie/deer,/turf/simulated/floor/wood,/area/map_template/heretic_sacrifice/void)
+"d" = (/turf/unsimulated/wall/cult,/area/map_template/heretic_sacrifice/riddle)
+"e" = (/turf/simulated/floor/wood/maple,/area/map_template/heretic_sacrifice/riddle)
+"f" = (/obj/structure/closet/cabinet,/turf/simulated/floor/wood,/area/map_template/heretic_sacrifice/void)
+"h" = (/obj/structure/flora/tree/dead/snowless,/obj/weather/swamp,/turf/simulated/floor/grass/cold,/area/map_template/heretic_sacrifice/hunt)
+"i" = (/turf/simulated/floor/plating,/area/map_template/heretic_sacrifice/void)
+"k" = (/obj/weather/swamp,/turf/simulated/floor/grass/cold,/area/map_template/heretic_sacrifice/hunt)
+"l" = (/obj/landmark/heretic/flesh,/turf/simulated/floor/flesh,/area/map_template/heretic_sacrifice/flesh)
+"n" = (/turf/unsimulated/wall/cult,/area/map_template/heretic_sacrifice/void)
+"r" = (/turf/simulated/floor/wood/walnut,/area/map_template/heretic_sacrifice/riddle)
+"t" = (/obj/weather/swamp/light,/obj/landmark/heretic/hunt,/turf/simulated/floor/holofloor/desert,/area/map_template/heretic_sacrifice/hunt)
+"v" = (/turf/simulated/floor/bluespace/interlude,/area/map_template/heretic_sacrifice/void)
+"x" = (/turf/simulated/floor/carpet/purple,/area/map_template/heretic_sacrifice/riddle)
+"y" = (/turf/simulated/floor/tiled/dark,/area/map_template/heretic_sacrifice/void)
+"z" = (/obj/structure/bed,/obj/item/bedsheet/yellow,/turf/simulated/floor/wood,/area/map_template/heretic_sacrifice/void)
+"B" = (/obj/weather/swamp/light,/turf/simulated/floor/holofloor/desert,/area/map_template/heretic_sacrifice/hunt)
+"C" = (/obj/item/device/flashlight/lamp/green,/obj/structure/table/woodentable,/turf/simulated/floor/wood,/area/map_template/heretic_sacrifice/void)
+"D" = (/obj/weather/swamp/hard,/turf/simulated/floor/grass/cold,/area/map_template/heretic_sacrifice/hunt)
+"E" = (/obj/landmark/heretic/void,/turf/simulated/floor/tiled/techmaint,/area/map_template/heretic_sacrifice/void)
+"F" = (/obj/weather/swamp/light,/obj/structure/lamppost,/turf/simulated/floor/grass/cold,/area/map_template/heretic_sacrifice/hunt)
+"G" = (/obj/weather/swamp/light,/turf/simulated/floor/grass/cold,/area/map_template/heretic_sacrifice/hunt)
+"I" = (/turf/simulated/floor/wood,/area/map_template/heretic_sacrifice/void)
+"J" = (/turf/unsimulated/wall/cult,/area/map_template/heretic_sacrifice/flesh)
+"K" = (/obj/structure/lamppost,/turf/simulated/floor/grass/cold,/area/map_template/heretic_sacrifice/hunt)
+"L" = (/obj/structure/cocoon,/turf/simulated/floor/flesh,/area/map_template/heretic_sacrifice/flesh)
+"M" = (/obj/structure/flora/tree/spooky,/turf/simulated/floor/grass/cold,/area/map_template/heretic_sacrifice/hunt)
+"N" = (/turf/simulated/floor/tiled/steel_ridged,/area/map_template/heretic_sacrifice/void)
+"O" = (/turf/simulated/floor/tiled/white,/area/map_template/heretic_sacrifice/void)
+"P" = (/turf/simulated/floor/carpet/blue,/area/map_template/heretic_sacrifice/riddle)
+"Q" = (/turf/simulated/floor/carpet/magenta,/area/map_template/heretic_sacrifice/riddle)
+"R" = (/turf/unsimulated/wall/cult,/area/map_template/heretic_sacrifice/hunt)
+"U" = (/obj/structure/flesh_structure,/turf/simulated/floor/flesh,/area/map_template/heretic_sacrifice/flesh)
+"V" = (/turf/simulated/wall/flesh,/area/map_template/heretic_sacrifice/flesh)
+"X" = (/turf/simulated/floor/tiled/techmaint,/area/map_template/heretic_sacrifice/void)
+"Y" = (/obj/item/toy/plushie/bee,/turf/simulated/floor/wood,/area/map_template/heretic_sacrifice/void)
+
+(1,1,1) = {"
+dddddddddddddddddddddddddnnnnnnnnnnnnnnnnnnnnnnnnn
+dxxxxxxxxxxxxxxxxxxxxxxxdnvvvvvvvvvvvvvvvvvvvvvvvn
+dxxxxxxxxxxxxxxxxxxxxxxxdnvvvvvvvvvvvvvvvvvvvvvvvn
+dxxrrrrrrrrrrrrrrrrrrrxxdnvvvvvvvvvvvvvvvvvvvvvvvn
+dxxrrrrrrrrrrrrrrrrrrrxxdnvvvvvvvvvvvvvvvvyyyvvvvn
+dxxrrPPPPPPPPPPPPPPPrrxxdnvvvvOOvvvvvvvvvvvyvvvvvn
+dxxrrPPPPPPPPPPPPPPPrrxxdnvvOOOvvvvvvvvvvvvyyvvvvn
+dxxrrPPrrrrrrrrrrrPPrrxxdnvvOOvvvvvvvvvvvvvyvvvvvn
+dxxrrPPrrrrrrrrrrrPPrrxxdnvvOvvvvvvvvvvvvvyvvvvvvn
+dxxrrPPrrQQQQQQQrrPPrrxxdnvvvvvvvviivvvvvvvvvvvvvn
+dxxrrPPrrQQQQQQQrrPPrrxxdnvvvvvvvviiiivvvvvvvvvvvn
+dxxrrPPrrQQeeeQQrrPPrrxxdnvvvvvvvvviNXNvvvvvvvvvvn
+dxxrrPPrrQQeeeQQrrPPrrxxdnvvvvvvvvviXEXvvvvvvvvvvn
+dxxrrPPrrQQeeeQQrrPPrrxxdnvvvvvvvviiNXNvvvvvvvvvvn
+dxxrrPPrrQQQQQQQrrPPrrxxdnvvvvvvvviivvvvvvvvvvvvvn
+dxxrrPPrrQQQQQQQrrPPrrxxdnvvvvvvvvvivvvvvvvvvvvvvn
+dxxrrPPrrrrrrrrrrrPPrrxxdnvvvvvvvvviivvvvvvvvvvvvn
+dxxrrPPrrrrrrrrrrrPPrrxxdnvvvvvvvvvvvvvvvvvvvvvvvn
+dxxrrPPPPPPPPPPPPPPPrrxxdnvvvvvvvvvvvvvvvvvvfvvvvn
+dxxrrPPPPPPPPPPPPPPPrrxxdnvvvvvvvvvvvvvvvvvIYvvvvn
+dxxrrrrrrrrrrrrrrrrrrrxxdnvvvvvvvvvvvvvvvvIzCvvvvn
+dxxrrrrrrrrrrrrrrrrrrrxxdnvvvvvvvvvvvvvvvvvcIvvvvn
+dxxxxxxxxxxxxxxxxxxxxxxxdnvvvvvvvvvvvvvvvvvvvvvvvn
+dxxxxxxxxxxxxxxxxxxxxxxxdnvvvvvvvvvvvvvvvvvvvvvvvn
+dddddddddddddddddddddddddnnnnnnnnnnnnnnnnnnnnnnnnn
+JJJJJJJJJJJJJJJJJJJJJJJJJRRRRRRRRRRRRRRRRRRRRRRRRR
+JVVVVVVVVVVVVVVVVVVVVVVVJRDDDDDDDDDDDDDDDDDDDDDDDR
+JVaaaaaaaaaaaaaaaaaaaaaVJRDDDDDDDDDDDDDDDDDDDDDDDR
+JVaaaaaaaUaaaaaaaaaaaaaVJRDDkkkkkkkkkkkkkkkBBkkDDR
+JVaaaaaaaaaaaaaUaaaaaaaVJRDDkkkkkkkkhkkkBBBBMBkDDR
+JVaaaaUaaaaaaaaaaaaaaaaVJRDDkkhkkhkkkkBBGGGBBkkDDR
+JVaaaaaaaaaaUaaaaaUaaaaVJRDDkkkkkkkkkkGBBGkkkkkDDR
+JVaaaaaaaaaaaaaaaaaaaaaVJRDDkkkhkkkkkkkGBGkkkkkDDR
+JVaaaaaaaaLaaaaaaaaaaaaVJRDDkkkkkkkkkMKGBGkkhkkDDR
+JVaaaaaaaaaaaaaaaaaaaaaVJRDDkkkkkhkkkGGBBGhkkkkDDR
+JVaaaaUaaaaaaaaLaaaaaaaVJRDDkkhkkkkGGBBBGkkkkkkDDR
+JVaaaaaaaaaaaaaaaaaaaaaVJRDDkkGGGGGBBBBGGkkhkkkDDR
+JVaaaaaaaaaalaaaaaaaaaaVJRDDkGGBBBBBBtBGkkkkkkkDDR
+JVaaaUaaaaaaaaaaaaaUaaaVJRDDkBBBGGGFBBGkkkkkkkkDDR
+JVaaaaaaLaaaaaaaaaaaaaaVJRDDkBBGGkkGGGGkhkkkkhkDDR
+JVaaaaaaaaaaaaaaUaaaaaaVJRDDkGBBGkkhkkkkkkkkkkkDDR
+JVaUaaaaaaaaLaaaaaaaaaaVJRDDkkBBBGkkkkkkkkkkkkkDDR
+JVaaaaaUaaaaaaaaaaaaaaaVJRDDkkBMBGkkkkhkkkkkhkkDDR
+JVaaaaaaaaaaaaaaaaaaaaaVJRDDkkkBGkkkkkkkkkkkkkkDDR
+JVaaaaaaaaaaaaaaaUaaaaaVJRDDhkkkkkkkkhkkkkhkkkkDDR
+JVaaaaaaaaaaaaaaaaaaaaaVJRDDkkkhkkhkkkkkhkkkhkkDDR
+JVaaaaaaaaaUaaaaaaaaaaaVJRDDkkkkkkkkkkkkkkkkkkkDDR
+JVaaaaaaaaaaaaaaaaaaaaaVJRDDDDDDDDDDDDDDDDDDDDDDDR
+JVVVVVVVVVVVVVVVVVVVVVVVJRDDDDDDDDDDDDDDDDDDDDDDDR
+JJJJJJJJJJJJJJJJJJJJJJJJJRRRRRRRRRRRRRRRRRRRRRRRRR
+"}

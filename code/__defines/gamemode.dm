@@ -34,6 +34,7 @@
 #define MODE_LOYALIST      "loyalist"
 #define MODE_COMMANDO      "commando"
 #define MODE_DEATHSQUAD    "deathsquad"
+#define MODE_HERETIC       "heretic" // [SIERRA-ADD] - Heretic
 #define MODE_ERT           "ert"
 #define MODE_ACTOR         "actor"
 #define MODE_MERCENARY     "mercenary"
