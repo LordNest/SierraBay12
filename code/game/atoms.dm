@@ -437,6 +437,9 @@
 	if(new_dir == old_dir)
 		return FALSE
 	dir = new_dir
+
+	SEND_SIGNAL(src, COMSIG_ATOM_DIR_CHANGE, dir, new_dir)
+
 	GLOB.dir_set_event.raise_event(src, old_dir, dir)
 
 	//Lighting
