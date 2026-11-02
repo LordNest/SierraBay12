@@ -31,3 +31,7 @@
 
 /obj/item/spell/flesh_surgery/do_spell_effect(atom/target, mob/user)
 	. = ..()
+	if(ishuman(target))
+
+	else
+		return

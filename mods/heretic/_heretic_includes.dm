@@ -37,22 +37,32 @@
 	#include "code/items/items-path_hunt.dm"
 	#include "code/items/items-path_riddle.dm"
 
-	#include "code/spells/adrenaline.dm"
+
 	#include "code/spells/crimson_cleave.dm"
-	#include "code/spells/hunter_whistle.dm"
+
 	#include "code/spells/flesh_surgery.dm"
-	#include "code/spells/mist_jaunt.dm"
+
 	#include "code/spells/shadow_cloak.dm"
-	#include "code/spells/void_shift.dm"
+
 	// Tier 2
 	#include "code/spells/wave_of_desperation.dm"
 
-	#include "code/spells/spells-hunt.dm"
-	#include "code/spells/spells-riddle.dm"
+	// Hunt
+	#include "code/spells/mist_jaunt.dm"
+	#include "code/spells/hunter_whistle.dm"
+	#include "code/spells/adrenaline.dm"
 
-	#include "code/turfs/heretic_turfs.dm"
+	// Void
+	#include "code/spells/evil_twin.dm"
+	#include "code/spells/voidball.dm"
+	#include "code/spells/void_shift.dm"
+	#include "code/spells/event_horizon.dm"
 
 #include "code/mobs/heretic_summons.dm"
+
+	#include "code/mobs/flesh/harvester.dm"
+	#include "code/mobs/flesh/hollow_guardian.dm"
+
 	#include "code/mobs/maid_in_the_mirror.dm"
 	#include "code/mobs/path_flesh.dm"
 

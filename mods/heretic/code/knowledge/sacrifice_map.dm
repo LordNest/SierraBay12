@@ -81,19 +81,44 @@ GLOBAL_LIST_EMPTY(heretic_sacrifice_landmarks)
 	icon = 'mods/heretic/icons/obj/flesh.dmi'
 	icon_state = "cocoon"
 	desc = "Fleshy cocoon, pulsating from inside. Something definetly trying to break free!"
+	anchored = TRUE
 
 /obj/structure/flesh_structure
 	name = "\improper Fleshy Structure"
 	icon = 'mods/heretic/icons/obj/flesh.dmi'
 	icon_state = "fleshprop"
 	desc = "Hideous amalgamation of flesh and bones."
+	anchored = TRUE
 
 /obj/structure/flesh_structure/Initialize()
 	. = ..()
-	set_light(6, 2, l_color = COLOR_RED_LIGHT)
+	set_light(6, 2, l_color = COLOR_PALE_RED_GRAY)
 	var/state = rand(2)
 	if (state)
 		icon_state = "[initial(icon_state)]_[state]"
+
+/turf/simulated/wall/flesh
+	icon_state = "flesh"
+	icon = 'mods/heretic/icons/turfs/flesh.dmi'
+
+/turf/simulated/wall/flesh/New(newloc)
+	..(newloc, MATERIAL_GROWTH)
+
+/turf/simulated/floor/flesh
+	name = "fleshy floor"
+	icon = 'mods/heretic/icons/turfs/flesh.dmi'
+	icon_state = "floor"
+	initial_flooring = /singleton/flooring/reinforced/flesh
+
+/singleton/flooring/reinforced/flesh
+	name = "fleshy floor"
+	desc = "Surface of this warm and wet..."
+	icon = 'mods/heretic/icons/turfs/flesh.dmi'
+	icon_base = "floor"
+	build_type = null
+	has_damage_range = 6
+	flags = TURF_ACID_IMMUNE
+	can_paint = null
 
 // Hunter's Dream props
 /obj/structure/lamppost
@@ -101,7 +126,39 @@ GLOBAL_LIST_EMPTY(heretic_sacrifice_landmarks)
 	icon = 'mods/heretic/icons/tallstructure.dmi'
 	icon_state = "streetlantern1"
 	desc = "Lamp post in the middle of nowhere. Only thing you can cling to like a moth."
+	anchored = TRUE
 
 /obj/structure/lamppost/Initialize()
 	. = ..()
 	set_light(8, 2, l_color = COLOR_PALE_ORANGE)
+
+/singleton/flooring/grass/cold
+	name = "grass"
+	desc = "Patch of cold grass"
+	icon = 'mods/heretic/icons/turfs/coldgrass.dmi'
+	icon_base = "grass"
+	has_base_range = 3
+	damage_temperature = T0C+80
+	flags = TURF_HAS_EDGES | TURF_HAS_CORNERS | TURF_REMOVE_SHOVEL
+	build_type = null
+	can_engrave = FALSE
+	floor_smooth = SMOOTH_NONE
+	wall_smooth = SMOOTH_ALL
+	space_smooth = SMOOTH_NONE
+
+/singleton/flooring/grass/cold/snow
+
+/obj/item/stack/tile/grass/cold
+
+/turf/simulated/floor/grass/cold
+	name = "grass patch"
+	icon = 'mods/heretic/icons/turfs/coldgrass.dmi'
+	icon_state = "grass0"
+	initial_flooring = /singleton/flooring/grass/cold
+	temperature = 277.15
+
+/turf/simulated/floor/grass/cold/snow
+	name = "grass patch"
+	icon = 'mods/heretic/icons/turfs/snowgrass.dmi'
+	icon_state = "grass0"
+	initial_flooring = /singleton/flooring/grass/cold/snow

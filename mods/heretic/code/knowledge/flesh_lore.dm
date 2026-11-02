@@ -42,10 +42,10 @@
 	knowledge_tier2 = /datum/heretic_knowledge/spell/flesh_surgery
 	guaranteed_side_tier2 = /datum/heretic_knowledge/fungoid_heart // /datum/heretic_knowledge/crucible
 	robes = /datum/heretic_knowledge/armor/flesh
-	knowledge_tier3 = /datum/heretic_knowledge/summon/raw_prophet
+	knowledge_tier3 = /datum/heretic_knowledge/summon/harvester
 	guaranteed_side_tier3 = /datum/heretic_knowledge/spell/crimson_cleave
 	blade = /datum/heretic_knowledge/blade_upgrade/flesh
-	knowledge_tier4 = /datum/heretic_knowledge/summon/stalker
+	knowledge_tier4 = /datum/heretic_knowledge/summon/hollow_guardian
 	ascension = /datum/heretic_knowledge/ultimate/flesh_final
 
 /datum/heretic_knowledge/limited_amount/starting/base_flesh
@@ -180,8 +180,8 @@
 		/obj/decal/cleanable/blood = 1,
 	)
 
-/datum/heretic_knowledge/summon/raw_prophet
-	name = "Raw Ritual"
+/datum/heretic_knowledge/summon/harvester
+	name = "Harvesting Ritual"
 	desc = "Allows you to transmute a pair of eyes, a left arm, and a pool of blood to create a Raw Prophet. \
 		Raw Prophets have a greatly increased sight range and x-ray vision, as well as a long range jaunt and \
 		the ability to link minds to communicate with ease, but are very fragile and weak in combat."
@@ -192,7 +192,7 @@
 		/obj/decal/cleanable/blood = 1,
 		/obj/item/organ/external/arm = 1,
 	)
-//	mob_to_summon = /mob/living/basic/heretic_summon/raw_prophet
+	mob_to_summon = /mob/living/simple_animal/hostile/commanded/harvester
 	cost = 2
 
 
@@ -215,12 +215,12 @@
 //	var/datum/wound/crit_wound = new wound_type()
 //	crit_wound.apply_wound(bodypart, attack_direction = get_dir(source, target))
 
-/datum/heretic_knowledge/summon/stalker
-	name = "Lonely Ritual"
-	desc = "Allows you to transmute a tail of any kind, a stomach, a tongue, a pen and a piece of paper to create a Stalker. \
-		Stalkers can jaunt, release EMPs, shapeshift into animals or automatons, and are strong in combat."
-	gain_text = "I was able to combine my greed and desires to summon an eldritch beast I had never seen before. \
-		An ever shapeshifting mass of flesh, it knew well my goals. The Marshal approved."
+/datum/heretic_knowledge/summon/hollow_guardian
+	name = "Empty Ritual"
+	desc = "Allows you to transmute a tail of any kind, a stomach, a tongue, a pen and a piece of paper to create a Hollow Guardian. \
+		Hollow Guardian are basically an organic exosuit, immune to EMPs and armed with array of weapons. You and your creatures can pilot this monstrosity."
+	gain_text = "I was able to combine my greed and desires to summon an empty carcass I had never seen before. \
+		A magnificent mountain of flesh and bones, wellcoming me inside. The Marshal approved."
 
 	required_atoms = list(
 		//obj/item/organ/internal/tail = 1,
@@ -229,10 +229,10 @@
 		/obj/item/pen = 1,
 		/obj/item/paper = 1,
 	)
-//	mob_to_summon = /mob/living/basic/heretic_summon/stalker
+//	mob_to_summon = /mob/living/basic/heretic_summon/hollow_guardian
 	cost = 2
 
-	is_final_knowledge = TRUE
+	// is_final_knowledge = TRUE
 
 /datum/heretic_knowledge/ultimate/flesh_final
 	name = "Priest's Final Hymn"

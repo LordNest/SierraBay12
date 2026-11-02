@@ -119,7 +119,6 @@
 	gain_text = "The hunt does not begin without a signal. If it is not given, even the best hunter will miss."
 	action_to_add = /spell/targeted/adrenaline
 	cost = 2
-	drafting_tier = 5
 
 /datum/heretic_knowledge/ultimate/hunt_final
 	name = "Ascension: Path of Moonhunter"

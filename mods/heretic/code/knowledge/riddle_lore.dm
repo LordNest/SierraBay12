@@ -153,7 +153,6 @@
 	cost = 2
 	research_tree_icon_path = 'mods/heretic/icons/knowledge.dmi'
 	research_tree_icon_state = "ghoul_voiceless"
-	drafting_tier = 4
 
 /datum/heretic_knowledge/ultimate/riddle_final
 	name = "Ascension: Path of Riddle"

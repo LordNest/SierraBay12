@@ -30,11 +30,12 @@
 
 	start = /datum/heretic_knowledge/limited_amount/starting/base_void
 	knowledge_tier1 = /datum/heretic_knowledge/spell/void_shift
-	knowledge_tier2 = /datum/heretic_knowledge/void/tier_two
+	knowledge_tier2 = /datum/heretic_knowledge/spell/evil_twin
 	robes = /datum/heretic_knowledge/armor/void
-	knowledge_tier3 = /datum/heretic_knowledge/rifle
+	knowledge_tier3 = /datum/heretic_knowledge/spell/voidball
+	guaranteed_side_tier3 = /datum/heretic_knowledge/rifle
 	blade = /datum/heretic_knowledge/blade_upgrade/void
-	knowledge_tier4 = /datum/heretic_knowledge/void/tier_four
+	knowledge_tier4 = /datum/heretic_knowledge/spell/event_horizon
 	ascension = /datum/heretic_knowledge/ultimate/void_final
 
 /datum/heretic_knowledge/limited_amount/starting/base_void
@@ -63,26 +64,13 @@
 	cost = 2
 	drafting_tier = 5
 
-/datum/heretic_knowledge/void/tier_two
-	name = "Stellar Transmutation"
-	desc = "Transmute star-matter into eldritch tools."
-	cost = 1
-	research_tree_icon_path = 'mods/heretic/icons/actions_ecult.dmi'
-	research_tree_icon_state = "eye"
-
-/datum/heretic_knowledge/void/tier_three
-	name = "Void Rift"
-	desc = "Tear a brief rift in local space-time."
+/datum/heretic_knowledge/spell/evil_twin
+	name = "Bluespace Mirror"
+	desc = "Grants you the spell Hunter's Whistle. This spell allows you to break lights in your vicinity. \
+		This spell also blinds silicons and anyone except you with synthetic eyes."
+	gain_text = "The hunt does not begin without a signal. If it is not given, even the best hunter will miss."
+	action_to_add = /spell/targeted/equip_item/evil_twin
 	cost = 2
-	research_tree_icon_path = 'mods/heretic/icons/actions_ecult.dmi'
-	research_tree_icon_state = "eye"
-
-/datum/heretic_knowledge/void/tier_four
-	name = "Cosmic Herald"
-	desc = "Summon a herald of the outer dark."
-	cost = 2
-	research_tree_icon_path = 'mods/heretic/icons/actions_ecult.dmi'
-	research_tree_icon_state = "eye"
 
 /datum/heretic_knowledge/armor/void
 	name = "Starweave Robes"
@@ -103,6 +91,24 @@
 	cost = 1
 	research_tree_icon_path = 'mods/heretic/icons/khopesh.dmi'
 	research_tree_icon_state = "dark_blade"
+
+/datum/heretic_knowledge/spell/voidball
+	name = "Sphere of Exile"
+	desc = "Grants you the spell Hunter's Whistle. This spell allows you to break lights in your vicinity. \
+		This spell also blinds silicons and anyone except you with synthetic eyes."
+	gain_text = "The hunt does not begin without a signal. If it is not given, even the best hunter will miss."
+	action_to_add = /spell/targeted/projectile/dumbfire/voidball
+	cost = 2
+
+/datum/heretic_knowledge/spell/event_horizon
+	name = "Event Horizon"
+	desc = "Grants you the spell Hunter's Whistle. This spell allows you to break lights in your vicinity. \
+		This spell also blinds silicons and anyone except you with synthetic eyes."
+	gain_text = "The hunt does not begin without a signal. If it is not given, even the best hunter will miss."
+	action_to_add = /spell/targeted/equip_item/event_horizon
+	cost = 2
+
+
 
 /datum/heretic_knowledge/ultimate/void_final
 	name = "Ascension: Path of Void"

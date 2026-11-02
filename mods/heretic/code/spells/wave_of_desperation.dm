@@ -1,6 +1,23 @@
 /spell/wave_of_desperation
+	name = "Wail of desperation"
+	desc = "Tear your bindings in destructive showcase of power, overwhelming your captors in psionic dread."
+	school = "transmutation"
+	feedback = "ra"
+	invocation_type = SpI_EMOTE
+	invocation = "conjures a sphere of fire around themselves."
+	school = "conjuration"
+	spell_flags = NEEDSCLOTHES
+	charge_max = 300
+	cooldown_min = 100
+	level_max = list(Sp_TOTAL = 2, Sp_SPEED = 2, Sp_POWER = 0)
+	cast_sound = 'sound/effects/meteorimpact.ogg'
+	duration = 40
+	hud_state = "gen_immolate"
 
-/spell/targeted/wave_of_desperation/cast(list/targets, mob/user)
+/spell/wave_of_desperation/choose_targets()
+	return list(holder)
+
+/spell/wave_of_desperation/cast(list/targets, mob/user)
 
 	var/escape_cooldown = 5 MINUTES		//This is used later to prevent spamming
 	var/mob/living/carbon/human/C = src
