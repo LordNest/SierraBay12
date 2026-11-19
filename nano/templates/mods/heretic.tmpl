@@ -1,0 +1,721 @@
+﻿<!--
+
+Title: Heretic Necronimicon
+
+Used In File(s): mods/heretic/code/antagonist.dm
+
+-->
+
+
+
+<style>
+
+.hereticConsole {
+
+	background: #141414;
+
+	color: #e0e0e0;
+
+	font-family: Verdana, sans-serif;
+
+	font-size: 12px;
+
+	min-height: 100%;
+
+	padding: 8px;
+
+	box-sizing: border-box;
+
+}
+
+.hereticNav {
+
+	display: flex;
+
+	justify-content: space-between;
+
+	align-items: center;
+
+	border-bottom: 1px solid #4a2a5a;
+
+	padding-bottom: 8px;
+
+	margin-bottom: 10px;
+
+	gap: 10px;
+
+}
+
+.hereticNavLeft {
+
+	display: flex;
+
+	align-items: center;
+
+	gap: 10px;
+
+}
+
+.hereticNavTitle {
+
+	font-size: 18px;
+
+	font-weight: bold;
+
+	color: #bd54e0;
+
+}
+
+.hereticPoints {
+
+	color: #2185d0;
+
+	font-weight: bold;
+
+	font-size: 14px;
+
+}
+
+.hereticSection {
+
+	border: 1px solid #444;
+
+	background: #222;
+
+	border-radius: 4px;
+
+	margin-bottom: 10px;
+
+	padding: 10px;
+
+}
+
+.hereticSectionTitle {
+
+	font-weight: bold;
+
+	font-size: 13px;
+
+	color: #bd54e0;
+
+	border-bottom: 1px solid #444;
+
+	padding-bottom: 6px;
+
+	margin-bottom: 8px;
+
+}
+
+.hereticTwoCol {
+
+	display: flex;
+
+	gap: 10px;
+
+}
+
+.hereticCol {
+
+	flex: 1;
+
+	min-width: 0;
+
+}
+
+.hereticPathGrid {
+
+	display: flex;
+
+	flex-wrap: wrap;
+
+	gap: 12px;
+
+}
+
+.hereticPathCard {
+
+	flex: 1 1 45%;
+
+	min-width: 280px;
+
+	border: 1px solid #553;
+
+	background: #1a1a1a;
+
+	border-radius: 6px;
+
+	padding: 12px;
+
+}
+
+.hereticPathCardActive {
+
+	border-color: #bd54e0;
+
+	box-shadow: 0 0 8px rgba(180, 80, 240, 0.25);
+
+}
+
+.hereticPathName {
+
+	font-size: 15px;
+
+	font-weight: bold;
+
+	color: #e03c3c;
+
+	margin-bottom: 6px;
+
+}
+
+.hereticPathDesc {
+
+	font-size: 11px;
+
+	color: #bbb;
+
+	margin-bottom: 8px;
+
+	line-height: 1.4;
+
+}
+
+.hereticPathIcon {
+
+	width: 48px;
+
+	height: 48px;
+
+	margin-bottom: 8px;
+
+}
+
+.hereticMuted {
+
+	color: #888;
+
+	font-style: italic;
+
+	font-size: 11px;
+
+}
+
+.hereticNodeLabel {
+
+	font-size: 10px;
+
+	color: #888;
+
+	text-transform: uppercase;
+
+	margin-bottom: 2px;
+
+}
+
+.hereticNodeName {
+
+	font-size: 15px;
+
+	font-weight: bold;
+
+	color: #cde;
+
+	margin-bottom: 8px;
+
+}
+
+.hereticNodeField {
+
+	margin-bottom: 8px;
+
+}
+
+.hereticNodeValue {
+
+	font-size: 12px;
+
+	color: #ddd;
+
+}
+
+.hereticBuyBtn {
+
+	margin-top: 8px;
+
+}
+
+.hereticBackBtn {
+
+	font-size: 12px;
+
+}
+
+.hereticBanner {
+
+	padding: 8px 10px;
+
+	border-radius: 4px;
+
+	margin-bottom: 10px;
+
+	font-size: 11px;
+
+}
+
+.hereticBannerPreview {
+
+	background: rgba(80, 60, 120, 0.35);
+
+	border: 1px solid rgba(180, 80, 240, 0.35);
+
+	color: #ccc;
+
+}
+
+.hereticBannerActive {
+
+	background: rgba(30, 110, 45, 0.25);
+
+	border: 1px solid rgba(60, 180, 80, 0.35);
+
+	color: #afa;
+
+}
+
+#hereticTreeContainer {
+
+	position: relative;
+
+	width: 99%;
+
+	height: 480px;
+
+	overflow: hidden;
+
+	border: 1px solid rgba(120, 60, 160, 0.5);
+
+	border-radius: 3px;
+
+	background: radial-gradient(ellipse at center, #1a1020 0%, #0d0d0d 100%);
+
+}
+
+.hereticNodeImg {
+
+	width: 32px;
+
+	height: 32px;
+
+	position: absolute;
+
+	top: 4px;
+
+	left: 4px;
+
+}
+
+.sciTechTreeIconBox {
+
+	width: 40px !important;
+
+	height: 40px !important;
+
+	min-width: 40px !important;
+
+	padding: 0 !important;
+
+	border-radius: 3px;
+
+	border: 1px solid transparent;
+
+	display: block !important;
+
+	position: relative;
+
+}
+
+.sciTechResearched {
+
+	background: rgba(30, 110, 45, 0.75) !important;
+
+	border-color: rgba(60, 180, 80, 0.6) !important;
+
+}
+
+.sciTechAvailable {
+
+	background: rgba(80, 30, 120, 0.75) !important;
+
+	border-color: rgba(180, 80, 240, 0.5) !important;
+
+}
+
+.sciTechCantResearch {
+
+	background: rgba(60, 30, 30, 0.65) !important;
+
+	border-color: rgba(120, 50, 50, 0.45) !important;
+
+	opacity: 0.7;
+
+}
+
+.sciTechPreview {
+
+	background: rgba(50, 40, 80, 0.75) !important;
+
+	border-color: rgba(120, 100, 180, 0.55) !important;
+
+}
+
+.sciTechSelected {
+
+	border-color: rgba(200, 140, 255, 0.9) !important;
+
+	box-shadow: 0 0 10px rgba(180, 80, 240, 0.5);
+
+}
+
+.hereticNodeStatus {
+
+	padding: 6px 10px;
+
+	border-radius: 3px;
+
+	text-align: center;
+
+	font-weight: bold;
+
+	margin-top: 8px;
+
+}
+
+.hereticStatusGood {
+
+	background: rgba(30, 110, 45, 0.5);
+
+	color: #6f6;
+
+}
+
+.hereticStatusLocked {
+
+	background: rgba(100, 30, 35, 0.5);
+
+	color: #f88;
+
+}
+
+.hereticStatusInfo {
+
+	background: rgba(60, 50, 90, 0.5);
+
+	color: #ccc;
+
+}
+
+</style>
+
+
+
+<div class="hereticConsole">
+
+
+
+	<div class="hereticNav">
+
+		<div class="hereticNavLeft">
+
+			{{if data.screen == "branch"}}
+
+				{{:helper.link("Back", '', {'back_to_hub' : 1}, null, 'hereticBackBtn')}}
+
+			{{/if}}
+
+			<div class="hereticNavTitle">Necronimicon</div>
+
+		</div>
+
+		<div class="hereticPoints">Knowledge Points: {{:data.charges}}</div>
+
+	</div>
+
+
+
+	{{if data.screen == "hub"}}
+
+	<div class="hereticSection">
+
+		<div class="hereticSectionTitle">Paths of Power</div>
+
+		<div class="hereticMuted" style="margin-bottom: 12px;">
+
+			Preview any branch to see its knowledge tree. Commit to one path to begin research — this choice is permanent.
+
+		</div>
+
+		<div class="hereticPathGrid">
+
+			{{for data.paths}}
+
+			<div class="hereticPathCard {{if value.is_committed == 1}}hereticPathCardActive{{/if}}">
+
+				{{if value.icon_url}}
+
+					<img src="{{:value.icon_url}}" class="hereticPathIcon" />
+
+				{{/if}}
+
+				<div class="hereticPathName">{{:value.display_name}}</div>
+
+				{{if value.is_committed == 1}}
+
+					<div style="font-size: 11px; color: #6f6; margin-bottom: 6px;">Your active path</div>
+
+				{{/if}}
+
+				<div style="font-size: 11px; margin-bottom: 8px; color: {{:value.complexity_color}};">
+
+					Complexity: {{:value.complexity}}
+
+				</div>
+
+				{{if value.desc_summary}}
+
+					<div class="hereticPathDesc">{{:value.desc_summary}}</div>
+
+				{{/if}}
+
+				{{if value.pros_summary}}
+
+					<div class="hereticNodeLabel">Pros</div>
+
+					<div class="hereticPathDesc">{{:value.pros_summary}}</div>
+
+				{{/if}}
+
+				{{if value.cons_summary}}
+
+					<div class="hereticNodeLabel">Cons</div>
+
+					<div class="hereticPathDesc">{{:value.cons_summary}}</div>
+
+				{{/if}}
+
+				<div style="margin-top: 10px;">
+
+					{{:helper.link("View Branch", '', {'view_path' : value.route}, null, 'hereticBuyBtn')}}
+
+				</div>
+
+			</div>
+
+			{{/for}}
+
+		</div>
+
+	</div>
+
+
+
+	<div class="hereticSection">
+
+		<div class="hereticSectionTitle">Status</div>
+
+		<div>Sacrifices: <b style="color:#e03c3c;">{{:data.total_sacrifices}}</b></div>
+
+		<div>Ascended: <b>{{if data.ascended}}Yes{{else}}No{{/if}}</b></div>
+
+		{{if data.objectives && data.objectives.length}}
+
+			<div class="hereticNodeLabel" style="margin-top:8px;">Objectives</div>
+
+			{{for data.objectives}}
+
+				<div style="font-size:11px; color:#bbb;">- {{:value.explanation}}</div>
+
+			{{/for}}
+
+		{{/if}}
+
+	</div>
+
+
+
+	{{else data.screen == "branch"}}
+
+	{{if data.can_research == 1}}
+
+		<div class="hereticBanner hereticBannerActive">Active path — you can research nodes in this branch.</div>
+
+	{{else data.can_commit == 1}}
+
+		<div class="hereticBanner hereticBannerPreview">Preview mode — explore this branch, then choose it to begin research.</div>
+
+	{{else}}
+
+		<div class="hereticBanner hereticBannerPreview">View only — you have already committed to another path.</div>
+
+	{{/if}}
+
+
+
+	<div class="hereticTwoCol">
+
+		<div class="hereticCol" style="flex: 2;">
+
+			<div class="hereticSection">
+
+				<div class="hereticSectionTitle">{{:data.path_name}} — Knowledge Tree</div>
+
+				<div id="hereticTreeContainer">
+
+					{{for data.tree_lines}}
+
+						<div style="position: absolute; border-{{:value.istop?'top':'bottom'}}: 1px solid rgba(180,80,240,0.35); border-{{:value.isright?'right':'left'}}: 1px solid rgba(180,80,240,0.35); width: {{:value.width}}%; height: {{:value.height}}%; left: {{:value.line_x}}%; bottom: {{:value.line_y}}%;"></div>
+
+					{{/for}}
+
+					{{for data.tree_nodes}}
+
+						<div style="position: absolute; left: {{:value.x}}%; bottom: {{:value.y}}%; margin-left: -20px; margin-bottom: -20px;">
+
+							{{:helper.link("<img src=\""+value.icon+"\" class=\"hereticNodeImg\" />", '', {'select_node' : value.id}, null, "link sciTechTreeIconBox "+((value.isresearched==1)?'sciTechResearched':((data.can_research==1)?((value.canunlock==1)?'sciTechAvailable':'sciTechCantResearch'):'sciTechPreview'))+" "+((value.id == data.selected_node_id)?'sciTechSelected':''))}}
+
+						</div>
+
+					{{/for}}
+
+				</div>
+
+			</div>
+
+		</div>
+
+
+
+		<div class="hereticCol" style="flex: 1;">
+
+			<div class="hereticSection">
+
+				<div class="hereticSectionTitle">Knowledge Node</div>
+
+				{{if data.selected_node}}
+
+					<div class="hereticNodeName">{{:data.selected_node.name}}</div>
+
+					<div class="hereticNodeField">
+
+						<div class="hereticNodeLabel">Description</div>
+
+						<div class="hereticNodeValue">{{:data.selected_node.desc}}</div>
+
+					</div>
+
+					<div class="hereticNodeField">
+
+						<div class="hereticNodeLabel">Cost</div>
+
+						<div class="hereticNodeValue" style="color:#2185d0;font-weight:bold;">{{:data.selected_node.cost}} KP</div>
+
+					</div>
+
+					{{if data.selected_node.gainFlavor}}
+
+					<div class="hereticNodeField">
+
+						<div class="hereticNodeLabel">Upon Research</div>
+
+						<div class="hereticNodeValue" style="color:#bd54e0;font-style:italic;">{{:data.selected_node.gainFlavor}}</div>
+
+					</div>
+
+					{{/if}}
+
+					{{if data.selected_node.tooltip}}
+
+					<div class="hereticNodeField">
+
+						<div class="hereticNodeValue" style="color:#e03c3c;">{{:data.selected_node.tooltip}}</div>
+
+					</div>
+
+					{{/if}}
+
+					{{if data.selected_node.isresearched == 1}}
+
+						<div class="hereticNodeStatus hereticStatusGood">Researched</div>
+
+					{{else data.can_research == 1 && data.selected_node.can_buy == 1}}
+
+						{{:helper.link("Research", 'confirm', {'research' : 1, 'path' : data.selected_node.path, 'category' : data.selected_node.category}, null, 'hereticBuyBtn')}}
+
+					{{else data.can_research == 1 && data.selected_node.canunlock == 1}}
+
+						<div class="hereticNodeStatus hereticStatusLocked">Not enough knowledge points</div>
+
+					{{else data.can_research == 1}}
+
+						<div class="hereticNodeStatus hereticStatusLocked">Requirements not met</div>
+
+					{{else}}
+
+						<div class="hereticNodeStatus hereticStatusInfo">Preview only</div>
+
+					{{/if}}
+
+				{{else}}
+
+					<div class="hereticMuted">Select a node in the tree.</div>
+
+				{{/if}}
+
+			</div>
+
+
+
+			{{if data.can_commit == 1 && data.starting_knowledge}}
+
+			<div class="hereticSection">
+
+				<div class="hereticSectionTitle">Commit to Path</div>
+
+				<div class="hereticMuted" style="margin-bottom: 8px;">
+
+					Your choice is permanent. Other paths will remain viewable but cannot be researched.
+
+				</div>
+
+				<div class="hereticNodeLabel">Starting cost: {{:data.starting_knowledge.cost}} KP</div>
+
+				{{:helper.link("Choose This Path", 'confirm', {'commit_path' : 1, 'route' : data.preview_route}, null, 'hereticBuyBtn')}}
+
+			</div>
+
+			{{/if}}
+
+
+
+			<div class="hereticSection">
+
+				<div class="hereticSectionTitle">Status</div>
+
+				<div>Available: <b style="color:#2185d0;">{{:data.charges}}</b> KP</div>
+
+				<div>Sacrifices: <b style="color:#e03c3c;">{{:data.total_sacrifices}}</b></div>
+
+				<div>Ascended: <b>{{if data.ascended}}Yes{{else}}No{{/if}}</b></div>
+
+			</div>
+
+		</div>
+
+	</div>
+
+	{{/if}}
+
+
+
+</div>
+
+

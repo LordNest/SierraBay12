@@ -48,6 +48,8 @@
 		if (DAMAGE_BRAIN)
 			adjustBrainLoss(damage)
 
+	SEND_SIGNAL(src, COMSIG_MOB_APPLY_DAMAGE, damage, damagetype, def_zone, damage_flags, used_weapon)
+
 	updatehealth()
 	return TRUE
 
