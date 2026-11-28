@@ -43,15 +43,27 @@ GLOBAL_ALIST_AS(sound_classes, alist(
 	"ch" = SOUND_CLASS_FRICATIVE, "s" = SOUND_CLASS_FRICATIVE, "f" = SOUND_CLASS_FRICATIVE,
 	"h" = SOUND_CLASS_FRICATIVE, "z" = SOUND_CLASS_FRICATIVE, "x" = SOUND_CLASS_FRICATIVE,
 	"v" = SOUND_CLASS_FRICATIVE, "j" = SOUND_CLASS_FRICATIVE,
+	"щ" = SOUND_CLASS_FRICATIVE, "ш" = SOUND_CLASS_FRICATIVE, "ф" = SOUND_CLASS_FRICATIVE,
+	"с" = SOUND_CLASS_FRICATIVE, "ж" = SOUND_CLASS_FRICATIVE, "ц" = SOUND_CLASS_FRICATIVE,
+	"х" = SOUND_CLASS_FRICATIVE, "з" = SOUND_CLASS_FRICATIVE, "в" = SOUND_CLASS_FRICATIVE,
 	"ck" = SOUND_CLASS_STOP, "p" = SOUND_CLASS_STOP, "t" = SOUND_CLASS_STOP,
 	"k" = SOUND_CLASS_STOP, "c" = SOUND_CLASS_STOP, "q" = SOUND_CLASS_STOP,
 	"b" = SOUND_CLASS_STOP, "d" = SOUND_CLASS_STOP, "g" = SOUND_CLASS_STOP,
+	"г" = SOUND_CLASS_STOP, "п" = SOUND_CLASS_STOP, "т" = SOUND_CLASS_STOP,
+	"к" = SOUND_CLASS_STOP,  "б" = SOUND_CLASS_STOP, "ч" = SOUND_CLASS_STOP,
+	"д" = SOUND_CLASS_STOP,
 	"l" = SOUND_CLASS_LIQUID, "r" = SOUND_CLASS_LIQUID, "w" = SOUND_CLASS_LIQUID,
 	"y" = SOUND_CLASS_LIQUID,
+	"л" = SOUND_CLASS_LIQUID, "р" = SOUND_CLASS_LIQUID, "й" = SOUND_CLASS_LIQUID,
 	"ng" = SOUND_CLASS_NASAL, "m" = SOUND_CLASS_NASAL, "n" = SOUND_CLASS_NASAL,
+	"м" = SOUND_CLASS_NASAL, "н" = SOUND_CLASS_NASAL,
 	"oo" = SOUND_CLASS_VOWEL, "ee" = SOUND_CLASS_VOWEL, "a" = SOUND_CLASS_VOWEL,
 	"e" = SOUND_CLASS_VOWEL, "idx" = SOUND_CLASS_VOWEL, "o" = SOUND_CLASS_VOWEL,
-	"u" = SOUND_CLASS_VOWEL
+	"u" = SOUND_CLASS_VOWEL,
+	"а" = SOUND_CLASS_VOWEL, "о" = SOUND_CLASS_VOWEL, "у" = SOUND_CLASS_VOWEL,
+	"э" = SOUND_CLASS_VOWEL, "и" = SOUND_CLASS_VOWEL, "ы" = SOUND_CLASS_VOWEL,
+	"ю" = SOUND_CLASS_VOWEL, "е" = SOUND_CLASS_VOWEL, "ё" = SOUND_CLASS_VOWEL,
+	"я" = SOUND_CLASS_VOWEL
 ))
 
 
@@ -82,7 +94,9 @@ GLOBAL_ALIST_INIT(confusable_sounds)
 
 GLOBAL_ALIST_AS(lipreadable_sounds, alist(
 	"p" = TRUE, "b" = TRUE, "m" = TRUE, "f" = TRUE, "v" = TRUE, "ph" = TRUE,
-	"w" = TRUE, "th" = TRUE, "o" = TRUE, "oo" = TRUE, "u" = TRUE
+	"w" = TRUE, "th" = TRUE, "o" = TRUE, "oo" = TRUE, "u" = TRUE,
+	"п" = TRUE, "б" = TRUE, "м" = TRUE, "ф" = TRUE, "в" = TRUE, "о" = TRUE,
+	"у" = TRUE, "а" = TRUE, "э" = TRUE, "и" = TRUE, "ы" = TRUE
 ))
 
 
@@ -91,9 +105,10 @@ GLOBAL_ALIST_AS(common_function_words, alist(
 	"on" = TRUE, "at" = TRUE, "is" = TRUE, "are" = TRUE, "was" = TRUE, "it" = TRUE,
 	"and" = TRUE, "or" = TRUE, "for" = TRUE, "be" = TRUE, "by" = TRUE, "as" = TRUE,
 	"so" = TRUE, "if" = TRUE, "we" = TRUE, "idx" = TRUE, "me" = TRUE, "my" = TRUE,
-	"you" = TRUE, "your" = TRUE, "he" = TRUE, "she" = TRUE, "they" = TRUE, "its" = TRUE,
-	"that" = TRUE, "this" = TRUE, "do" = TRUE, "did" = TRUE, "has" = TRUE, "have" = TRUE,
-	"can" = TRUE, "will" = TRUE, "just" = TRUE, "there" = TRUE
+	"ты" = TRUE, "твой" = TRUE, "твоя" = TRUE, "твою" = TRUE, "твоего" = TRUE, "твоих" = TRUE, "твоё" = TRUE,
+	"он" = TRUE, "его" = TRUE, "она" = TRUE, "её" = TRUE, "их" = TRUE, "ихнего" = TRUE, "ихних" = TRUE,
+	"того" = TRUE, "этого" = TRUE, "за" = TRUE, "перед" = TRUE, "около" = TRUE, "между" = TRUE,
+	"просто" = TRUE, "к" = TRUE, "на" = TRUE, "над" = TRUE, "под" = TRUE
 ))
 
 /**
